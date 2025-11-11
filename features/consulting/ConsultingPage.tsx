@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { articles } from '../../data/mockData';
+import consultingData from './data/consulting.json';
 import ConsultingDetailDialog from './components/dialogs/ConsultingDetailDialog';
 import ConsultingCards from './components/ConsultingCards';
 import { Article } from '../../types';
@@ -9,7 +9,16 @@ const ConsultingPage: React.FC = () => {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const consultingArticles = articles.filter(article => article.category === 'Tư vấn');
+  // Transform consulting data to match Article interface
+  const consultingArticles: Article[] = consultingData.map((item: any, index: number) => ({
+    id: item.url || `consulting-${index}`,
+    title: item.title,
+    image: item.thumbnail,
+    excerpt: item.content.length > 150 ? item.content.substring(0, 150) + '...' : item.content,
+    content: item.content,
+    publishDate: item.date,
+    category: 'Tư vấn' as const
+  }));
 
   const handleArticleClick = (article: Article) => {
     setSelectedArticle(article);

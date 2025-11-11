@@ -16,7 +16,7 @@ const MapSection: React.FC = () => {
           <span className="mt-1 mr-3 text-blue-600">&#x1f4cd;</span>
           <div>
             <h3 className="font-semibold">Địa chỉ</h3>
-            <p>Tầng 5, Tòa nhà ABC, 123 Đường XYZ, Quận Hoàn Kiếm, Hà Nội</p>
+            <p>Tầng 5, Số 19N7B, KĐT Trung Hòa Nhân Chính, Quận Thanh Xuân, TP Hà Nội</p>
           </div>
         </li>
         <li className="flex items-start">

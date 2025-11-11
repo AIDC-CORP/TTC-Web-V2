@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { articles } from '../../data/mockData';
+import blogData from './data/blog.json';
 import BlogCards from './components/BlogCards';
 import ArticleDetailDialog from './components/dialogs/ArticleDetailDialog';
 import { Article } from '../../types';
@@ -11,7 +11,17 @@ const BlogPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const blogArticles = articles.filter(article => article.category === 'Blog');
+
+  // Transform blog data to match Article interface
+  const blogArticles: Article[] = (blogData || []).map((item: any, index: number) => ({
+    id: item.url || `blog-${index}`,
+    title: item.title,
+    image: item.thumbnail,
+    excerpt: item.content?.length > 150 ? item.content.substring(0, 150) + '...' : item.content || '',
+    content: item.content || '',
+    publishDate: item.date || '',
+    category: 'Blog' as const
+  }));
 
   const totalPages = Math.ceil(blogArticles.length / ARTICLES_PER_PAGE);
   const indexOfLastArticle = currentPage * ARTICLES_PER_PAGE;
