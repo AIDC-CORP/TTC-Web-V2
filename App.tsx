@@ -5,7 +5,6 @@ import MainLayout from './common/components/MainLayout';
 import HomePage from './features/home/HomePage';
 import AboutPage from './features/about/AboutPage';
 import ProjectsPage from './features/projects/ProjectsPage';
-import ProjectDetailPage from './features/projects/ProjectDetailPage';
 import ConsultingPage from './features/consulting/ConsultingPage';
 import BlogPage from './features/blog/BlogPage';
 import ContactPage from './features/contact/ContactPage';
@@ -20,7 +19,6 @@ const App: React.FC = () => {
           <Route index element={<HomePage />} />
           <Route path="/gioi-thieu" element={<AboutPage />} />
           <Route path="/du-an" element={<ProjectsPage />} />
-          <Route path="/du-an/:id" element={<ProjectDetailPage />} />
           <Route path="/tu-van" element={<ConsultingPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<ArticleDetailPage />} />

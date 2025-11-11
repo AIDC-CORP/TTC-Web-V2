@@ -34,8 +34,12 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold text-blue-700">
-              Tân Thành Công
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/logo-ttc-removebg-DNXrVdJp.png" 
+                alt="Tân Thành Công JSC" 
+                className="h-12 w-auto"
+              />
             </Link>
           </div>
 

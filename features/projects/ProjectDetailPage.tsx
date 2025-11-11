@@ -1,11 +1,39 @@
 
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { projects } from '../../data/mockData';
+import projectsData from './data/projects.json';
+
+interface ProjectJSON {
+  name: string;
+  url: string;
+  thumbnail_url: string;
+  year: string;
+  location_specific: string;
+  square: string;
+  project_manager: string;
+  gallery_urls: string[];
+}
+
+// Transform JSON data to match Project interface
+const transformedProjects = projectsData.map((project: ProjectJSON, index: number) => ({
+  id: `project-${index}`,
+  name: project.name,
+  image: project.thumbnail_url || 'https://picsum.photos/seed/project-default/800/600',
+  summary: `Dự án tại ${project.location_specific}`,
+  description: `Dự án: ${project.name}\nĐịa điểm: ${project.location_specific}\nQuy mô: ${project.square}\nNăm thực hiện: ${project.year}\nQuản lý dự án: ${project.project_manager}`,
+  investor: undefined,
+  executionTime: project.year,
+  gallery: project.gallery_urls.length > 0 ? project.gallery_urls : [],
+  category: 'Công trình',
+  location_specific: project.location_specific,
+  square: project.square,
+  project_manager: project.project_manager,
+  year: project.year
+}));
 
 const ProjectDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const project = projects.find(p => p.id === id);
+  const project = transformedProjects.find(p => p.id === id);
 
   if (!project) {
     return (
@@ -35,22 +63,30 @@ const ProjectDetailPage: React.FC = () => {
                 <div className="bg-gray-50 p-6 rounded-lg shadow-md sticky top-28">
                     <h3 className="text-xl font-bold border-b pb-3 mb-4">Thông tin dự án</h3>
                     <div className="space-y-4">
-                        {project.investor && (
+                        {project.project_manager && (
                             <div>
-                                <h4 className="font-semibold text-gray-700">Chủ đầu tư</h4>
-                                <p className="text-gray-600">{project.investor}</p>
+                                <h4 className="font-semibold text-gray-700">Quản lý dự án</h4>
+                                <p className="text-gray-600">{project.project_manager}</p>
                             </div>
                         )}
-                        {project.executionTime && (
+                        {project.year && (
                              <div>
-                                <h4 className="font-semibold text-gray-700">Thời gian thực hiện</h4>
-                                <p className="text-gray-600">{project.executionTime}</p>
+                                <h4 className="font-semibold text-gray-700">Năm thực hiện</h4>
+                                <p className="text-gray-600">{project.year}</p>
                             </div>
                         )}
-                        <div>
-                            <h4 className="font-semibold text-gray-700">Lĩnh vực</h4>
-                            <p className="text-gray-600">{project.category}</p>
-                        </div>
+                        {project.location_specific && (
+                            <div>
+                                <h4 className="font-semibold text-gray-700">Địa điểm</h4>
+                                <p className="text-gray-600">{project.location_specific}</p>
+                            </div>
+                        )}
+                        {project.square && (
+                            <div>
+                                <h4 className="font-semibold text-gray-700">Quy mô</h4>
+                                <p className="text-gray-600">{project.square}</p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
