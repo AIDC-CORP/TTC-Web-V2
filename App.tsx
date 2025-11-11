@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import MainLayout from './features/common/components/MainLayout';
+import MainLayout from './common/components/MainLayout';
 import HomePage from './features/home/HomePage';
 import AboutPage from './features/about/AboutPage';
 import ProjectsPage from './features/projects/ProjectsPage';

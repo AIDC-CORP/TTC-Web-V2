@@ -5,6 +5,8 @@
 [![React](https://img.shields.io/badge/React-19.2.0-blue.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8.2-blue.svg)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.2.0-646CFF.svg)](https://vitejs.dev/)
+[![Jest](https://img.shields.io/badge/Jest-30.2.0-C21325.svg)](https://jestjs.io/)
+[![Testing Library](https://img.shields.io/badge/Testing_Library-16.3.0-E33332.svg)](https://testing-library.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC.svg)](https://tailwindcss.com/)
 [![Yarn](https://img.shields.io/badge/Yarn-1.22+-blue.svg)](https://yarnpkg.com/)
 
@@ -30,6 +32,7 @@ A modern, responsive corporate website for Tân Thành Công JSC, showcasing con
 - **React Router** - Client-side routing with HashRouter
 - **Component Architecture** - Feature-based folder structure
 - **Mock Data System** - Static data for development and demo purposes
+- **Testing Suite** - Jest and React Testing Library for component testing
 
 ## 🚀 Quick Start
 
@@ -217,6 +220,9 @@ export PATH="$(yarn global bin):$PATH"
 | `yarn dev` | Start development server on port 3000 |
 | `yarn build` | Build the app for production |
 | `yarn preview` | Preview the production build locally |
+| `yarn test` | Run Jest tests once |
+| `yarn test:watch` | Run Jest tests in watch mode |
+| `yarn test:coverage` | Run Jest tests with coverage report |
 
 ## 🏛️ Project Structure
 
@@ -237,9 +243,12 @@ TTC-Web-V2/
 │   ├── types.ts          # TypeScript interfaces
 │   ├── App.tsx           # Main application component
 │   └── index.tsx         # Application entry point
+├── __tests__/             # Jest test files
 ├── package.json           # Dependencies and scripts
 ├── vite.config.ts         # Vite configuration
 ├── tsconfig.json          # TypeScript configuration
+├── jest.config.ts         # Jest configuration
+├── jest.setup.ts          # Jest setup file
 └── README.md             # This file
 ```
 
@@ -255,10 +264,68 @@ TTC-Web-V2/
 - **@vitejs/plugin-react** - React plugin for Vite
 - **@types/node** - Node.js type definitions
 
+### Testing Framework
+- **Jest 30.2.0** - JavaScript testing framework
+- **React Testing Library 16.3.0** - Testing utilities for React components
+- **@testing-library/jest-dom 6.9.1** - Custom Jest matchers for DOM testing
+- **@testing-library/user-event 14.6.1** - User interaction testing utilities
+- **ts-jest 29.4.5** - TypeScript preprocessor for Jest
+
 ### Styling & UI
 - **Tailwind CSS** - Utility-first CSS framework
 - **Responsive Design** - Mobile-first approach
 - **Custom Animations** - CSS transitions and transforms
+
+## 🧪 Testing
+
+This project includes a comprehensive testing setup using Jest and React Testing Library to ensure code quality and prevent regressions.
+
+### Running Tests
+
+```bash
+# Run tests once
+yarn test
+
+# Run tests in watch mode (recommended during development)
+yarn test:watch
+
+# Run tests with coverage report
+yarn test:coverage
+```
+
+### Test Structure
+
+Tests are organized in the `__tests__/` directory at the root level:
+
+```
+__tests__/
+├── ServiceCard.test.tsx    # Tests for ServiceCard component
+├── ProjectCard.test.tsx    # Tests for ProjectCard component
+└── ...                     # Additional test files
+```
+
+### Test Configuration
+
+- **jest.config.ts** - Main Jest configuration with TypeScript support
+- **jest.setup.ts** - Global test setup (imports jest-dom matchers)
+- **tsconfig.json** - Updated to include Jest types
+
+### Writing Tests
+
+Tests use React Testing Library for component testing:
+
+```typescript
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import MyComponent from './MyComponent';
+
+describe('MyComponent', () => {
+  it('should render correctly', () => {
+    render(<MyComponent />);
+    expect(screen.getByText('Expected Text')).toBeInTheDocument();
+  });
+});
+```
 
 ## 📊 Data Models
 
