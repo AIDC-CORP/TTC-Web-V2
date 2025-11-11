@@ -1,11 +1,29 @@
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { projects, services } from '../../data/mockData';
 import ProjectCard from '../projects/components/ProjectCard';
 import ServiceCard from './components/ServiceCard';
 
+const ServicesRow: React.FC = () => {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <div
+      ref={trackRef}
+      className="mt-10 flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scroll-smooth"
+    >
+      {services.map((service) => (
+        <div key={service.id} className="flex-shrink-0 w-80">
+          <ServiceCard service={service} />
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const HomePage: React.FC = () => {
+  const trackRef = useRef<HTMLDivElement>(null);
   const featuredProjects = projects.slice(0, 3);
   const heroImages = useMemo(
     () => [
