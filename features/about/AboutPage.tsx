@@ -27,7 +27,7 @@ const AboutPage: React.FC = () => {
             Hành trình kiến tạo những giá trị bền vững
           </p>
           <p className="mt-4 text-base md:text-lg text-blue-200 max-w-2xl mx-auto opacity-90">
-            Hơn 15 năm kinh nghiệm trong lĩnh vực tư vấn và quản lý dự án xây dựng
+            Hơn 10 năm kinh nghiệm trong lĩnh vực tư vấn và quản lý dự án xây dựng
           </p>
         </div>
       </div>

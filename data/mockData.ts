@@ -106,25 +106,25 @@ export const services: Service[] = [
   {
     id: 'tu-van-xuc-tien-dau-tu',
     name: 'Tư vấn xúc tiến đầu tư',
-    image: 'https://picsum.photos/seed/service_icon1/400/300',
+    image: 'https://www.tanthanhcongjsc.com/wp-content/uploads/2022/10/tu-van-thiet-ke-600x386.jpg',
     summary: 'Đội ngũ chuyên gia tư vấn am hiểu thị trường đầu tư.'
   },
   {
     id: 'tu-van-thiet-ke-du-an',
     name: 'Tư vấn thiết kế dự án',
-    image: 'https://picsum.photos/seed/service_icon2/400/300',
+    image: 'https://tse1.mm.bing.net/th/id/OIP.2bkTl2wNkZHFJI0-ntWLFgHaEk?cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3',
     summary: 'Đội ngũ kỹ sư chuyên môn cao và nhiều năm kinh nghiệm.'
   },
   {
     id: 'thi-cong-du-an-quy-trinh',
     name: 'Thi công dự án và quy trình',
-    image: 'https://picsum.photos/seed/service_icon3/400/300',
+    image: 'https://www.tanthanhcongjsc.com/wp-content/uploads/2022/10/thi-cong-xay-dung-600x386.jpg',
     summary: 'Chất lượng – Kỹ thuật – Thẩm mỹ cho công trình.'
   },
   {
     id: 'bao-hanh-24-24',
     name: 'Dịch vụ bảo hành 24/24',
-    image: 'https://picsum.photos/seed/service_icon4/400/300',
+    image: 'https://www.tanthanhcongjsc.com/wp-content/uploads/2022/10/cai-tao-sua-chua-600x386.jpg',
     summary: 'Cải tạo và sửa chữa công trình đảm bảo tính chuyên môn cao.'
   }
 ];

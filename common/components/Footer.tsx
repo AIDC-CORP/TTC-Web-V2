@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2">
-            <h3 className="text-xl font-bold text-blue-400 mb-4">CÔNG TY CỔ PHẦN TÂN THÀNH CÔNG</h3>
+            <h3 className="text-xl font-bold text-blue-400 mb-4">CÔNG TY CỔ PHẦN CÔNG NGHỆ XÂY DỰNG TÂN THÀNH CÔNG</h3>
             <p className="text-gray-300">
               Chuyên cung cấp các giải pháp tư vấn, thiết kế và quản lý dự án xây dựng hàng đầu Việt Nam.
             </p>
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-start">
                 <span className="mt-1 mr-2">&#x1f4cd;</span>
-                <span>Tầng 5, Tòa nhà ABC, 123 Đường XYZ, Quận 1, TP. Hồ Chí Minh</span>
+                <span> Số 19N7B, KĐT Trung Hòa Nhân Chính, Quận Thanh Xuân, TP Hà Nội</span>
               </li>
               <li className="flex items-center">
                 <span className="mr-2">&#x260e;</span>
