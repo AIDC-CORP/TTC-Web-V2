@@ -1,6 +1,8 @@
 
 import React from 'react';
-import Value from './components/Value';
+import Value from './components/Quotes';
+import Cards from './components/Cards';
+import Stats from './components/Stats';
 
 const AboutPage: React.FC = () => {
   return (
@@ -49,40 +51,10 @@ const AboutPage: React.FC = () => {
             </div>
         </div>
 
-        <div className="mt-20 md:mt-32">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-                <div className="bg-gray-50 p-8 rounded-lg shadow-md">
-                    <h3 className="text-2xl font-bold text-blue-600 mb-3">Sứ mệnh</h3>
-                    <p className="text-gray-600">Cung cấp các giải pháp kỹ thuật ưu việt, an toàn và hiệu quả, góp phần vào sự phát triển bền vững của ngành xây dựng và xã hội.</p>
-                </div>
-                 <div className="bg-gray-50 p-8 rounded-lg shadow-md">
-                    <h3 className="text-2xl font-bold text-blue-600 mb-3">Tầm nhìn</h3>
-                    <p className="text-gray-600">Trở thành đối tác tin cậy hàng đầu trong lĩnh vực tư vấn và quản lý dự án xây dựng tại Việt Nam và vươn tầm khu vực.</p>
-                </div>
-                 <div className="bg-gray-50 p-8 rounded-lg shadow-md">
-                    <h3 className="text-2xl font-bold text-blue-600 mb-3">Giá trị cốt lõi</h3>
-                    <p className="text-gray-600">Uy tín - Chuyên nghiệp - Sáng tạo - Tận tâm. Đây là kim chỉ nam cho mọi hoạt động của chúng tôi.</p>
-                </div>
-            </div>
-        </div>
+        <Cards />
 
         <div className="mt-20 md:mt-32">
-            <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">CHÚNG TÔI CÓ GÌ?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16">
-                <div className="bg-blue-50 p-8 rounded-lg shadow-md">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">20</div>
-                    <div className="text-lg font-semibold text-gray-700">KIẾN TRÚC SƯ</div>
-                </div>
-                <div className="bg-blue-50 p-8 rounded-lg shadow-md">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">40</div>
-                    <div className="text-lg font-semibold text-gray-700">KỸ SƯ XÂY DỰNG</div>
-                </div>
-                <div className="bg-blue-50 p-8 rounded-lg shadow-md">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">10</div>
-                    <div className="text-lg font-semibold text-gray-700">CHUYÊN GIA VẤN VIÊN</div>
-                </div>
-            </div>
-
+            <Stats />
             <Value />
         </div>
       </div>
