@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import ArticleCard from './ArticleCard';
 import { Article } from '../../../types';
 
@@ -19,28 +20,55 @@ const BlogCards: React.FC<BlogCardsProps> = ({
 }) => {
   return (
     <div className="container mx-auto px-4 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {articles.map(article => (
-          <ArticleCard
+      <motion.div 
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
+        variants={{
+          hidden: {},
+          visible: {}
+        }}
+      >
+        {articles.map((article, index) => (
+          <motion.div
             key={article.id}
-            article={article}
-            onClick={onArticleClick ? () => onArticleClick(article) : undefined}
-          />
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.6 }}
+          >
+            <ArticleCard
+              article={article}
+              onClick={onArticleClick ? () => onArticleClick(article) : undefined}
+            />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {totalPages > 1 && (
-        <div className="flex justify-center mt-12 space-x-2">
+        <motion.div 
+          className="flex justify-center mt-12 space-x-2"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           {Array.from({ length: totalPages }, (_, i) => i + 1).map(number => (
-            <button
+            <motion.button
               key={number}
               onClick={() => onPageChange(number)}
               className={`px-4 py-2 rounded-md font-semibold ${currentPage === number ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-blue-200'}`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
             >
               {number}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
       )}
     </div>
   );

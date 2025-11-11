@@ -1,5 +1,9 @@
 
 import React from 'react';
+import { motion } from 'framer-motion';
+import Value from './components/Quotes';
+import Cards from './components/Cards';
+import Stats from './components/Stats';
 
 const AboutPage: React.FC = () => {
   return (
@@ -15,123 +19,104 @@ const AboutPage: React.FC = () => {
         </div>
         
         {/* Content */}
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="inline-block mb-6 px-4 py-2 bg-blue-500 rounded-full text-sm font-semibold tracking-wide">
+        <motion.div 
+          className="container mx-auto px-4 text-center relative z-10"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <motion.div 
+            className="inline-block mb-6 px-4 py-2 bg-blue-500 rounded-full text-sm font-semibold tracking-wide"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Giới thiệu về công ty
-          </div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight animate-fade-in">
+          </motion.div>
+          <motion.h1 
+            className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight animate-fade-in"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             Về Tân Thành Công
-          </h1>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-300 to-blue-100 mx-auto mb-6 rounded-full"></div>
-          <p className="mt-6 text-lg md:text-2xl text-blue-100 max-w-3xl mx-auto font-light leading-relaxed animate-fade-in-delayed">
+          </motion.h1>
+          <motion.div 
+            className="w-20 h-1 bg-gradient-to-r from-blue-300 to-blue-100 mx-auto mb-6 rounded-full"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          />
+          <motion.p 
+            className="mt-6 text-lg md:text-2xl text-blue-100 max-w-3xl mx-auto font-light leading-relaxed animate-fade-in-delayed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+          >
             Hành trình kiến tạo những giá trị bền vững
-          </p>
-          <p className="mt-4 text-base md:text-lg text-blue-200 max-w-2xl mx-auto opacity-90">
-            Hơn 10 năm kinh nghiệm trong lĩnh vực tư vấn và quản lý dự án xây dựng
-          </p>
-        </div>
+          </motion.p>
+          <motion.p 
+            className="mt-4 text-base md:text-lg text-blue-200 max-w-2xl mx-auto opacity-90"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          >
+            Hơn 15 năm kinh nghiệm trong lĩnh vực tư vấn và quản lý dự án xây dựng
+          </motion.p>
+        </motion.div>
       </div>
 
       <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <img src="https://picsum.photos/seed/aboutus/800/600" alt="Đội ngũ Tân Thành Công" className="rounded-lg shadow-2xl"/>
-            </div>
-            <div>
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">Câu chuyện của chúng tôi</h2>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                    Được thành lập từ năm 2010, Tân Thành Công khởi đầu với một đội ngũ kỹ sư tâm huyết và khát vọng mang đến những công trình chất lượng cao cho Việt Nam. Trải qua hơn một thập kỷ phát triển, chúng tôi đã không ngừng nỗ lực, đổi mới và vươn lên trở thành một trong những công ty tư vấn xây dựng uy tín hàng đầu.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                    Sự thành công của chúng tôi được xây dựng trên nền tảng chuyên môn vững chắc, tinh thần trách nhiệm và sự tin tưởng của Quý khách hàng, đối tác.
-                </p>
-            </div>
-        </div>
+        <motion.div 
+          className="grid md:grid-cols-2 gap-12 items-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <img src="https://picsum.photos/seed/aboutus/800/600" alt="Đội ngũ Tân Thành Công" className="rounded-lg shadow-2xl"/>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Câu chuyện của chúng tôi</h2>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Được thành lập từ năm 2010, Tân Thành Công khởi đầu với một đội ngũ kỹ sư tâm huyết và khát vọng mang đến những công trình chất lượng cao cho Việt Nam. Trải qua hơn một thập kỷ phát triển, chúng tôi đã không ngừng nỗ lực, đổi mới và vươn lên trở thành một trong những công ty tư vấn xây dựng uy tín hàng đầu.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              Sự thành công của chúng tôi được xây dựng trên nền tảng chuyên môn vững chắc, tinh thần trách nhiệm và sự tin tưởng của Quý khách hàng, đối tác.
+            </p>
+          </motion.div>
+        </motion.div>
 
-        <div className="mt-20 md:mt-32">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-                <div className="bg-gray-50 p-8 rounded-lg shadow-md">
-                    <h3 className="text-2xl font-bold text-blue-600 mb-3">Sứ mệnh</h3>
-                    <p className="text-gray-600">Cung cấp các giải pháp kỹ thuật ưu việt, an toàn và hiệu quả, góp phần vào sự phát triển bền vững của ngành xây dựng và xã hội.</p>
-                </div>
-                 <div className="bg-gray-50 p-8 rounded-lg shadow-md">
-                    <h3 className="text-2xl font-bold text-blue-600 mb-3">Tầm nhìn</h3>
-                    <p className="text-gray-600">Trở thành đối tác tin cậy hàng đầu trong lĩnh vực tư vấn và quản lý dự án xây dựng tại Việt Nam và vươn tầm khu vực.</p>
-                </div>
-                 <div className="bg-gray-50 p-8 rounded-lg shadow-md">
-                    <h3 className="text-2xl font-bold text-blue-600 mb-3">Giá trị cốt lõi</h3>
-                    <p className="text-gray-600">Uy tín - Chuyên nghiệp - Sáng tạo - Tận tâm. Đây là kim chỉ nam cho mọi hoạt động của chúng tôi.</p>
-                </div>
-            </div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <Cards />
+        </motion.div>
 
-        <div className="mt-20 md:mt-32">
-            <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">CHÚNG TÔI CÓ GÌ?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16">
-                <div className="bg-blue-50 p-8 rounded-lg shadow-md">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">20</div>
-                    <div className="text-lg font-semibold text-gray-700">KIẾN TRÚC SƯ</div>
-                </div>
-                <div className="bg-blue-50 p-8 rounded-lg shadow-md">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">40</div>
-                    <div className="text-lg font-semibold text-gray-700">KỸ SƯ XÂY DỰNG</div>
-                </div>
-                <div className="bg-blue-50 p-8 rounded-lg shadow-md">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">10</div>
-                    <div className="text-lg font-semibold text-gray-700">CHUYÊN GIA VẤN VIÊN</div>
-                </div>
-            </div>
-
-            <div className="space-y-16">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 className="text-3xl font-bold text-blue-600 mb-4">CÔNG NGHỆ</h3>
-                        <p className="text-gray-600 leading-relaxed">
-                            Áp dụng công nghệ tiên tiến sử dụng nhà thép tiền chế trong việc xây dựng nhà máy cho các doanh nghiệp.
-                        </p>
-                    </div>
-                    <div>
-                        <img src="https://picsum.photos/seed/technology/600/400" alt="Công nghệ tiên tiến" className="rounded-lg shadow-2xl"/>
-                    </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <img src="https://picsum.photos/seed/vision/600/400" alt="Tầm nhìn" className="rounded-lg shadow-2xl"/>
-                    </div>
-                    <div>
-                        <h3 className="text-3xl font-bold text-blue-600 mb-4">TẦM NHÌN</h3>
-                        <p className="text-gray-600 leading-relaxed">
-                            Đội ngũ kỹ sư với nhiều năm kinh nghiệm trong việc tư vấn & thiết kế sẽ giúp bạn hiện thực hóa nhà máy tiêu chuẩn quốc tế.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 className="text-3xl font-bold text-blue-600 mb-4">THIẾT BỊ</h3>
-                        <p className="text-gray-600 leading-relaxed">
-                            Trang thiết bị máy móc và công nghệ hiện đại được vận hành bởi đội ngũ công nhân với tay nghề bậc 7/7
-                        </p>
-                    </div>
-                    <div>
-                        <img src="https://picsum.photos/seed/equipment/600/400" alt="Thiết bị hiện đại" className="rounded-lg shadow-2xl"/>
-                    </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <img src="https://picsum.photos/seed/orientation/600/400" alt="Định hướng" className="rounded-lg shadow-2xl"/>
-                    </div>
-                    <div>
-                        <h3 className="text-3xl font-bold text-blue-600 mb-4">ĐỊNH HƯỚNG</h3>
-                        <p className="text-gray-600 leading-relaxed">
-                            Sự hài lòng của Quý khách hàng chính là mục tiêu và động lực lớn nhất để Tân Thành Công luôn luôn hướng đến.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <motion.div 
+          className="mt-20 md:mt-32"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
+          <Stats />
+          <Value />
+        </motion.div>
       </div>
     </div>
   );
