@@ -4,10 +4,31 @@ import React from 'react';
 const AboutPage: React.FC = () => {
   return (
     <div className="bg-white">
-       <div className="relative bg-blue-700 text-white py-20 md:py-32">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold">Về Tân Thành Công</h1>
-          <p className="mt-4 text-lg md:text-xl text-blue-200">Hành trình kiến tạo những giá trị bền vững</p>
+      <div className="relative bg-cover bg-center text-white py-24 md:py-40 overflow-hidden" style={{ backgroundImage: `url('https://picsum.photos/seed/construction-hero/1920/1080')` }}>
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-300 rounded-full blur-3xl"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="inline-block mb-6 px-4 py-2 bg-blue-500 rounded-full text-sm font-semibold tracking-wide">
+            Giới thiệu về công ty
+          </div>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight animate-fade-in">
+            Về Tân Thành Công
+          </h1>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-300 to-blue-100 mx-auto mb-6 rounded-full"></div>
+          <p className="mt-6 text-lg md:text-2xl text-blue-100 max-w-3xl mx-auto font-light leading-relaxed animate-fade-in-delayed">
+            Hành trình kiến tạo những giá trị bền vững
+          </p>
+          <p className="mt-4 text-base md:text-lg text-blue-200 max-w-2xl mx-auto opacity-90">
+            Hơn 15 năm kinh nghiệm trong lĩnh vực tư vấn và quản lý dự án xây dựng
+          </p>
         </div>
       </div>
 
@@ -40,6 +61,74 @@ const AboutPage: React.FC = () => {
                  <div className="bg-gray-50 p-8 rounded-lg shadow-md">
                     <h3 className="text-2xl font-bold text-blue-600 mb-3">Giá trị cốt lõi</h3>
                     <p className="text-gray-600">Uy tín - Chuyên nghiệp - Sáng tạo - Tận tâm. Đây là kim chỉ nam cho mọi hoạt động của chúng tôi.</p>
+                </div>
+            </div>
+        </div>
+
+        <div className="mt-20 md:mt-32">
+            <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">CHÚNG TÔI CÓ GÌ?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16">
+                <div className="bg-blue-50 p-8 rounded-lg shadow-md">
+                    <div className="text-4xl font-bold text-blue-600 mb-2">20</div>
+                    <div className="text-lg font-semibold text-gray-700">KIẾN TRÚC SƯ</div>
+                </div>
+                <div className="bg-blue-50 p-8 rounded-lg shadow-md">
+                    <div className="text-4xl font-bold text-blue-600 mb-2">40</div>
+                    <div className="text-lg font-semibold text-gray-700">KỸ SƯ XÂY DỰNG</div>
+                </div>
+                <div className="bg-blue-50 p-8 rounded-lg shadow-md">
+                    <div className="text-4xl font-bold text-blue-600 mb-2">10</div>
+                    <div className="text-lg font-semibold text-gray-700">CHUYÊN GIA VẤN VIÊN</div>
+                </div>
+            </div>
+
+            <div className="space-y-16">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 className="text-3xl font-bold text-blue-600 mb-4">CÔNG NGHỆ</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                            Áp dụng công nghệ tiên tiến sử dụng nhà thép tiền chế trong việc xây dựng nhà máy cho các doanh nghiệp.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="https://picsum.photos/seed/technology/600/400" alt="Công nghệ tiên tiến" className="rounded-lg shadow-2xl"/>
+                    </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://picsum.photos/seed/vision/600/400" alt="Tầm nhìn" className="rounded-lg shadow-2xl"/>
+                    </div>
+                    <div>
+                        <h3 className="text-3xl font-bold text-blue-600 mb-4">TẦM NHÌN</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                            Đội ngũ kỹ sư với nhiều năm kinh nghiệm trong việc tư vấn & thiết kế sẽ giúp bạn hiện thực hóa nhà máy tiêu chuẩn quốc tế.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 className="text-3xl font-bold text-blue-600 mb-4">THIẾT BỊ</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                            Trang thiết bị máy móc và công nghệ hiện đại được vận hành bởi đội ngũ công nhân với tay nghề bậc 7/7
+                        </p>
+                    </div>
+                    <div>
+                        <img src="https://picsum.photos/seed/equipment/600/400" alt="Thiết bị hiện đại" className="rounded-lg shadow-2xl"/>
+                    </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://picsum.photos/seed/orientation/600/400" alt="Định hướng" className="rounded-lg shadow-2xl"/>
+                    </div>
+                    <div>
+                        <h3 className="text-3xl font-bold text-blue-600 mb-4">ĐỊNH HƯỚNG</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                            Sự hài lòng của Quý khách hàng chính là mục tiêu và động lực lớn nhất để Tân Thành Công luôn luôn hướng đến.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
