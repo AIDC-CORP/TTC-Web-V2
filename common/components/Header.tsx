@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 const NavItem: React.FC<{ to: string; children: React.ReactNode; onClick?: () => void }> = ({ to, children, onClick }) => {
@@ -19,6 +19,8 @@ const NavItem: React.FC<{ to: string; children: React.ReactNode; onClick?: () =>
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [showHeader, setShowHeader] = useState(true);
+  const lastScrollYRef = useRef(0);
   const navigate = useNavigate();
 
   const handleSearch = (e: React.FormEvent) => {
@@ -30,8 +32,30 @@ const Header: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY || 0;
+      const lastY = lastScrollYRef.current;
+
+      if (currentY < 10) {
+        setShowHeader(true);
+      } else if (currentY > lastY && currentY > 120) {
+        // scrolling down and beyond threshold -> hide
+        setShowHeader(false);
+      } else if (currentY < lastY) {
+        // scrolling up -> show
+        setShowHeader(true);
+      }
+
+      lastScrollYRef.current = currentY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50">
+    <header className={`sticky top-0 z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}>
       {/* Top contact bar */}
       <div className="hidden md:block bg-gray-900 text-gray-200 text-xs">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-1 flex items-center justify-between">

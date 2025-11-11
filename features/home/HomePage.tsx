@@ -1,29 +1,10 @@
 
-import React, { useEffect, useMemo, useState, useRef } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { projects, services } from '../../data/mockData';
 import ProjectCard from '../projects/components/ProjectCard';
-import ServiceCard from './components/ServiceCard';
-
-const ServicesRow: React.FC = () => {
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  return (
-    <div
-      ref={trackRef}
-      className="mt-10 flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scroll-smooth"
-    >
-      {services.map((service) => (
-        <div key={service.id} className="flex-shrink-0 w-80">
-          <ServiceCard service={service} />
-        </div>
-      ))}
-    </div>
-  );
-};
 
 const HomePage: React.FC = () => {
-  const trackRef = useRef<HTMLDivElement>(null);
   const featuredProjects = projects.slice(0, 3);
   const heroImages = useMemo(
     () => [
@@ -34,6 +15,67 @@ const HomePage: React.FC = () => {
     []
   );
   const [currentIndex, setCurrentIndex] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  const ServicesRow: React.FC = () => {
+    return (
+      <div className="mt-10">
+        {/* Desktop grid */}
+        <div className="hidden lg:grid grid-cols-4 gap-6">
+          {services.map((svc, idx) => (
+            <article key={svc.id} className="group bg-white rounded-3xl overflow-hidden shadow-sm ring-1 ring-gray-100 hover:shadow-lg transition">
+              <div className="relative">
+                <img
+                  src={svc.image}
+                  alt={svc.name}
+                  className="h-56 w-full object-cover"
+                />
+                <div className="absolute -bottom-8 right-6">
+                  <div className="h-14 w-14 rounded-full bg-red-600 text-white grid place-items-center shadow-lg">
+                    <span className="text-xl">{idx % 3 === 0 ? '🛠️' : idx % 3 === 1 ? '⚙️' : '🏗️'}</span>
+                  </div>
+                </div>
+              </div>
+              <div className="pt-10 px-6 pb-6">
+                <div className="text-red-600 text-xs font-semibold tracking-widest uppercase mb-2">Thiết kế xây dựng</div>
+                <h3 className="text-lg font-bold mb-2 group-hover:text-blue-700 transition">{svc.name}</h3>
+                <p className="text-gray-600 text-sm leading-6">{svc.summary}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* Mobile/Tablet carousel */}
+        <div
+          ref={trackRef}
+          className="lg:hidden flex gap-6 overflow-x-auto snap-x snap-mandatory pb-2 [-ms-overflow-style:none] [scrollbar-width:none]"
+          style={{ scrollbarWidth: 'none' }}
+        >
+          {services.map((svc, idx) => (
+            <article key={svc.id} className="min-w-[85%] sm:min-w-[60%] snap-start bg-white rounded-3xl overflow-hidden shadow-sm ring-1 ring-gray-100">
+              <div className="relative">
+                <img
+                  src={svc.image}
+                  alt={svc.name}
+                  className="h-60 w-full object-cover"
+                />
+                <div className="absolute -bottom-8 right-6">
+                  <div className="h-14 w-14 rounded-full bg-red-600 text-white grid place-items-center shadow-lg">
+                    <span className="text-xl">{idx % 3 === 0 ? '🛠️' : idx % 3 === 1 ? '⚙️' : '🏗️'}</span>
+                  </div>
+                </div>
+              </div>
+              <div className="pt-10 px-6 pb-6">
+                <div className="text-red-600 text-xs font-semibold tracking-widest uppercase mb-2">Thiết kế xây dựng</div>
+                <h3 className="text-lg font-bold mb-2">{svc.name}</h3>
+                <p className="text-gray-600 text-sm">{svc.summary}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
@@ -75,6 +117,8 @@ const HomePage: React.FC = () => {
           </Link>
         </div>
       </section>
+
+
 
       {/* Industrial Solutions Intro Section */}
       <section className="py-16 md:py-24 bg-white">
@@ -205,31 +249,9 @@ const HomePage: React.FC = () => {
 
       <div className="md:max-w-xl text-gray-600">
         <p>
-          Fixera mang đến đầy đủ các dịch vụ thiết kế và xây dựng cho cá nhân,
-          gia đình và các công trình công nghiệp. Chúng tôi cung cấp phân tích
-          chuyên sâu, tư vấn chiến lược và giải pháp tối ưu giúp hiện thực hóa
-          mọi ý tưởng xây dựng.
+        Tân Thành Công mang đến giải pháp toàn diện trong thiết kế và thi công nhà xưởng công nghiệp. Với đội ngũ kỹ sư và chuyên gia giàu kinh nghiệm, chúng tôi cung cấp dịch vụ tư vấn, thiết kế, và thi công trọn gói, đảm bảo tiến độ, chất lượng và tính an toàn cho từng công trình. Tân Thành Công luôn hướng đến việc tối ưu chi phí và hiện thực hóa mọi ý tưởng xây dựng của khách hàng bằng những giải pháp kỹ thuật tiên tiến và hiệu quả.
+      
         </p>
-
-        {/* nav buttons */}
-        <div className="mt-6 flex items-center gap-3">
-          <button
-            type="button"
-            onClick={() => trackRef.current?.scrollBy({ left: -360, behavior: 'smooth' })}
-            className="h-11 w-11 rounded-full border border-gray-300 bg-white shadow-sm hover:bg-gray-50 transition"
-            aria-label="Previous"
-          >
-            ‹
-          </button>
-          <button
-            type="button"
-            onClick={() => trackRef.current?.scrollBy({ left: 360, behavior: 'smooth' })}
-            className="h-11 w-11 rounded-full border border-gray-300 bg-white shadow-sm hover:bg-gray-50 transition"
-            aria-label="Next"
-          >
-            ›
-          </button>
-        </div>
       </div>
     </div>
 
@@ -256,34 +278,120 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Stats: Chúng tôi có gì? */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Chúng tôi có gì?</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <div className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-1">20</div>
-              <div className="text-gray-700 font-semibold">Kiến trúc sư</div>
+      {/* Stats: Chúng tôi có gì? (red overlay section) */}
+      <section className="relative py-16 md:py-24">
+        {/* Background image + red overlay */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('https://tse3.mm.bing.net/th/id/OIP.5m-P9yD6n4RlLeY7Nr4ZhQHaE7?cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3')",
+            backgroundAttachment: 'fixed',
+          }}
+        />
+        <div className="absolute inset-0 bg-blue-600/40" />
+
+        <div className="relative container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">Chúng tôi có gì?</h2>
+
+          {/* Team capability stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white mb-16">
+            <div className="bg-white/10 rounded-2xl p-8 text-center backdrop-blur-sm">
+              <div className="text-5xl font-extrabold leading-none">20+</div>
+              <div className="mt-2 text-lg font-semibold opacity-95">Kiến trúc sư</div>
+              <div className="mt-3 text-sm opacity-90">Thiết kế kết cấu, kiến trúc công trình hiện đại.</div>
             </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <div className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-1">40</div>
-              <div className="text-gray-700 font-semibold">Kỹ sư xây dựng</div>
+            <div className="bg-white/10 rounded-2xl p-8 text-center backdrop-blur-sm">
+              <div className="text-5xl font-extrabold leading-none">40+</div>
+              <div className="mt-2 text-lg font-semibold opacity-95">Kỹ sư xây dựng</div>
+              <div className="mt-3 text-sm opacity-90">Giám sát thi công, quản lý chất lượng.</div>
             </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <div className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-1">10</div>
-              <div className="text-gray-700 font-semibold">Chuyên gia tư vấn</div>
+            <div className="bg-white/10 rounded-2xl p-8 text-center backdrop-blur-sm">
+              <div className="text-5xl font-extrabold leading-none">10+</div>
+              <div className="mt-2 text-lg font-semibold opacity-95">Chuyên gia tư vấn viên</div>
+              <div className="mt-3 text-sm opacity-90">Phân tích và hỗ trợ khách hàng doanh nghiệp.</div>
             </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <div className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-1">150+</div>
-              <div className="text-gray-700 font-semibold">Dự án</div>
+          </div>
+
+          {/* Highlight criteria */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-white">
+            <div className="bg-white/5 rounded-2xl p-8 backdrop-blur-sm">
+              <h3 className="text-2xl font-bold mb-3">Công nghệ</h3>
+              <p className="opacity-95">Áp dụng nhà thép tiền chế hiện đại.</p>
             </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <div className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-1">100+</div>
-              <div className="text-gray-700 font-semibold">Nhân viên</div>
+            <div className="bg-white/5 rounded-2xl p-8 backdrop-blur-sm">
+              <h3 className="text-2xl font-bold mb-3">Thiết bị</h3>
+              <p className="opacity-95">Máy móc hiện đại – vận hành bởi công nhân tay nghề bậc 7/7.</p>
             </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <div className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-1">1000+</div>
-              <div className="text-gray-700 font-semibold">Khách hàng</div>
+            <div className="bg-white/5 rounded-2xl p-8 backdrop-blur-sm">
+              <h3 className="text-2xl font-bold mb-3">Tầm nhìn</h3>
+              <p className="opacity-95">Đội ngũ kỹ sư nhiều năm kinh nghiệm, hướng tới chuẩn quốc tế.</p>
+            </div>
+            <div className="bg-white/5 rounded-2xl p-8 backdrop-blur-sm">
+              <h3 className="text-2xl font-bold mb-3">Định hướng</h3>
+              <p className="opacity-95">Lấy sự hài lòng của khách hàng làm mục tiêu.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TTC: Tiêu chí an toàn và bền vững (moved to bottom) */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          {/* Visual */}
+          <div className="order-2 lg:order-1">
+            <img
+              src="https://tse3.mm.bing.net/th/id/OIP.5m-P9yD6n4RlLeY7Nr4ZhQHaE7?cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3"
+              alt="Công trình tiêu biểu Tân Thành Công"
+              className="w-full h-[480px] object-cover rounded-3xl shadow-xl"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="order-1 lg:order-2">
+            <span className="inline-flex items-center rounded-full bg-red-100 text-red-700 text-sm font-semibold px-4 py-2 mb-5">
+              Quy trình làm việc của Tân Thành Công
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-5">
+              Tiêu chí an toàn và bền vững
+            </h2>
+            <p className="text-gray-700 mb-6">
+              Tân Thành Công cung cấp đầy đủ các dịch vụ thiết kế và xây dựng cho doanh nghiệp.
+              Chúng tôi mang đến giải pháp toàn diện từ phân tích, tư vấn chiến lược đến triển khai thực tế,
+              mở ra cơ hội phát triển cho mọi ý tưởng.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div className="flex items-start gap-3">
+                <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-green-600">✓</span>
+                <div>Đảm bảo an toàn lao động</div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-green-600">✓</span>
+                <div>Vật liệu thân thiện môi trường</div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-green-600">✓</span>
+                <div>Phù hợp nhiều không gian và đối tượng sử dụng</div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-green-600">✓</span>
+                <div>Hoàn thiện nhanh chóng, hiệu quả</div>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <Link
+                to="/lien-he"
+                className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-xl text-lg transition duration-300 shadow-sm"
+              >
+                <span>Liên hệ ngay</span>
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-white">
+                  <span className="text-red-600 text-xl leading-none">☎</span>
+                </span>
+              </Link>
+              <a href="tel:0976447766" className="text-blue-700 font-semibold">
+                (+84) 0976-447-766
+              </a>
             </div>
           </div>
         </div>
