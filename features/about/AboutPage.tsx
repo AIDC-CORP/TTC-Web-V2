@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Value from './components/Value';
 
 const AboutPage: React.FC = () => {
   return (
@@ -82,55 +83,7 @@ const AboutPage: React.FC = () => {
                 </div>
             </div>
 
-            <div className="space-y-16">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 className="text-3xl font-bold text-blue-600 mb-4">CÔNG NGHỆ</h3>
-                        <p className="text-gray-600 leading-relaxed">
-                            Áp dụng công nghệ tiên tiến sử dụng nhà thép tiền chế trong việc xây dựng nhà máy cho các doanh nghiệp.
-                        </p>
-                    </div>
-                    <div>
-                        <img src="https://picsum.photos/seed/technology/600/400" alt="Công nghệ tiên tiến" className="rounded-lg shadow-2xl"/>
-                    </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <img src="https://picsum.photos/seed/vision/600/400" alt="Tầm nhìn" className="rounded-lg shadow-2xl"/>
-                    </div>
-                    <div>
-                        <h3 className="text-3xl font-bold text-blue-600 mb-4">TẦM NHÌN</h3>
-                        <p className="text-gray-600 leading-relaxed">
-                            Đội ngũ kỹ sư với nhiều năm kinh nghiệm trong việc tư vấn & thiết kế sẽ giúp bạn hiện thực hóa nhà máy tiêu chuẩn quốc tế.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 className="text-3xl font-bold text-blue-600 mb-4">THIẾT BỊ</h3>
-                        <p className="text-gray-600 leading-relaxed">
-                            Trang thiết bị máy móc và công nghệ hiện đại được vận hành bởi đội ngũ công nhân với tay nghề bậc 7/7
-                        </p>
-                    </div>
-                    <div>
-                        <img src="https://picsum.photos/seed/equipment/600/400" alt="Thiết bị hiện đại" className="rounded-lg shadow-2xl"/>
-                    </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <img src="https://picsum.photos/seed/orientation/600/400" alt="Định hướng" className="rounded-lg shadow-2xl"/>
-                    </div>
-                    <div>
-                        <h3 className="text-3xl font-bold text-blue-600 mb-4">ĐỊNH HƯỚNG</h3>
-                        <p className="text-gray-600 leading-relaxed">
-                            Sự hài lòng của Quý khách hàng chính là mục tiêu và động lực lớn nhất để Tân Thành Công luôn luôn hướng đến.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <Value />
         </div>
       </div>
     </div>
