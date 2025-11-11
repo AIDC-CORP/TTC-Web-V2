@@ -30,12 +30,55 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
+    <header className="sticky top-0 z-50">
+      {/* Top contact bar */}
+      <div className="hidden md:block bg-gray-900 text-gray-200 text-xs">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-1 flex items-center justify-between">
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="flex items-center gap-2">
+              {/* location */}
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-red-500" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.686 2 6 4.686 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.314-2.686-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z"/>
+              </svg>
+              Số 19N7B, KĐT Trung Hòa Nhân Chính, Quận Thanh Xuân, TP Hà Nội
+            </span>
+            <span className="flex items-center gap-2">
+              {/* time */}
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm.75 5a.75.75 0 0 0-1.5 0v5c0 .199.079.39.22.53l3 3a.75.75 0 1 0 1.06-1.06L12.75 11.5V7z"/>
+              </svg>
+              Giờ làm việc: 08:00 – 17:30
+            </span>
+            <a href="mailto:info@tanthanhcongjsc.com" className="flex items-center gap-2 hover:text-white transition-colors">
+              {/* email */}
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.511l-8 5.333-8-5.333V6h16zM4 18V9.489l7.4 4.933a1 1 0 0 0 1.2 0L20 9.49V18H4z"/>
+              </svg>
+              info@tanthanhcongjsc.com
+            </a>
+          </div>
+          <a href="tel:+84976447766" className="flex items-center gap-2.5 text-white">
+            <span className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-red-500">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+                <path d="M1.5 4.5A3 3 0 014.5 1.5h2.172c.621 0 1.184.363 1.418.936l1.137 2.846a1.5 1.5 0 01-.37 1.648l-1.21 1.21a.75.75 0 00-.154.837c.59 1.331 1.64 2.88 3.168 4.407 1.527 1.528 3.076 2.578 4.407 3.168a.75.75 0 00.837-.154l1.21-1.21a1.5 1.5 0 011.648-.37l2.846 1.137c.573.234.936.797.936 1.418V19.5a3 3 0 01-3 3h-1.5C8.596 22.5 1.5 15.404 1.5 6V4.5z" />
+              </svg>
+            </span>
+            <div className="leading-tight">
+              <div className="text-[11px] text-gray-300">Hotline</div>
+              <div className="font-semibold text-sm">(+84) 0976 447 766</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Main header */}
+      <div className="bg-white/80 backdrop-blur-lg shadow-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold text-blue-700">
-              Tân Thành Công
+          <div className="flex-shrink-0 -ml-18 md:-ml-20">
+            <Link to="/" className="flex items-center gap-2 text-2xl font-bold text-blue-700">
+              <img src="/logo.png" alt="Logo Tân Thành Công" className="h-12 w-12 object-contain" />
+              <span>Tân Thành Công</span>
             </Link>
           </div>
 
@@ -81,7 +124,8 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-      
+      </div>
+
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-white pb-4">

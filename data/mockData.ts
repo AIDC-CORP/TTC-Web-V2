@@ -104,28 +104,28 @@ export const articles: Article[] = [
 
 export const services: Service[] = [
   {
-    id: 'tu-van-thiet-ke',
-    name: 'Tư vấn thiết kế',
+    id: 'tu-van-xuc-tien-dau-tu',
+    name: 'Tư vấn xúc tiến đầu tư',
     image: 'https://picsum.photos/seed/service_icon1/400/300',
-    summary: 'Cung cấp giải pháp thiết kế kiến trúc, kết cấu và MEP toàn diện.'
+    summary: 'Đội ngũ chuyên gia tư vấn am hiểu thị trường đầu tư.'
   },
   {
-    id: 'quan-ly-du-an',
-    name: 'Quản lý dự án',
+    id: 'tu-van-thiet-ke-du-an',
+    name: 'Tư vấn thiết kế dự án',
     image: 'https://picsum.photos/seed/service_icon2/400/300',
-    summary: 'Đảm bảo dự án hoàn thành đúng tiến độ, chất lượng và ngân sách.'
+    summary: 'Đội ngũ kỹ sư chuyên môn cao và nhiều năm kinh nghiệm.'
   },
   {
-    id: 'tu-van-giam-sat',
-    name: 'Tư vấn giám sát',
+    id: 'thi-cong-du-an-quy-trinh',
+    name: 'Thi công dự án và quy trình',
     image: 'https://picsum.photos/seed/service_icon3/400/300',
-    summary: 'Kiểm soát chất lượng thi công, vật liệu và an toàn lao động.'
+    summary: 'Chất lượng – Kỹ thuật – Thẩm mỹ cho công trình.'
   },
   {
-    id: 'tham-dinh-du-an',
-    name: 'Thẩm định dự án',
+    id: 'bao-hanh-24-24',
+    name: 'Dịch vụ bảo hành 24/24',
     image: 'https://picsum.photos/seed/service_icon4/400/300',
-    summary: 'Đánh giá tính khả thi và hiệu quả của các dự án đầu tư xây dựng.'
+    summary: 'Cải tạo và sửa chữa công trình đảm bảo tính chuyên môn cao.'
   }
 ];
 
