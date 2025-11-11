@@ -1,9 +1,15 @@
 import React from 'react';
 import ServicesRow from './ServiceRow';
+import { motion } from 'framer-motion';
 
 const ServiceSection: React.FC = () => {
   return (
-    <section className="py-20 md:py-28 bg-gray-50">
+    <motion.section 
+      className="py-20 md:py-28 bg-gray-50"
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, delay: 0.6 }}
+    >
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
@@ -28,7 +34,7 @@ const ServiceSection: React.FC = () => {
         {/* Cards row (carousel) */}
         <ServicesRow />
       </div>
-    </section>
+    </motion.section>
   );
 };
 

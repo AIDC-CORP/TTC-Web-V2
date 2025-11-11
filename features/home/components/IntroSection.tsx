@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const IntroSection: React.FC = () => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCount(prev => prev < 10 ? prev + 1 : 10);
+    }, 100);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <motion.section 
+      className="py-16 md:py-24 bg-white"
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+    >
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
         {/* Visual side */}
         <div className="relative pl-14 md:pl-24">
@@ -15,7 +30,7 @@ const IntroSection: React.FC = () => {
             >
               NĂM KINH NGHIỆM
             </div>
-            <div className="text-red-600 font-extrabold text-6xl md:text-7xl mt-4 leading-none">10+</div>
+            <div className="text-red-600 font-extrabold text-6xl md:text-7xl mt-4 leading-none">{count}+</div>
           </div>
 
           {/* Overlapped images */}
@@ -94,7 +109,7 @@ const IntroSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

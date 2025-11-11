@@ -1,8 +1,14 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const CalloutSection: React.FC = () => {
   return (
-    <section className="py-12 md:py-16 bg-white">
+    <motion.section 
+      className="py-12 md:py-16 bg-white"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, delay: 0.8 }}
+    >
       <div className="container mx-auto px-4">
         <div className="rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
@@ -16,7 +22,7 @@ const CalloutSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

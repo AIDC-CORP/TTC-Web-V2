@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const HeroSection: React.FC = () => {
   const heroImages = useMemo(
@@ -20,7 +21,12 @@ const HeroSection: React.FC = () => {
   }, [heroImages.length]);
 
   return (
-    <section className="relative min-h-[100vh] h-[100vh] text-white overflow-hidden">
+    <motion.section 
+      className="relative min-h-[100vh] h-[100vh] text-white overflow-hidden"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="absolute inset-0">
         {heroImages.map((src, index) => (
           <div
@@ -49,7 +55,7 @@ const HeroSection: React.FC = () => {
           </span>
         </Link>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

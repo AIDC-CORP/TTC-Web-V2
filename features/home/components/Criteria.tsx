@@ -1,9 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Criteria: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <motion.section 
+      className="py-16 md:py-24 bg-white"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 1.0 }}
+    >
       <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
         {/* Visual */}
         <div className="order-2 lg:order-1">
@@ -63,7 +69,7 @@ const Criteria: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
