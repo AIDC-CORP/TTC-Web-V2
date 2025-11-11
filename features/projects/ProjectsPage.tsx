@@ -1,5 +1,6 @@
 
 import React, { useState, useMemo } from 'react';
+import { motion } from 'framer-motion';
 import projectsData from './data/projects.json';
 import ProjectCard from './components/ProjectCard';
 import ProjectDetailDialog from './components/dialogs/ProjectDetailDialog';
@@ -132,51 +133,128 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <div>
-      <div className="bg-white py-20">
+      <motion.div 
+        className="bg-white py-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800">Dự án của chúng tôi</h1>
-          <p className="mt-4 text-lg text-gray-600">Năng lực và kinh nghiệm được chứng thực qua các công trình thực tế</p>
+          <motion.h1 
+            className="text-4xl md:text-5xl font-extrabold text-gray-800"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Dự án của chúng tôi
+          </motion.h1>
+          <motion.p 
+            className="mt-4 text-lg text-gray-600"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Năng lực và kinh nghiệm được chứng thực qua các công trình thực tế
+          </motion.p>
         </div>
-      </div>
+      </motion.div>
 
       <div className="container mx-auto px-4 py-16">
         <div className="lg:flex lg:gap-8">
           {/* Filters Sidebar */}
-          <div className="lg:w-1/4 mb-8 lg:mb-0">
+          <motion.div 
+            className="lg:w-1/4 mb-8 lg:mb-0"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             {/* Category Filter */}
-            <div className="mb-6">
+            <motion.div 
+              className="mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <h3 className="text-lg font-semibold text-gray-800 mb-4">Lọc theo danh mục</h3>
-              <div className="flex flex-wrap gap-2">
-                {categories.map(category => (
-                  <button 
+              <motion.div 
+                className="flex flex-wrap gap-2"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ staggerChildren: 0.1, delayChildren: 0.4 }}
+                variants={{
+                  hidden: {},
+                  visible: {}
+                }}
+              >
+                {categories.map((category, index) => (
+                  <motion.button 
                     key={category} 
                     onClick={() => setFilter(category)}
                     className={`px-4 py-2 rounded-full font-semibold text-sm transition-colors duration-300 ${filter === category ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-blue-200'}`}
+                    variants={{
+                      hidden: { opacity: 0, scale: 0.8 },
+                      visible: { opacity: 1, scale: 1 }
+                    }}
+                    transition={{ duration: 0.4 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     {category}
-                  </button>
+                  </motion.button>
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Region Filter */}
-            <div className="mb-6">
+            <motion.div 
+              className="mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               <h3 className="text-lg font-semibold text-gray-800 mb-4">Lọc theo vùng miền</h3>
-              <div className="flex flex-wrap gap-2">
-                {regions.map(region => (
-                  <button
+              <motion.div 
+                className="flex flex-wrap gap-2"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ staggerChildren: 0.1, delayChildren: 0.6 }}
+                variants={{
+                  hidden: {},
+                  visible: {}
+                }}
+              >
+                {regions.map((region, index) => (
+                  <motion.button
                     key={region}
                     onClick={() => setRegionFilter(region)}
                     className={`px-4 py-2 rounded-full font-semibold text-sm transition-colors duration-300 ${regionFilter === region ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-green-200'}`}
+                    variants={{
+                      hidden: { opacity: 0, scale: 0.8 },
+                      visible: { opacity: 1, scale: 1 }
+                    }}
+                    transition={{ duration: 0.4 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     {region}
-                  </button>
+                  </motion.button>
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Price Filter */}
-            <div className="bg-gray-50 p-4 rounded-lg">
+            <motion.div 
+              className="bg-gray-50 p-4 rounded-lg"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
               <h3 className="text-lg font-semibold text-gray-800 mb-4">Lọc theo quy mô</h3>
               <div className="space-y-4">
                 <div>
@@ -211,29 +289,87 @@ const ProjectsPage: React.FC = () => {
                   Quy mô: {priceRange.min.toLocaleString()}m² — {priceRange.max.toLocaleString()}m²
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Projects Grid */}
-          <div className="lg:w-3/4">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-              {filteredProjects.map(project => (
-                <ProjectCard key={project.id} project={project} onClick={openProjectDialog} />
+          <motion.div 
+            className="lg:w-3/4"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ staggerChildren: 0.1, delayChildren: 0.4 }}
+              variants={{
+                hidden: {},
+                visible: {}
+              }}
+            >
+              {filteredProjects.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <ProjectCard project={project} onClick={openProjectDialog} />
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             {/* Recently Viewed */}
             {recentlyViewed.length > 0 && (
-              <div className="mt-16">
-                <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">Đã xem gần đây</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                  {recentlyViewed.map(project => (
-                    <ProjectCard key={`recent-${project.id}`} project={project} onClick={openProjectDialog} />
+              <motion.div 
+                className="mt-16"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                <motion.h2 
+                  className="text-2xl font-bold text-gray-800 mb-8 text-center"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
+                  Đã xem gần đây
+                </motion.h2>
+                <motion.div 
+                  className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ staggerChildren: 0.1, delayChildren: 1.0 }}
+                  variants={{
+                    hidden: {},
+                    visible: {}
+                  }}
+                >
+                  {recentlyViewed.map((project, index) => (
+                    <motion.div
+                      key={`recent-${project.id}`}
+                      variants={{
+                        hidden: { opacity: 0, scale: 0.8 },
+                        visible: { opacity: 1, scale: 1 }
+                      }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <ProjectCard project={project} onClick={openProjectDialog} />
+                    </motion.div>
                   ))}
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
 

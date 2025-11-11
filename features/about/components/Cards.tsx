@@ -1,11 +1,28 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Cards: React.FC = () => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
-    <div className="mt-20 md:mt-32">
+    <motion.div 
+      className="mt-20 md:mt-32"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ staggerChildren: 0.2 }}
+    >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Sứ mệnh Card */}
-        <div className="group relative bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100 hover:border-blue-200">
+        <motion.div 
+          className="group relative bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100 hover:border-blue-200"
+          variants={cardVariants}
+          transition={{ duration: 0.6 }}
+          whileHover={{ y: -8, transition: { duration: 0.3 } }}
+        >
           <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
             <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -19,10 +36,15 @@ const Cards: React.FC = () => {
               Cung cấp các giải pháp kỹ thuật ưu việt, an toàn và hiệu quả, góp phần vào sự phát triển bền vững của ngành xây dựng và xã hội.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Tầm nhìn Card */}
-        <div className="group relative bg-gradient-to-br from-purple-50 to-pink-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-100 hover:border-purple-200">
+        <motion.div 
+          className="group relative bg-gradient-to-br from-purple-50 to-pink-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-100 hover:border-purple-200"
+          variants={cardVariants}
+          transition={{ duration: 0.6 }}
+          whileHover={{ y: -8, transition: { duration: 0.3 } }}
+        >
           <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
             <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,10 +59,15 @@ const Cards: React.FC = () => {
               Trở thành đối tác tin cậy hàng đầu trong lĩnh vực tư vấn và quản lý dự án xây dựng tại Việt Nam và vươn tầm khu vực.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Giá trị cốt lõi Card */}
-        <div className="group relative bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100 hover:border-green-200">
+        <motion.div 
+          className="group relative bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100 hover:border-green-200"
+          variants={cardVariants}
+          transition={{ duration: 0.6 }}
+          whileHover={{ y: -8, transition: { duration: 0.3 } }}
+        >
           <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
             <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg">
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,9 +81,9 @@ const Cards: React.FC = () => {
               Uy tín - Chuyên nghiệp - Sáng tạo - Tận tâm. Đây là kim chỉ nam cho mọi hoạt động của chúng tôi.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

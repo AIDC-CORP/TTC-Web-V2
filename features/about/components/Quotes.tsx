@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Value: React.FC = () => {
   const values = [
@@ -28,12 +29,29 @@ const Value: React.FC = () => {
     },
   ];
 
+  const quoteVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: { opacity: 1, y: 0, scale: 1 }
+  };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <motion.div 
+      className="grid grid-cols-1 md:grid-cols-2 gap-8"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ staggerChildren: 0.15, delayChildren: 0.2 }}
+    >
       {values.map((value) => (
-        <div
+        <motion.div
           key={value.id}
           className="relative bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl p-8 md:p-10 shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300"
+          variants={quoteVariants}
+          transition={{ duration: 0.6 }}
+          whileHover={{ 
+            scale: 1.02, 
+            transition: { duration: 0.3 }
+          }}
         >
           {/* Decorative corner circle */}
           <div className="absolute -top-16 -right-16 w-40 h-40 bg-blue-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
@@ -56,9 +74,9 @@ const Value: React.FC = () => {
 
           {/* Closing quote mark */}
           <div className="absolute bottom-4 right-6 text-5xl md:text-6xl text-white opacity-20">‟</div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
