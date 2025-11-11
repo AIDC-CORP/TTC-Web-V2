@@ -1,12 +1,16 @@
 
 import React, { useState } from 'react';
 import { articles } from '../../data/mockData';
-import ArticleCard from './components/ArticleCard';
+import BlogCards from './components/BlogCards';
+import ArticleDetailDialog from './components/dialogs/ArticleDetailDialog';
+import { Article } from '../../types';
 
 const ARTICLES_PER_PAGE = 6;
 
 const BlogPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const blogArticles = articles.filter(article => article.category === 'Blog');
 
   const totalPages = Math.ceil(blogArticles.length / ARTICLES_PER_PAGE);
@@ -15,6 +19,16 @@ const BlogPage: React.FC = () => {
   const currentArticles = blogArticles.slice(indexOfFirstArticle, indexOfLastArticle);
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
+  const handleArticleClick = (article: Article) => {
+    setSelectedArticle(article);
+    setIsDialogOpen(true);
+  };
+
+  const handleCloseDialog = () => {
+    setIsDialogOpen(false);
+    setSelectedArticle(null);
+  };
 
   return (
     <div>
@@ -25,27 +39,19 @@ const BlogPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {currentArticles.map(article => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
-        </div>
+      <BlogCards
+        articles={currentArticles}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={paginate}
+        onArticleClick={handleArticleClick}
+      />
 
-        {totalPages > 1 && (
-          <div className="flex justify-center mt-12 space-x-2">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map(number => (
-              <button
-                key={number}
-                onClick={() => paginate(number)}
-                className={`px-4 py-2 rounded-md font-semibold ${currentPage === number ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-blue-200'}`}
-              >
-                {number}
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
+      <ArticleDetailDialog
+        article={selectedArticle}
+        isOpen={isDialogOpen}
+        onClose={handleCloseDialog}
+      />
     </div>
   );
 };

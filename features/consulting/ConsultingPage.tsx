@@ -1,10 +1,25 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { articles } from '../../data/mockData';
-import ArticleCard from '../blog/components/ArticleCard';
+import ConsultingDetailDialog from './components/dialogs/ConsultingDetailDialog';
+import ConsultingCards from './components/ConsultingCards';
+import { Article } from '../../types';
 
 const ConsultingPage: React.FC = () => {
+  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   const consultingArticles = articles.filter(article => article.category === 'Tư vấn');
+
+  const handleArticleClick = (article: Article) => {
+    setSelectedArticle(article);
+    setIsDialogOpen(true);
+  };
+
+  const handleCloseDialog = () => {
+    setIsDialogOpen(false);
+    setSelectedArticle(null);
+  };
 
   return (
     <div>
@@ -15,13 +30,16 @@ const ConsultingPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {consultingArticles.map(article => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
-        </div>
-      </div>
+      <ConsultingCards
+        articles={consultingArticles}
+        onArticleClick={handleArticleClick}
+      />
+
+      <ConsultingDetailDialog
+        article={selectedArticle}
+        isOpen={isDialogOpen}
+        onClose={handleCloseDialog}
+      />
     </div>
   );
 };

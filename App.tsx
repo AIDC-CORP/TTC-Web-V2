@@ -9,7 +9,6 @@ import ConsultingPage from './features/consulting/ConsultingPage';
 import BlogPage from './features/blog/BlogPage';
 import ContactPage from './features/contact/ContactPage';
 import SearchResultsPage from './features/search/SearchResultsPage';
-import ArticleDetailPage from './features/blog/ArticleDetailPage';
 
 const App: React.FC = () => {
   return (
@@ -21,7 +20,6 @@ const App: React.FC = () => {
           <Route path="/du-an" element={<ProjectsPage />} />
           <Route path="/tu-van" element={<ConsultingPage />} />
           <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:id" element={<ArticleDetailPage />} />
           <Route path="/lien-he" element={<ContactPage />} />
           <Route path="/tim-kiem" element={<SearchResultsPage />} />
         </Route>
