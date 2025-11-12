@@ -1,34 +1,81 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import ProjectCard from '../projects/components/ProjectCard';
+import { motion } from 'framer-motion';
 import HeroSection from './components/HeroSection';
-import ServicesRow from './components/ServiceRow';
 import IntroSection from './components/IntroSection';
 import FeaturedProjectsSection from './components/FeaturedProjectsSection';
 import ServiceSection from './components/ServiceSection';
 import LatestBlogsSection from './components/LatestBlogsSection';
+import PartnersSection from './components/PartnersSection';
 import CalloutSection from './components/CalloutSection';
 import Criteria from './components/CriteriaSection';
-import PartnersSection from './components/PartnersSection';
 
 const HomePage: React.FC = () => {
   return (
     <div>
       <HeroSection />
 
-      <IntroSection />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <IntroSection />
+      </motion.div>
 
-      <FeaturedProjectsSection />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+      >
+        <FeaturedProjectsSection />
+      </motion.div>
 
-      <ServiceSection />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
+        <ServiceSection />
+      </motion.div>
 
-      <LatestBlogsSection />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+      >
+        <LatestBlogsSection />
+      </motion.div>
 
-      <PartnersSection />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+      >
+        <PartnersSection />
+      </motion.div>
 
-      <CalloutSection />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+      >
+        <CalloutSection />
+      </motion.div>
 
-      <Criteria />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+      >
+        <Criteria />
+      </motion.div>
     </div>
   );
 };
