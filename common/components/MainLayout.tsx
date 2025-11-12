@@ -17,7 +17,7 @@ const MainLayout: React.FC = () => {
     <div className="flex flex-col min-h-screen bg-gray-50 text-gray-800">
       <Header />
       <main className="flex-grow">
-        <Outlet key={location.pathname} />
+        <Outlet />
       </main>
       <Footer />
       <FloatingButtons />

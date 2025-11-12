@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Article } from '../../../types';
+import { Article } from '../../../../types';
 
 interface ConsultingDetailDialogProps {
   article: Article | null;
