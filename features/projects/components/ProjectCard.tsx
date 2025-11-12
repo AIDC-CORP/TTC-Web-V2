@@ -18,7 +18,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
 
   const CardContent = () => (
     <motion.div 
-      className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group cursor-pointer h-full flex flex-col"
+      style={{ height: '400px' }}
+      className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group cursor-pointer  flex flex-col"
       whileHover={{ 
         y: -8, 
         transition: { duration: 0.3, ease: "easeOut" }

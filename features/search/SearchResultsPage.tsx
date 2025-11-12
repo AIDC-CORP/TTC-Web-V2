@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { allContent } from '../../data/mockData';
 import ProjectCard from '../projects/components/ProjectCard';
-import ArticleCard from '../blog/components/ArticleCard';
+import BlogCards from '../blog/components/BlogCards';
 import { Project, Article } from '../../types';
 
 const SearchResultsPage: React.FC = () => {
@@ -33,14 +33,16 @@ const SearchResultsPage: React.FC = () => {
       </p>
 
       {results.length > 0 && (
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {results.map(item => {
                 if ('gallery' in item) { // Check if it's a Project
                     return <ProjectCard key={item.id} project={item as Project} />;
-                } else { // It's an Article
-                    return <ArticleCard key={item.id} article={item as Article} />;
                 }
+                return null;
             })}
+          </div>
+          <BlogCards articles={results.filter(item => !('gallery' in item)) as Article[]} />
         </div>
       )}
 
