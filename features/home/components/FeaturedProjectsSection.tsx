@@ -1,11 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { projects } from '../../../data/mockData';
+import projectsData from '../../projects/data/projects.json';
 import ProjectCard from '../../projects/components/ProjectCard';
 import { motion } from 'framer-motion';
 
 const FeaturedProjectsSection: React.FC = () => {
-  const featuredProjects = projects.slice(0, 3);
+  const featuredProjects = projectsData.slice(0, 3).map(project => ({
+    id: project.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+    name: project.name,
+    image: project.thumbnail_url || 'https://picsum.photos/400/300?random=1',
+    summary: `${project.location_specific} - ${project.square}`,
+    description: `Dự án tại ${project.location_specific}, diện tích ${project.square}, năm ${project.year}. Quản lý dự án: ${project.project_manager}`,
+    investor: project.project_manager,
+    executionTime: project.year,
+    gallery: project.gallery_urls,
+    category: 'Nhà máy sản xuất'
+  }));
 
   return (
     <motion.section 
@@ -19,7 +29,7 @@ const FeaturedProjectsSection: React.FC = () => {
         <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">Chúng tôi tự hào đã góp phần vào thành công của nhiều dự án lớn, khẳng định năng lực và uy tín.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredProjects.map(project => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard key={project.id} project={project} onClick={() => {}} />
           ))}
         </div>
         <div className="text-center mt-12">
@@ -30,4 +40,5 @@ const FeaturedProjectsSection: React.FC = () => {
         </div>
       </motion.section>
     );
-  };export default FeaturedProjectsSection;
+  };
+export default FeaturedProjectsSection;
