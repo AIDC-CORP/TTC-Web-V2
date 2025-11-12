@@ -8,7 +8,8 @@ import IntroSection from './components/IntroSection';
 import FeaturedProjectsSection from './components/FeaturedProjectsSection';
 import ServiceSection from './components/ServiceSection';
 import CalloutSection from './components/CalloutSection';
-import Criteria from './components/Criteria';
+import Criteria from './components/CriteriaSection';
+import PartnersSection from './components/PartnersSection';
 
 const HomePage: React.FC = () => {
   return (
@@ -20,6 +21,8 @@ const HomePage: React.FC = () => {
       <FeaturedProjectsSection />
 
       <ServiceSection />
+
+      <PartnersSection />
 
       <CalloutSection />
 
