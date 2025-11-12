@@ -1,33 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-
-interface ProjectJSON {
-  name: string;
-  url: string;
-  thumbnail_url: string;
-  year: string;
-  location_specific: string;
-  square: string;
-  project_manager: string;
-  gallery_urls: string[];
-}
-
-interface Project {
-  id: string;
-  name: string;
-  image: string;
-  summary: string;
-  description: string;
-  investor: any;
-  executionTime: string;
-  gallery: string[];
-  category: string;
-  location_specific: string;
-  square: string;
-  project_manager: string;
-  year: string;
-}
+import { Project } from '../../../../types';
 
 interface ProjectDetailDialogProps {
   project: Project | null;

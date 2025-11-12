@@ -9,6 +9,11 @@ export interface Project {
   executionTime?: string;
   gallery: string[];
   category: string;
+  location_specific: string;
+  region: string;
+  square: string;
+  project_manager: string;
+  year: string;
 }
 
 export interface Article {
