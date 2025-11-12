@@ -47,20 +47,16 @@ const ProjectsPage: React.FC = () => {
   const regions = ['Tất cả', 'Miền Bắc', 'Miền Trung', 'Miền Nam'];
 
   const filteredProjects = useMemo(() => {
-    let filtered = transformedProjects;
-
-    // Filter by region
-    if (regionFilter !== 'Tất cả') {
-      filtered = filtered.filter(project => project.region === regionFilter);
-    }
-
-    // Filter by square range (area in m²)
-    filtered = filtered.filter(project => {
+    return transformedProjects.filter(project => {
+      // Filter by region
+      const regionMatch = regionFilter === 'Tất cả' || project.region === regionFilter;
+      
+      // Filter by square range
       const squareValue = parseInt(project.square) || 0;
-      return squareValue >= appliedPriceRange.min && squareValue <= appliedPriceRange.max;
+      const squareMatch = squareValue >= appliedPriceRange.min && squareValue <= appliedPriceRange.max;
+      
+      return regionMatch && squareMatch;
     });
-
-    return filtered;
   }, [regionFilter, appliedPriceRange]);
 
   const applyScaleFilter = () => {
@@ -296,7 +292,7 @@ const ProjectsPage: React.FC = () => {
               </motion.div>
             ) : (
               <motion.div 
-                key={`projects-${regionFilter}`}
+                key={`projects-${regionFilter}-${appliedPriceRange.min}-${appliedPriceRange.max}`}
                 className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
                 initial="hidden"
                 whileInView="visible"
