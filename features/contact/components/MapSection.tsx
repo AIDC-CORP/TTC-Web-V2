@@ -23,7 +23,7 @@ const MapSection: React.FC = () => {
           <span className="mt-1 mr-3 text-blue-600">&#x260e;</span>
           <div>
             <h3 className="font-semibold">Hotline</h3>
-            <a href="tel:+842838123456" className="hover:text-blue-600 transition-colors">(028) 38 123 456</a>
+            <a href="tel:+84976447766" className="hover:text-blue-600 transition-colors">(0976) 447 766</a>
           </div>
         </li>
         <li className="flex items-start">

@@ -46,7 +46,7 @@ const HeroSection: React.FC = () => {
           Tư vấn chuyên nghiệp, thi công nhanh chóng, công nghệ tiêu chuẩn Quốc tế luôn được Tân Thành Công đặt lên hàng đầu.
         </p>
         <Link
-          to="/tu-van"
+          to="/lien-he"
           className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-xl text-lg transition duration-300 shadow-sm"
         >
           <span>Liên Hệ Tư Vấn</span>
