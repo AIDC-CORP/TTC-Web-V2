@@ -38,7 +38,8 @@ const transformedProjects: Project[] = projectsData.map((project: ProjectJSON, i
 
 const ProjectsPage: React.FC = () => {
   const [regionFilter, setRegionFilter] = useState('Tất cả');
-  const [priceRange, setPriceRange] = useState({ min: 0, max: 200000 });
+  const [tempPriceRange, setTempPriceRange] = useState({ min: 0, max: 200000 });
+  const [appliedPriceRange, setAppliedPriceRange] = useState({ min: 0, max: 200000 });
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [recentlyViewed, setRecentlyViewed] = useState<Project[]>([]);
@@ -53,29 +54,23 @@ const ProjectsPage: React.FC = () => {
       filtered = filtered.filter(project => project.region === regionFilter);
     }
 
-    // Filter by price range (using square footage as proxy for size)
-    // Convert all measurements to m² for comparison
+    // Filter by square range (area in m²)
     filtered = filtered.filter(project => {
-      let squareValue = 0;
-      const squareText = project.square.toLowerCase();
-      
-      // Extract numeric value (including decimal point)
-      const numericMatch = squareText.match(/[\d.]+/);
-      const numericValue = numericMatch ? parseFloat(numericMatch[0]) : 0;
-      
-      if (squareText.includes('ha')) {
-        // Convert hectares to m² (1 ha = 10,000 m²)
-        squareValue = numericValue * 10000;
-      } else {
-        // Assume m²
-        squareValue = numericValue || 0;
-      }
-      
-      return squareValue >= priceRange.min && squareValue <= priceRange.max;
+      const squareValue = parseInt(project.square) || 0;
+      return squareValue >= appliedPriceRange.min && squareValue <= appliedPriceRange.max;
     });
 
     return filtered;
-  }, [regionFilter, priceRange]);
+  }, [regionFilter, appliedPriceRange]);
+
+  const applyScaleFilter = () => {
+    setAppliedPriceRange({ ...tempPriceRange });
+  };
+
+  const resetFilters = () => {
+    setTempPriceRange({ min: 0, max: 200000 });
+    setAppliedPriceRange({ min: 0, max: 200000 });
+  };
 
   const openProjectDialog = (project: Project) => {
     setSelectedProject(project);
@@ -170,46 +165,100 @@ const ProjectsPage: React.FC = () => {
               </motion.div>
             </motion.div>
 
-            {/* Price Filter */}
+            {/* Scale Filter */}
             <motion.div 
-              className="bg-gray-50 p-4 rounded-lg"
+              className="bg-gray-50 p-6 rounded-lg"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">Lọc theo quy mô</h3>
-              <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-gray-800 mb-6">Lọc theo quy mô</h3>
+              <div className="space-y-6">
+                {/* Min Range Slider */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Quy mô tối thiểu (m²):</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-3">
+                    Quy mô tối thiểu: <span className="text-green-600 font-semibold">{tempPriceRange.min.toLocaleString()} m²</span>
+                  </label>
                   <input
-                    type="number"
-                    value={priceRange.min}
-                    onChange={(e) => setPriceRange(prev => ({ ...prev, min: Number(e.target.value) }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-center"
+                    type="range"
                     min="0"
-                    step="1000"
+                    max="200000"
+                    step="5000"
+                    value={tempPriceRange.min}
+                    onChange={(e) => {
+                      const newMin = Number(e.target.value);
+                      if (newMin <= tempPriceRange.max) {
+                        setTempPriceRange(prev => ({ ...prev, min: newMin }));
+                      }
+                    }}
+                    className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-green-600"
+                    style={{
+                      background: `linear-gradient(to right, #16a34a 0%, #16a34a ${(tempPriceRange.min / 200000) * 100}%, #d1d5db ${(tempPriceRange.min / 200000) * 100}%, #d1d5db 100%)`
+                    }}
                   />
+                  <div className="flex justify-between text-xs text-gray-500 mt-1">
+                    <span>0 m²</span>
+                    <span>200,000 m²</span>
+                  </div>
                 </div>
+
+                {/* Max Range Slider */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Quy mô tối đa (m²):</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-3">
+                    Quy mô tối đa: <span className="text-green-600 font-semibold">{tempPriceRange.max.toLocaleString()} m²</span>
+                  </label>
                   <input
-                    type="number"
-                    value={priceRange.max}
-                    onChange={(e) => setPriceRange(prev => ({ ...prev, max: Number(e.target.value) }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-center"
+                    type="range"
                     min="0"
-                    step="1000"
+                    max="200000"
+                    step="5000"
+                    value={tempPriceRange.max}
+                    onChange={(e) => {
+                      const newMax = Number(e.target.value);
+                      if (newMax >= tempPriceRange.min) {
+                        setTempPriceRange(prev => ({ ...prev, max: newMax }));
+                      }
+                    }}
+                    className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-green-600"
+                    style={{
+                      background: `linear-gradient(to right, #d1d5db 0%, #d1d5db ${(tempPriceRange.max / 200000) * 100}%, #16a34a ${(tempPriceRange.max / 200000) * 100}%, #16a34a 100%)`
+                    }}
                   />
+                  <div className="flex justify-between text-xs text-gray-500 mt-1">
+                    <span>0 m²</span>
+                    <span>200,000 m²</span>
+                  </div>
                 </div>
-                <button
-                  onClick={() => setPriceRange({ min: 0, max: 200000 })}
-                  className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-                >
-                  Đặt lại
-                </button>
-                <div className="text-center text-sm text-gray-600">
-                  Quy mô: {priceRange.min.toLocaleString()}m² — {priceRange.max.toLocaleString()}m²
+
+                {/* Current Range Display */}
+                <div className="bg-white p-4 rounded-md border border-gray-200">
+                  <div className="text-center">
+                    <p className="text-xs text-gray-600 mb-1">Khoảng quy mô đã chọn</p>
+                    <p className="text-lg font-bold text-gray-800">
+                      {tempPriceRange.min.toLocaleString()} — {tempPriceRange.max.toLocaleString()} m²
+                    </p>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-2">
+                  <motion.button
+                    onClick={applyScaleFilter}
+                    className="flex-1 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors font-medium shadow-sm"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Áp dụng
+                  </motion.button>
+                  <motion.button
+                    onClick={resetFilters}
+                    className="flex-1 px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 transition-colors font-medium shadow-sm"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Đặt lại
+                  </motion.button>
                 </div>
               </div>
             </motion.div>
@@ -238,7 +287,7 @@ const ProjectsPage: React.FC = () => {
                 <button
                   onClick={() => {
                     setRegionFilter('Tất cả');
-                    setPriceRange({ min: 0, max: 200000 });
+                    resetFilters();
                   }}
                   className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                 >
