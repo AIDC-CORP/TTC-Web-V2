@@ -24,8 +24,8 @@ const FloatingButtons: React.FC = () => {
     });
   };
 
-  const phoneNumber = '+842838123456'; // From footer contact info
-  const zaloUrl = `https://zalo.me/${phoneNumber}`;
+  const phoneNumber = '+84976447766'; // From footer contact info
+  const zaloUrl = `https://zalo.me/0976447766`;
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col space-y-3">
