@@ -99,6 +99,7 @@ const AboutPage: React.FC = () => {
         </motion.div>
 
         <motion.div
+          className="mt-20 md:mt-32"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

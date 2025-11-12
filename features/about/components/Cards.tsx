@@ -9,7 +9,7 @@ const Cards: React.FC = () => {
 
   return (
     <motion.div 
-      className="mt-20 md:mt-32"
+      className="w-full"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
