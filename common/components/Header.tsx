@@ -3,13 +3,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 const NavItem: React.FC<{ to: string; children: React.ReactNode; onClick?: () => void }> = ({ to, children, onClick }) => {
-  const activeClasses = 'text-blue-600 font-semibold';
+  const activeClasses = 'text-blue-600 font-semibold underline underline-offset-4 decoration-2 decoration-blue-600';
   const inactiveClasses = 'text-gray-600 hover:text-blue-600 transition-colors';
   return (
     <NavLink
       to={to}
       onClick={onClick}
-      className={({ isActive }) => `${isActive ? activeClasses : inactiveClasses} py-2 px-3 rounded-md`}
+      className={({ isActive }) => `${isActive ? activeClasses : inactiveClasses} py-5 px-8 rounded-md text-base font-medium`}
     >
       {children}
     </NavLink>
@@ -111,7 +111,7 @@ const Header: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-2">
+          <nav className="hidden lg:flex items-center space-x-1">
             <NavItem to="/">Trang chủ</NavItem>
             <NavItem to="/gioi-thieu">Giới thiệu</NavItem>
             <NavItem to="/du-an">Dự án</NavItem>
