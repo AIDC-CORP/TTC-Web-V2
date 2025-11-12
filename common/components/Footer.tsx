@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <span className="mr-2">&#x260e;</span>
-                <a href="tel:+84976447766" className="hover:text-blue-400 transition-colors">(028) 38 123 456</a>
+                <a href="tel:+84976447766" className="hover:text-blue-400 transition-colors">0976 447 766</a>
               </li>
               <li className="flex items-center">
                 <span className="mr-2">&#x2709;</span>
