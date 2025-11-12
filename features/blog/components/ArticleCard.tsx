@@ -12,7 +12,8 @@ interface ArticleCardProps {
 const ArticleCard: React.FC<ArticleCardProps> = ({ article, onClick }) => {
   const content = (
     <motion.div 
-      className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group cursor-pointer h-full flex flex-col"
+      style={{ height: '470px' }}
+      className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group cursor-pointer  flex flex-col"
       whileHover={{ 
         y: -8, 
         transition: { duration: 0.3, ease: "easeOut" }
@@ -64,7 +65,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, onClick }) => {
           {article.title}
         </motion.h3>
         <motion.p 
-          className="text-gray-600 text-sm line-clamp-3 flex-1"
+          className="text-gray-600 text-sm line-clamp-3"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}

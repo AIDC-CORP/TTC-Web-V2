@@ -5,16 +5,16 @@ import { Article } from '../../../types';
 
 interface BlogCardsProps {
   articles: Article[];
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (pageNumber: number) => void;
+  currentPage?: number;
+  totalPages?: number;
+  onPageChange?: (pageNumber: number) => void;
   onArticleClick?: (article: Article) => void;
 }
 
 const BlogCards: React.FC<BlogCardsProps> = ({
   articles,
-  currentPage,
-  totalPages,
+  currentPage = 1,
+  totalPages = 1,
   onPageChange,
   onArticleClick
 }) => {
@@ -23,8 +23,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({
       <motion.div 
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        animate="visible"
         transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
         variants={{
           hidden: {},
@@ -48,7 +47,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({
         ))}
       </motion.div>
 
-      {totalPages > 1 && (
+      {totalPages > 1 && onPageChange && (
         <motion.div 
           className="flex justify-center mt-12 space-x-2"
           initial={{ opacity: 0, y: 30 }}
