@@ -6,10 +6,7 @@ import BlogCards from './components/BlogCards';
 import ArticleDetailDialog from './components/dialogs/ArticleDetailDialog';
 import { Article } from '../../types';
 
-const ARTICLES_PER_PAGE = 6;
-
 const BlogPage: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState(1);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -23,13 +20,6 @@ const BlogPage: React.FC = () => {
     publishDate: item.date || '',
     category: 'Blog' as const
   }));
-
-  const totalPages = Math.ceil(blogArticles.length / ARTICLES_PER_PAGE);
-  const indexOfLastArticle = currentPage * ARTICLES_PER_PAGE;
-  const indexOfFirstArticle = indexOfLastArticle - ARTICLES_PER_PAGE;
-  const currentArticles = blogArticles.slice(indexOfFirstArticle, indexOfLastArticle);
-
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   const handleArticleClick = (article: Article) => {
     setSelectedArticle(article);
@@ -71,15 +61,11 @@ const BlogPage: React.FC = () => {
 
       <motion.div
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <BlogCards
-          articles={currentArticles}
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={paginate}
+          articles={blogArticles}
           onArticleClick={handleArticleClick}
         />
       </motion.div>

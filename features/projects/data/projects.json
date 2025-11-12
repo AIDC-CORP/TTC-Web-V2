@@ -2,7 +2,7 @@
   {
     "name": "CÔNG TY CP SẢN XUẤT A-ONE TIMBER VIỆT NAM",
     "url": "https://tanthanha.com/du-an/cong-ty-cp-san-xuat-a-one-timber-viet-nam",
-    "thumbnail_url": "",
+    "thumbnail_url": "/project-assets/aone.jpg",
     "year": "2018",
     "location_specific": "Hiệp Hòa – Bắc Giang",
     "square": "41.478m2",
@@ -12,7 +12,7 @@
   {
     "name": "DỰ ÁN ĐẦU TƯ XÂY DỰNG KHU SẢN XUẤT SÔNG HỒNG 7",
     "url": "https://tanthanha.com/du-an/du-an-dau-tu-xay-dung-khu-san-xuat-song-hong-7",
-    "thumbnail_url": "",
+    "thumbnail_url": "/project-assets/songhong7.jpg",
     "year": "2016",
     "location_specific": "Hưng Yên",
     "square": "57.927m2",
@@ -22,7 +22,7 @@
   {
     "name": "NHÀ MÁY DAEYUN ST VINA",
     "url": "https://tanthanha.com/du-an/nha-may-daeyun-st-vina",
-    "thumbnail_url": "",
+    "thumbnail_url": "/project-assets/daeyun.jpg",
     "year": "2016",
     "location_specific": "KCN Bá Thiện 2 – Vĩnh Phúc",
     "square": "2ha",
@@ -32,7 +32,7 @@
   {
     "name": "NHÀ MÁY FOXCON",
     "url": "https://tanthanha.com/du-an/nha-may-foxcon",
-    "thumbnail_url": "",
+    "thumbnail_url": "/project-assets/foxcon.png",
     "year": "2017",
     "location_specific": "Quế Võ – Bắc Ninh",
     "square": "9.000m2",
@@ -42,7 +42,7 @@
   {
     "name": "NHÀ MÁY GẠCH HỒNG TRANG",
     "url": "https://tanthanha.com/du-an/nha-may-gach-hong-trang",
-    "thumbnail_url": "",
+    "thumbnail_url": "/project-assets/hongtrang.jpg",
     "year": "2019",
     "location_specific": "Phổ Yên – Thái Nguyên",
     "square": "10ha",
@@ -52,7 +52,7 @@
   {
     "name": "NHÀ MÁY JAPFA COM FEED VIỆT NAM",
     "url": "https://tanthanha.com/du-an/nha-may-japfa-com-feed-viet-nam",
-    "thumbnail_url": "",
+    "thumbnail_url": "/project-assets/japfa.jpg",
     "year": "2018",
     "location_specific": "Quỳnh Phụ – Thái Bình",
     "square": "5ha",
@@ -62,7 +62,7 @@
   {
     "name": "NHÀ MÁY JPC VIỆT NAM FACTORY",
     "url": "https://tanthanha.com/du-an/nha-may-jpc-viet-nam-factory",
-    "thumbnail_url": "",
+    "thumbnail_url": "/project-assets/jpc.jpg",
     "year": "2018",
     "location_specific": "Hà Nam",
     "square": "10.800m2",
@@ -72,7 +72,7 @@
   {
     "name": "NHÀ MÁY M.A.P",
     "url": "https://tanthanha.com/du-an/nha-may-m-a-p",
-    "thumbnail_url": "",
+    "thumbnail_url": "/project-assets/map.jpg",
     "year": "2019",
     "location_specific": "KCN Bắc Thăng Long – Nội Bài",
     "square": "18.000m2",
@@ -82,7 +82,7 @@
   {
     "name": "NHÀ MÁY SẢN XUẤT ĐỒ GỖ NỘI NHẤT FAMI",
     "url": "https://tanthanha.com/du-an/nha-may-san-xuat-do-go-noi-nhat-fami",
-    "thumbnail_url": "",
+    "thumbnail_url": "/project-assets/fami.jpg",
     "year": "2016",
     "location_specific": "Vĩnh Khúc – Văn Giang – Hưng Yên",
     "square": "4.7ha",
@@ -92,7 +92,7 @@
   {
     "name": "NHÀ MÁY SẢN XUẤT KHUÔN MẪU LINH KIỆN NHỰA VÀ KIM LOẠI",
     "url": "https://tanthanha.com/du-an/nha-may-san-xuat-khuon-mau-linh-kien-nhua-va-kim-loai",
-    "thumbnail_url": "",
+    "thumbnail_url": "/project-assets/nhuakimloai.jpg",
     "year": "2018",
     "location_specific": "Yên Mỹ – Hưng Yên",
     "square": "5.414m2",
@@ -102,7 +102,7 @@
   {
     "name": "NHÀ MÁY SẢN XUẤT SHINJO VIETNAM PROJECT",
     "url": "https://tanthanha.com/du-an/nha-may-san-xuat-shinjo-vietnam-project",
-    "thumbnail_url": "",
+    "thumbnail_url": "/project-assets/shinjo.jpg",
     "year": "2019",
     "location_specific": "Hưng Yên",
     "square": "4.032m2",
@@ -112,7 +112,7 @@
   {
     "name": "NHÀ MÁY SẢN XUẤT SƠN HÀ",
     "url": "https://tanthanha.com/du-an/nha-may-san-xuat-son-ha",
-    "thumbnail_url": "",
+    "thumbnail_url": "/project-assets/sonha.jpg",
     "year": "2019",
     "location_specific": "Hưng Yên",
     "square": "8.640m2",

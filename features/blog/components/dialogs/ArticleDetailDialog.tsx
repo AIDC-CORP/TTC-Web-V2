@@ -1,13 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Article } from '../../../types';
+import { Article } from '../../../../types';
 
 interface ArticleDetailDialogProps {
   article: Article | null;
   isOpen: boolean;
   onClose: () => void;
 }
+
+// Helper function to parse content with embedded images
+const parseContentWithImages = (content: string, articleId: string) => {
+  const imageRegex = /\[IMAGE:(.*?)\]/g;
+  const parts: Array<{ type: 'text' | 'image'; content: string }> = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = imageRegex.exec(content)) !== null) {
+    // Add text before image
+    if (match.index > lastIndex) {
+      parts.push({
+        type: 'text',
+        content: content.substring(lastIndex, match.index)
+      });
+    }
+    
+    // Add image
+    parts.push({
+      type: 'image',
+      content: match[1] // Image filename
+    });
+    
+    lastIndex = match.index + match[0].length;
+  }
+  
+  // Add remaining text
+  if (lastIndex < content.length) {
+    parts.push({
+      type: 'text',
+      content: content.substring(lastIndex)
+    });
+  }
+  
+  return parts;
+};
 
 const ArticleDetailDialog: React.FC<ArticleDetailDialogProps> = ({ article, isOpen, onClose }) => {
   const backLink = article?.category === 'Blog' ? '/blog' : '/tu-van';
@@ -90,9 +126,53 @@ const ArticleDetailDialog: React.FC<ArticleDetailDialogProps> = ({ article, isOp
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
                 >
-                  <p className="text-gray-600 leading-relaxed whitespace-pre-line">
-                    {article.content}
-                  </p>
+                  {parseContentWithImages(article.content, article.id).map((part, index) => {
+                    if (part.type === 'text') {
+                      // Split text by markdown headings
+                      const lines = part.content.split('\n');
+                      return (
+                        <div key={index}>
+                          {lines.map((line, lineIndex) => {
+                            if (line.startsWith('## ')) {
+                              return (
+                                <h2 key={lineIndex} className="text-2xl font-bold text-gray-800 mt-6 mb-3">
+                                  {line.replace(/^## /, '')}
+                                </h2>
+                              );
+                            } else if (line.startsWith('# ')) {
+                              return (
+                                <h1 key={lineIndex} className="text-3xl font-bold text-gray-800 mt-6 mb-3">
+                                  {line.replace(/^# /, '')}
+                                </h1>
+                              );
+                            } else if (line.startsWith('- ')) {
+                              return (
+                                <li key={lineIndex} className="text-gray-600 leading-relaxed ml-5 mb-2 list-disc">
+                                  {line.replace(/^- /, '')}
+                                </li>
+                              );
+                            } else if (line.trim()) {
+                              return (
+                                <p key={lineIndex} className="text-gray-600 leading-relaxed mb-4">
+                                  {line}
+                                </p>
+                              );
+                            }
+                            return null;
+                          })}
+                        </div>
+                      );
+                    } else {
+                      return (
+                        <img
+                          key={index}
+                          src={`/blog-assets/${part.content}`}
+                          alt={`Article image ${index}`}
+                          className="w-full h-auto object-cover rounded-lg shadow-lg my-6"
+                        />
+                      );
+                    }
+                  })}
                 </motion.div>
               </motion.div>
 
