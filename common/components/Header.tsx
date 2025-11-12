@@ -9,7 +9,7 @@ const NavItem: React.FC<{ to: string; children: React.ReactNode; onClick?: () =>
     <NavLink
       to={to}
       onClick={onClick}
-      className={({ isActive }) => `${isActive ? activeClasses : inactiveClasses} py-4 px-8 rounded-md text-base font-medium`}
+      className={({ isActive }) => `${isActive ? activeClasses : inactiveClasses} py-5 px-8 rounded-md text-base font-medium`}
     >
       {children}
     </NavLink>
