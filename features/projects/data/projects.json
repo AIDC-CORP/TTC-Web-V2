@@ -5,6 +5,7 @@
     "thumbnail_url": "/project-assets/aone.jpg",
     "year": "2018",
     "location_specific": "Hiệp Hòa – Bắc Giang",
+    "region": "Miền Bắc",
     "square": "41.478m2",
     "project_manager": "Nhữ Văn Mỹ Dũng",
     "gallery_urls": []
@@ -15,6 +16,7 @@
     "thumbnail_url": "/project-assets/songhong7.jpg",
     "year": "2016",
     "location_specific": "Hưng Yên",
+    "region": "Miền Bắc",
     "square": "57.927m2",
     "project_manager": "Nhữ Văn Mỹ Dũng",
     "gallery_urls": []
@@ -25,6 +27,7 @@
     "thumbnail_url": "/project-assets/daeyun.jpg",
     "year": "2016",
     "location_specific": "KCN Bá Thiện 2 – Vĩnh Phúc",
+    "region": "Miền Bắc",
     "square": "2ha",
     "project_manager": "Nguyễn Đình Dũng",
     "gallery_urls": []
@@ -35,6 +38,7 @@
     "thumbnail_url": "/project-assets/foxcon.png",
     "year": "2017",
     "location_specific": "Quế Võ – Bắc Ninh",
+    "region": "Miền Bắc",
     "square": "9.000m2",
     "project_manager": "Nhữ Văn Mỹ Dũng",
     "gallery_urls": []
@@ -45,6 +49,7 @@
     "thumbnail_url": "/project-assets/hongtrang.jpg",
     "year": "2019",
     "location_specific": "Phổ Yên – Thái Nguyên",
+    "region": "Miền Bắc",
     "square": "10ha",
     "project_manager": "Nhữ Văn Mỹ Dũng",
     "gallery_urls": []
@@ -55,6 +60,7 @@
     "thumbnail_url": "/project-assets/japfa.jpg",
     "year": "2018",
     "location_specific": "Quỳnh Phụ – Thái Bình",
+    "region": "Miền Bắc",
     "square": "5ha",
     "project_manager": "Nhữ Văn Mỹ Dũng",
     "gallery_urls": []
@@ -65,6 +71,7 @@
     "thumbnail_url": "/project-assets/jpc.jpg",
     "year": "2018",
     "location_specific": "Hà Nam",
+    "region": "Miền Bắc",
     "square": "10.800m2",
     "project_manager": "Nhữ Văn Mỹ Dũng",
     "gallery_urls": []
@@ -75,6 +82,7 @@
     "thumbnail_url": "/project-assets/map.jpg",
     "year": "2019",
     "location_specific": "KCN Bắc Thăng Long – Nội Bài",
+    "region": "Miền Bắc",
     "square": "18.000m2",
     "project_manager": "Nhữ Văn Mỹ Dũng",
     "gallery_urls": []
@@ -85,6 +93,7 @@
     "thumbnail_url": "/project-assets/fami.jpg",
     "year": "2016",
     "location_specific": "Vĩnh Khúc – Văn Giang – Hưng Yên",
+    "region": "Miền Bắc",
     "square": "4.7ha",
     "project_manager": "Nguyễn Đình Dũng",
     "gallery_urls": []
@@ -95,6 +104,7 @@
     "thumbnail_url": "/project-assets/nhuakimloai.jpg",
     "year": "2018",
     "location_specific": "Yên Mỹ – Hưng Yên",
+    "region": "Miền Bắc",
     "square": "5.414m2",
     "project_manager": "Nhữ Văn Mỹ Dũng",
     "gallery_urls": []
@@ -105,6 +115,7 @@
     "thumbnail_url": "/project-assets/shinjo.jpg",
     "year": "2019",
     "location_specific": "Hưng Yên",
+    "region": "Miền Bắc",
     "square": "4.032m2",
     "project_manager": "Thiều, Lê, Hòa",
     "gallery_urls": []
@@ -115,7 +126,107 @@
     "thumbnail_url": "/project-assets/sonha.jpg",
     "year": "2019",
     "location_specific": "Hưng Yên",
+    "region": "Miền Bắc",
     "square": "8.640m2",
+    "project_manager": "Nhữ Văn Mỹ Dũng",
+    "gallery_urls": []
+  },
+  {
+    "name": "NHÀ MÁY SẢN XUẤT THỨC ĂN CHĂN NUÔI NEWHOPE",
+    "url": "https://tanthanha.com/du-an/nha-may-san-xuat-thuc-an-chan-nuoi-newhope",
+    "thumbnail_url": "/project-assets/newhope.jpg",
+    "year": "2018",
+    "location_specific": "Hưng Yên",
+    "region": "Miền Bắc",
+    "square": "47000.00m2",
+    "project_manager": "Nguyễn Đình Dũng",
+    "gallery_urls": []
+  },
+  {
+    "name": "NHÀ MÁY SẢN XUẤT THỰC PHẨM AN PHÚ HƯNG",
+    "url": "https://tanthanha.com/du-an/nha-may-san-xuat-thuc-an-chan-nuoi-newhope",
+    "thumbnail_url": "/project-assets/phuhung.jpg",
+    "year": "2016",
+    "location_specific": "Cụm CN Tây Nam – Phủ Lý",
+    "region": "Miền Bắc",
+    "square": "35000.00m2",
+    "project_manager": "Nhữ Văn Mỹ Dũng",
+    "gallery_urls": []  
+  },
+  {
+    "name": "NHÀ MÁY SỮA CỦ CHI",
+    "url": "STRING",
+    "thumbnail_url": "/project-assets/milkcuchi.jpg",
+    "year": "2016",
+    "location_specific": "TP Hồ Chí Minh",
+    "region": "Miền Nam",
+    "square": "50000.00m2",
+    "project_manager": "Nhữ Văn Mỹ Dũng",
+    "gallery_urls": []
+  },
+  {
+    "name": "NHÀ MÁY SUMIDENSO WIRE & CABLE",
+    "url": "https://tanthanha.com/du-an/nha-may-thuc-an-chan-nuoi-c-p-viet-nam",
+    "thumbnail_url": "/project-assets/sumidenso.jpg",
+    "year": "2017",
+    "location_specific": "Hậu Giang",
+    "region": "Miền Nam",
+    "square": "15.015m2",
+    "project_manager": "Nhữ Văn Mỹ Dũng",
+    "gallery_urls": []
+  },
+  {
+    "name": "NHÀ MÁY TOWADA ELECTRONICS",
+    "url": "https://tanthanha.com/du-an/nha-may-thuc-an-chan-nuoi-c-p-viet-nam",
+    "thumbnail_url": "/project-assets/towada.jpg",
+    "year": "2016",
+    "location_specific": "Hậu Giang",
+    "region": "Miền Bắc",
+    "square": "8.400m2",
+    "project_manager": "Thiều, Lê, Hòa",
+    "gallery_urls": []
+  },
+  {
+    "name": "NHÀ MÁY TOYO INK",
+    "url": "https://tanthanha.com/du-an/nha-may-thuc-an-chan-nuoi-c-p-viet-nam",
+    "thumbnail_url": "/project-assets/toyo.jpg",
+    "year": "2018",
+    "location_specific": "Quế Võ – Bắc Ninh",
+    "region": "Miền Bắc",
+    "square": "8.400m2",
+    "project_manager": "Phạm Toàn Thắng",
+    "gallery_urls": []
+  },
+  {
+    "name": "NHÀ MÁY YANG MIN ENTERPRISE VIỆT NAM",
+    "url": "https://tanthanha.com/du-an/nha-may-thuc-an-chan-nuoi-c-p-viet-nam",
+    "thumbnail_url": "/project-assets/yangmin.jpg",
+    "year": "2016",
+    "location_specific": "KCN Yên Phong – Bắc Ninh",
+    "region": "Miền Bắc",
+    "square": "8.400m2",
+    "project_manager": "Nhữ Văn Mỹ Dũng",
+    "gallery_urls": []
+  },
+  {
+    "name": "NHÀ MÁY YUSEN",
+    "url": "https://tanthanha.com/du-an/nha-may-thuc-an-chan-nuoi-c-p-viet-nam",
+    "thumbnail_url": "/project-assets/yusen.jpg",
+    "year": "2017",
+    "location_specific": "KCN Tân Trường – Hải Dương",
+    "region": "Miền Bắc",
+    "square": "14.400m2",
+    "project_manager": "Nguyễn Hữu Hòa",
+    "gallery_urls": []
+  },
+  {
+    "name": "CÔNG TY PHẠM – ASSET HƯNG YÊN",
+    "url": "https://tanthanha.com/du-an/nha-may-thuc-an-chan-nuoi-c-p-viet-nam",
+    "thumbnail_url": "/project-assets/assetHY.jpg",
+    "year": "2018",
+    "location_specific": "Yên Mỹ Hưng Yên",
+    "region": "Miền Bắc",
+    "square": "11.000m2",
     "project_manager": "Nhữ Văn Mỹ Dũng",
     "gallery_urls": []
   }

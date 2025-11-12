@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import projectsData from './data/projects.json';
 import ProjectCard from './components/ProjectCard';
 import ProjectDetailDialog from './components/dialogs/ProjectDetailDialog';
+import { Project } from '../../types';
 
 interface ProjectJSON {
   name: string;
@@ -11,25 +12,14 @@ interface ProjectJSON {
   thumbnail_url: string;
   year: string;
   location_specific: string;
+  region: string;
   square: string;
   project_manager: string;
   gallery_urls: string[];
 }
 
-interface Project {
-  id: string;
-  name: string;
-  image: string;
-  summary: string;
-  description: string;
-  investor: any;
-  executionTime: string;
-  gallery: string[];
-  category: string;
-}
-
 // Transform JSON data to match Project interface
-const transformedProjects = projectsData.map((project: ProjectJSON, index: number) => ({
+const transformedProjects: Project[] = projectsData.map((project: ProjectJSON, index: number) => ({
   id: `project-${index}`,
   name: project.name,
   image: project.thumbnail_url || 'https://picsum.photos/seed/project-default/800/600',
@@ -40,59 +30,27 @@ const transformedProjects = projectsData.map((project: ProjectJSON, index: numbe
   gallery: project.gallery_urls.length > 0 ? project.gallery_urls : [],
   category: 'Công trình',
   location_specific: project.location_specific,
+  region: project.region,
   square: project.square,
   project_manager: project.project_manager,
   year: project.year
 }));
 
 const ProjectsPage: React.FC = () => {
-  const [filter, setFilter] = useState('Tất cả');
   const [regionFilter, setRegionFilter] = useState('Tất cả');
-  const [priceRange, setPriceRange] = useState({ min: 0, max: 30000 });
+  const [priceRange, setPriceRange] = useState({ min: 0, max: 200000 });
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [recentlyViewed, setRecentlyViewed] = useState<Project[]>([]);
-  
-  const categories = useMemo(() => ['Tất cả', ...Array.from(new Set(transformedProjects.map(p => p.category)))], []);
-
-  // Function to determine region based on location
-  const getRegion = (location: string): string => {
-    // Northern provinces
-    if (location.includes('Bắc Giang') || location.includes('Hưng Yên') || location.includes('Hà Nam') || 
-        location.includes('Thái Nguyên') || location.includes('Bắc Ninh') || location.includes('Vĩnh Phúc') ||
-        location.includes('Hải Dương') || location.includes('Hải Phòng') || location.includes('Quảng Ninh') ||
-        location.includes('Nam Định') || location.includes('Ninh Bình') || location.includes('Thanh Hóa') ||
-        location.includes('Hà Nội') || location.includes('Hà Tây')) {
-      return 'Miền Bắc';
-    }
-    
-    // Southern provinces
-    if (location.includes('TP. Hồ Chí Minh') || location.includes('Đồng Nai') || location.includes('Bình Dương') ||
-        location.includes('Long An') || location.includes('Tiền Giang') || location.includes('Bến Tre') ||
-        location.includes('Vĩnh Long') || location.includes('Trà Vinh') || location.includes('Hậu Giang') ||
-        location.includes('Kiên Giang') || location.includes('An Giang') || location.includes('Đồng Tháp') ||
-        location.includes('Tây Ninh') || location.includes('Bình Phước') || location.includes('Bà Rịa') ||
-        location.includes('Cần Thơ') || location.includes('Sóc Trăng')) {
-      return 'Miền Nam';
-    }
-    
-    // Central provinces (default for any other location)
-    return 'Miền Trung';
-  };
 
   const regions = ['Tất cả', 'Miền Bắc', 'Miền Trung', 'Miền Nam'];
 
   const filteredProjects = useMemo(() => {
     let filtered = transformedProjects;
 
-    // Filter by category
-    if (filter !== 'Tất cả') {
-      filtered = filtered.filter(project => project.category === filter);
-    }
-
     // Filter by region
     if (regionFilter !== 'Tất cả') {
-      filtered = filtered.filter(project => getRegion(project.location_specific) === regionFilter);
+      filtered = filtered.filter(project => project.region === regionFilter);
     }
 
     // Filter by price range (using square footage as proxy for size)
@@ -101,19 +59,23 @@ const ProjectsPage: React.FC = () => {
       let squareValue = 0;
       const squareText = project.square.toLowerCase();
       
+      // Extract numeric value (including decimal point)
+      const numericMatch = squareText.match(/[\d.]+/);
+      const numericValue = numericMatch ? parseFloat(numericMatch[0]) : 0;
+      
       if (squareText.includes('ha')) {
         // Convert hectares to m² (1 ha = 10,000 m²)
-        squareValue = parseFloat(squareText.replace(/[^\d.]/g, '')) * 10000;
+        squareValue = numericValue * 10000;
       } else {
         // Assume m²
-        squareValue = parseFloat(squareText.replace(/[^\d.]/g, '')) || 0;
+        squareValue = numericValue || 0;
       }
       
       return squareValue >= priceRange.min && squareValue <= priceRange.max;
     });
 
     return filtered;
-  }, [filter, regionFilter, priceRange]);
+  }, [regionFilter, priceRange]);
 
   const openProjectDialog = (project: Project) => {
     setSelectedProject(project);
@@ -169,7 +131,7 @@ const ProjectsPage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {/* Category Filter */}
+            {/* Region Filter */}
             <motion.div 
               className="mb-6"
               initial={{ opacity: 0, y: 20 }}
@@ -177,52 +139,13 @@ const ProjectsPage: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">Lọc theo danh mục</h3>
-              <motion.div 
-                className="flex flex-wrap gap-2"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ staggerChildren: 0.1, delayChildren: 0.4 }}
-                variants={{
-                  hidden: {},
-                  visible: {}
-                }}
-              >
-                {categories.map((category, index) => (
-                  <motion.button 
-                    key={category} 
-                    onClick={() => setFilter(category)}
-                    className={`px-4 py-2 rounded-full font-semibold text-sm transition-colors duration-300 ${filter === category ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-blue-200'}`}
-                    variants={{
-                      hidden: { opacity: 0, scale: 0.8 },
-                      visible: { opacity: 1, scale: 1 }
-                    }}
-                    transition={{ duration: 0.4 }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {category}
-                  </motion.button>
-                ))}
-              </motion.div>
-            </motion.div>
-
-            {/* Region Filter */}
-            <motion.div 
-              className="mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
               <h3 className="text-lg font-semibold text-gray-800 mb-4">Lọc theo vùng miền</h3>
               <motion.div 
                 className="flex flex-wrap gap-2"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                transition={{ staggerChildren: 0.1, delayChildren: 0.6 }}
+                transition={{ staggerChildren: 0.1, delayChildren: 0.4 }}
                 variants={{
                   hidden: {},
                   visible: {}
@@ -280,7 +203,7 @@ const ProjectsPage: React.FC = () => {
                   />
                 </div>
                 <button
-                  onClick={() => setPriceRange({ min: 0, max: 30000 })}
+                  onClick={() => setPriceRange({ min: 0, max: 200000 })}
                   className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
                 >
                   Đặt lại
@@ -300,30 +223,55 @@ const ProjectsPage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ staggerChildren: 0.1, delayChildren: 0.4 }}
-              variants={{
-                hidden: {},
-                visible: {}
-              }}
-            >
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  variants={{
-                    hidden: { opacity: 0, y: 50 },
-                    visible: { opacity: 1, y: 0 }
+            {filteredProjects.length === 0 ? (
+              <motion.div 
+                className="text-center py-16"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="text-6xl mb-4">🏗️</div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">Không tìm thấy dự án</h3>
+                <p className="text-gray-600 mb-6">
+                  Hiện tại chưa có dự án nào phù hợp với bộ lọc của bạn.
+                </p>
+                <button
+                  onClick={() => {
+                    setRegionFilter('Tất cả');
+                    setPriceRange({ min: 0, max: 200000 });
                   }}
-                  transition={{ duration: 0.6 }}
+                  className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                 >
-                  <ProjectCard project={project} onClick={openProjectDialog} />
-                </motion.div>
-              ))}
-            </motion.div>
+                  Xem tất cả dự án
+                </button>
+              </motion.div>
+            ) : (
+              <motion.div 
+                key={`projects-${regionFilter}`}
+                className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ staggerChildren: 0.1, delayChildren: 0.4 }}
+                variants={{
+                  hidden: {},
+                  visible: {}
+                }}
+              >
+                {filteredProjects.map((project, index) => (
+                  <motion.div
+                    key={project.id}
+                    variants={{
+                      hidden: { opacity: 0, y: 50 },
+                      visible: { opacity: 1, y: 0 }
+                    }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <ProjectCard project={project} onClick={openProjectDialog} />
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
 
             {/* Recently Viewed */}
             {recentlyViewed.length > 0 && (

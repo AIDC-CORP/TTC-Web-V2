@@ -19,7 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
   const CardContent = () => (
     <motion.div 
       style={{ height: '400px' }}
-      className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group cursor-pointer  flex flex-col"
+      className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group cursor-pointer flex flex-col"
       whileHover={{ 
         y: -8, 
         transition: { duration: 0.3, ease: "easeOut" }
@@ -38,36 +38,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
           className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition-opacity duration-300"
           whileHover={{ opacity: 0.6 }}
         ></motion.div>
-         <motion.div 
+         <div 
            className="absolute bottom-0 left-0 bg-blue-600 text-white px-3 py-1 text-sm font-semibold rounded-tr-lg"
-           initial={{ x: -100 }}
-           animate={{ x: 0 }}
-           transition={{ duration: 0.5, delay: 0.2 }}
          >
             {project.category}
-          </motion.div>
+          </div>
       </div>
-      <motion.div 
+      <div 
         className="p-6 flex-1 flex flex-col"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
       >
-        <motion.h3 
+        <h3 
           className="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors"
-          whileHover={{ scale: 1.02 }}
         >
           {project.name}
-        </motion.h3>
-        <motion.p 
+        </h3>
+        <p 
           className="text-gray-600 text-sm line-clamp-3 flex-1"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
         >
           {project.summary}
-        </motion.p>
-      </motion.div>
+        </p>
+      </div>
     </motion.div>
   );
 
