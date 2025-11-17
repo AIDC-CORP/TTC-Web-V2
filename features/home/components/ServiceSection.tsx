@@ -23,7 +23,7 @@ const ServiceSection: React.FC = () => {
             </h2>
           </div>
 
-          <div className="md:max-w-xl text-gray-600">
+          <div className="md:max-w-2xl text-gray-600 md:text-lg font-medium leading-relaxed">
             <p>
             Tân Thành Công mang đến giải pháp toàn diện trong thiết kế và thi công nhà xưởng công nghiệp. Với đội ngũ kỹ sư và chuyên gia giàu kinh nghiệm, chúng tôi cung cấp dịch vụ tư vấn, thiết kế, và thi công trọn gói, đảm bảo tiến độ, chất lượng và tính an toàn cho từng công trình. Tân Thành Công luôn hướng đến việc tối ưu chi phí và hiện thực hóa mọi ý tưởng xây dựng của khách hàng bằng những giải pháp kỹ thuật tiên tiến và hiệu quả.
       

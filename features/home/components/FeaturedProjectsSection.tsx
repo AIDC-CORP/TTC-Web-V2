@@ -46,7 +46,7 @@ const FeaturedProjectsSection: React.FC = () => {
       >
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Dự án Tiêu biểu</h2>
-          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">Chúng tôi tự hào đã góp phần vào thành công của nhiều dự án lớn, khẳng định năng lực và uy tín.</p>
+          <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12 text-base md:text-lg font-medium leading-relaxed">Chúng tôi tự hào đã góp phần vào thành công của nhiều dự án lớn, khẳng định năng lực và uy tín.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map(project => (
               <ProjectCard key={project.id} project={project} onClick={handleProjectClick} />

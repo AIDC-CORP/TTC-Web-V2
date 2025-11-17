@@ -36,7 +36,7 @@ const Value: React.FC = () => {
 
   return (
     <motion.div 
-      className="grid grid-cols-1 md:grid-cols-2 gap-8"
+      className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -45,7 +45,7 @@ const Value: React.FC = () => {
       {values.map((value) => (
         <motion.div
           key={value.id}
-          className="relative bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl p-8 md:p-10 shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300"
+          className="relative bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl p-6 md:p-8 shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300"
           variants={quoteVariants}
           transition={{ duration: 0.6 }}
           whileHover={{ 
@@ -57,23 +57,23 @@ const Value: React.FC = () => {
           <div className="absolute -top-16 -right-16 w-40 h-40 bg-blue-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
 
           {/* Quote mark icon */}
-          <div className="text-5xl md:text-6xl text-white opacity-30 mb-4">‟</div>
+          <div className="text-4xl md:text-5xl text-white opacity-30 mb-3">‟</div>
 
           {/* Label badge */}
-          <div className="inline-block mb-4 px-3 py-1 bg-white rounded-full">
-            <span className="text-sm font-semibold text-blue-600">{value.label}</span>
+          <div className="inline-block mb-3 px-4 py-1.5 bg-white rounded-full">
+            <span className="text-sm md:text-base font-bold text-blue-600">{value.label}</span>
           </div>
 
           {/* Content */}
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight relative z-10">
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-3 leading-tight relative z-10">
             {value.title}
           </h3>
-          <p className="text-white text-base md:text-lg leading-relaxed relative z-10">
+          <p className="text-white text-base md:text-lg font-medium leading-relaxed relative z-10">
             {value.description}
           </p>
 
           {/* Closing quote mark */}
-          <div className="absolute bottom-4 right-6 text-5xl md:text-6xl text-white opacity-20">‟</div>
+          <div className="absolute bottom-3 right-4 text-4xl md:text-5xl text-white opacity-20">‟</div>
         </motion.div>
       ))}
     </motion.div>
