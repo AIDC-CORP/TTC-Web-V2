@@ -36,12 +36,12 @@ const IntroSection: React.FC = () => {
           {/* Overlapped images */}
           <div className="relative">
             <img
-              src="https://udl.kizuna.vn/photos/2020/05/28/c3fea20d60a652af993d14925ca1e3c6.jpg"
+              src="introsection2.jpg"
               alt="Nhà xưởng công nghiệp"
               className="w-full h-72 sm:h-96 object-cover rounded-3xl shadow-md"
             />
             <img
-              src="https://www.tanthanhcongjsc.com/wp-content/uploads/2022/10/chat-luong-600x386.jpg "
+              src="introsection1.jpg"
               alt="Kỹ sư công trường"
               className="absolute -top-8 -left-8 w-44 h-32 sm:w-64 sm:h-44 object-cover rounded-3xl shadow-lg border-8 border-white"
             />
