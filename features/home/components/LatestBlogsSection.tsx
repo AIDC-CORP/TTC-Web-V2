@@ -41,7 +41,7 @@ const LatestBlogsSection: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Bài viết mới nhất</h2>
-            <p className="text-center text-gray-600 max-w-2xl mx-auto">Cập nhật những tin tức, tư vấn và kiến thức mới nhất về xây dựng và thiết kế công nghiệp.</p>
+            <p className="text-center text-gray-600 max-w-2xl mx-auto md:text-lg font-medium leading-relaxed">Cập nhật những tin tức, tư vấn và kiến thức mới nhất về xây dựng và thiết kế công nghiệp.</p>
           </div>
           <BlogCards articles={latestArticles} onArticleClick={handleArticleClick} />
           <div className="text-center mt-12">

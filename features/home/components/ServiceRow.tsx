@@ -54,7 +54,7 @@ const ServicesRow: React.FC = () => {
             <div className="pt-10 px-6 pb-6">
               <div className="text-red-600 text-xs font-semibold tracking-widest uppercase mb-2">Thiết kế xây dựng</div>
               <h3 className="text-lg font-bold mb-2">{svc.name}</h3>
-              <p className="text-gray-600 text-sm">{svc.summary}</p>
+              <p className="text-gray-800 text-base leading-relaxed">{svc.summary}</p>
             </div>
           </article>
         ))}
