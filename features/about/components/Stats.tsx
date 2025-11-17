@@ -117,7 +117,7 @@ const Stats: React.FC = () => {
           <div className="text-5xl font-bold text-blue-600 mb-2">
             <AnimatedCounter value={10} />
           </div>
-          <div className="text-lg font-semibold text-gray-700">CHUYÊN GIA VẤN VIÊN</div>
+          <div className="text-lg font-semibold text-gray-700">CHUYÊN GIA TƯ VẤN</div>
         </motion.div>
         <motion.div
           className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"

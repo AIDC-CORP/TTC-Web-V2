@@ -8,7 +8,8 @@ const NavItem: React.FC<{ to: string; children: React.ReactNode; onClick?: () =>
       to={to}
       onClick={onClick}
       className={({ isActive }) => {
-        const baseClasses = 'py-2.5 px-6 rounded-lg text-lg font-medium transition-all duration-300 relative overflow-hidden group leading-tight';
+        const baseClasses =
+          'py-2.5 px-2.5 lg:px-3.5 xl:px-5 rounded-lg text-sm lg:text-base xl:text-lg font-medium transition-all duration-300 relative overflow-hidden group leading-tight whitespace-nowrap';
         if (isActive) {
           return `${baseClasses} text-blue-600 font-semibold bg-blue-50 border-b-2 border-blue-600`;
         }
@@ -66,13 +67,18 @@ const Header: React.FC = () => {
       <div className="hidden md:block bg-blue-900 text-gray-200 text-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-1 flex items-center justify-between">
           <div className="flex flex-wrap items-center gap-4">
-            <span className="flex items-center gap-2">
+          <a
+              href="https://www.google.com/maps?q=21.005076,105.801285"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
+            >
               {/* location */}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-red-500" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C8.686 2 6 4.686 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.314-2.686-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z"/>
               </svg>
               Số 19N7B, KĐT Trung Hòa Nhân Chính, Quận Thanh Xuân, TP Hà Nội
-            </span>
+            </a>
             <span className="flex items-center gap-2">
               {/* time */}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
@@ -111,13 +117,13 @@ const Header: React.FC = () => {
               <img 
                 src="/logo-ttc-removebg-DNXrVdJp.png" 
                 alt="Tân Thành Công JSC" 
-                className="h-12 w-auto"
+                className="h-9 lg:h-11 xl:h-12 w-auto"
               />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-2">
+          <nav className="hidden lg:flex items-center space-x-1.5 lg:space-x-2 xl:space-x-3">
             <NavItem to="/">Trang chủ</NavItem>
             <NavItem to="/gioi-thieu">Giới thiệu</NavItem>
             <NavItem to="/du-an">Dự án</NavItem>
@@ -133,7 +139,7 @@ const Header: React.FC = () => {
                 placeholder="Tìm kiếm..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-48 pl-3 pr-10 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm shadow-sm"
+                className="w-32 lg:w-40 xl:w-52 pl-3 pr-10 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm shadow-sm"
               />
               <button 
                 type="submit" 
