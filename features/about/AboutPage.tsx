@@ -26,7 +26,7 @@ const AboutPage: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.div 
-            className="inline-block mb-6 px-4 py-2 bg-blue-500 rounded-full text-sm font-semibold tracking-wide"
+            className="inline-block mb-6 px-4 py-2 bg-blue-500 rounded-full text-base font-bold tracking-wide"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -34,7 +34,7 @@ const AboutPage: React.FC = () => {
             Giới thiệu về công ty
           </motion.div>
           <motion.h1 
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight animate-fade-in"
+            className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight animate-fade-in"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -48,7 +48,7 @@ const AboutPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
           />
           <motion.p 
-            className="mt-6 text-lg md:text-2xl text-blue-100 max-w-3xl mx-auto font-light leading-relaxed animate-fade-in-delayed"
+            className="mt-6 text-xl md:text-3xl text-blue-100 max-w-3xl mx-auto font-medium leading-relaxed animate-fade-in-delayed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
@@ -56,7 +56,7 @@ const AboutPage: React.FC = () => {
             Hành trình kiến tạo những giá trị bền vững
           </motion.p>
           <motion.p 
-            className="mt-6 text-base md:text-lg text-blue-200 max-w-2xl mx-auto opacity-90"
+            className="mt-6 text-lg md:text-xl text-blue-200 max-w-2xl mx-auto opacity-90 font-medium leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
@@ -68,7 +68,7 @@ const AboutPage: React.FC = () => {
 
       <div className="container mx-auto px-4 py-16 md:py-24">
         <motion.div 
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="grid md:grid-cols-2 gap-12 md:gap-16 items-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -87,12 +87,13 @@ const AboutPage: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
+            className="md:pl-8"
           >
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Câu chuyện của chúng tôi</h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <h2 className="text-4xl md:text-5xl md:whitespace-nowrap font-bold text-gray-800 mb-6 leading-tight">Câu chuyện của chúng tôi</h2>
+            <p className="text-gray-700 text-base md:text-lg font-medium leading-relaxed mb-6">
               Được thành lập từ năm 2015, Tân Thành Công khởi đầu với một đội ngũ kỹ sư tâm huyết và khát vọng mang đến những công trình chất lượng cao cho Việt Nam. Trải qua hơn một thập kỷ phát triển, chúng tôi đã không ngừng nỗ lực, đổi mới và vươn lên trở thành một trong những công ty tư vấn xây dựng uy tín hàng đầu.
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 text-base md:text-lg font-medium leading-relaxed">
               Sự thành công của chúng tôi được xây dựng trên nền tảng chuyên môn vững chắc, tinh thần trách nhiệm và sự tin tưởng của Quý khách hàng, đối tác.
             </p>
           </motion.div>

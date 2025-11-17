@@ -50,13 +50,13 @@ const IntroSection: React.FC = () => {
 
         {/* Content side */}
         <div>
-          <span className="inline-block text-xs md:text-sm font-semibold tracking-widest uppercase bg-red-100 text-red-700 px-4 py-2 rounded-full mb-5">
+          <span className="inline-block text-sm md:text-base font-bold tracking-widest uppercase bg-red-100 text-red-700 px-4 py-2 rounded-full mb-5">
             Tân Thành Công
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-5">
             Đối tác thiết kế và thi công nhà xưởng công nghiệp chuẩn quốc tế
           </h2>
-          <p className="text-gray-700 mb-8">
+          <p className="text-gray-700 mb-8 text-base md:text-lg font-medium leading-relaxed">
             Tân Thành Công JSC mang tới giải pháp tổng thể cho doanh nghiệp sản xuất và nhà đầu tư.
             Chúng tôi kết hợp kiến thức chuyên môn sâu, đội ngũ đa ngôn ngữ và quy trình quản trị hiện đại
             để đảm bảo dự án vận hành bền vững, an toàn và hiệu quả.
@@ -66,8 +66,8 @@ const IntroSection: React.FC = () => {
             <div className="flex items-start gap-3">
               <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-red-600">✓</span>
               <div>
-                <div className="font-semibold text-gray-900">Tổng thầu thiết kế & thi công</div>
-                <p className="text-gray-600 text-sm">
+                <div className="font-bold text-gray-900 text-base md:text-lg">Tổng thầu thiết kế & thi công</div>
+                <p className="text-gray-600 text-base leading-relaxed">
                   Kết nối trọn chuỗi giá trị từ tư vấn ý tưởng, thiết kế kỹ thuật đến triển khai công trường chuẩn quốc tế.
                 </p>
               </div>
@@ -75,8 +75,8 @@ const IntroSection: React.FC = () => {
             <div className="flex items-start gap-3">
               <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-red-600">✓</span>
               <div>
-                <div className="font-semibold text-gray-900">Đồng hành cùng doanh nghiệp FDI</div>
-                <p className="text-gray-600 text-sm">
+                <div className="font-bold text-gray-900 text-base md:text-lg">Đồng hành cùng doanh nghiệp FDI</div>
+                <p className="text-gray-600 text-base leading-relaxed">
                   Hiểu rõ yêu cầu của nhà đầu tư nước ngoài, tối ưu chi phí và tiến độ cho dự án công nghiệp tại Việt Nam.
                 </p>
               </div>
@@ -84,8 +84,8 @@ const IntroSection: React.FC = () => {
             <div className="flex items-start gap-3 sm:col-span-2">
               <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-red-600">✓</span>
               <div>
-                <div className="font-semibold text-gray-900">Giải pháp xanh & thông minh</div>
-                <p className="text-gray-600 text-sm">
+                <div className="font-bold text-gray-900 text-base md:text-lg">Giải pháp xanh & thông minh</div>
+                <p className="text-gray-600 text-base leading-relaxed">
                   Ưu tiên công nghệ nhà thép tiền chế, tiết kiệm năng lượng và mở rộng linh hoạt cho nhà xưởng tương lai.
                 </p>
               </div>
@@ -101,7 +101,7 @@ const IntroSection: React.FC = () => {
             </Link>
             <a
               href="tel:0976447766"
-              className="inline-flex items-center gap-3 text-blue-700 font-semibold"
+              className="inline-flex items-center gap-3 text-blue-700 font-bold text-base md:text-lg"
             >
               <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-100">☎</span>
               <span>(+84) 0976-447-766</span>

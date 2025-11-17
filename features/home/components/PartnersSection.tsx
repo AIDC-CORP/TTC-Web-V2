@@ -27,7 +27,7 @@ const PartnersSection: React.FC = () => {
           <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
             Các đối tác chiến lược
           </h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-4 text-gray-800 w-3xl mx-auto text-base md:text-lg font-medium leading-relaxed">
             Chúng tôi tự hào hợp tác với những thương hiệu hàng đầu trong ngành
           </p>
         </div>

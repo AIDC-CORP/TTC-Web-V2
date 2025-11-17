@@ -15,10 +15,10 @@ const Cards: React.FC = () => {
       viewport={{ once: true }}
       transition={{ staggerChildren: 0.2 }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
         {/* Sứ mệnh Card */}
         <motion.div 
-          className="group relative bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100 hover:border-blue-200"
+          className="group relative bg-gradient-to-br from-blue-50 to-indigo-100 p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100 hover:border-blue-200"
           variants={cardVariants}
           transition={{ duration: 0.6 }}
           whileHover={{ y: -8, transition: { duration: 0.3 } }}
@@ -31,8 +31,8 @@ const Cards: React.FC = () => {
             </div>
           </div>
           <div className="pt-6 text-center">
-            <h3 className="text-2xl font-bold text-blue-700 mb-4 group-hover:text-blue-800 transition-colors duration-300">Sứ mệnh</h3>
-            <p className="text-gray-700 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
+            <h3 className="text-3xl md:text-4xl font-bold text-blue-700 mb-6 group-hover:text-blue-800 transition-colors duration-300">Sứ mệnh</h3>
+            <p className="text-gray-700 text-base md:text-lg font-medium leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
               Cung cấp các giải pháp kỹ thuật ưu việt, an toàn và hiệu quả, góp phần vào sự phát triển bền vững của ngành xây dựng và xã hội.
             </p>
           </div>
@@ -40,7 +40,7 @@ const Cards: React.FC = () => {
 
         {/* Tầm nhìn Card */}
         <motion.div 
-          className="group relative bg-gradient-to-br from-purple-50 to-pink-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-100 hover:border-purple-200"
+          className="group relative bg-gradient-to-br from-purple-50 to-pink-100 p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-100 hover:border-purple-200"
           variants={cardVariants}
           transition={{ duration: 0.6 }}
           whileHover={{ y: -8, transition: { duration: 0.3 } }}
@@ -54,8 +54,8 @@ const Cards: React.FC = () => {
             </div>
           </div>
           <div className="pt-6 text-center">
-            <h3 className="text-2xl font-bold text-purple-700 mb-4 group-hover:text-purple-800 transition-colors duration-300">Tầm nhìn</h3>
-            <p className="text-gray-700 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
+            <h3 className="text-3xl md:text-4xl font-bold text-purple-700 mb-6 group-hover:text-purple-800 transition-colors duration-300">Tầm nhìn</h3>
+            <p className="text-gray-700 text-base md:text-lg font-medium leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
               Trở thành đối tác tin cậy hàng đầu trong lĩnh vực tư vấn và quản lý dự án xây dựng tại Việt Nam và vươn tầm khu vực.
             </p>
           </div>
@@ -63,7 +63,7 @@ const Cards: React.FC = () => {
 
         {/* Giá trị cốt lõi Card */}
         <motion.div 
-          className="group relative bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100 hover:border-green-200"
+          className="group relative bg-gradient-to-br from-green-50 to-emerald-100 p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100 hover:border-green-200"
           variants={cardVariants}
           transition={{ duration: 0.6 }}
           whileHover={{ y: -8, transition: { duration: 0.3 } }}
@@ -76,8 +76,8 @@ const Cards: React.FC = () => {
             </div>
           </div>
           <div className="pt-6 text-center">
-            <h3 className="text-2xl font-bold text-green-700 mb-4 group-hover:text-green-800 transition-colors duration-300">Giá trị cốt lõi</h3>
-            <p className="text-gray-700 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
+            <h3 className="text-3xl md:text-4xl font-bold text-green-700 mb-6 group-hover:text-green-800 transition-colors duration-300">Giá trị cốt lõi</h3>
+            <p className="text-gray-700 text-base md:text-lg font-medium leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
               Uy tín - Chuyên nghiệp - Sáng tạo - Tận tâm. Đây là kim chỉ nam cho mọi hoạt động của chúng tôi.
             </p>
           </div>
