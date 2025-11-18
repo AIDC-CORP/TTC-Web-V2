@@ -1,6 +1,8 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const NavItem: React.FC<{ to: string; children: React.ReactNode; onClick?: () => void }> = ({ to, children, onClick }) => {
   return (
@@ -24,6 +26,7 @@ const NavItem: React.FC<{ to: string; children: React.ReactNode; onClick?: () =>
 };
 
 const Header: React.FC = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [showHeader, setShowHeader] = useState(true);
@@ -84,7 +87,7 @@ const Header: React.FC = () => {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm.75 5a.75.75 0 0 0-1.5 0v5c0 .199.079.39.22.53l3 3a.75.75 0 1 0 1.06-1.06L12.75 11.5V7z"/>
               </svg>
-              Giờ làm việc: 08:00 – 17:30
+              {t('common.workingHours')}
             </span>
             <a href="mailto:info@tanthanhcongjsc.com" className="flex items-center gap-2 hover:text-white transition-colors">
               {/* email */}
@@ -101,7 +104,7 @@ const Header: React.FC = () => {
               </svg>
             </span>
             <div className="leading-tight">
-              <div className="text-[10px] text-gray-300">Hotline</div>
+              <div className="text-[10px] text-gray-300">{t('common.hotline')}</div>
               <div className="font-semibold text-sm">(+84) 0976 447 766</div>
             </div>
           </a>
@@ -109,7 +112,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Main header */}
-      <div className="bg-white/80 backdrop-blur-lg shadow-md">
+      <div className="bg-white/80 backdrop-blur-lg shadow-md relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
@@ -124,19 +127,19 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1.5 lg:space-x-2 xl:space-x-3">
-            <NavItem to="/">Trang chủ</NavItem>
-            <NavItem to="/gioi-thieu">Giới thiệu</NavItem>
-            <NavItem to="/du-an">Dự án</NavItem>
-            <NavItem to="/tu-van">Tư vấn</NavItem>
-            <NavItem to="/blog">Blog</NavItem>
-            <NavItem to="/lien-he">Liên hệ</NavItem>
+            <NavItem to="/">{t('common.home')}</NavItem>
+            <NavItem to="/gioi-thieu">{t('common.about')}</NavItem>
+            <NavItem to="/du-an">{t('common.projects')}</NavItem>
+            <NavItem to="/tu-van">{t('common.consulting')}</NavItem>
+            <NavItem to="/blog">{t('common.blog')}</NavItem>
+            <NavItem to="/lien-he">{t('common.contact')}</NavItem>
           </nav>
           
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-4 pr-24">
             <form onSubmit={handleSearch} className="relative">
               <input
                 type="text"
-                placeholder="Tìm kiếm..."
+                placeholder={t('common.searchPlaceholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-32 lg:w-40 xl:w-52 pl-3 pr-10 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm shadow-sm"
@@ -175,22 +178,29 @@ const Header: React.FC = () => {
             </button>
           </div>
         </div>
+        {/* Language Switcher - Outside container to be at edge */}
+        <div className="hidden lg:flex absolute right-0 top-0 h-20 items-center justify-center pr-3">
+          <LanguageSwitcher />
         </div>
+      </div>
       </div>
       
       {/* Mobile Menu */}
       <div className={`lg:hidden bg-white border-t border-gray-300 relative z-50 ${isMenuOpen ? 'block' : 'hidden'}`}>
         <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
-          <NavItem to="/" onClick={() => setIsMenuOpen(false)}>Trang chủ</NavItem>
-          <NavItem to="/gioi-thieu" onClick={() => setIsMenuOpen(false)}>Giới thiệu</NavItem>
-          <NavItem to="/du-an" onClick={() => setIsMenuOpen(false)}>Dự án</NavItem>
-          <NavItem to="/tu-van" onClick={() => setIsMenuOpen(false)}>Tư vấn</NavItem>
-          <NavItem to="/blog" onClick={() => setIsMenuOpen(false)}>Blog</NavItem>
-          <NavItem to="/lien-he" onClick={() => setIsMenuOpen(false)}>Liên hệ</NavItem>
+          <NavItem to="/" onClick={() => setIsMenuOpen(false)}>{t('common.home')}</NavItem>
+          <NavItem to="/gioi-thieu" onClick={() => setIsMenuOpen(false)}>{t('common.about')}</NavItem>
+          <NavItem to="/du-an" onClick={() => setIsMenuOpen(false)}>{t('common.projects')}</NavItem>
+          <NavItem to="/tu-van" onClick={() => setIsMenuOpen(false)}>{t('common.consulting')}</NavItem>
+          <NavItem to="/blog" onClick={() => setIsMenuOpen(false)}>{t('common.blog')}</NavItem>
+          <NavItem to="/lien-he" onClick={() => setIsMenuOpen(false)}>{t('common.contact')}</NavItem>
+          <div className="flex justify-center">
+            <LanguageSwitcher />
+          </div>
           <form onSubmit={(e) => { handleSearch(e); setIsMenuOpen(false); }} className="w-full mt-2 relative">
             <input
               type="text"
-              placeholder="Tìm kiếm..."
+              placeholder={t('common.searchPlaceholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-3 pr-10 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm shadow-sm"

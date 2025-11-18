@@ -1,8 +1,11 @@
 import React from 'react';
 import ServicesRow from './ServiceRow';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const ServiceSection: React.FC = () => {
+  const { t } = useTranslation();
+  
   return (
     <motion.section 
       className="py-20 md:py-28 bg-gray-50"
@@ -15,18 +18,17 @@ const ServiceSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <div className="max-w-3xl">
             <span className="inline-flex items-center rounded-full bg-red-100 text-red-700 text-sm font-semibold px-4 py-2 mb-4">
-              DỊCH VỤ CỦA CHÚNG TÔI
+              {t('home.services.badge')}
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
-              Cung cấp các giải pháp
-              <br className="hidden md:block" /> thiết kế xây dựng
+              {t('home.services.title')}
+              <br className="hidden md:block" /> {t('home.services.titleLine2')}
             </h2>
           </div>
 
           <div className="md:max-w-2xl text-gray-600 md:text-lg font-medium leading-relaxed">
             <p>
-            Tân Thành Công mang đến giải pháp toàn diện trong thiết kế và thi công nhà xưởng công nghiệp. Với đội ngũ kỹ sư và chuyên gia giàu kinh nghiệm, chúng tôi cung cấp dịch vụ tư vấn, thiết kế, và thi công trọn gói, đảm bảo tiến độ, chất lượng và tính an toàn cho từng công trình. Tân Thành Công luôn hướng đến việc tối ưu chi phí và hiện thực hóa mọi ý tưởng xây dựng của khách hàng bằng những giải pháp kỹ thuật tiên tiến và hiệu quả.
-      
+              {t('home.services.description')}
             </p>
           </div>
         </div>

@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import Value from './components/Quotes';
 import Cards from './components/Cards';
 import Stats from './components/Stats';
+import { useTranslation } from 'react-i18next';
 
 const AboutPage: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="bg-white">
       <div className="relative bg-cover bg-center text-white py-24 md:py-40 overflow-hidden" style={{ backgroundImage: `url('/about.png')` }}>
@@ -31,7 +33,7 @@ const AboutPage: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Giới thiệu về công ty
+            {t('aboutPage.hero.badge')}
           </motion.div>
           <motion.h1 
             className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight animate-fade-in"
@@ -39,7 +41,7 @@ const AboutPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Về Tân Thành Công
+            {t('aboutPage.hero.title')}
           </motion.h1>
           <motion.div 
             className="w-20 h-1 bg-gradient-to-r from-blue-300 to-blue-100 mx-auto mb-6 rounded-full"
@@ -53,7 +55,7 @@ const AboutPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
           >
-            Hành trình kiến tạo những giá trị bền vững
+            {t('aboutPage.hero.subtitle1')}
           </motion.p>
           <motion.p 
             className="mt-6 text-lg md:text-xl text-blue-200 max-w-2xl mx-auto opacity-90 font-medium leading-relaxed"
@@ -61,7 +63,7 @@ const AboutPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            Hơn 10 năm kinh nghiệm trong lĩnh vực tư vấn và quản lý dự án xây dựng
+            {t('aboutPage.hero.subtitle2')}
           </motion.p>
         </motion.div>
       </div>
@@ -89,12 +91,12 @@ const AboutPage: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="md:pl-8"
           >
-            <h2 className="text-4xl md:text-5xl md:whitespace-nowrap font-bold text-gray-800 mb-6 leading-tight">Câu chuyện của chúng tôi</h2>
+            <h2 className="text-4xl md:text-5xl md:whitespace-nowrap font-bold text-gray-800 mb-6 leading-tight">{t('aboutPage.story.title')}</h2>
             <p className="text-gray-700 text-base md:text-lg font-medium leading-relaxed mb-6">
-              Được thành lập từ năm 2015, Tân Thành Công khởi đầu với một đội ngũ kỹ sư tâm huyết và khát vọng mang đến những công trình chất lượng cao cho Việt Nam. Trải qua hơn một thập kỷ phát triển, chúng tôi đã không ngừng nỗ lực, đổi mới và vươn lên trở thành một trong những công ty tư vấn xây dựng uy tín hàng đầu.
+              {t('aboutPage.story.paragraph1')}
             </p>
             <p className="text-gray-600 text-base md:text-lg font-medium leading-relaxed">
-              Sự thành công của chúng tôi được xây dựng trên nền tảng chuyên môn vững chắc, tinh thần trách nhiệm và sự tin tưởng của Quý khách hàng, đối tác.
+              {t('aboutPage.story.paragraph2')}
             </p>
           </motion.div>
         </motion.div>

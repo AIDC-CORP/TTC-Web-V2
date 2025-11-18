@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 interface AnimatedCounterProps {
   value: number;
@@ -41,6 +42,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
 };
 
 const Stats: React.FC = () => {
+  const { t } = useTranslation();
   const titleVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 }
@@ -61,7 +63,7 @@ const Stats: React.FC = () => {
         variants={titleVariants}
         transition={{ duration: 0.6 }}
       >
-        CHÚNG TÔI CÓ GÌ?
+        {t('aboutPage.stats.title')}
       </motion.h2>
       <motion.div
         className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16"
@@ -84,7 +86,7 @@ const Stats: React.FC = () => {
           <div className="text-5xl font-bold text-blue-600 mb-2">
             <AnimatedCounter value={20} />
           </div>
-          <div className="text-lg font-semibold text-gray-700">KIẾN TRÚC SƯ</div>
+          <div className="text-lg font-semibold text-gray-700">{t('aboutPage.stats.architects')}</div>
         </motion.div>
         <motion.div
           className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
@@ -101,7 +103,7 @@ const Stats: React.FC = () => {
           <div className="text-5xl font-bold text-blue-600 mb-2">
             <AnimatedCounter value={40} />
           </div>
-          <div className="text-lg font-semibold text-gray-700">KỸ SƯ XÂY DỰNG</div>
+          <div className="text-lg font-semibold text-gray-700">{t('aboutPage.stats.engineers')}</div>
         </motion.div>
         <motion.div
           className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
@@ -117,7 +119,7 @@ const Stats: React.FC = () => {
           <div className="text-5xl font-bold text-blue-600 mb-2">
             <AnimatedCounter value={10} />
           </div>
-          <div className="text-lg font-semibold text-gray-700">CHUYÊN GIA TƯ VẤN</div>
+          <div className="text-lg font-semibold text-gray-700">{t('aboutPage.stats.consultants')}</div>
         </motion.div>
         <motion.div
           className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
@@ -133,7 +135,7 @@ const Stats: React.FC = () => {
           <div className="text-5xl font-bold text-blue-600 mb-2">
             <AnimatedCounter value={150} suffix="+" />
           </div>
-          <div className="text-lg font-semibold text-gray-700">DỰ ÁN</div>
+          <div className="text-lg font-semibold text-gray-700">{t('aboutPage.stats.projects')}</div>
         </motion.div>
         <motion.div
           className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
@@ -149,7 +151,7 @@ const Stats: React.FC = () => {
           <div className="text-5xl font-bold text-blue-600 mb-2">
             <AnimatedCounter value={100} suffix="+" />
           </div>
-          <div className="text-lg font-semibold text-gray-700">NHÂN VIÊN</div>
+          <div className="text-lg font-semibold text-gray-700">{t('aboutPage.stats.staff')}</div>
         </motion.div>
         <motion.div
           className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
@@ -165,7 +167,7 @@ const Stats: React.FC = () => {
           <div className="text-5xl font-bold text-blue-600 mb-2">
             <AnimatedCounter value={1000} suffix="+" />
           </div>
-          <div className="text-lg font-semibold text-gray-700">KHÁCH HÀNG</div>
+          <div className="text-lg font-semibold text-gray-700">{t('aboutPage.stats.clients')}</div>
         </motion.div>
       </motion.div>
     </>

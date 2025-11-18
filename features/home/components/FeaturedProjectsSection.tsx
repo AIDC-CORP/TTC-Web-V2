@@ -5,8 +5,10 @@ import ProjectCard from '../../projects/components/ProjectCard';
 import ProjectDetailDialog from '../../projects/components/dialogs/ProjectDetailDialog';
 import { motion } from 'framer-motion';
 import { Project } from '../../../types';
+import { useTranslation } from 'react-i18next';
 
 const FeaturedProjectsSection: React.FC = () => {
+  const { t } = useTranslation();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -19,7 +21,7 @@ const FeaturedProjectsSection: React.FC = () => {
     investor: project.project_manager,
     executionTime: project.year,
     gallery: project.gallery_urls,
-    category: 'Nhà máy sản xuất',
+    category: t('home.projects.category'),
     location_specific: project.location_specific,
     square: project.square,
     project_manager: project.project_manager,
@@ -45,8 +47,8 @@ const FeaturedProjectsSection: React.FC = () => {
         transition={{ duration: 0.8, delay: 0.4 }}
       >
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Dự án Tiêu biểu</h2>
-          <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12 text-base md:text-lg font-medium leading-relaxed">Chúng tôi tự hào đã góp phần vào thành công của nhiều dự án lớn, khẳng định năng lực và uy tín.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">{t('home.projects.title')}</h2>
+          <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12 text-base md:text-lg font-medium leading-relaxed">{t('home.projects.description')}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map(project => (
               <ProjectCard key={project.id} project={project} onClick={handleProjectClick} />
@@ -54,7 +56,7 @@ const FeaturedProjectsSection: React.FC = () => {
           </div>
           <div className="text-center mt-12">
              <Link to="/du-an" className="text-blue-600 font-semibold hover:underline">
-               Xem tất cả dự án &rarr;
+               {t('home.projects.viewAll')}
              </Link>
           </div>
           </div>

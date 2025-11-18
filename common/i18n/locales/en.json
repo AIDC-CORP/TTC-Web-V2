@@ -1,0 +1,246 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "consulting": "Consulting",
+    "blog": "Blog",
+    "contact": "Contact",
+    "search": "Search",
+    "searchPlaceholder": "Search...",
+    "hotline": "Hotline",
+    "workingHours": "Working Hours: 08:00 – 17:30",
+    "viewAll": "View All",
+    "contactUs": "Contact Us",
+    "contactConsultation": "Contact Consultation",
+    "callNow": "Call",
+    "chatZalo": "Chat Zalo",
+    "chatMessenger": "Chat Messenger"
+  },
+  "home": {
+    "hero": {
+      "badge": "PRE-ENGINEERED STEEL BUILDINGS",
+      "title": "TAN THANH CONG JSC",
+      "description": "Professional consulting, fast construction, international standard technology is always Tan Thanh Cong's top priority."
+    },
+    "intro": {
+      "badge": "Tan Thanh Cong",
+      "yearsExperience": "YEARS OF EXPERIENCE",
+      "title": "Partner for international standard industrial factory design and construction",
+      "description": "Tan Thanh Cong JSC provides comprehensive solutions for manufacturing enterprises and investors. We combine deep expertise, multilingual teams and modern management processes to ensure projects operate sustainably, safely and efficiently.",
+      "feature1": {
+        "title": "Design & Construction General Contractor",
+        "description": "Connecting the entire value chain from idea consulting, technical design to international standard site implementation."
+      },
+      "feature2": {
+        "title": "Partnering with FDI Enterprises",
+        "description": "Understanding the requirements of foreign investors, optimizing costs and schedules for industrial projects in Vietnam."
+      },
+      "feature3": {
+        "title": "Green & Smart Solutions",
+        "description": "Prioritizing pre-engineered steel building technology, energy saving and flexible expansion for future factories."
+      }
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "description": "We are proud to have contributed to the success of many major projects, demonstrating our capabilities and reputation.",
+      "viewAll": "View all projects →",
+      "category": "Manufacturing Plant"
+    },
+    "services": {
+      "badge": "OUR SERVICES",
+      "title": "Providing",
+      "titleLine2": "construction design solutions",
+      "description": "Tan Thanh Cong provides comprehensive solutions in the design and construction of industrial factories. With a team of experienced engineers and experts, we provide consulting, design, and full-package construction services, ensuring progress, quality, and safety for each project. Tan Thanh Cong always aims to optimize costs and realize all construction ideas of customers with advanced and effective technical solutions.",
+      "category": "Construction Design",
+      "items": {
+        "tu-van-xuc-tien-dau-tu": {
+          "name": "Investment promotion consulting",
+          "summary": "Team of expert consultants with deep understanding of the investment market."
+        },
+        "tu-van-thiet-ke-du-an": {
+          "name": "Project design consulting",
+          "summary": "Team of highly specialized engineers with many years of experience."
+        },
+        "thi-cong-du-an-quy-trinh": {
+          "name": "Project construction and process",
+          "summary": "Quality - Technique - Aesthetics for the project."
+        },
+        "bao-hanh-24-24": {
+          "name": "24/24 warranty service",
+          "summary": "Renovation and repair of works to ensure high professionalism."
+        }
+      }
+    },
+    "blogs": {
+      "title": "Latest Articles",
+      "description": "Update the latest news, consulting and knowledge about construction and industrial design.",
+      "viewAll": "View all articles →"
+    },
+    "partners": {
+      "badge": "OUR PARTNERS",
+      "title": "Strategic Partners",
+      "description": "We are proud to partner with the leading brands in the industry"
+    },
+    "criteria": {
+      "badge": "Tan Thanh Cong's Working Process",
+      "title": "Safety and Sustainability Criteria",
+      "description": "Tan Thanh Cong provides a full range of design and construction services for businesses. We bring comprehensive solutions from analysis, strategic consulting to practical implementation, opening up development opportunities for every idea.",
+      "item1": "Ensure labor safety",
+      "item2": "Environmentally friendly materials",
+      "item3": "Suitable for many spaces and users",
+      "item4": "Fast and effective completion"
+    },
+    "callout": {
+      "title": "Need factory construction consulting?",
+      "description": "The fastest way, please contact our consultants directly through the following channels.",
+      "call": "Call 0976 447 766"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "badge": "About the company",
+      "title": "About Tan Thanh Cong",
+      "subtitle1": "A journey of creating sustainable values",
+      "subtitle2": "Over 10 years of experience in construction project consulting and management"
+    },
+    "story": {
+      "title": "Our Story",
+      "paragraph1": "Established in 2015, Tan Thanh Cong started with a team of dedicated engineers and a desire to bring high-quality works to Vietnam. Through more than a decade of development, we have constantly strived, innovated, and risen to become one of the leading reputable construction consulting companies.",
+      "paragraph2": "Our success is built on a solid foundation of expertise, a sense of responsibility, and the trust of our customers and partners."
+    },
+    "mission": {
+      "title": "Mission",
+      "description": "Providing superior, safe, and effective technical solutions, contributing to the sustainable development of the construction industry and society."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "To become the leading trusted partner in the field of construction project consulting and management in Vietnam and to reach the regional level."
+    },
+    "coreValues": {
+      "title": "Core Values",
+      "description": "Prestige - Professionalism - Creativity - Dedication. These are the guiding principles for all our activities."
+    },
+    "stats": {
+      "title": "WHAT WE HAVE?",
+      "architects": "ARCHITECTS",
+      "engineers": "CONSTRUCTION ENGINEERS",
+      "consultants": "CONSULTANTS",
+      "projects": "PROJECTS",
+      "staff": "STAFF",
+      "clients": "CLIENTS"
+    }
+  },
+  "about": {
+    "technology": {
+      "label": "TECHNOLOGY",
+      "title": "TECHNOLOGY",
+      "description": "Applying advanced technology using pre-engineered steel in the construction of factories for businesses."
+    },
+    "vision": {
+      "label": "VISION",
+      "title": "VISION",
+      "description": "A team of engineers with many years of experience in consulting & design will help you realize international standard factories."
+    },
+    "equipment": {
+      "label": "EQUIPMENT",
+      "title": "EQUIPMENT",
+      "description": "Modern machinery and technology equipment operated by a team of workers with grade 7/7 skills"
+    },
+    "direction": {
+      "label": "ORIENTATION",
+      "title": "ORIENTATION",
+      "description": "Customer satisfaction is the biggest goal and motivation for Tan Thanh Cong to always strive for."
+    }
+  },
+  "projectsPage": {
+    "title": "Our Projects",
+    "subtitle": "Capabilities and experience proven through real projects",
+    "filters": {
+      "region": {
+        "title": "Filter by Region",
+        "all": "All",
+        "north": "Northern",
+        "central": "Central",
+        "south": "Southern"
+      },
+      "scale": {
+        "title": "Filter by Scale",
+        "min": "Minimum Scale",
+        "max": "Maximum Scale",
+        "selectedRange": "Selected Scale Range",
+        "apply": "Apply",
+        "reset": "Reset",
+        "unit": "m²"
+      }
+    },
+    "noResults": {
+      "title": "No Projects Found",
+      "description": "Currently, there are no projects matching your filters.",
+      "viewAll": "View All Projects"
+    },
+    "recentlyViewed": "Recently Viewed",
+    "project": {
+      "summary": "Project at {location}",
+      "defaultDescription": "This project was implemented on a large scale and on schedule. We are proud of the results achieved during construction.",
+      "category": "Construction",
+      "imageAlt": "Project image {name} {index}",
+      "mainImageAlt": "Main project image {name}"
+    },
+    "detail": {
+      "notFound": {
+        "title": "Project Not Found",
+        "description": "The project you are looking for does not exist or has been deleted.",
+        "backToProjects": "Back to Projects List"
+      },
+      "backToProjects": "Back to Projects List",
+      "projectInfo": "Project Information",
+      "projectManager": "Project Manager",
+      "executionYear": "Execution Year",
+      "location": "Location",
+      "scale": "Scale",
+      "gallery": "Image Gallery",
+      "viewAllProjects": "View All Projects",
+      "close": "Close"
+    }
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "subtitle": "We are always ready to listen and provide solutions for you.",
+    "sendMessage": "Send Message",
+    "ourLocation": "Our Location",
+    "form": {
+      "title": "Send Consultation Request",
+      "name": "Full Name",
+      "nameRequired": "Please enter your name",
+      "phone": "Phone Number",
+      "phoneOrEmailRequired": "Please enter phone number or email",
+      "phoneInvalid": "Invalid phone number",
+      "email": "Email",
+      "emailInvalid": "Invalid email",
+      "message": "Message Content",
+      "messageRequired": "Please enter message content",
+      "submit": "Send",
+      "success": {
+        "title": "Contact sent successfully!",
+        "message": "We will respond to you as soon as possible."
+      }
+    },
+    "map": {
+      "title": "Direct Contact Information",
+      "address": "Address",
+      "addressValue": "5th Floor, No. 19N7B, Trung Hoa Nhan Chinh Urban Area, Thanh Xuan District, Hanoi",
+      "hotline": "Hotline",
+      "email": "Email",
+      "openMap": "Open Large Map"
+    }
+  },
+  "footer": {
+    "companyName": "TAN THANH CONG CONSTRUCTION TECHNOLOGY JOINT STOCK COMPANY",
+    "companyDescription": "Specializing in providing leading consulting, design and construction project management solutions in Vietnam.",
+    "quickLinks": "Quick Links",
+    "aboutUs": "About Us",
+    "contactInfo": "Contact Information",
+    "copyright": "© {year} Tan Thanh Cong JSC. All rights reserved."
+  }
+}

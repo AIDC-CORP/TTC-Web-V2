@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Cards: React.FC = () => {
+  const { t } = useTranslation();
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 }
@@ -31,9 +33,9 @@ const Cards: React.FC = () => {
             </div>
           </div>
           <div className="pt-6 text-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-blue-700 mb-6 group-hover:text-blue-800 transition-colors duration-300">Sứ mệnh</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-blue-700 mb-6 group-hover:text-blue-800 transition-colors duration-300">{t('aboutPage.mission.title')}</h3>
             <p className="text-gray-700 text-base md:text-lg font-medium leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
-              Cung cấp các giải pháp kỹ thuật ưu việt, an toàn và hiệu quả, góp phần vào sự phát triển bền vững của ngành xây dựng và xã hội.
+              {t('aboutPage.mission.description')}
             </p>
           </div>
         </motion.div>
@@ -54,9 +56,9 @@ const Cards: React.FC = () => {
             </div>
           </div>
           <div className="pt-6 text-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-purple-700 mb-6 group-hover:text-purple-800 transition-colors duration-300">Tầm nhìn</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-purple-700 mb-6 group-hover:text-purple-800 transition-colors duration-300">{t('aboutPage.vision.title')}</h3>
             <p className="text-gray-700 text-base md:text-lg font-medium leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
-              Trở thành đối tác tin cậy hàng đầu trong lĩnh vực tư vấn và quản lý dự án xây dựng tại Việt Nam và vươn tầm khu vực.
+              {t('aboutPage.vision.description')}
             </p>
           </div>
         </motion.div>
@@ -76,9 +78,9 @@ const Cards: React.FC = () => {
             </div>
           </div>
           <div className="pt-6 text-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-green-700 mb-6 group-hover:text-green-800 transition-colors duration-300">Giá trị cốt lõi</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-green-700 mb-6 group-hover:text-green-800 transition-colors duration-300">{t('aboutPage.coreValues.title')}</h3>
             <p className="text-gray-700 text-base md:text-lg font-medium leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
-              Uy tín - Chuyên nghiệp - Sáng tạo - Tận tâm. Đây là kim chỉ nam cho mọi hoạt động của chúng tôi.
+              {t('aboutPage.coreValues.description')}
             </p>
           </div>
         </motion.div>

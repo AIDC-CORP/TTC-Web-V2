@@ -5,8 +5,10 @@ import BlogCards from '../../blog/components/BlogCards';
 import ArticleDetailDialog from '../../blog/components/dialogs/ArticleDetailDialog';
 import { motion } from 'framer-motion';
 import { Article } from '../../../types';
+import { useTranslation } from 'react-i18next';
 
 const LatestBlogsSection: React.FC = () => {
+  const { t } = useTranslation();
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -40,13 +42,13 @@ const LatestBlogsSection: React.FC = () => {
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Bài viết mới nhất</h2>
-            <p className="text-center text-gray-600 max-w-2xl mx-auto md:text-lg font-medium leading-relaxed">Cập nhật những tin tức, tư vấn và kiến thức mới nhất về xây dựng và thiết kế công nghiệp.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">{t('home.blogs.title')}</h2>
+            <p className="text-center text-gray-600 max-w-2xl mx-auto md:text-lg font-medium leading-relaxed">{t('home.blogs.description')}</p>
           </div>
           <BlogCards articles={latestArticles} onArticleClick={handleArticleClick} />
           <div className="text-center mt-12">
             <Link to="/blog" className="text-blue-600 font-semibold hover:underline">
-              Xem tất cả bài viết &rarr;
+              {t('home.blogs.viewAll')}
             </Link>
           </div>
         </div>

@@ -1,31 +1,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Value: React.FC = () => {
+  const { t } = useTranslation();
+  
   const values = [
     {
       id: 1,
-      label: 'CÔNG NGHỆ',
-      title: 'CÔNG NGHỆ',
-      description: 'Áp dụng công nghệ tiên tiến sử dụng nhà thép tiền chế trong việc xây dựng nhà máy cho các doanh nghiệp.',
+      label: t('about.technology.label'),
+      title: t('about.technology.title'),
+      description: t('about.technology.description'),
     },
     {
       id: 2,
-      label: 'TẦM NHÌN',
-      title: 'TẦM NHÌN',
-      description: 'Đội ngũ kỹ sư với nhiều năm kinh nghiệm trong việc tư vấn & thiết kế sẽ giúp bạn hiện thực hóa nhà máy tiêu chuẩn quốc tế.',
+      label: t('about.vision.label'),
+      title: t('about.vision.title'),
+      description: t('about.vision.description'),
     },
     {
       id: 3,
-      label: 'THIẾT BỊ',
-      title: 'THIẾT BỊ',
-      description: 'Trang thiết bị máy móc và công nghệ hiện đại được vận hành bởi đội ngũ công nhân với tay nghề bậc 7/7',
+      label: t('about.equipment.label'),
+      title: t('about.equipment.title'),
+      description: t('about.equipment.description'),
     },
     {
       id: 4,
-      label: 'ĐỊNH HƯỚNG',
-      title: 'ĐỊNH HƯỚNG',
-      description: 'Sự hài lòng của Quý khách hàng chính là mục tiêu và động lực lớn nhất để Tân Thành Công luôn luôn hướng đến.',
+      label: t('about.direction.label'),
+      title: t('about.direction.title'),
+      description: t('about.direction.description'),
     },
   ];
 
