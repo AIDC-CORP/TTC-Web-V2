@@ -1,10 +1,18 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import projectsData from './data/projects.json';
 import ProjectCard from './components/ProjectCard';
 import ProjectDetailDialog from './components/dialogs/ProjectDetailDialog';
 import { Project } from '../../types';
+
+type RegionFilterKey = 'all' | 'north' | 'central' | 'south';
+
+const REGION_KEY_MAP: Record<string, RegionFilterKey> = {
+  'Miền Bắc': 'north',
+  'Miền Trung': 'central',
+  'Miền Nam': 'south'
+};
 
 interface ProjectJSON {
   name: string;
@@ -25,7 +33,7 @@ const ProjectsPage: React.FC = () => {
 
   const transformedProjects: Project[] = useMemo(() =>
     (projectsData as ProjectJSON[]).map((project: ProjectJSON, index: number) => {
-      const regionKey = project.region === 'Miền Bắc' ? 'north' : project.region === 'Miền Trung' ? 'central' : 'south';
+      const regionKey = REGION_KEY_MAP[project.region] ?? 'all';
       return {
         id: `project-${index}`,
         name: i18n.language === 'vi' ? project.name_vi : project.name,
@@ -37,7 +45,7 @@ const ProjectsPage: React.FC = () => {
         gallery: project.gallery_urls.length > 0 ? project.gallery_urls : [],
         category: t('projects.category'),
         location_specific: project.location_specific,
-        region: project.region_vi,
+        region: project.region,
         regionKey: regionKey,
         square: project.square,
         project_manager: project.project_manager,
@@ -45,19 +53,19 @@ const ProjectsPage: React.FC = () => {
       }
     }), [t, i18n.language]);
 
-  const [regionFilter, setRegionFilter] = useState('all');
+  const [regionFilter, setRegionFilter] = useState<RegionFilterKey>('all');
   const [tempPriceRange, setTempPriceRange] = useState({ min: 0, max: 200000 });
   const [appliedPriceRange, setAppliedPriceRange] = useState({ min: 0, max: 200000 });
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [recentlyViewed, setRecentlyViewed] = useState<Project[]>([]);
 
-  const regions = [
-    { key: 'all', label: t('projects.filters.regions.all') },
-    { key: 'north', label: t('projects.filters.regions.north') },
-    { key: 'central', label: t('projects.filters.regions.central') },
-    { key: 'south', label: t('projects.filters.regions.south') }
-  ];
+  const regionOptions = useMemo(() => ([
+    { key: 'all' as RegionFilterKey, label: t('projects.filters.regions.all') },
+    { key: 'north' as RegionFilterKey, label: t('projects.filters.regions.north') },
+    { key: 'central' as RegionFilterKey, label: t('projects.filters.regions.central') },
+    { key: 'south' as RegionFilterKey, label: t('projects.filters.regions.south') }
+  ]), [t]);
 
   const filteredProjects = useMemo(() => {
     return transformedProjects.filter(project => {
@@ -66,30 +74,30 @@ const ProjectsPage: React.FC = () => {
       const squareMatch = squareValue >= appliedPriceRange.min && squareValue <= appliedPriceRange.max;
       return regionMatch && squareMatch;
     });
-  }, [regionFilter, appliedPriceRange, transformedProjects, t]);
+  }, [regionFilter, appliedPriceRange, transformedProjects]);
 
-  const applyScaleFilter = () => {
+  const applyScaleFilter = useCallback(() => {
     setAppliedPriceRange({ ...tempPriceRange });
-  };
+  }, [tempPriceRange]);
 
-  const resetFilters = () => {
+  const resetFilters = useCallback(() => {
     setTempPriceRange({ min: 0, max: 200000 });
     setAppliedPriceRange({ min: 0, max: 200000 });
-  };
+  }, []);
 
-  const openProjectDialog = (project: Project) => {
+  const openProjectDialog = useCallback((project: Project) => {
     setSelectedProject(project);
     setIsDialogOpen(true);
     setRecentlyViewed(prev => {
       const filtered = prev.filter(p => p.id !== project.id);
       return [project, ...filtered].slice(0, 5);
     });
-  };
+  }, []);
 
-  const closeProjectDialog = () => {
+  const closeProjectDialog = useCallback(() => {
     setIsDialogOpen(false);
     setSelectedProject(null);
-  };
+  }, []);
 
   return (
     <div>
@@ -149,7 +157,7 @@ const ProjectsPage: React.FC = () => {
                   visible: {}
                 }}
               >
-                {regions.map((region) => (
+                {regionOptions.map((region) => (
                   <motion.button
                     key={region.key}
                     onClick={() => setRegionFilter(region.key)}
