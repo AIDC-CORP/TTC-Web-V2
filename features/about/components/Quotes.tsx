@@ -1,33 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Value: React.FC = () => {
-  const values = [
-    {
-      id: 1,
-      label: 'CÔNG NGHỆ',
-      title: 'CÔNG NGHỆ',
-      description: 'Áp dụng công nghệ tiên tiến sử dụng nhà thép tiền chế trong việc xây dựng nhà máy cho các doanh nghiệp.',
-    },
-    {
-      id: 2,
-      label: 'TẦM NHÌN',
-      title: 'TẦM NHÌN',
-      description: 'Đội ngũ kỹ sư với nhiều năm kinh nghiệm trong việc tư vấn & thiết kế sẽ giúp bạn hiện thực hóa nhà máy tiêu chuẩn quốc tế.',
-    },
-    {
-      id: 3,
-      label: 'THIẾT BỊ',
-      title: 'THIẾT BỊ',
-      description: 'Trang thiết bị máy móc và công nghệ hiện đại được vận hành bởi đội ngũ công nhân với tay nghề bậc 7/7',
-    },
-    {
-      id: 4,
-      label: 'ĐỊNH HƯỚNG',
-      title: 'ĐỊNH HƯỚNG',
-      description: 'Sự hài lòng của Quý khách hàng chính là mục tiêu và động lực lớn nhất để Tân Thành Công luôn luôn hướng đến.',
-    },
-  ];
+  const { t } = useTranslation();
+  const values: { label: string; title: string; description: string }[] = t('about.quotes', { returnObjects: true });
 
   const quoteVariants = {
     hidden: { opacity: 0, y: 50, scale: 0.9 },
@@ -42,9 +19,9 @@ const Value: React.FC = () => {
       viewport={{ once: true }}
       transition={{ staggerChildren: 0.15, delayChildren: 0.2 }}
     >
-      {values.map((value) => (
+      {values.map((value, index) => (
         <motion.div
-          key={value.id}
+          key={index}
           className="relative bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl p-6 md:p-8 shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300"
           variants={quoteVariants}
           transition={{ duration: 0.6 }}

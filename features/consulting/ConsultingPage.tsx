@@ -1,29 +1,40 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import consultingData from './data/consulting.json';
 import ConsultingDetailDialog from './components/dialogs/ConsultingDetailDialog';
 import ConsultingCards from './components/ConsultingCards';
 import { Article } from '../../types';
 
 const ConsultingPage: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
+  const currentLang = i18n.language.startsWith('vi') ? 'vi' : 'en';
+
   // Transform consulting data to match Article interface
-  const consultingArticles: Article[] = consultingData.map((item: any, index: number) => ({
-    id: item.url || `consulting-${index}`,
-    title: item.title,
-    image: item.thumbnail,
-    excerpt: item.content.length > 150 ? item.content.substring(0, 150) + '...' : item.content,
-    content: item.content,
-    publishDate: item.date,
-    category: 'Tư vấn' as const
-  }));
+  const consultingArticles: Article[] = (consultingData as Article[]).map((item: Article) => {
+    const localizedData = item[currentLang] || item.vi; // Fallback to Vietnamese
+    const content = localizedData.content || '';
+    return {
+      ...item,
+      title: localizedData.title,
+      image: item.thumbnail, // Match the property used in the Card component
+      excerpt: content.length > 150 ? content.substring(0, 150) + '...' : content,
+      content: content,
+      publishDate: item.date || '',
+      category: t('blog.category.consulting') as const
+    };
+  });
 
   const handleArticleClick = (article: Article) => {
-    setSelectedArticle(article);
-    setIsDialogOpen(true);
+    // Find the original full article from consultingData to pass to the dialog
+    const fullArticle = consultingData.find(a => a.id === article.id) as Article | undefined;
+    if (fullArticle) {
+      setSelectedArticle(fullArticle);
+      setIsDialogOpen(true);
+    }
   };
 
   const handleCloseDialog = () => {
@@ -46,7 +57,7 @@ const ConsultingPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Dịch vụ Tư vấn
+            {t('consulting.page.title')}
           </motion.h1>
           <motion.p 
             className="mt-4 text-lg text-gray-800 max-w-3xl mx-auto md:text-lg font-medium leading-relaxed"
@@ -54,7 +65,7 @@ const ConsultingPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Cung cấp giải pháp chuyên môn, đồng hành cùng chủ đầu tư từ ý tưởng đến khi hoàn thiện công trình.
+            {t('consulting.page.subtitle')}
           </motion.p>
         </div>
       </motion.div>

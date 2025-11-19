@@ -1,33 +1,35 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-gray-800 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2">
-            <h3 className="text-xl font-bold text-blue-400 mb-4">CÔNG TY CỔ PHẦN CÔNG NGHỆ XÂY DỰNG TÂN THÀNH CÔNG</h3>
+            <h3 className="text-xl font-bold text-blue-400 mb-4">{t('footer.companyName')}</h3>
             <p className="text-gray-300">
-              Chuyên cung cấp các giải pháp tư vấn, thiết kế và quản lý dự án xây dựng hàng đầu Việt Nam.
+              {t('footer.companyDescription')}
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-lg mb-4">Liên kết nhanh</h4>
+            <h4 className="font-semibold text-lg mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
-              <li><Link to="/gioi-thieu" className="hover:text-blue-400 transition-colors">Về chúng tôi</Link></li>
-              <li><Link to="/du-an" className="hover:text-blue-400 transition-colors">Dự án</Link></li>
-              <li><Link to="/blog" className="hover:text-blue-400 transition-colors">Blog</Link></li>
-              <li><Link to="/lien-he" className="hover:text-blue-400 transition-colors">Liên hệ</Link></li>
+              <li><Link to="/gioi-thieu" className="hover:text-blue-400 transition-colors">{t('footer.aboutUs')}</Link></li>
+              <li><Link to="/du-an" className="hover:text-blue-400 transition-colors">{t('nav.projects')}</Link></li>
+              <li><Link to="/blog" className="hover:text-blue-400 transition-colors">{t('nav.blog')}</Link></li>
+              <li><Link to="/lien-he" className="hover:text-blue-400 transition-colors">{t('nav.contact')}</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-lg mb-4">Thông tin liên hệ</h4>
+            <h4 className="font-semibold text-lg mb-4">{t('footer.contactInfo')}</h4>
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-start">
                 <span className="mt-1 mr-2">&#x1f4cd;</span>
-                <span> Số 19N7B, KĐT Trung Hòa Nhân Chính, Quận Thanh Xuân, TP Hà Nội</span>
+                <span>{t('header.address')}</span>
               </li>
               <li className="flex items-center">
                 <span className="mr-2">&#x260e;</span>
@@ -42,7 +44,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="bg-gray-900 py-4 text-center text-gray-400 text-sm">
-        <p>&copy; {new Date().getFullYear()} Tân Thành Công JSC. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} {t('footer.copyright')}</p>
       </div>
     </footer>
   );

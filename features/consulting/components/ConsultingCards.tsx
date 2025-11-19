@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Article } from '../../../types';
 
 interface ConsultingCardsProps {
@@ -8,6 +9,8 @@ interface ConsultingCardsProps {
 }
 
 const ConsultingCards: React.FC<ConsultingCardsProps> = ({ articles, onArticleClick }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="container mx-auto px-4 py-16">
       <motion.div 
@@ -33,7 +36,7 @@ const ConsultingCards: React.FC<ConsultingCardsProps> = ({ articles, onArticleCl
             >
               <div className="relative">
                 <motion.img 
-                  src={article.image} 
+                  src={article.thumbnail} 
                   alt={article.title} 
                   className="w-full h-56 object-cover" 
                   whileHover={{ scale: 1.05 }}
@@ -49,7 +52,7 @@ const ConsultingCards: React.FC<ConsultingCardsProps> = ({ articles, onArticleCl
                   animate={{ x: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  {article.category}
+                  {article.categories.includes('Tư vấn') ? t('blog.category.consulting') : t('blog.category.blog')}
                 </motion.div>
               </div>
               <motion.div 
@@ -64,10 +67,10 @@ const ConsultingCards: React.FC<ConsultingCardsProps> = ({ articles, onArticleCl
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                  {article.publishDate}
+                  {article.date}
                 </motion.p>
                 <motion.h3 
-                  className="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors"
+                  className="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2"
                   whileHover={{ scale: 1.02 }}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -94,7 +97,7 @@ const ConsultingCards: React.FC<ConsultingCardsProps> = ({ articles, onArticleCl
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Đọc thêm &rarr;
+                    {t('blog.readMore')} &rarr;
                   </motion.span>
                 </motion.div>
               </motion.div>

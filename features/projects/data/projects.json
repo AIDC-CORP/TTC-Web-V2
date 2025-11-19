@@ -1,6 +1,7 @@
 [
   {
-    "name": "CÔNG TY CP SẢN XUẤT A-ONE TIMBER VIỆT NAM",
+    "name": "A-ONE TIMBER VIET NAM PRODUCTION JSC",
+    "name_vi": "CÔNG TY CP SẢN XUẤT A-ONE TIMBER VIỆT NAM",
     "url": "https://tanthanha.com/du-an/cong-ty-cp-san-xuat-a-one-timber-viet-nam",
     "thumbnail_url": "/project-assets/aone.jpg",
     "year": "2018",
@@ -11,7 +12,8 @@
     "gallery_urls": []
   },
   {
-    "name": "DỰ ÁN ĐẦU TƯ XÂY DỰNG KHU SẢN XUẤT SÔNG HỒNG 7",
+    "name": "SONG HONG 7 PRODUCTION AREA CONSTRUCTION INVESTMENT PROJECT",
+    "name_vi": "DỰ ÁN ĐẦU TƯ XÂY DỰNG KHU SẢN XUẤT SÔNG HỒNG 7",
     "url": "https://tanthanha.com/du-an/du-an-dau-tu-xay-dung-khu-san-xuat-song-hong-7",
     "thumbnail_url": "/project-assets/songhong7.jpg",
     "year": "2016",
@@ -22,7 +24,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY DAEYUN ST VINA",
+    "name": "DAEYUN ST VINA FACTORY",
+    "name_vi": "NHÀ MÁY DAEYUN ST VINA",
     "url": "https://tanthanha.com/du-an/nha-may-daeyun-st-vina",
     "thumbnail_url": "/project-assets/daeyun.jpg",
     "year": "2016",
@@ -33,7 +36,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY FOXCON",
+    "name": "FOXCONN FACTORY",
+    "name_vi": "NHÀ MÁY FOXCON",
     "url": "https://tanthanha.com/du-an/nha-may-foxcon",
     "thumbnail_url": "/project-assets/foxcon.png",
     "year": "2017",
@@ -44,7 +48,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY GẠCH HỒNG TRANG",
+    "name": "HONG TRANG BRICK FACTORY",
+    "name_vi": "NHÀ MÁY GẠCH HỒNG TRANG",
     "url": "https://tanthanha.com/du-an/nha-may-gach-hong-trang",
     "thumbnail_url": "/project-assets/hongtrang.jpg",
     "year": "2019",
@@ -55,7 +60,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY JAPFA COM FEED VIỆT NAM",
+    "name": "JAPFA COM FEED VIETNAM FACTORY",
+    "name_vi": "NHÀ MÁY JAPFA COM FEED VIỆT NAM",
     "url": "https://tanthanha.com/du-an/nha-may-japfa-com-feed-viet-nam",
     "thumbnail_url": "/project-assets/japfa.jpg",
     "year": "2018",
@@ -66,7 +72,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY JPC VIỆT NAM FACTORY",
+    "name": "JPC VIETNAM FACTORY",
+    "name_vi": "NHÀ MÁY JPC VIỆT NAM FACTORY",
     "url": "https://tanthanha.com/du-an/nha-may-jpc-viet-nam-factory",
     "thumbnail_url": "/project-assets/jpc.jpg",
     "year": "2018",
@@ -77,7 +84,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY M.A.P",
+    "name": "M.A.P FACTORY",
+    "name_vi": "NHÀ MÁY M.A.P",
     "url": "https://tanthanha.com/du-an/nha-may-m-a-p",
     "thumbnail_url": "/project-assets/map.jpg",
     "year": "2019",
@@ -88,7 +96,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY SẢN XUẤT ĐỒ GỖ NỘI NHẤT FAMI",
+    "name": "FAMI FURNITURE FACTORY",
+    "name_vi": "NHÀ MÁY SẢN XUẤT ĐỒ GỖ NỘI NHẤT FAMI",
     "url": "https://tanthanha.com/du-an/nha-may-san-xuat-do-go-noi-nhat-fami",
     "thumbnail_url": "/project-assets/fami.jpg",
     "year": "2016",
@@ -99,7 +108,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY SẢN XUẤT KHUÔN MẪU LINH KIỆN NHỰA VÀ KIM LOẠI",
+    "name": "PLASTIC AND METAL COMPONENTS MOLD FACTORY",
+    "name_vi": "NHÀ MÁY SẢN XUẤT KHUÔN MẪU LINH KIỆN NHỰA VÀ KIM LOẠI",
     "url": "https://tanthanha.com/du-an/nha-may-san-xuat-khuon-mau-linh-kien-nhua-va-kim-loai",
     "thumbnail_url": "/project-assets/nhuakimloai.jpg",
     "year": "2018",
@@ -110,7 +120,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY SẢN XUẤT SHINJO VIETNAM PROJECT",
+    "name": "SHINJO VIETNAM PROJECT FACTORY",
+    "name_vi": "NHÀ MÁY SẢN XUẤT SHINJO VIETNAM PROJECT",
     "url": "https://tanthanha.com/du-an/nha-may-san-xuat-shinjo-vietnam-project",
     "thumbnail_url": "/project-assets/shinjo.jpg",
     "year": "2019",
@@ -121,7 +132,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY SẢN XUẤT SƠN HÀ",
+    "name": "SON HA PRODUCTION FACTORY",
+    "name_vi": "NHÀ MÁY SẢN XUẤT SƠN HÀ",
     "url": "https://tanthanha.com/du-an/nha-may-san-xuat-son-ha",
     "thumbnail_url": "/project-assets/sonha.jpg",
     "year": "2019",
@@ -132,7 +144,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY SẢN XUẤT THỨC ĂN CHĂN NUÔI NEWHOPE",
+    "name": "NEWHope ANIMAL FEED FACTORY",
+    "name_vi": "NHÀ MÁY SẢN XUẤT THỨC ĂN CHĂN NUÔI NEWHOPE",
     "url": "https://tanthanha.com/du-an/nha-may-san-xuat-thuc-an-chan-nuoi-newhope",
     "thumbnail_url": "/project-assets/newhope.jpg",
     "year": "2018",
@@ -143,7 +156,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY SẢN XUẤT THỰC PHẨM AN PHÚ HƯNG",
+    "name": "AN PHU HUNG FOOD PRODUCTION FACTORY",
+    "name_vi": "NHÀ MÁY SẢN XUẤT THỰC PHẨM AN PHÚ HƯNG",
     "url": "https://tanthanha.com/du-an/nha-may-san-xuat-thuc-an-chan-nuoi-newhope",
     "thumbnail_url": "/project-assets/phuhung.jpg",
     "year": "2016",
@@ -151,10 +165,11 @@
     "region": "Miền Bắc",
     "square": "35000",
     "project_manager": "Nhữ Văn Mỹ Dũng",
-    "gallery_urls": []  
+    "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY SỮA CỦ CHI",
+    "name": "CU CHI MILK FACTORY",
+    "name_vi": "NHÀ MÁY SỮA CỦ CHI",
     "url": "STRING",
     "thumbnail_url": "/project-assets/milkcuchi.jpg",
     "year": "2016",
@@ -165,7 +180,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY SUMIDENSO WIRE & CABLE",
+    "name": "SUMIDENSO WIRE & CABLE FACTORY",
+    "name_vi": "NHÀ MÁY SUMIDENSO WIRE & CABLE",
     "url": "https://tanthanha.com/du-an/nha-may-thuc-an-chan-nuoi-c-p-viet-nam",
     "thumbnail_url": "/project-assets/sumidenso.jpg",
     "year": "2017",
@@ -176,7 +192,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY TOWADA ELECTRONICS",
+    "name": "TOWADA ELECTRONICS FACTORY",
+    "name_vi": "NHÀ MÁY TOWADA ELECTRONICS",
     "url": "https://tanthanha.com/du-an/nha-may-thuc-an-chan-nuoi-c-p-viet-nam",
     "thumbnail_url": "/project-assets/towada.jpg",
     "year": "2016",
@@ -187,7 +204,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY TOYO INK",
+    "name": "TOYO INK FACTORY",
+    "name_vi": "NHÀ MÁY TOYO INK",
     "url": "https://tanthanha.com/du-an/nha-may-thuc-an-chan-nuoi-c-p-viet-nam",
     "thumbnail_url": "/project-assets/toyo.jpg",
     "year": "2018",
@@ -198,7 +216,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY YANG MIN ENTERPRISE VIỆT NAM",
+    "name": "YANG MIN ENTERPRISE VIETNAM FACTORY",
+    "name_vi": "NHÀ MÁY YANG MIN ENTERPRISE VIỆT NAM",
     "url": "https://tanthanha.com/du-an/nha-may-thuc-an-chan-nuoi-c-p-viet-nam",
     "thumbnail_url": "/project-assets/yangmin.jpg",
     "year": "2016",
@@ -209,7 +228,8 @@
     "gallery_urls": []
   },
   {
-    "name": "NHÀ MÁY YUSEN",
+    "name": "YUSEN FACTORY",
+    "name_vi": "NHÀ MÁY YUSEN",
     "url": "https://tanthanha.com/du-an/nha-may-thuc-an-chan-nuoi-c-p-viet-nam",
     "thumbnail_url": "/project-assets/yusen.jpg",
     "year": "2017",
@@ -220,7 +240,8 @@
     "gallery_urls": []
   },
   {
-    "name": "CÔNG TY PHẠM – ASSET HƯNG YÊN",
+    "name": "PHAM-ASSET HUNG YEN COMPANY",
+    "name_vi": "CÔNG TY PHẠM – ASSET HƯNG YÊN",
     "url": "https://tanthanha.com/du-an/nha-may-thuc-an-chan-nuoi-c-p-viet-nam",
     "thumbnail_url": "/project-assets/assetHY.jpg",
     "year": "2018",

@@ -1,29 +1,41 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import blogData from './data/blog.json';
 import BlogCards from './components/BlogCards';
 import ArticleDetailDialog from './components/dialogs/ArticleDetailDialog';
 import { Article } from '../../types';
 
 const BlogPage: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
+  const currentLang = i18n.language.startsWith('vi') ? 'vi' : 'en';
+
   // Transform blog data to match Article interface
-  const blogArticles: Article[] = (blogData || []).map((item: any, index: number) => ({
-    id: item.url || `blog-${index}`,
-    title: item.title,
-    image: item.thumbnail,
-    excerpt: item.content?.length > 150 ? item.content.substring(0, 150) + '...' : item.content || '',
-    content: item.content || '',
-    publishDate: item.date || '',
-    category: 'Blog' as const
-  }));
+  const blogArticles: Article[] = (blogData || []).map((item: any) => {
+    const localizedData = item[currentLang] || item.vi; // Fallback to Vietnamese
+    const content = localizedData.content || '';
+    return {
+      ...item,
+      id: item.id,
+      title: localizedData.title,
+      image: item.thumbnail,
+      excerpt: content.length > 150 ? content.substring(0, 150) + '...' : content,
+      content: content,
+      publishDate: item.date || '',
+      category: t('blog.category.blog') as const
+    };
+  });
 
   const handleArticleClick = (article: Article) => {
-    setSelectedArticle(article);
-    setIsDialogOpen(true);
+    // Find the original full article from blogData to pass to the dialog
+    const fullArticle = blogData.find(a => a.id === article.id) as Article | undefined;
+    if (fullArticle) {
+      setSelectedArticle(fullArticle);
+      setIsDialogOpen(true);
+    }
   };
 
   const handleCloseDialog = () => {
@@ -46,7 +58,7 @@ const BlogPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Blog & Tin tức
+            {t('blog.page.title')}
           </motion.h1>
           <motion.p 
             className="mt-4 text-lg text-gray-800 max-w-3xl mx-auto md:text-lg font-medium leading-relaxed"
@@ -54,7 +66,7 @@ const BlogPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Chia sẻ kiến thức, cập nhật tin tức ngành và hoạt động của công ty
+            {t('blog.page.subtitle')}
           </motion.p>
         </div>
       </motion.div>

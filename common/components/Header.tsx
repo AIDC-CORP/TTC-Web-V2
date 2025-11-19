@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const NavItem: React.FC<{ to: string; children: React.ReactNode; onClick?: () => void }> = ({ to, children, onClick }) => {
   return (
@@ -26,6 +27,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [showHeader, setShowHeader] = useState(true);
+  const { t, i18n } = useTranslation();
   const lastScrollYRef = useRef(0);
   const navigate = useNavigate();
 
@@ -71,14 +73,14 @@ const Header: React.FC = () => {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-red-500" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C8.686 2 6 4.686 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.314-2.686-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z"/>
               </svg>
-              Số 19N7B, KĐT Trung Hòa Nhân Chính, Quận Thanh Xuân, TP Hà Nội
+              {t('header.address')}
             </span>
             <span className="flex items-center gap-2">
               {/* time */}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm.75 5a.75.75 0 0 0-1.5 0v5c0 .199.079.39.22.53l3 3a.75.75 0 1 0 1.06-1.06L12.75 11.5V7z"/>
               </svg>
-              Giờ làm việc: 08:00 – 17:30
+              {t('header.workingHours')}
             </span>
             <a href="mailto:info@tanthanhcongjsc.com" className="flex items-center gap-2 hover:text-white transition-colors">
               {/* email */}
@@ -88,17 +90,25 @@ const Header: React.FC = () => {
               info@tanthanhcongjsc.com
             </a>
           </div>
-          <a href="tel:+84976447766" className="flex items-center gap-2 text-white hover:opacity-90 transition-opacity duration-200">
-            <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-red-500 shadow-sm hover:shadow transition-shadow duration-200">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
-                <path d="M1.5 4.5A3 3 0 014.5 1.5h2.172c.621 0 1.184.363 1.418.936l1.137 2.846a1.5 1.5 0 01-.37 1.648l-1.21 1.21a.75.75 0 00-.154.837c.59 1.331 1.64 2.88 3.168 4.407 1.527 1.528 3.076 2.578 4.407 3.168a.75.75 0 00.837-.154l1.21-1.21a1.5 1.5 0 011.648-.37l2.846 1.137c.573.234.936.797.936 1.418V19.5a3 3 0 01-3 3h-1.5C8.596 22.5 1.5 15.404 1.5 6V4.5z" />
-              </svg>
-            </span>
-            <div className="leading-tight">
-              <div className="text-[10px] text-gray-300">Hotline</div>
-              <div className="font-semibold text-sm">(+84) 0976 447 766</div>
+
+          <div className="flex items-center gap-4">
+            <a href="tel:+84976447766" className="flex items-center gap-2 text-white hover:opacity-90 transition-opacity duration-200">
+              <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-red-500 shadow-sm hover:shadow transition-shadow duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+                  <path d="M1.5 4.5A3 3 0 014.5 1.5h2.172c.621 0 1.184.363 1.418.936l1.137 2.846a1.5 1.5 0 01-.37 1.648l-1.21 1.21a.75.75 0 00-.154.837c.59 1.331 1.64 2.88 3.168 4.407 1.527 1.528 3.076 2.578 4.407 3.168a.75.75 0 00.837-.154l1.21-1.21a1.5 1.5 0 011.648-.37l2.846 1.137c.573.234.936.797.936 1.418V19.5a3 3 0 01-3 3h-1.5C8.596 22.5 1.5 15.404 1.5 6V4.5z" />
+                </svg>
+              </span>
+              <div className="leading-tight">
+                <div className="text-[10px] text-gray-300">{t('header.hotline')}</div>
+                <div className="font-semibold text-sm">(+84) 0976 447 766</div>
+              </div>
+            </a>
+            <div className="flex items-center gap-2 text-sm">
+              <button onClick={() => i18n.changeLanguage('vi')} className={`px-2 py-1 rounded-md transition-colors ${i18n.language === 'vi' ? 'bg-blue-600 text-white' : 'hover:bg-blue-800'}`}>VI</button>
+              <span className="text-gray-500">|</span>
+              <button onClick={() => i18n.changeLanguage('en')} className={`px-2 py-1 rounded-md transition-colors ${i18n.language === 'en' ? 'bg-blue-600 text-white' : 'hover:bg-blue-800'}`}>EN</button>
             </div>
-          </a>
+          </div>
         </div>
       </div>
 
@@ -118,19 +128,19 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-2">
-            <NavItem to="/">Trang chủ</NavItem>
-            <NavItem to="/gioi-thieu">Giới thiệu</NavItem>
-            <NavItem to="/du-an">Dự án</NavItem>
-            <NavItem to="/tu-van">Tư vấn</NavItem>
-            <NavItem to="/blog">Blog</NavItem>
-            <NavItem to="/lien-he">Liên hệ</NavItem>
+            <NavItem to="/">{t('nav.home')}</NavItem>
+            <NavItem to="/gioi-thieu">{t('nav.about')}</NavItem>
+            <NavItem to="/du-an">{t('nav.projects')}</NavItem>
+            <NavItem to="/tu-van">{t('nav.consulting')}</NavItem>
+            <NavItem to="/blog">{t('nav.blog')}</NavItem>
+            <NavItem to="/lien-he">{t('nav.contact')}</NavItem>
           </nav>
           
           <div className="hidden lg:block">
             <form onSubmit={handleSearch} className="relative">
               <input
                 type="text"
-                placeholder="Tìm kiếm..."
+                placeholder={t('header.searchPlaceholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-48 pl-3 pr-10 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm shadow-sm"
@@ -175,16 +185,16 @@ const Header: React.FC = () => {
       {/* Mobile Menu */}
       <div className={`lg:hidden bg-white border-t border-gray-300 relative z-50 ${isMenuOpen ? 'block' : 'hidden'}`}>
         <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
-          <NavItem to="/" onClick={() => setIsMenuOpen(false)}>Trang chủ</NavItem>
-          <NavItem to="/gioi-thieu" onClick={() => setIsMenuOpen(false)}>Giới thiệu</NavItem>
-          <NavItem to="/du-an" onClick={() => setIsMenuOpen(false)}>Dự án</NavItem>
-          <NavItem to="/tu-van" onClick={() => setIsMenuOpen(false)}>Tư vấn</NavItem>
-          <NavItem to="/blog" onClick={() => setIsMenuOpen(false)}>Blog</NavItem>
-          <NavItem to="/lien-he" onClick={() => setIsMenuOpen(false)}>Liên hệ</NavItem>
+          <NavItem to="/" onClick={() => setIsMenuOpen(false)}>{t('nav.home')}</NavItem>
+          <NavItem to="/gioi-thieu" onClick={() => setIsMenuOpen(false)}>{t('nav.about')}</NavItem>
+          <NavItem to="/du-an" onClick={() => setIsMenuOpen(false)}>{t('nav.projects')}</NavItem>
+          <NavItem to="/tu-van" onClick={() => setIsMenuOpen(false)}>{t('nav.consulting')}</NavItem>
+          <NavItem to="/blog" onClick={() => setIsMenuOpen(false)}>{t('nav.blog')}</NavItem>
+          <NavItem to="/lien-he" onClick={() => setIsMenuOpen(false)}>{t('nav.contact')}</NavItem>
           <form onSubmit={(e) => { handleSearch(e); setIsMenuOpen(false); }} className="w-full mt-2 relative">
             <input
               type="text"
-              placeholder="Tìm kiếm..."
+              placeholder={t('header.searchPlaceholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-3 pr-10 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm shadow-sm"

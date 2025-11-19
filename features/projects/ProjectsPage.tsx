@@ -1,6 +1,6 @@
-
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import projectsData from './data/projects.json';
 import ProjectCard from './components/ProjectCard';
 import ProjectDetailDialog from './components/dialogs/ProjectDetailDialog';
@@ -8,56 +8,65 @@ import { Project } from '../../types';
 
 interface ProjectJSON {
   name: string;
+  name_vi: string;
   url: string;
   thumbnail_url: string;
   year: string;
   location_specific: string;
   region: string;
+  region_vi: string;
   square: string;
   project_manager: string;
   gallery_urls: string[];
 }
 
-// Transform JSON data to match Project interface
-const transformedProjects: Project[] = projectsData.map((project: ProjectJSON, index: number) => ({
-  id: `project-${index}`,
-  name: project.name,
-  image: project.thumbnail_url || 'https://picsum.photos/seed/project-default/800/600',
-  summary: `Dự án tại ${project.location_specific}`,
-  description: `Dự án này được thực hiện với quy mô lớn và đúng tiến độ. Chúng tôi tự hào về những kết quả đạt được trong quá trình thi công.`,
-  investor: undefined,
-  executionTime: project.year,
-  gallery: project.gallery_urls.length > 0 ? project.gallery_urls : [],
-  category: 'Công trình',
-  location_specific: project.location_specific,
-  region: project.region,
-  square: project.square,
-  project_manager: project.project_manager,
-  year: project.year
-}));
-
 const ProjectsPage: React.FC = () => {
-  const [regionFilter, setRegionFilter] = useState('Tất cả');
+  const { t, i18n } = useTranslation();
+
+  const transformedProjects: Project[] = useMemo(() =>
+    (projectsData as ProjectJSON[]).map((project: ProjectJSON, index: number) => {
+      const regionKey = project.region === 'Miền Bắc' ? 'north' : project.region === 'Miền Trung' ? 'central' : 'south';
+      return {
+        id: `project-${index}`,
+        name: i18n.language === 'vi' ? project.name_vi : project.name,
+        image: project.thumbnail_url || 'https://picsum.photos/seed/project-default/800/600',
+        summary: t('projects.summary', { location: project.location_specific }),
+        description: t('projects.description'),
+        investor: undefined,
+        executionTime: project.year,
+        gallery: project.gallery_urls.length > 0 ? project.gallery_urls : [],
+        category: t('projects.category'),
+        location_specific: project.location_specific,
+        region: project.region_vi,
+        regionKey: regionKey,
+        square: project.square,
+        project_manager: project.project_manager,
+        year: project.year
+      }
+    }), [t, i18n.language]);
+
+  const [regionFilter, setRegionFilter] = useState('all');
   const [tempPriceRange, setTempPriceRange] = useState({ min: 0, max: 200000 });
   const [appliedPriceRange, setAppliedPriceRange] = useState({ min: 0, max: 200000 });
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [recentlyViewed, setRecentlyViewed] = useState<Project[]>([]);
 
-  const regions = ['Tất cả', 'Miền Bắc', 'Miền Trung', 'Miền Nam'];
+  const regions = [
+    { key: 'all', label: t('projects.filters.regions.all') },
+    { key: 'north', label: t('projects.filters.regions.north') },
+    { key: 'central', label: t('projects.filters.regions.central') },
+    { key: 'south', label: t('projects.filters.regions.south') }
+  ];
 
   const filteredProjects = useMemo(() => {
     return transformedProjects.filter(project => {
-      // Filter by region
-      const regionMatch = regionFilter === 'Tất cả' || project.region === regionFilter;
-      
-      // Filter by square range
+      const regionMatch = regionFilter === 'all' || project.regionKey === regionFilter;
       const squareValue = parseInt(project.square) || 0;
       const squareMatch = squareValue >= appliedPriceRange.min && squareValue <= appliedPriceRange.max;
-      
       return regionMatch && squareMatch;
     });
-  }, [regionFilter, appliedPriceRange]);
+  }, [regionFilter, appliedPriceRange, transformedProjects, t]);
 
   const applyScaleFilter = () => {
     setAppliedPriceRange({ ...tempPriceRange });
@@ -71,8 +80,6 @@ const ProjectsPage: React.FC = () => {
   const openProjectDialog = (project: Project) => {
     setSelectedProject(project);
     setIsDialogOpen(true);
-    
-    // Add to recently viewed (keep only last 5)
     setRecentlyViewed(prev => {
       const filtered = prev.filter(p => p.id !== project.id);
       return [project, ...filtered].slice(0, 5);
@@ -99,7 +106,7 @@ const ProjectsPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Dự án của chúng tôi
+            {t('projects.page.title')}
           </motion.h1>
           <motion.p 
             className="mt-4 text-lg text-gray-600"
@@ -107,7 +114,7 @@ const ProjectsPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Năng lực và kinh nghiệm được chứng thực qua các công trình thực tế
+            {t('projects.page.subtitle')}
           </motion.p>
         </div>
       </motion.div>
@@ -130,7 +137,7 @@ const ProjectsPage: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">Lọc theo vùng miền</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('projects.filters.regionTitle')}</h3>
               <motion.div 
                 className="flex flex-wrap gap-2"
                 initial="hidden"
@@ -142,11 +149,11 @@ const ProjectsPage: React.FC = () => {
                   visible: {}
                 }}
               >
-                {regions.map((region, index) => (
+                {regions.map((region) => (
                   <motion.button
-                    key={region}
-                    onClick={() => setRegionFilter(region)}
-                    className={`px-4 py-2 rounded-full font-semibold text-sm transition-colors duration-300 ${regionFilter === region ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-green-200'}`}
+                    key={region.key}
+                    onClick={() => setRegionFilter(region.key)}
+                    className={`px-4 py-2 rounded-full font-semibold text-sm transition-colors duration-300 ${regionFilter === region.key ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-green-200'}`}
                     variants={{
                       hidden: { opacity: 0, scale: 0.8 },
                       visible: { opacity: 1, scale: 1 }
@@ -155,7 +162,7 @@ const ProjectsPage: React.FC = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    {region}
+                    {region.label}
                   </motion.button>
                 ))}
               </motion.div>
@@ -169,12 +176,12 @@ const ProjectsPage: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <h3 className="text-lg font-semibold text-gray-800 mb-6">Lọc theo quy mô</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-6">{t('projects.filters.scaleTitle')}</h3>
               <div className="space-y-6">
                 {/* Min Range Slider */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-3">
-                    Quy mô tối thiểu: <span className="text-green-600 font-semibold">{tempPriceRange.min.toLocaleString()} m²</span>
+                    {t('projects.filters.minScale')}: <span className="text-green-600 font-semibold">{tempPriceRange.min.toLocaleString()} m²</span>
                   </label>
                   <input
                     type="range"
@@ -189,9 +196,6 @@ const ProjectsPage: React.FC = () => {
                       }
                     }}
                     className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-green-600"
-                    style={{
-                      background: `linear-gradient(to right, #16a34a 0%, #16a34a ${(tempPriceRange.min / 200000) * 100}%, #d1d5db ${(tempPriceRange.min / 200000) * 100}%, #d1d5db 100%)`
-                    }}
                   />
                   <div className="flex justify-between text-xs text-gray-500 mt-1">
                     <span>0 m²</span>
@@ -202,7 +206,7 @@ const ProjectsPage: React.FC = () => {
                 {/* Max Range Slider */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-3">
-                    Quy mô tối đa: <span className="text-green-600 font-semibold">{tempPriceRange.max.toLocaleString()} m²</span>
+                    {t('projects.filters.maxScale')}: <span className="text-green-600 font-semibold">{tempPriceRange.max.toLocaleString()} m²</span>
                   </label>
                   <input
                     type="range"
@@ -217,9 +221,6 @@ const ProjectsPage: React.FC = () => {
                       }
                     }}
                     className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-green-600"
-                    style={{
-                      background: `linear-gradient(to right, #d1d5db 0%, #d1d5db ${(tempPriceRange.max / 200000) * 100}%, #16a34a ${(tempPriceRange.max / 200000) * 100}%, #16a34a 100%)`
-                    }}
                   />
                   <div className="flex justify-between text-xs text-gray-500 mt-1">
                     <span>0 m²</span>
@@ -230,7 +231,7 @@ const ProjectsPage: React.FC = () => {
                 {/* Current Range Display */}
                 <div className="bg-white p-4 rounded-md border border-gray-200">
                   <div className="text-center">
-                    <p className="text-xs text-gray-600 mb-1">Khoảng quy mô đã chọn</p>
+                    <p className="text-xs text-gray-600 mb-1">{t('projects.filters.selectedRange')}</p>
                     <p className="text-lg font-bold text-gray-800">
                       {tempPriceRange.min.toLocaleString()} — {tempPriceRange.max.toLocaleString()} m²
                     </p>
@@ -245,7 +246,7 @@ const ProjectsPage: React.FC = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Áp dụng
+                    {t('projects.filters.apply')}
                   </motion.button>
                   <motion.button
                     onClick={resetFilters}
@@ -253,7 +254,7 @@ const ProjectsPage: React.FC = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Đặt lại
+                    {t('projects.filters.reset')}
                   </motion.button>
                 </div>
               </div>
@@ -276,18 +277,18 @@ const ProjectsPage: React.FC = () => {
                 transition={{ duration: 0.6 }}
               >
                 <div className="text-6xl mb-4">🏗️</div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">Không tìm thấy dự án</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">{t('projects.noResults.title')}</h3>
                 <p className="text-gray-600 mb-6">
-                  Hiện tại chưa có dự án nào phù hợp với bộ lọc của bạn.
+                  {t('projects.noResults.subtitle')}
                 </p>
                 <button
                   onClick={() => {
-                    setRegionFilter('Tất cả');
+                    setRegionFilter('all');
                     resetFilters();
                   }}
                   className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                 >
-                  Xem tất cả dự án
+                  {t('projects.noResults.button')}
                 </button>
               </motion.div>
             ) : (
@@ -303,7 +304,7 @@ const ProjectsPage: React.FC = () => {
                   visible: {}
                 }}
               >
-                {filteredProjects.map((project, index) => (
+                {filteredProjects.map((project) => (
                   <motion.div
                     key={project.id}
                     variants={{
@@ -334,7 +335,7 @@ const ProjectsPage: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                 >
-                  Đã xem gần đây
+                  {t('projects.recentlyViewed')}
                 </motion.h2>
                 <motion.div 
                   className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
@@ -347,7 +348,7 @@ const ProjectsPage: React.FC = () => {
                     visible: {}
                   }}
                 >
-                  {recentlyViewed.map((project, index) => (
+                  {recentlyViewed.map((project) => (
                     <motion.div
                       key={`recent-${project.id}`}
                       variants={{

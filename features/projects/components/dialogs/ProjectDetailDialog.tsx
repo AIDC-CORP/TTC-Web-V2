@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Project } from '../../../../types';
 
 interface ProjectDetailDialogProps {
@@ -10,6 +11,7 @@ interface ProjectDetailDialogProps {
 }
 
 const ProjectDetailDialog: React.FC<ProjectDetailDialogProps> = ({ project, isOpen, onClose }) => {
+  const { t } = useTranslation();
   return (
     <AnimatePresence>
       {isOpen && project && (
@@ -102,7 +104,7 @@ const ProjectDetailDialog: React.FC<ProjectDetailDialogProps> = ({ project, isOp
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.7 }}
                     >
-                      Thông tin dự án
+                      {t('projects.dialog.title')}
                     </motion.h3>
                     <motion.div 
                       className="space-y-4"
@@ -122,7 +124,7 @@ const ProjectDetailDialog: React.FC<ProjectDetailDialogProps> = ({ project, isOp
                           }}
                           transition={{ duration: 0.4 }}
                         >
-                          <h4 className="font-semibold text-gray-700">Quản lý dự án</h4>
+                          <h4 className="font-semibold text-gray-700">{t('projects.dialog.manager')}</h4>
                           <p className="text-gray-600">{project.project_manager}</p>
                         </motion.div>
                       )}
@@ -134,7 +136,7 @@ const ProjectDetailDialog: React.FC<ProjectDetailDialogProps> = ({ project, isOp
                           }}
                           transition={{ duration: 0.4 }}
                         >
-                          <h4 className="font-semibold text-gray-700">Năm thực hiện</h4>
+                          <h4 className="font-semibold text-gray-700">{t('projects.dialog.year')}</h4>
                           <p className="text-gray-600">{project.year}</p>
                         </motion.div>
                       )}
@@ -146,7 +148,7 @@ const ProjectDetailDialog: React.FC<ProjectDetailDialogProps> = ({ project, isOp
                           }}
                           transition={{ duration: 0.4 }}
                         >
-                          <h4 className="font-semibold text-gray-700">Địa điểm</h4>
+                          <h4 className="font-semibold text-gray-700">{t('projects.dialog.location')}</h4>
                           <p className="text-gray-600">{project.location_specific}</p>
                         </motion.div>
                       )}
@@ -158,7 +160,7 @@ const ProjectDetailDialog: React.FC<ProjectDetailDialogProps> = ({ project, isOp
                           }}
                           transition={{ duration: 0.4 }}
                         >
-                          <h4 className="font-semibold text-gray-700">Quy mô</h4>
+                          <h4 className="font-semibold text-gray-700">{t('projects.dialog.scale')}</h4>
                           <p className="text-gray-600">{project.square}</p>
                         </motion.div>
                       )}
@@ -181,7 +183,7 @@ const ProjectDetailDialog: React.FC<ProjectDetailDialogProps> = ({ project, isOp
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 1.0 }}
                   >
-                    Thư viện hình ảnh
+                    {t('projects.dialog.gallery')}
                   </motion.h3>
                   <motion.div 
                     className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
@@ -229,7 +231,7 @@ const ProjectDetailDialog: React.FC<ProjectDetailDialogProps> = ({ project, isOp
                   className="text-blue-600 hover:underline"
                   onClick={onClose}
                 >
-                  Xem tất cả dự án
+                  {t('featuredProjects.seeAll')}
                 </Link>
                 <motion.button
                   onClick={onClose}
@@ -237,7 +239,7 @@ const ProjectDetailDialog: React.FC<ProjectDetailDialogProps> = ({ project, isOp
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Đóng
+                  {t('dialog.close')}
                 </motion.button>
               </motion.div>
             </div>
