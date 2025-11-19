@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import blogData from '../../blog/data/blog.json';
 import BlogCards from '../../blog/components/BlogCards';
@@ -8,22 +8,42 @@ import { useTranslation } from 'react-i18next';
 import { Article } from '../../../types';
 
 const LatestBlogsSection: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const latestArticles = blogData
-    .filter(article => article.title) // Lọc ra các bài viết không có tiêu đề
-    .slice(0, 3)
-    .map(article => ({
-    id: article.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
-    title: article.title,
-    image: article.thumbnail || 'https://picsum.photos/400/300?random=2',
-    excerpt: article.content.length > 150 ? article.content.substring(0, 150) + '...' : article.content,
-    content: article.content,
-    publishDate: article.date,
-    category: article.categories.includes('Tư vấn') ? t('blog.category.consulting') as const : t('blog.category.blog') as const
-  }));
+  const latestArticles = useMemo<Article[]>(() => {
+    const currentLang = i18n.language.startsWith('vi') ? 'vi' : 'en';
+
+    const mappedArticles = (blogData as Article[])
+      .map<Article | null>((article) => {
+        const localized = article[currentLang] || article.vi || article.en;
+        const fallback = article.vi || article.en;
+        const title = localized?.title?.trim() || fallback?.title?.trim();
+
+        if (!title) {
+          return null;
+        }
+
+        const content = localized?.content || fallback?.content || '';
+        const excerpt = content.length > 150 ? `${content.substring(0, 150)}...` : content;
+
+        return {
+          ...article,
+          id: article.id || title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+          title,
+          content,
+          excerpt,
+          publishDate: article.date,
+          category: article.categories.includes('Tư vấn')
+            ? t('blog.category.consulting')
+            : t('blog.category.blog')
+        };
+      })
+      .filter((article): article is Article => Boolean(article));
+
+    return mappedArticles.slice(0, 3);
+  }, [i18n.language, t]);
 
   const handleArticleClick = (article: Article) => {
     setSelectedArticle(article);

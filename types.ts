@@ -31,6 +31,11 @@ export interface Article {
     title: string;
     content: string;
   };
+  title?: string;
+  content?: string;
+  excerpt?: string;
+  publishDate?: string;
+  category?: string;
 }
 
 export interface Service {

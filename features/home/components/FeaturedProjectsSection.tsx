@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import projectsData from '../../projects/data/projects.json';
 import ProjectCard from '../../projects/components/ProjectCard';
@@ -7,31 +7,61 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Project } from '../../../types';
 
+type RegionKey = 'north' | 'central' | 'south' | 'all';
+
+const REGION_KEY_MAP: Record<string, RegionKey> = {
+  'Miền Bắc': 'north',
+  'Miền Trung': 'central',
+  'Miền Nam': 'south'
+};
+
+interface ProjectJSON {
+  name: string;
+  name_vi: string;
+  thumbnail_url: string;
+  location_specific: string;
+  square: string;
+  year: string;
+  project_manager: string;
+  gallery_urls: string[];
+  region: string;
+}
+
 const FeaturedProjectsSection: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const featuredProjects = projectsData.slice(0, 3).map(project => ({
-    id: project.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
-    name: project.name,
-    image: project.thumbnail_url || 'https://picsum.photos/400/300?random=1',
-    summary: `${project.location_specific} - ${project.square}`,
-    description: t('featuredProjects.description', { 
-      location: project.location_specific, 
-      square: project.square, 
-      year: project.year, 
-      manager: project.project_manager 
-    }),
-    investor: project.project_manager,
-    executionTime: project.year,
-    gallery: project.gallery_urls,
-    category: t('featuredProjects.category.factory'),
-    location_specific: project.location_specific,
-    square: project.square,
-    project_manager: project.project_manager,
-    year: project.year
-  }));
+  const featuredProjects = useMemo<Project[]>(() =>
+    (projectsData as ProjectJSON[])
+      .slice(0, 3)
+      .map((project, index) => ({
+        id: `featured-${index}`,
+        name: i18n.language === 'vi' ? project.name_vi : project.name,
+        image: project.thumbnail_url || 'https://picsum.photos/400/300?random=1',
+        summary: t('featuredProjects.summary', {
+          location: project.location_specific,
+          square: project.square,
+          defaultValue: `${project.location_specific} - ${project.square}`
+        }),
+        description: t('featuredProjects.description', { 
+          location: project.location_specific, 
+          square: project.square, 
+          year: project.year, 
+          manager: project.project_manager 
+        }),
+        investor: project.project_manager,
+        executionTime: project.year,
+        gallery: project.gallery_urls?.length ? project.gallery_urls : [],
+        category: t('featuredProjects.category.factory'),
+        location_specific: project.location_specific,
+        region: project.region,
+        regionKey: REGION_KEY_MAP[project.region] ?? 'all',
+        square: project.square,
+        project_manager: project.project_manager,
+        year: project.year
+      }))
+  , [t, i18n.language]);
 
   const handleProjectClick = (project: Project) => {
     setSelectedProject(project);
