@@ -5,6 +5,7 @@ import projectsData from './data/projects.json';
 
 interface ProjectJSON {
   name: string;
+  name_vi: string;
   url: string;
   thumbnail_url: string;
   year: string;
@@ -17,10 +18,12 @@ interface ProjectJSON {
 // Transform JSON data to match Project interface
 const transformedProjects = projectsData.map((project: ProjectJSON, index: number) => ({
   id: `project-${index}`,
-  name: project.name,
+  name: project.name_vi, // Default to Vietnamese name
+  name_en: project.name,
+  name_vi: project.name_vi,
   image: project.thumbnail_url || 'https://picsum.photos/seed/project-default/800/600',
   summary: `Dự án tại ${project.location_specific}`,
-  description: `Dự án: ${project.name}\nĐịa điểm: ${project.location_specific}\nQuy mô: ${project.square}\nNăm thực hiện: ${project.year}\nQuản lý dự án: ${project.project_manager}`,
+  description: `Dự án: ${project.name_vi}\nĐịa điểm: ${project.location_specific}\nQuy mô: ${project.square}\nNăm thực hiện: ${project.year}\nQuản lý dự án: ${project.project_manager}`,
   investor: undefined,
   executionTime: project.year,
   gallery: project.gallery_urls.length > 0 ? project.gallery_urls : [],

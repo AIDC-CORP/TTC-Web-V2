@@ -12,7 +12,10 @@ const LatestBlogsSection: React.FC = () => {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const latestArticles = blogData.slice(0, 3).map(article => ({
+  const latestArticles = blogData
+    .filter(article => article.title) // Lọc ra các bài viết không có tiêu đề
+    .slice(0, 3)
+    .map(article => ({
     id: article.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
     title: article.title,
     image: article.thumbnail || 'https://picsum.photos/400/300?random=2',

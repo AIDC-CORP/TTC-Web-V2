@@ -11,6 +11,7 @@ export interface Project {
   category: string;
   location_specific: string;
   region: string;
+  regionKey?: string;
   square: string;
   project_manager: string;
   year: string;

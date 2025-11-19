@@ -8,38 +8,44 @@ import { Project } from '../../types';
 
 interface ProjectJSON {
   name: string;
+  name_vi: string;
   url: string;
   thumbnail_url: string;
   year: string;
   location_specific: string;
   region: string;
+  region_vi: string;
   square: string;
   project_manager: string;
   gallery_urls: string[];
 }
 
 const ProjectsPage: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
-  const transformedProjects: Project[] = useMemo(() => 
-    (projectsData as ProjectJSON[]).map((project: ProjectJSON, index: number) => ({
-      id: `project-${index}`,
-      name: project.name,
-      image: project.thumbnail_url || 'https://picsum.photos/seed/project-default/800/600',
-      summary: t('projects.summary', { location: project.location_specific }),
-      description: t('projects.description'),
-      investor: undefined,
-      executionTime: project.year,
-      gallery: project.gallery_urls.length > 0 ? project.gallery_urls : [],
-      category: t('projects.category'),
-      location_specific: project.location_specific,
-      region: project.region,
-      square: project.square,
-      project_manager: project.project_manager,
-      year: project.year
-    })), [t]);
+  const transformedProjects: Project[] = useMemo(() =>
+    (projectsData as ProjectJSON[]).map((project: ProjectJSON, index: number) => {
+      const regionKey = project.region === 'Miền Bắc' ? 'north' : project.region === 'Miền Trung' ? 'central' : 'south';
+      return {
+        id: `project-${index}`,
+        name: i18n.language === 'vi' ? project.name_vi : project.name,
+        image: project.thumbnail_url || 'https://picsum.photos/seed/project-default/800/600',
+        summary: t('projects.summary', { location: project.location_specific }),
+        description: t('projects.description'),
+        investor: undefined,
+        executionTime: project.year,
+        gallery: project.gallery_urls.length > 0 ? project.gallery_urls : [],
+        category: t('projects.category'),
+        location_specific: project.location_specific,
+        region: project.region_vi,
+        regionKey: regionKey,
+        square: project.square,
+        project_manager: project.project_manager,
+        year: project.year
+      }
+    }), [t, i18n.language]);
 
-  const [regionFilter, setRegionFilter] = useState(t('projects.filters.regions.all'));
+  const [regionFilter, setRegionFilter] = useState('all');
   const [tempPriceRange, setTempPriceRange] = useState({ min: 0, max: 200000 });
   const [appliedPriceRange, setAppliedPriceRange] = useState({ min: 0, max: 200000 });
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -47,15 +53,15 @@ const ProjectsPage: React.FC = () => {
   const [recentlyViewed, setRecentlyViewed] = useState<Project[]>([]);
 
   const regions = [
-    t('projects.filters.regions.all'), 
-    t('projects.filters.regions.north'), 
-    t('projects.filters.regions.central'), 
-    t('projects.filters.regions.south')
+    { key: 'all', label: t('projects.filters.regions.all') },
+    { key: 'north', label: t('projects.filters.regions.north') },
+    { key: 'central', label: t('projects.filters.regions.central') },
+    { key: 'south', label: t('projects.filters.regions.south') }
   ];
 
   const filteredProjects = useMemo(() => {
     return transformedProjects.filter(project => {
-      const regionMatch = regionFilter === t('projects.filters.regions.all') || project.region === regionFilter;
+      const regionMatch = regionFilter === 'all' || project.regionKey === regionFilter;
       const squareValue = parseInt(project.square) || 0;
       const squareMatch = squareValue >= appliedPriceRange.min && squareValue <= appliedPriceRange.max;
       return regionMatch && squareMatch;
@@ -145,9 +151,9 @@ const ProjectsPage: React.FC = () => {
               >
                 {regions.map((region) => (
                   <motion.button
-                    key={region}
-                    onClick={() => setRegionFilter(region)}
-                    className={`px-4 py-2 rounded-full font-semibold text-sm transition-colors duration-300 ${regionFilter === region ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-green-200'}`}
+                    key={region.key}
+                    onClick={() => setRegionFilter(region.key)}
+                    className={`px-4 py-2 rounded-full font-semibold text-sm transition-colors duration-300 ${regionFilter === region.key ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-green-200'}`}
                     variants={{
                       hidden: { opacity: 0, scale: 0.8 },
                       visible: { opacity: 1, scale: 1 }
@@ -156,7 +162,7 @@ const ProjectsPage: React.FC = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    {region}
+                    {region.label}
                   </motion.button>
                 ))}
               </motion.div>
@@ -277,7 +283,7 @@ const ProjectsPage: React.FC = () => {
                 </p>
                 <button
                   onClick={() => {
-                    setRegionFilter(t('projects.filters.regions.all'));
+                    setRegionFilter('all');
                     resetFilters();
                   }}
                   className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
