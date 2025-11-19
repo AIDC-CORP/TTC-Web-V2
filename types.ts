@@ -11,6 +11,7 @@ export interface Project {
   category: string;
   location_specific: string;
   region: string;
+  regionKey?: string;
   square: string;
   project_manager: string;
   year: string;
@@ -18,12 +19,18 @@ export interface Project {
 
 export interface Article {
   id: string;
-  title: string;
-  image: string;
-  excerpt: string;
-  content: string;
-  publishDate: string;
-  category: 'Blog' | 'Tư vấn';
+  url: string;
+  date: string;
+  thumbnail: string;
+  categories: string[];
+  vi: {
+    title: string;
+    content: string;
+  };
+  en: {
+    title: string;
+    content: string;
+  };
 }
 
 export interface Service {

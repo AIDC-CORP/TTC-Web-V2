@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const PartnersSection: React.FC = () => {
+  const { t } = useTranslation();
   const partners = [
     { name: 'Alo', logo: '/alo-logo.png' },
     { name: 'Diều Phương', logo: '/dieuphuong-logo.png' },
@@ -22,13 +24,13 @@ const PartnersSection: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-flex items-center rounded-full bg-red-100 text-red-700 text-sm font-semibold px-4 py-2 mb-4">
-            ĐỐI TÁC CỦA CHÚNG TÔI
+            {t('partners.tag')}
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
-            Các đối tác chiến lược
+            {t('partners.title')}
           </h2>
           <p className="mt-4 text-gray-800 w-3xl mx-auto text-base md:text-lg font-medium leading-relaxed">
-            Chúng tôi tự hào hợp tác với những thương hiệu hàng đầu trong ngành
+            {t('partners.subtitle')}
           </p>
         </div>
 

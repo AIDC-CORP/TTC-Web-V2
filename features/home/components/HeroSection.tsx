@@ -1,8 +1,10 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const HeroSection: React.FC = () => {
+  const { t } = useTranslation();
   const heroImages = useMemo(
     () => [
       'https://onetouchmedia.vn/wp-content/uploads/2019/11/05.jpg',
@@ -38,18 +40,18 @@ const HeroSection: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a]/80 via-[#1e3a8a]/60 to-[#1d4ed8]/40"></div>
       </div>
       <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-start text-left">
-        <span className="uppercase tracking-[0.30em] text-blue-180/90 mb-6 text-sm md:text-base">NHÀ THÉP TIỀN CHẾ</span>
+        <span className="uppercase tracking-[0.30em] text-blue-180/90 mb-6 text-sm md:text-base">{t('hero.subtitle')}</span>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 max-w-4xl">
-          TÂN THÀNH CÔNG JSC
+          {t('hero.title')}
         </h1>
         <p className="text-base md:text-xl max-w-3xl mb-10 text-blue-100">
-          Tư vấn chuyên nghiệp, thi công nhanh chóng, công nghệ tiêu chuẩn Quốc tế luôn được Tân Thành Công đặt lên hàng đầu.
+          {t('hero.description')}
         </p>
         <Link
           to="/lien-he"
           className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-xl text-lg transition duration-300 shadow-sm"
         >
-          <span>Liên Hệ Tư Vấn</span>
+          <span>{t('hero.ctaButton')}</span>
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-white">
             <span className="text-blue-600 text-xl leading-none">✓</span>
           </span>

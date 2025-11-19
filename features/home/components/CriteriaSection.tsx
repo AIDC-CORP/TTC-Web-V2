@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Criteria: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <motion.section 
       className="py-16 md:py-24 bg-white"
@@ -23,33 +25,31 @@ const Criteria: React.FC = () => {
         {/* Content */}
         <div className="order-1 lg:order-2">
           <span className="inline-flex items-center rounded-full bg-red-100 text-red-700 text-sm font-semibold px-4 py-2 mb-5">
-            Quy trình làm việc của Tân Thành Công
+            {t('criteria.tag')}
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-5">
-            Tiêu chí an toàn và bền vững
+            {t('criteria.title')}
           </h2>
           <p className="text-gray-700 mb-6">
-            Tân Thành Công cung cấp đầy đủ các dịch vụ thiết kế và xây dựng cho doanh nghiệp.
-            Chúng tôi mang đến giải pháp toàn diện từ phân tích, tư vấn chiến lược đến triển khai thực tế,
-            mở ra cơ hội phát triển cho mọi ý tưởng.
+            {t('criteria.description')}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             <div className="flex items-start gap-3">
               <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-green-600">✓</span>
-              <div>Đảm bảo an toàn lao động</div>
+              <div>{t('criteria.item1')}</div>
             </div>
             <div className="flex items-start gap-3">
               <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-green-600">✓</span>
-              <div>Vật liệu thân thiện môi trường</div>
+              <div>{t('criteria.item2')}</div>
             </div>
             <div className="flex items-start gap-3">
               <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-green-600">✓</span>
-              <div>Phù hợp nhiều không gian và đối tượng sử dụng</div>
+              <div>{t('criteria.item3')}</div>
             </div>
             <div className="flex items-start gap-3">
               <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-green-600">✓</span>
-              <div>Hoàn thiện nhanh chóng, hiệu quả</div>
+              <div>{t('criteria.item4')}</div>
             </div>
           </div>
 
@@ -58,7 +58,7 @@ const Criteria: React.FC = () => {
               to="/lien-he"
               className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-xl text-lg transition duration-300 shadow-sm"
             >
-              <span>Liên hệ ngay</span>
+              <span>{t('criteria.ctaButton')}</span>
               <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-white">
                 <span className="text-red-600 text-xl leading-none">☎</span>
               </span>
