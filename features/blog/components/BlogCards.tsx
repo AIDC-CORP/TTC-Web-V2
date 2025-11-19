@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Article } from '../../../types';
 
 interface BlogCardsProps {
@@ -18,6 +19,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({
   onPageChange,
   onArticleClick
 }) => {
+  const { t } = useTranslation();
   return (
     <div className="container mx-auto px-4 py-16">
       <motion.div 
@@ -43,7 +45,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({
             >
               <div className="relative">
                 <motion.img 
-                  src={article.image} 
+                  src={article.thumbnail} 
                   alt={article.title} 
                   className="w-full h-56 object-cover" 
                   whileHover={{ scale: 1.05 }}
@@ -104,7 +106,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Đọc thêm &rarr;
+                    {t('blog.readMore')} &rarr;
                   </motion.span>
                 </motion.div>
               </motion.div>

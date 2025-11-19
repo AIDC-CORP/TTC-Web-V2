@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const IntroSection: React.FC = () => {
+  const { t } = useTranslation();
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ const IntroSection: React.FC = () => {
               className="text-gray-800 font-bold tracking-wider bg-white rounded-full shadow px-3 py-2 text-sm"
               style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
             >
-              NĂM KINH NGHIỆM
+              {t('intro.experienceBadge')}
             </div>
             <div className="text-red-600 font-extrabold text-6xl md:text-7xl mt-4 leading-none">{count}+</div>
           </div>
@@ -51,42 +53,40 @@ const IntroSection: React.FC = () => {
         {/* Content side */}
         <div>
           <span className="inline-block text-sm md:text-base font-bold tracking-widest uppercase bg-red-100 text-red-700 px-4 py-2 rounded-full mb-5">
-            Tân Thành Công
+            {t('intro.tag')}
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-5">
-            Đối tác thiết kế và thi công nhà xưởng công nghiệp chuẩn quốc tế
+            {t('intro.title')}
           </h2>
           <p className="text-gray-700 mb-8 text-base md:text-lg font-medium leading-relaxed">
-            Tân Thành Công JSC mang tới giải pháp tổng thể cho doanh nghiệp sản xuất và nhà đầu tư.
-            Chúng tôi kết hợp kiến thức chuyên môn sâu, đội ngũ đa ngôn ngữ và quy trình quản trị hiện đại
-            để đảm bảo dự án vận hành bền vững, an toàn và hiệu quả.
+            {t('intro.description')}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="flex items-start gap-3">
               <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-red-600">✓</span>
               <div>
-                <div className="font-bold text-gray-900 text-base md:text-lg">Tổng thầu thiết kế & thi công</div>
+                <div className="font-bold text-gray-900 text-base md:text-lg">{t('intro.feature1.title')}</div>
                 <p className="text-gray-600 text-base leading-relaxed">
-                  Kết nối trọn chuỗi giá trị từ tư vấn ý tưởng, thiết kế kỹ thuật đến triển khai công trường chuẩn quốc tế.
+                  {t('intro.feature1.description')}
                 </p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-red-600">✓</span>
               <div>
-                <div className="font-bold text-gray-900 text-base md:text-lg">Đồng hành cùng doanh nghiệp FDI</div>
+                <div className="font-bold text-gray-900 text-base md:text-lg">{t('intro.feature2.title')}</div>
                 <p className="text-gray-600 text-base leading-relaxed">
-                  Hiểu rõ yêu cầu của nhà đầu tư nước ngoài, tối ưu chi phí và tiến độ cho dự án công nghiệp tại Việt Nam.
+                  {t('intro.feature2.description')}
                 </p>
               </div>
             </div>
             <div className="flex items-start gap-3 sm:col-span-2">
               <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-red-600">✓</span>
               <div>
-                <div className="font-bold text-gray-900 text-base md:text-lg">Giải pháp xanh & thông minh</div>
+                <div className="font-bold text-gray-900 text-base md:text-lg">{t('intro.feature3.title')}</div>
                 <p className="text-gray-600 text-base leading-relaxed">
-                  Ưu tiên công nghệ nhà thép tiền chế, tiết kiệm năng lượng và mở rộng linh hoạt cho nhà xưởng tương lai.
+                  {t('intro.feature3.description')}
                 </p>
               </div>
             </div>
@@ -97,7 +97,7 @@ const IntroSection: React.FC = () => {
               to="/lien-he"
               className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-sm"
             >
-              <span>Liên hệ ngay</span>
+              <span>{t('intro.ctaButton')}</span>
             </Link>
             <a
               href="tel:0976447766"

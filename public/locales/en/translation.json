@@ -1,0 +1,245 @@
+{
+  "header": {
+    "address": "No. 19N7B, Trung Hoa Nhan Chinh Urban Area, Thanh Xuan District, Hanoi City",
+    "workingHours": "Working hours: 08:00 – 17:30",
+    "hotline": "Hotline",
+    "searchPlaceholder": "Search..."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "projects": "Projects",
+    "consulting": "Consulting",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "footer": {
+    "companyName": "TAN THANH CONG CONSTRUCTION TECHNOLOGY JOINT STOCK COMPANY",
+    "companyDescription": "Specializing in providing leading consulting, design, and construction project management solutions in Vietnam.",
+    "quickLinks": "Quick Links",
+    "aboutUs": "About Us",
+    "contactInfo": "Contact Information",
+    "copyright": "Tan Thanh Cong JSC. All rights reserved."
+  },
+  "hero": {
+    "subtitle": "PRE-ENGINEERED STEEL BUILDINGS",
+    "title": "TAN THANH CONG JSC",
+    "description": "Professional consultation, rapid construction, and international standard technology are top priorities at Tan Thanh Cong.",
+    "ctaButton": "Get a Consultation"
+  },
+  "intro": {
+    "experienceBadge": "YEARS OF EXPERIENCE",
+    "tag": "Tan Thanh Cong",
+    "title": "Your Partner for International-Standard Industrial Workshop Design and Construction",
+    "description": "Tan Thanh Cong JSC offers a comprehensive solution for manufacturing businesses and investors. We combine deep expertise, a multilingual team, and modern management processes to ensure projects operate sustainably, safely, and efficiently.",
+    "feature1": {
+      "title": "Design & Build General Contractor",
+      "description": "Connecting the entire value chain from conceptual consulting and technical design to international-standard site implementation."
+    },
+    "feature2": {
+      "title": "Partnering with FDI Enterprises",
+      "description": "Understanding the requirements of foreign investors to optimize costs and timelines for industrial projects in Vietnam."
+    },
+    "feature3": {
+      "title": "Green & Smart Solutions",
+      "description": "Prioritizing pre-engineered steel building technology, energy efficiency, and flexible expansion for future factories."
+    },
+    "ctaButton": "Contact Us Now"
+  },
+  "featuredProjects": {
+    "title": "Featured Projects",
+    "subtitle": "We are proud to have contributed to the success of many large projects, affirming our capacity and reputation.",
+    "seeAll": "See all projects",
+    "description": "Project at {{location}}, area {{square}}, year {{year}}. Project management: {{manager}}",
+    "category": {
+      "factory": "Manufacturing Plant"
+    }
+  },
+  "services": {
+    "tag": "OUR SERVICES",
+    "title": "Providing comprehensive<1/>construction design solutions",
+    "description": "Tan Thanh Cong offers a total solution for industrial workshop design and construction. With a team of experienced engineers and experts, we provide turnkey consulting, design, and construction services, ensuring progress, quality, and safety for every project. Tan Thanh Cong always aims to optimize costs and realize all of our clients' construction ideas with advanced and effective technical solutions."
+  },
+  "latestBlogs": {
+    "title": "Latest Articles",
+    "subtitle": "Stay updated with the latest news, advice, and knowledge on industrial construction and design.",
+    "seeAll": "See all articles"
+  },
+  "blog": {
+    "category": {
+      "consulting": "Consulting",
+      "blog": "Blog"
+    },
+    "page": {
+      "title": "Blog & News",
+      "subtitle": "Sharing knowledge, updating industry news, and company activities"
+    },
+    "readMore": "Read more"
+  },
+  "partners": {
+    "tag": "OUR PARTNERS",
+    "title": "Strategic Partners",
+    "subtitle": "We are proud to partner with leading brands in the industry"
+  },
+  "callout": {
+    "title": "Need advice on factory construction?",
+    "subtitle": "For the fastest response, please contact our consultants directly through the following channels.",
+    "zalo": "Chat on Zalo",
+    "messenger": "Chat on Messenger",
+    "call": "Call 0976 447 766"
+  },
+  "criteria": {
+    "tag": "Tan Thanh Cong's Working Process",
+    "title": "Safety and Sustainability Criteria",
+    "description": "Tan Thanh Cong provides a full range of design and construction services for businesses. We offer a comprehensive solution from analysis and strategic consulting to practical implementation, opening up development opportunities for every idea.",
+    "item1": "Ensuring labor safety",
+    "item2": "Environmentally friendly materials",
+    "item3": "Suitable for various spaces and users",
+    "item4": "Fast and efficient completion",
+    "ctaButton": "Contact Us Now"
+  },
+  "about": {
+    "hero": {
+      "tag": "About the Company",
+      "title": "About Tan Thanh Cong",
+      "subtitle": "A journey of creating sustainable values",
+      "experience": "Over 10 years of experience in construction project consulting and management"
+    },
+    "story": {
+      "title": "Our Story",
+      "paragraph1": "Established in 2015, Tan Thanh Cong started with a team of dedicated engineers and a desire to bring high-quality constructions to Vietnam. Over more than a decade of development, we have continuously strived, innovated, and risen to become one of the leading reputable construction consulting companies.",
+      "paragraph2": "Our success is built on a foundation of solid expertise, a spirit of responsibility, and the trust of our customers and partners."
+    },
+    "cards": {
+      "mission": {
+        "title": "Mission",
+        "description": "To provide superior, safe, and effective technical solutions, contributing to the sustainable development of the construction industry and society."
+      },
+      "vision": {
+        "title": "Vision",
+        "description": "To become the leading trusted partner in the field of construction project consulting and management in Vietnam and to reach a regional level."
+      },
+      "core_values": {
+        "title": "Core Values",
+        "description": "Prestige - Professionalism - Creativity - Dedication. This is the guiding principle for all our activities."
+      }
+    },
+    "stats": {
+      "title": "WHAT WE HAVE",
+      "architects": "ARCHITECTS",
+      "engineers": "CONSTRUCTION ENGINEERS",
+      "consultants": "EXPERT CONSULTANTS",
+      "projects": "PROJECTS",
+      "staff": "STAFF",
+      "clients": "CLIENTS"
+    },
+    "quotes": [
+      {
+        "label": "TECHNOLOGY",
+        "title": "TECHNOLOGY",
+        "description": "Applying advanced technology using pre-engineered steel buildings in the construction of factories for businesses."
+      },
+      {
+        "label": "VISION",
+        "title": "VISION",
+        "description": "Our team of engineers with many years of experience in consulting & design will help you realize an international standard factory."
+      },
+      {
+        "label": "EQUIPMENT",
+        "title": "EQUIPMENT",
+        "description": "Modern machinery and technology are operated by a team of workers with 7/7 level skills."
+      },
+      {
+        "label": "DIRECTION",
+        "title": "DIRECTION",
+        "description": "The satisfaction of our customers is the biggest goal and motivation for Tan Thanh Cong to always strive for."
+      }
+    ]
+  },
+  "consulting": {
+    "seeAll": "See all consulting articles",
+    "page": {
+      "title": "Consulting Services",
+      "subtitle": "Providing expert solutions, accompanying investors from idea to project completion."
+    }
+  },
+  "dialog": {
+    "close": "Close"
+  },
+  "article": {
+    "notFound": "Article not found",
+    "notFoundText": "The article you are looking for does not exist or has been deleted.",
+    "backToBlog": "Back to Blog"
+  },
+  "projects": {
+    "summary": "Project at {{location}}",
+    "description": "This project was carried out on a large scale and on schedule. We are proud of the results achieved during the construction process.",
+    "category": "Construction",
+    "page": {
+      "title": "Our Projects",
+      "subtitle": "Capacity and experience proven through real projects"
+    },
+    "filters": {
+      "regionTitle": "Filter by region",
+      "regions": {
+        "all": "All",
+        "north": "North",
+        "central": "Central",
+        "south": "South"
+      },
+      "scaleTitle": "Filter by scale",
+      "minScale": "Minimum scale",
+      "maxScale": "Maximum scale",
+      "selectedRange": "Selected scale range",
+      "apply": "Apply",
+      "reset": "Reset"
+    },
+    "noResults": {
+      "title": "No projects found",
+      "subtitle": "There are currently no projects that match your filters.",
+      "button": "View all projects"
+    },
+    "recentlyViewed": "Recently Viewed",
+    "dialog": {
+      "title": "Project Information",
+      "manager": "Project Manager",
+      "year": "Year",
+      "location": "Location",
+      "scale": "Scale",
+      "gallery": "Image Gallery",
+      "galleryAlt": "Project image {{name}} {{index}}"
+    }
+  },
+  "contact": {
+    "page": {
+      "title": "Contact Us",
+      "subtitle": "We are always ready to listen and advise you on solutions."
+    },
+    "form": {
+      "title": "Send a consultation request",
+      "nameLabel": "Full Name",
+      "phoneLabel": "Phone Number",
+      "emailLabel": "Email",
+      "messageLabel": "Message Content",
+      "submitButton": "Send",
+      "success": {
+        "title": "Contact sent successfully!",
+        "message": "We will get back to you as soon as possible."
+      },
+      "errors": {
+        "name": "Please enter your full name",
+        "phoneOrEmail": "Please enter a phone number or email",
+        "invalidEmail": "Invalid email address",
+        "invalidPhone": "Invalid phone number",
+        "message": "Please enter a message"
+      }
+    },
+    "map": {
+      "title": "Our Location",
+      "directContact": "Direct Contact Information",
+      "addressLabel": "Address",
+      "emailLabel": "Email",
+      "openMapButton": "Open larger map"
+    }
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "header": {
+    "address": "Số 19N7B, KĐT Trung Hòa Nhân Chính, Quận Thanh Xuân, TP Hà Nội",
+    "workingHours": "Giờ làm việc: 08:00 – 17:30",
+    "hotline": "Hotline",
+    "searchPlaceholder": "Tìm kiếm..."
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "projects": "Dự án",
+    "consulting": "Tư vấn",
+    "blog": "Blog",
+    "contact": "Liên hệ"
+  },
+  "footer": {
+    "companyName": "CÔNG TY CỔ PHẦN CÔNG NGHỆ XÂY DỰNG TÂN THÀNH CÔNG",
+    "companyDescription": "Chuyên cung cấp các giải pháp tư vấn, thiết kế và quản lý dự án xây dựng hàng đầu Việt Nam.",
+    "quickLinks": "Liên kết nhanh",
+    "aboutUs": "Về chúng tôi",
+    "contactInfo": "Thông tin liên hệ",
+    "copyright": "Tân Thành Công JSC. All rights reserved."
+  },
+  "hero": {
+    "subtitle": "NHÀ THÉP TIỀN CHẾ",
+    "title": "TÂN THÀNH CÔNG JSC",
+    "description": "Tư vấn chuyên nghiệp, thi công nhanh chóng, công nghệ tiêu chuẩn Quốc tế luôn được Tân Thành Công đặt lên hàng đầu.",
+    "ctaButton": "Liên Hệ Tư Vấn"
+  },
+  "intro": {
+    "experienceBadge": "NĂM KINH NGHIỆM",
+    "tag": "Tân Thành Công",
+    "title": "Đối tác thiết kế và thi công nhà xưởng công nghiệp chuẩn quốc tế",
+    "description": "Tân Thành Công JSC mang tới giải pháp tổng thể cho doanh nghiệp sản xuất và nhà đầu tư. Chúng tôi kết hợp kiến thức chuyên môn sâu, đội ngũ đa ngôn ngữ và quy trình quản trị hiện đại để đảm bảo dự án vận hành bền vững, an toàn và hiệu quả.",
+    "feature1": {
+      "title": "Tổng thầu thiết kế & thi công",
+      "description": "Kết nối trọn chuỗi giá trị từ tư vấn ý tưởng, thiết kế kỹ thuật đến triển khai công trường chuẩn quốc tế."
+    },
+    "feature2": {
+      "title": "Đồng hành cùng doanh nghiệp FDI",
+      "description": "Hiểu rõ yêu cầu của nhà đầu tư nước ngoài, tối ưu chi phí và tiến độ cho dự án công nghiệp tại Việt Nam."
+    },
+    "feature3": {
+      "title": "Giải pháp xanh & thông minh",
+      "description": "Ưu tiên công nghệ nhà thép tiền chế, tiết kiệm năng lượng và mở rộng linh hoạt cho nhà xưởng tương lai."
+    },
+    "ctaButton": "Liên hệ ngay"
+  },
+  "featuredProjects": {
+    "title": "Dự án Tiêu biểu",
+    "subtitle": "Chúng tôi tự hào đã góp phần vào thành công của nhiều dự án lớn, khẳng định năng lực và uy tín.",
+    "seeAll": "Xem tất cả dự án",
+    "description": "Dự án tại {{location}}, diện tích {{square}}, năm {{year}}. Quản lý dự án: {{manager}}",
+    "category": {
+      "factory": "Nhà máy sản xuất"
+    }
+  },
+  "services": {
+    "tag": "DỊCH VỤ CỦA CHÚNG TÔI",
+    "title": "Cung cấp các giải pháp<1/>thiết kế xây dựng",
+    "description": "Tân Thành Công mang đến giải pháp toàn diện trong thiết kế và thi công nhà xưởng công nghiệp. Với đội ngũ kỹ sư và chuyên gia giàu kinh nghiệm, chúng tôi cung cấp dịch vụ tư vấn, thiết kế, và thi công trọn gói, đảm bảo tiến độ, chất lượng và tính an toàn cho từng công trình. Tân Thành Công luôn hướng đến việc tối ưu chi phí và hiện thực hóa mọi ý tưởng xây dựng của khách hàng bằng những giải pháp kỹ thuật tiên tiến và hiệu quả."
+  },
+  "latestBlogs": {
+    "title": "Bài viết mới nhất",
+    "subtitle": "Cập nhật những tin tức, tư vấn và kiến thức mới nhất về xây dựng và thiết kế công nghiệp.",
+    "seeAll": "Xem tất cả bài viết"
+  },
+  "blog": {
+    "category": {
+      "consulting": "Tư vấn",
+      "blog": "Blog"
+    },
+    "page": {
+      "title": "Blog & Tin tức",
+      "subtitle": "Chia sẻ kiến thức, cập nhật tin tức ngành và hoạt động của công ty"
+    },
+    "readMore": "Đọc thêm"
+  },
+  "partners": {
+    "tag": "ĐỐI TÁC CỦA CHÚNG TÔI",
+    "title": "Các đối tác chiến lược",
+    "subtitle": "Chúng tôi tự hào hợp tác với những thương hiệu hàng đầu trong ngành"
+  },
+  "callout": {
+    "title": "Bạn cần tư vấn xây dựng nhà xưởng?",
+    "subtitle": "Cách nhanh nhất, vui lòng liên hệ trực tiếp với tư vấn viên qua các kênh sau.",
+    "zalo": "Chat Zalo",
+    "messenger": "Chat Messenger",
+    "call": "Gọi 0976 447 766"
+  },
+  "criteria": {
+    "tag": "Quy trình làm việc của Tân Thành Công",
+    "title": "Tiêu chí an toàn và bền vững",
+    "description": "Tân Thành Công cung cấp đầy đủ các dịch vụ thiết kế và xây dựng cho doanh nghiệp. Chúng tôi mang đến giải pháp toàn diện từ phân tích, tư vấn chiến lược đến triển khai thực tế, mở ra cơ hội phát triển cho mọi ý tưởng.",
+    "item1": "Đảm bảo an toàn lao động",
+    "item2": "Vật liệu thân thiện môi trường",
+    "item3": "Phù hợp nhiều không gian và đối tượng sử dụng",
+    "item4": "Hoàn thiện nhanh chóng, hiệu quả",
+    "ctaButton": "Liên hệ ngay"
+  },
+  "about": {
+    "hero": {
+      "tag": "Giới thiệu về công ty",
+      "title": "Về Tân Thành Công",
+      "subtitle": "Hành trình kiến tạo những giá trị bền vững",
+      "experience": "Hơn 10 năm kinh nghiệm trong lĩnh vực tư vấn và quản lý dự án xây dựng"
+    },
+    "story": {
+      "title": "Câu chuyện của chúng tôi",
+      "paragraph1": "Được thành lập từ năm 2015, Tân Thành Công khởi đầu với một đội ngũ kỹ sư tâm huyết và khát vọng mang đến những công trình chất lượng cao cho Việt Nam. Trải qua hơn một thập kỷ phát triển, chúng tôi đã không ngừng nỗ lực, đổi mới và vươn lên trở thành một trong những công ty tư vấn xây dựng uy tín hàng đầu.",
+      "paragraph2": "Sự thành công của chúng tôi được xây dựng trên nền tảng chuyên môn vững chắc, tinh thần trách nhiệm và sự tin tưởng của Quý khách hàng, đối tác."
+    },
+    "cards": {
+      "mission": {
+        "title": "Sứ mệnh",
+        "description": "Cung cấp các giải pháp kỹ thuật ưu việt, an toàn và hiệu quả, góp phần vào sự phát triển bền vững của ngành xây dựng và xã hội."
+      },
+      "vision": {
+        "title": "Tầm nhìn",
+        "description": "Trở thành đối tác tin cậy hàng đầu trong lĩnh vực tư vấn và quản lý dự án xây dựng tại Việt Nam và vươn tầm khu vực."
+      },
+      "core_values": {
+        "title": "Giá trị cốt lõi",
+        "description": "Uy tín - Chuyên nghiệp - Sáng tạo - Tận tâm. Đây là kim chỉ nam cho mọi hoạt động của chúng tôi."
+      }
+    },
+    "stats": {
+      "title": "CHÚNG TÔI CÓ GÌ?",
+      "architects": "KIẾN TRÚC SƯ",
+      "engineers": "KỸ SƯ XÂY DỰNG",
+      "consultants": "CHUYÊN GIA TƯ VẤN",
+      "projects": "DỰ ÁN",
+      "staff": "NHÂN VIÊN",
+      "clients": "KHÁCH HÀNG"
+    },
+    "quotes": [
+      {
+        "label": "CÔNG NGHỆ",
+        "title": "CÔNG NGHỆ",
+        "description": "Áp dụng công nghệ tiên tiến sử dụng nhà thép tiền chế trong việc xây dựng nhà máy cho các doanh nghiệp."
+      },
+      {
+        "label": "TẦM NHÌN",
+        "title": "TẦM NHÌN",
+        "description": "Đội ngũ kỹ sư với nhiều năm kinh nghiệm trong việc tư vấn & thiết kế sẽ giúp bạn hiện thực hóa nhà máy tiêu chuẩn quốc tế."
+      },
+      {
+        "label": "THIẾT BỊ",
+        "title": "THIẾT BỊ",
+        "description": "Trang thiết bị máy móc và công nghệ hiện đại được vận hành bởi đội ngũ công nhân với tay nghề bậc 7/7"
+      },
+      {
+        "label": "ĐỊNH HƯỚNG",
+        "title": "ĐỊNH HƯỚNG",
+        "description": "Sự hài lòng của Quý khách hàng chính là mục tiêu và động lực lớn nhất để Tân Thành Công luôn luôn hướng đến."
+      }
+    ]
+  },
+  "consulting": {
+    "seeAll": "Xem tất cả tư vấn",
+    "page": {
+      "title": "Dịch vụ Tư vấn",
+      "subtitle": "Cung cấp giải pháp chuyên môn, đồng hành cùng chủ đầu tư từ ý tưởng đến khi hoàn thiện công trình."
+    }
+  },
+  "dialog": {
+    "close": "Đóng"
+  },
+  "article": {
+    "notFound": "Không tìm thấy bài viết",
+    "notFoundText": "Bài viết bạn đang tìm kiếm không tồn tại hoặc đã bị xóa.",
+    "backToBlog": "Quay lại trang Blog"
+  },
+  "projects": {
+    "summary": "Dự án tại {{location}}",
+    "description": "Dự án này được thực hiện với quy mô lớn và đúng tiến độ. Chúng tôi tự hào về những kết quả đạt được trong quá trình thi công.",
+    "category": "Công trình",
+    "page": {
+      "title": "Dự án của chúng tôi",
+      "subtitle": "Năng lực và kinh nghiệm được chứng thực qua các công trình thực tế"
+    },
+    "filters": {
+      "regionTitle": "Lọc theo vùng miền",
+      "regions": {
+        "all": "Tất cả",
+        "north": "Miền Bắc",
+        "central": "Miền Trung",
+        "south": "Miền Nam"
+      },
+      "scaleTitle": "Lọc theo quy mô",
+      "minScale": "Quy mô tối thiểu",
+      "maxScale": "Quy mô tối đa",
+      "selectedRange": "Khoảng quy mô đã chọn",
+      "apply": "Áp dụng",
+      "reset": "Đặt lại"
+    },
+    "noResults": {
+      "title": "Không tìm thấy dự án",
+      "subtitle": "Hiện tại chưa có dự án nào phù hợp với bộ lọc của bạn.",
+      "button": "Xem tất cả dự án"
+    },
+    "recentlyViewed": "Đã xem gần đây",
+    "dialog": {
+      "title": "Thông tin dự án",
+      "manager": "Quản lý dự án",
+      "year": "Năm thực hiện",
+      "location": "Địa điểm",
+      "scale": "Quy mô",
+      "gallery": "Thư viện hình ảnh",
+      "galleryAlt": "Hình ảnh dự án {{name}} {{index}}"
+    }
+  },
+  "contact": {
+    "page": {
+      "title": "Liên hệ với chúng tôi",
+      "subtitle": "Chúng tôi luôn sẵn sàng lắng nghe và tư vấn giải pháp cho bạn."
+    },
+    "form": {
+      "title": "Gửi yêu cầu tư vấn",
+      "nameLabel": "Họ và tên",
+      "phoneLabel": "Số điện thoại",
+      "emailLabel": "Email",
+      "messageLabel": "Nội dung tin nhắn",
+      "submitButton": "Gửi đi",
+      "success": {
+        "title": "Gửi liên hệ thành công!",
+        "message": "Chúng tôi sẽ phản hồi bạn sớm nhất."
+      },
+      "errors": {
+        "name": "Vui lòng nhập họ tên",
+        "phoneOrEmail": "Vui lòng nhập SĐT hoặc Email",
+        "invalidEmail": "Email không hợp lệ",
+        "invalidPhone": "Số điện thoại không hợp lệ",
+        "message": "Vui lòng nhập nội dung tin nhắn"
+      }
+    },
+    "map": {
+      "title": "Vị trí của chúng tôi",
+      "directContact": "Thông tin liên hệ trực tiếp",
+      "addressLabel": "Địa chỉ",
+      "emailLabel": "Email",
+      "openMapButton": "Mở bản đồ lớn"
+    }
+  }
+}

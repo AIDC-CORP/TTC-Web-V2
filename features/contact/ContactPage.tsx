@@ -1,15 +1,17 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import FormSection from './components/FormSection';
 import MapSection from './components/MapSection';
 
 const ContactPage: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-gray-50">
         <div className="bg-white py-20">
             <div className="container mx-auto px-4 text-center">
-                <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800">Liên hệ với chúng tôi</h1>
-                <p className="mt-4 text-lg text-gray-600">Chúng tôi luôn sẵn sàng lắng nghe và tư vấn giải pháp cho bạn.</p>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800">{t('contact.page.title')}</h1>
+                <p className="mt-4 text-lg text-gray-600">{t('contact.page.subtitle')}</p>
             </div>
         </div>
 
@@ -22,7 +24,7 @@ const ContactPage: React.FC = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                             </svg>
                         </div>
-                        <h2 className="text-2xl font-bold text-gray-800">Gửi tin nhắn</h2>
+                        <h2 className="text-2xl font-bold text-gray-800">{t('contact.form.title')}</h2>
                     </div>
                     <FormSection />
                 </div>
@@ -34,7 +36,7 @@ const ContactPage: React.FC = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                         </div>
-                        <h2 className="text-2xl font-bold text-gray-800">Vị trí của chúng tôi</h2>
+                        <h2 className="text-2xl font-bold text-gray-800">{t('contact.map.title')}</h2>
                     </div>
                     <MapSection />
                 </div>
