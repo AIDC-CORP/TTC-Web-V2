@@ -161,7 +161,7 @@ const ProjectDetailDialog: React.FC<ProjectDetailDialogProps> = ({ project, isOp
                           transition={{ duration: 0.4 }}
                         >
                           <h4 className="font-semibold text-gray-700">{t('projects.dialog.scale')}</h4>
-                          <p className="text-gray-600">{project.square}</p>
+                          <p className="text-gray-600">{project.square} m²</p>
                         </motion.div>
                       )}
                     </motion.div>

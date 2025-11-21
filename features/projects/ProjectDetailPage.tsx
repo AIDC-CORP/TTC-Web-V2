@@ -87,7 +87,7 @@ const ProjectDetailPage: React.FC = () => {
                         {project.square && (
                             <div>
                                 <h4 className="font-semibold text-gray-700">Quy mô</h4>
-                                <p className="text-gray-600">{project.square}</p>
+                                <p className="text-gray-600">{project.square} m²</p>
                             </div>
                         )}
                     </div>

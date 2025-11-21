@@ -7,7 +7,20 @@ import Cards from './components/Cards';
 import Stats from './components/Stats';
 
 const AboutPage: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, ready } = useTranslation();
+  
+  // Show loading state if translations aren't ready
+  if (!ready) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Đang tải...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white">
       <div className="relative bg-cover bg-center text-white py-24 md:py-40 overflow-hidden" style={{ backgroundImage: `url('/about.png')` }}>
