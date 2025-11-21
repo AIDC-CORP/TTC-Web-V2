@@ -3,8 +3,21 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 const Value: React.FC = () => {
-  const { t } = useTranslation();
-  const values: { label: string; title: string; description: string }[] = t('about.quotes', { returnObjects: true });
+  const { t, ready } = useTranslation();
+  
+  // Ensure translations are loaded before accessing
+  if (!ready) {
+    return null;
+  }
+
+  let values: { label: string; title: string; description: string }[] = [];
+  try {
+    const quotesData = t('about.quotes', { returnObjects: true });
+    values = Array.isArray(quotesData) ? quotesData : [];
+  } catch (error) {
+    console.error('Error loading quotes translations:', error);
+    values = [];
+  }
 
   const quoteVariants = {
     hidden: { opacity: 0, y: 50, scale: 0.9 },

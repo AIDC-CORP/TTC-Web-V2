@@ -9,6 +9,8 @@ if (!rootElement) {
 }
 
 const root = ReactDOM.createRoot(rootElement);
+
+// Render app - i18n will load asynchronously and components handle ready state
 root.render(
   <React.StrictMode>
     <App />
