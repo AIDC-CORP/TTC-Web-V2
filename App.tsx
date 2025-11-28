@@ -1,18 +1,17 @@
-
-import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
-import MainLayout from './common/components/MainLayout';
-import HomePage from './features/home/HomePage';
-import AboutPage from './features/about/AboutPage';
-import ProjectsPage from './features/projects/ProjectsPage';
-import ConsultingPage from './features/consulting/ConsultingPage';
-import BlogPage from './features/blog/BlogPage';
-import ContactPage from './features/contact/ContactPage';
-import SearchResultsPage from './features/search/SearchResultsPage';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainLayout from "./common/components/MainLayout";
+import HomePage from "./features/home/HomePage";
+import AboutPage from "./features/about/AboutPage";
+import ProjectsPage from "./features/projects/ProjectsPage";
+import ConsultingPage from "./features/consulting/ConsultingPage";
+import BlogPage from "./features/blog/BlogPage";
+import ContactPage from "./features/contact/ContactPage";
+import SearchResultsPage from "./features/search/SearchResultsPage";
 
 const App: React.FC = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
@@ -24,7 +23,7 @@ const App: React.FC = () => {
           <Route path="/tim-kiem" element={<SearchResultsPage />} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 
