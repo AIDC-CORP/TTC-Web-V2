@@ -5,6 +5,7 @@ import projectsData from './data/projects.json';
 import ProjectCard from './components/ProjectCard';
 import ProjectDetailDialog from './components/dialogs/ProjectDetailDialog';
 import { Project } from '../../types';
+import { getCurrentLangKey } from '../../common/utils/i18nUtils';
 
 type RegionFilterKey = 'all' | 'north' | 'central' | 'south';
 
@@ -30,13 +31,14 @@ interface ProjectJSON {
 
 const ProjectsPage: React.FC = () => {
   const { t, i18n } = useTranslation();
+  const currentLang = getCurrentLangKey(i18n.language);
 
   const transformedProjects: Project[] = useMemo(() =>
     (projectsData as ProjectJSON[]).map((project: ProjectJSON, index: number) => {
       const regionKey = REGION_KEY_MAP[project.region] ?? 'all';
       return {
         id: `project-${index}`,
-        name: i18n.language === 'vi' ? project.name_vi : project.name,
+        name: currentLang === 'vi' ? project.name_vi : project.name, // Use English name for KO as well
         image: project.thumbnail_url || 'https://picsum.photos/seed/project-default/800/600',
         summary: t('projects.summary', { location: project.location_specific }),
         description: t('projects.description'),
@@ -101,14 +103,14 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <div>
-      <motion.div 
+      <motion.div
         className="bg-white py-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         <div className="container mx-auto px-4 text-center">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-5xl font-extrabold text-gray-800"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -116,7 +118,7 @@ const ProjectsPage: React.FC = () => {
           >
             {t('projects.page.title')}
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="mt-4 text-lg text-gray-600"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -130,7 +132,7 @@ const ProjectsPage: React.FC = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="lg:flex lg:gap-8">
           {/* Filters Sidebar */}
-          <motion.div 
+          <motion.div
             className="lg:w-1/4 mb-8 lg:mb-0"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -138,7 +140,7 @@ const ProjectsPage: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             {/* Region Filter */}
-            <motion.div 
+            <motion.div
               className="mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -146,7 +148,7 @@ const ProjectsPage: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('projects.filters.regionTitle')}</h3>
-              <motion.div 
+              <motion.div
                 className="flex flex-wrap gap-2"
                 initial="hidden"
                 whileInView="visible"
@@ -177,7 +179,7 @@ const ProjectsPage: React.FC = () => {
             </motion.div>
 
             {/* Scale Filter */}
-            <motion.div 
+            <motion.div
               className="bg-gray-50 p-6 rounded-lg"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -270,7 +272,7 @@ const ProjectsPage: React.FC = () => {
           </motion.div>
 
           {/* Projects Grid */}
-          <motion.div 
+          <motion.div
             className="lg:w-3/4"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -278,7 +280,7 @@ const ProjectsPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {filteredProjects.length === 0 ? (
-              <motion.div 
+              <motion.div
                 className="text-center py-16"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -300,7 +302,7 @@ const ProjectsPage: React.FC = () => {
                 </button>
               </motion.div>
             ) : (
-              <motion.div 
+              <motion.div
                 key={`projects-${regionFilter}-${appliedPriceRange.min}-${appliedPriceRange.max}`}
                 className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
                 initial="hidden"
@@ -329,14 +331,14 @@ const ProjectsPage: React.FC = () => {
 
             {/* Recently Viewed */}
             {recentlyViewed.length > 0 && (
-              <motion.div 
+              <motion.div
                 className="mt-16"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                <motion.h2 
+                <motion.h2
                   className="text-2xl font-bold text-gray-800 mb-8 text-center"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -345,7 +347,7 @@ const ProjectsPage: React.FC = () => {
                 >
                   {t('projects.recentlyViewed')}
                 </motion.h2>
-                <motion.div 
+                <motion.div
                   className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
                   initial="hidden"
                   whileInView="visible"

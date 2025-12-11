@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { services } from '../../../data/mockData';
 
 const ServicesRow: React.FC = () => {
+  const { t } = useTranslation();
   const trackRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -13,7 +15,7 @@ const ServicesRow: React.FC = () => {
             <div className="relative">
               <img
                 src={svc.image}
-                alt={svc.name}
+                alt={t(`services.items.${svc.id}.name`)}
                 className="h-56 w-full object-cover"
               />
               <div className="absolute -bottom-8 right-6">
@@ -23,9 +25,9 @@ const ServicesRow: React.FC = () => {
               </div>
             </div>
             <div className="pt-10 px-6 pb-6">
-              <div className="text-red-600 text-xs font-semibold tracking-widest uppercase mb-2">Thiết kế xây dựng</div>
-              <h3 className="text-lg font-bold mb-2 group-hover:text-blue-700 transition">{svc.name}</h3>
-              <p className="text-gray-600 text-sm leading-6">{svc.summary}</p>
+              <div className="text-red-600 text-xs font-semibold tracking-widest uppercase mb-2">{t('services.category')}</div>
+              <h3 className="text-lg font-bold mb-2 group-hover:text-blue-700 transition">{t(`services.items.${svc.id}.name`)}</h3>
+              <p className="text-gray-600 text-sm leading-6">{t(`services.items.${svc.id}.summary`)}</p>
             </div>
           </article>
         ))}
@@ -42,7 +44,7 @@ const ServicesRow: React.FC = () => {
             <div className="relative">
               <img
                 src={svc.image}
-                alt={svc.name}
+                alt={t(`services.items.${svc.id}.name`)}
                 className="h-60 w-full object-cover"
               />
               <div className="absolute -bottom-8 right-6">
@@ -52,9 +54,9 @@ const ServicesRow: React.FC = () => {
               </div>
             </div>
             <div className="pt-10 px-6 pb-6">
-              <div className="text-red-600 text-xs font-semibold tracking-widest uppercase mb-2">Thiết kế xây dựng</div>
-              <h3 className="text-lg font-bold mb-2">{svc.name}</h3>
-              <p className="text-gray-800 text-base leading-relaxed">{svc.summary}</p>
+              <div className="text-red-600 text-xs font-semibold tracking-widest uppercase mb-2">{t('services.category')}</div>
+              <h3 className="text-lg font-bold mb-2">{t(`services.items.${svc.id}.name`)}</h3>
+              <p className="text-gray-800 text-base leading-relaxed">{t(`services.items.${svc.id}.summary`)}</p>
             </div>
           </article>
         ))}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Article } from '../../../../types';
+import { getCurrentLangKey } from '../../../../common/utils/i18nUtils';
 
 interface ConsultingDetailDialogProps {
   article: Article | null;
@@ -29,7 +30,7 @@ const parseContentWithImages = (content: string) => {
   if (lastIndex < content.length) {
     parts.push({ type: 'text', content: content.substring(lastIndex) });
   }
-  
+
   return parts;
 };
 
@@ -46,7 +47,7 @@ const ConsultingDetailDialog: React.FC<ConsultingDetailDialogProps> = ({ article
   return (
     <AnimatePresence>
       {isOpen && article && (
-        <motion.div 
+        <motion.div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -54,7 +55,7 @@ const ConsultingDetailDialog: React.FC<ConsultingDetailDialogProps> = ({ article
           transition={{ duration: 0.3 }}
           onClick={onClose}
         >
-          <motion.div 
+          <motion.div
             className="bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto"
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -64,14 +65,14 @@ const ConsultingDetailDialog: React.FC<ConsultingDetailDialogProps> = ({ article
           >
             <div className="p-6">
               {/* Header */}
-              <motion.div 
+              <motion.div
                 className="flex justify-between items-center mb-6"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <div>
-                  <motion.span 
+                  <motion.span
                     className="text-sm text-gray-500"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -79,7 +80,7 @@ const ConsultingDetailDialog: React.FC<ConsultingDetailDialogProps> = ({ article
                   >
                     {article.categories.join(' | ')} | {article.date}
                   </motion.span>
-                  <motion.h2 
+                  <motion.h2
                     className="text-2xl md:text-3xl font-bold text-gray-800 mt-1"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -100,7 +101,7 @@ const ConsultingDetailDialog: React.FC<ConsultingDetailDialogProps> = ({ article
               </motion.div>
 
               {/* Content */}
-              <motion.div 
+              <motion.div
                 className="mb-6"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -114,7 +115,7 @@ const ConsultingDetailDialog: React.FC<ConsultingDetailDialogProps> = ({ article
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
                 />
-                <motion.div 
+                <motion.div
                   className="prose max-w-none"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -143,7 +144,7 @@ const ConsultingDetailDialog: React.FC<ConsultingDetailDialogProps> = ({ article
               </motion.div>
 
               {/* Footer */}
-              <motion.div 
+              <motion.div
                 className="mt-8 pt-6 border-t border-gray-200 flex justify-between"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

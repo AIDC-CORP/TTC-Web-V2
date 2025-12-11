@@ -58,6 +58,25 @@
   "services": {
     "tag": "DỊCH VỤ CỦA CHÚNG TÔI",
     "title": "Cung cấp các giải pháp<1/>thiết kế xây dựng",
+    "category": "Thiết kế xây dựng",
+    "items": {
+      "tu-van-xuc-tien-dau-tu": {
+        "name": "Tư vấn xúc tiến đầu tư",
+        "summary": "Đội ngũ chuyên gia tư vấn am hiểu thị trường đầu tư."
+      },
+      "tu-van-thiet-ke-du-an": {
+        "name": "Tư vấn thiết kế dự án",
+        "summary": "Đội ngũ kỹ sư chuyên môn cao và nhiều năm kinh nghiệm."
+      },
+      "thi-cong-du-an-quy-trinh": {
+        "name": "Thi công dự án và quy trình",
+        "summary": "Chất lượng – Kỹ thuật – Thẩm mỹ cho công trình."
+      },
+      "bao-hanh-24-24": {
+        "name": "Dịch vụ bảo hành 24/24",
+        "summary": "Cải tạo và sửa chữa công trình đảm bảo tính chuyên môn cao."
+      }
+    },
     "description": "Tân Thành Công mang đến giải pháp toàn diện trong thiết kế và thi công nhà xưởng công nghiệp. Với đội ngũ kỹ sư và chuyên gia giàu kinh nghiệm, chúng tôi cung cấp dịch vụ tư vấn, thiết kế, và thi công trọn gói, đảm bảo tiến độ, chất lượng và tính an toàn cho từng công trình. Tân Thành Công luôn hướng đến việc tối ưu chi phí và hiện thực hóa mọi ý tưởng xây dựng của khách hàng bằng những giải pháp kỹ thuật tiên tiến và hiệu quả."
   },
   "latestBlogs": {

@@ -47,7 +47,7 @@ export const projects: Project[] = [
     ],
     category: 'Công nghiệp'
   },
-   {
+  {
     id: 'du-an-cau-thu-thiem-2',
     name: 'Cầu Thủ Thiêm 2',
     image: 'https://picsum.photos/seed/project4/800/600',
@@ -91,7 +91,7 @@ export const articles: Article[] = [
     publishDate: '2024-03-10',
     category: 'Tư vấn'
   },
-    {
+  {
     id: 'giai-phap-phong-chay-chua-chay-hieu-qua',
     title: 'Giải Pháp Tối Ưu Cho Hệ Thống Phòng Cháy Chữa Cháy',
     image: 'https://picsum.photos/seed/service2/800/450',
@@ -106,7 +106,7 @@ export const services: Service[] = [
   {
     id: 'tu-van-xuc-tien-dau-tu',
     name: 'Tư vấn xúc tiến đầu tư',
-    image: 'https://www.tanthanhcongjsc.com/wp-content/uploads/2022/10/tu-van-thiet-ke-600x386.jpg',
+    image: '/tuvan.jpg',
     summary: 'Đội ngũ chuyên gia tư vấn am hiểu thị trường đầu tư.'
   },
   {
@@ -118,13 +118,13 @@ export const services: Service[] = [
   {
     id: 'thi-cong-du-an-quy-trinh',
     name: 'Thi công dự án và quy trình',
-    image: 'https://www.tanthanhcongjsc.com/wp-content/uploads/2022/10/thi-cong-xay-dung-600x386.jpg',
+    image: '/thicong.webp',
     summary: 'Chất lượng – Kỹ thuật – Thẩm mỹ cho công trình.'
   },
   {
     id: 'bao-hanh-24-24',
     name: 'Dịch vụ bảo hành 24/24',
-    image: 'https://www.tanthanhcongjsc.com/wp-content/uploads/2022/10/cai-tao-sua-chua-600x386.jpg',
+    image: '/tiendo.jpg',
     summary: 'Cải tạo và sửa chữa công trình đảm bảo tính chuyên môn cao.'
   }
 ];

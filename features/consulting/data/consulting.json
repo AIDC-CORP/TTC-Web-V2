@@ -3,7 +3,7 @@
     "id": "tieu-chuan-leed-la-gi",
     "url": "https://tanthanhcongjsc.com/tu-van/tieu-chuan-leed-la-gi.html",
     "date": "21 Tháng 8, 2023",
-    "thumbnail": "https://tanthanhcongjsc.com/wp-content/uploads/2023/08/1.gif",
+    "thumbnail": "/blog-assets/leed.gif",
     "categories": [
       "Tin tức",
       "Tư vấn"
@@ -15,6 +15,10 @@
     "en": {
       "title": "What is the LEED standard?",
       "content": "LEED is an international standard system for green architecture, recognized and accredited for architectural works, providing third-party verification and certification that a building or public property is designed and built based on standards aimed at improving performance, combined with standards for energy saving, water efficiency, reducing CO2 emissions, improving the quality of the living environment, enhancing resource management capabilities, and the flexibility of the building in adapting to change.\n\nDeveloped by the U.S. Green Building Council (USGBC), LEED provides owners and managers with a solid basis for identifying and implementing feasible and standardized \"green architecture\" solutions such as design, construction, operation, and maintenance. LEED is a very convincing standard because of its flexibility, as it is easily applicable to all types of buildings – from commercial to residential. It operates throughout the entire building process – design and construction, operation and maintenance, equipping people with significant innovations. And LEED extends its benefits beyond specific, outdated construction fields into related areas of development.\n\n[IMAGE:2-1.jpg]\n\n## What value does LEED bring?\nWhen a building is LEED certified, it means that it uses water and energy efficiently, emits less CO2, and makes good use of local resources, helping to minimize energy consumption during production and transportation. Parallel to the boom in the Green market, such as organic food and energy-efficient hybrid cars, Green architecture is attracting the interest of planners, investors, designers, and consumers. Buildings that meet green, environmentally friendly standards always win favor and are the top choice for customers today. The presence of the global LEED standard has helped save energy and use it efficiently in buildings, which not only helps reduce costs for businesses but also plays an important role in building a civilized, modern life, ensuring energy security, sustainable development, and environmental protection.\n\n[IMAGE:3-1-e1692620299162.jpg]"
+    },
+    "ko": {
+      "title": "LEED 표준이란 무엇인가?",
+      "content": "LEED는 녹색 건축에 대한 국제 표준 시스템으로, 건축물에 대해 인정받고 공인된 제3자 검증 및 인증을 제공합니다. 이는 건물이 성능 향상을 목표로 하는 표준에 따라 설계되고 건설되었음을 인증하며, 에너지 절약, 물 효율성, CO2 배출 감소, 생활 환경 품질 개선, 자원 관리 능력 향상, 그리고 변화에 적응하는 건물의 유연성에 대한 표준과 결합됩니다.\n\n미국 그린빌딩협의회(USGBC)에서 개발한 LEED는 소유주와 관리자에게 설계, 시공, 운영 및 유지보수와 같은 실현 가능하고 표준화된 \"녹색 건축\" 솔루션을 식별하고 구현하기 위한 견고한 기반을 제공합니다. LEED는 상업용에서 주거용까지 모든 유형의 건물에 쉽게 적용할 수 있는 유연성 때문에 매우 설득력 있는 표준입니다. 이는 설계 및 시공, 운영 및 유지보수 등 전체 건축 과정에서 작동하며, 사람들에게 중요한 혁신을 제공합니다. 그리고 LEED는 그 혜택을 특정하고 구식인 건설 분야를 넘어 관련 개발 분야로 확장합니다.\n\n[IMAGE:2-1.jpg]\n\n## LEED는 어떤 가치를 가져오는가?\n건물이 LEED 인증을 받았다는 것은 물과 에너지를 효율적으로 사용하고, CO2를 적게 배출하며, 지역 자원을 잘 활용하여 생산 및 운송 중 에너지 소비를 최소화하는 데 도움을 준다는 것을 의미합니다. 유기농 식품, 에너지 효율적인 하이브리드 자동차 등 녹색 시장의 붐과 함께 녹색 건축은 계획가, 투자자, 디자이너 및 소비자의 관심을 끌고 있습니다. 녹색, 친환경 표준을 충족하는 건물은 항상 호의를 얻으며 오늘날 고객에게 최고의 선택이 됩니다. 글로벌 LEED 표준의 존재는 건물에서 에너지를 절약하고 효율적으로 사용하는 데 도움을 주었으며, 이는 기업의 비용 절감에 기여할 뿐만 아니라 문명화되고 현대적인 삶을 구축하고, 에너지 안보를 보장하며, 지속 가능한 개발과 환경 보호에 중요한 역할을 합니다.\n\n[IMAGE:3-1-e1692620299162.jpg]"
     }
   },
   {
@@ -33,6 +37,10 @@
     "en": {
       "title": "Application and Benefits of CFD Simulation in the HVAC Field",
       "content": "## The Necessity of Using CFD Simulation in the HVAC Field\nHVAC, which stands for Heating, Ventilation, and Air Conditioning, is a system that creates thermal comfort and ensures indoor air quality throughout all seasons. Conventionally, HVAC design calculations assume an \"ideal flow\" (air is perfectly mixed in a very short time), and handbooks with estimation formulas can be used for quick and simple calculations. This approach can lead to improperly sized HVAC equipment, thereby increasing operational costs and reducing energy efficiency. Therefore, a tool is still needed to verify the design before actual construction. To verify the design, engineers can either create experimental models or run CFD simulations under actual operating conditions. Among these, CFD simulation is a tool that has been widely used by large corporations such as SAMSUNG, LG, DAIKIN, and Ramboll because of the value and benefits it brings.\n\n[IMAGE:loi-ich-mo-phong-cfd.png]\n\n## Simulation for Evaluating Comfort Indices in HVAC\nThe comfort indices of the air environment in HVAC include thermal comfort (which covers temperature, humidity, wind speed, and comfort-related indices) and indoor air quality (which includes concentrations of dust, odors, toxic gases, bacteria, and viruses). These comfort indices not only reflect human comfort in living spaces (homes, cinemas, classrooms, etc.) but are also requirements clearly defined in standards such as ASHRAE 55 (USA), ISO 7730 (international), and TCVN 7438 (Vietnam). These indices depend on actual conditions that change over time, furniture layout, and other factors. Therefore, conventional calculation methods are often inadequate to meet the requirements for comfort indices. CFD simulation helps engineers visualize and evaluate comfort indices in both steady-state and transient conditions. Here are some of the values that CFD simulation provides:\n\n- Calculating the distribution of comfort indices, verifying the design, and optimizing the performance of the HVAC system by simulating these indices in the early design stage.\n- Identifying areas that do not ensure comfort, assessing the impact of factors affecting these indices, and verifying proposed solutions.\n- Modifying the HVAC system design and interior layout (if necessary) to optimize comfort indices, thereby ensuring the requirements and standards defined during the design phase.\n- Analyzing and testing improvement options for HVAC systems in existing buildings.\n\n[IMAGE:tien-nghi-nhiet-phan-bo-co2.png]\n\n(In the left figure, the orange color indicates the location of highest comfort, where the PMV value = 0)\n## Simulation for Flow Analysis in HVAC\nFor the space inside a building, in addition to comfort indices, other issues require the support of CFD simulation, such as: (1) the dispersion of dust and pollutants (in homes, parking garages, factories), (2) the mean age of air in a room, (3) fire safety, etc.\n\nFurthermore, CFD simulation is also used to assess the mutual influence of the indoor and outdoor environments, including key factors such as: (1) the effect of solar radiation entering the building, (2) the impact of dust and toxic gases from outside entering the building, (3) heat loss through the building envelope, and (4) natural and forced ventilation. By iterating designs or changing influencing conditions, engineers can easily achieve several important requirements, such as:\n\n- Predicting trends when incidents occur, and testing prevention and response measures in the early design stage.\n- Optimizing systems for handling dust and toxic gases, and fire protection systems (e.g., smoke control systems).\n- Assessing the impact of external factors (e.g., solar radiation, dust, humidity, toxic gases) on indoor comfort indices.\n- Verifying the design and performance of the ventilation system.\n\n[IMAGE:thiet-ke-gio-cuong-buc.png]\n\n(The red color indicates the location with the poorest ventilation performance)\n## Simulation for Optimizing HVAC Equipment\nCFD simulation allows design engineers to evaluate indices such as performance, energy efficiency, noise level, residence time, etc., of HVAC equipment, including: (1) air cleaning equipment, (2) air conditioners (AC), (3) air handling units (AHU), (4) combustion devices and boilers, (5) chillers, (6) diffusers, (7) coils, (8) humidity control equipment, (9) heating equipment, (10) pumps, fans, compressors, ductwork, and (11) refrigeration units. The CFD simulation process brings many benefits to design engineers and manufacturers, for example:\n\n- Minimizing the need to build physical prototypes of equipment for testing during the design process.\n- Detecting potential problems early in the design process.\n- Optimizing the shape and performance of HVAC equipment, especially for devices located in confined spaces such as cars, ships, trains, and airplanes.\n- Analyzing and testing improvement options for duct systems and air vents in existing buildings.\n\n[IMAGE:thiet-ke-ong-gio-1400x467.png]\n\n## Simulation for Optimizing HVAC System Energy\nEnergy models are also often based on the \"ideal flow\" assumption. In reality, the air mass in a building is stratified by height and is not uniform in either space or time. Therefore, even the most accurately calculated energy models need an additional verification tool. By fixing indoor conditions and varying outdoor conditions, CFD simulation is an effective tool for verifying and optimizing a building's energy. The values that CFD simulation brings to HVAC energy optimization are:\n\n- Verifying \"energy-saving ideas\" in the early design stage, thus allowing the HVAC system to achieve high energy efficiency.\n- Eliminating unnecessary elements, thereby increasing the energy efficiency of the entire HVAC system.\n- Creating a database for energy models that can be applied in IoT (Internet of Things) and digital twins.\n\n[IMAGE:bo-tri-dan-nong.png]\n\n## Conclusion: Combining CFD Simulation and HVAC is a Potential Solution for Sustainable Development\nCombining CFD simulation in HVAC saves time, costs, and energy consumption during operation, while technical standards are enhanced. CFD simulation will be a powerful support tool in the HVAC system design process, ensuring criteria for green building and sustainable development.\n\nIn the future, the combination of CFD simulation with other computing systems, including cloud computing and virtual/augmented reality (VR/AR), will help increase the efficiency and speed of work in the design phase for engineers, while also giving clients a realistic view of the HVAC system before and after operation. Additionally, CFD simulation has the potential to be combined with the Internet of Things (IoT) and digital twins in controlling and optimizing HVAC systems."
+    },
+    "ko": {
+      "title": "HVAC 분야에서 CFD 시뮬레이션의 응용 및 이점",
+      "content": "## HVAC 분야에서 CFD 시뮬레이션 사용의 필요성\nHVAC(난방, 환기 및 공기 조화)는 사계절 내내 열적 쾌적함을 조성하고 실내 공기질을 보장하는 시스템입니다. 전통적으로 HVAC 설계 계산은 \"이상적인 흐름\"(공기가 매우 짧은 시간 내에 완벽하게 혼합됨)을 가정하며, 빠르고 간단한 계산을 위해 추정 공식이 있는 핸드북을 사용할 수 있습니다. 이러한 접근 방식은 HVAC 장비의 부적절한 크기 조정을 초래하여 운영 비용을 증가시키고 에너지 효율성을 감소시킬 수 있습니다. 따라서 실제 시공 전에 설계를 검증하기 위한 도구가 여전히 필요합니다. 설계를 검증하기 위해 엔지니어는 실험 모델을 만들거나 실제 작동 조건에서 CFD 시뮬레이션을 실행할 수 있습니다. 그중 CFD 시뮬레이션은 삼성을 비롯하여 LG, DAIKIN, Ramboll과 같은 대기업에서 널리 사용해 온 도구로, 그 가치와 이점 때문입니다.\n\n[IMAGE:loi-ich-mo-phong-cfd.png]\n\n## HVAC의 쾌적 지수 평가를 위한 시뮬레이션\nHVAC의 공기 환경 쾌적 지수에는 열적 쾌적함(온도, 습도, 풍속 및 쾌적 관련 지수 포함)과 실내 공기질(먼지, 냄새, 독성 가스, 박테리아 및 바이러스 농도 포함)이 포함됩니다. 이러한 쾌적 지수는 생활 공간(주택, 영화관, 교실 등)에서의 인간의 쾌적함을 반영할 뿐만 아니라 ASHRAE 55(미국), ISO 7730(국제), TCVN 7438(베트남)과 같은 표준에 명확히 정의된 요구 사항이기도 합니다. 이러한 지수는 시간, 가구 배치 및 기타 요인에 따라 변화하는 실제 조건에 따라 달라집니다. 따라서 기존의 계산 방법은 쾌적 지수에 대한 요구 사항을 충족하기에 불충분한 경우가 많습니다. CFD 시뮬레이션은 엔지니어가 정상 상태 및 과도 상태 모두에서 쾌적 지수를 시각화하고 평가하는 데 도움을 줍니다. CFD 시뮬레이션이 제공하는 몇 가지 가치는 다음과 같습니다.\n\n- 초기 설계 단계에서 이러한 지수를 시뮬레이션하여 쾌적 지수의 분포를 계산하고, 설계를 검증하며, HVAC 시스템의 성능을 최적화합니다.\n- 쾌적함을 보장하지 않는 영역을 식별하고, 이러한 지수에 영향을 미치는 요인의 영향을 평가하며, 제안된 솔루션을 검증합니다.\n- 필요한 경우 HVAC 시스템 설계 및 내부 배치를 수정하여 쾌적 지수를 최적화함으로써 설계 단계에서 정의된 요구 사항 및 표준을 보장합니다.\n- 기존 건물의 HVAC 시스템 개선 옵션을 분석하고 테스트합니다.\n\n[IMAGE:tien-nghi-nhiet-phan-bo-co2.png]\n\n(왼쪽 그림에서 주황색은 쾌적도가 가장 높은 위치를 나타내며, 여기서 PMV 값 = 0입니다)\n## HVAC의 흐름 분석을 위한 시뮬레이션\n건물 내부 공간의 경우 쾌적 지수 외에도 (1) 먼지 및 오염 물질의 확산(주택, 주차장, 공장), (2) 실내 공기의 평균 연령, (3) 화재 안전 등과 같은 다른 문제에 대해 CFD 시뮬레이션의 지원이 필요합니다.\n\n또한 CFD 시뮬레이션은 (1) 건물로 들어오는 태양 복사의 영향, (2) 외부에서 건물로 들어오는 먼지 및 독성 가스의 영향, (3) 건물 외피를 통한 열 손실, (4) 자연 환기 및 강제 환기와 같은 주요 요소를 포함하여 실내 및 실외 환경의 상호 영향을 평가하는 데에도 사용됩니다. 설계를 반복하거나 영향 조건을 변경함으로써 엔지니어는 다음과 같은 몇 가지 중요한 요구 사항을 쉽게 달성할 수 있습니다.\n\n- 사고 발생 시 경향을 예측하고 초기 설계 단계에서 예방 및 대응 조치를 테스트합니다.\n- 먼지 및 독성 가스 처리 시스템, 소방 시스템(예: 연기 제어 시스템)을 최적화합니다.\n- 실내 쾌적 지수에 대한 외부 요인(예: 태양 복사, 먼지, 습도, 독성 가스)의 영향을 평가합니다.\n- 환기 시스템의 설계 및 성능을 검증합니다.\n\n[IMAGE:thiet-ke-gio-cuong-buc.png]\n\n(빨간색은 환기 성능이 가장 나쁜 위치를 나타냅니다)\n## HVAC 장비 최적화를 위한 시뮬레이션\nCFD 시뮬레이션을 통해 설계 엔지니어는 (1) 공기 청정 장비, (2) 에어컨(AC), (3) 공기 조화기(AHU), (4) 연소 장치 및 보일러, (5) 칠러, (6) 디퓨저, (7) 코일, (8) 습도 조절 장비, (9) 난방 장비, (10) 펌프, 팬, 압축기, 덕트 작업, (11) 냉동 장치를 포함한 HVAC 장비의 성능, 에너지 효율성, 소음 수준, 체류 시간 등의 지표를 평가할 수 있습니다. CFD 시뮬레이션 프로세스는 설계 엔지니어와 제조업체에 다음과 같은 많은 이점을 제공합니다.\n\n- 설계 과정에서 테스트를 위해 장비의 물리적 프로토타입을 제작할 필요성을 최소화합니다.\n- 설계 프로세스 초기에 잠재적인 문제를 감지합니다.\n- 특히 자동차, 선박, 기차, 비행기와 같이 좁은 공간에 위치한 장비의 경우 HVAC 장비의 모양과 성능을 최적화합니다.\n- 기존 건물의 덕트 시스템 및 통풍구에 대한 개선 옵션을 분석하고 테스트합니다.\n\n[IMAGE:thiet-ke-ong-gio-1400x467.png]\n\n## HVAC 시스템 에너지 최적화를 위한 시뮬레이션\n에너지 모델은 종종 \"이상적인 흐름\" 가정을 기반으로 합니다. 실제로 건물의 공기 질량은 높이에 따라 층화되며 공간이나 시간에서 균일하지 않습니다. 따라서 가장 정확하게 계산된 에너지 모델이라도 추가적인 검증 도구가 필요합니다. 실내 조건을 고정하고 실외 조건을 다양하게 함으로써 CFD 시뮬레이션은 건물의 에너지를 검증하고 최적화하는 데 효과적인 도구가 됩니다. CFD 시뮬레이션이 HVAC 에너지 최적화에 가져다주는 가치는 다음과 같습니다.\n\n- 초기 설계 단계에서 \"에너지 절약 아이디어\"를 검증하여 HVAC 시스템이 높은 에너지 효율성을 달성할 수 있도록 합니다.\n- 불필요한 요소를 제거하여 전체 HVAC 시스템의 에너지 효율성을 높입니다.\n- IoT(사물 인터넷) 및 디지털 트윈에 적용할 수 있는 에너지 모델을 위한 데이터베이스를 생성합니다.\n\n[IMAGE:bo-tri-dan-nong.png]\n\n## 결론: CFD 시뮬레이션과 HVAC의 결합은 지속 가능한 발전을 위한 잠재적 솔루션입니다\nHVAC에서 CFD 시뮬레이션을 결합하면 기술 표준이 향상되는 동시에 운영 중 시간, 비용 및 에너지 소비를 절약할 수 있습니다. CFD 시뮬레이션은 HVAC 시스템 설계 과정에서 강력한 지원 도구가 되어 녹색 건축 및 지속 가능한 개발 기준을 보장할 것입니다.\n\n미래에는 클라우드 컴퓨팅 및 가상/증강 현실(VR/AR)을 포함한 다른 컴퓨팅 시스템과 CFD 시뮬레이션의 결합으로 엔지니어의 설계 단계 작업 효율성과 속도를 높이는 동시에, 고객에게 운영 전후의 HVAC 시스템에 대한 현실적인 뷰를 제공할 것입니다. 또한 CFD 시뮬레이션은 HVAC 시스템을 제어하고 최적화하는 데 있어 사물 인터넷(IoT) 및 디지털 트윈과 결합될 잠재력이 있습니다."
     }
   },
   {
@@ -50,13 +58,17 @@
     "en": {
       "title": "Solar Panel Factory Project",
       "content": "The project, invested by the Taichi Group from Japan, involves the production of solar panels for the Asian market. Tan Thanh Cong provided construction consultancy at Hoa Phu Industrial Park."
+    },
+    "ko": {
+      "title": "태양광 패널 공장 프로젝트",
+      "content": "일본 Taichi 그룹이 투자한 이 프로젝트는 아시아 시장을 위한 태양광 패널 생산을 포함합니다. 떤탄꽁은 Hoa Phu 산업 단지에서 건설 컨설팅을 제공했습니다."
     }
   },
   {
     "id": "nha-may-san-xuat-linh-kien-dien-thoai",
     "url": "https://tanthanhcongjsc.com/du-an/nha-may-che-bien-thuc-an-gia-suc.html",
     "date": "",
-    "thumbnail":"/blog-assets/linhkien.png",
+    "thumbnail": "/blog-assets/linhkien.png",
     "categories": [
       "Dự án"
     ],
@@ -67,6 +79,10 @@
     "en": {
       "title": "Phone Component Manufacturing Plant",
       "content": "The animal feed processing plant project was consulted on and built"
+    },
+    "ko": {
+      "title": "휴대폰 부품 제조 공장",
+      "content": "동물 사료 가공 공장 프로젝트가 컨설팅 및 건설되었습니다"
     }
   },
   {
@@ -84,13 +100,17 @@
     "en": {
       "title": "Consulting for a Korean Lawnmower Factory",
       "content": "The largest household plastics manufacturing plant project in the north with an area of 50 hectares"
+    },
+    "ko": {
+      "title": "한국 예초기 제조 공장 컨설팅",
+      "content": "면적 50헥타르의 북부 최대 가정용 플라스틱 제조 공장 프로젝트"
     }
   },
   {
     "id": "tu-van-nha-may-san-xuat-den-led-techvina",
     "url": "https://tanthanhcongjsc.com/blog/cong-nghe-nha-thep-tien-che.html",
     "date": "16 Tháng 7, 2015",
-    "thumbnail":"/blog-assets/ledtechvina.jpg",
+    "thumbnail": "/blog-assets/ledtechvina.jpg",
     "categories": [
       "Tin tức"
     ],
@@ -101,13 +121,17 @@
     "en": {
       "title": "Consulting for Techvina Led Lamp Factory",
       "content": "Applying international standard technology to ensure specifications and quality for all industrial projects."
+    },
+    "ko": {
+      "title": "Techvina LED 램프 공장 컨설팅",
+      "content": "모든 산업 프로젝트에 대한 규격과 품질을 보장하기 위해 국제 표준 기술 적용."
     }
   },
   {
     "id": "tu-van-nang-cap-nha-xuong",
     "url": "https://tanthanhcongjsc.com/tu-van/beast-lesser-had-sixth-without-face-that.html",
     "date": "16 Tháng 7, 2015",
-    "thumbnail":"/blog-assets/tuvannangcap.jpg",
+    "thumbnail": "/blog-assets/tuvannangcap.jpg",
     "categories": [
       "Tư vấn"
     ],
@@ -118,6 +142,10 @@
     "en": {
       "title": "Consulting on Factory Upgrades",
       "content": "Tan Thanh Cong provides consulting services for upgrading old factories to international standards."
+    },
+    "ko": {
+      "title": "공장 업그레이드 컨설팅",
+      "content": "떤탄꽁은 기존 공장을 국제 표준으로 업그레이드하기 위한 컨설팅 서비스를 제공합니다."
     }
   }
 ]

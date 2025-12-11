@@ -5,13 +5,14 @@ import blogData from './data/blog.json';
 import BlogCards from './components/BlogCards';
 import ArticleDetailDialog from './components/dialogs/ArticleDetailDialog';
 import { Article } from '../../types';
+import { getCurrentLangKey } from '../../common/utils/i18nUtils';
 
 const BlogPage: React.FC = () => {
   const { t, i18n } = useTranslation();
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const currentLang = i18n.language.startsWith('vi') ? 'vi' : 'en';
+  const currentLang = getCurrentLangKey(i18n.language);
 
   // Transform blog data to match Article interface
   const blogArticles: Article[] = (blogData || []).map((item: any) => {
@@ -45,14 +46,14 @@ const BlogPage: React.FC = () => {
 
   return (
     <div>
-      <motion.div 
+      <motion.div
         className="bg-white py-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         <div className="container mx-auto px-4 text-center">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-5xl font-extrabold text-gray-800"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,7 +61,7 @@ const BlogPage: React.FC = () => {
           >
             {t('blog.page.title')}
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="mt-4 text-lg text-gray-800 max-w-3xl mx-auto md:text-lg font-medium leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

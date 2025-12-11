@@ -58,6 +58,25 @@
   "services": {
     "tag": "OUR SERVICES",
     "title": "Providing comprehensive<1/>construction design solutions",
+    "category": "Construction Design",
+    "items": {
+      "tu-van-xuc-tien-dau-tu": {
+        "name": "Investment Promotion Consulting",
+        "summary": "Consulting experts with deep understanding of the investment market."
+      },
+      "tu-van-thiet-ke-du-an": {
+        "name": "Project Design Consulting",
+        "summary": "Team of highly qualified engineers with years of experience."
+      },
+      "thi-cong-du-an-quy-trinh": {
+        "name": "Project Construction & Process",
+        "summary": "Quality – Technique – Aesthetics for the project."
+      },
+      "bao-hanh-24-24": {
+        "name": "24/24 Warranty Service",
+        "summary": "Renovation and repair ensuring high professionalism."
+      }
+    },
     "description": "Tan Thanh Cong offers a total solution for industrial workshop design and construction. With a team of experienced engineers and experts, we provide turnkey consulting, design, and construction services, ensuring progress, quality, and safety for every project. Tan Thanh Cong always aims to optimize costs and realize all of our clients' construction ideas with advanced and effective technical solutions."
   },
   "latestBlogs": {

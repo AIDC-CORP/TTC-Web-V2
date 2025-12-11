@@ -1,0 +1,264 @@
+{
+    "header": {
+        "address": "하노이시 탄쑤언구 쭝화년찡 도시지역 19N7B호",
+        "workingHours": "근무 시간: 08:00 – 17:30",
+        "hotline": "핫라인",
+        "searchPlaceholder": "검색..."
+    },
+    "nav": {
+        "home": "홈",
+        "about": "회사 소개",
+        "projects": "프로젝트",
+        "consulting": "상담",
+        "blog": "블로그",
+        "contact": "연락처"
+    },
+    "footer": {
+        "companyName": "떤탄꽁 건설기술 주식회사",
+        "companyDescription": "베트남 최고의 건설 프로젝트 관리, 설계 및 상담 솔루션 제공 전문.",
+        "quickLinks": "빠른 링크",
+        "aboutUs": "회사 소개",
+        "contactInfo": "연락처 정보",
+        "copyright": "Tan Thanh Cong JSC. All rights reserved."
+    },
+    "hero": {
+        "subtitle": "조립식 철골 건물",
+        "title": "떤탄꽁 (TAN THANH CONG JSC)",
+        "description": "전문적인 상담, 신속한 시공, 국제 표준 기술은 떤탄꽁이 최우선으로 여기는 가치입니다.",
+        "ctaButton": "상담 받기"
+    },
+    "intro": {
+        "experienceBadge": "10년 이상의 경험",
+        "tag": "떤탄꽁",
+        "title": "국제 표준 산업 공장 설계 및 시공 파트너",
+        "description": "떤탄꽁 JSC는 제조 기업과 투자자를 위한 종합 솔루션을 제공합니다. 우리는 깊이 있는 전문 지식, 다국어 팀, 현대적인 관리 프로세스를 결합하여 프로젝트가 지속 가능하고 안전하며 효율적으로 운영되도록 보장합니다.",
+        "feature1": {
+            "title": "설계 및 시공 총괄 계약자",
+            "description": "컨셉 상담 및 기술 설계부터 국제 표준 현장 구현까지 전체 가치 사슬을 연결합니다."
+        },
+        "feature2": {
+            "title": "FDI 기업과 파트너십",
+            "description": "외국인 투자자의 요구 사항을 이해하여 베트남 산업 프로젝트의 비용과 일정을 최적화합니다."
+        },
+        "feature3": {
+            "title": "친환경 & 스마트 솔루션",
+            "description": "조립식 철골 건물 기술, 에너지 효율성, 미래 공장을 위한 유연한 확장을 우선시합니다."
+        },
+        "ctaButton": "지금 연락하기"
+    },
+    "featuredProjects": {
+        "title": "주요 프로젝트",
+        "subtitle": "우리는 많은 대규모 프로젝트의 성공에 기여하여 역량과 명성을 확인받은 것을 자랑스럽게 생각합니다.",
+        "seeAll": "모든 프로젝트 보기",
+        "description": "프로젝트 위치: {{location}}, 면적: {{square}}, 연도: {{year}}. 프로젝트 관리: {{manager}}",
+        "category": {
+            "factory": "제조 공장"
+        }
+    },
+    "services": {
+        "tag": "우리의 서비스",
+        "title": "종합적인<1/>건설 설계 솔루션 제공",
+        "category": "건설 설계",
+        "items": {
+            "tu-van-xuc-tien-dau-tu": {
+                "name": "투자 유치 컨설팅",
+                "summary": "투자 시장에 정통한 전문가 팀."
+            },
+            "tu-van-thiet-ke-du-an": {
+                "name": "프로젝트 설계 컨설팅",
+                "summary": "다년간의 경험을 가진 고숙련 엔지니어 팀."
+            },
+            "thi-cong-du-an-quy-trinh": {
+                "name": "프로젝트 시공 및 프로세스",
+                "summary": "공사를 위한 품질 – 기술 – 미학."
+            },
+            "bao-hanh-24-24": {
+                "name": "24/24 보증 서비스",
+                "summary": "높은 전문성을 보장하는 개조 및 수리."
+            }
+        },
+        "description": "떤탄꽁은 산업 공장 설계 및 시공을 위한 토탈 솔루션을 제공합니다. 경험이 풍부한 엔지니어와 전문가 팀과 함께 턴키 상담, 설계 및 시공 서비스를 제공하여 모든 프로젝트의 진행, 품질 및 안전을 보장합니다. 떤탄꽁은 항상 비용을 최적화하고 선진적이고 효과적인 기술 솔루션으로 고객의 모든 건설 아이디어를 실현하는 것을 목표로 합니다."
+    },
+    "latestBlogs": {
+        "title": "최신 기사",
+        "subtitle": "산업 건설 및 설계에 대한 최신 뉴스, 조언 및 지식을 업데이트하세요.",
+        "seeAll": "모든 기사 보기"
+    },
+    "blog": {
+        "category": {
+            "consulting": "상담",
+            "blog": "블로그"
+        },
+        "page": {
+            "title": "블로그 & 뉴스",
+            "subtitle": "지식 공유, 업계 뉴스 및 회사 활동 업데이트"
+        },
+        "readMore": "더 읽기"
+    },
+    "partners": {
+        "tag": "우리의 파트너",
+        "title": "전략적 파트너",
+        "subtitle": "업계 최고의 브랜드와 협력하고 있습니다"
+    },
+    "callout": {
+        "title": "공장 건설 상담이 필요하신가요?",
+        "subtitle": "가장 빠른 답변을 원하시면 다음 채널을 통해 상담원에게 직접 문의해 주세요.",
+        "zalo": "Zalo 채팅",
+        "messenger": "Messenger 채팅",
+        "call": "0976 447 766 전화하기"
+    },
+    "criteria": {
+        "tag": "떤탄꽁의 작업 프로세스",
+        "title": "안전 및 지속 가능성 기준",
+        "description": "떤탄꽁은 기업을 위한 모든 설계 및 건설 서비스를 제공합니다. 분석, 전략 상담부터 실제 구현까지 포괄적인 솔루션을 제공하여 모든 아이디어에 대한 발전 기회를 열어줍니다.",
+        "item1": "노동 안전 보장",
+        "item2": "친환경 소재",
+        "item3": "다양한 공간과 사용자에게 적합",
+        "item4": "신속하고 효율적인 완공",
+        "ctaButton": "지금 연락하기"
+    },
+    "about": {
+        "hero": {
+            "tag": "회사 소개",
+            "title": "떤탄꽁 소개",
+            "subtitle": "지속 가능한 가치를 창조하는 여정",
+            "experience": "건설 프로젝트 상담 및 관리 분야에서 10년 이상의 경험"
+        },
+        "story": {
+            "title": "우리의 이야기",
+            "paragraph1": "2015년에 설립된 떤탄꽁은 헌신적인 엔지니어 팀과 베트남에 고품질 건축물을 제공하겠다는 열망으로 시작했습니다. 10년 이상의 발전을 거치며 끊임없이 노력하고 혁신하여 최고의 명성을 가진 건설 상담 회사 중 하나로 성장했습니다.",
+            "paragraph2": "우리의 성공은 탄탄한 전문성, 책임감, 그리고 고객과 파트너의 신뢰를 바탕으로 구축되었습니다."
+        },
+        "cards": {
+            "mission": {
+                "title": "사명",
+                "description": "우수하고 안전하며 효과적인 기술 솔루션을 제공하여 건설 산업과 사회의 지속 가능한 발전에 기여합니다."
+            },
+            "vision": {
+                "title": "비전",
+                "description": "베트남 건설 프로젝트 상담 및 관리 분야에서 최고의 신뢰할 수 있는 파트너가 되어 지역 수준으로 도약하는 것입니다."
+            },
+            "core_values": {
+                "title": "핵심 가치",
+                "description": "신뢰 - 전문성 - 창의성 - 헌신. 이것이 우리의 모든 활동을 이끄는 지침입니다."
+            }
+        },
+        "stats": {
+            "title": "우리가 가진 것",
+            "architects": "건축가",
+            "engineers": "건설 엔지니어",
+            "consultants": "전문 상담가",
+            "projects": "프로젝트",
+            "staff": "직원",
+            "clients": "고객"
+        },
+        "quotes": [
+            {
+                "label": "기술",
+                "title": "기술",
+                "description": "기업의 공장 건설에 조립식 철골 건물을 사용하는 선진 기술 적용."
+            },
+            {
+                "label": "비전",
+                "title": "비전",
+                "description": "다년간의 상담 및 설계 경험을 가진 엔지니어 팀이 국제 표준 공장을 실현하도록 도와드립니다."
+            },
+            {
+                "label": "장비",
+                "title": "장비",
+                "description": "현대적인 기계와 기술이 7/7 레벨 기술을 가진 작업자 팀에 의해 운영됩니다."
+            },
+            {
+                "label": "방향",
+                "title": "방향",
+                "description": "고객의 만족은 떤탄꽁이 항상 노력하는 가장 큰 목표이자 동기입니다."
+            }
+        ]
+    },
+    "consulting": {
+        "seeAll": "모든 상담 기사 보기",
+        "page": {
+            "title": "상담 서비스",
+            "subtitle": "아이디어부터 프로젝트 완료까지 투자자와 동행하는 전문 솔루션 제공."
+        }
+    },
+    "dialog": {
+        "close": "닫기"
+    },
+    "article": {
+        "notFound": "기사를 찾을 수 없음",
+        "notFoundText": "찾고 계신 기사가 존재하지 않거나 삭제되었습니다.",
+        "backToBlog": "블로그로 돌아가기"
+    },
+    "projects": {
+        "summary": "{{location}} 프로젝트",
+        "description": "이 프로젝트는 대규모로 일정에 맞춰 수행되었습니다. 우리는 시공 과정에서 달성한 결과를 자랑스럽게 생각합니다.",
+        "category": "공사",
+        "page": {
+            "title": "우리의 프로젝트",
+            "subtitle": "실제 공사를 통해 입증된 역량과 경험"
+        },
+        "filters": {
+            "regionTitle": "지역별 필터",
+            "regions": {
+                "all": "전체",
+                "north": "북부",
+                "central": "중부",
+                "south": "남부"
+            },
+            "scaleTitle": "규모별 필터",
+            "minScale": "최소 규모",
+            "maxScale": "최대 규모",
+            "selectedRange": "선택된 규모 범위",
+            "apply": "적용",
+            "reset": "초기화"
+        },
+        "noResults": {
+            "title": "프로젝트를 찾을 수 없음",
+            "subtitle": "현재 필터와 일치하는 프로젝트가 없습니다.",
+            "button": "모든 프로젝트 보기"
+        },
+        "recentlyViewed": "최근 본 프로젝트",
+        "dialog": {
+            "title": "프로젝트 정보",
+            "manager": "프로젝트 관리자",
+            "year": "시행 연도",
+            "location": "위치",
+            "scale": "규모",
+            "gallery": "이미지 갤러리",
+            "galleryAlt": "프로젝트 이미지 {{name}} {{index}}"
+        }
+    },
+    "contact": {
+        "page": {
+            "title": "연락하기",
+            "subtitle": "우리는 항상 여러분의 의견을 듣고 솔루션을 조언할 준비가 되어 있습니다."
+        },
+        "form": {
+            "title": "상담 요청 보내기",
+            "nameLabel": "이름",
+            "phoneLabel": "전화번호",
+            "emailLabel": "이메일",
+            "messageLabel": "메시지 내용",
+            "submitButton": "보내기",
+            "success": {
+                "title": "연락처 전송 성공!",
+                "message": "빠른 시일 내에 답변 드리겠습니다."
+            },
+            "errors": {
+                "name": "이름을 입력해 주세요",
+                "phoneOrEmail": "전화번호 또는 이메일을 입력해 주세요",
+                "invalidEmail": "유효하지 않은 이메일 주소입니다",
+                "invalidPhone": "유효하지 않은 전화번호입니다",
+                "message": "메시지를 입력해 주세요"
+            }
+        },
+        "map": {
+            "title": "위치",
+            "directContact": "직접 연락처 정보",
+            "addressLabel": "주소",
+            "emailLabel": "이메일",
+            "openMapButton": "더 큰 지도 열기"
+        }
+    }
+}

@@ -6,6 +6,7 @@ import ArticleDetailDialog from '../../blog/components/dialogs/ArticleDetailDial
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Article } from '../../../types';
+import { getCurrentLangKey } from '../../../common/utils/i18nUtils';
 
 const LatestBlogsSection: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -13,7 +14,7 @@ const LatestBlogsSection: React.FC = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const latestArticles = useMemo<Article[]>(() => {
-    const currentLang = i18n.language.startsWith('vi') ? 'vi' : 'en';
+    const currentLang = getCurrentLangKey(i18n.language);
 
     const mappedArticles = (blogData as Article[])
       .map<Article | null>((article) => {
@@ -76,10 +77,10 @@ const LatestBlogsSection: React.FC = () => {
           </div>
         </div>
       </motion.section>
-      <ArticleDetailDialog 
-        article={selectedArticle} 
-        isOpen={isDialogOpen} 
-        onClose={handleCloseDialog} 
+      <ArticleDetailDialog
+        article={selectedArticle}
+        isOpen={isDialogOpen}
+        onClose={handleCloseDialog}
       />
     </>
   );

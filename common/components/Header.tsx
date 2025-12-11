@@ -71,21 +71,21 @@ const Header: React.FC = () => {
             <span className="flex items-center gap-2">
               {/* location */}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-red-500" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C8.686 2 6 4.686 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.314-2.686-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z"/>
+                <path d="M12 2C8.686 2 6 4.686 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.314-2.686-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z" />
               </svg>
               {t('header.address')}
             </span>
             <span className="flex items-center gap-2">
               {/* time */}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm.75 5a.75.75 0 0 0-1.5 0v5c0 .199.079.39.22.53l3 3a.75.75 0 1 0 1.06-1.06L12.75 11.5V7z"/>
+                <path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm.75 5a.75.75 0 0 0-1.5 0v5c0 .199.079.39.22.53l3 3a.75.75 0 1 0 1.06-1.06L12.75 11.5V7z" />
               </svg>
               {t('header.workingHours')}
             </span>
             <a href="mailto:info@tanthanhcongjsc.com" className="flex items-center gap-2 hover:text-white transition-colors">
               {/* email */}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.511l-8 5.333-8-5.333V6h16zM4 18V9.489l7.4 4.933a1 1 0 0 0 1.2 0L20 9.49V18H4z"/>
+                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.511l-8 5.333-8-5.333V6h16zM4 18V9.489l7.4 4.933a1 1 0 0 0 1.2 0L20 9.49V18H4z" />
               </svg>
               info@tanthanhcongjsc.com
             </a>
@@ -103,10 +103,39 @@ const Header: React.FC = () => {
                 <div className="font-semibold text-sm">(+84) 0976 447 766</div>
               </div>
             </a>
-            <div className="flex items-center gap-2 text-sm">
-              <button onClick={() => i18n.changeLanguage('vi')} className={`px-2 py-1 rounded-md transition-colors ${i18n.language === 'vi' ? 'bg-blue-600 text-white' : 'hover:bg-blue-800'}`}>VI</button>
-              <span className="text-gray-500">|</span>
-              <button onClick={() => i18n.changeLanguage('en')} className={`px-2 py-1 rounded-md transition-colors ${i18n.language === 'en' ? 'bg-blue-600 text-white' : 'hover:bg-blue-800'}`}>EN</button>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => i18n.changeLanguage('vi')}
+                className={`w-7 h-7 rounded-full overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'vi' ? 'border-blue-600 scale-110 shadow-md' : 'border-transparent opacity-70 hover:opacity-100 hover:scale-105'}`}
+                title="Tiếng Việt"
+              >
+                <svg viewBox="0 0 640 480" className="w-full h-full object-cover">
+                  <path fill="#da251d" d="M0 0h640v480H0z" />
+                  <path fill="#ff0" d="M320 125.7 348.6 211h91.1l-75.3 54 26.5 86.8-70.9-52.6-70.9 52.6 26.5-86.8-75.3-54h91.2z" />
+                </svg>
+              </button>
+
+              <button
+                onClick={() => i18n.changeLanguage('en')}
+                className={`w-7 h-7 rounded-full overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'en' ? 'border-blue-600 scale-110 shadow-md' : 'border-transparent opacity-70 hover:opacity-100 hover:scale-105'}`}
+                title="English"
+              >
+                <svg viewBox="0 0 640 480" className="w-full h-full object-cover">
+                  <path fill="#012169" d="M0 0h640v480H0z" />
+                  <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z" />
+                  <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z" />
+                  <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z" />
+                  <path fill="#C8102E" d="M266 0v480h110V0H266zM0 185v110h640V185H0z" />
+                </svg>
+              </button>
+
+              <button
+                onClick={() => i18n.changeLanguage('ko')}
+                className={`w-7 h-7 rounded-full overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'ko' ? 'border-blue-600 scale-110 shadow-md' : 'border-transparent opacity-70 hover:opacity-100 hover:scale-105'}`}
+                title="한국어"
+              >
+                <img src="/KO.png" alt="Korea" className="w-full h-full object-cover" />
+              </button>
             </div>
           </div>
         </div>
@@ -114,74 +143,74 @@ const Header: React.FC = () => {
 
       {/* Main header */}
       <div className="bg-white/80 backdrop-blur-lg shadow-md">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center">
-              <img 
-                src="/logo-ttc-removebg-DNXrVdJp.png" 
-                alt="Tân Thành Công JSC" 
-                className="h-12 w-auto"
-              />
-            </Link>
-          </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
+            <div className="flex-shrink-0">
+              <Link to="/" className="flex items-center">
+                <img
+                  src="/logo-ttc-removebg-DNXrVdJp.png"
+                  alt="Tân Thành Công JSC"
+                  className="h-12 w-auto"
+                />
+              </Link>
+            </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-2">
-            <NavItem to="/">{t('nav.home')}</NavItem>
-            <NavItem to="/gioi-thieu">{t('nav.about')}</NavItem>
-            <NavItem to="/du-an">{t('nav.projects')}</NavItem>
-            <NavItem to="/tu-van">{t('nav.consulting')}</NavItem>
-            <NavItem to="/blog">{t('nav.blog')}</NavItem>
-            <NavItem to="/lien-he">{t('nav.contact')}</NavItem>
-          </nav>
-          
-          <div className="hidden lg:block">
-            <form onSubmit={handleSearch} className="relative">
-              <input
-                type="text"
-                placeholder={t('header.searchPlaceholder')}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-48 pl-3 pr-10 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm shadow-sm"
-              />
-              <button 
-                type="submit" 
-                className="absolute right-1 top-1/2 -translate-y-1/2 w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200"
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-2">
+              <NavItem to="/">{t('nav.home')}</NavItem>
+              <NavItem to="/gioi-thieu">{t('nav.about')}</NavItem>
+              <NavItem to="/du-an">{t('nav.projects')}</NavItem>
+              <NavItem to="/tu-van">{t('nav.consulting')}</NavItem>
+              <NavItem to="/blog">{t('nav.blog')}</NavItem>
+              <NavItem to="/lien-he">{t('nav.contact')}</NavItem>
+            </nav>
+
+            <div className="hidden lg:block">
+              <form onSubmit={handleSearch} className="relative">
+                <input
+                  type="text"
+                  placeholder={t('header.searchPlaceholder')}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-48 pl-3 pr-10 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm shadow-sm"
+                />
+                <button
+                  type="submit"
+                  className="absolute right-1 top-1/2 -translate-y-1/2 w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                </button>
+              </form>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="lg:hidden">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg flex items-center justify-center hover:from-blue-700 hover:to-blue-800 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none relative group"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`h-6 w-6 transition-all duration-300 ${isMenuOpen ? 'rotate-90' : ''}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  {isMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                  )}
+                </svg>
+                {/* Ripple effect */}
+                <span className="absolute inset-0 rounded-lg bg-white opacity-0 group-active:opacity-20 group-active:animate-ping"></span>
               </button>
-            </form>
+            </div>
           </div>
-
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg flex items-center justify-center hover:from-blue-700 hover:to-blue-800 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none relative group"
-            >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className={`h-6 w-6 transition-all duration-300 ${isMenuOpen ? 'rotate-90' : ''}`} 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor" 
-                strokeWidth={2.5}
-              >
-                {isMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-                )}
-              </svg>
-              {/* Ripple effect */}
-              <span className="absolute inset-0 rounded-lg bg-white opacity-0 group-active:opacity-20 group-active:animate-ping"></span>
-            </button>
-          </div>
-        </div>
         </div>
       </div>
-      
+
       {/* Mobile Menu */}
       <div className={`lg:hidden bg-white border-t border-gray-300 relative z-50 ${isMenuOpen ? 'block' : 'hidden'}`}>
         <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
@@ -199,8 +228,8 @@ const Header: React.FC = () => {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-3 pr-10 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm shadow-sm"
             />
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="absolute right-1 top-1/2 -translate-y-1/2 w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>

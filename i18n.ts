@@ -8,14 +8,14 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    supportedLngs: ['en', 'vi'],
+    supportedLngs: ['en', 'vi', 'ko'],
     fallbackLng: 'vi',
     detection: {
       order: ['path', 'cookie', 'htmlTag', 'localStorage', 'subdomain'],
       caches: ['cookie'],
     },
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
+      loadPath: '/locales/{{lng}}/{{ns}}.json?t=' + new Date().getTime(),
     },
     react: { useSuspense: false },
   });

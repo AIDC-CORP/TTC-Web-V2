@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import articlesData from './data/blog.json';
 import { Article } from '../../types';
+import { getCurrentLangKey } from '../../common/utils/i18nUtils';
 
 // Cast the imported JSON to the correct type
 const articles = articlesData as Article[];
@@ -52,7 +53,7 @@ const ArticleDetailPage: React.FC = () => {
   const { t, i18n } = useTranslation();
   const article = articles.find(a => a.id === id);
 
-  const currentLang = i18n.language.startsWith('vi') ? 'vi' : 'en';
+  const currentLang = getCurrentLangKey(i18n.language);
 
   if (!article) {
     return (
