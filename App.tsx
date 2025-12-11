@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from './common/components/MainLayout';
 import ErrorBoundary from './common/components/ErrorBoundary';
 import HomePage from './features/home/HomePage';
@@ -14,7 +14,7 @@ import SearchResultsPage from './features/search/SearchResultsPage';
 const App: React.FC = () => {
   return (
     <ErrorBoundary>
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<HomePage />} />
@@ -26,7 +26,7 @@ const App: React.FC = () => {
             <Route path="/tim-kiem" element={<SearchResultsPage />} />
           </Route>
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </ErrorBoundary>
   );
 };
