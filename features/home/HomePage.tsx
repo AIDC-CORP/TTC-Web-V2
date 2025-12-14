@@ -8,6 +8,7 @@ import LatestBlogsSection from './components/LatestBlogsSection';
 import PartnersSection from './components/PartnersSection';
 import CalloutSection from './components/CalloutSection';
 import Criteria from './components/CriteriaSection';
+import { FactoryAnatomySection } from './components/FactoryAnatomySection';
 
 const HomePage: React.FC = () => {
   return (
@@ -40,6 +41,15 @@ const HomePage: React.FC = () => {
       >
         <ServiceSection />
       </motion.div>
+
+      {/* <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
+      >
+        <FactoryAnatomySection />
+      </motion.div> */}
 
       <motion.div
         initial={{ opacity: 0, y: 50 }}
