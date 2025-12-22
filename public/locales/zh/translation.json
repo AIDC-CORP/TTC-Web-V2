@@ -1,0 +1,264 @@
+{
+    "header": {
+        "address": "河内市青春郡中和仁政新区19N7B号",
+        "workingHours": "工作时间：08:00 – 17:30",
+        "hotline": "热线电话",
+        "searchPlaceholder": "搜索..."
+    },
+    "nav": {
+        "home": "首页",
+        "about": "关于我们",
+        "projects": "项目",
+        "consulting": "咨询",
+        "blog": "博客",
+        "contact": "联系我们"
+    },
+    "footer": {
+        "companyName": "新成公建筑技术股份公司",
+        "companyDescription": "专业提供越南领先的咨询、设计和建筑项目管理解决方案。",
+        "quickLinks": "快速链接",
+        "aboutUs": "关于我们",
+        "contactInfo": "联系信息",
+        "copyright": "新成公股份公司。版权所有。"
+    },
+    "hero": {
+        "subtitle": "预制钢结构建筑",
+        "title": "新成公股份公司",
+        "description": "专业咨询、快速施工、国际标准技术始终是新成公的首要任务。",
+        "ctaButton": "获取咨询"
+    },
+    "intro": {
+        "experienceBadge": "年经验",
+        "tag": "新成公",
+        "title": "您的国际标准工业厂房设计与建造合作伙伴",
+        "description": "新成公股份公司为制造企业和投资者提供全面解决方案。我们结合深厚的专业知识、多语言团队和现代化管理流程，确保项目可持续、安全、高效运营。",
+        "feature1": {
+            "title": "设计与建造总承包",
+            "description": "连接从概念咨询、技术设计到国际标准现场实施的整个价值链。"
+        },
+        "feature2": {
+            "title": "与外商投资企业合作",
+            "description": "了解外国投资者的要求，优化越南工业项目的成本和时间表。"
+        },
+        "feature3": {
+            "title": "绿色与智能解决方案",
+            "description": "优先采用预制钢结构建筑技术，节能并为未来工厂提供灵活扩展。"
+        },
+        "ctaButton": "立即联系我们"
+    },
+    "featuredProjects": {
+        "title": "精选项目",
+        "subtitle": "我们为众多大型项目的成功做出了贡献，这证明了我们的能力和声誉。",
+        "seeAll": "查看所有项目",
+        "description": "位于{{location}}的项目，面积{{square}}，年份{{year}}。项目管理：{{manager}}",
+        "category": {
+            "factory": "制造工厂"
+        }
+    },
+    "services": {
+        "tag": "我们的服务",
+        "title": "提供全面的<1/>建筑设计解决方案",
+        "category": "建筑设计",
+        "items": {
+            "tu-van-xuc-tien-dau-tu": {
+                "name": "投资促进咨询",
+                "summary": "对投资市场有深刻理解的咨询专家。"
+            },
+            "tu-van-thiet-ke-du-an": {
+                "name": "项目设计咨询",
+                "summary": "经验丰富的高素质工程师团队。"
+            },
+            "thi-cong-du-an-quy-trinh": {
+                "name": "项目施工与流程",
+                "summary": "项目的质量 – 技术 – 美学。"
+            },
+            "bao-hanh-24-24": {
+                "name": "24小时保修服务",
+                "summary": "专业的翻新和维修服务。"
+            }
+        },
+        "description": "新成公为工业厂房设计和建造提供全面解决方案。凭借经验丰富的工程师和专家团队，我们提供交钥匙咨询、设计和施工服务，确保每个项目的进度、质量和安全。新成公始终致力于优化成本，并通过先进有效的技术解决方案实现客户的所有建筑理念。"
+    },
+    "latestBlogs": {
+        "title": "最新文章",
+        "subtitle": "了解有关工业建筑和设计的最新新闻、建议和知识。",
+        "seeAll": "查看所有文章"
+    },
+    "blog": {
+        "category": {
+            "consulting": "咨询",
+            "blog": "博客"
+        },
+        "page": {
+            "title": "博客与新闻",
+            "subtitle": "分享知识，更新行业新闻和公司活动"
+        },
+        "readMore": "阅读更多"
+    },
+    "partners": {
+        "tag": "我们的合作伙伴",
+        "title": "战略合作伙伴",
+        "subtitle": "我们很荣幸与行业领先品牌合作"
+    },
+    "callout": {
+        "title": "需要工厂建设建议？",
+        "subtitle": "为了获得最快的响应，请通过以下渠道直接联系我们的顾问。",
+        "zalo": "Zalo聊天",
+        "messenger": "Messenger聊天",
+        "call": "拨打 0976 447 766"
+    },
+    "criteria": {
+        "tag": "新成公的工作流程",
+        "title": "安全与可持续发展标准",
+        "description": "新成公为企业提供全方位的设计和建筑服务。我们提供从分析和战略咨询到实际实施的全面解决方案，为每个想法开辟发展机会。",
+        "item1": "确保劳动安全",
+        "item2": "环保材料",
+        "item3": "适用于各种空间和用户",
+        "item4": "快速高效完成",
+        "ctaButton": "立即联系我们"
+    },
+    "about": {
+        "hero": {
+            "tag": "关于公司",
+            "title": "关于新成公",
+            "subtitle": "创造可持续价值的旅程",
+            "experience": "在建筑项目咨询和管理方面拥有超过10年的经验"
+        },
+        "story": {
+            "title": "我们的故事",
+            "paragraph1": "新成公成立于2015年，最初只有一支充满热情的工程师团队，希望为越南带来高质量的建筑。经过十多年的发展，我们不断努力、创新并崛起，成为领先的信誉建筑咨询公司之一。",
+            "paragraph2": "我们的成功建立在扎实的专业知识、责任精神以及客户和合作伙伴的信任之上。"
+        },
+        "cards": {
+            "mission": {
+                "title": "使命",
+                "description": "提供卓越、安全、有效的技术解决方案，促进建筑业和社会的可持续发展。"
+            },
+            "vision": {
+                "title": "愿景",
+                "description": "成为越南建筑项目咨询和管理领域领先的可信合作伙伴，并达到区域水平。"
+            },
+            "core_values": {
+                "title": "核心价值观",
+                "description": "信誉 - 专业 - 创新 - 奉献。这是我们所有活动的指导原则。"
+            }
+        },
+        "stats": {
+            "title": "我们拥有什么",
+            "architects": "建筑师",
+            "engineers": "建筑工程师",
+            "consultants": "专家顾问",
+            "projects": "项目",
+            "staff": "员工",
+            "clients": "客户"
+        },
+        "quotes": [
+            {
+                "label": "技术",
+                "title": "技术",
+                "description": "在企业工厂建设中应用预制钢结构建筑的先进技术。"
+            },
+            {
+                "label": "愿景",
+                "title": "愿景",
+                "description": "我们在咨询和设计方面拥有多年经验的工程师团队将帮助您实现国际标准工厂。"
+            },
+            {
+                "label": "设备",
+                "title": "设备",
+                "description": "现代化的机械和技术由具有7/7级技能的工人团队操作。"
+            },
+            {
+                "label": "方向",
+                "title": "方向",
+                "description": "客户的满意是新成公始终努力追求的最大目标和动力。"
+            }
+        ]
+    },
+    "consulting": {
+        "seeAll": "查看所有咨询文章",
+        "page": {
+            "title": "咨询服务",
+            "subtitle": "提供专家解决方案，陪伴投资者从构思到项目完成。"
+        }
+    },
+    "dialog": {
+        "close": "关闭"
+    },
+    "article": {
+        "notFound": "未找到文章",
+        "notFoundText": "您要查找的文章不存在或已被删除。",
+        "backToBlog": "返回博客"
+    },
+    "projects": {
+        "summary": "位于{{location}}的项目",
+        "description": "该项目大规模按时完成。我们为施工过程中取得的成果感到自豪。",
+        "category": "建筑",
+        "page": {
+            "title": "我们的项目",
+            "subtitle": "通过实际项目证明的能力和经验"
+        },
+        "filters": {
+            "regionTitle": "按地区筛选",
+            "regions": {
+                "all": "全部",
+                "north": "北部",
+                "central": "中部",
+                "south": "南部"
+            },
+            "scaleTitle": "按规模筛选",
+            "minScale": "最小规模",
+            "maxScale": "最大规模",
+            "selectedRange": "选定的规模范围",
+            "apply": "应用",
+            "reset": "重置"
+        },
+        "noResults": {
+            "title": "未找到项目",
+            "subtitle": "目前没有符合您筛选条件的项目。",
+            "button": "查看所有项目"
+        },
+        "recentlyViewed": "最近查看",
+        "dialog": {
+            "title": "项目信息",
+            "manager": "项目经理",
+            "year": "年份",
+            "location": "位置",
+            "scale": "规模",
+            "gallery": "图库",
+            "galleryAlt": "项目图片 {{name}} {{index}}"
+        }
+    },
+    "contact": {
+        "page": {
+            "title": "联系我们",
+            "subtitle": "我们随时准备倾听并为您提供解决方案建议。"
+        },
+        "form": {
+            "title": "发送咨询请求",
+            "nameLabel": "全名",
+            "phoneLabel": "电话号码",
+            "emailLabel": "电子邮件",
+            "messageLabel": "消息内容",
+            "submitButton": "发送",
+            "success": {
+                "title": "联系发送成功！",
+                "message": "我们会尽快回复您。"
+            },
+            "errors": {
+                "name": "请输入您的全名",
+                "phoneOrEmail": "请输入电话号码或电子邮件",
+                "invalidEmail": "无效的电子邮件地址",
+                "invalidPhone": "无效的电话号码",
+                "message": "请输入消息"
+            }
+        },
+        "map": {
+            "title": "我们的位置",
+            "directContact": "直接联系信息",
+            "addressLabel": "地址",
+            "emailLabel": "电子邮件",
+            "openMapButton": "打开大地图"
+        }
+    }
+}

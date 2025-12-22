@@ -106,35 +106,34 @@ const Header: React.FC = () => {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => i18n.changeLanguage('vi')}
-                className={`w-7 h-7 rounded-full overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'vi' ? 'border-blue-600 scale-110 shadow-md' : 'border-transparent opacity-70 hover:opacity-100 hover:scale-105'}`}
+                className={`w-9 h-6 rounded-md overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'vi' ? 'border-blue-600 scale-110 shadow-md' : 'border-transparent opacity-70 hover:opacity-100 hover:scale-105'}`}
                 title="Tiếng Việt"
               >
-                <svg viewBox="0 0 640 480" className="w-full h-full object-cover">
-                  <path fill="#da251d" d="M0 0h640v480H0z" />
-                  <path fill="#ff0" d="M320 125.7 348.6 211h91.1l-75.3 54 26.5 86.8-70.9-52.6-70.9 52.6 26.5-86.8-75.3-54h91.2z" />
-                </svg>
+                <img src="/National-flag/VN.png" alt="Vietnam" className="w-full h-full object-cover" />
               </button>
 
               <button
                 onClick={() => i18n.changeLanguage('en')}
-                className={`w-7 h-7 rounded-full overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'en' ? 'border-blue-600 scale-110 shadow-md' : 'border-transparent opacity-70 hover:opacity-100 hover:scale-105'}`}
+                className={`w-9 h-6 rounded-md overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'en' ? 'border-blue-600 scale-110 shadow-md' : 'border-transparent opacity-70 hover:opacity-100 hover:scale-105'}`}
                 title="English"
               >
-                <svg viewBox="0 0 640 480" className="w-full h-full object-cover">
-                  <path fill="#012169" d="M0 0h640v480H0z" />
-                  <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z" />
-                  <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z" />
-                  <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z" />
-                  <path fill="#C8102E" d="M266 0v480h110V0H266zM0 185v110h640V185H0z" />
-                </svg>
+                <img src="/National-flag/EN.png" alt="English" className="w-full h-full object-cover" />
               </button>
 
               <button
                 onClick={() => i18n.changeLanguage('ko')}
-                className={`w-7 h-7 rounded-full overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'ko' ? 'border-blue-600 scale-110 shadow-md' : 'border-transparent opacity-70 hover:opacity-100 hover:scale-105'}`}
+                className={`w-9 h-6 rounded-md overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'ko' ? 'border-blue-600 scale-110 shadow-md' : 'border-transparent opacity-70 hover:opacity-100 hover:scale-105'}`}
                 title="한국어"
               >
-                <img src="/KO.png" alt="Korea" className="w-full h-full object-cover" />
+                <img src="/National-flag/KO.png" alt="Korea" className="w-full h-full object-cover" />
+              </button>
+
+              <button
+                onClick={() => i18n.changeLanguage('zh')}
+                className={`w-9 h-6 rounded-md overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'zh' ? 'border-blue-600 scale-110 shadow-md' : 'border-transparent opacity-70 hover:opacity-100 hover:scale-105'}`}
+                title="中文"
+              >
+                <img src="/National-flag/CN.png" alt="China" className="w-full h-full object-cover" />
               </button>
             </div>
           </div>
@@ -188,30 +187,27 @@ const Header: React.FC = () => {
               <div className="flex items-center gap-2 mr-1 md:hidden">
                 <button
                   onClick={() => i18n.changeLanguage('vi')}
-                  className={`w-7 h-7 rounded-full overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'vi' ? 'border-blue-600 shadow-sm' : 'border-transparent opacity-80'}`}
+                  className={`w-9 h-6 rounded-md overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'vi' ? 'border-blue-600 shadow-sm' : 'border-transparent opacity-80'}`}
                 >
-                  <svg viewBox="0 0 640 480" className="w-full h-full object-cover">
-                    <path fill="#da251d" d="M0 0h640v480H0z" />
-                    <path fill="#ff0" d="M320 125.7 348.6 211h91.1l-75.3 54 26.5 86.8-70.9-52.6-70.9 52.6 26.5-86.8-75.3-54h91.2z" />
-                  </svg>
+                  <img src="/National-flag/VN.png" alt="Vietnam" className="w-full h-full object-cover" />
                 </button>
                 <button
                   onClick={() => i18n.changeLanguage('en')}
-                  className={`w-7 h-7 rounded-full overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'en' ? 'border-blue-600 shadow-sm' : 'border-transparent opacity-80'}`}
+                  className={`w-9 h-6 rounded-md overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'en' ? 'border-blue-600 shadow-sm' : 'border-transparent opacity-80'}`}
                 >
-                  <svg viewBox="0 0 640 480" className="w-full h-full object-cover">
-                    <path fill="#012169" d="M0 0h640v480H0z" />
-                    <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z" />
-                    <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z" />
-                    <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z" />
-                    <path fill="#C8102E" d="M266 0v480h110V0H266zM0 185v110h640V185H0z" />
-                  </svg>
+                  <img src="/National-flag/EN.png" alt="English" className="w-full h-full object-cover" />
                 </button>
                 <button
                   onClick={() => i18n.changeLanguage('ko')}
-                  className={`w-7 h-7 rounded-full overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'ko' ? 'border-blue-600 shadow-sm' : 'border-transparent opacity-80'}`}
+                  className={`w-9 h-6 rounded-md overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'ko' ? 'border-blue-600 shadow-sm' : 'border-transparent opacity-80'}`}
                 >
-                  <img src="/KO.png" alt="Korea" className="w-full h-full object-cover" />
+                  <img src="/National-flag/KO.png" alt="Korea" className="w-full h-full object-cover" />
+                </button>
+                <button
+                  onClick={() => i18n.changeLanguage('zh')}
+                  className={`w-9 h-6 rounded-md overflow-hidden transition-all duration-200 border-2 ${i18n.language === 'zh' ? 'border-blue-600 shadow-sm' : 'border-transparent opacity-80'}`}
+                >
+                  <img src="/National-flag/CN.png" alt="China" className="w-full h-full object-cover" />
                 </button>
               </div>
 

@@ -5,6 +5,7 @@ import ProjectCard from '../../projects/components/ProjectCard';
 import ProjectDetailDialog from '../../projects/components/dialogs/ProjectDetailDialog';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { getCurrentLangKey } from '../../../common/utils/i18nUtils';
 import { Project } from '../../../types';
 
 type RegionKey = 'north' | 'central' | 'south' | 'all';
@@ -29,6 +30,7 @@ interface ProjectJSON {
 
 const FeaturedProjectsSection: React.FC = () => {
   const { t, i18n } = useTranslation();
+  const currentLang = getCurrentLangKey(i18n.language);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -37,18 +39,18 @@ const FeaturedProjectsSection: React.FC = () => {
       .slice(0, 3)
       .map((project, index) => ({
         id: `featured-${index}`,
-        name: i18n.language === 'vi' ? project.name_vi : project.name,
+        name: currentLang === 'vi' ? project.name_vi : project.name,
         image: project.thumbnail_url || 'https://picsum.photos/400/300?random=1',
         summary: t('featuredProjects.summary', {
           location: project.location_specific,
           square: project.square,
           defaultValue: `${project.location_specific} - ${project.square}`
         }),
-        description: t('featuredProjects.description', { 
-          location: project.location_specific, 
-          square: project.square, 
-          year: project.year, 
-          manager: project.project_manager 
+        description: t('featuredProjects.description', {
+          location: project.location_specific,
+          square: project.square,
+          year: project.year,
+          manager: project.project_manager
         }),
         investor: project.project_manager,
         executionTime: project.year,
@@ -61,7 +63,7 @@ const FeaturedProjectsSection: React.FC = () => {
         project_manager: project.project_manager,
         year: project.year
       }))
-  , [t, i18n.language]);
+    , [t, i18n.language]);
 
   const handleProjectClick = (project: Project) => {
     setSelectedProject(project);
@@ -75,7 +77,7 @@ const FeaturedProjectsSection: React.FC = () => {
 
   return (
     <>
-      <motion.section 
+      <motion.section
         className="py-16 md:py-24 bg-white"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -90,16 +92,16 @@ const FeaturedProjectsSection: React.FC = () => {
             ))}
           </div>
           <div className="text-center mt-12">
-             <Link to="/du-an" className="text-blue-600 font-semibold hover:underline">
-               {t('featuredProjects.seeAll')} &rarr;
-             </Link>
+            <Link to="/du-an" className="text-blue-600 font-semibold hover:underline">
+              {t('featuredProjects.seeAll')} &rarr;
+            </Link>
           </div>
-          </div>
-        </motion.section>
-      <ProjectDetailDialog 
-        project={selectedProject} 
-        isOpen={isDialogOpen} 
-        onClose={handleCloseDialog} 
+        </div>
+      </motion.section>
+      <ProjectDetailDialog
+        project={selectedProject}
+        isOpen={isDialogOpen}
+        onClose={handleCloseDialog}
       />
     </>
   );

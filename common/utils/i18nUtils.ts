@@ -2,9 +2,10 @@
  * Get the current language key for data localization
  * Falls back to Vietnamese if language is not supported
  */
-export const getCurrentLangKey = (i18nLanguage: string): 'vi' | 'en' | 'ko' => {
+export const getCurrentLangKey = (i18nLanguage: string): 'vi' | 'en' | 'ko' | 'zh' => {
     if (i18nLanguage.startsWith('ko')) return 'ko';
     if (i18nLanguage.startsWith('en')) return 'en';
+    if (i18nLanguage.startsWith('zh')) return 'zh';
     return 'vi'; // Default fallback
 };
 
@@ -13,7 +14,7 @@ export const getCurrentLangKey = (i18nLanguage: string): 'vi' | 'en' | 'ko' => {
  */
 export const getLocalizedData = <T extends Record<string, any>>(
     data: T,
-    langKey: 'vi' | 'en' | 'ko'
+    langKey: 'vi' | 'en' | 'ko' | 'zh'
 ): any => {
     // Try requested language
     if (data[langKey]) return data[langKey];

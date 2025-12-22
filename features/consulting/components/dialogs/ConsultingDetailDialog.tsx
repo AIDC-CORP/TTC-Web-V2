@@ -36,7 +36,7 @@ const parseContentWithImages = (content: string) => {
 
 const ConsultingDetailDialog: React.FC<ConsultingDetailDialogProps> = ({ article, isOpen, onClose }) => {
   const { t, i18n } = useTranslation();
-  const currentLang = i18n.language.startsWith('vi') ? 'vi' : 'en';
+  const currentLang = getCurrentLangKey(i18n.language);
 
   if (!isOpen || !article) {
     return null;
