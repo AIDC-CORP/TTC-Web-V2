@@ -66,7 +66,7 @@ const ArticleDetailDialog: React.FC<ArticleDetailDialogProps> = ({ article, isOp
     <AnimatePresence>
       {isOpen && article && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -74,17 +74,17 @@ const ArticleDetailDialog: React.FC<ArticleDetailDialogProps> = ({ article, isOp
           onClick={onClose}
         >
           <motion.div
-            className="bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto"
-            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full mx-4 max-h-[88vh] overflow-y-auto mt-8 mb-8"
+            initial={{ opacity: 0, scale: 0.9, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 50 }}
+            exit={{ opacity: 0, scale: 0.9, y: -20 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-6">
+            <div className="p-8">
               {/* Header */}
               <motion.div
-                className="flex justify-between items-center mb-6"
+                className="flex justify-between items-start mb-5 pb-4 border-b border-gray-100"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -128,8 +128,8 @@ const ArticleDetailDialog: React.FC<ArticleDetailDialogProps> = ({ article, isOp
                 <motion.img
                   src={article.thumbnail}
                   alt={localizedContent.title}
-                  className="w-full h-auto object-cover rounded-lg shadow-lg mb-6"
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  className="w-full max-h-[420px] object-cover object-top rounded-xl shadow-md mb-6"
+                  initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                 />
@@ -147,13 +147,13 @@ const ArticleDetailDialog: React.FC<ArticleDetailDialogProps> = ({ article, isOp
                           {lines.map((line, lineIndex) => {
                             if (line.startsWith('## ')) {
                               return (
-                                <h2 key={lineIndex} className="text-2xl font-bold text-gray-800 mt-6 mb-3">
+                                <h2 key={lineIndex} className="text-2xl font-bold text-gray-800 mt-6 mb-3 clear-both">
                                   {line.replace(/^## /, '')}
                                 </h2>
                               );
                             } else if (line.startsWith('# ')) {
                               return (
-                                <h1 key={lineIndex} className="text-3xl font-bold text-gray-800 mt-6 mb-3">
+                                <h1 key={lineIndex} className="text-3xl font-bold text-gray-800 mt-6 mb-3 clear-both">
                                   {line.replace(/^# /, '')}
                                 </h1>
                               );
@@ -175,12 +175,26 @@ const ArticleDetailDialog: React.FC<ArticleDetailDialogProps> = ({ article, isOp
                         </div>
                       );
                     } else {
+                      const [filename, layout = 'full'] = part.content.split(':');
+                      const getImageClassName = (lay: string) => {
+                        switch (lay) {
+                          case 'left':
+                            return 'w-full md:w-1/2 md:float-left md:mr-6 my-4 h-auto object-cover rounded-lg shadow-lg';
+                          case 'right':
+                            return 'w-full md:w-1/2 md:float-right md:ml-6 my-4 h-auto object-cover rounded-lg shadow-lg';
+                          case 'center':
+                            return 'w-full md:max-w-2xl mx-auto my-6 block h-auto object-cover rounded-lg shadow-lg';
+                          case 'full':
+                          default:
+                            return 'w-full h-auto object-cover rounded-lg shadow-lg my-6';
+                        }
+                      };
                       return (
                         <img
                           key={index}
-                          src={`/blog-assets/${part.content}`}
+                          src={`/blog-assets/${filename}`}
                           alt={`Article image ${index}`}
-                          className="w-full h-auto object-cover rounded-lg shadow-lg my-6"
+                          className={getImageClassName(layout)}
                         />
                       );
                     }

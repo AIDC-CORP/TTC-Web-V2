@@ -65,6 +65,15 @@ export const projects: Project[] = [
 
 export const articles: Article[] = [
   {
+    id: 'tan-thanh-cong-tham-gia-dien-dan-hop-tac-viet-nam-han-quoc',
+    title: 'Tân Thành Công tham gia Diễn đàn Hợp tác Doanh nghiệp Việt Nam – Hàn Quốc: Hướng tới mô hình Tổng thầu công nghiệp xanh theo tiêu chuẩn ESG',
+    image: '/blog-assets/ttc-esg-1.jpg',
+    excerpt: 'Trong bối cảnh xu hướng phát triển bền vững đang trở thành yêu cầu tất yếu của các dự án công nghiệp trên toàn cầu, Công ty Cổ phần Công nghệ Xây dựng Tân Thành Công (TTC) đã tham gia Diễn đàn Hợp tác Doanh nghiệp Việt Nam – Hàn Quốc.',
+    content: 'Trong bối cảnh xu hướng phát triển bền vững đang trở thành yêu cầu tất yếu của các dự án công nghiệp trên toàn cầu, Công ty Cổ phần Công nghệ Xây dựng Tân Thành Công (TTC) đã tham gia Diễn đàn Hợp tác Doanh nghiệp Việt Nam – Hàn Quốc nhằm trao đổi kinh nghiệm, cập nhật các xu hướng mới trong lĩnh vực xây dựng công nghiệp, quản lý dự án và phát triển doanh nghiệp theo tiêu chuẩn ESG. Sự kiện quy tụ nhiều chuyên gia, doanh nghiệp và tổ chức đến từ Hàn Quốc hoạt động trong các lĩnh vực công nghiệp, công nghệ, sản xuất, an toàn lao động và phát triển bền vững.',
+    publishDate: '2026-06-05',
+    category: 'Blog'
+  },
+  {
     id: 'xu-huong-vat-lieu-xay-dung-ben-vung',
     title: 'Xu Hướng Vật Liệu Xây Dựng Bền Vững Năm 2024',
     image: 'https://picsum.photos/seed/blog1/800/450',
@@ -87,7 +96,7 @@ export const articles: Article[] = [
     title: 'Tầm Quan Trọng Của Tư Vấn Giám Sát Thi Công Chuyên Nghiệp',
     image: 'https://picsum.photos/seed/service1/800/450',
     excerpt: 'Một đội ngũ tư vấn giám sát giỏi sẽ là chìa khóa đảm bảo chất lượng, tiến độ và sự an toàn cho mọi công trình.',
-    content: 'Vai trò của tư vấn giám sát không chỉ dừng lại ở việc kiểm tra bản vẽ và theo dõi tiến độ. Một đơn vị giám sát chuyên nghiệp sẽ chủ động phát hiện các rủi ro tiềm ẩn, đề xuất các giải pháp kỹ thuật tối ưu, quản lý chất lượng vật liệu đầu vào và đảm bảo công trình được thi công đúng theo thiết kế và tiêu chuẩn kỹ thuật. Đầu tư vào dịch vụ tư vấn giám sát là một khoản đầu tư thông minh để bảo vệ giá trị công trình của bạn.',
+    content: 'Vai trò của tư vấn giám sát không chỉ dừng lại ở việc kiểm tra bản vẽ và theo dõi tiến độ. Một đơn vị giám sát chuyên nghiệp sẽ chủ động phát hiện các rủi ro tiềm ẩn, đề xuất các giải pháp kỹ thuật tối ưu, quản lý chất lượng vật liệu đầu vào và đảm bảo công trình được thi công đúng theo thiết kế và tiêu chuẩn kỹ thuật. Đầu tư vào dịch vụ tư vấn giám sát là một khoản investment thông minh để bảo vệ giá trị công trình của bạn.',
     publishDate: '2024-03-10',
     category: 'Tư vấn'
   },
@@ -99,7 +108,7 @@ export const articles: Article[] = [
     content: 'Với các quy định ngày càng chặt chẽ về an toàn PCCC, việc thiết kế một hệ thống hiệu quả và tuân thủ pháp luật là vô cùng quan trọng. Dịch vụ của chúng tôi bao gồm khảo sát, lên phương án thiết kế, lựa chọn thiết bị phù hợp và hỗ trợ chủ đầu tư trong quá trình thẩm duyệt với cơ quan chức năng, đảm bảo hệ thống PCCC của bạn không chỉ an toàn mà còn tối ưu về chi phí.',
     publishDate: '2024-02-18',
     category: 'Tư vấn'
-  },
+  }
 ];
 
 export const services: Service[] = [

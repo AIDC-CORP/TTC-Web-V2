@@ -28,13 +28,27 @@ const parseContent = (content: string) => {
     parts.push({ type: 'text', content: content.substring(lastIndex) });
   }
 
+  const getImageClassName = (layout: string) => {
+    switch (layout) {
+      case 'left':
+        return 'w-full md:w-1/2 md:float-left md:mr-6 my-4 h-auto object-cover rounded-lg shadow-lg';
+      case 'right':
+        return 'w-full md:w-1/2 md:float-right md:ml-6 my-4 h-auto object-cover rounded-lg shadow-lg';
+      case 'center':
+        return 'w-full md:max-w-2xl mx-auto my-6 block h-auto object-cover rounded-lg shadow-lg';
+      case 'full':
+      default:
+        return 'w-full h-auto object-cover rounded-lg shadow-lg my-6';
+    }
+  };
+
   return parts.map((part, index) => {
     if (part.type === 'text') {
       return (
         <div key={index}>
           {part.content.split('\n').map((line, lineIndex) => {
             if (line.startsWith('## ')) {
-              return <h2 key={lineIndex} className="text-2xl font-bold text-gray-800 mt-6 mb-3">{line.replace(/^## /, '')}</h2>;
+              return <h2 key={lineIndex} className="text-2xl font-bold text-gray-800 mt-6 mb-3 clear-both">{line.replace(/^## /, '')}</h2>;
             } else if (line.trim()) {
               return <p key={lineIndex} className="text-gray-600 leading-relaxed mb-4">{line}</p>;
             }
@@ -43,7 +57,8 @@ const parseContent = (content: string) => {
         </div>
       );
     } else {
-      return <img key={index} src={`/blog-assets/${part.content}`} alt={`Article content image ${index}`} className="w-full h-auto object-cover rounded-lg shadow-lg my-6" />;
+      const [filename, layout = 'full'] = part.content.split(':');
+      return <img key={index} src={`/blog-assets/${filename}`} alt={`Article content image ${index}`} className={getImageClassName(layout)} />;
     }
   });
 };

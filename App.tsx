@@ -8,6 +8,7 @@ import AboutPage from './features/about/AboutPage';
 import ProjectsPage from './features/projects/ProjectsPage';
 import ConsultingPage from './features/consulting/ConsultingPage';
 import BlogPage from './features/blog/BlogPage';
+import ArticleDetailPage from './features/blog/ArticleDetailPage';
 import ContactPage from './features/contact/ContactPage';
 import SearchResultsPage from './features/search/SearchResultsPage';
 
@@ -22,6 +23,7 @@ const App: React.FC = () => {
             <Route path="/du-an" element={<ProjectsPage />} />
             <Route path="/tu-van" element={<ConsultingPage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:id" element={<ArticleDetailPage />} />
             <Route path="/lien-he" element={<ContactPage />} />
             <Route path="/tim-kiem" element={<SearchResultsPage />} />
           </Route>
