@@ -6,6 +6,7 @@ import ConsultingDetailDialog from './components/dialogs/ConsultingDetailDialog'
 import ConsultingCards from './components/ConsultingCards';
 import { Article } from '../../types';
 import { getCurrentLangKey } from '../../common/utils/i18nUtils';
+import Seo from '../../common/components/Seo';
 
 const ConsultingPage: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -45,6 +46,13 @@ const ConsultingPage: React.FC = () => {
 
   return (
     <div>
+      <Seo
+        title="Tư vấn"
+        description="Dịch vụ tư vấn chuyên nghiệp từ Tân Thành Công JSC - Tư vấn đầu tư, thiết kế và giải pháp kỹ thuật cho nhà máy và công trình công nghiệp."
+        canonical="https://tanthanhcongjsc.com/tu-van"
+        image="https://tanthanhcongjsc.com/tuvan.jpg"
+        lang="vi"
+      />
       <motion.div
         className="bg-white py-20"
         initial={{ opacity: 0 }}

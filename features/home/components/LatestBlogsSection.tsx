@@ -1,8 +1,7 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import blogData from '../../blog/data/blog.json';
 import BlogCards from '../../blog/components/BlogCards';
-import ArticleDetailDialog from '../../blog/components/dialogs/ArticleDetailDialog';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Article } from '../../../types';
@@ -10,8 +9,6 @@ import { getCurrentLangKey } from '../../../common/utils/i18nUtils';
 
 const LatestBlogsSection: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const latestArticles = useMemo<Article[]>(() => {
     const currentLang = getCurrentLangKey(i18n.language);
@@ -46,16 +43,6 @@ const LatestBlogsSection: React.FC = () => {
     return mappedArticles.slice(0, 3);
   }, [i18n.language, t]);
 
-  const handleArticleClick = (article: Article) => {
-    setSelectedArticle(article);
-    setIsDialogOpen(true);
-  };
-
-  const handleCloseDialog = () => {
-    setIsDialogOpen(false);
-    setSelectedArticle(null);
-  };
-
   return (
     <>
       <motion.section
@@ -69,7 +56,7 @@ const LatestBlogsSection: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">{t('latestBlogs.title')}</h2>
             <p className="text-center text-gray-600 max-w-2xl mx-auto md:text-lg font-medium leading-relaxed">{t('latestBlogs.subtitle')}</p>
           </div>
-          <BlogCards articles={latestArticles} onArticleClick={handleArticleClick} />
+          <BlogCards articles={latestArticles} />
           <div className="text-center mt-12">
             <Link to="/blog" className="text-blue-600 font-semibold hover:underline">
               {t('latestBlogs.seeAll')} &rarr;
@@ -77,11 +64,6 @@ const LatestBlogsSection: React.FC = () => {
           </div>
         </div>
       </motion.section>
-      <ArticleDetailDialog
-        article={selectedArticle}
-        isOpen={isDialogOpen}
-        onClose={handleCloseDialog}
-      />
     </>
   );
 };

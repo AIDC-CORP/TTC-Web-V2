@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import blogData from './data/blog.json';
 import BlogCards from './components/BlogCards';
-import ArticleDetailDialog from './components/dialogs/ArticleDetailDialog';
 import { Article } from '../../types';
 import { getCurrentLangKey } from '../../common/utils/i18nUtils';
+import Seo from '../../common/components/Seo';
 
 const BlogPage: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const currentLang = getCurrentLangKey(i18n.language);
 
@@ -30,22 +28,15 @@ const BlogPage: React.FC = () => {
     };
   });
 
-  const handleArticleClick = (article: Article) => {
-    // Find the original full article from blogData to pass to the dialog
-    const fullArticle = blogData.find(a => a.id === article.id) as Article | undefined;
-    if (fullArticle) {
-      setSelectedArticle(fullArticle);
-      setIsDialogOpen(true);
-    }
-  };
-
-  const handleCloseDialog = () => {
-    setIsDialogOpen(false);
-    setSelectedArticle(null);
-  };
-
   return (
     <div>
+      <Seo
+        title="Blog"
+        description="Blog Tân Thành Công JSC - Cập nhật tin tức, kiến thức chuyên ngành và xu hướng mới nhất trong lĩnh vực thiết kế và thi công nhà máy công nghiệp."
+        canonical="https://tanthanhcongjsc.com/blog"
+        image="https://tanthanhcongjsc.com/logo_aidc.png"
+        lang="vi"
+      />
       <motion.div
         className="bg-white py-20"
         initial={{ opacity: 0 }}
@@ -79,15 +70,8 @@ const BlogPage: React.FC = () => {
       >
         <BlogCards
           articles={blogArticles}
-          onArticleClick={handleArticleClick}
         />
       </motion.div>
-
-      <ArticleDetailDialog
-        article={selectedArticle}
-        isOpen={isDialogOpen}
-        onClose={handleCloseDialog}
-      />
     </div>
   );
 };

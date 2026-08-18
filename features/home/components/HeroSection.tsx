@@ -23,7 +23,7 @@ const HeroSection: React.FC = () => {
   }, [heroImages.length]);
 
   return (
-    <motion.section 
+    <motion.section
       className="relative min-h-[100vh] h-[100vh] text-white overflow-hidden"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}

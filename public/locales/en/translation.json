@@ -93,7 +93,8 @@
       "title": "Blog & News",
       "subtitle": "Sharing knowledge, updating industry news, and company activities"
     },
-    "readMore": "Read more"
+    "readMore": "Read more",
+    "breadcrumbHome": "Home"
   },
   "partners": {
     "tag": "OUR PARTNERS",
@@ -188,7 +189,12 @@
   "article": {
     "notFound": "Article not found",
     "notFoundText": "The article you are looking for does not exist or has been deleted.",
-    "backToBlog": "Back to Blog"
+    "backToBlog": "Back to Blog",
+    "gallery": "Event Photos",
+    "galleryImageAlt": "Event photo {{n}}",
+    "prevImage": "Previous image",
+    "nextImage": "Next image",
+    "closeImage": "Close"
   },
   "projects": {
     "summary": "Project at {{location}}",

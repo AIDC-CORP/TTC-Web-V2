@@ -93,7 +93,8 @@
             "title": "블로그 & 뉴스",
             "subtitle": "지식 공유, 업계 뉴스 및 회사 활동 업데이트"
         },
-        "readMore": "더 읽기"
+        "readMore": "더 읽기",
+        "breadcrumbHome": "홈"
     },
     "partners": {
         "tag": "우리의 파트너",
@@ -188,7 +189,12 @@
     "article": {
         "notFound": "기사를 찾을 수 없음",
         "notFoundText": "찾고 계신 기사가 존재하지 않거나 삭제되었습니다.",
-        "backToBlog": "블로그로 돌아가기"
+        "backToBlog": "블로그로 돌아가기",
+        "gallery": "행사 사진",
+        "galleryImageAlt": "행사 사진 {{n}}",
+        "prevImage": "이전 이미지",
+        "nextImage": "다음 이미지",
+        "closeImage": "닫기"
     },
     "projects": {
         "summary": "{{location}} 프로젝트",

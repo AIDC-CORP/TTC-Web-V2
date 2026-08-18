@@ -93,7 +93,8 @@
       "title": "Blog & Tin tức",
       "subtitle": "Chia sẻ kiến thức, cập nhật tin tức ngành và hoạt động của công ty"
     },
-    "readMore": "Đọc thêm"
+    "readMore": "Đọc thêm",
+    "breadcrumbHome": "Trang chủ"
   },
   "partners": {
     "tag": "ĐỐI TÁC CỦA CHÚNG TÔI",
@@ -188,7 +189,12 @@
   "article": {
     "notFound": "Không tìm thấy bài viết",
     "notFoundText": "Bài viết bạn đang tìm kiếm không tồn tại hoặc đã bị xóa.",
-    "backToBlog": "Quay lại trang Blog"
+    "backToBlog": "Quay lại trang Blog",
+    "gallery": "Hình ảnh sự kiện",
+    "galleryImageAlt": "Hình ảnh sự kiện {{n}}",
+    "prevImage": "Ảnh trước",
+    "nextImage": "Ảnh tiếp theo",
+    "closeImage": "Đóng"
   },
   "projects": {
     "summary": "Dự án tại {{location}}",

@@ -1,0 +1,2955 @@
+% !TEX program = xelatex
+\documentclass[10pt,a4paper,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, backgrounds, shadows}
+
+% Set margins: 12mm left/right, 14mm top, 14mm bottom
+\geometry{a4paper, top=14mm, bottom=14mm, left=12mm, right=12mm, headheight=0mm, headsep=0mm, footskip=0mm}
+
+% Typography: Segoe UI
+\setmainfont{Segoe UI}[
+  BoldFont={Segoe UI Bold},
+  ItalicFont={Segoe UI Italic},
+  BoldItalicFont={Segoe UI Bold Italic}
+]
+
+% Color Palette - Luxury Corporate High-Tech
+\definecolor{TTCDeepNavy}{RGB}{10, 25, 47}
+\definecolor{TTCBlue}{RGB}{15, 60, 120}
+\definecolor{TTCLightBlue}{RGB}{240, 246, 255}
+\definecolor{TTCRed}{RGB}{214, 40, 40}
+\definecolor{TTCCyan}{RGB}{0, 180, 216}
+\definecolor{TTCGold}{RGB}{247, 127, 0}
+\definecolor{TTCTextDark}{RGB}{30, 41, 59}
+\definecolor{TTCTextMuted}{RGB}{100, 116, 139}
+\definecolor{TTCBorder}{RGB}{203, 213, 225}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.05}
+\pagestyle{empty}
+
+% Header & Footer Macros
+\newcommand{\pageheaderbar}[2]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[TTCDeepNavy] (current page.north west) rectangle ([yshift=-10mm]current page.north east);
+    \fill[TTCRed] ([yshift=-10mm]current page.north west) rectangle ([yshift=-11mm]current page.north east);
+    \node[anchor=west, text=white, font=\fontsize{7.5}{9}\selectfont\bfseries] at ([xshift=12mm, yshift=-5mm]current page.north west) {
+      \faBuilding\quad CÔNG TY CỔ PHẦN CÔNG NGHỆ XÂY DỰNG TÂN THÀNH CÔNG \textbullet\ TTC JSC
+    };
+    \node[anchor=east, text=TTCCyan, font=\fontsize{7.5}{9}\selectfont\bfseries] at ([xshift=-12mm, yshift=-5mm]current page.north east) {
+      #1
+    };
+  \end{tikzpicture}%
+}
+
+\newcommand{\pagefooterbar}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[TTCDeepNavy] (current page.south west) rectangle ([yshift=8mm]current page.south east);
+    \fill[TTCCyan] ([yshift=8mm]current page.south west) rectangle ([yshift=8.8mm]current page.south east);
+    \node[anchor=west, text=white, font=\fontsize{6.8}{8}\selectfont] at ([xshift=12mm, yshift=4mm]current page.south west) {
+      \faPhone*\ +84 976 447 766 \quad\textbullet\quad \faEnvelope\ info@tanthanhcongjsc.com \quad\textbullet\quad \faGlobe\ https://tanthanhcongjsc.com
+    };
+    \node[anchor=east, text=white, font=\fontsize{7}{8}\selectfont\bfseries] at ([xshift=-12mm, yshift=4mm]current page.south east) {
+      #1
+    };
+  \end{tikzpicture}%
+}
+
+% Section Header Brand Macro
+\newcommand{\secbrand}[2]{%
+  \noindent\begin{tikzpicture}
+    \fill[TTCRed] (0,0) rectangle (4mm,10mm);
+    \node[anchor=west, align=left, inner sep=0pt] at (6mm, 5mm) {
+      {\fontsize{13}{15}\selectfont\bfseries\color{TTCBlue} #1}\\[1.5pt]
+      {\fontsize{7.2}{8.8}\selectfont\itshape\color{TTCTextMuted} #2}
+    };
+  \end{tikzpicture}\par\vspace{1.5mm}%
+}
+
+\begin{document}
+
+% ============================================================
+% TRANG 01: TRANG BÌA CHÍNH - THE MASTER INDUSTRIAL DOSSIER
+% ============================================================
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % Full Deep Navy Background
+  \fill[TTCDeepNavy] (current page.south west) rectangle (current page.north east);
+  
+  % Hero Image with soft angled overlay
+  \node[anchor=north, inner sep=0pt] at ([yshift=-18mm]current page.north) {
+    \includegraphics[width=210mm, height=130mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/executive-cover-hero.jpg}
+  };
+  
+  % Gradient blend overlays
+  \fill[TTCDeepNavy, opacity=0.88] ([yshift=-18mm]current page.north west) rectangle ([yshift=-148mm]current page.north east);
+  \fill[TTCDeepNavy] ([yshift=-135mm]current page.north west) rectangle (current page.south east);
+  
+  % Technical grid watermark
+  \draw[TTCCyan!8!white, line width=0.5pt] ([xshift=10mm, yshift=15mm]current page.south west) grid[step=10mm] ([xshift=200mm, yshift=90mm]current page.south west);
+  
+  % Top Header Ribbon
+  \fill[TTCRed] ([yshift=-12mm]current page.north west) rectangle ([yshift=-14mm]current page.north east);
+  \node[anchor=west, text=white, font=\fontsize{8.5}{10}\selectfont\bfseries] at ([xshift=15mm, yshift=-6mm]current page.north west) {
+    \faBuilding\quad CÔNG TY CỔ PHẦN CÔNG NGHỆ XÂY DỰNG TÂN THÀNH CÔNG
+  };
+  \node[anchor=east, fill=TTCRed, text=white, font=\fontsize{7.5}{9}\selectfont\bfseries, rounded corners=2pt, inner sep=3pt] at ([xshift=-15mm, yshift=-6mm]current page.north east) {
+    [ VI | EN ] \textbullet\ MASTER PROFILE 2026
+  };
+  
+  % Central Titles
+  \node[anchor=center, align=center] at ([yshift=-80mm]current page.north) {
+    {\fontsize{11}{13}\selectfont\bfseries\color{TTCCyan}\faAward\ HỒ SƠ NĂNG LỰC TỔNG THỂ DOANH NGHIỆP}\\[5pt]
+    {\fontsize{24}{28}\selectfont\bfseries\color{white} MASTER COMPANY PROFILE}\\[3pt]
+    {\fontsize{13}{16}\selectfont\bfseries\color{TTCRed} TỔNG THẦU EPC CÔNG NGHIỆP THẾ HỆ MỚI}\\[4pt]
+    {\fontsize{9}{11}\selectfont\color{white!90!gray} Turnkey Industrial EPC General Contractor \textbullet\ High-Tech PEB \textbullet\ ESG-Ready Smart Facilities}
+  };
+  
+  % 4 Pillar Statement Cards
+  \node[anchor=north, align=center] at ([yshift=-125mm]current page.north) {
+    \begin{tikzpicture}
+      \node[
+        rounded corners=8pt, fill=white, draw=TTCCyan!60!white, line width=1.2pt,
+        text width=176mm, inner sep=8pt, drop shadow={opacity=0.35, shadow xshift=2pt, shadow yshift=-2pt}
+      ] {
+        {\fontsize{10}{12}\selectfont\bfseries\color{TTCBlue} \faCheckCircle\quad 4 TRỤ CỘT NĂNG LỰC BẢO CHỨNG TỔNG THẦU TÂN THÀNH CÔNG:}\\[4pt]
+        \begin{tabularx}{\linewidth}{@{}X|X@{}}
+          {\fontsize{7.8}{10.2}\selectfont\color{TTCTextDark}
+          \textbf{\color{TTCRed}1. Thi Công Fast-Track 100\% Đúng Hạn:}\newline
+          Ứng dụng mô hình 4D BIM rà soát 100\% xung đột Zero-Clash, kiểm soát đường găng CPM, thi công 3 ca liên tục.} &
+          {\fontsize{7.8}{10.2}\selectfont\color{TTCTextDark}
+          \textbf{\color{TTCBlue}2. Công Trình Xanh ESG \& Solar-Ready:}\newline
+          Thiết kế dầm kèo chịu tải pin mặt trời 1--5MWp, vỏ bao che cách nhiệt tiết kiệm 20\% điện năng, tư vấn LEED/LOTUS.} \\[4pt]
+          \hline\rule{0pt}{10pt}
+          {\fontsize{7.8}{10.2}\selectfont\color{TTCTextDark}
+          \textbf{\color{TTCBlue}3. Tiên Phong ConTech AI Tối Ưu Thép:}\newline
+          Hợp tác R\&D cùng AIDC ứng dụng thuật toán AI tối ưu tiết diện dầm cột, tiết kiệm 10--15\% chi phí kết cấu cho FDI.} &
+          {\fontsize{7.8}{10.2}\selectfont\color{TTCTextDark}
+          \textbf{\color{TTCRed}4. Nhà Máy PEB 30.000 Tấn/Năm:}\newline
+          Xưởng sản xuất tự động quy mô $>20.000$ m$^2$, 100\% mối hàn siêu âm AWS D1.1, đội cơ giới $>300$ Tỷ làm chủ hiện trường.}
+        \end{tabularx}
+      };
+    \end{tikzpicture}
+  };
+  
+  % Big 4 Quantitative Metrics
+  \node[anchor=south] at ([yshift=24mm]current page.south) {
+    \begin{tikzpicture}
+      \node[
+        rounded corners=6pt, fill=TTCDeepNavy!90!black, draw=TTCCyan!80!white, line width=1pt,
+        text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+      ] {
+        \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+          {\fontsize{17}{19}\selectfont\bfseries\color{TTCRed} 10+ NĂM} &
+          {\fontsize{17}{19}\selectfont\bfseries\color{TTCCyan} >500.000 m²} &
+          {\fontsize{17}{19}\selectfont\bfseries\color{white} 30.000 TẤN} &
+          {\fontsize{17}{19}\selectfont\bfseries\color{TTCGold} 500 TỶ VNĐ} \\
+          {\fontsize{7.8}{9.5}\selectfont Kinh nghiệm Tổng thầu EPC} &
+          {\fontsize{7.8}{9.5}\selectfont Sàn Xây dựng Hoàn thành} &
+          {\fontsize{7.8}{9.5}\selectfont Thép PEB Sản xuất / Năm} &
+          {\fontsize{7.8}{9.5}\selectfont Hạn mức Tín dụng Bảo lãnh}
+        \end{tabularx}
+      };
+    \end{tikzpicture}
+  };
+  
+  % Footer Legal Line
+  \node[anchor=south, text=white!80!gray, font=\fontsize{7}{8.5}\selectfont] at ([yshift=8mm]current page.south) {
+    \faAward\ Chứng chỉ Năng lực Xây dựng Hạng I (Bộ Xây Dựng) \textbullet\ ISO 9001/14001/45001 \textbullet\ Chuẩn Hợp đồng FIDIC Silver Book EPC Turnkey
+  };
+\end{tikzpicture}
+
+\newpage
+
+% ============================================================
+% TRANG 02: MỤC LỤC TỔNG QUAN & HỒ SƠ PHÁP NHÂN DOANH NGHIỆP
+% ============================================================
+\pageheaderbar{MỤC LỤC TỔNG QUAN \& HỒ SƠ PHÁP NHÂN}{Trang 02}
+\pagefooterbar{Trang 02}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {TABLE OF CONTENTS \& CORPORATE PROFILE};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+  \draw[TTCRed!15!white, line width=1pt] ([xshift=15mm, yshift=20mm]current page.south west) -- ([xshift=35mm, yshift=20mm]current page.south west) -- ([xshift=45mm, yshift=10mm]current page.south west);
+  \draw[TTCCyan!20!white, line width=1pt] ([xshift=-15mm, yshift=20mm]current page.south east) -- ([xshift=-35mm, yshift=20mm]current page.south east) -- ([xshift=-45mm, yshift=10mm]current page.south east);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Mục Lục Tổng Quan \& Hồ Sơ Pháp Nhân Doanh Nghiệp}{Master Table of Contents \& Official Corporate Legal Registration}
+
+% TẦNG 1: MỤC LỤC 5 CHƯƠNG LỚN (2 CỘT PHÂN CẤP RÕ RÀNG)
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+    minimum width=186mm, minimum height=105mm, inner sep=7pt, text width=176mm, align=left
+  ] {
+    {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faTasks\quad CẤU TRÚC 5 PHẦN HỒ SƠ NĂNG LỰC TỔNG THỂ DOANH NGHIỆP:}\\[4pt]
+    {\fontsize{7.5}{10.5}\selectfont
+    \begin{tabularx}{\linewidth}{@{}X|X@{}}
+      \textbf{\color{TTCRed}PHẦN I: TỔNG QUAN \& PHÁP NHÂN DOANH NGHIỆP}\newline
+      \textbullet\ Thư ngỏ Tổng Giám Đốc \& Cam kết C-Level \dotfill Trang 03\newline
+      \textbullet\ Hành trình hơn 10 năm bứt phá (2012--2026+) \dotfill Trang 04\newline
+      \textbullet\ Hệ sinh thái Tổng thầu EPC \& Đối tác AIDC \dotfill Trang 05\newline
+      \textbullet\ Cơ cấu tổ chức \& Hồ sơ Pháp lý Hạng I BXD \dotfill Trang 06\\[4pt]
+      \textbf{\color{TTCBlue}PHẦN II: SỨC MẠNH TÀI CHÍNH \& NHÂN LỰC}\newline
+      \textbullet\ Báo cáo doanh thu đa tiền tệ (VND/USD/RMB) \dotfill Trang 07\newline
+      \textbullet\ Hạn mức tín dụng 500 Tỷ \& Đội ngũ 2.850+ NS \dotfill Trang 08\\[4pt]
+      \textbf{\color{TTCBlue}PHẦN III: NHÀ MÁY PEB \& THIẾT BỊ CƠ GIỚI}\newline
+      \textbullet\ Xưởng kết cấu thép 30.000T/năm \& Dây chuyền CNC \dotfill Trang 09\newline
+      \textbullet\ Đội xe máy cơ giới $>300$ Tỷ \& Cẩu nâng 100T \dotfill Trang 10
+      &
+      \textbf{\color{TTCRed}PHẦN IV: GIẢI PHÁP EPC, CONTECH \& ESG}\newline
+      \textbullet\ Quy trình 6 bước Fast-track \& Value Engineering \dotfill Trang 11\newline
+      \textbullet\ Tiên phong ConTech BIM 5D \& Tối ưu thép AI \dotfill Trang 12\newline
+      \textbullet\ Công trình xanh LEED/LOTUS \& Mái Solar-Ready \dotfill Trang 13\newline
+      \textbullet\ Kiểm soát QA/QC AWS D1.1 \& NDT mối hàn \dotfill Trang 14\newline
+      \textbullet\ An toàn HSE Zero Accident \& Văn hóa Stop Work \dotfill Trang 15\\[4pt]
+      \textbf{\color{TTCBlue}PHẦN V: DỰ ÁN TIÊU BIỂU \& CHUỖI CUNG ỨNG}\newline
+      \textbullet\ Danh mục 150+ dự án công nghiệp tiêu biểu \dotfill Trang 16\newline
+      \textbullet\ Case Studies: Hồng Trang, Sông Hồng 7, Japfa \dotfill Trang 17--19\newline
+      \textbullet\ Case Studies: Daeyun, Sumidenso, Foxconn \dotfill Trang 19--20\newline
+      \textbullet\ Chuỗi cung ứng Cấp 1 \& Thư khen Chủ đầu tư \dotfill Trang 21--22\newline
+      \textbullet\ Bản đồ phủ sóng, 4 Cam kết vàng \& Bìa sau \dotfill Trang 23--24
+    \end{tabularx}}
+  };
+\end{tikzpicture}
+
+\vspace{6mm}
+
+% TẦNG 2: BẢNG HỒ SƠ PHÁP NHÂN DOANH NGHIỆP ĐẦY ĐỦ
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCBorder, line width=0.9pt,
+    minimum width=186mm, minimum height=82mm, inner sep=7pt, text width=176mm, align=left
+  ] {
+    {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faBuilding\quad THÔNG TIN PHÁP NHÂN \& DỮ LIỆU ĐĂNG KÝ DOANH NGHIỆP:}\\[3pt]
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabularx}{\linewidth}{@{}l|X|l|X@{}}
+      \toprule
+      \textbf{Tên tiếng Việt} & \multicolumn{3}{l}{\textbf{CÔNG TY CỔ PHẦN CÔNG NGHỆ XÂY DỰNG TÂN THÀNH CÔNG}} \\
+      \textbf{Tên tiếng Anh} & \multicolumn{3}{l}{TAN THANH CONG CONSTRUCTION TECHNOLOGY JOINT STOCK COMPANY} \\
+      \textbf{Tên viết tắt} & TTC JSC & \textbf{Mã số thuế} & \textbf{\color{TTCRed}0107090447} \\
+      \textbf{Đại diện PL} & \textbf{Ông PHẠM HUY TÂN} (Tổng Giám Đốc) & \textbf{Năm thành lập} & 2012 (Hơn 10+ năm kinh nghiệm) \\
+      \textbf{Trụ sở chính} & \multicolumn{3}{l}{Tầng 5, Tòa nhà TTC Tower, Phố Duy Tân, Cầu Giấy, TP. Hà Nội, Việt Nam} \\
+      \textbf{VP Giao dịch} & \multicolumn{3}{l}{Tòa nhà Golden Palm, 21 Lê Văn Lương, Nhân Chính, Thanh Xuân, Hà Nội} \\
+      \textbf{Nhà máy PEB} & \multicolumn{3}{l}{Cụm Công nghiệp Thanh Oai, Huyện Thanh Oai, TP. Hà Nội (Quy mô $>20.000$ m$^2$)} \\
+      \textbf{Chi nhánh Nam} & \multicolumn{3}{l}{Số 88, Đường Song Hành, KCN Sóng Thần, TP. Dĩ An, Tỉnh Bình Dương} \\
+      \textbf{Hotline 24/7} & \textbf{+84 976 447 766} & \textbf{Email chính thức} & info@tanthanhcongjsc.com \\
+      \textbf{Website} & https://tanthanhcongjsc.com & \textbf{Lĩnh vực chính} & Tổng thầu EPC, Kết cấu thép PEB, MEP, ESG \\
+      \bottomrule
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{6mm}
+
+% TẦNG 3: BĂNG NĂNG LỰC PHÁP NHÂN
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} HẠNG I BXD} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} 100\% ĐÚNG HẸN} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} 500 TỶ VNĐ} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 24 THÁNG} \\
+      {\fontsize{7.5}{9.5}\selectfont Chứng Chỉ Năng Lực Cấp I} &
+      {\fontsize{7.5}{9.5}\selectfont Bàn Giao Hợp Đồng EPC} &
+      {\fontsize{7.5}{9.5}\selectfont Hạn Mức Tín Dụng Bảo Lãnh} &
+      {\fontsize{7.5}{9.5}\selectfont Bảo Hành Kết Cấu Toàn Diện}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faAward\ PHÁP NHÂN MINH BẠCH} \quad\textbullet\quad
+    \textbf{\faCertificate\ CHỨNG CHỈ HẠNG I BỘ XÂY DỰNG} \quad\textbullet\quad
+    \textbf{\faHandshake\ CHUẨN MỰC HỢP ĐỒNG FIDIC} \quad\textbullet\quad
+    \textbf{\faShield*\ BẢO HÀNH DÀI HẠN UY TÍN}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 03: THÔNG ĐIỆP TỔNG GIÁM ĐỐC & ẢNH NỀN 3D NÂNG TẦM CÔNG TRÌNH
+% ============================================================
+\pageheaderbar{THÔNG ĐIỆP TỔNG GIÁM ĐỐC}{Trang 03}
+\pagefooterbar{Trang 03}
+
+% Background visual: 3D Skyline hand at bottom (inspired by Hop Luc reference)
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=south, inner sep=0pt, opacity=0.92] at ([yshift=8mm]current page.south) {
+    \includegraphics[width=210mm, height=105mm]{d:/AIDC/TTC-V2/TTC-Web-V2/sales-kit/05-company-profile/assets/ceo_vision_hand_skyline.jpg}
+  };
+  \fill[white, opacity=0.72] ([xshift=10mm, yshift=10mm]current page.south west) rectangle ([xshift=200mm, yshift=115mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Thông Điệp Tổng Giám Đốc}{CEO Strategic Message \& C-Level Commitment}
+
+% TẦNG 1: THƯ NGỎ SONG NGỮ VIỆT - ANH (2 CỘT CHUYÊN NGHIỆP CAO)
+\noindent
+\begin{tabular}{@{}p{112mm}@{\hspace{4mm}}p{70mm}@{}}
+  % Cột Trái: Thư ngỏ Song ngữ
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+      minimum width=112mm, minimum height=88mm, inner sep=6.5pt, text width=103mm, align=left
+    ] {
+      {\fontsize{8.5}{10.5}\selectfont\bfseries\color{TTCBlue} \faEnvelope\quad THƯ NGỎ GỬI QUÝ CHỦ ĐẦU TƯ \& ĐỐI TÁC:}\\[3pt]
+      {\fontsize{7.2}{9.8}\selectfont\color{TTCTextDark}
+      \textbf{Kính gửi Quý Khách hàng và Đối tác toàn cầu!}\newline
+      Trải qua hơn một thập kỷ đồng hành cùng dòng vốn đầu tư FDI, Tân Thành Công tự hào khẳng định vị thế Tổng thầu EPC công nghiệp thế hệ mới uy tín hàng đầu tại Việt Nam. Với tôn chỉ \textit{`Chất lượng là danh dự -- An toàn là sinh mệnh -- Tiến độ là cam kết'}, chúng tôi đã đồng hành cùng hàng trăm tập đoàn đa quốc gia hiện thực hóa các đại công trình sản xuất hiện đại, an toàn và bền vững.\newline
+      Chúng tôi cam kết luôn là người bạn đồng hành tin cậy nhất, mang lại hiệu quả đầu tư vượt trội và giá trị trường tồn cho mọi công trình.}\\[3pt]
+      {\fontsize{6.8}{9.4}\selectfont\color{TTCTextMuted}
+      \textbf{\color{TTCRed}Dear Valued Clients and Global Partners!}\newline
+      For over a decade partnering with international FDI investors, Tan Thanh Cong has proudly established itself as a leading next-generation Turnkey EPC General Contractor in Vietnam. Guided by our motto \textit{`Quality is Honor -- Safety is Life -- Schedule is Commitment'}, we deliver fully integrated industrial construction solutions, from advanced BIM engineering and 30,000T PEB manufacturing to smart Digital Twin commissioning.}
+    };
+  \end{tikzpicture}
+  &
+  % Cột Phải: Badge Lãnh đạo & Tuyên ngôn
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=TTCDeepNavy!95!black, draw=TTCRed!80!white, line width=1pt,
+      minimum width=70mm, minimum height=88mm, inner sep=6pt, text width=61mm, align=left
+    ] {
+      {\fontsize{8.5}{10.5}\selectfont\bfseries\color{TTCCyan} \faAward\ BAN LÃNH ĐẠO ĐIỀU HÀNH}\\[2pt]
+      {\fontsize{11.5}{13.5}\selectfont\bfseries\color{white} Ông PHẠM HUY TÂN}\\[1.5pt]
+      {\fontsize{7.5}{9}\selectfont\color{TTCGold} TỔNG GIÁM ĐỐC / CEO}\\[4pt]
+      \rule{61mm}{0.6pt}\\[4pt]
+      {\fontsize{7.2}{9.5}\selectfont\itshape\color{white!95!gray}
+      ``Chúng tôi không chỉ xây dựng nhà máy, chúng tôi kiến tạo những tổ hợp sản xuất thông minh, chuẩn xanh ESG và bền vững suốt vòng đời 30+ năm.''}\\[5pt]
+      \rule{61mm}{0.4pt}\\[4pt]
+      {\fontsize{6.8}{8.5}\selectfont\color{TTCCyan}
+      \faPhone*\ Hotline 24/7: +84 976 447 766\newline
+      \faEnvelope\ ceo@tanthanhcongjsc.com}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{3mm}
+
+% TẦNG 2: 3 CAM KẾT BẢO LÃNH VÀNG C-LEVEL
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCRed!70!white, line width=0.9pt,
+    minimum width=186mm, inner sep=6pt, text width=176mm, align=left
+  ] {
+    {\fontsize{8.8}{10.8}\selectfont\bfseries\color{TTCRed} \faCheckCircle\quad 3 CAM KẾT BẢO LÃNH VÀNG CỦA TỔNG GIÁM ĐỐC:}\\[2.5pt]
+    \begin{tabularx}{\linewidth}{@{}X|X|X@{}}
+      {\fontsize{7.2}{9.5}\selectfont\color{TTCTextDark}
+      \textbf{\color{TTCBlue}1. Cam Kết Tiến Độ Fast-Track:}\newline
+      100\% công trình bàn giao đúng hoặc trước tiến độ hợp đồng. Phạt 1\% giá trị hợp đồng/tuần nếu chậm trễ do lỗi Tổng thầu.} &
+      {\fontsize{7.2}{9.5}\selectfont\color{TTCTextDark}
+      \textbf{\color{TTCBlue}2. Bảo Lãnh Chất Lượng AWS:}\newline
+      100\% phôi thép có CO/CQ gốc, 100\% mối hàn chịu lực siêu âm NDT đạt chuẩn Mỹ AWS D1.1, bảo hành 24 tháng.} &
+      {\fontsize{7.2}{9.5}\selectfont\color{TTCTextDark}
+      \textbf{\color{TTCBlue}3. Minh Bạch Tài Chính:}\newline
+      Hạn mức bảo lãnh 500 Tỷ VNĐ, hợp đồng Lump-sum Turnkey triệt tiêu phát sinh, cam kết 0 nợ đọng chuỗi cung ứng.}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 04: HÀNH TRÌNH 10+ NĂM BỨT PHÁ (ẢNH KỸ SƯ & ĐƯỜNG PHỐI CẢNH 3D)
+% ============================================================
+\pageheaderbar{HÀNH TRÌNH PHÁT TRIỂN 10+ NĂM}{Trang 04}
+\pagefooterbar{Trang 04}
+
+% Background visual: Engineer hero image at top right with dynamic perspective lines
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=north east, inner sep=0pt, opacity=0.88] at ([xshift=0mm, yshift=-10mm]current page.north east) {
+    \includegraphics[width=135mm, height=78mm]{d:/AIDC/TTC-V2/TTC-Web-V2/sales-kit/05-company-profile/assets/milestones_engineer_hero.jpg}
+  };
+  \fill[white, opacity=0.85] ([xshift=65mm, yshift=-10mm]current page.north west) rectangle ([xshift=210mm, yshift=-90mm]current page.north west);
+  
+  % Dynamic 3D red perspective lines (inspired by Hop Luc Milestones page)
+  \draw[TTCRed!70!white, line width=1.5pt] ([xshift=15mm, yshift=-130mm]current page.north west) -- ([xshift=60mm, yshift=-120mm]current page.north west) -- ([xshift=115mm, yshift=-105mm]current page.north west) -- ([xshift=170mm, yshift=-85mm]current page.north west) -- ([xshift=205mm, yshift=-75mm]current page.north west);
+  \draw[TTCRed!40!white, line width=0.8pt] ([xshift=15mm, yshift=-135mm]current page.north west) -- ([xshift=60mm, yshift=-125mm]current page.north west) -- ([xshift=115mm, yshift=-110mm]current page.north west) -- ([xshift=170mm, yshift=-90mm]current page.north west) -- ([xshift=205mm, yshift=-80mm]current page.north west);
+  \draw[TTCCyan!50!white, line width=0.8pt] ([xshift=15mm, yshift=-140mm]current page.north west) -- ([xshift=60mm, yshift=-130mm]current page.north west) -- ([xshift=115mm, yshift=-115mm]current page.north west) -- ([xshift=170mm, yshift=-95mm]current page.north west) -- ([xshift=205mm, yshift=-85mm]current page.north west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Hành Trình Hơn 10 Năm Bứt Phá \& Phát Triển}{Corporate Milestones, Continuous Breakthroughs \& Growth Trajectory}
+
+% TẦNG 1: KHỐI GIỚI THIỆU HÀNH TRÌNH BỨT PHÁ (BÊN TRÁI)
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+    minimum width=115mm, minimum height=32mm, inner sep=7pt, text width=106mm, align=left
+  ] {
+    {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faHistory\quad QUÁ TRÌNH PHÁT TRIỂN KHẲNG ĐỊNH VỊ THẾ:}\\[3pt]
+    {\fontsize{7.5}{10}\selectfont\color{TTCTextDark}
+    Khởi nguồn từ niềm đam mê cơ khí chính xác và khát vọng kiến tạo các công trình công nghiệp hiện đại, Tân Thành Công đã vượt qua chặng đường hơn một thập kỷ đầy tự hào: từ một xưởng gia công kết cấu thép quy mô vừa vươn lên thành \textbf{Tổng thầu EPC Hạng I uy tín toàn quốc}, đạt doanh thu hơn 1.000 Tỷ VNĐ và dẫn đầu về ứng dụng công nghệ ConTech \& chuẩn xanh ESG.}
+  };
+\end{tikzpicture}
+
+\vspace{18mm}
+
+% TẦNG 2: 4 MỐC SON PHÁT TRIỂN BẬC THANG (4 CỘT DỌC CÂN ĐỐI)
+\noindent
+\begin{tabular}{@{}p{44mm}@{\hspace{3.5mm}}p{44mm}@{\hspace{3.5mm}}p{44mm}@{\hspace{3.5mm}}p{44mm}@{}}
+  \begin{tikzpicture}
+    \node[rounded corners=6pt, fill=white, draw=TTCBorder, line width=0.9pt, minimum width=44mm, minimum height=88mm, inner sep=5pt, text width=38mm, align=left] {
+      {\fontsize{10.5}{12.5}\selectfont\bfseries\color{TTCRed} 2012 -- 2018}\\[2pt]
+      {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCBlue} Khởi Nghiệp Cơ Khí}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ Thành lập xưởng gia công cơ khí kết cấu thép tại Hà Nội.\newline
+      \textbullet\ Thi công lắp dựng các nhà xưởng quy mô vừa tại miền Bắc.\newline
+      \textbullet\ Tích lũy đội ngũ kỹ sư kết cấu dầm thép cốt lõi.\newline
+      \textbullet\ Định hình văn hóa chất lượng và an toàn chuẩn mực.}
+    };
+    \fill[TTCRed] (22mm, 44mm) circle (3pt);
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=6pt, fill=white, draw=TTCBorder, line width=0.9pt, minimum width=44mm, minimum height=88mm, inner sep=5pt, text width=38mm, align=left] {
+      {\fontsize{10.5}{12.5}\selectfont\bfseries\color{TTCBlue} 2019 -- 2021}\\[2pt]
+      {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCBlue} Bứt Phá Sản Xuất}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ Khởi công xưởng PEB công suất 25.000 Tấn/năm.\newline
+      \textbullet\ Đầu tư dàn cẩu lốp 25T-100T \& máy cán tôn 100m.\newline
+      \textbullet\ Mở rộng Tổng thầu hạ tầng KCN \& cơ điện MEP.\newline
+      \textbullet\ Hoàn thiện hệ sinh thái thi công khép kín.}
+    };
+    \fill[TTCBlue] (22mm, 44mm) circle (3pt);
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=6pt, fill=white, draw=TTCBorder, line width=0.9pt, minimum width=44mm, minimum height=88mm, inner sep=5pt, text width=38mm, align=left] {
+      {\fontsize{10.5}{12.5}\selectfont\bfseries\color{TTCBlue} 2022 -- 2024}\\[2pt]
+      {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCBlue} Tổng Thầu Hạng I}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ Đạt Chứng chỉ Năng lực Hạng I Bộ Xây dựng.\newline
+      \textbullet\ Thi công loạt đại dự án FDI $>100.000$ m$^2$ (Hồng Trang, Sông Hồng 7, Japfa).\newline
+      \textbullet\ Doanh thu vượt mốc 1.150 Tỷ VNĐ.\newline
+      \textbullet\ Mở rộng chi nhánh và dự án tại miền Nam.}
+    };
+    \fill[TTCBlue] (22mm, 44mm) circle (3pt);
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=6pt, fill=white, draw=TTCRed!80!white, line width=1pt, minimum width=44mm, minimum height=88mm, inner sep=5pt, text width=38mm, align=left] {
+      {\fontsize{10.5}{12.5}\selectfont\bfseries\color{TTCRed} 2025 -- 2026+}\\[2pt]
+      {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCRed} ConTech \& ESG}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ Kế hoạch doanh thu 1.500 -- 2.000 Tỷ VNĐ.\newline
+      \textbullet\ Hợp tác AI ConTech cùng AIDC tối ưu 10-15\% thép.\newline
+      \textbullet\ Nhà máy Solar-Ready \& định hướng LEED/LOTUS.\newline
+      \textbullet\ Tiên phong mô hình Nhà máy số Digital Twin.}
+    };
+    \fill[TTCRed] (22mm, 44mm) circle (3.5pt);
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{5mm}
+
+% TẦNG 3: BĂNG CHỈ SỐ BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 150+} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} >500.000 m²} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} 30.000 TẤN/NĂM} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 20+} \\
+      {\fontsize{7.5}{9.5}\selectfont Đại Dự Án Hoàn Thành} &
+      {\fontsize{7.5}{9.5}\selectfont Sàn Xây Dựng Công Nghiệp} &
+      {\fontsize{7.5}{9.5}\selectfont Công Suất Xưởng PEB} &
+      {\fontsize{7.5}{9.5}\selectfont Tỉnh Thành Thi Công}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faHistory\ 10+ NĂM KINH NGHIỆM THỰC CHIẾN} \quad\textbullet\quad
+    \textbf{\faAward\ NĂNG LỰC TỔNG THẦU HẠNG I} \quad\textbullet\quad
+    \textbf{\faMicrochip\ TIÊN PHONG CONTECH THẾ HỆ MỚI}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 05: HỆ SINH THÁI TỔNG THẦU & ĐỐI TÁC CÔNG NGHỆ AIDC (CUNG TRÒN NĂNG ĐỘNG)
+% ============================================================
+\pageheaderbar{HỆ SINH THÁI DOANH NGHIỆP \& R\&D CÔNG NGHỆ}{Trang 05}
+\pagefooterbar{Trang 05}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {TTC INDUSTRIAL ECOSYSTEM \& AIDC CONTECH};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Hệ Sinh Thái Tổng Thầu EPC \& R\&D Công Nghệ AIDC}{Integrated Industrial Ecosystem \& Advanced AI ConTech Collaboration}
+
+% TẦNG 1: BỐ CỤC CUNG TRÒN NĂNG ĐỘNG (INSPIRED BY HOP LUC ECOSYSTEM SCREENSHOT)
+\noindent
+\begin{tikzpicture}
+  % Large Central Brand Arc (Right side)
+  \fill[TTCRed] (148mm, 0) circle (52mm);
+  \fill[TTCDeepNavy!95!black] (148mm, 0) circle (41mm);
+  
+  % Brand Name inside Arc
+  \node[text=white, font=\fontsize{14.5}{16.5}\selectfont\bfseries, align=center] at (148mm, 7mm) {
+    TÂN THÀNH CÔNG\\[2pt]
+    {\fontsize{9.5}{11.5}\selectfont\color{TTCCyan} TTC ECOSYSTEM}
+  };
+  
+  % Orbit Satellite 01: TTC PEB
+  \draw[TTCRed, line width=1.5pt] (98mm, 32mm) -- (116mm, 24mm);
+  \node[circle, draw=TTCRed, fill=white, line width=1.5pt, minimum size=20mm, inner sep=0pt] (sat1) at (90mm, 35mm) {
+    \begin{tabular}{c}
+      \faIndustry\\[-2pt]
+      {\fontsize{6.6}{8}\selectfont\bfseries TTC PEB}
+    \end{tabular}
+  };
+  
+  % Orbit Satellite 02: AIDC ConTech
+  \draw[TTCCyan, line width=1.5pt] (86mm, 0) -- (107mm, 0);
+  \node[circle, draw=TTCCyan, fill=white, line width=1.5pt, minimum size=20mm, inner sep=0pt] (sat2) at (76mm, 0) {
+    \begin{tabular}{c}
+      \faMicrochip\\[-2pt]
+      {\fontsize{6.6}{8}\selectfont\bfseries AIDC AI}
+    \end{tabular}
+  };
+  
+  % Orbit Satellite 03: TTC MEP
+  \draw[TTCBlue, line width=1.5pt] (98mm, -32mm) -- (116mm, -24mm);
+  \node[circle, draw=TTCBlue, fill=white, line width=1.5pt, minimum size=20mm, inner sep=0pt] (sat3) at (90mm, -35mm) {
+    \begin{tabular}{c}
+      \faCogs\\[-2pt]
+      {\fontsize{6.6}{8}\selectfont\bfseries TTC MEP}
+    \end{tabular}
+  };
+  
+  % Orbit Satellite 04: Hạ Tầng KCN
+  \draw[TTCGold, line width=1.5pt] (122mm, -46mm) -- (135mm, -36mm);
+  \node[circle, draw=TTCGold, fill=white, line width=1.5pt, minimum size=20mm, inner sep=0pt] (sat4) at (118mm, -52mm) {
+    \begin{tabular}{c}
+      \faBuilding\\[-2pt]
+      {\fontsize{6.6}{8}\selectfont\bfseries INFRA}
+    \end{tabular}
+  };
+  
+  % Left Side Description Cards (4 Cards cao hơn)
+  \node[anchor=west, text width=68mm] at (-5mm, 35mm) {
+    \begin{tikzpicture}
+      \node[rounded corners=5pt, fill=white, draw=TTCRed!70!white, line width=0.8pt, inner sep=5pt, text width=65mm, align=left] {
+        {\fontsize{8.5}{10.5}\selectfont\bfseries\color{TTCRed} 01. NHÀ MÁY KẾT CẤU THÉP TTC PEB}\\[2pt]
+        {\fontsize{7}{9}\selectfont\color{TTCTextDark}
+        Công suất 30.000 Tấn/năm, xưởng $>20.000$ m$^2$, gia công tự động CNC, hàn hồ quang chìm SAW đạt chuẩn Mỹ AWS D1.1.}
+      };
+    \end{tikzpicture}
+  };
+  
+  \node[anchor=west, text width=68mm] at (-5mm, 10mm) {
+    \begin{tikzpicture}
+      \node[rounded corners=5pt, fill=white, draw=TTCCyan!80!white, line width=0.8pt, inner sep=5pt, text width=65mm, align=left] {
+        {\fontsize{8.5}{10.5}\selectfont\bfseries\color{TTCCyan} 02. ĐƠN VỊ THÀNH VIÊN AIDC (R\&D CONTECH)}\\[2pt]
+        {\fontsize{7}{9}\selectfont\color{TTCTextDark}
+        Đơn vị thành viên chuyên sâu R\&D công nghệ số, ứng dụng thuật toán AI tối ưu 10-15\% kết cấu dầm thép và Digital Twin.}
+      };
+    \end{tikzpicture}
+  };
+  
+  \node[anchor=west, text width=68mm] at (-5mm, -15mm) {
+    \begin{tikzpicture}
+      \node[rounded corners=5pt, fill=white, draw=TTCBlue!70!white, line width=0.8pt, inner sep=5pt, text width=65mm, align=left] {
+        {\fontsize{8.5}{10.5}\selectfont\bfseries\color{TTCBlue} 03. CƠ ĐIỆN MEP \& PCCC CHUYÊN SÂU}\\[2pt]
+        {\fontsize{7}{9}\selectfont\color{TTCTextDark}
+        Trạm biến áp trung thế 22kV, HVAC phòng sạch, PCCC tự động, trạm xử lý nước thải Cột A QCVN 40.}
+      };
+    \end{tikzpicture}
+  };
+  
+  \node[anchor=west, text width=68mm] at (-5mm, -40mm) {
+    \begin{tikzpicture}
+      \node[rounded corners=5pt, fill=white, draw=TTCGold!80!white, line width=0.8pt, inner sep=5pt, text width=65mm, align=left] {
+        {\fontsize{8.5}{10.5}\selectfont\bfseries\color{TTCGold} 04. HẠ TẦNG KỸ THUẬT KCN XANH}\\[2pt]
+        {\fontsize{7}{9}\selectfont\color{TTCTextDark}
+        Thi công san lấp, giao thông nội bộ, móng cọc tải trọng nặng và cảnh quan sinh thái chuẩn ESG.}
+      };
+    \end{tikzpicture}
+  };
+\end{tikzpicture}
+
+\vspace{5mm}
+
+% TẦNG 2: 4 KHỐI GIÁ TRỊ CỘNG HƯỞNG HỆ SINH THÁI (4 CARDS CÂN ĐỐI)
+\noindent
+\begin{tabular}{@{}p{44mm}@{\hspace{3.5mm}}p{44mm}@{\hspace{3.5mm}}p{44mm}@{\hspace{3.5mm}}p{44mm}@{}}
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=44mm, minimum height=70mm, inner sep=5pt, text width=38mm, align=left] {
+      {\fontsize{8.5}{10.5}\selectfont\bfseries\color{TTCRed} \faAward\ Trách Nhiệm 1 Đầu Mối}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ Đại diện Tổng thầu EPC duy nhất.\newline
+      \textbullet\ Quản lý thiết kế, pháp lý DTM/PCCC.\newline
+      \textbullet\ Thi công nền móng, kết cấu, MEP.\newline
+      \textbullet\ Triệt tiêu mọi rủi ro đùn đẩy trách nhiệm.\newline
+      \textbullet\ Bàn giao As-Built chìa khóa trao tay.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=44mm, minimum height=70mm, inner sep=5pt, text width=38mm, align=left] {
+      {\fontsize{8.5}{10.5}\selectfont\bfseries\color{TTCCyan} \faMicrochip\ Công Nghệ Bảo Trợ}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ AIDC đồng hành R\&D công nghệ số.\newline
+      \textbullet\ Thuật toán AI tối ưu tiết diện dầm.\newline
+      \textbullet\ Mô hình BIM 5D tiết kiệm 10--15\%.\newline
+      \textbullet\ Bàn giao Digital Twin 3D hoàn công.\newline
+      \textbullet\ Quản trị dữ liệu đám mây CDE.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=44mm, minimum height=70mm, inner sep=5pt, text width=38mm, align=left] {
+      {\fontsize{8.5}{10.5}\selectfont\bfseries\color{TTCBlue} \faIndustry\ Tự Chủ Sản Xuất}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ Tổ hợp xưởng PEB 30.000T/năm.\newline
+      \textbullet\ Dây chuyền CNC Plasma/Hàn SAW.\newline
+      \textbullet\ 100\% dầm thép ổn định chất lượng.\newline
+      \textbullet\ Không phụ thuộc gia công thầu phụ.\newline
+      \textbullet\ Làm chủ hoàn toàn tiến độ dự án.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=44mm, minimum height=70mm, inner sep=5pt, text width=38mm, align=left] {
+      {\fontsize{8.5}{10.5}\selectfont\bfseries\color{TTCGold} \faCheckCircle\ Bảo Hành Cấp Tốc}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ Phản ứng kỹ thuật tại chỗ trong 4h.\newline
+      \textbullet\ Đội bảo trì chuyên trách 24/7.\newline
+      \textbullet\ Bảo hành kết cấu 24 tháng toàn diện.\newline
+      \textbullet\ Kiểm tra định kỳ 6 tháng/lần miễn phí.\newline
+      \textbullet\ Đồng hành trọn đời cùng nhà máy.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 3: BĂNG CHỈ SỐ SỨC MẠNH HỆ SINH THÁI
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 1 ĐẦU MỐI} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} 30.000 TẤN} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} -15\% THÉP} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 100\% KHÉP KÍN} \\
+      {\fontsize{7.5}{9.5}\selectfont Trách Nhiệm Toàn Diện} &
+      {\fontsize{7.5}{9.5}\selectfont Năng Lực Sản Xuất PEB} &
+      {\fontsize{7.5}{9.5}\selectfont Tối Ưu Hóa Chi Phí AI} &
+      {\fontsize{7.5}{9.5}\selectfont Chuỗi Giá Trị Tổng Thầu}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faAward\ CHỦ ĐỘNG NGUỒN LỰC} \quad\textbullet\quad
+    \textbf{\faMicrochip\ BẢO TRỢ CÔNG NGHỆ CONTECH} \quad\textbullet\quad
+    \textbf{\faIndustry\ NĂNG LỰC SẢN XUẤT VỮNG MẠNH} \quad\textbullet\quad
+    \textbf{\faBuilding\ ĐỒNG HÀNH BỀN VỮNG CÙNG FDI}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 06: CƠ CẤU TỔ CHỨC & HỒ SƠ PHÁP LÝ HẠNG I
+% ============================================================
+\pageheaderbar{CƠ CẤU TỔ CHỨC \& HỒ SƠ PHÁP LÝ HẠNG I}{Trang 06}
+\pagefooterbar{Trang 06}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {ORGANIZATIONAL STRUCTURE \& CLASS I CERTIFICATE};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Cơ Cấu Tổ Chức \& Năng Lực Pháp Lý Hạng I}{Corporate Organizational Structure, Grade I Certificate \& ISO Management System}
+
+% TẦNG 1: SƠ ĐỒ TỔ CHỨC ĐA TẦNG PHÂN CẤP
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+    minimum width=186mm, inner sep=7pt, text width=176mm, align=center
+  ] {
+    {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faUsersCog\quad SƠ ĐỒ CƠ CẤU TỔ CHỨC ĐIỀU HÀNH DOANH NGHIỆP}\\[4pt]
+    \begin{tikzpicture}[
+      node distance=4.5mm and 4mm,
+      cbox/.style={rounded corners=3.5pt, line width=0.7pt, align=center, inner sep=3.5pt, font=\fontsize{6.8}{8.5}\selectfont}
+    ]
+      % Row 1: General Shareholders & BOD
+      \node[cbox, fill=TTCDeepNavy!95!black, text=white, draw=TTCCyan, minimum width=68mm] (bod) {\textbf{ĐẠI HỘI ĐỒNG CỔ ĐÔNG \textbullet\ HỘI ĐỒNG QUẢN TRỊ}};
+      
+      % Row 2: CEO & Advisor & AIDC
+      \node[cbox, fill=TTCRed, text=white, draw=TTCRed!80!white, minimum width=58mm, below=4mm of bod] (ceo) {\textbf{TỔNG GIÁM ĐỐC \textbullet\ PHẠM HUY TÂN}};
+      \node[cbox, fill=white, draw=TTCBlue!60!white, text=TTCBlue, minimum width=48mm, left=4mm of ceo] (adv) {\textbf{HỘI ĐỒNG CỐ VẤN KỸ THUẬT}};
+      \node[cbox, fill=white, draw=TTCCyan!80!white, text=TTCBlue, minimum width=48mm, right=4mm of ceo] (aidc) {\textbf{TRUNG TÂM R\&D CÔNG NGHỆ AIDC}};
+      
+      \draw[->, line width=0.8pt, TTCBlue] (bod) -- (ceo);
+      \draw[<->, line width=0.8pt, dashed, TTCBlue] (adv) -- (ceo);
+      \draw[<->, line width=0.8pt, dashed, TTCCyan] (ceo) -- (aidc);
+      
+      % Row 3: 3 Deputy General Directors
+      \node[cbox, fill=TTCLightBlue, draw=TTCBlue!60!white, text=TTCBlue, minimum width=52mm, below=4mm of ceo] (d1) {\textbf{P.TGĐ KỸ THUẬT \& BIM 5D}};
+      \node[cbox, fill=TTCLightBlue, draw=TTCBlue!60!white, text=TTCBlue, minimum width=52mm, left=4mm of d1] (d2) {\textbf{P.TGĐ DỰ ÁN \& SX PEB}};
+      \node[cbox, fill=TTCLightBlue, draw=TTCBlue!60!white, text=TTCBlue, minimum width=52mm, right=4mm of d1] (d3) {\textbf{P.TGĐ TÀI CHÍNH \& FIDIC}};
+      
+      \draw[->, line width=0.8pt, TTCBlue] (ceo.south) -- (d1.north);
+      \draw[->, line width=0.8pt, TTCBlue] (ceo.south) -| (d2.north);
+      \draw[->, line width=0.8pt, TTCBlue] (ceo.south) -| (d3.north);
+      
+      % Row 4: Project Management Boards
+      \node[cbox, fill=TTCRed!90!black, text=white, draw=TTCRed, minimum width=82mm, below=4mm of d1, xshift=-44mm] (fdi) {\textbf{\faGlobe\ BAN ĐIỀU HÀNH DỰ ÁN VỐN FDI}\\[1.5pt]{\fontsize{6}{7.5}\selectfont (Nhật Bản, Hàn Quốc, Đài Loan, Singapore, EU, Mỹ)}};
+      \node[cbox, fill=TTCBlue!95!black, text=white, draw=TTCBlue, minimum width=82mm, below=4mm of d1, xshift=44mm] (dom) {\textbf{\faBuilding\ BAN ĐIỀU HÀNH DỰ ÁN TRONG NƯỚC \& KCN}\\[1.5pt]{\fontsize{6}{7.5}\selectfont (Tập đoàn Bất động sản, Hạ tầng KCN, Doanh nghiệp lớn)}};
+      
+      \draw[->, line width=0.8pt, TTCRed] (d1.south) -| (fdi.north);
+      \draw[->, line width=0.8pt, TTCBlue] (d1.south) -| (dom.north);
+    \end{tikzpicture}
+  };
+\end{tikzpicture}
+
+\vspace{5mm}
+
+% TẦNG 2: BỘ 4 CARD PHÁP LÝ HẠNG I & ISO QUỐC TẾ
+\noindent
+\begin{tabular}{@{}p{91mm}@{\hspace{4mm}}p{91mm}@{}}
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=91mm, minimum height=44mm, inner sep=6pt, align=left, text width=84mm] {
+      {\fontsize{8.8}{11}\selectfont\bfseries\color{TTCRed} \faAward\ 01. CHỨNG CHỈ NĂNG LỰC HẠNG I (BXD)}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ Bộ Xây dựng cấp phép Tổng thầu Thiết kế \& Thi công Cấp I.\newline
+      \textbullet\ Năng lực thi công công trình quy mô sàn không giới hạn.\newline
+      \textbullet\ Thiết kế \& lắp dựng vượt nhịp dầm thép $>60$m không cột giữa.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=91mm, minimum height=44mm, inner sep=6pt, align=left, text width=84mm] {
+      {\fontsize{8.8}{11}\selectfont\bfseries\color{TTCBlue} \faCheckDouble\ 02. HỆ THỐNG QUẢN LÝ ISO 9001:2015}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ Kiểm soát chất lượng khảo sát, thiết kế và gia công PEB.\newline
+      \textbullet\ Kế hoạch nghiệm thu ITP chi tiết từng cấu kiện dầm cột.\newline
+      \textbullet\ Nghiệm thu độc lập cùng TVGS quốc tế và Chủ đầu tư.}
+    };
+  \end{tikzpicture}
+  \\[3mm]
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=91mm, minimum height=44mm, inner sep=6pt, align=left, text width=84mm] {
+      {\fontsize{8.8}{11}\selectfont\bfseries\color{TTCBlue} \faLeaf\ 03. HỆ THỐNG MÔI TRƯỜNG ISO 14001:2015}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ Kiểm soát triệt để bụi mịn, tiếng ồn và nước thải thi công.\newline
+      \textbullet\ Ưu tiên vật liệu Low-Carbon và tái chế phôi thép chuẩn.\newline
+      \textbullet\ Đáp ứng các tiêu chí kiểm toán ESG khắt khe của FDI.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=91mm, minimum height=44mm, inner sep=6pt, align=left, text width=84mm] {
+      {\fontsize{8.8}{11}\selectfont\bfseries\color{TTCGold} \faCheckCircle\ 04. AN TOÀN SỨC KHỎE ISO 45001:2018}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ Duy trì chính sách Zero Accident tại 100\% công trường.\newline
+      \textbullet\ Huấn luyện ATLĐ định kỳ, cấp thẻ an toàn Nhóm 3.\newline
+      \textbullet\ Trang bị 100\% bảo hộ lao động PPE tiêu chuẩn 3M/Petzl.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{5mm}
+
+% TẦNG 3: BẢNG 4 TIÊU CHUẨN KỸ THUẬT QUỐC TẾ ÁP DỤNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, minimum height=38mm, inner sep=6pt, text width=176mm, align=left
+  ] {
+    {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} \faAward\quad BẢNG TIÊU CHUẨN KỸ THUẬT \& PHÁP LÝ QUỐC TẾ ÁP DỤNG:}\\[3pt]
+    \begin{tabularx}{\linewidth}{@{}X|X|X|X@{}}
+      {\fontsize{7.2}{9.2}\selectfont\color{TTCTextDark}
+      \textbf{\color{TTCRed}FIDIC Silver Book}\newline
+      Chuẩn hợp đồng EPC Turnkey quốc tế, bảo vệ quyền lợi Chủ đầu tư.} &
+      {\fontsize{7.2}{9.2}\selectfont\color{TTCTextDark}
+      \textbf{\color{TTCBlue}Mỹ AWS D1.1 / D1.3}\newline
+      Quy chuẩn hàn kết cấu thép và thử nghiệm không phá hủy NDT.} &
+      {\fontsize{7.2}{9.2}\selectfont\color{TTCTextDark}
+      \textbf{\color{TTCBlue}AISC 360 \& ASTM}\newline
+      Tiêu chuẩn thiết kế kết cấu thép và cơ lý vật liệu phôi thép.} &
+      {\fontsize{7.2}{9.2}\selectfont\color{TTCTextDark}
+      \textbf{\color{TTCGold}QCVN 06:2022/BXD}\newline
+      Quy chuẩn an toàn cháy cho nhà và công trình công nghiệp.}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{5mm}
+
+% TẦNG 4: BĂNG BẢO CHỨNG PHÁP LÝ
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} HẠNG I BXD} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} ISO 9001:2015} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} ISO 14001:2015} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} ISO 45001:2018} \\
+      {\fontsize{7.5}{9.5}\selectfont Tổng Thầu EPC Cấp I} &
+      {\fontsize{7.5}{9.5}\selectfont Quản Lý Chất Lượng} &
+      {\fontsize{7.5}{9.5}\selectfont Quản Lý Môi Trường} &
+      {\fontsize{7.5}{9.5}\selectfont An Toàn Sức Khỏe LĐ}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 07: BÁO CÁO TÀI CHÍNH ĐA TIỀN TỆ & BIỂU ĐỒ TĂNG TRƯỞNG
+% ============================================================
+\pageheaderbar{NĂNG LỰC TÀI CHÍNH ĐA TIỀN TỆ}{Trang 07}
+\pagefooterbar{Trang 07}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {FINANCIAL CAPACITY \& REVENUE GROWTH};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Năng Lực Tài Chính \& Tăng Trưởng Đa Tiền Tệ}{Financial Strength, Multi-Currency Transparency (VND / USD / RMB) \& Audited Growth}
+
+% TẦNG 1: BIỂU ĐỒ DOANH THU 5 NĂM (2021-2025) & BẢNG ĐA TIỀN TỆ
+\noindent
+\begin{tabular}{@{}p{115mm}@{\hspace{4mm}}p{67mm}@{}}
+  % Bảng Doanh thu 5 năm đa tiền tệ + BIỂU ĐỒ CỘT TIKZ (Single Canvas)
+  \begin{tikzpicture}
+    % Outer Card Frame
+    \draw[TTCBlue!40!white, line width=0.9pt, fill=white, rounded corners=6pt] (0, 0) rectangle (11.5, 9.5);
+    
+    % Top Table
+    \node[anchor=north west, inner sep=0pt, text width=10.5cm] at (0.5, 9.0) {
+      {\fontsize{8.8}{10.8}\selectfont\bfseries\color{TTCBlue} \faChartLine\quad TĂNG TRƯỞNG DOANH THU GIAI ĐOẠN 2021 -- 2025:}\\[3pt]
+      \renewcommand{\arraystretch}{1.08}
+      \begin{tabularx}{\linewidth}{@{}c|Y|Y|Y@{}}
+        \toprule
+        \textbf{Năm} & \textbf{Doanh thu (VND)} & \textbf{Doanh thu (USD)} & \textbf{Doanh thu (RMB)} \\
+        \midrule
+        \textbf{2021} & 420 Tỷ VNĐ & \$17.5M & ¥123.5M \\
+        \textbf{2022} & 680 Tỷ VNĐ & \$28.3M & ¥200.0M \\
+        \textbf{2023} & 920 Tỷ VNĐ & \$38.3M & ¥270.5M \\
+        \textbf{2024} & 1.150 Tỷ VNĐ & \$47.9M & ¥338.2M \\
+        \textbf{2025 (KH)} & \textbf{\color{TTCRed}1.600 Tỷ VNĐ} & \textbf{\color{TTCRed}\$65.0M} & \textbf{\color{TTCRed}¥470.0M} \\
+        \bottomrule
+      \end{tabularx}
+    };
+    
+    % Bottom Bar Chart
+    \draw[gray!25, dashed, line width=0.4pt] (0.8, 0.9) -- (10.7, 0.9);
+    \draw[gray!25, dashed, line width=0.4pt] (0.8, 1.8) -- (10.7, 1.8);
+    \draw[gray!25, dashed, line width=0.4pt] (0.8, 2.7) -- (10.7, 2.7);
+    
+    % Bar 2021
+    \fill[TTCBlue!70!white, rounded corners=1.5pt] (1.2, 0.9) rectangle (2.2, 1.45);
+    \node[above, font=\fontsize{6}{7}\selectfont\bfseries\color{TTCBlue}, inner sep=1pt] at (1.7, 1.45) {420 Tỷ};
+    \node[below, font=\fontsize{6}{7}\selectfont\color{TTCTextMuted}, inner sep=1pt] at (1.7, 0.9) {2021};
+    
+    % Bar 2022
+    \fill[TTCBlue!80!white, rounded corners=1.5pt] (3.2, 0.9) rectangle (4.2, 1.8);
+    \node[above, font=\fontsize{6}{7}\selectfont\bfseries\color{TTCBlue}, inner sep=1pt] at (3.7, 1.8) {680 Tỷ};
+    \node[below, font=\fontsize{6}{7}\selectfont\color{TTCTextMuted}, inner sep=1pt] at (3.7, 0.9) {2022};
+    
+    % Bar 2023
+    \fill[TTCBlue!90!white, rounded corners=1.5pt] (5.2, 0.9) rectangle (6.2, 2.15);
+    \node[above, font=\fontsize{6}{7}\selectfont\bfseries\color{TTCBlue}, inner sep=1pt] at (5.7, 2.15) {920 Tỷ};
+    \node[below, font=\fontsize{6}{7}\selectfont\color{TTCTextMuted}, inner sep=1pt] at (5.7, 0.9) {2023};
+    
+    % Bar 2024
+    \fill[TTCBlue, rounded corners=1.5pt] (7.2, 0.9) rectangle (8.2, 2.5);
+    \node[above, font=\fontsize{6}{7}\selectfont\bfseries\color{TTCBlue}, inner sep=1pt] at (7.7, 2.5) {1.150 Tỷ};
+    \node[below, font=\fontsize{6}{7}\selectfont\color{TTCTextMuted}, inner sep=1pt] at (7.7, 0.9) {2024};
+    
+    % Bar 2025 (KH)
+    \fill[TTCRed, rounded corners=1.5pt] (9.2, 0.9) rectangle (10.2, 3.1);
+    \node[above, font=\fontsize{6.5}{7.5}\selectfont\bfseries\color{TTCRed}, inner sep=1pt] at (9.7, 3.1) {1.600 Tỷ};
+    \node[below, font=\fontsize{6}{7}\selectfont\bfseries\color{TTCRed}, inner sep=1pt] at (9.7, 0.9) {2025(KH)};
+  \end{tikzpicture}
+  &
+  % Card Cơ cấu doanh thu theo lĩnh vực
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt,
+      minimum width=67mm, minimum height=95mm, inner sep=5pt, text width=58mm, align=left
+    ] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} \faChartPie\quad CƠ CẤU DOANH THU:}\\[4pt]
+      {\fontsize{7.5}{10}\selectfont\color{TTCTextDark}
+      \textbf{\color{TTCRed}55\%} -- Tổng thầu EPC Xây dựng\\[2.5pt]
+      \textbf{\color{TTCCyan}25\%} -- Sản xuất \& Lắp dựng PEB\\[2.5pt]
+      \textbf{\color{TTCBlue}12\%} -- Cơ điện MEP \& PCCC\\[2.5pt]
+      \textbf{\color{TTCGold}8\%} -- Hạ tầng KCN \& Hoàn thiện}\\[5pt]
+      \rule{58mm}{0.4pt}\\[4pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextMuted}
+      \textbullet\ Dòng tiền kinh doanh dương liên tục 5 năm.\newline
+      \textbullet\ Kiểm toán độc lập bởi đơn vị uy tín.\newline
+      \textbullet\ Tỷ lệ vốn tự có cao, không rủi ro đứt gãy vốn dự án.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{4mm}
+
+% TẦNG 2: BỘ 3 CARD CHỈ SỐ AN TOÀN TÀI CHÍNH (CR, QR, D/E)
+\noindent
+\begin{tabular}{@{}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{}}
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=50mm, inner sep=5pt, text width=52mm, align=left] {
+      {\fontsize{8.2}{10.2}\selectfont\bfseries\color{TTCRed} \faBalanceScale\ Khả Năng Thanh Toán Hiện Hành}\\[3pt]
+      {\fontsize{13.5}{15.5}\selectfont\bfseries\color{TTCBlue} CR = 1.85}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ Tài sản ngắn hạn vượt trội nợ ngắn hạn.\newline
+      \textbullet\ Thanh toán nhà cung cấp đúng hạn 100\%.\newline
+      \textbullet\ Chuẩn thanh khoản tối ưu theo Big4.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=50mm, inner sep=5pt, text width=52mm, align=left] {
+      {\fontsize{8.2}{10.2}\selectfont\bfseries\color{TTCCyan} \faCoins\ Khả Năng Thanh Toán Nhanh}\\[3pt]
+      {\fontsize{13.5}{15.5}\selectfont\bfseries\color{TTCBlue} QR = 1.42}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ Dự trữ tiền mặt và tương đương dồi dào.\newline
+      \textbullet\ Sẵn sàng ứng phó biến động giá thép.\newline
+      \textbullet\ Không chịu áp lực giải ngân khẩn cấp.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=50mm, inner sep=5pt, text width=52mm, align=left] {
+      {\fontsize{8.2}{10.2}\selectfont\bfseries\color{TTCGold} \faShield*\ Tỷ Lệ Nợ Trên Vốn Chủ}\\[3pt]
+      {\fontsize{13.5}{15.5}\selectfont\bfseries\color{TTCBlue} D/E = 0.52}\\[3pt]
+      {\fontsize{6.8}{8.8}\selectfont\color{TTCTextDark}
+      \textbullet\ Đòn bẩy tài chính cực kỳ an toàn.\newline
+      \textbullet\ Cấu trúc vốn lành mạnh chuẩn mực FDI.\newline
+      \textbullet\ Tỷ suất sinh lời ROE/ROA ổn định cao.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 3: BĂNG BẢO CHỨNG TÀI CHÍNH
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 1.600 TỶ} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} \$65.0M USD} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} 100\% KIỂM TOÁN} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 0 NỢ QUÁ HẠN} \\
+      {\fontsize{7.5}{9.5}\selectfont Doanh Thu Kế Hoạch 2025} &
+      {\fontsize{7.5}{9.5}\selectfont Quy Mô Tương Đương USD} &
+      {\fontsize{7.5}{9.5}\selectfont Báo Cáo Minh Bạch Độc Lập} &
+      {\fontsize{7.5}{9.5}\selectfont Uy Tín Tín Dụng Cao Nhất}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faCheckCircle\ BÁO CÁO KIỂM TOÁN ĐỘC LẬP} \quad\textbullet\quad
+    \textbf{\faGlobe\ ĐA TIỀN TỆ VND / USD / RMB} \quad\textbullet\quad
+    \textbf{\faHandshake\ MINH BẠCH TÀI CHÍNH} \quad\textbullet\quad
+    \textbf{\faShield*\ BẢO TOÀN DÒNG TIỀN DỰ ÁN}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 08: HẠN MỨC TÍN DỤNG 500 TỶ & ĐỘI NGŨ NHÂN SỰ 2.850+
+% ============================================================
+\pageheaderbar{TÍN DỤNG 500 TỶ \& ĐỘI NGŨ NHÂN LỰC}{Trang 08}
+\pagefooterbar{Trang 08}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {CREDIT FACILITIES \& 2850+ WORKFORCE};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Hạn Mức Tín Dụng 500 Tỷ \& Đội Ngũ Nhân Lực 2.850+}{500 Billion VND Multi-Bank Credit Facility \& 2,850+ Elite Engineering Workforce}
+
+% TẦNG 1: KHỐI TÍN DỤNG 500 TỶ (HỢP TÁC ĐA NGÂN HÀNG)
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCRed!70!white, line width=0.9pt,
+    minimum width=186mm, minimum height=44mm, inner sep=7pt, text width=176mm, align=left
+  ] {
+    {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCRed} \faHandHoldingUsd\quad HẠN MỨC BẢO LÃNH TÍN DỤNG 500 TỶ VNĐ -- HỢP TÁC ĐA NGÂN HÀNG HÀNG ĐẦU:}\\[3pt]
+    {\fontsize{7.5}{10.2}\selectfont\color{TTCTextDark}
+    Tân Thành Công duy trì xếp hạng tín dụng xuất sắc tại các ngân hàng thương mại hàng đầu Việt Nam (Vietcombank, BIDV, VietinBank, Techcombank, MB Bank) với \textbf{tổng hạn mức tín dụng và bảo lãnh lên đến 500 Tỷ VNĐ}. Sẵn sàng phát hành đầy đủ các loại bảo lãnh ngân hàng quốc tế nhanh chóng trong 24 giờ:\newline
+    \textbullet\ \textbf{Bảo lãnh thực hiện hợp đồng (Performance Bond 5--10\%)} \quad\textbullet\ \textbf{Bảo lãnh tiền tạm ứng (Advance Payment Bond 10--20\%)}\newline
+    \textbullet\ \textbf{Bảo lãnh bảo hành công trình (Maintenance Bond 5\% / 24 tháng)} \quad\textbullet\ \textbf{Mở L/C nhập khẩu phôi thép trực tiếp từ nước ngoài}}
+  };
+\end{tikzpicture}
+
+\vspace{6mm}
+
+% TẦNG 2: BỘ 3 KHỐI CƠ CẤU NHÂN SỰ 2.850+
+\noindent
+\begin{tabular}{@{}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{}}
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=118mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCRed} \faUserTie\ 180+ KỸ SƯ \& KTS}\\[5pt]
+      {\fontsize{7.2}{10}\selectfont\color{TTCTextDark}
+      \textbullet\ 100\% tốt nghiệp ĐH Xây Dựng, Bách Khoa, Kiến Trúc.\newline
+      \textbullet\ 35+ Thạc sĩ \& Kỹ sư trưởng có Chứng chỉ Hành nghề Cấp I.\newline
+      \textbullet\ Thành thạo BIM 5D, Tekla, Revit, Etabs, Navisworks.\newline
+      \textbullet\ 15 Chứng chỉ Quản lý Dự án Quốc tế PMP \& FIDIC.\newline
+      \textbullet\ Thường xuyên đào tạo nâng cao trình độ ConTech \& AI.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=118mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faHardHat\ 2.500+ THỢ LÀNH NGHỀ}\\[5pt]
+      {\fontsize{7.2}{10}\selectfont\color{TTCTextDark}
+      \textbullet\ 100\% thợ hàn cơ khí đạt chứng chỉ 3G/4G/6G AWS D1.1.\newline
+      \textbullet\ Đội ngũ thợ lắp dựng kết cấu thép và sàn deck giàu kinh nghiệm.\newline
+      \textbullet\ 100\% được huấn luyện an toàn lao động Nhóm 3 định kỳ.\newline
+      \textbullet\ Tác phong công nghiệp 5S, kỷ luật cao hiện trường.\newline
+      \textbullet\ Sẵn sàng tổ chức thi công 3 ca liên tục.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=118mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCCyan} \faGlobe\ 30+ CHUYÊN GIA FDI}\\[5pt]
+      {\fontsize{7.2}{10}\selectfont\color{TTCTextDark}
+      \textbullet\ Cố vấn kỹ thuật Nhật Bản (chuẩn 5S, Kaizen) và Hàn Quốc.\newline
+      \textbullet\ Chuyên gia công nghệ R\&D từ đơn vị thành viên AIDC.\newline
+      \textbullet\ Giao tiếp thông thạo: Tiếng Anh, Nhật, Hàn, Trung.\newline
+      \textbullet\ Am hiểu sâu sắc quy chuẩn kỹ thuật và văn hóa FDI.\newline
+      \textbullet\ Cầu nối tin cậy, giải quyết mọi vướng mắc 24/7.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 3: BĂNG CHỈ SỐ NHÂN SỰ
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 500 TỶ} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} 2.850+} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} 180+ KỸ SƯ} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 100\% CHỨNG CHỈ} \\
+      {\fontsize{7.5}{9.5}\selectfont Hạn Mức Tín Dụng Bảo Lãnh} &
+      {\fontsize{7.5}{9.5}\selectfont Tổng Nhân Lực Thực Chiến} &
+      {\fontsize{7.5}{9.5}\selectfont Kỹ Sư Kết Cấu \& BIM 5D} &
+      {\fontsize{7.5}{9.5}\selectfont Đạt Chuẩn ATLĐ \& Chuyên Môn}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faHandHoldingUsd\ BẢO LÃNH TÍN DỤNG 500 TỶ} \quad\textbullet\quad
+    \textbf{\faUsers\ ĐỘI NGŨ 2.850+ NHÂN SỰ} \quad\textbullet\quad
+    \textbf{\faGraduationCap\ KỸ SƯ CHỨNG CHỈ HẠNG I} \quad\textbullet\quad
+    \textbf{\faGlobe\ ĐỒNG HÀNH TOÀN DIỆN CÙNG FDI}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 09: NHÀ MÁY SẢN XUẤT KẾT CẤU THÉP PEB 30.000 TẤN/NĂM
+% ============================================================
+\pageheaderbar{NHÀ MÁY KẾT CẤU THÉP PEB 30.000T}{Trang 09}
+\pagefooterbar{Trang 09}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {PEB MANUFACTURING FACTORY 30000T};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Tổ Hợp Xưởng Sản Xuất Kết Cấu Thép PEB 30.000 Tấn/Năm}{High-Tech PEB Fabrication Plant, Automated CNC Lines \& AWS D1.1 Welding Quality}
+
+% TẦNG 1: KHỐI GIỚI THIỆU NHÀ MÁY & DÂY CHUYỀN CNC
+\noindent
+\begin{tabular}{@{}p{112mm}@{\hspace{4mm}}p{70mm}@{}}
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+      minimum width=112mm, minimum height=88mm, inner sep=6.5pt, text width=103mm, align=left
+    ] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faIndustry\quad QUY MÔ NHÀ MÁY SẢN XUẤT HIỆN ĐẠI:}\\[4pt]
+      {\fontsize{7.5}{10.5}\selectfont\color{TTCTextDark}
+      Tân Thành Công sở hữu tổ hợp nhà máy sản xuất kết cấu thép tiền chế (PEB) quy mô \textbf{diện tích $>20.000$ m$^2$} tại Hà Nội với \textbf{công suất thiết kế 30.000 Tấn/năm}.\newline
+      Nhà máy được trang bị đồng bộ các dây chuyền gia công cơ khí chính xác CNC nhập khẩu, cho phép sản xuất các cấu kiện dầm cột siêu trường, siêu trọng và vượt nhịp lớn độ chính xác từng milimét.\newline
+      \textbullet\ Hệ thống lưu kho phôi thép dự trữ thường xuyên $>3.000$ Tấn.\newline
+      \textbullet\ Kiểm định an toàn môi trường xưởng và cấp phép PCCC đầy đủ.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+      minimum width=70mm, minimum height=88mm, inner sep=6.5pt, text width=61mm, align=left
+    ] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCCyan} \faAward\ TIÊU CHUẨN SẢN XUẤT}\\[4pt]
+      {\fontsize{7.2}{10}\selectfont\color{white}
+      \textbullet\ Chuẩn hàn Mỹ: \textbf{AWS D1.1 / D1.3}\newline
+      \textbullet\ Làm sạch bề mặt: \textbf{Sa 2.5 SIS 055900}\newline
+      \textbullet\ Sơn chống cháy: \textbf{Kiểm định PCCC}\newline
+      \textbullet\ Siêu âm mối hàn: \textbf{100\% NDT UT/MT}\newline
+      \textbullet\ Độ bám dính sơn: \textbf{ASTM D4541}\newline
+      \textbullet\ Dung sai kích thước: \textbf{ISO 13920-B}}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 2: 6 CÔNG ĐOẠN GIA CÔNG KẾT CẤU THÉP KHÉP KÍN
+\noindent
+{\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faCogs\quad QUY TRÌNH 6 BƯỚC GIA CÔNG KHÉP KÍN TẠI NHÀ MÁY PEB:}\\[4pt]
+\noindent
+\begin{tabular}{@{}p{29mm}@{\hspace{2mm}}p{29mm}@{\hspace{2mm}}p{29mm}@{\hspace{2mm}}p{29mm}@{\hspace{2mm}}p{29mm}@{\hspace{2mm}}p{29mm}@{}}
+  \begin{tikzpicture}
+    \node[rounded corners=4pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.7pt, minimum width=29mm, minimum height=68mm, inner sep=4pt, text width=25mm, align=left] {
+      {\fontsize{7.8}{9.8}\selectfont\bfseries\color{TTCRed} 01. Cắt Plasma}\\[3pt]
+      {\fontsize{6.2}{8}\selectfont\color{TTCTextDark}
+      \textbullet\ Máy cắt CNC Plasma Hypertherm.\newline
+      \textbullet\ Độ chính xác $\pm 0.5$mm.\newline
+      \textbullet\ Vát mép dầm tự động chữ V/K.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=4pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.7pt, minimum width=29mm, minimum height=68mm, inner sep=4pt, text width=25mm, align=left] {
+      {\fontsize{7.8}{9.8}\selectfont\bfseries\color{TTCBlue} 02. Gá Đính}\\[3pt]
+      {\fontsize{6.2}{8}\selectfont\color{TTCTextDark}
+      \textbullet\ Máy gá đính Corimpex tự động.\newline
+      \textbullet\ Định vị cánh \& bụng dầm H/I.\newline
+      \textbullet\ Lực ép thủy lực đồng bộ 20T.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=4pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.7pt, minimum width=29mm, minimum height=68mm, inner sep=4pt, text width=25mm, align=left] {
+      {\fontsize{7.8}{9.8}\selectfont\bfseries\color{TTCCyan} 03. Hàn SAW}\\[3pt]
+      {\fontsize{6.2}{8}\selectfont\color{TTCTextDark}
+      \textbullet\ Máy hàn hồ quang ESAB SAW.\newline
+      \textbullet\ Ngấu sâu 100\% chuẩn AWS D1.1.\newline
+      \textbullet\ Thuốc hàn \& dây hàn cao cấp.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=4pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.7pt, minimum width=29mm, minimum height=68mm, inner sep=4pt, text width=25mm, align=left] {
+      {\fontsize{7.8}{9.8}\selectfont\bfseries\color{TTCBlue} 04. Nắn Thẳng}\\[3pt]
+      {\fontsize{6.2}{8}\selectfont\color{TTCTextDark}
+      \textbullet\ Máy nắn cánh thủy lực 40T.\newline
+      \textbullet\ Khử triệt để biến dạng nhiệt.\newline
+      \textbullet\ Sai số độ thẳng $<1/1000$ L.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=4pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.7pt, minimum width=29mm, minimum height=68mm, inner sep=4pt, text width=25mm, align=left] {
+      {\fontsize{7.8}{9.8}\selectfont\bfseries\color{TTCBlue} 05. Phun Bi}\\[3pt]
+      {\fontsize{6.2}{8}\selectfont\color{TTCTextDark}
+      \textbullet\ Buồng phun bi tự động 8 đầu.\newline
+      \textbullet\ Độ sạch bề mặt Sa 2.5 SIS.\newline
+      \textbullet\ Tạo độ nhám bám dính tối ưu.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=4pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.7pt, minimum width=29mm, minimum height=68mm, inner sep=4pt, text width=25mm, align=left] {
+      {\fontsize{7.8}{9.8}\selectfont\bfseries\color{TTCGold} 06. Sơn PCCC}\\[3pt]
+      {\fontsize{6.2}{8}\selectfont\color{TTCTextDark}
+      \textbullet\ Phun sơn sương Airless áp lực.\newline
+      \textbullet\ Sơn Epoxy lót + Sơn phủ PU.\newline
+      \textbullet\ Sơn chống cháy kiểm định PCCC.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 3: BĂNG NĂNG LỰC NHÀ MÁY PEB
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} >20.000 m²} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} 30.000 TẤN} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} 100\% CNC} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} AWS D1.1} \\
+      {\fontsize{7.5}{9.5}\selectfont Diện Tích Tổ Hợp Xưởng} &
+      {\fontsize{7.5}{9.5}\selectfont Công Suất Thép / Năm} &
+      {\fontsize{7.5}{9.5}\selectfont Dây Chuyền Tự Động Hóa} &
+      {\fontsize{7.5}{9.5}\selectfont Tiêu Chuẩn Hàn Quốc Tế}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faIndustry\ TỰ CHỦ 100\% NGUỒN CUNG PEB} \quad\textbullet\quad
+    \textbf{\faMicrochip\ DÂY CHUYỀN CNC TỰ ĐỘNG} \quad\textbullet\quad
+    \textbf{\faAward\ CHUẨN MỸ AWS D1.1} \quad\textbullet\quad
+    \textbf{\faShield*\ KIỂM ĐỊNH PCCC ĐẦY ĐỦ}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 10: ĐỘI XE MÁY THIẾT BỊ CƠ GIỚI >300 TỶ & CẨU NÂNG 100T
+% ============================================================
+\pageheaderbar{THIẾT BỊ CƠ GIỚI \& XE MÁY THI CÔNG}{Trang 10}
+\pagefooterbar{Trang 10}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {CONSTRUCTION MACHINERY \& HEAVY CRANES};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Đội Xe Máy Cơ Giới Hiện Trường $>300$ Tỷ VNĐ}{Heavy Machinery Fleet, 100T Mobile Cranes \& Advanced Construction Equipment}
+
+% TẦNG 1: BẢNG DANH MỤC 85+ THIẾT BỊ CHỦ LỰC
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+    minimum width=186mm, inner sep=6.5pt, text width=176mm, align=left
+  ] {
+    {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faTruckLoading\quad BẢNG DANH MỤC THIẾT BỊ CƠ GIỚI SỞ HỮU TRỰC TIẾP:}\\[3pt]
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\linewidth}{@{}l|X|c|l@{}}
+      \toprule
+      \textbf{Nhóm Thiết Bị} & \textbf{Chủng Loại \& Thương Hiệu} & \textbf{Số Lượng} & \textbf{Năng Lực Phục Vụ} \\
+      \midrule
+      \textbf{Cẩu Bánh Lốp} & Kato, Tadano, Sany (25T -- 100T) & 12 Chiếc & Lắp dựng dầm kèo thép nhịp $>60$m \\
+      \textbf{Xe Nâng Người} & Genie, JLG Boom lift / Scissor (18m--28m) & 28 Chiếc & Lắp tôn mái, panel vách, MEP trên cao \\
+      \textbf{San Lấp \& Nền Móng} & Máy xúc Komatsu, máy lu rung Sakai 14T & 16 Chiếc & Thi công hạ tầng KCN, móng cọc tải nặng \\
+      \textbf{Bơm Bê Tông} & Xe bơm cần Putzmeister 38m--52m, xe bồn & 08 Chiếc & Đổ sàn công nghiệp phẳng Laser Screed \\
+      \textbf{Máy Cán Tôn Hiện Trường} & Máy cán tôn Cliplock/Seamlock tại chỗ & 04 Dàn & Cán tấm tôn dài $>100$m triệt tiêu dột \\
+      \textbf{Máy Trắc Địa \& Laser} & Toàn đạc điện tử Leica, máy cân Laser & 18 Bộ & Định vị tim trục móng bu-lông sai số $<2$mm \\
+      \bottomrule
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{6mm}
+
+% TẦNG 2: 3 CARD ƯU THẾ LÀM CHỦ THIẾT BỊ
+\noindent
+\begin{tabular}{@{}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{}}
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=72mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCRed} \faAward\ Tự Chủ 100\% Hiện Trường}\\[4pt]
+      {\fontsize{7.2}{9.6}\selectfont\color{TTCTextDark}
+      \textbullet\ Toàn bộ thiết bị do TTC sở hữu trực tiếp.\newline
+      \textbullet\ Chủ động điều phối máy móc 24/7.\newline
+      \textbullet\ Không phụ thuộc thuê ngoài, bảo đảm tiến độ.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=72mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} \faTools\ Kiểm Định An Toàn 100\%}\\[4pt]
+      {\fontsize{7.2}{9.6}\selectfont\color{TTCTextDark}
+      \textbullet\ 100\% xe máy có chứng chỉ kiểm định an toàn.\newline
+      \textbullet\ Bảo dưỡng kỹ thuật định kỳ hàng tháng.\newline
+      \textbullet\ Thợ vận hành có chứng chỉ nghề chuẩn quốc gia.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=72mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCCyan} \faBolt\ Thi Công 3 Ca Liên Tục}\\[4pt]
+      {\fontsize{7.2}{9.6}\selectfont\color{TTCTextDark}
+      \textbullet\ Hệ thống đèn chiếu sáng cao áp công trường.\newline
+      \textbullet\ Vận hành thi công liên tục 3 ca ngày đêm.\newline
+      \textbullet\ Rút ngắn từ 30--45 ngày so với tiến độ chuẩn.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 3: BĂNG CHỈ SỐ CƠ GIỚI
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} >300 TỶ} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} 85+ XE MÁY} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} CẨU 100T} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 100\% SỞ HỮU} \\
+      {\fontsize{7.5}{9.5}\selectfont Giá Trị Đội Xe Cơ Giới} &
+      {\fontsize{7.5}{9.5}\selectfont Thiết Bị Chuyên Dụng} &
+      {\fontsize{7.5}{9.5}\selectfont Sức Nâng Dầm Kèo Lớn Nhất} &
+      {\fontsize{7.5}{9.5}\selectfont Làm Chủ Tiến Độ Thi Công}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faTractor\ LÀM CHỦ CƠ GIỚI HIỆN TRƯỜNG} \quad\textbullet\quad
+    \textbf{\faAward\ KIỂM ĐỊNH AN TOÀN TUYỆT ĐỐI} \quad\textbullet\quad
+    \textbf{\faBolt\ THẦN TỐC 3 CA LIÊN TỤC} \quad\textbullet\quad
+    \textbf{\faShield*\ KHÔNG PHỤ THUỘC THUÊ NGOÀI}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 11: QUY TRÌNH 6 BƯỚC EPC FAST-TRACK & VALUE ENGINEERING
+% ============================================================
+\pageheaderbar{QUY TRÌNH FAST-TRACK \& VALUE ENGINEERING}{Trang 11}
+\pagefooterbar{Trang 11}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {EPC FAST-TRACK PROCESS \& VALUE ENGINEERING};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Quy Trình 6 Bước EPC Fast-Track \& Kỹ Thuật Giá Trị (VE)}{Integrated Fast-Track Turnkey Process, Value Engineering \& Schedule Compression}
+
+% TẦNG 1: SƠ ĐỒ 6 BƯỚC THI CÔNG FAST-TRACK
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+    minimum width=186mm, minimum height=64mm, inner sep=6.5pt, text width=176mm, align=left
+  ] {
+    {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} \faProjectDiagram\quad CHUỖI 6 GIAI ĐOẠN TỔNG THẦU EPC FAST-TRACK KHÉP KÍN:}\\[3pt]
+    \begin{tabularx}{\linewidth}{@{}X|X|X@{}}
+      \textbf{\color{TTCRed}01. Thiết Kế BIM 3D/5D}\newline
+      {\fontsize{6.8}{8.8}\selectfont Khảo sát địa chất, thiết kế Concept, mô phỏng BIM rà soát 100\% xung đột kết cấu \& MEP.} &
+      \textbf{\color{TTCBlue}02. Pháp Lý \& PCCC}\newline
+      {\fontsize{6.8}{8.8}\selectfont Lập báo cáo DTM môi trường, thẩm duyệt thiết kế PCCC, xin cấp phép xây dựng nhanh chóng.} &
+      \textbf{\color{TTCBlue}03. Sản Xuất PEB}\newline
+      {\fontsize{6.8}{8.8}\selectfont Gia công 30.000T dầm thép CNC tại xưởng song song với thi công ép cọc móng hiện trường.} \\[4pt]
+      \hline\rule{0pt}{9pt}
+      \textbf{\color{TTCBlue}04. Móng \& Hạ Tầng}\newline
+      {\fontsize{6.8}{8.8}\selectfont Thi công san lấp, cọc khoan nhồi, móng đài, nền bê tông sàn phẳng Laser Screed.} &
+      \textbf{\color{TTCBlue}05. Lắp Dựng \& MEP}\newline
+      {\fontsize{6.8}{8.8}\selectfont Lắp dựng khung thép cẩu 100T, lợp tôn chống dột, lắp đặt trạm biến áp, HVAC, PCCC tự động.} &
+      \textbf{\color{TTCRed}06. Bàn Giao \& As-Built}\newline
+      {\fontsize{6.8}{8.8}\selectfont Kiểm định PCCC, nghiệm thu Sở Xây dựng, bàn giao hồ sơ As-Built và Digital Twin vận hành.}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{5mm}
+
+% TẦNG 2: BẢNG SO SÁNH GIẢI PHÁP VALUE ENGINEERING (VE) TỐI ƯU CHI PHÍ
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCCyan!80!white, line width=0.9pt,
+    minimum width=186mm, minimum height=76mm, inner sep=6.5pt, text width=176mm, align=left
+  ] {
+    {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} \faFunnelDollar\quad BẢNG PHÂN TÍCH HIỆU QUẢ KỸ THUẬT GIÁ TRỊ (VALUE ENGINEERING -- VE):}\\[3pt]
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\linewidth}{@{}p{32mm}|X|X|p{30mm}@{}}
+      \toprule
+      \textbf{Hạng Mục Kỹ Thuật} & \textbf{Thiết Kế Cơ Sở Truyền Thống} & \textbf{Giải Pháp VE Của TTC} & \textbf{Hiệu Quả Đạt Được} \\
+      \midrule
+      \textbf{Kết Cấu Khung Thép} & Dầm chữ H tiết diện không đổi (32 kg/m$^2$) & Dầm Tapered AI tối ưu theo mô-men uốn & \textbf{\color{TTCRed}Tiết giảm 12--15\% thép} \\
+      \textbf{Nền Móng \& Sàn} & Đổ bê tông thủ công, móng cọc đơn lẻ & Tối ưu phản lực chân cột, sàn Laser Screed & \textbf{\color{TTCBlue}Giảm 8.5\% chi phí móng} \\
+      \textbf{Tiến Độ Thi Công} & Tuần tự: Thiết kế $\rightarrow$ Móng $\rightarrow$ Thép & Fast-track cuốn chiếu 3 ca kết hợp Tekla & \textbf{\color{TTCCyan}Rút ngắn 45--60 ngày} \\
+      \textbf{Xung Đột MEP/PCCC} & Phát sinh 20--30 điểm cắt đục hiện trường & Rà soát Navisworks Zero-Clash 100\% & \textbf{\color{TTCGold}0 chi phí phát sinh} \\
+      \bottomrule
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{5mm}
+
+% TẦNG 3: BĂNG CHỈ SỐ FAST-TRACK
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} -30\%} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} -15\% THÉP} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} 100\% ZERO-CLASH} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 1 ĐẦU MỐI} \\
+      {\fontsize{7.5}{9.5}\selectfont Thời Gian Thi Công} &
+      {\fontsize{7.5}{9.5}\selectfont Tối Ưu Chi Phí Đầu Tư} &
+      {\fontsize{7.5}{9.5}\selectfont Rà Soát Xung Đột BIM} &
+      {\fontsize{7.5}{9.5}\selectfont Trách Nhiệm EPC Trọn Gói}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faBolt\ THI CÔNG FAST-TRACK 3 CA} \quad\textbullet\quad
+    \textbf{\faFunnelDollar\ VALUE ENGINEERING TỐI ƯU} \quad\textbullet\quad
+    \textbf{\faLaptopCode\ ZERO-CLASH BIM 5D} \quad\textbullet\quad
+    \textbf{\faCheckCircle\ BÀN GIAO ĐÚNG HẸN 100\%}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 12: TIÊN PHONG CONTECH: BIM 5D, AI TỐI ƯU THÉP & DIGITAL TWIN
+% ============================================================
+\pageheaderbar{TIÊN PHONG CONTECH BIM 5D \& AI}{Trang 12}
+\pagefooterbar{Trang 12}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {CONTECH ADVANCEMENTS BIM 5D \& AI OPTIMIZATION};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Tiên Phong ConTech: BIM 5D, Tối Ưu Thép AI \& Digital Twin}{Next-Gen Construction Technology, AIDC AI Steel Optimization \& Smart Digital Twin}
+
+% TẦNG 1: KHỐI HỢP TÁC R&D CÙNG ĐƠN VỊ THÀNH VIÊN AIDC
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCCyan!80!white, line width=1pt,
+    minimum width=186mm, inner sep=7pt, text width=176mm, align=left
+  ] {
+    {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCCyan} \faBrain\quad HỢP TÁC R\&D CÙNG ĐƠN VỊ THÀNH VIÊN AIDC -- TỐI ƯU HÓA KẾT CẤU BẰNG AI:}\\[3pt]
+    {\fontsize{7.5}{10.2}\selectfont\color{TTCTextDark}
+    Tân Thành Công hợp tác chiến lược cùng \textbf{Đơn vị thành viên AIDC (Trung tâm R\&D AI ConTech)} phát triển các thuật toán học máy phân tích biểu đồ mô-men và ứng suất dầm kèo thép. Giải pháp này giúp \textbf{tiết giảm 10--15\% trọng lượng thép} nhưng vẫn đảm bảo tuyệt đối hệ số an toàn chịu lực theo tiêu chuẩn Mỹ AISC 360 và TCVN 5575:2012.}
+  };
+\end{tikzpicture}
+
+\vspace{6mm}
+
+% TẦNG 2: 3 CỘT TRỤ CÔNG NGHỆ SỐ CONTECH
+\noindent
+\begin{tabular}{@{}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{}}
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=112mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faCube\ BIM 5D Toàn Diện}\\[5pt]
+      {\fontsize{6.8}{9}\selectfont\color{TTCTextDark}
+      \textbullet\ \textbf{Revit \& Tekla Structures:} Thiết kế chi tiết LOD 400 xuất Shop Drawing tự động.\newline
+      \textbullet\ \textbf{Navisworks Manage:} Rà soát phát hiện 100\% xung đột không gian kết cấu \& MEP.\newline
+      \textbullet\ \textbf{BIM 4D Tiến độ:} Mô phỏng trực quan chuỗi cung ứng và lắp dựng dầm kèo.\newline
+      \textbullet\ \textbf{BIM 5D Chi phí:} Đồng bộ hóa dự toán, thanh quyết toán khối lượng thực tế.\newline
+      \textbullet\ \textbf{CDE Common Data:} Môi trường dữ liệu chung kết nối trực tuyến CĐT và TVGS.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=112mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCRed} \faMicrochip\ AI Steel Optimization}\\[5pt]
+      {\fontsize{6.8}{9}\selectfont\color{TTCTextDark}
+      \textbullet\ \textbf{Thuật toán AI AIDC:} Phân tích biểu đồ mô-men tối ưu tiết diện dầm Tapered.\newline
+      \textbullet\ \textbf{Tiết kiệm 10--15\% thép:} Giảm 3--5 kg thép/$m^2$ sàn xây dựng.\newline
+      \textbullet\ \textbf{Giảm tải móng cọc:} Tiết giảm 8.5\% chi phí ép cọc và kết cấu đài móng.\newline
+      \textbullet\ \textbf{Kiểm định chuẩn quốc tế:} Đảm bảo 100\% an toàn chịu lực AISC 360/ASTM.\newline
+      \textbullet\ \textbf{Tối ưu hóa đa biến:} Tự động lặp hàng ngàn kịch bản kết cấu trong vài giờ.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=112mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCCyan} \faCloud\ Smart Digital Twin}\\[5pt]
+      {\fontsize{6.8}{9}\selectfont\color{TTCTextDark}
+      \textbullet\ \textbf{Bản sao số 3D As-Built:} Bàn giao toàn bộ thông số thiết bị cơ điện MEP.\newline
+      \textbullet\ \textbf{Cảm biến IoT hiện trường:} Theo dõi độ võng dầm mái, rung chấn \& nhiệt độ.\newline
+      \textbullet\ \textbf{Bảo trì dự đoán (PdM):} Cảnh báo sớm nguy cơ ăn mòn và xuống cấp kết cấu.\newline
+      \textbullet\ \textbf{Tích hợp BMS/SCADA:} Kết nối hệ thống điều khiển thông minh toàn nhà máy.\newline
+      \textbullet\ \textbf{Đồng hành 30+ năm:} Tối ưu hóa chi phí vòng đời O\&M cho Chủ đầu tư.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 3: BĂNG CHỈ SỐ CONTECH
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} -15\% THÉP} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} BIM 5D} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} DIGITAL TWIN} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} R\&D AIDC} \\
+      {\fontsize{7.5}{9.5}\selectfont Tối Ưu Kết Cấu Bằng AI} &
+      {\fontsize{7.5}{9.5}\selectfont Quản Trị Mô Hình Số 5D} &
+      {\fontsize{7.5}{9.5}\selectfont Bàn Giao Bản Sao Số} &
+      {\fontsize{7.5}{9.5}\selectfont Bảo Trợ Công Nghệ Tiên Tiến}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faMicrochip\ TIÊN PHONG CÔNG NGHỆ CONTECH} \quad\textbullet\quad
+    \textbf{\faBrain\ THUẬT TOÁN AI TỐI ƯU} \quad\textbullet\quad
+    \textbf{\faCube\ MÔ HÌNH SỐ BIM 5D} \quad\textbullet\quad
+    \textbf{\faCloud\ BẢN SAO SỐ DIGITAL TWIN}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 13: CÔNG TRÌNH XANH BỀN VỮNG ESG & MÁI SOLAR-READY
+% ============================================================
+\pageheaderbar{CÔNG TRÌNH XANH ESG \& SOLAR-READY}{Trang 13}
+\pagefooterbar{Trang 13}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {SUSTAINABLE ESG INDUSTRIAL FACILITIES \& SOLAR-READY};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Tiêu Chuẩn Công Trình Xanh ESG \& Mái Solar-Ready}{Green Industrial Standards, LEED/LOTUS Consulting \& 1--5MWp Solar-Ready Engineering}
+
+% TẦNG 1: KHỐI GIẢI PHÁP MÁI SOLAR-READY
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+    minimum width=186mm, inner sep=7pt, text width=176mm, align=left
+  ] {
+    {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faSolarPanel\quad KẾT CẤU MÁI SOLAR-READY -- SẴN SÀNG LẮP ĐẶT ĐIỆN MẶT TRỜI 1--5 MWp:}\\[3pt]
+    {\fontsize{7.5}{10.2}\selectfont\color{TTCTextDark}
+    Tân Thành Công tiên phong tính toán tải trọng tăng thêm ($+15$ đến $+20$ kg/$m^2$) ngay từ giai đoạn thiết kế dầm kèo, xà gồ và phụ kiện kẹp Seamlock chuyên dụng. Nhà máy hoàn thành \textbf{sẵn sàng lắp đặt hệ thống pin năng lượng mặt trời mái nhà công suất 1--5 MWp} mà không cần gia cố kết cấu, giúp Chủ đầu tư đạt chứng chỉ giảm phát thải carbon quốc tế (RECs/I-REC).}
+  };
+\end{tikzpicture}
+
+\vspace{6mm}
+
+% TẦNG 2: 3 TRỤ CỘT CÔNG TRÌNH XANH ESG
+\noindent
+\begin{tabular}{@{}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{}}
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=112mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCRed} \faTemperatureLow\ Vỏ Bao Che Cách Nhiệt}\\[5pt]
+      {\fontsize{7.2}{10}\selectfont\color{TTCTextDark}
+      \textbullet\ Sử dụng panel bông khoáng Rockwool/PIR chống cháy.\newline
+      \textbullet\ Giảm nhiệt độ bề mặt nhà xưởng từ 5--8°C.\newline
+      \textbullet\ Tiết kiệm 20\% điện năng tiêu thụ cho hệ thống HVAC.\newline
+      \textbullet\ Lấy sáng tự nhiên Polycarbonate giảm đèn ban ngày.\newline
+      \textbullet\ Giảm tải nhiệt bức xạ toàn nhà máy.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=112mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faLeaf\ Tư Vấn LEED / LOTUS}\\[5pt]
+      {\fontsize{7.2}{10}\selectfont\color{TTCTextDark}
+      \textbullet\ Đội ngũ chuyên gia tư vấn đạt chuẩn xanh LEED \& LOTUS.\newline
+      \textbullet\ Tối ưu hóa vật liệu Low-VOC và thép tái chế.\newline
+      \textbullet\ Hệ thống thu gom nước mưa tái sử dụng tưới cảnh quan.\newline
+      \textbullet\ Bãi đỗ xe ưu tiên xe điện và trạm sạc nhanh.\newline
+      \textbullet\ Tiêu chuẩn giảm phát thải toàn diện.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=112mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCGold} \faRecycle\ Xử Lý Môi Trường Cột A}\\[5pt]
+      {\fontsize{7.2}{10}\selectfont\color{TTCTextDark}
+      \textbullet\ Trạm xử lý nước thải sinh hoạt \& CN chuẩn QCVN 40 Cột A.\newline
+      \textbullet\ Hệ thống quan trắc tự động kết nối dữ liệu KCN.\newline
+      \textbullet\ Đáp ứng các tiêu chí kiểm toán ESG khắt khe từ EU/Mỹ.\newline
+      \textbullet\ Phân loại rác thải xây dựng tái chế 100\%.\newline
+      \textbullet\ Đảm bảo phát triển bền vững 30+ năm.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 3: BĂNG CHỈ SỐ ESG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 1--5 MWp} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} -20\% ĐIỆN} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} LEED / LOTUS} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} CỘT A QCVN} \\
+      {\fontsize{7.5}{9.5}\selectfont Mái Sẵn Sàng Điện Mặt Trời} &
+      {\fontsize{7.5}{9.5}\selectfont Tiết Kiệm Năng Lượng HVAC} &
+      {\fontsize{7.5}{9.5}\selectfont Chuẩn Công Trình Xanh} &
+      {\fontsize{7.5}{9.5}\selectfont Xử Lý Nước Thải Môi Trường}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faSolarPanel\ KẾT CẤU MÁI SOLAR-READY} \quad\textbullet\quad
+    \textbf{\faLeaf\ CHUẨN CÔNG TRÌNH XANH ESG} \quad\textbullet\quad
+    \textbf{\faAward\ ĐỒNG HÀNH CHỨNG CHỈ LEED} \quad\textbullet\quad
+    \textbf{\faShield*\ PHÁT TRIỂN BỀN VỮNG 30+ NĂM}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 14: HỆ THỐNG KIỂM SOÁT CHẤT LƯỢNG QA/QC CHUẨN MỸ AWS D1.1
+% ============================================================
+\pageheaderbar{KIỂM SOÁT CHẤT LƯỢNG QA/QC AWS D1.1}{Trang 14}
+\pagefooterbar{Trang 14}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {QA/QC QUALITY ASSURANCE SYSTEM AWS D1.1};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Hệ Thống Kiểm Soát Chất Lượng QA/QC Chuẩn Mỹ AWS D1.1}{Comprehensive QA/QC Inspection, 100\% NDT Welding Tests \& Full Traceability}
+
+% TẦNG 1: QUY TRÌNH KIỂM SOÁT CHẤT LƯỢNG 4 CẤP
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+    minimum width=186mm, inner sep=7pt, text width=176mm, align=left
+  ] {
+    {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faCheckDouble\quad QUY TRÌNH KIỂM SOÁT CHẤT LƯỢNG 4 TẦNG NGHIỆM THU (ITP):}\\[4pt]
+    \begin{tabularx}{\linewidth}{@{}X|X|X|X@{}}
+      \textbf{\color{TTCRed}1. Vật Liệu Đầu Vào}\newline
+      {\fontsize{7}{9.2}\selectfont 100\% thép có chứng chỉ CO/CQ gốc, thí nghiệm cơ lý kéo uốn và hóa học.} &
+      \textbf{\color{TTCBlue}2. Gia Công Xưởng}\newline
+      {\fontsize{7}{9.2}\selectfont Kiểm tra hình học, độ vát mép, siêu âm mối hàn NDT và độ bám dính màng sơn.} &
+      \textbf{\color{TTCBlue}3. Lắp Dựng Hiện Trường}\newline
+      {\fontsize{7}{9.2}\selectfont Kiểm tra lực siết bu-lông 8.8/10.9 bằng cờ lê lực, độ thẳng cột sai số $<2$mm.} &
+      \textbf{\color{TTCGold}4. Nghiệm Thu TVGS}\newline
+      {\fontsize{7}{9.2}\selectfont Nghiệm thu từng giai đoạn cùng Tư vấn giám sát quốc tế và Cơ quan Nhà nước.}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{6mm}
+
+% TẦNG 2: 3 PHƯƠNG PHÁP THỬ NGHIỆM KHÔNG PHÁ HỦY NDT
+\noindent
+\begin{tabular}{@{}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{}}
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=112mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCRed} \faWaveSquare\ Siêu Âm Mối Hàn (UT)}\\[5pt]
+      {\fontsize{7.2}{10}\selectfont\color{TTCTextDark}
+      \textbullet\ Kiểm tra khuyết tật bên trong mối hàn dầm kèo chịu lực.\newline
+      \textbullet\ 100\% mối hàn đối đầu được siêu âm đạt chuẩn AWS D1.1.\newline
+      \textbullet\ Cấp chứng thư kết quả siêu âm độc lập cho từng dầm.\newline
+      \textbullet\ Kỹ thuật viên NDT bậc II/III quốc tế trực tiếp thực hiện.\newline
+      \textbullet\ Không có bất kỳ khuyết tật ngầm nào.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=112mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faMagnet\ Hạt Từ \& Thẩm Thấu (MT/PT)}\\[5pt]
+      {\fontsize{7.2}{10}\selectfont\color{TTCTextDark}
+      \textbullet\ Phát hiện các vết nứt tế vi bề mặt tại các nút khung chịu lực.\newline
+      \textbullet\ Thực hiện ngay sau khi hàn và trước khi phun bi làm sạch.\newline
+      \textbullet\ Đảm bảo độ bền mỏi kết cấu dưới tải trọng động của cẩu trục.\newline
+      \textbullet\ Lưu trữ biên bản kiểm tra truy xuất nguồn gốc cấu kiện.\newline
+      \textbullet\ Kiểm soát 100\% nút liên kết quan trọng.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=112mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCCyan} \faPaintBrush\ Đo Chiều Dày Sơn (DFT)}\\[5pt]
+      {\fontsize{7.2}{10}\selectfont\color{TTCTextDark}
+      \textbullet\ Máy đo từ tính Elcometer kiểm tra chiều dày lớp sơn lót \& phủ.\newline
+      \textbullet\ Đo độ bám dính màng sơn theo chuẩn ASTM D4541.\newline
+      \textbullet\ Bảo vệ chống ăn mòn tối đa trong môi trường công nghiệp.\newline
+      \textbullet\ Kiểm tra độ ẩm và điểm sương bề mặt trước khi sơn.\newline
+      \textbullet\ Độ bền màu và chống ăn mòn $>20$ năm.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 3: BĂNG CHỈ SỐ QA/QC
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 100\% NDT} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} AWS D1.1} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} CO/CQ GỐC} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 24 THÁNG} \\
+      {\fontsize{7.5}{9.5}\selectfont Thử Nghiệm Không Phá Hủy} &
+      {\fontsize{7.5}{9.5}\selectfont Chuẩn Hàn Mỹ Quốc Tế} &
+      {\fontsize{7.5}{9.5}\selectfont Nguồn Gốc Phôi Thép} &
+      {\fontsize{7.5}{9.5}\selectfont Bảo Hành Kết Cấu Toàn Diện}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faAward\ QUY TRÌNH KIỂM SOÁT QA/QC 4 TẦNG} \quad\textbullet\quad
+    \textbf{\faCheckDouble\ 100\% SIÊU ÂM MỐI HÀN AWS D1.1} \quad\textbullet\quad
+    \textbf{\faCertificate\ CO/CQ XUẤT XỨ CHÍNH HÃNG} \quad\textbullet\quad
+    \textbf{\faShield*\ BẢO HÀNH TRÁCH NHIỆM CAO}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 15: AN TOÀN LAO ĐỘNG HSE CHUẨN QUỐC TẾ -- ZERO ACCIDENT POLICY
+% ============================================================
+\pageheaderbar{AN TOÀN LAO ĐỘNG HSE ZERO ACCIDENT}{Trang 15}
+\pagefooterbar{Trang 15}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {HSE HEALTH SAFETY ENVIRONMENT ZERO ACCIDENT};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{An Toàn Lao Động \& Môi Trường HSE Chuẩn Quốc Tế}{Health, Safety \& Environment (HSE) Excellence, Zero Accident Policy \& ISO 45001}
+
+% TẦNG 1: TUYÊN NGÔN AN TOÀN LÀ SINH MỆNH
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCRed!80!white, line width=1pt,
+    minimum width=186mm, inner sep=7pt, text width=176mm, align=left
+  ] {
+    {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCRed} \faShield*\quad CHÍNH SÁCH AN TOÀN ZERO ACCIDENT -- AN TOÀN LÀ SINH MỆNH DOANH NGHIỆP:}\\[3pt]
+    {\fontsize{7.5}{10.2}\selectfont\color{TTCTextDark}
+    Tại Tân Thành Công, \textbf{an toàn của mỗi kỹ sư và công nhân là ưu tiên cao nhất}. Chúng tôi áp dụng quy chuẩn quản lý an toàn ISO 45001:2018 và văn hóa \textit{`Dừng công việc ngay lập tức nếu thấy nguy cơ mất an toàn (Stop Work Authority)'}. Đến nay, chúng tôi tự hào duy trì thành tích \textbf{$>3.500.000$ giờ làm việc an toàn không tai nạn mất thời gian lao động (LTI Free)} trên toàn bộ các đại dự án.}
+  };
+\end{tikzpicture}
+
+\vspace{6mm}
+
+% TẦNG 2: 3 BIỆN PHÁP QUẢN TRỊ AN TOÀN HIỆN TRƯỜNG
+\noindent
+\begin{tabular}{@{}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{}}
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=112mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCRed} \faHardHat\ Trang Bị PPE Châu Âu}\\[5pt]
+      {\fontsize{7.2}{10}\selectfont\color{TTCTextDark}
+      \textbullet\ 100\% nhân sự cấp mũ, giày mũi thép, áo phản quang và kính 3M/Petzl.\newline
+      \textbullet\ Dây an toàn toàn thân 2 móc chống sốc khi làm việc trên cao.\newline
+      \textbullet\ Lưới an toàn hứng rơi toàn bộ diện tích mái xưởng.\newline
+      \textbullet\ Dây cứu sinh Lifeline cố định bằng cáp thép 12mm.\newline
+      \textbullet\ Kiểm tra định kỳ thiết bị bảo hộ mỗi tuần.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=112mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faIdCard\ Thẻ Số Hóa \& FaceID}\\[5pt]
+      {\fontsize{7.2}{10}\selectfont\color{TTCTextDark}
+      \textbullet\ Cổng xoay Tripod FaceID kiểm soát vào ra công trường.\newline
+      \textbullet\ Chỉ công nhân đã học an toàn và đạt khám sức khỏe mới được vào.\newline
+      \textbullet\ Họp an toàn đầu giờ Tool-box Meeting 15 phút mỗi sáng.\newline
+      \textbullet\ Thưởng phạt minh bạch theo hệ thống chấm điểm HSE.\newline
+      \textbullet\ Quản trị nhân sự số hóa thời gian thực.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=112mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCGold} \faFireExtinguisher\ PCCC \& Cứu Hộ 24/7}\\[5pt]
+      {\fontsize{7.2}{10}\selectfont\color{TTCTextDark}
+      \textbullet\ Giấy phép Hot Work Permit giám sát 100\% công tác hàn cắt.\newline
+      \textbullet\ Bình chữa cháy và bạt chống cháy bố trí tại từng vị trí thi công.\newline
+      \textbullet\ Đội phản ứng nhanh sơ cấp cứu túc trực thường trực.\newline
+      \textbullet\ Diễn tập PCCC cứu nạn định kỳ mỗi quý một lần.\newline
+      \textbullet\ Sẵn sàng ứng phó mọi tình huống khẩn cấp.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 3: BĂNG CHỈ SỐ HSE
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 0 TAI NẠN} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} >3.5M GIỜ} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} ISO 45001} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 100\% PPE} \\
+      {\fontsize{7.5}{9.5}\selectfont Mục Tiêu An Toàn Tuyệt Đối} &
+      {\fontsize{7.5}{9.5}\selectfont Giờ An Toàn Không Gián Đoạn} &
+      {\fontsize{7.5}{9.5}\selectfont Hệ Thống Quản Trị Quốc Tế} &
+      {\fontsize{7.5}{9.5}\selectfont Trang Bị Bảo Hộ Đạt Chuẩn}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faShield*\ CHÍNH SÁCH ZERO ACCIDENT} \quad\textbullet\quad
+    \textbf{\faAward\ HƠN 3.5 TRIỆU GIỜ AN TOÀN} \quad\textbullet\quad
+    \textbf{\faMedal\ TIÊU CHUẨN ISO 45001:2018} \quad\textbullet\quad
+    \textbf{\faHeart\ TRÂN TRỌNG MẠNG SỐNG CON NGƯỜI}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 16: DANH MỤC ĐẠI DỰ ÁN CÔNG NGHIỆP TIÊU BIỂU THEO NGÀNH
+% ============================================================
+\pageheaderbar{DANH MỤC ĐẠI DỰ ÁN TIÊU BIỂU}{Trang 16}
+\pagefooterbar{Trang 16}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {FEATURED INDUSTRIAL PROJECT PORTFOLIO};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Danh Mục 150+ Đại Dự Án Công Nghiệp Phân Theo Ngành}{Selected 150+ Turnkey EPC Projects Categorized by High-Growth Industrial Sectors}
+
+% TẦNG 1: BẢNG TỔNG HỢP CÁC DỰ ÁN TIÊU BIỂU
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+    minimum width=186mm, minimum height=84mm, inner sep=6.5pt, text width=176mm, align=left
+  ] {
+    {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} \faList\quad BẢNG TIÊU BIỂU CÁC DỰ ÁN ĐÃ BÀN GIAO VÀ ĐANG THI CÔNG:}\\[3pt]
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\linewidth}{@{}p{36mm}|p{44mm}|c|c|X@{}}
+      \toprule
+      \textbf{Lĩnh Vực Ngành} & \textbf{Tên Dự Án / Khách Hàng} & \textbf{Diện Tích} & \textbf{Địa Điểm} & \textbf{Phạm Vi Hợp Đồng} \\
+      \midrule
+      \textbf{Dệt May Xuất Khẩu} & Nhà máy May Hồng Trang & 75.000 m$^2$ & Hải Dương & Tổng thầu EPC (Fast-track 150 ngày) \\
+      \textbf{Dệt May Cao Cấp} & Nhà máy May Sông Hồng 7 & 68.000 m$^2$ & Nam Định & Tổng thầu Thiết kế \& Thi công 2 tầng \\
+      \textbf{Nông Nghiệp FDI} & Tổ hợp Japfa Comfeed & 45.000 m$^2$ & Bình Phước & Tổng thầu Kết cấu Silo \& Nhà xưởng \\
+      \textbf{Thức Ăn Chăn Nuôi} & Nhà máy New Hope & 38.000 m$^2$ & Thanh Hóa & Xưởng sản xuất thức ăn chăn nuôi \\
+      \textbf{Điện Tử \& Ô Tô} & Nhà máy Daeyun Korea & 32.000 m$^2$ & Bắc Giang & Xưởng sạch Class 10.000 \& MEP \\
+      \textbf{Phụ Tùng Ô Tô} & Nhà máy Sumidenso Japan & 28.000 m$^2$ & Hải Dương & Nhà máy sản xuất dây cáp ô tô \\
+      \textbf{Điện Tử Bán Dẫn} & Chuỗi Nhà xưởng Foxconn & 42.000 m$^2$ & Bắc Ninh & Kết cấu thép vượt nhịp \& Sàn ESD \\
+      \textbf{Logistics \& Kho Vận} & Kho vận Yusen Logistics & 35.000 m$^2$ & Hưng Yên & Tổng thầu EPC Kho thông minh \\
+      \bottomrule
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{6mm}
+
+% TẦNG 2: 3 CARD ĐẶC ĐIỂM DỰ ÁN CỦA TTC
+\noindent
+\begin{tabular}{@{}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{}}
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=70mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCRed} \faGlobe\ 70\% Khách Hàng FDI}\\[4pt]
+      {\fontsize{7.2}{9.6}\selectfont\color{TTCTextDark}
+      \textbullet\ Phục vụ các tập đoàn đa quốc gia.\newline
+      \textbullet\ Khách hàng đến từ Nhật Bản, Hàn Quốc, Đài Loan, Singapore và Châu Âu.\newline
+      \textbullet\ Tuân thủ quy chuẩn kiểm toán quốc tế nghiêm ngặt.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=70mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faAward\ 100\% Vượt Nhịp Lớn}\\[4pt]
+      {\fontsize{7.2}{9.6}\selectfont\color{TTCTextDark}
+      \textbullet\ Chuyên môn hóa thiết kế dầm kèo.\newline
+      \textbullet\ Khẩu độ vượt nhịp từ 36m đến trên 60m không cột giữa.\newline
+      \textbullet\ Tối ưu hóa không gian mặt bằng sản xuất và dây chuyền tự động.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=70mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCCyan} \faRedo\ 85\% Khách Hàng Tái Ký}\\[4pt]
+      {\fontsize{7.2}{9.6}\selectfont\color{TTCTextDark}
+      \textbullet\ Tỷ lệ giữ chân khách hàng vượt trội.\newline
+      \textbullet\ Hơn 85\% Chủ đầu tư tiếp tục chỉ định Tân Thành Công làm Tổng thầu cho các giai đoạn mở rộng tiếp theo.\newline
+      \textbullet\ Uy tín xây dựng trên sự minh bạch.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 3: BĂNG CHỈ SỐ DỰ ÁN
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 150+} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} >500.000 m²} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} 70\% FDI} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 85\% TÁI KÝ} \\
+      {\fontsize{7.5}{9.5}\selectfont Dự Án Hoàn Thành} &
+      {\fontsize{7.5}{9.5}\selectfont Tổng Diện Tích Sàn} &
+      {\fontsize{7.5}{9.5}\selectfont Tỷ Trọng Vốn Quốc Tế} &
+      {\fontsize{7.5}{9.5}\selectfont Tỷ Lệ Khách Hàng Mở Rộng}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faBuilding\ 150+ CÔNG TRÌNH HIỆN HỮU} \quad\textbullet\quad
+    \textbf{\faGlobe\ ĐỐI TÁC TIN CẬY FDI} \quad\textbullet\quad
+    \textbf{\faAward\ NĂNG LỰC TỔNG THẦU HẠNG I} \quad\textbullet\quad
+    \textbf{\faHandshake\ BẢO HÀNH TRỌN ĐỜI CÔNG TRÌNH}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 17: CASE STUDY 01 -- NHÀ MÁY DỆT MAY HỒNG TRANG
+% ============================================================
+\pageheaderbar{SELECTED CASE STUDY 01}{Trang 17}
+\pagefooterbar{Trang 17}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {HONG TRANG INDUSTRIAL TEXTILE PLANT};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Case Study 01: Nhà Máy Dệt May Xuất Khẩu Hồng Trang}{Hong Trang Garment Factory \textbullet\ 75,000 m$^2$ High-Span Turnkey EPC Project \textbullet\ Hai Duong}
+
+% TẦNG 1: ẢNH CÔNG TRÌNH & CARD THÔNG SỐ CHÍNH
+\noindent
+\begin{tabular}{@{}p{105mm}@{\hspace{4mm}}p{77mm}@{}}
+  % Ảnh dự án Hồng Trang
+  \begin{tikzpicture}
+    \node[rounded corners=6pt, fill=white, draw=TTCBorder, line width=0.8pt, inner sep=3pt] {
+      \includegraphics[width=100mm, height=92mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/project-assets/hongtrang.jpg}
+    };
+  \end{tikzpicture}
+  &
+  % Thông số kỹ thuật dự án
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+      minimum width=77mm, minimum height=96mm, inner sep=7pt, text width=67mm, align=left
+    ] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCCyan} \faInfoCircle\ THÔNG TIN TỔNG QUAN DỰ ÁN}\\[4pt]
+      {\fontsize{7.5}{10.2}\selectfont\color{white}
+      \textbf{Chủ đầu tư:} Công ty TNHH May Hồng Trang\newline
+      \textbf{Địa điểm:} KCN Tân Trường, Hải Dương\newline
+      \textbf{Diện tích sàn:} \textbf{\color{TTCGold}75.000 m$^2$}\newline
+      \textbf{Khẩu độ vượt nhịp:} \textbf{\color{TTCCyan}42 mét (không cột)}\newline
+      \textbf{Thời gian thi công:} \textbf{\color{TTCRed}150 ngày (Fast-track)}\newline
+      \textbf{Phạm vi hợp đồng:} Tổng thầu EPC trọn gói (Thiết kế BIM, Sản xuất PEB, Móng cọc, Lắp dựng kết cấu, Hạ tầng KCN \& PCCC tự động).}\\[6pt]
+      \rule{67mm}{0.4pt}\\[5pt]
+      {\fontsize{7}{9}\selectfont\color{white!85!gray} Bàn giao đúng tiến độ, đạt chuẩn kiểm toán khắt khe của các nhãn hàng thời trang xuất khẩu Châu Âu.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 2: 3 ĐIỂM NHẤN KỸ THUẬT & GIẢI PHÁP TỔNG THẦU
+\noindent
+\begin{tabular}{@{}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{}}
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=72mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCRed} \faAward\ Vượt Nhịp 42m Tối Ưu}\\[4pt]
+      {\fontsize{7.2}{9.5}\selectfont\color{TTCTextDark}
+      \textbullet\ Thiết kế dầm thép tiết diện thay đổi vượt nhịp 42m.\newline
+      \textbullet\ Tăng 18\% diện tích bố trí dây chuyền may tự động.\newline
+      \textbullet\ Tối ưu hóa không gian cho Chủ đầu tư.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=72mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} \faBolt\ Tiến Độ Fast-Track 150 Ngày}\\[4pt]
+      {\fontsize{7.2}{9.5}\selectfont\color{TTCTextDark}
+      \textbullet\ Triển khai thi công 3 ca liên tục.\newline
+      \textbullet\ Sản xuất 2.200 tấn dầm thép tại xưởng đồng thời ép cọc.\newline
+      \textbullet\ Rút ngắn 45 ngày so với tiến độ cam kết.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=72mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCCyan} \faLeaf\ Sàn Chống Bụi \& Mái Mát}\\[4pt]
+      {\fontsize{7.2}{9.5}\selectfont\color{TTCTextDark}
+      \textbullet\ Sàn bê tông phẳng Laser Screed tăng cứng Hardener Sika.\newline
+      \textbullet\ Mái tôn Seamlock cách nhiệt Rockwool chống dột.\newline
+      \textbullet\ Giảm 6°C nhiệt độ làm việc trong nhà xưởng.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 3: BĂNG CHỈ SỐ CASE STUDY
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 75.000 m²} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} 150 NGÀY} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} NHỊP 42M} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 2.200 TẤN} \\
+      {\fontsize{7.5}{9.5}\selectfont Sàn Xây Dựng Hoàn Thành} &
+      {\fontsize{7.5}{9.5}\selectfont Tiến Độ Thi Công Thần Tốc} &
+      {\fontsize{7.5}{9.5}\selectfont Khẩu Độ Không Cột Giữa} &
+      {\fontsize{7.5}{9.5}\selectfont Thép Kết Cấu Chế Tạo}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faAward\ CÔNG TRÌNH ĐẠT CHUẨN XUẤT KHẨU EU} \quad\textbullet\quad
+    \textbf{\faBolt\ TIẾN ĐỘ FAST-TRACK VƯỢT TRỘI} \quad\textbullet\quad
+    \textbf{\faShield*\ BẢO HÀNH TOÀN DIỆN 24 THÁNG}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 18: CASE STUDY 02 -- NHÀ MÁY DỆT MAY SÔNG HỒNG 7
+% ============================================================
+\pageheaderbar{SELECTED CASE STUDY 02}{Trang 18}
+\pagefooterbar{Trang 18}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {SONG HONG 7 INDUSTRIAL GARMENT PLANT};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Case Study 02: Nhà Máy Dệt May Xuất Khẩu Sông Hồng 7}{Song Hong 7 Garment Plant \textbullet\ 68,000 m$^2$ 2-Storey Heavy-Duty Steel EPC \textbullet\ Nam Dinh}
+
+% TẦNG 1: ẢNH CÔNG TRÌNH & CARD THÔNG SỐ CHÍNH
+\noindent
+\begin{tabular}{@{}p{105mm}@{\hspace{4mm}}p{77mm}@{}}
+  % Ảnh dự án Sông Hồng 7
+  \begin{tikzpicture}
+    \node[rounded corners=6pt, fill=white, draw=TTCBorder, line width=0.8pt, inner sep=3pt] {
+      \includegraphics[width=100mm, height=92mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/project-assets/songhong7.jpg}
+    };
+  \end{tikzpicture}
+  &
+  % Thông số kỹ thuật dự án
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+      minimum width=77mm, minimum height=96mm, inner sep=7pt, text width=67mm, align=left
+    ] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCCyan} \faInfoCircle\ THÔNG TIN TỔNG QUAN DỰ ÁN}\\[4pt]
+      {\fontsize{7.5}{10.2}\selectfont\color{white}
+      \textbf{Chủ đầu tư:} Công ty CP May Sông Hồng\newline
+      \textbf{Địa điểm:} KCN Nghĩa Hưng, Nam Định\newline
+      \textbf{Diện tích sàn:} \textbf{\color{TTCGold}68.000 m$^2$ (Quy mô 2 tầng)}\newline
+      \textbf{Tải trọng sàn tầng 2:} \textbf{\color{TTCCyan}1.200 kg/m$^2$}\newline
+      \textbf{Tiến độ hoàn thành:} \textbf{\color{TTCRed}Vượt hạn 25 ngày}\newline
+      \textbf{Phạm vi hợp đồng:} Tổng thầu Thiết kế \& Thi công xây dựng kết cấu thép 2 tầng tải trọng nặng, sàn deck liên hợp bê tông cốt thép, trạm biến áp 2x2.000kVA, điều hòa trung tâm Chiller.}\\[6pt]
+      \rule{67mm}{0.4pt}\\[5pt]
+      {\fontsize{7}{9}\selectfont\color{white!85!gray} Dự án tiêu biểu về kết cấu nhà xưởng thép 2 tầng chịu tải trọng lớn tại miền Bắc.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 2: 3 GIẢI PHÁP KỸ THUẬT NỔI BẬT
+\noindent
+\begin{tabular}{@{}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{\hspace{4mm}}p{59.3mm}@{}}
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=72mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCRed} \faLayerGroup\ Kết Cấu Thép 2 Tầng}\\[4pt]
+      {\fontsize{7.2}{9.5}\selectfont\color{TTCTextDark}
+      \textbullet\ Hệ dầm thép liên hợp bản sàn deck.\newline
+      \textbullet\ Chịu tải máy may và dệt công nghiệp $>1.200$ kg/$m^2$.\newline
+      \textbullet\ Triệt tiêu hoàn toàn rung lắc sàn.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=72mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} \faTemperatureLow\ HVAC Chiller Phòng Sạch}\\[4pt]
+      {\fontsize{7.2}{9.5}\selectfont\color{TTCTextDark}
+      \textbullet\ Thi công hệ thống điều hòa Chiller giải nhiệt nước.\newline
+      \textbullet\ Duy trì nhiệt độ 24°C và độ ẩm 60\% ổn định.\newline
+      \textbullet\ Đạt chuẩn môi trường sản xuất dệt may cao cấp.}
+    };
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt, minimum width=59.3mm, minimum height=72mm, inner sep=6pt, text width=52mm, align=left] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCCyan} \faAward\ Thư Khen Của Chủ Đầu Tư}\\[4pt]
+      {\fontsize{7.2}{9.5}\selectfont\color{TTCTextDark}
+      \textbullet\ Ban Lãnh đạo May Sông Hồng trao tặng thư khen.\newline
+      \textbullet\ Đánh giá cao chất lượng thi công mối hàn dầm.\newline
+      \textbullet\ Bàn giao trước tiến độ hợp đồng 25 ngày.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 3: BĂNG CHỈ SỐ CASE STUDY
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 68.000 m²} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} 2 TẦNG SÀN} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} 1.200 KG/M²} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} -25 NGÀY} \\
+      {\fontsize{7.5}{9.5}\selectfont Sàn Xây Dựng 2 Tầng} &
+      {\fontsize{7.5}{9.5}\selectfont Kết Cấu Thép Liên Hợp} &
+      {\fontsize{7.5}{9.5}\selectfont Tải Trọng Động Máy Móc} &
+      {\fontsize{7.5}{9.5}\selectfont Vượt Tiến Độ Bàn Giao}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faAward\ NĂNG LỰC THI CÔNG KẾT CẤU PHỨC TẠP} \quad\textbullet\quad
+    \textbf{\faCheckCircle\ KIỂM SOÁT ĐỘ VÕNG HOÀN HẢO} \quad\textbullet\quad
+    \textbf{\faHandshake\ ĐỐI TÁC TRUYỀN THỐNG TIN CẬY}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 19: CASE STUDY 03 -- TỔ HỢP JAPFA COMFEED & NHÀ MÁY DAEYUN
+% ============================================================
+\pageheaderbar{SELECTED CASE STUDY 03}{Trang 19}
+\pagefooterbar{Trang 19}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {JAPFA COMFEED \& DAEYUN KOREA PLANTS};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Case Study 03: Tổ Hợp Japfa Comfeed \& Nhà Máy Daeyun Korea}{Japfa Comfeed Feedmill Complex \textbullet\ Daeyun Precision Korea Factory \textbullet\ FDI EPC Standards}
+
+% TẦNG 1: 2 CỘT DỰ ÁN FDI SONG SONG
+\noindent
+\begin{tabular}{@{}p{91mm}@{\hspace{4mm}}p{91mm}@{}}
+  % DỰ ÁN 1: JAPFA COMFEED
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+      minimum width=91mm, minimum height=155mm, inner sep=6pt, text width=83mm, align=left
+    ] {
+      \includegraphics[width=83mm, height=64mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/project-assets/japfa.jpg}\\[5pt]
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCRed} TỔ HỢP NHÀ MÁY JAPFA COMFEED}\\[4pt]
+      {\fontsize{7.2}{9.8}\selectfont\color{TTCTextDark}
+      \textbf{Chủ đầu tư:} Tập đoàn Japfa Comfeed (Indonesia/Hà Lan)\newline
+      \textbf{Quy mô:} 45.000 m$^2$, tháp Silo cao 45m, tải trọng móng cọc đặc biệt.\newline
+      \textbf{Phạm vi TTC:} Tổng thầu EPC kết cấu thép Silo, nhà xưởng nghiền ép cám, kho thành phẩm khẩu độ lớn và hạ tầng đường nội bộ xe container.\newline
+      \textbf{Điểm nhấn:} Hoàn thành đúng cam kết an toàn Zero Accident theo tiêu chuẩn kiểm toán OHSAS khắt khe của tập đoàn đa quốc gia.\newline
+      \textbf{Tiến độ:} Bàn giao vượt tiến độ 20 ngày.}
+    };
+  \end{tikzpicture}
+  &
+  % DỰ ÁN 2: DAEYUN KOREA
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+      minimum width=91mm, minimum height=155mm, inner sep=6pt, text width=83mm, align=left
+    ] {
+      \includegraphics[width=83mm, height=64mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/project-assets/daeyun.jpg}\\[5pt]
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} NHÀ MÁY DAEYUN KOREA PRECISION}\\[4pt]
+      {\fontsize{7.2}{9.8}\selectfont\color{TTCTextDark}
+      \textbf{Chủ đầu tư:} Daeyun Co., Ltd (Hàn Quốc)\newline
+      \textbf{Quy mô:} 32.000 m$^2$, KCN Quang Châu, Bắc Giang.\newline
+      \textbf{Phạm vi TTC:} Tổng thầu EPC nhà máy linh kiện điện tử, phòng sạch Class 10.000, trạm biến áp, PCCC tự động FM200.\newline
+      \textbf{Điểm nhấn:} Thi công chính xác theo chuẩn bản vẽ kỹ thuật Hàn Quốc, bàn giao nghiệm thu 100\% hạng mục trong lần đầu tiên, không có lỗi tồn đọng.\newline
+      \textbf{Tiêu chuẩn:} Đạt chuẩn phòng sạch quốc tế ISO 14644-1.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 2: BĂNG CHỈ SỐ CASE STUDY
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 77.000 m²} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} SILO 45M} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} CLASS 10.000} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 100\% ĐÚNG HẸN} \\
+      {\fontsize{7.5}{9.5}\selectfont Tổng Sàn 2 Dự Án} &
+      {\fontsize{7.5}{9.5}\selectfont Chiều Cao Kết Cấu Silo} &
+      {\fontsize{7.5}{9.5}\selectfont Tiêu Chuẩn Phòng Sạch} &
+      {\fontsize{7.5}{9.5}\selectfont Bàn Giao Tuyệt Đối}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faAward\ ĐÁP ỨNG CHUẨN MỰC FDI KHẮT KHE NHẤT} \quad\textbullet\quad
+    \textbf{\faIndustry\ KẾT CẤU CHUYÊN SÂU} \quad\textbullet\quad
+    \textbf{\faGlobe\ ĐỐI TÁC ĐỒNG HÀNH TOÀN DIỆN}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 20: CASE STUDY 04 -- NHÀ MÁY SUMIDENSO & PHỤ TRỢ FOXCONN
+% ============================================================
+\pageheaderbar{SELECTED CASE STUDY 04}{Trang 20}
+\pagefooterbar{Trang 20}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {SUMIDENSO JAPAN \& FOXCONN AUXILIARY PLANTS};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Case Study 04: Nhà Máy Sumidenso Japan \& Chuỗi Phụ Trợ Foxconn}{Sumidenso Automotive Wire Harness \textbullet\ Foxconn Electronics Supply Chain Facilities}
+
+% TẦNG 1: 2 CỘT DỰ ÁN CÔNG NGHỆ CAO
+\noindent
+\begin{tabular}{@{}p{91mm}@{\hspace{4mm}}p{91mm}@{}}
+  % DỰ ÁN 1: SUMIDENSO
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+      minimum width=91mm, minimum height=155mm, inner sep=6pt, text width=83mm, align=left
+    ] {
+      \includegraphics[width=83mm, height=64mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/project-assets/sumidenso.jpg}\\[5pt]
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCRed} NHÀ MÁY SUMIDENSO VIETNAM (JAPAN)}\\[4pt]
+      {\fontsize{7.2}{9.8}\selectfont\color{TTCTextDark}
+      \textbf{Chủ đầu tư:} Sumitomo Electric Industries (Nhật Bản)\newline
+      \textbf{Quy mô:} 28.000 m$^2$, KCN Đại An, Hải Dương.\newline
+      \textbf{Phạm vi TTC:} Thi công kết cấu thép nhịp lớn, hệ thống vỏ bao che cách âm cách nhiệt và sàn epoxy tự phẳng kháng dầu mỡ mài mòn.\newline
+      \textbf{Điểm nhấn:} Tuân thủ quy trình 5S và tiêu chuẩn an toàn Nhật Bản khắt khe, đạt điểm đánh giá chất lượng nghiệm thu tối đa từ đoàn chuyên gia Sumitomo.\newline
+      \textbf{Độ bền:} Bảo chứng chất lượng chuẩn Nhật Bản.}
+    };
+  \end{tikzpicture}
+  &
+  % DỰ ÁN 2: FOXCONN AUXILIARY
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+      minimum width=91mm, minimum height=155mm, inner sep=6pt, text width=83mm, align=left
+    ] {
+      \includegraphics[width=83mm, height=64mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/project-assets/foxcon.png}\\[5pt]
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} CHUỖI NHÀ XƯỞNG PHỤ TRỢ FOXCONN}\\[4pt]
+      {\fontsize{7.2}{9.8}\selectfont\color{TTCTextDark}
+      \textbf{Chủ đầu tư:} Đối tác chuỗi cung ứng linh kiện Foxconn\newline
+      \textbf{Quy mô:} 42.000 m$^2$, KCN Quế Võ, Bắc Ninh.\newline
+      \textbf{Phạm vi TTC:} Tổng thầu EPC xây dựng tổ hợp nhà xưởng sản xuất cơ khí chính xác, chống rung vi mô cho máy CNC khuôn mẫu, sàn chống tĩnh điện ESD.\newline
+      \textbf{Điểm nhấn:} Hoàn thành trong 120 ngày đáp ứng tiến độ lắp đặt dây chuyền sản xuất bo mạch điện tử xuất khẩu.\newline
+      \textbf{Công nghệ:} Hệ thống kiểm soát nhiệt ẩm 24/7.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 2: BĂNG CHỈ SỐ CASE STUDY
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 70.000 m²} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} CHỐNG RUNG} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} SÀN ESD} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 100\% 5S JAPAN} \\
+      {\fontsize{7.5}{9.5}\selectfont Tổng Sàn 2 Tổ Hợp} &
+      {\fontsize{7.5}{9.5}\selectfont Chống Rung Vi Mô CNC} &
+      {\fontsize{7.5}{9.5}\selectfont Sơn Kháng Tĩnh Điện} &
+      {\fontsize{7.5}{9.5}\selectfont Tiêu Chuẩn Nhật Bản}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faAward\ NĂNG LỰC TỔNG THẦU CÔNG NGHỆ CAO} \quad\textbullet\quad
+    \textbf{\faMicrochip\ SÀN CHỐNG TĨNH ĐIỆN ESD} \quad\textbullet\quad
+    \textbf{\faShield*\ AN TOÀN TUYỆT ĐỐI}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 21: MẠNG LƯỚI CHUỖI CUNG ỨNG CHIẾN LƯỢC CẤP 1 TOÀN CẦU
+% ============================================================
+\pageheaderbar{CHUỖI CUNG ỨNG CẤP 1 TOÀN CẦU}{Trang 21}
+\pagefooterbar{Trang 21}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {GLOBAL TIER-1 STRATEGIC SUPPLY CHAIN};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Mạng Lưới Chuỗi Cung Ứng Cấp 1 Toàn Cầu}{Global Tier-1 Strategic Material Suppliers, Verified Origins \& Premium Brand Partners}
+
+% TẦNG 1: 4 NHÓM ĐỐI TÁC CUNG ỨNG VẬT TƯ CHIẾN LƯỢC
+\noindent
+\begin{tabular}{@{}p{91mm}@{\hspace{4mm}}p{91mm}@{}}
+  % Nhóm 1: Thép kết cấu
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=91mm, minimum height=76mm, inner sep=6pt, align=left, text width=83mm] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCRed} \faIndustry\ 01. PHÔI THÉP KẾT CẤU CHÍNH HÃNG}\\[4pt]
+      {\fontsize{7.2}{9.6}\selectfont\color{TTCTextDark}
+      \textbullet\ \textbf{POSCO (Hàn Quốc):} Thép tấm cường độ cao SS400, SM490.\newline
+      \textbullet\ \textbf{Hòa Phát / Formosa:} Thép hình chữ H, I, U, V, thép cuộn cán nóng.\newline
+      \textbullet\ \textbf{Nippon Steel (Nhật Bản):} Phôi thép đặc chủng chống ăn mòn.\newline
+      \textbullet\ \textbf{Cam kết:} 100\% lô thép có đầy đủ chứng chỉ CO/CQ gốc và hóa đơn VAT.\newline
+      \textbullet\ Thử nghiệm cơ lý độc lập tại Viện Khoa học IBST.}
+    };
+  \end{tikzpicture}
+  &
+  % Nhóm 2: Tôn & Panel
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=91mm, minimum height=76mm, inner sep=6pt, align=left, text width=83mm] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} \faLayerGroup\ 02. TÔN MÁI \& PANEL CÁCH NHIỆT}\\[4pt]
+      {\fontsize{7.2}{9.6}\selectfont\color{TTCTextDark}
+      \textbullet\ \textbf{BlueScope Lysaght (Úc):} Tôn Clean Colorbond, Zincalume AZ150/AZ200.\newline
+      \textbullet\ \textbf{Panel Phương Nam / Javta:} Panel bông khoáng Rockwool, PIR chống cháy.\newline
+      \textbullet\ \textbf{Tôn Đông Á / Nam Kim:} Tôn mạ kẽm xà gồ Z275/Z300 chống rỉ sét.\newline
+      \textbullet\ \textbf{Cam kết:} Bảo hành chống ăn mòn thủng mái lên đến 20--25 năm.\newline
+      \textbullet\ Chứng nhận thử nghiệm chống cháy EI60/EI90 chuẩn PCCC.}
+    };
+  \end{tikzpicture}
+  \\[3.5mm]
+  % Nhóm 3: Sơn & Hóa chất
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=91mm, minimum height=76mm, inner sep=6pt, align=left, text width=83mm] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCCyan} \faPaintRoller\ 03. SƠN CÔNG NGHIỆP \& HÓA CHẤT}\\[4pt]
+      {\fontsize{7.2}{9.6}\selectfont\color{TTCTextDark}
+      \textbullet\ \textbf{Jotun (Na Uy) / PPG (Mỹ):} Sơn lót Epoxy giàu kẽm, sơn Polyurethane.\newline
+      \textbullet\ \textbf{Sơn chống cháy KCC / Benzo:} Kiểm định cục PCCC Bộ Công An.\newline
+      \textbullet\ \textbf{Sika (Thụy Sĩ) / BASF (Đức):} Phụ gia bê tông, hardener sàn, sika chống thấm.\newline
+      \textbullet\ \textbf{Cam kết:} Độ bám dính màng sơn đạt chuẩn quốc tế ASTM D4541.\newline
+      \textbullet\ Bảo vệ kết cấu bền bỉ trong môi trường ven biển.}
+    };
+  \end{tikzpicture}
+  &
+  % Nhóm 4: Thiết bị cơ điện & PCCC
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=91mm, minimum height=76mm, inner sep=6pt, align=left, text width=83mm] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCGold} \faBolt\ 04. THIẾT BỊ CƠ ĐIỆN MEP \& PCCC}\\[4pt]
+      {\fontsize{7.2}{9.6}\selectfont\color{TTCTextDark}
+      \textbullet\ \textbf{Schneider Electric / ABB / Mitsubishi:} Tủ điện trung thế 22kV.\newline
+      \textbullet\ \textbf{Cadivi / LS Vina:} Cáp điện hạ thế, cáp chống cháy chuẩn IEC.\newline
+      \textbullet\ \textbf{Daikin / Trane / Carrier:} Hệ thống điều hòa không khí Chiller \& VRV.\newline
+      \textbullet\ \textbf{Ebara / Grundfos / Hochiki:} Bơm PCCC và tủ báo cháy tự động.\newline
+      \textbullet\ Tích hợp chuẩn giao tiếp Modbus/BACnet cho SCADA.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 2: BĂNG BẢO CHỨNG CHUỖI CUNG ỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 100\%} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} 25 NĂM} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} TIER-1} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 0 RỦI RO} \\
+      {\fontsize{7.5}{9.5}\selectfont CO/CQ Gốc Chính Hãng} &
+      {\fontsize{7.5}{9.5}\selectfont Bảo Hành Mái Tôn Chống Dột} &
+      {\fontsize{7.5}{9.5}\selectfont Đối Tác Thương Hiệu Quốc Tế} &
+      {\fontsize{7.5}{9.5}\selectfont Đứt Gãy Chuỗi Cung Ứng}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faAward\ NGUỒN GỐC VẬT LIỆU CHÍNH HÃNG 100\%} \quad\textbullet\quad
+    \textbf{\faGlobe\ ĐỐI TÁC CHIẾN LƯỢC TOÀN CẦU} \quad\textbullet\quad
+    \textbf{\faShield*\ BẢO HÀNH DÀI HẠN UY TÍN}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 22: THƯ KHEN NGỢI & ĐÁNH GIÁ TỪ CHỦ ĐẦU TƯ FDI (TESTIMONIALS)
+% ============================================================
+\pageheaderbar{ĐÁNH GIÁ TỪ KHÁCH HÀNG \& ĐỐI TÁC}{Trang 22}
+\pagefooterbar{Trang 22}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {CLIENT TESTIMONIALS \& RECOMMENDATIONS};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Thư Khen Ngợi \& Đánh Giá Từ Các Chủ Đầu Tư FDI}{Official Client Recommendation Letters, High CSAT Ratings \& Long-term Trust}
+
+% TẦNG 1: 4 TRÍCH ĐOẠN THƯ KHEN 5 SAO
+\noindent
+\begin{tabular}{@{}p{91mm}@{\hspace{4mm}}p{91mm}@{}}
+  % Thư khen 1: Japfa
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=91mm, minimum height=76mm, inner sep=6pt, align=left, text width=83mm] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCRed} \faQuoteLeft\ BAN QUẢN LÝ DỰ ÁN JAPFA COMFEED}\\[4pt]
+      {\fontsize{7.2}{9.6}\selectfont\itshape\color{TTCTextDark}
+      ``Tân Thành Công đã thể hiện sự chuyên nghiệp vượt trội trong công tác quản lý an toàn và tiến độ xây dựng tổ hợp Silo 45m. Dù gặp điều kiện thời tiết khắc nghiệt, công trình vẫn về đích an toàn tuyệt đối và đạt chất lượng nghiệm thu tối ưu.''}
+      \\[6pt]
+      {\fontsize{7.2}{9.2}\selectfont\bfseries\color{TTCBlue} \faUserTie\ Mr. Hendra Wijaya -- Giám đốc Dự án Japfa Vietnam}
+    };
+  \end{tikzpicture}
+  &
+  % Thư khen 2: May Hồng Trang
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=91mm, minimum height=76mm, inner sep=6pt, align=left, text width=83mm] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} \faQuoteLeft\ CÔNG TY TNHH MAY HỒNG TRANG}\\[4pt]
+      {\fontsize{7.2}{9.6}\selectfont\itshape\color{TTCTextDark}
+      ``Giải pháp dầm thép vượt nhịp 42m của Tổng thầu Tân Thành Công giúp chúng tôi tối ưu hóa tối đa mặt bằng dây chuyền sản xuất may. Tiến độ 150 ngày hoàn thành 75.000m$^2$ là một kỷ lục thực sự, giúp công ty kịp đơn hàng xuất khẩu đi Mỹ.''}
+      \\[6pt]
+      {\fontsize{7.2}{9.2}\selectfont\bfseries\color{TTCBlue} \faUserTie\ Bà Phạm Thị Hồng -- Tổng Giám Đốc}
+    };
+  \end{tikzpicture}
+  \\[3.5mm]
+  % Thư khen 3: Sông Hồng 7
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=91mm, minimum height=76mm, inner sep=6pt, align=left, text width=83mm] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCCyan} \faQuoteLeft\ CÔNG TY CỔ PHẦN MAY SÔNG HỒNG}\\[4pt]
+      {\fontsize{7.2}{9.6}\selectfont\itshape\color{TTCTextDark}
+      ``Nhà xưởng 2 tầng tải trọng nặng 1.200 kg/m$^2$ đòi hỏi yêu cầu kỹ thuật kết cấu thép liên hợp rất khắt khe. Tân Thành Công đã bàn giao trước hạn 25 ngày với chất lượng mối hàn và độ phẳng sàn bê tông tiệm cận độ hoàn hảo.''}
+      \\[6pt]
+      {\fontsize{7.2}{9.2}\selectfont\bfseries\color{TTCBlue} \faUserTie\ Ông Bùi Đức Thịnh -- Đại diện Ban Điều Hành}
+    };
+  \end{tikzpicture}
+  &
+  % Thư khen 4: Daeyun Korea
+  \begin{tikzpicture}
+    \node[rounded corners=5pt, fill=white, draw=TTCBorder, line width=0.8pt, minimum width=91mm, minimum height=76mm, inner sep=6pt, align=left, text width=83mm] {
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCGold} \faQuoteLeft\ DAEYUN KOREA PRECISION CO., LTD}\\[4pt]
+      {\fontsize{7.2}{9.6}\selectfont\itshape\color{TTCTextDark}
+      ``We highly appreciate TTC's engineering capability and English/Korean communication skills. The cleanroom Class 10,000 and MEP systems were executed strictly to Korean standards without any delay. Highly recommended EPC contractor in Vietnam.''}
+      \\[6pt]
+      {\fontsize{7.2}{9.2}\selectfont\bfseries\color{TTCBlue} \faUserTie\ Mr. Park Jin Woo -- Managing Director}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 2: BĂNG CHỈ SỐ HÀI LÒNG KHÁCH HÀNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 9.8 / 10} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} 100\%} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} 85\% TÁI KÝ} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 5 SAO} \\
+      {\fontsize{7.5}{9.5}\selectfont Điểm Hài Lòng CSAT} &
+      {\fontsize{7.5}{9.5}\selectfont Bàn Giao Đạt Chuẩn Ngay} &
+      {\fontsize{7.5}{9.5}\selectfont Hợp Tác Giai Đoạn Mở Rộng} &
+      {\fontsize{7.5}{9.5}\selectfont Đánh Giá Chất Lượng Quốc Tế}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{3mm}
+
+% THANH BẢO CHỨNG
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=3.5pt, fill=TTCLightBlue!90!white, draw=TTCBorder, line width=0.8pt,
+    minimum width=186mm, inner sep=4pt, text width=176mm, align=center
+  ] {
+    {\fontsize{7.2}{9}\selectfont\color{TTCBlue}
+    \textbf{\faAward\ BẢO CHỨNG BỞI HÀNG TRĂM TẬP ĐOÀN FDI} \quad\textbullet\quad
+    \textbf{\faStar\ ĐIỂM ĐÁNH GIÁ XUẤT SẮC 9.8/10} \quad\textbullet\quad
+    \textbf{\faHandshake\ ĐỒNG HÀNH BỀN VỮNG TRỌN ĐỜI}}
+  };
+\end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 23: BẢN ĐỒ DỰ ÁN 20+ TỈNH THÀNH & 4 CAM KẾT BẢO LÃNH VÀNG
+% ============================================================
+\pageheaderbar{MẠNG LƯỚI PHỦ SÓNG \& CAM KẾT VÀNG}{Trang 23}
+\pagefooterbar{Trang 23}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {NATIONWIDE PROJECT COVERAGE \& 4 GOLD COMMITMENTS};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Bản Đồ Phủ Sóng 20+ Tỉnh Thành \& 4 Cam Kết Bảo Lãnh Vàng}{Nationwide Footprint in 20+ Industrial Provinces \& 4 Uncompromising Turnkey Guarantees}
+
+% TẦNG 1: BẢN ĐỒ MẠNG LƯỚI & DANH SÁCH TỈNH THÀNH THI CÔNG
+\noindent
+\begin{tabular}{@{}p{80mm}@{\hspace{4mm}}p{102mm}@{}}
+  % Hình ảnh Bản đồ phủ sóng
+  \begin{tikzpicture}
+    \node[rounded corners=6pt, fill=white, draw=TTCBorder, line width=0.8pt, inner sep=3pt] {
+      \includegraphics[width=76mm, height=92mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/project-assets/map.jpg}
+    };
+  \end{tikzpicture}
+  &
+  % Danh sách các vùng trọng điểm
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.9pt,
+      minimum width=102mm, minimum height=96mm, inner sep=7pt, text width=93mm, align=left
+    ] {
+      {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCBlue} \faMapMarked*\quad HỆ THỐNG CÔNG TRÌNH TRẢI DÀI TOÀN QUỐC:}\\[4pt]
+      {\fontsize{7.5}{10.2}\selectfont\color{TTCTextDark}
+      \textbf{\color{TTCRed}\faMapMarker*\ Miền Bắc (Trọng tâm sản xuất):}\newline
+      Hà Nội, Bắc Ninh, Bắc Giang, Hải Dương, Hải Phòng, Hưng Yên, Nam Định, Thái Bình, Hà Nam, Vĩnh Phúc, Phú Thọ, Quảng Ninh.\\[5pt]
+      \textbf{\color{TTCBlue}\faMapMarker*\ Miền Trung (Công nghiệp \& Nông nghiệp):}\newline
+      Thanh Hóa, Nghệ An, Hà Tĩnh, Quảng Nam, Đà Nẵng.\\[5pt]
+      \textbf{\color{TTCGold}\faMapMarker*\ Miền Nam (Khu công nghiệp lớn):}\newline
+      Bình Dương, Đồng Nai, Long An, Bình Phước, Tây Ninh, TP. Hồ Chí Minh.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{6mm}
+
+% TẦNG 2: 4 CAM KẾT VÀNG BẢO LÃNH HỢP ĐỒNG TỔNG THẦU
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt, fill=white, draw=TTCRed!70!white, line width=1pt,
+    minimum width=186mm, minimum height=68mm, inner sep=7pt, text width=176mm, align=left
+  ] {
+    {\fontsize{9.5}{11.5}\selectfont\bfseries\color{TTCRed} \faAward\quad 4 CAM KẾT BẢO LÃNH VÀNG CỦA TỔNG THẦU TÂN THÀNH CÔNG:}\\[4pt]
+    \begin{tabularx}{\linewidth}{@{}X|X@{}}
+      {\fontsize{7.5}{10.2}\selectfont\color{TTCTextDark}
+      \textbf{\color{TTCRed}1. Cam Kết Tiến Độ Thần Tốc:}\newline
+      Bàn giao công trình đúng hoặc trước tiến độ hợp đồng. Phạt 1\% giá trị hợp đồng/tuần nếu chậm trễ do lỗi Tổng thầu.} &
+      {\fontsize{7.5}{10.2}\selectfont\color{TTCTextDark}
+      \textbf{\color{TTCBlue}2. Minh Bạch Chi Phí -- 0 Phát Sinh:}\newline
+      Hợp đồng Lump-sum Turnkey trọn gói cố định, triệt tiêu mọi phát sinh vô lý, cam kết minh bạch tài chính tuyệt đối.} \\[7pt]
+      \hline\rule{0pt}{12pt}
+      {\fontsize{7.5}{10.2}\selectfont\color{TTCTextDark}
+      \textbf{\color{TTCBlue}3. An Toàn Lao Động Zero Accident:}\newline
+      Duy trì tuyệt đối chính sách Zero Accident tại 100\% công trường, bảo đảm an toàn sinh mạng cho toàn bộ người lao động.} &
+      {\fontsize{7.5}{10.2}\selectfont\color{TTCTextDark}
+      \textbf{\color{TTCGold}4. Bảo Hành Kết Cấu 24 Tháng:}\newline
+      Bảo hành toàn diện kết cấu thép 24 tháng, hỗ trợ kỹ thuật tại hiện trường trong vòng 4 giờ, đồng hành trọn đời công trình.}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{6mm}
+
+% TẦNG 3: BĂNG CHỈ SỐ BẢN ĐỒ
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=5pt, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white, line width=1pt,
+    text=white, minimum width=186mm, minimum height=24mm, inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCRed} 20+ TỈNH THÀNH} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCCyan} 150+ DỰ ÁN} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{white} 4 GIỜ} &
+      {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCGold} 24 THÁNG} \\
+      {\fontsize{7.5}{9.5}\selectfont Phủ Sóng Toàn Quốc} &
+      {\fontsize{7.5}{9.5}\selectfont Công Trình Đã Hoàn Thành} &
+      {\fontsize{7.5}{9.5}\selectfont Phản Ứng Kỹ Thuật Hiện Trường} &
+      {\fontsize{7.5}{9.5}\selectfont Bảo Hành Toàn Diện}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\end{minipage}
+
+\newpage
+
+% ============================================================
+% TRANG 24: TRANG BÌA SAU (BACK COVER) -- PHÁP NHÂN TOÀN DIỆN & KẾT NỐI
+% ============================================================
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % Full Deep Navy Background
+  \fill[TTCDeepNavy] (current page.south west) rectangle (current page.north east);
+  
+  % Technical grid watermark
+  \draw[TTCCyan!8!white, line width=0.5pt] ([xshift=10mm, yshift=15mm]current page.south west) grid[step=10mm] ([xshift=200mm, yshift=280mm]current page.south west);
+  
+  % Top Header Ribbon
+  \fill[TTCRed] ([yshift=-12mm]current page.north west) rectangle ([yshift=-14mm]current page.north east);
+  \node[anchor=west, text=white, font=\fontsize{8.5}{10}\selectfont\bfseries] at ([xshift=15mm, yshift=-6mm]current page.north west) {
+    \faBuilding\quad CÔNG TY CỔ PHẦN CÔNG NGHỆ XÂY DỰNG TÂN THÀNH CÔNG \textbullet\ TTC JSC
+  };
+  
+  % Central Brand Logo & Title
+  \node[anchor=center, align=center] at ([yshift=78mm]current page.center) {
+    {\fontsize{22}{26}\selectfont\bfseries\color{white} TÂN THÀNH CÔNG JSC}\\[3pt]
+    {\fontsize{13}{16}\selectfont\bfseries\color{TTCRed} TỔNG THẦU EPC CÔNG NGHIỆP THẾ HỆ MỚI}\\[4pt]
+    {\fontsize{9}{11}\selectfont\color{TTCCyan} Next-Generation Industrial EPC General Contractor \textbullet\ PEB 30,000T \textbullet\ ESG-Ready}
+  };
+  
+  % Strategic Slogan Box
+  \node[anchor=center] at ([yshift=46mm]current page.center) {
+    \begin{tikzpicture}
+      \node[
+        rounded corners=6pt, fill=white, draw=TTCCyan!80!white, line width=1pt,
+        text width=178mm, inner sep=9pt, align=center
+      ] {
+        {\fontsize{9.5}{12}\selectfont\bfseries\color{TTCBlue}
+        ``ĐỒNG HÀNH CÙNG KHÁCH HÀNG KIẾN TẠO NHỮNG TỔ HỢP CÔNG NGHIỆP HIỆN ĐẠI, AN TOÀN VÀ TRƯỜNG TỒN''}\\[3pt]
+        {\fontsize{7.5}{9.5}\selectfont\itshape\color{TTCTextMuted}
+        Partnering with Global FDI Investors to Build Smart, Safe and Sustainable Industrial Manufacturing Facilities.}
+      };
+    \end{tikzpicture}
+  };
+  
+  % 3 Column Legal & Location Information
+  \node[anchor=center] at ([yshift=-12mm]current page.center) {
+    \begin{tikzpicture}
+      \node[
+        rounded corners=8pt, fill=TTCDeepNavy!95!black, draw=TTCBorder, line width=0.8pt,
+        text width=178mm, inner sep=9pt
+      ] {
+        \begin{tabularx}{\linewidth}{@{}X|X|X@{}}
+          {\fontsize{7.8}{10.2}\selectfont\color{white}
+          \textbf{\color{TTCRed}\faBuilding\ TRỤ SỞ CHÍNH:}\newline
+          Tầng 5, Tòa nhà TTC Tower, Phố Duy Tân, Cầu Giấy, Hà Nội, Việt Nam.\newline
+          \textbf{Mã số thuế:} 0107090447\newline
+          \textbf{Hotline 24/7:} +84 976 447 766}
+          &
+          {\fontsize{7.8}{10.2}\selectfont\color{white}
+          \textbf{\color{TTCCyan}\faMapMarker*\ CHI NHÁNH PHÍA NAM:}\newline
+          Số 88, Đường Song Hành, KCN Sóng Thần, Dĩ An, Bình Dương, Việt Nam.\newline
+          \textbf{Email:} info@tanthanhcongjsc.com\newline
+          \textbf{Website:} tanthanhcongjsc.com}
+          &
+          {\fontsize{7.8}{10.2}\selectfont\color{white}
+          \textbf{\color{TTCGold}\faIndustry\ NHÀ MÁY PEB:}\newline
+          Cụm Công nghiệp Thanh Oai, Huyện Thanh Oai, TP. Hà Nội, Việt Nam.\newline
+          \textbf{Quy mô:} $>20.000$ m$^2$\newline
+          \textbf{Công suất:} 30.000 Tấn/năm}
+        \end{tabularx}
+      };
+    \end{tikzpicture}
+  };
+  
+  % 2 QR Code Badges for Digital Access
+  \node[anchor=center] at ([yshift=-72mm]current page.center) {
+    \begin{tikzpicture}
+      \node[
+        rounded corners=6pt, fill=white, draw=TTCCyan!80!white, line width=0.8pt,
+        inner sep=7pt, text width=178mm, align=center
+      ] {
+        \begin{tabularx}{\linewidth}{@{}Y|Y@{}}
+          \begin{tabular}{c}
+            \textbf{\fontsize{8}{10}\selectfont\color{TTCBlue}\faQrcode\ TẢI PROFILE PDF SONG NGỮ [VI | EN]}\\[2pt]
+            {\fontsize{6.8}{8.5}\selectfont\color{TTCTextMuted} Quét mã QR để tải hồ sơ năng lực số hóa chất lượng cao}
+          \end{tabular}
+          &
+          \begin{tabular}{c}
+            \textbf{\fontsize{8}{10}\selectfont\color{TTCRed}\faVideo\ THAM QUAN 3D VIRTUAL TOUR NHÀ MÁY}\\[2pt]
+            {\fontsize{6.8}{8.5}\selectfont\color{TTCTextMuted} Trải nghiệm thực tế ảo dây chuyền CNC \& xưởng PEB 30.000T}
+          \end{tabular}
+        \end{tabularx}
+      };
+    \end{tikzpicture}
+  };
+  
+  % Bottom Legal & Copyright Bar
+  \fill[TTCBlue] (current page.south west) rectangle ++(\paperwidth,11mm);
+  \draw[TTCRed, line width=1.5pt] ([yshift=11mm]current page.south west) -- ++(\paperwidth,0);
+  
+  \node[anchor=south, text=white, font=\fontsize{7}{8.5}\selectfont] at ([yshift=3.5mm]current page.south) {
+    \copyright\ 2026 CÔNG TY CỔ PHẦN CÔNG NGHỆ XÂY DỰNG TÂN THÀNH CÔNG \textbullet\ ALL RIGHTS RESERVED \textbullet\ ISO 9001:2015 \textbullet\ CHỨNG CHỈ NĂNG LỰC HẠNG I BXD
+  };
+\end{tikzpicture}
+
+\end{document}

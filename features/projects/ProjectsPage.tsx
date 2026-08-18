@@ -6,6 +6,7 @@ import ProjectCard from './components/ProjectCard';
 import ProjectDetailDialog from './components/dialogs/ProjectDetailDialog';
 import { Project } from '../../types';
 import { getCurrentLangKey } from '../../common/utils/i18nUtils';
+import Seo from '../../common/components/Seo';
 
 type RegionFilterKey = 'all' | 'north' | 'central' | 'south';
 
@@ -103,6 +104,13 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <div>
+      <Seo
+        title="Dự án"
+        description="Khám phá các dự án nhà máy và công trình công nghiệp tiêu biểu do Tân Thành Công JSC tư vấn, thiết kế và thi công trên toàn quốc."
+        canonical="https://tanthanhcongjsc.com/du-an"
+        image="https://tanthanhcongjsc.com/logo_aidc.png"
+        lang="vi"
+      />
       <motion.div
         className="bg-white py-20"
         initial={{ opacity: 0 }}

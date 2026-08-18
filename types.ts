@@ -17,20 +17,30 @@ export interface Project {
   year: string;
 }
 
+export type LangKey = 'vi' | 'en' | 'ko' | 'zh';
+
+export interface LocalizedContent {
+  title: string;
+  content: string;
+}
+
+export interface GalleryImage {
+  src: string;
+  caption?: Partial<Record<LangKey, string>>;
+}
+
 export interface Article {
   id: string;
   url: string;
   date: string;
   thumbnail: string;
   categories: string[];
-  vi: {
-    title: string;
-    content: string;
-  };
-  en: {
-    title: string;
-    content: string;
-  };
+  vi: LocalizedContent;
+  en: LocalizedContent;
+  ko?: LocalizedContent;
+  zh?: LocalizedContent;
+  leadImage?: GalleryImage;
+  gallery?: GalleryImage[];
   title?: string;
   content?: string;
   excerpt?: string;

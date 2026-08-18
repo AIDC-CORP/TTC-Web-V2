@@ -1,76 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import articlesData from './data/blog.json';
-import { Article } from '../../types';
+import { Article, GalleryImage, LangKey } from '../../types';
 import { getCurrentLangKey } from '../../common/utils/i18nUtils';
+import { viDateToISO } from '../../common/utils/dateUtils';
+import Seo from '../../common/components/Seo';
+import ArticleContent from './components/ArticleContent';
+import ArticleGallery from './components/ArticleGallery';
+import Lightbox, { LightboxImage } from './components/Lightbox';
 
-// Cast the imported JSON to the correct type
 const articles = articlesData as Article[];
+const SITE_URL = 'https://tanthanhcongjsc.com';
+const SITE_NAME = 'Tân Thành Công JSC';
 
-// Helper function to parse content with embedded images and markdown
-const parseContent = (content: string) => {
-  if (!content) return [];
-  const imageRegex = /\[IMAGE:(.*?)\]/g;
-  const parts: Array<{ type: 'text' | 'image'; content: string }> = [];
-  let lastIndex = 0;
-  let match;
+const captionFor = (image: GalleryImage | undefined, lang: LangKey): string =>
+  image?.caption?.[lang] || image?.caption?.vi || '';
 
-  while ((match = imageRegex.exec(content)) !== null) {
-    if (match.index > lastIndex) {
-      parts.push({ type: 'text', content: content.substring(lastIndex, match.index) });
-    }
-    parts.push({ type: 'image', content: match[1] });
-    lastIndex = match.index + match[0].length;
-  }
-
-  if (lastIndex < content.length) {
-    parts.push({ type: 'text', content: content.substring(lastIndex) });
-  }
-
-  const getImageClassName = (layout: string) => {
-    switch (layout) {
-      case 'left':
-        return 'w-full md:w-1/2 md:float-left md:mr-6 my-4 h-auto object-cover rounded-lg shadow-lg';
-      case 'right':
-        return 'w-full md:w-1/2 md:float-right md:ml-6 my-4 h-auto object-cover rounded-lg shadow-lg';
-      case 'center':
-        return 'w-full md:max-w-2xl mx-auto my-6 block h-auto object-cover rounded-lg shadow-lg';
-      case 'full':
-      default:
-        return 'w-full h-auto object-cover rounded-lg shadow-lg my-6';
-    }
-  };
-
-  return parts.map((part, index) => {
-    if (part.type === 'text') {
-      return (
-        <div key={index}>
-          {part.content.split('\n').map((line, lineIndex) => {
-            if (line.startsWith('## ')) {
-              return <h2 key={lineIndex} className="text-2xl font-bold text-gray-800 mt-6 mb-3 clear-both">{line.replace(/^## /, '')}</h2>;
-            } else if (line.trim()) {
-              return <p key={lineIndex} className="text-gray-600 leading-relaxed mb-4">{line}</p>;
-            }
-            return null;
-          })}
-        </div>
-      );
-    } else {
-      const [filename, layout = 'full'] = part.content.split(':');
-      return <img key={index} src={`/blog-assets/${filename}`} alt={`Article content image ${index}`} className={getImageClassName(layout)} />;
-    }
-  });
-};
+const buildExcerpt = (content: string): string =>
+  content
+    .replace(/\[IMAGE:.*?\]/g, '')
+    .replace(/##?\s/g, '')
+    .replace(/\n+/g, ' ')
+    .trim()
+    .substring(0, 160);
 
 const ArticleDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { t, i18n } = useTranslation();
-  const article = articles.find(a => a.id === id);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
+  const article = articles.find((a) => a.id === id);
   const currentLang = getCurrentLangKey(i18n.language);
+  const localizedContent = article ? (article[currentLang] || article.vi) : null;
 
-  if (!article) {
+  if (!article || !localizedContent) {
     return (
       <div className="container mx-auto px-4 py-20 text-center">
         <h1 className="text-3xl font-bold">{t('article.notFound')}</h1>
@@ -82,21 +46,128 @@ const ArticleDetailPage: React.FC = () => {
     );
   }
 
-  const localizedContent = article[currentLang] || article.vi;
+  const canonical = `${SITE_URL}/blog/${article.id}`;
+  const excerpt = buildExcerpt(localizedContent.content);
+  const isoDate = viDateToISO(article.date);
+  const imageUrl = article.thumbnail.startsWith('http')
+    ? article.thumbnail
+    : `${SITE_URL}${article.thumbnail}`;
+
+  const galleryCaption = (image: GalleryImage) => captionFor(image, currentLang);
+
+  const lightboxImages: LightboxImage[] = (article.gallery || []).map((img) => ({
+    src: img.src,
+    caption: galleryCaption(img),
+  }));
+
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: localizedContent.title,
+      description: excerpt,
+      image: imageUrl,
+      datePublished: isoDate,
+      dateModified: isoDate,
+      inLanguage: currentLang,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+      author: { '@type': 'Organization', name: SITE_NAME },
+      publisher: {
+        '@type': 'Organization',
+        name: SITE_NAME,
+        logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo-tab.png` },
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: t('blog.breadcrumbHome'), item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: t('blog.page.title'), item: `${SITE_URL}/blog` },
+        { '@type': 'ListItem', position: 3, name: localizedContent.title },
+      ],
+    },
+  ];
 
   return (
     <div className="bg-white py-16">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <Link to="/blog" className="text-blue-600 hover:underline mb-8 inline-block">
-          &larr; {t('article.backToBlog')}
-        </Link>
-        <span className="text-sm text-gray-500">{article.categories.join(' | ')} | {article.date}</span>
-        <h1 className="text-3xl md:text-4xl font-extrabold text-gray-800 mt-2 mb-6">{localizedContent.title}</h1>
-        <img src={article.thumbnail} alt={localizedContent.title} className="w-full h-auto object-cover rounded-lg shadow-lg mb-8" />
-        <div className="prose max-w-none text-gray-700 leading-relaxed">
-          {parseContent(localizedContent.content)}
+      <Seo
+        title={localizedContent.title}
+        description={excerpt}
+        canonical={canonical}
+        image={imageUrl}
+        type="article"
+        lang={currentLang}
+        jsonLd={jsonLd}
+      />
+
+      <div className="container mx-auto px-4 max-w-3xl">
+        {/* Breadcrumb */}
+        <nav aria-label="Breadcrumb" className="text-sm text-gray-500 mb-6">
+          <ol className="flex flex-wrap items-center gap-1">
+            <li><Link to="/" className="hover:text-blue-600">{t('blog.breadcrumbHome')}</Link></li>
+            <li aria-hidden="true">/</li>
+            <li><Link to="/blog" className="hover:text-blue-600">{t('blog.page.title')}</Link></li>
+            <li aria-hidden="true">/</li>
+            <li className="text-gray-700 line-clamp-1" aria-current="page">{localizedContent.title}</li>
+          </ol>
+        </nav>
+
+        <article>
+          {/* Meta */}
+          <div className="flex flex-wrap items-center gap-3 mb-3">
+            {article.categories.map((cat) => (
+              <span key={cat} className="text-xs font-semibold uppercase tracking-wide text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                {cat}
+              </span>
+            ))}
+            {article.date && (
+              <time dateTime={isoDate} className="text-sm text-gray-400">{article.date}</time>
+            )}
+          </div>
+
+          {/* Title — H1 for SEO */}
+          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-snug mb-6">
+            {localizedContent.title}
+          </h1>
+
+          {/* Hero */}
+          <img
+            src={article.thumbnail}
+            alt={localizedContent.title}
+            className="w-full max-h-[500px] object-cover object-top rounded-2xl shadow-lg mb-8"
+          />
+
+          {/* Body */}
+          <div className="text-gray-700 leading-relaxed text-base">
+            <ArticleContent content={localizedContent.content} />
+          </div>
+
+          {/* Event gallery */}
+          {article.gallery && article.gallery.length > 0 && (
+            <ArticleGallery
+              images={article.gallery}
+              lang={currentLang}
+              title={t('article.gallery')}
+              onImageClick={setLightboxIndex}
+            />
+          )}
+        </article>
+
+        {/* Back link */}
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <Link to="/blog" className="inline-flex items-center gap-1 text-blue-600 hover:underline text-sm font-medium">
+            ← {t('article.backToBlog')}
+          </Link>
         </div>
       </div>
+
+      <Lightbox
+        images={lightboxImages}
+        index={lightboxIndex}
+        onClose={() => setLightboxIndex(null)}
+        onNavigate={setLightboxIndex}
+      />
     </div>
   );
 };

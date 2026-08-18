@@ -5,6 +5,7 @@ import { allContent } from '../../data/mockData';
 import ProjectCard from '../projects/components/ProjectCard';
 import BlogCards from '../blog/components/BlogCards';
 import { Project, Article } from '../../types';
+import Seo from '../../common/components/Seo';
 
 const SearchResultsPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -24,6 +25,11 @@ const SearchResultsPage: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-16">
+      <Seo
+        title={query ? `Kết quả tìm kiếm: ${query}` : 'Tìm kiếm'}
+        description={`Tìm kiếm dự án, bài viết và dịch vụ tại Tân Thành Công JSC${query ? ` - Từ khóa: ${query}` : ''}`}
+        lang="vi"
+      />
       <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">Kết quả tìm kiếm</h1>
       <p className="text-center text-gray-600 mb-12">
         {results.length > 0 

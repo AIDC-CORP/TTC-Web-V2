@@ -9,10 +9,48 @@ import PartnersSection from './components/PartnersSection';
 import CalloutSection from './components/CalloutSection';
 import Criteria from './components/CriteriaSection';
 import { FactoryAnatomySection } from './components/FactoryAnatomySection';
+import Seo from '../../common/components/Seo';
+
+const SITE_URL = 'https://tanthanhcongjsc.com';
 
 const HomePage: React.FC = () => {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Tân Thành Công JSC',
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo-tab.png`,
+      description: 'Giải pháp tích hợp cho dự án nhà máy và công trình công nghiệp tại Việt Nam.',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Hà Nội',
+        addressCountry: 'VN',
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Tân Thành Công JSC',
+      url: SITE_URL,
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: `${SITE_URL}/tim-kiem?q={search_term_string}`,
+        'query-input': 'required name=search_term_string',
+      },
+    },
+  ];
+
   return (
     <div>
+      <Seo
+        title="Trang chủ"
+        description="Tân Thành Công JSC - Giải pháp tích hợp cho dự án nhà máy và công trình công nghiệp tại Việt Nam. Tư vấn, thiết kế, thi công và bảo trì."
+        canonical={`${SITE_URL}/`}
+        image={`${SITE_URL}/logo_aidc.png`}
+        lang="vi"
+        jsonLd={jsonLd}
+      />
       <HeroSection />
 
       <motion.div

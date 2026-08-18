@@ -93,7 +93,8 @@
             "title": "博客与新闻",
             "subtitle": "分享知识，更新行业新闻和公司活动"
         },
-        "readMore": "阅读更多"
+        "readMore": "阅读更多",
+        "breadcrumbHome": "首页"
     },
     "partners": {
         "tag": "我们的合作伙伴",
@@ -188,7 +189,12 @@
     "article": {
         "notFound": "未找到文章",
         "notFoundText": "您要查找的文章不存在或已被删除。",
-        "backToBlog": "返回博客"
+        "backToBlog": "返回博客",
+        "gallery": "活动照片",
+        "galleryImageAlt": "活动照片 {{n}}",
+        "prevImage": "上一张",
+        "nextImage": "下一张",
+        "closeImage": "关闭"
     },
     "projects": {
         "summary": "位于{{location}}的项目",

@@ -3,11 +3,19 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import FormSection from './components/FormSection';
 import MapSection from './components/MapSection';
+import Seo from '../../common/components/Seo';
 
 const ContactPage: React.FC = () => {
   const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-gray-50">
+      <Seo
+        title="Liên hệ"
+        description="Liên hệ với Tân Thành Công JSC - Nhận tư vấn miễn phí và báo giá cho dự án nhà máy và công trình công nghiệp của bạn."
+        canonical="https://tanthanhcongjsc.com/lien-he"
+        image="https://tanthanhcongjsc.com/logo_aidc.png"
+        lang="vi"
+      />
         <div className="bg-white py-20">
             <div className="container mx-auto px-4 text-center">
                 <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800">{t('contact.page.title')}</h1>

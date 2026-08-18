@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Value from './components/Quotes';
 import Cards from './components/Cards';
 import Stats from './components/Stats';
+import Seo from '../../common/components/Seo';
 
 const AboutPage: React.FC = () => {
   const { t, ready } = useTranslation();
@@ -23,6 +24,13 @@ const AboutPage: React.FC = () => {
 
   return (
     <div className="bg-white">
+      <Seo
+        title="Giới thiệu"
+        description="Tìm hiểu về Tân Thành Công JSC - Đội ngũ chuyên nghiệp với hơn 10 năm kinh nghiệm trong lĩnh vực tư vấn, thiết kế và thi công nhà máy công nghiệp."
+        canonical="https://tanthanhcongjsc.com/gioi-thieu"
+        image="https://tanthanhcongjsc.com/about.png"
+        lang="vi"
+      />
       <div className="relative bg-cover bg-center text-white py-24 md:py-40 overflow-hidden" style={{ backgroundImage: `url('/about.png')` }}>
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
