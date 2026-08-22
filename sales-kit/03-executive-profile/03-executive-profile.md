@@ -29,7 +29,7 @@
   * **>500.000 m²** Sàn Xây Dựng Công Nghiệp
   * **30.000 T** Thép PEB / Năm (Công suất Nhà máy)
 * **Thanh Bảo Chứng Pháp Lý & Tài Chính:**
-  * Năng lực Hạng I BXD | Bảo Lãnh 500 Tỷ ACB | ISO 9001/14001/45001 | FIDIC EPC Turnkey | Hotline +84 976 447 766.
+  * Năng lực Hạng I BXD | Bảo Lãnh 250 Tỷ ACB | ISO 9001/14001/45001 | FIDIC EPC Turnkey | Hotline +84 976 447 766.
 
 ---
 
@@ -45,7 +45,7 @@
   * `02. Nhà máy Kết cấu Thép TTC PEB`: Công suất 30.000 Tấn/năm, hàn tự động SAW, vượt nhịp $>60$m.
   * `03. AIDC ConTech (Công nghệ Số)`: Bảo trợ công nghệ AI tối ưu thép 10-15%, Digital Twin 7D.
   * `04. Cơ điện MEP & PCCC Chuyên sâu`: Trạm biến áp 110kV/22kV, HVAC phòng sạch, PCCC tự động, trạm xử lý nước thải Cột A.
-* **Băng 4 Chỉ số Bảo chứng:** 500 Tỷ Hạn mức Tín dụng ACB | 100% Cam kết Đúng Hạn | 24 Giờ Phát hành Bảo lãnh | 0 VNĐ Nợ đọng Thầu phụ & NCC.
+* **Băng 4 Chỉ số Bảo chứng:** 250 Tỷ Hạn mức Tín dụng ACB | 100% Cam kết Đúng Hạn | 24 Giờ Phát hành Bảo lãnh | 0 VNĐ Nợ đọng Thầu phụ & NCC.
 
 ---
 
@@ -84,17 +84,14 @@
 ---
 
 ### TRANG 5: NĂNG LỰC TÀI CHÍNH & TĂNG TRƯỞNG DOANH THU
-* **Bảng Doanh Thu Đa Tiền Tệ (3 Loại Tiền Tệ: Tỷ VNĐ / Triệu USD / Triệu RMB - Chuẩn Hợp Lực Trang 16-17):**
-  * 2022: 450 Tỷ VNĐ / 18.36 Triệu USD / 130.43 Triệu RMB.
-  * 2023: 620 Tỷ VNĐ / 25.30 Triệu USD / 179.71 Triệu RMB (+37.7%).
-  * 2024: 850 Tỷ VNĐ / 34.69 Triệu USD / 246.37 Triệu RMB (+37.1%).
-  * 2025 (KT): 1.150 Tỷ VNĐ / 46.93 Triệu USD / 333.33 Triệu RMB (+35.2%).
-  * 2026 (KH): 1.500 Tỷ VNĐ / 61.22 Triệu USD / 434.78 Triệu RMB.
+* **Báo Cáo Tài Chính Kiểm Toán 3 Năm Gần Nhất (Chuẩn BCTC Minh Bạch & Bảo Mật Số Liệu):**
+  * Tổng tài sản, Vốn chủ sở hữu, Doanh thu thuần, Lợi nhuận sau thuế: Đạt chuẩn BCTC Kiểm toán độc lập, tăng trưởng vững chắc 25–35%/năm.
+  * Hệ số thanh toán hiện hành (Current Ratio): **$>1.85$ lần** (đảm bảo thanh khoản vượt trội).
+  * Cam kết nợ đọng thầu phụ & nhà cung cấp: **0 VNĐ (Cam kết 100%)**.
 * **Chỉ số Thanh khoản Vững chắc & Cam kết Thanh toán:**
-  * Current Ratio $>1.85$ lần, vốn chủ sở hữu an toàn, BCTC kiểm toán minh bạch.
-  * **Nợ đọng Thầu phụ & Nhà cung cấp = 0 VNĐ**.
+  * Lịch sử tín dụng chuẩn mực Nhóm 1 tại CIC, dòng tiền vận hành dự án độc lập, không phụ thuộc vào tiến độ giải ngân của CĐT.
 * **Hệ thống Ngân hàng Hợp tác Chiến lược:**
-  * Ngân hàng giao dịch chính: **ACB (Ngân hàng TMCP Á Châu)** cấp hạn mức tín dụng & bảo lãnh **500 TỶ VNĐ**.
+  * Ngân hàng giao dịch chính: **ACB (Ngân hàng TMCP Á Châu)** cấp hạn mức tín dụng & bảo lãnh **250 TỶ VNĐ**.
   * Ngân hàng đồng hành: TPBank, Vietcombank, BIDV, VietinBank, MB Bank.
 
 ---
@@ -106,7 +103,7 @@
 * **Ảnh thực tế:** Dây chuyền sản xuất thép CNC tự động & Thi công lắp dựng khung kèo vượt nhịp lớn.
 * **Danh mục Thiết bị Cơ giới Sở hữu:**
   * Cẩu lốp 25T–100T (08 chiếc), Dàn máy cán tôn Seamlock di động 100m (04 bộ), Xe Boomlift/Scissor 12m–28m (16 chiếc), Máy Laser Leica (08 bộ), Máy hàn SAW (12 bộ).
-* **Băng Chỉ số Cơ giới:** >300 Tỷ Giá trị Đội Cơ giới | $\pm 0.5$mm Dung sai CNC | 100M Liền Dải Cán Tôn Mái | SA 2.5 ISO Tiêu Chuẩn Làm Sạch.
+* **Băng Chỉ số Cơ giới:** >150 Tỷ Giá trị Đội Cơ giới | $\pm 0.5$mm Dung sai CNC | 100M Liền Dải Cán Tôn Mái | SA 2.5 ISO Tiêu Chuẩn Làm Sạch.
 
 ---
 

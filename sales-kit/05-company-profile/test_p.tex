@@ -1,0 +1,238 @@
+% !TEX program = xelatex
+\documentclass[10pt,a4paper,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, backgrounds, shadows, fit}
+
+% Set margins: 12mm left/right, 14mm top, 14mm bottom
+\geometry{a4paper, top=14mm, bottom=14mm, left=12mm, right=12mm, headheight=0mm, headsep=0mm, footskip=0mm}
+
+% Typography: Segoe UI with robust fallback
+\IfFontExistsTF{Segoe UI}{
+  \setmainfont{Segoe UI}[
+    BoldFont={Segoe UI Bold},
+    ItalicFont={Segoe UI Italic},
+    BoldItalicFont={Segoe UI Bold Italic}
+  ]
+}{
+  \IfFontExistsTF{Arial}{
+    \setmainfont{Arial}[
+      BoldFont={Arial Bold},
+      ItalicFont={Arial Italic},
+      BoldItalicFont={Arial Bold Italic}
+    ]
+  }{
+    \setmainfont{DejaVu Sans}[
+      BoldFont={DejaVu Sans Bold},
+      ItalicFont={DejaVu Sans Oblique},
+      BoldItalicFont={DejaVu Sans Bold Oblique}
+    ]
+  }
+}
+
+% Color Palette - Luxury Corporate High-Tech
+\definecolor{TTCDeepNavy}{RGB}{10, 25, 47}
+\definecolor{TTCBlue}{RGB}{15, 60, 120}
+\definecolor{TTCLightBlue}{RGB}{240, 246, 255}
+\definecolor{TTCRed}{RGB}{214, 40, 40}
+\definecolor{TTCCyan}{RGB}{0, 180, 216}
+\definecolor{TTCGold}{RGB}{247, 127, 0}
+\definecolor{TTCTextDark}{RGB}{30, 41, 59}
+\definecolor{TTCTextMuted}{RGB}{100, 116, 139}
+\definecolor{TTCBorder}{RGB}{203, 213, 225}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.05}
+\pagestyle{empty}
+
+% Header & Footer Macros
+\newcommand{\pageheaderbar}[2]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[TTCDeepNavy] (current page.north west) rectangle ([yshift=-10mm]current page.north east);
+    \fill[TTCRed] ([yshift=-10mm]current page.north west) rectangle ([yshift=-11mm]current page.north east);
+    \node[anchor=west, text=white, font=\fontsize{7.5}{9}\selectfont\bfseries] at ([xshift=12mm, yshift=-5mm]current page.north west) {
+      \faBuilding\quad CÔNG TY CỔ PHẦN CÔNG NGHỆ XÂY DỰNG TÂN THÀNH CÔNG \textbullet\ TTC JSC
+    };
+    \node[anchor=east, text=TTCCyan, font=\fontsize{7.5}{9}\selectfont\bfseries] at ([xshift=-12mm, yshift=-5mm]current page.north east) {
+      #1
+    };
+  \end{tikzpicture}%
+}
+
+\newcommand{\pagefooterbar}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[TTCDeepNavy] (current page.south west) rectangle ([yshift=8mm]current page.south east);
+    \fill[TTCCyan] ([yshift=8mm]current page.south west) rectangle ([yshift=8.8mm]current page.south east);
+    \node[anchor=west, text=white, font=\fontsize{6.8}{8}\selectfont] at ([xshift=12mm, yshift=4mm]current page.south west) {
+      \faPhone*\ +84 976 447 766 \quad\textbullet\quad \faEnvelope\ info@tanthanhcongjsc.com \quad\textbullet\quad \faGlobe\ https://tanthanhcongjsc.com
+    };
+    \node[anchor=east, text=white, font=\fontsize{7}{8}\selectfont\bfseries] at ([xshift=-12mm, yshift=4mm]current page.south east) {
+      #1
+    };
+  \end{tikzpicture}%
+}
+
+% Section Header Brand Macro
+\newcommand{\secbrand}[2]{%
+  \noindent\begin{tikzpicture}
+    \fill[TTCRed] (0,0) rectangle (4mm,10mm);
+    \node[anchor=west, align=left, inner sep=0pt] at (6mm, 5mm) {
+      {\fontsize{13}{15}\selectfont\bfseries\color{TTCBlue} #1}\\[1.5pt]
+      {\fontsize{7.2}{8.8}\selectfont\itshape\color{TTCTextMuted} #2}
+    };
+  \end{tikzpicture}\par\vspace{1.5mm}%
+}
+
+\begin{document}
+% ============================================================
+% TRANG 29: LOGO WALL ĐỐI TÁC \& KHÁCH HÀNG CHIẾN LƯỢC [TRANG MỚI]
+% ============================================================
+\pageheaderbar{ĐỐI TÁC \& KHÁCH HÀNG CHIẾN LƯỢC}{Trang 29}
+\pagefooterbar{Trang 29}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.03, scale=2.8, font=\bfseries\sffamily, text=TTCBlue] at ([yshift=-10mm]current page.center) {STRATEGIC CLIENTS \& PARTNERS LOGO WALL};
+  \draw[TTCBlue!6!white, line width=0.5pt] ([xshift=15mm, yshift=20mm]current page.south west) grid[step=8mm] ([xshift=195mm, yshift=45mm]current page.south west);
+\end{tikzpicture}
+
+\begin{minipage}[t][246mm]{\textwidth}
+\secbrand{Mạng Lưới Khách Hàng Quốc Tế \& Đối Tác Chiến Lược}{Trusted by Global Multinational Corporations \& Premier Vietnamese Industrial Leaders}
+
+% TẦNG 1: 4 KHỐI ĐỐI TÁC THEO QUỐC GIA \& PHÂN KHÚC
+\noindent
+\begin{tabular}{@{}p{91mm}@{\hspace{4mm}}p{91mm}@{}}
+  % Khối 1: Nhật Bản \& Hàn Quốc
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.8pt,
+      minimum width=91mm, minimum height=48mm, inner sep=6pt, align=left, text width=83mm
+    ] {
+      {\fontsize{8.8}{10.8}\selectfont\bfseries\color{TTCRed} \faFlag\quad 1. TẬP ĐOÀN NHẬT BẢN \& HÀN QUỐC:}\\[3pt]
+      {\fontsize{7.2}{9.2}\selectfont\color{TTCTextDark}
+      \textbullet\ \textbf{Sumitomo Electric (Nhật Bản):} NM dây cáp điện tử 15.015 m$^2$.\newline
+      \textbullet\ \textbf{Daeyun Group (Hàn Quốc):} NM phòng sạch linh kiện 20.000 m$^2$.\newline
+      \textbullet\ \textbf{Towada Electronic (Nhật Bản):} Xưởng lắp ráp bản mạch điện tử.\newline
+      \textbullet\ \textbf{Toyo Seikan \& Shinjo Corp (Nhật Bản):} NM bao bì \& cơ khí chính xác.}
+    };
+  \end{tikzpicture} &
+  % Khối 2: Đài Loan \& Singapore
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.8pt,
+      minimum width=91mm, minimum height=48mm, inner sep=6pt, align=left, text width=83mm
+    ] {
+      {\fontsize{8.8}{10.8}\selectfont\bfseries\color{TTCCyan} \faGlobeAsia\quad 2. TẬP ĐOÀN ĐÀI LOAN \& SINGAPORE:}\\[3pt]
+      {\fontsize{7.2}{9.2}\selectfont\color{TTCTextDark}
+      \textbullet\ \textbf{Foxconn Technology Group (Đài Loan):} Xưởng sản xuất linh kiện 12.000 m$^2$.\newline
+      \textbullet\ \textbf{BW Industrial (Singapore):} Tổ hợp logistics thông minh 45.000 m$^2$.\newline
+      \textbullet\ \textbf{Saigon Ve Wong / A-One (Đài Loan):} NM chế biến thực phẩm 30.000 m$^2$.\newline
+      \textbullet\ \textbf{New Hope Group (Singapore):} Cụm tháp Silo thức ăn chăn nuôi 32.000 m$^2$.}
+    };
+  \end{tikzpicture}
+  \\[2mm]
+  % Khối 3: Đa quốc gia \& ASEAN
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.8pt,
+      minimum width=91mm, minimum height=48mm, inner sep=6pt, align=left, text width=83mm
+    ] {
+      {\fontsize{8.8}{10.8}\selectfont\bfseries\color{TTCBlue} \faGlobe\quad 3. TẬP ĐOÀN ĐA QUỐC GIA \& ASEAN:}\\[3pt]
+      {\fontsize{7.2}{9.2}\selectfont\color{TTCTextDark}
+      \textbullet\ \textbf{Japfa Comfeed (Indonesia):} Tổ hợp Silo nông nghiệp công nghệ cao 50.000 m$^2$.\newline
+      \textbullet\ \textbf{C.P Group (Thái Lan):} NM chế biến thức ăn chăn nuôi Đồng Văn 35.000 m$^2$.\newline
+      \textbullet\ \textbf{Yusen Logistics (Nhật Bản):} Kho lạnh và logistics ngoại quan Đình Vũ.\newline
+      \textbullet\ \textbf{Fami Garment (Hàn Quốc):} Xưởng may xuất khẩu Thụy Vân 28.000 m$^2$.}
+    };
+  \end{tikzpicture} &
+  % Khối 4: Doanh nghiệp lớn Việt Nam
+  \begin{tikzpicture}
+    \node[
+      rounded corners=6pt, fill=white, draw=TTCBlue!40!white, line width=0.8pt,
+      minimum width=91mm, minimum height=48mm, inner sep=6pt, align=left, text width=83mm
+    ] {
+      {\fontsize{8.8}{10.8}\selectfont\bfseries\color{TTCGold} \faBuilding\quad 4. TẬP ĐOÀN HÀNG ĐẦU VIỆT NAM:}\\[3pt]
+      {\fontsize{7.2}{9.2}\selectfont\color{TTCTextDark}
+      \textbullet\ \textbf{Tập đoàn May Sông Hồng:} NM may xuất khẩu Sông Hồng 7 (68.000 m$^2$).\newline
+      \textbullet\ \textbf{Công ty Cổ phần Gạch Hồng Trang:} Tổ hợp nhà máy 100.000 m$^2$.\newline
+      \textbullet\ \textbf{Tập đoàn Sơn Hà:} NM thiết bị năng lượng và bồn nước Thuận Thành 24.000 m$^2$.\newline
+      \textbullet\ \textbf{Tập đoàn Hòa Phát:} Đối tác cung cấp thép và hạ tầng công nghiệp.}
+    };
+  \end{tikzpicture}
+\end{tabular}
+
+\vspace{2mm}
+
+% TẦNG 2: BẢNG LÝ DO KHÁCH HÀNG FDI LỰA CHỌN TTC
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt,
+    fill=TTCLightBlue,
+    draw=TTCBorder,
+    line width=0.8pt,
+    minimum width=186mm,
+    inner sep=6pt,
+    text width=176mm
+  ] {
+    {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} \faHandshake\quad LÝ DO CÁC TẬP ĐOÀN FDI TOÀN CẦU CHỌN TÂN THÀNH CÔNG:}\\[3pt]
+    \begin{tabularx}{\linewidth}{@{}p{56mm}@{\hspace{4mm}}p{56mm}@{\hspace{4mm}}p{56mm}@{}}
+      \textbf{\color{TTCRed}1. Pháp Lý FDI Trọn Gói:}\newline
+      {\fontsize{6.8}{8.5}\selectfont Am hiểu sâu sắc thủ tục cấp phép đầu tư, thẩm duyệt ĐTM, PCCC và nghiệm thu xây dựng tại hơn 20 tỉnh thành.} &
+      \textbf{\color{TTCCyan}2. Giao Tiếp Đa Ngôn Ngữ:}\newline
+      {\fontsize{6.8}{8.5}\selectfont Đội ngũ kỹ sư làm việc thành thạo tiếng Anh, tiếng Nhật, tiếng Hàn và tiếng Trung; xử lý hồ sơ chuẩn quốc tế.} &
+      \textbf{\color{TTCBlue}3. Cam Kết FIDIC Chặt Chẽ:}\newline
+      {\fontsize{6.8}{8.5}\selectfont Áp dụng chuẩn hợp đồng FIDIC Silver Book, bảo lãnh ngân hàng uy tín 250 tỷ, cam kết 0 phát sinh chi phí.}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+
+\vspace{2mm}
+
+% TẦNG 3: BĂNG KPI LOGO WALL
+\noindent
+\begin{tikzpicture}
+  \node[
+    rounded corners=6pt,
+    fill=TTCDeepNavy!95!black,
+    draw=TTCCyan!80!white,
+    line width=1pt,
+    text=white,
+    minimum width=186mm,
+    minimum height=20mm,
+    inner sep=4pt
+  ] {
+    \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
+      {\fontsize{14}{16}\selectfont\bfseries\color{TTCRed} 65\% FDI} &
+      {\fontsize{14}{16}\selectfont\bfseries\color{TTCCyan} 85\% KH LẶP LẠI} &
+      {\fontsize{14}{16}\selectfont\bfseries\color{white} 4 NGÔN NGỮ} &
+      {\fontsize{14}{16}\selectfont\bfseries\color{TTCGold} 100\% HÀI LÒNG} \\
+      {\fontsize{7.2}{9}\selectfont Tỷ Trọng Dự Án Quốc Tế} &
+      {\fontsize{7.2}{9}\selectfont Khách Hàng Giao Dự Án Tiếp} &
+      {\fontsize{7.2}{9}\selectfont Giao Tiếp \& Hồ Sơ} &
+      {\fontsize{7.2}{9}\selectfont Đánh Giá Chất Lượng EPC}
+    \end{tabularx}
+  };
+\end{tikzpicture}
+\end{minipage}
+\newpage
+
+\end{document}

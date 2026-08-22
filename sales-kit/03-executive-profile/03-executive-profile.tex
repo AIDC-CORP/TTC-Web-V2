@@ -22,12 +22,21 @@
 
 % --- FONTS & VIETNAMESE TYPOGRAPHY ---
 \usepackage{fontspec}
-\setmainfont{Segoe UI}[
-  BoldFont={Segoe UI Bold},
-  ItalicFont={Segoe UI Italic},
-  BoldItalicFont={Segoe UI Bold Italic}
-]
-\newfontfamily\titlefont{Segoe UI Semibold}
+\IfFontExistsTF{Segoe UI}{
+  \setmainfont{Segoe UI}[
+    BoldFont={Segoe UI Bold},
+    ItalicFont={Segoe UI Italic},
+    BoldItalicFont={Segoe UI Bold Italic}
+  ]
+  \newfontfamily\titlefont{Segoe UI Semibold}
+}{
+  \setmainfont{Arial}[
+    BoldFont={Arial Bold},
+    ItalicFont={Arial Italic},
+    BoldItalicFont={Arial Bold Italic}
+  ]
+  \newfontfamily\titlefont{Arial Bold}
+}
 
 % --- GRAPHICS & TIKZ ---
 \usepackage{xcolor}
@@ -104,7 +113,7 @@
 \begin{tikzpicture}[remember picture,overlay]
   % 1. Full-page background photo (Industrial Factory Construction)
   \node[anchor=center,inner sep=0pt] at (current page.center) {
-    \includegraphics[width=\paperwidth,height=\paperheight]{d:/AIDC/TTC-V2/TTC-Web-V2/public/executive-cover-hero.jpg}
+    \includegraphics[width=\paperwidth,height=\paperheight]{../../public/executive-cover-hero.jpg}
   };
 
   % 2. Cohesive Dark Luxury Architectural Overlay (Unified, no harsh striped cuts)
@@ -137,7 +146,7 @@
             draw=TTCBorder,
             line width=0.5pt
           ] {
-            \includegraphics[height=13mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/logo.png}
+            \includegraphics[height=13mm]{../../public/logo.png}
           };
         \end{tikzpicture}
         &
@@ -280,7 +289,7 @@
   % Left: Photo
   \begin{tikzpicture}
     \node[rounded corners=6pt, draw=TTCBorder, line width=0.8pt, inner sep=0pt, fill=white] (pimg) {
-      \includegraphics[width=91mm,height=55mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/c_level_site_inspection.jpg}
+      \includegraphics[width=91mm,height=55mm]{../../public/c_level_site_inspection.jpg}
     };
     \node[
       anchor=south, fill=TTCDeepNavy!95!black, draw=TTCCyan!80!white,
@@ -341,7 +350,7 @@
     minimum width=186mm, minimum height=20mm, inner sep=4pt
   ] {
     \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
-      {\fontsize{15}{17}\selectfont\bfseries\color{TTCRed} 300--500 TỶ} &
+      {\fontsize{15}{17}\selectfont\bfseries\color{TTCRed} 250 TỶ} &
       {\fontsize{15}{17}\selectfont\bfseries\color{TTCCyan} 100\%} &
       {\fontsize{15}{17}\selectfont\bfseries\color{white} 24 GIỜ} &
       {\fontsize{15}{17}\selectfont\bfseries\color{TTCRed} 0 VNĐ} \\
@@ -676,7 +685,7 @@
     text=white, minimum width=186mm, minimum height=26mm, inner sep=4pt
   ] {
     \begin{tabularx}{176mm}{@{}Y|Y|Y@{}}
-      {\fontsize{16}{18}\selectfont\bfseries\color{TTCRed} 300 -- 500 TỶ} &
+      {\fontsize{16}{18}\selectfont\bfseries\color{TTCRed} 250 TỶ} &
       {\fontsize{16}{18}\selectfont\bfseries\color{TTCCyan} 100\%} &
       {\fontsize{16}{18}\selectfont\bfseries\color{white} 24 GIỜ} \\
       {\fontsize{7.8}{9.2}\selectfont Hạn mức Bảo lãnh Thầu \& Tín dụng} &
@@ -757,7 +766,7 @@
 \begin{tabular}{@{}p{91mm}@{\hspace{4mm}}p{91mm}@{}}
   \begin{tikzpicture}
     \node[rounded corners=6pt, draw=TTCBorder, line width=0.8pt, inner sep=0pt, fill=white] (img1) {
-      \includegraphics[width=91mm,height=50mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/introsection1.jpg}
+      \includegraphics[width=91mm,height=50mm]{../../public/introsection1.jpg}
     };
     \node[anchor=south, fill=TTCBlue!95!black, text=white, rounded corners=4pt, inner sep=3pt, text width=85mm, align=center] at ([yshift=2mm]img1.south) {
       {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCCyan} DÂY CHUYỀN SẢN XUẤT KẾT CẤU THÉP CNC TỰ ĐỘNG}
@@ -766,7 +775,7 @@
   &
   \begin{tikzpicture}
     \node[rounded corners=6pt, draw=TTCBorder, line width=0.8pt, inner sep=0pt, fill=white] (img2) {
-      \includegraphics[width=91mm,height=50mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/introsection2.jpg}
+      \includegraphics[width=91mm,height=50mm]{../../public/introsection2.jpg}
     };
     \node[anchor=south, fill=TTCBlue!95!black, text=white, rounded corners=4pt, inner sep=3pt, text width=85mm, align=center] at ([yshift=2mm]img2.south) {
       {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCCyan} THI CÔNG LẮP DỰNG KHUNG KÈO KHẨU ĐỘ LỚN AN TOÀN}
@@ -809,7 +818,7 @@
     text=white, minimum width=186mm, minimum height=22mm, inner sep=4pt
   ] {
     \begin{tabularx}{176mm}{@{}Y|Y|Y|Y@{}}
-      {\fontsize{14}{16}\selectfont\bfseries\color{TTCRed} >300 TỶ VNĐ} &
+      {\fontsize{14}{16}\selectfont\bfseries\color{TTCRed} >150 TỶ VNĐ} &
       {\fontsize{14}{16}\selectfont\bfseries\color{TTCCyan} $\pm 0.5$ mm} &
       {\fontsize{14}{16}\selectfont\bfseries\color{white} 100M LIỀN DẢI} &
       {\fontsize{14}{16}\selectfont\bfseries\color{TTCRed} SA 2.5 ISO} \\
@@ -992,7 +1001,7 @@
   \node[
     rounded corners=6pt, draw=TTCBorder, line width=0.8pt, inner sep=0pt, fill=white
   ] (bimimg) {
-    \includegraphics[width=186mm,height=55mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/bim-model-3d.jpg}
+    \includegraphics[width=186mm,height=55mm]{../../public/bim-model-3d.jpg}
   };
   \node[
     anchor=south, fill=TTCBlue!95!black, draw=TTCCyan!80!white,
@@ -1074,7 +1083,7 @@
   \node[
     rounded corners=6pt, draw=TTCBorder, line width=0.8pt, inner sep=0pt, fill=white
   ] (esgimg) {
-    \includegraphics[width=186mm,height=55mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/bim-esg-factory-3d.jpg}
+    \includegraphics[width=186mm,height=55mm]{../../public/bim-esg-factory-3d.jpg}
   };
   \node[
     anchor=south, fill=TTCBlue!95!black, draw=TTCCyan!80!white,
@@ -1223,7 +1232,7 @@
 \begin{tabular}{@{}p{43.5mm}@{\hspace{4mm}}p{43.5mm}@{\hspace{4mm}}p{43.5mm}@{\hspace{4mm}}p{43.5mm}@{}}
   \begin{tikzpicture}
     \node[rounded corners=4pt, draw=TTCBorder, line width=0.7pt, inner sep=0pt, fill=white] (p1) {
-      \includegraphics[width=43.5mm,height=28mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/project-assets/hongtrang.jpg}
+      \includegraphics[width=43.5mm,height=28mm]{../../public/project-assets/hongtrang.jpg}
     };
     \node[anchor=south, fill=TTCBlue!95!black, text=white, rounded corners=2pt, inner sep=2pt, text width=40mm, align=center] at ([yshift=1.5mm]p1.south) {
       {\fontsize{6.5}{7.8}\selectfont\bfseries HỒNG TRANG (100K m²)}
@@ -1232,7 +1241,7 @@
   &
   \begin{tikzpicture}
     \node[rounded corners=4pt, draw=TTCBorder, line width=0.7pt, inner sep=0pt, fill=white] (p2) {
-      \includegraphics[width=43.5mm,height=28mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/project-assets/songhong7.jpg}
+      \includegraphics[width=43.5mm,height=28mm]{../../public/project-assets/songhong7.jpg}
     };
     \node[anchor=south, fill=TTCBlue!95!black, text=white, rounded corners=2pt, inner sep=2pt, text width=40mm, align=center] at ([yshift=1.5mm]p2.south) {
       {\fontsize{6.5}{7.8}\selectfont\bfseries SÔNG HỒNG 7 (58K m²)}
@@ -1241,7 +1250,7 @@
   &
   \begin{tikzpicture}
     \node[rounded corners=4pt, draw=TTCBorder, line width=0.7pt, inner sep=0pt, fill=white] (p3) {
-      \includegraphics[width=43.5mm,height=28mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/project-assets/japfa.jpg}
+      \includegraphics[width=43.5mm,height=28mm]{../../public/project-assets/japfa.jpg}
     };
     \node[anchor=south, fill=TTCBlue!95!black, text=white, rounded corners=2pt, inner sep=2pt, text width=40mm, align=center] at ([yshift=1.5mm]p3.south) {
       {\fontsize{6.5}{7.8}\selectfont\bfseries JAPFA (50K m²)}
@@ -1250,7 +1259,7 @@
   &
   \begin{tikzpicture}
     \node[rounded corners=4pt, draw=TTCBorder, line width=0.7pt, inner sep=0pt, fill=white] (p4) {
-      \includegraphics[width=43.5mm,height=28mm]{d:/AIDC/TTC-V2/TTC-Web-V2/public/project-assets/daeyun.jpg}
+      \includegraphics[width=43.5mm,height=28mm]{../../public/project-assets/daeyun.jpg}
     };
     \node[anchor=south, fill=TTCBlue!95!black, text=white, rounded corners=2pt, inner sep=2pt, text width=40mm, align=center] at ([yshift=1.5mm]p4.south) {
       {\fontsize{6.5}{7.8}\selectfont\bfseries DAEYUN (20K m²)}
