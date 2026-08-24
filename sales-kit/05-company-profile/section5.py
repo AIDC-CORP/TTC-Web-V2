@@ -564,7 +564,7 @@ Danh sách được trình bày theo một cấu trúc thống nhất để ngư
   \node[anchor=west,text=white,font=\fontsize{6.5}{7.5}\selectfont\bfseries] at (14,182) {DỰ ÁN / CHỦ ĐẦU TƯ};
   \node[text=white,font=\fontsize{6.5}{7.5}\selectfont\bfseries] at (84,182) {QUY MÔ};
   \node[anchor=west,text=white,font=\fontsize{6.5}{7.5}\selectfont\bfseries] at (96,182) {ĐỊA ĐIỂM};
-  \node[anchor=west,text=white,font=\fontsize{6.5}{7.5}\selectfont\bfseries] at (129,182) {PHẠM VI TTC};
+  \node[anchor=west,text=white,font=\fontsize{6.5}{7.5}\selectfont\bfseries] at (129,182) {PHẠM VI CÔNG VIỆC};
 
   \newcommand{\projectrowa}[8]{%
     \fill[#8] (0,{#1-11}) rectangle (186,{#1+11});
@@ -583,12 +583,12 @@ Danh sách được trình bày theo một cấu trúc thống nhất để ngư
     \draw[TTCBorder,line width=.45pt] (10,{#1-11}) -- (186,{#1-11});
   }
 
-  \projectrowa{165}{01}{Tổ hợp NM Gạch Hồng Trang}{Gạch Hồng Trang • Việt Nam}{100.000 m$^2$}{Lập Thạch\\Vĩnh Phúc}{Tổng thầu EPC • Fast-track 6,5 tháng}{TTCLightBlue}
-  \projectrowa{143}{02}{Nhà máy May Sông Hồng 7}{May Sông Hồng • Việt Nam}{68.000 m$^2$}{Hải Hậu\\Nam Định}{Thiết kế và thi công • Sàn hai tầng tải nặng}{white}
-  \projectrowa{121}{03}{Tổ hợp NM Japfa Comfeed}{Japfa • Indonesia}{50.000 m$^2$}{Vĩnh Phúc\\Thái Bình}{Kết cấu silo cao 45 m • Xưởng CNC}{TTCLightBlue}
-  \projectrowa{99}{04}{NM Thức Ăn Chăn Nuôi CP}{C.P • Thái Lan}{35.000 m$^2$}{Đồng Văn\\Hà Nam}{Xưởng sản xuất • Kho bảo quản}{white}
-  \projectrowa{77}{05}{Nhà máy Daeyun ST Vina}{Daeyun • Hàn Quốc}{20.000 m$^2$}{Bá Thiện 2\\Vĩnh Phúc}{Xưởng sạch • Sàn chống tĩnh điện}{TTCLightBlue}
-  \projectrowa{55}{06}{Nhà máy Dây Cáp Sumidenso}{Sumitomo • Nhật Bản}{15.015 m$^2$}{Sông Hậu\\Hậu Giang}{Nhà máy dây cáp ô tô • Hệ PCCC}{white}
+  \projectrowa{165}{01}{Nhà máy Công nghệ 2M}{2M Technocom • Việt Nam}{Khuôn mẫu \& Nhựa}{Yên Mỹ II\\Hưng Yên}{Tư vấn thiết kế \& Tổng thầu thi công}{TTCLightBlue}
+  \projectrowa{143}{02}{Nhà máy Sơn ALO Việt Nam}{Sơn ALO • Việt Nam}{Sơn \& Hóa chất}{Phú Nghĩa\\Hà Nội}{Tổng thầu EPC • Xưởng \& Kho hóa chất}{white}
+  \projectrowa{121}{03}{Nhà máy Nhựa Sendai}{Sendai Plastics • Việt Nam}{Nhựa kỹ thuật}{Ân Thi\\Hưng Yên}{Tổng thầu thi công • Hai xưởng \& văn phòng}{TTCLightBlue}
+  \projectrowa{99}{04}{Tổ hợp Nhà máy May Lào Cai}{May Lào Cai • Việt Nam}{Dệt may cao tầng}{Phố Mới\\Lào Cai}{Tư vấn thiết kế \& thi công trọn gói}{white}
+  \projectrowa{77}{05}{Nhà máy Nhựa DHL}{Tập đoàn Nhựa DHL • Việt Nam}{Bao bì \& màng nhựa}{Thái Hà\\Hà Nam}{Tổng thầu thi công • Xưởng \& văn phòng}{TTCLightBlue}
+  \projectrowa{55}{06}{Nhà máy Nhôm Quang Thịnh}{CP Nhôm Quang Thịnh • Việt Nam}{Nhôm định hình}{Thuận Thành\\Bắc Ninh}{Tổng thầu thi công • Xưởng thép \& văn phòng}{white}
   \projectrowa{33}{07}{Xưởng Sản Xuất Foxconn}{Foxconn • Đài Loan}{12.000 m$^2$}{Quế Võ\\Bắc Ninh}{Kết cấu vượt nhịp • Lắp dựng nhà xưởng cao}{TTCLightBlue}
   \projectrowa{11}{08}{Tổ hợp Logistics BW Industrial}{BW Industrial • Singapore}{45.000 m$^2$}{Yên Phong\\Bắc Ninh}{Tổng thầu kho thông minh • Sàn siêu phẳng}{white}
 \end{tikzpicture}
@@ -631,7 +631,7 @@ PAGE_21 = r"""% ============================================================
 \pagefooterbar{Trang 21}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Danh Mục Dự Án FDI Và Công Nghiệp Phụ Trợ}{Tám công trình tiếp theo • Nhà đầu tư đa quốc gia • Yêu cầu chuyên biệt}
+\secbrand{Danh Mục Dự Án Quốc Tế Và Công Nghiệp Phụ Trợ}{Tám công trình tiếp theo • Nhà đầu tư đa quốc gia • Yêu cầu chuyên biệt}
 
 {\fontsize{15}{17}\selectfont\bfseries\color{TTCBlue}
 NHÀ ĐẦU TƯ • CHUYÊN NGÀNH • GIẢI PHÁP TRIỂN KHAI\par}
@@ -651,7 +651,7 @@ Danh mục thể hiện kinh nghiệm triển khai nhà máy thực phẩm, đi�
   \node[anchor=west,text=white,font=\fontsize{6.5}{7.5}\selectfont\bfseries] at (14,182) {DỰ ÁN / CHỦ ĐẦU TƯ};
   \node[text=white,font=\fontsize{6.5}{7.5}\selectfont\bfseries] at (84,182) {QUY MÔ};
   \node[anchor=west,text=white,font=\fontsize{6.5}{7.5}\selectfont\bfseries] at (96,182) {ĐỊA ĐIỂM};
-  \node[anchor=west,text=white,font=\fontsize{6.5}{7.5}\selectfont\bfseries] at (129,182) {PHẠM VI TTC};
+  \node[anchor=west,text=white,font=\fontsize{6.5}{7.5}\selectfont\bfseries] at (129,182) {PHẠM VI CÔNG VIỆC};
 
   \newcommand{\projectrowb}[8]{%
     \fill[#8] (0,{#1-11}) rectangle (186,{#1+11});
@@ -670,14 +670,14 @@ Danh mục thể hiện kinh nghiệm triển khai nhà máy thực phẩm, đi�
     \draw[TTCBorder,line width=.45pt] (10,{#1-11}) -- (186,{#1-11});
   }
 
-  \projectrowb{165}{09}{NM Chăn Nuôi New Hope}{New Hope • Singapore}{32.000 m$^2$}{Quang Châu\\Bắc Giang}{Silo ngũ cốc • Trạm điện biến áp}{TTCLightBlue}
-  \projectrowb{143}{10}{NM Cơ Khí Shinjo Vina}{Shinjo • Nhật Bản}{18.500 m$^2$}{VSIP\\Bắc Ninh}{Xưởng cơ khí chính xác • Dầm cầu trục 15T}{white}
-  \projectrowb{121}{11}{NM Điện Tử Towada}{Towada • Nhật Bản}{16.000 m$^2$}{Phúc Điền\\Hải Dương}{Lắp ráp vi mạch • Phòng sạch ISO}{TTCLightBlue}
-  \projectrowb{99}{12}{NM Bao Bì Toyo Seikan}{Toyo Seikan • Nhật Bản}{22.000 m$^2$}{Tiên Sơn\\Bắc Ninh}{Tổng thầu EPC • Xưởng bao bì • Sàn phẳng}{white}
-  \projectrowb{77}{13}{Xưởng May Fami Vina}{Fami Garment • Hàn Quốc}{28.000 m$^2$}{Thụy Vân\\Phú Thọ}{Nhà xưởng may hai tầng • Hệ HVAC}{TTCLightBlue}
+  \projectrowb{165}{09}{Nhà máy Điện tử Towada}{Towada • Nhật Bản}{18.500 m$^2$}{Phúc Điền\\Hải Dương}{Xưởng lắp ráp linh kiện • Cơ điện MEP}{TTCLightBlue}
+  \projectrowb{143}{10}{Kho Lạnh Logistics Yusen}{Yusen • Nhật Bản}{22.000 m$^2$}{Đình Vũ\\Hải Phòng}{Kho lạnh $-25^\circ$C • Cửa xuất nhập tự động}{white}
+  \projectrowb{121}{11}{Nhà máy Dây Cáp Shinjo Vina}{Shinjo • Hàn Quốc}{14.000 m$^2$}{Bá Thiện 2\\Vĩnh Phúc}{Xưởng sản xuất cáp • Khung thép khẩu độ lớn}{TTCLightBlue}
+  \projectrowb{99}{12}{Nhà máy Bao Bì Toyo Seikan}{Toyo Seikan • Nhật Bản}{22.000 m$^2$}{Tiên Sơn\\Bắc Ninh}{Tổng thầu EPC • Xưởng bao bì • Sàn phẳng}{white}
+  \projectrowb{77}{13}{Nhà máy Nhựa Tiền Phong}{Tiền Phong • Việt Nam}{18.000 m$^2$}{An Dương\\Hải Phòng}{Xưởng đùn ống nhựa • Sàn theo tải thiết kế}{TTCLightBlue}
   \projectrowb{55}{14}{Kho Logistics Yusen}{Yusen • Nhật Bản}{25.000 m$^2$}{Đình Vũ\\Hải Phòng}{Kho ngoại quan • Cụm sàn nâng hàng}{white}
-  \projectrowb{33}{15}{NM Thực Phẩm A-One}{Saigon Ve Wong • Đài Loan}{30.000 m$^2$}{Sóng Thần 2\\Bình Dương}{Xưởng chế biến thực phẩm • Chuẩn HACCP}{TTCLightBlue}
-  \projectrowb{11}{16}{NM Năng Lượng Sơn Hà}{Sơn Hà • Việt Nam}{24.000 m$^2$}{Thuận Thành\\Bắc Ninh}{Xưởng sản xuất bồn • Pin mặt trời}{white}
+  \projectrowb{33}{15}{Nhà máy Thực Phẩm A-One}{Saigon Ve Wong • Đài Loan}{30.000 m$^2$}{Sóng Thần 2\\Bình Dương}{Xưởng chế biến thực phẩm • Chuẩn HACCP}{TTCLightBlue}
+  \projectrowb{11}{16}{Nhà máy Năng Lượng Sơn Hà}{Sơn Hà • Việt Nam}{24.000 m$^2$}{Thuận Thành\\Bắc Ninh}{Xưởng sản xuất bồn • Pin mặt trời}{white}
 \end{tikzpicture}
 
 \vspace{3mm}
@@ -690,16 +690,16 @@ Danh mục thể hiện kinh nghiệm triển khai nhà máy thực phẩm, đi�
     at (7,29) {TỪ DANH MỤC ĐẾN 6 HỒ SƠ DỰ ÁN • TRANG 22--27};
   \foreach \x in {62,124}{\draw[white!25!gray] (\x,5) -- (\x,23);}
   \node[align=center,text width=53mm] at (31,14) {
-    {\fontsize{7.8}{9.2}\selectfont\bfseries\color{white} HỒNG TRANG • SÔNG HỒNG 7}\\[-.2mm]
-    {\fontsize{6}{7.2}\selectfont\color{white!75!gray}EPC nhịp lớn • nhà xưởng hai tầng}
+    {\fontsize{7.8}{9.2}\selectfont\bfseries\color{white} CÔNG NGHỆ 2M • SƠN ALO}\\[-.2mm]
+    {\fontsize{6}{7.2}\selectfont\color{white!75!gray}Khuôn mẫu chính xác • xưởng sơn \& hóa chất}
   };
   \node[align=center,text width=53mm] at (93,14) {
-    {\fontsize{7.8}{9.2}\selectfont\bfseries\color{white} JAPFA • DAEYUN}\\[-.2mm]
-    {\fontsize{6}{7.2}\selectfont\color{white!75!gray}Công trình process • phòng sạch}
+    {\fontsize{7.8}{9.2}\selectfont\bfseries\color{white} SENDAI • MAY LÀO CAI}\\[-.2mm]
+    {\fontsize{6}{7.2}\selectfont\color{white!75!gray}Nhựa kỹ thuật • may xưởng nhiều tầng}
   };
   \node[align=center,text width=53mm] at (155,14) {
-    {\fontsize{7.8}{9.2}\selectfont\bfseries\color{white} SUMIDENSO • FOXCONN}\\[-.2mm]
-    {\fontsize{6}{7.2}\selectfont\color{white!75!gray}Bàn giao chất lượng • nhà xưởng điện tử}
+    {\fontsize{7.8}{9.2}\selectfont\bfseries\color{white} NHỰA DHL • NHÔM QUANG THỊNH}\\[-.2mm]
+    {\fontsize{6}{7.2}\selectfont\color{white!75!gray}Bao bì nhựa màng • nhôm đùn ép định hình}
   };
 \end{tikzpicture}
 \end{minipage}
@@ -1445,51 +1445,65 @@ PAGE_27_LEGACY = r"""% =========================================================
 """
 
 PAGE_22 = r"""% ============================================================
-% TRANG 22: FLAGSHIP CASE -- NHÀ MÁY GẠCH HỒNG TRANG
+% TRANG 22: FLAGSHIP CASE -- NHÀ MÁY CÔNG NGHỆ 2M VIỆT NAM
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{DỰ ÁN TIÊU BIỂU • HỒNG TRANG}{Trang 22}
+\casepagebars{DỰ ÁN TIÊU BIỂU • NHÀ MÁY CÔNG NGHỆ 2M}{Trang 22}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Hồ Sơ Dự Án 01: Nhà Máy Gạch Hồng Trang}{Flagship EPC case • Large-span industrial facility • Lập Thạch, Vĩnh Phúc}
+\secbrand{Hồ Sơ Dự Án 01: Nhà Máy Sản Xuất Khuôn Mẫu 2M Việt Nam}{High-tech precision facility • Mold \& Parts manufacturing • KCN Yên Mỹ II, Hưng Yên}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
   \path[use as bounding box] (0,0) rectangle (186,220);
 
-  % Ảnh dự án nhỏ gọn, đúng với độ phân giải nguồn
+  % Cụm ảnh theo tiến trình: phối cảnh + ảnh thi công + ảnh hoàn thiện
   \begin{scope}
-    \clip[rounded corners=4pt] (0,150) rectangle (70,220);
-    \node[inner sep=0pt] at (35,185)
-      {\includegraphics[width=70mm,height=70mm]{../../public/project-assets/hongtrang.jpg}};
-    \fill[TTCDeepNavy,opacity=.88] (0,150) rectangle (70,161);
+    \clip[rounded corners=4pt] (0,174) rectangle (70,220);
+    \node[inner sep=0pt] at (35,197)
+      {\includegraphics[width=70mm,height=46mm]{../../public/project-assets/2m1.jpg}};
+    \fill[TTCDeepNavy,opacity=.88] (0,174) rectangle (70,185);
     \node[anchor=west,text=white,font=\fontsize{7}{8}\selectfont\bfseries]
-      at (4,155.5) {ẢNH DỰ ÁN • LẬP THẠCH, VĨNH PHÚC};
+      at (4,179.5) {PHỐI CẢNH THIẾT KẾ};
   \end{scope}
+  \begin{scope}
+    \clip[rounded corners=2pt] (0,150) rectangle (34,172);
+    \node[inner sep=0pt] at (17,161)
+      {\includegraphics[width=34mm,height=22mm]{../../public/project-assets/2m3.jpg}};
+  \end{scope}
+  \begin{scope}
+    \clip[rounded corners=2pt] (36,150) rectangle (70,172);
+    \node[inner sep=0pt] at (53,161)
+      {\includegraphics[width=34mm,height=22mm]{../../public/project-assets/2m5.jpg}};
+  \end{scope}
+  \fill[TTCDeepNavy,opacity=.82] (0,150) rectangle (34,156);
+  \fill[TTCDeepNavy,opacity=.82] (36,150) rectangle (70,156);
+  \node[anchor=west,text=white,font=\fontsize{4.8}{5.6}\selectfont\bfseries] at (2,153) {ẢNH THI CÔNG};
+  \node[anchor=west,text=white,font=\fontsize{4.8}{5.6}\selectfont\bfseries] at (38,153) {ẢNH HOÀN THIỆN};
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,150) rectangle (70,220);
 
   % Tóm tắt điều hành
   \fill[TTCLightBlue,rounded corners=4pt] (74,150) rectangle (186,220);
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (74,150) rectangle (186,220);
   \node[anchor=north west,text=TTCRed,font=\fontsize{7.5}{9}\selectfont\bfseries]
-    at (80,214) {TỔNG THẦU EPC};
+    at (80,214) {TƯ VẤN THIẾT KẾ \& TỔNG THẦU THI CÔNG};
   \node[anchor=north west,text width=99mm,align=left,text=TTCBlue,
-        font=\fontsize{14}{16}\selectfont\bfseries]
-    at (80,207) {100.000 m$^2$ QUY HOẠCH};
+        font=\fontsize{13}{15}\selectfont\bfseries]
+    at (80,207) {TỔ HỢP NHÀ MÁY CÔNG NGHỆ 2M};
   \draw[TTCBorder,line width=.55pt] (80,190) -- (180,190);
   \foreach \x in {113.3,146.6}{\draw[TTCBorder,line width=.5pt] (\x,163) -- (\x,186);}
   \node[align=center,text width=29mm] at (96.5,176) {
-    {\fontsize{11}{12}\selectfont\bfseries\color{TTCRed}75.000 m$^2$}\\[-.5mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}DIỆN TÍCH SÀN}};
+    {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCRed}CƠ KHÍ CHÍNH XÁC}\\[-.5mm]
+    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}KHUÔN MẪU \& NHỰA}};
   \node[align=center,text width=29mm] at (130,176) {
-    {\fontsize{11}{12}\selectfont\bfseries\color{TTCBlue}NHỊP 42M}\\[-.5mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}KHÔNG CỘT GIỮA}};
+    {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCBlue}KẾT CẤU THÉP}\\[-.5mm]
+    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}XƯỞNG \& VP 3 TẦNG}};
   \node[align=center,text width=29mm] at (163.5,176) {
-    {\fontsize{11}{12}\selectfont\bfseries\color{TTCBlue}6,5 THÁNG}\\[-.5mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}TIẾN ĐỘ THI CÔNG}};
+    {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCBlue}CHỐNG RUNG}\\[-.5mm]
+    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}CHO DÀN MÁY CNC}};
   \node[anchor=south west,text width=99mm,align=left,text=TTCTextDark,
         font=\fontsize{7.4}{9}\selectfont]
-    at (80,153) {\textbf{Phạm vi TTC:} Tổng thầu EPC; phối hợp thiết kế, kết cấu thép, hạ tầng và tổ chức thi công fast-track.};
+    at (80,153) {\textbf{Chủ đầu tư:} Công ty Cổ phần Công nghệ 2M Việt Nam (2M TECHNOCOM., JSC) \textbullet\ \textbf{Đơn vị thực hiện:} Tân Thành Công JSC -- tư vấn thiết kế, thi công kết cấu thép, sàn chịu lực và hạ tầng kỹ thuật.};
 
   % Câu chuyện dự án: bài toán -- giải pháp -- kết quả
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
@@ -1503,7 +1517,7 @@ PAGE_22 = r"""% ============================================================
     at (5,120) {BÀI TOÁN};
   \node[anchor=north west,text width=48mm,align=left,text=TTCTextDark,
         font=\fontsize{7.2}{9}\selectfont]
-    at (5,110) {Dây chuyền lò nung cần mặt bằng liên tục, không bị chia cắt bởi cột giữa; đồng thời nhà xưởng phải thoát nhiệt hiệu quả.};
+    at (5,110) {Chủ đầu tư cần xây dựng nhà máy sản xuất khuôn mẫu chính xác cao và linh kiện kỹ thuật, đòi hỏi nền sàn xưởng ổn định chống rung cho máy CNC \& máy ép nhựa.};
 
   \draw[-{Latex[length=2.5mm]},TTCCyan,line width=1pt] (59.5,108) -- (63,108);
   \fill[TTCDeepNavy,rounded corners=4pt] (64,79) rectangle (122,137);
@@ -1513,7 +1527,7 @@ PAGE_22 = r"""% ============================================================
     at (69,120) {GIẢI PHÁP TTC};
   \node[anchor=north west,text width=48mm,align=left,text=white,
         font=\fontsize{7.2}{9}\selectfont]
-    at (69,110) {Khung thép tiết diện thay đổi vượt nhịp 42 m; thông gió đối lưu đỉnh mái; các gói EPC được triển khai song song.};
+    at (69,110) {Tư vấn thiết kế tối ưu nhịp xưởng thông thoáng; gia cường móng \& sàn bê tông chịu tải chống rung; tích hợp đồng bộ hệ MEP, chiếu sáng và trạm biến áp KCN.};
 
   \draw[-{Latex[length=2.5mm]},TTCCyan,line width=1pt] (123.5,108) -- (127,108);
   \fill[TTCLightBlue,rounded corners=4pt] (128,79) rectangle (186,137);
@@ -1524,7 +1538,7 @@ PAGE_22 = r"""% ============================================================
     at (133,120) {KẾT QUẢ};
   \node[anchor=north west,text width=48mm,align=left,text=TTCTextDark,
         font=\fontsize{7.2}{9}\selectfont]
-    at (133,110) {Hoàn thành 75.000 m$^2$ sàn trong 6,5 tháng; bàn giao sớm 20 ngày theo hồ sơ năng lực hiện tại.};
+    at (133,110) {Bàn giao công trình hoàn chỉnh đúng tiến độ, đáp ứng chuẩn kỹ thuật khắt khe của ngành sản xuất khuôn mẫu công nghệ cao, đưa vào vận hành hiệu quả.};
 
   % Băng ghi nhớ
   \fill[white,rounded corners=4pt] (0,20) rectangle (186,70);
@@ -1534,31 +1548,31 @@ PAGE_22 = r"""% ============================================================
   \draw[TTCBorder] (62,27) -- (62,58);
   \draw[TTCBorder] (124,27) -- (124,58);
   \node[align=center,text width=52mm] at (31,42) {
-    {\fontsize{12}{13}\selectfont\bfseries\color{TTCRed}42 MÉT}\\[-.5mm]
-    {\fontsize{6.6}{8}\selectfont\color{TTCTextMuted}MẶT BẰNG SẢN XUẤT KHÔNG CỘT GIỮA}};
+    {\fontsize{11}{12}\selectfont\bfseries\color{TTCRed}CHỐNG RUNG ĐỘNG}\\[-.5mm]
+    {\fontsize{6.6}{8}\selectfont\color{TTCTextMuted}SÀN GIA CƯỜNG CHO DÀN MÁY CNC}};
   \node[align=center,text width=52mm] at (93,42) {
-    {\fontsize{12}{13}\selectfont\bfseries\color{TTCBlue}EPC SONG SONG}\\[-.5mm]
-    {\fontsize{6.6}{8}\selectfont\color{TTCTextMuted}THIẾT KẾ • SẢN XUẤT • THI CÔNG}};
+    {\fontsize{11}{12}\selectfont\bfseries\color{TTCBlue}TỔNG THẦU TRỌN GÓI}\\[-.5mm]
+    {\fontsize{6.6}{8}\selectfont\color{TTCTextMuted}TƯ VẤN THIẾT KẾ • KẾT CẤU • MEP}};
   \node[align=center,text width=52mm] at (155,42) {
-    {\fontsize{12}{13}\selectfont\bfseries\color{TTCBlue}SỚM 20 NGÀY}\\[-.5mm]
-    {\fontsize{6.6}{8}\selectfont\color{TTCTextMuted}SO VỚI MỐC CAM KẾT}};
+    {\fontsize{11}{12}\selectfont\bfseries\color{TTCBlue}CHUẨN TIẾN ĐỘ}\\[-.5mm]
+    {\fontsize{6.6}{8}\selectfont\color{TTCTextMuted}BÀN GIAO CHÌA KHÓA TRAO TAY}};
 
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,14);
   \node[anchor=west,text=white,font=\fontsize{7.4}{9}\selectfont\bfseries]
-    at (7,7) {GIÁ TRỊ CỐT LÕI: KHÔNG GIAN SẢN XUẤT LIÊN TỤC • TIẾN ĐỘ CÓ KIỂM SOÁT};
+    at (7,7) {GIÁ TRỊ CỐT LÕI: KHÔNG GIAN CÔNG NGHỆ CHÍNH XÁC • TỔNG THẦU ĐỒNG BỘ TRỌN GÓI};
 \end{tikzpicture}
 \end{minipage}
 \newpage
 """
 
 PAGE_23 = r"""% ============================================================
-% TRANG 23: ENGINEERING CASE -- NHÀ MÁY MAY SÔNG HỒNG 7
+% TRANG 23: ENGINEERING CASE -- NHÀ MÁY SƠN ALO VIỆT NAM
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{GIẢI PHÁP KỸ THUẬT • SÔNG HỒNG 7}{Trang 23}
+\casepagebars{GIẢI PHÁP KỸ THUẬT • NHÀ MÁY SƠN ALO}{Trang 23}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Hồ Sơ Dự Án 02: Nhà Máy May Sông Hồng 7}{Engineering anatomy • Two-storey heavy-duty factory • Hải Hậu, Nam Định}
+\secbrand{Hồ Sơ Dự Án 02: Nhà Máy Sản Xuất Sơn ALO Việt Nam}{Chemical \& Paint manufacturing complex • PCCC ATEX standard • KCN Phú Nghĩa, Hà Nội}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
@@ -1568,533 +1582,728 @@ PAGE_23 = r"""% ============================================================
   \begin{scope}
     \clip[rounded corners=4pt] (0,148) rectangle (104,220);
     \node[inner sep=0pt] at (52,184)
-      {\includegraphics[width=104mm,height=77.5mm]{../../public/project-assets/songhong7.jpg}};
+      {\includegraphics[width=104mm,height=77.5mm]{../../public/project-assets/son_alo_2.jpg}};
     \fill[TTCDeepNavy,opacity=.88] (0,148) rectangle (104,160);
     \node[anchor=west,text=white,font=\fontsize{7}{8}\selectfont\bfseries]
-      at (4,154) {PHỐI CẢNH DỰ ÁN • HẢI HẬU, NAM ĐỊNH};
+      at (4,154) {PHỐI CẢNH TỔNG THỂ • KCN PHÚ NGHĨA, HÀ NỘI};
   \end{scope}
+  % Ảnh thực tế tại mốc khởi công, trình bày như bằng chứng tiến trình
+  \begin{scope}
+    \clip[rounded corners=2pt] (73,181) rectangle (101,217);
+    \node[inner sep=0pt] at (87,199)
+      {\includegraphics[width=28mm,height=36mm]{../../public/project-assets/son_alo_1.jpg}};
+  \end{scope}
+  \draw[white,line width=1.2pt,rounded corners=2pt] (73,181) rectangle (101,217);
+  \fill[TTCDeepNavy,opacity=.88] (73,181) rectangle (101,188);
+  \node[anchor=west,text=white,font=\fontsize{4.7}{5.5}\selectfont\bfseries]
+    at (75,184.5) {ẢNH LỄ KHỞI CÔNG};
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,148) rectangle (104,220);
 
   \fill[TTCDeepNavy,rounded corners=4pt] (108,148) rectangle (186,220);
   \node[anchor=north west,text=TTCCyan,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
-    at (114,214) {TÓM TẮT DỰ ÁN};
-  \node[anchor=north west,text=white,font=\fontsize{15}{16}\selectfont\bfseries]
-    at (114,205) {68.000 m$^2$};
+    at (114,214) {TỔNG THẦU EPC};
+  \node[anchor=north west,text=white,font=\fontsize{13.5}{15}\selectfont\bfseries]
+    at (114,206) {TỔ HỢP SƠN ALO};
   \node[anchor=north west,text=white!75!gray,font=\fontsize{6.5}{8}\selectfont]
-    at (114,190) {TỔNG DIỆN TÍCH SÀN};
-  \draw[white!25!gray] (114,183) -- (180,183);
-  \node[anchor=north west,text width=62mm,align=left,text=white,
+    at (114,192) {CỤM 4 PHÂN XƯỞNG \& KHO HÓA CHẤT};
+  \draw[white!25!gray] (114,184) -- (180,184);
+  \node[anchor=north west,text width=66mm,align=left,text=white,
         font=\fontsize{7.2}{9}\selectfont]
-    at (114,178) {\textbf{Kết cấu:} Nhà xưởng hai tầng\\[1mm]
-                  \textbf{Tải trọng thiết kế:} 1.200 kg/m$^2$\\[1mm]
-                  \textbf{Tiến độ:} 180 ngày\\[1mm]
-                  \textbf{Vai trò TTC:} Thiết kế và thi công};
+    at (114,179) {\textbf{Chủ đầu tư:} Cty CP Đầu tư ALO Việt Nam\\[1mm]
+                  \textbf{Địa điểm:} Lô CN1, KCN Phú Nghĩa, Hà Nội\\[1mm]
+                  \textbf{Tiêu chuẩn:} An toàn PCCC \& Kháng hóa chất\\[1mm]
+                  \textbf{Tân Thành Công JSC:} Tổng thầu EPC (Thiết kế \& Thi công)};
 
-  % Sơ đồ kỹ thuật khác biệt với trang trước
+  % Sơ đồ kỹ thuật: Nhà xưởng hóa chất sơn & kiểm soát môi trường
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (0,140) {SƠ ĐỒ NGUYÊN LÝ • ĐƯỜNG TRUYỀN TẢI VÀ KIỂM SOÁT RUNG};
+    at (0,140) {SƠ ĐỒ NGUYÊN LÝ • GIẢI PHÁP AN TOÀN CHÁY NỔ \& KHÁNG HÓA CHẤT};
   \fill[TTCLightBlue,rounded corners=4pt] (0,53) rectangle (186,134);
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,53) rectangle (186,134);
 
-  % Khung hai tầng
-  \draw[TTCBlue,line width=1.2pt] (10,67) -- (132,67);
-  \draw[TTCBlue,line width=2pt] (12,94) -- (130,94);
-  \draw[TTCBlue,line width=1.2pt] (12,122) -- (71,130) -- (130,122);
-  \foreach \x in {16,44,72,100,128}{
-    \draw[TTCBlue,line width=1.2pt] (\x,67) -- (\x,122);
+  % Bản vẽ sơ đồ phân xưởng hóa chất
+  % Mái dốc + Cửa trời thông gió
+  \draw[TTCBlue,line width=1.4pt] (12,118) -- (68,126) -- (128,118);
+  \draw[TTCRed,line width=1pt] (58,126) -- (58,130) -- (78,130) -- (78,126);
+  \node[anchor=south,text=TTCRed,font=\fontsize{5.8}{7}\selectfont\bfseries] at (68,130.5) {CỬA TRỜI THOÁT HƠI DUNG MÔI};
+
+  % Khung cột thép
+  \draw[TTCBlue,line width=1.4pt] (12,67) -- (12,118);
+  \draw[TTCBlue,line width=1.4pt] (128,67) -- (128,118);
+  \foreach \x in {41,70,99}{
+    \draw[TTCBlue,line width=1pt,dashed] (\x,67) -- (\x,122);
   }
-  \foreach \x in {26,54,82,110}{
-    \fill[white] (\x,98) rectangle +(15,7);
-    \draw[TTCBorder] (\x,98) rectangle +(15,7);
-    \draw[-{Latex[length=2mm]},TTCRed,line width=.8pt] (\x+7.5,108) -- (\x+7.5,96);
+
+  % Tuyến PCCC Sprinkler & Foam
+  \draw[TTCRed,line width=1.2pt,dashed] (15,108) -- (125,108);
+  \foreach \x in {25,50,75,100,120}{
+    \fill[TTCRed] (\x,108) circle (1.2mm);
+    \draw[-{Latex[length=1.5mm]},TTCRed,line width=.6pt] (\x,106) -- (\x,100);
   }
-  \node[anchor=west,text=TTCRed,font=\fontsize{6.5}{8}\selectfont\bfseries]
-    at (16,112) {TẢI TRỌNG ĐỘNG TỪ CỤM MÁY SẢN XUẤT};
-  \draw[TTCCyan,line width=1.2pt,dashed] (17,87) -- (127,87);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.3}{7.5}\selectfont\bfseries]
-    at (19,82) {TUYẾN MEP / HVAC PHỐI HỢP DƯỚI SÀN};
-  \draw[<->,>=Latex,TTCBlue,line width=.8pt] (16,60) -- (128,60);
-  \node[fill=TTCLightBlue,text=TTCBlue,font=\fontsize{6.5}{8}\selectfont\bfseries]
-    at (72,60) {KHÔNG GIAN SẢN XUẤT HAI TẦNG};
+  \node[anchor=west,text=TTCRed,font=\fontsize{6.3}{7.5}\selectfont\bfseries]
+    at (16,112) {MẠNG LƯỚI CHỮA CHÁY TỰ ĐỘNG FOAM \& SPRINKLER};
+
+  % Bồn khuấy & Dây chuyền sản xuất
+  \fill[white] (22,72) rectangle (40,94);
+  \draw[TTCBorder,line width=.7pt] (22,72) rectangle (40,94);
+  \node[align=center,text=TTCBlue,font=\fontsize{6}{7.2}\selectfont\bfseries] at (31,83) {BỒN KHUẤY\\PHA SƠN};
+
+  \fill[white] (50,72) rectangle (72,94);
+  \draw[TTCBorder,line width=.7pt] (50,72) rectangle (72,94);
+  \node[align=center,text=TTCBlue,font=\fontsize{6}{7.2}\selectfont\bfseries] at (61,83) {DÂY CHUYỀN\\ĐÓNG THÙNG};
+
+  \fill[white] (82,72) rectangle (120,94);
+  \draw[TTCBorder,line width=.7pt] (82,72) rectangle (120,94);
+  \node[align=center,text=TTCBlue,font=\fontsize{6}{7.2}\selectfont\bfseries] at (101,83) {KHO THÀNH PHẨM \&\\NGUYÊN LIỆU HÓA CHẤT};
+
+  % Sàn Epoxy
+  \fill[TTCDeepNavy!85!black] (10,64) rectangle (130,68);
+  \node[anchor=north west,text=TTCDeepNavy,font=\fontsize{6.2}{7.5}\selectfont\bfseries]
+    at (12,63) {SÀN BÊ TÔNG PHỦ EPOXY TỰ PHẲNG KHÁNG HÓA CHẤT};
 
   % Chú giải bên phải
-  \draw[TTCBorder] (138,60) -- (138,127);
+  \draw[TTCBorder] (136,58) -- (136,128);
   \node[anchor=north west,text=TTCBlue,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
-    at (145,124) {3 QUYẾT ĐỊNH THIẾT KẾ};
-  \node[anchor=north west,text width=34mm,align=left,text=TTCTextDark,
-        font=\fontsize{6.7}{8.3}\selectfont]
-    at (145,114) {\textbf{01 • Sàn liên hợp}\newline
-                  Deck mạ kẽm và bê tông cốt thép tạo mặt sàn tải nặng.};
-  \node[anchor=north west,text width=34mm,align=left,text=TTCTextDark,
-        font=\fontsize{6.7}{8.3}\selectfont]
-    at (145,92) {\textbf{02 • Kiểm soát rung}\newline
-                  Phân vùng tải và đường truyền lực rõ ràng theo khu máy.};
-  \node[anchor=north west,text width=34mm,align=left,text=TTCTextDark,
-        font=\fontsize{6.7}{8.3}\selectfont]
-    at (145,70) {\textbf{03 • Phối hợp MEP}\newline
-                  Dành trước không gian HVAC và tuyến kỹ thuật dưới sàn.};
+    at (141,126) {3 QUYẾT ĐỊNH KỸ THUẬT};
+  \node[anchor=north west,text width=40mm,align=left,text=TTCTextDark,
+        font=\fontsize{6.5}{8.1}\selectfont]
+    at (141,117) {\textbf{01 • Kháng hóa chất}\newline
+                  Sàn bê tông liên hợp phủ Epoxy tự phẳng kháng dung môi hữu cơ.};
+  \node[anchor=north west,text width=40mm,align=left,text=TTCTextDark,
+        font=\fontsize{6.5}{8.1}\selectfont]
+    at (141,94) {\textbf{02 • An toàn PCCC}\newline
+                  Tường ngăn cháy lan Rockwool, hệ thống bọt Foam \& báo cháy theo hồ sơ được duyệt.};
+  \node[anchor=north west,text width=40mm,align=left,text=TTCTextDark,
+        font=\fontsize{6.5}{8.1}\selectfont]
+    at (141,71) {\textbf{03 • Thông gió vi khí hậu}\newline
+                  Cửa Louver đối lưu khí tự nhiên liên tục giải phóng nồng độ hơi dung môi.};
 
   % Ba ý ghi nhớ
-  \fill[white,rounded corners=3pt] (0,9) rectangle (58,45);
-  \draw[TTCBorder,rounded corners=3pt] (0,9) rectangle (58,45);
+  \fill[white,rounded corners=3pt] (0,20) rectangle (58,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (0,20) rectangle (58,52);
   \node[anchor=north west,text=TTCRed,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (5,39) {01 • TẢI NẶNG};
+    at (5,47) {01 • PCCC CHUYÊN DỤNG};
   \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
-    at (5,30) {Sàn tầng hai được tổ chức theo khu vực tải và thiết bị.};
+    at (5,38) {Hệ thống chữa cháy bọt Foam và giải pháp ngăn cháy lan theo hồ sơ được duyệt.};
 
-  \fill[white,rounded corners=3pt] (64,9) rectangle (122,45);
-  \draw[TTCBorder,rounded corners=3pt] (64,9) rectangle (122,45);
+  \fill[white,rounded corners=3pt] (64,20) rectangle (122,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (64,20) rectangle (122,52);
   \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (69,39) {02 • PHỐI HỢP};
+    at (69,47) {02 • SÀN KHÁNG ĂN MÒN};
   \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
-    at (69,30) {Kết cấu và MEP được khóa giao diện trước khi triển khai.};
+    at (69,38) {Bê tông cốt thép phủ Epoxy kháng dung môi và hóa chất theo yêu cầu vận hành.};
 
-  \fill[white,rounded corners=3pt] (128,9) rectangle (186,45);
-  \draw[TTCBorder,rounded corners=3pt] (128,9) rectangle (186,45);
+  \fill[white,rounded corners=3pt] (128,20) rectangle (186,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (128,20) rectangle (186,52);
   \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (133,39) {03 • TIẾN ĐỘ};
+    at (133,47) {03 • TIẾN ĐỘ EPC};
   \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
-    at (133,30) {Chu kỳ kết cấu, sàn và cơ điện được triển khai theo nhịp lặp.};
+    at (133,38) {Bàn giao trọn gói đồng bộ cụm xưởng sản xuất, kho và khu điều hành.};
 
-  \fill[TTCDeepNavy,rounded corners=2pt] (0,0) rectangle (186,6);
+  \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,14);
+  \node[anchor=west,text=white,font=\fontsize{7.4}{9}\selectfont\bfseries]
+    at (7,7) {GIÁ TRỊ CỐT LÕI: AN TOÀN CHÁY NỔ HÓA CHẤT • SÀN BỀN VỮNG KHÁNG ĂN MÒN};
 \end{tikzpicture}
 \end{minipage}
 \newpage
 """
 
 PAGE_24 = r"""% ============================================================
-% TRANG 24: PROCESS CASE -- TỔ HỢP JAPFA COMFEED
+% TRANG 24: INJECTION MOLDING CASE -- NHÀ MÁY NHỰA SENDAI VIỆT NAM
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{CÔNG TRÌNH CÔNG NGHỆ • JAPFA COMFEED}{Trang 24}
+\casepagebars{GIẢI PHÁP KỸ THUẬT • NHÀ MÁY NHỰA SENDAI}{Trang 24}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Hồ Sơ Dự Án 03: Tổ Hợp Japfa Comfeed}{Process-industry case • High-rise silo • Dynamic-load and dust control}
+\secbrand{Hồ Sơ Dự Án 03: Nhà Máy Sản Xuất Nhựa Sendai Việt Nam}{High-tech plastics manufacturing plant • Injection molding facility • KCN Số 3, Hưng Yên}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
   \path[use as bounding box] (0,0) rectangle (186,220);
 
-  % Ảnh nhỏ và bảng số liệu 2x2
+  % Phối cảnh và thẻ dữ liệu
   \begin{scope}
-    \clip[rounded corners=4pt] (0,151) rectangle (68,219);
-    \node[inner sep=0pt] at (34,185)
-      {\includegraphics[width=68mm,height=68mm]{../../public/project-assets/japfa.jpg}};
-    \fill[TTCDeepNavy,opacity=.9] (0,151) rectangle (68,162);
+    \clip[rounded corners=4pt] (0,148) rectangle (104,220);
+    \node[inner sep=0pt] at (52,184)
+      {\includegraphics[width=104mm,height=77.5mm]{../../public/project-assets/sendai_1.jpg}};
+    \fill[TTCDeepNavy,opacity=.88] (0,148) rectangle (104,160);
     \node[anchor=west,text=white,font=\fontsize{7}{8}\selectfont\bfseries]
-      at (4,156.5) {ẢNH DỰ ÁN • JAPFA COMFEED};
+      at (4,154) {PHỐI CẢNH TỔNG THỂ • KCN SỐ 03, HƯNG YÊN};
   \end{scope}
-  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,151) rectangle (68,219);
+  % Không có ảnh hiện trường trong bộ nguồn: dùng góc phối cảnh thứ hai và ghi nhãn rõ
+  \begin{scope}
+    \clip[rounded corners=2pt] (68,190) rectangle (101,216);
+    \node[inner sep=0pt] at (84.5,203)
+      {\includegraphics[width=50mm,height=26mm]{../../public/project-assets/sendai_3.jpg}};
+  \end{scope}
+  \draw[white,line width=1.2pt,rounded corners=2pt] (68,190) rectangle (101,216);
+  \fill[TTCDeepNavy,opacity=.88] (68,190) rectangle (101,197);
+  \node[anchor=west,text=white,font=\fontsize{4.6}{5.4}\selectfont\bfseries]
+    at (70,193.5) {PHỐI CẢNH MẶT ĐỨNG};
+  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,148) rectangle (104,220);
 
-  \fill[TTCLightBlue,rounded corners=4pt] (72,151) rectangle (186,219);
-  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (72,151) rectangle (186,219);
+  \fill[TTCDeepNavy,rounded corners=4pt] (108,148) rectangle (186,220);
+  \node[anchor=north west,text=TTCCyan,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
+    at (114,214) {TỔNG THẦU THI CÔNG};
+  \node[anchor=north west,text=white,font=\fontsize{13.5}{15}\selectfont\bfseries]
+    at (114,206) {TỔ HỢP NHỰA SENDAI};
+  \node[anchor=north west,text=white!75!gray,font=\fontsize{6.5}{8}\selectfont]
+    at (114,192) {CỤM 2 PHÂN XƯỞNG \& KHỐI VĂN PHÒNG};
+  \draw[white!25!gray] (114,184) -- (180,184);
+  \node[anchor=north west,text width=66mm,align=left,text=white,
+        font=\fontsize{7.2}{9}\selectfont]
+    at (114,179) {\textbf{Chủ đầu tư:} Cty CP Nhựa Sendai Việt Nam\\[1mm]
+                  \textbf{Địa điểm:} Lô C7, KCN Số 3, Ân Thi, Hưng Yên\\[1mm]
+                  \textbf{Quy mô:} 2 Xưởng đúc ép \& Nhà VP 3 tầng\\[1mm]
+                  \textbf{Tân Thành Công JSC:} Tổng thầu thi công xây dựng \& MEP};
+
+  % Sơ đồ kỹ thuật: Nhà xưởng đúc ép nhựa & mạng lưới phụ trợ MEP
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (78,211) {CỤM DỰ ÁN VĨNH PHÚC / THÁI BÌNH};
-  \draw[TTCBorder] (129,158) -- (129,204);
-  \draw[TTCBorder] (78,181) -- (180,181);
-  \node[align=center,text width=45mm] at (103.5,193) {
-    {\fontsize{12}{13}\selectfont\bfseries\color{TTCRed}50.000 m$^2$}\\[-.5mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}DIỆN TÍCH QUY HOẠCH}};
-  \node[align=center,text width=45mm] at (154.5,193) {
-    {\fontsize{12}{13}\selectfont\bfseries\color{TTCBlue}SILO 45M}\\[-.5mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}CHIỀU CAO CỤM THÁP}};
-  \node[align=center,text width=45mm] at (103.5,169) {
-    {\fontsize{12}{13}\selectfont\bfseries\color{TTCBlue}2.800 TẤN}\\[-.5mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}KẾT CẤU THÉP PEB}};
-  \node[align=center,text width=45mm] at (154.5,169) {
-    {\fontsize{12}{13}\selectfont\bfseries\color{TTCBlue}165 NGÀY}\\[-.5mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}TIẾN ĐỘ THI CÔNG}};
+    at (0,140) {SƠ ĐỒ NGUYÊN LÝ • DÂY CHUYỀN ĐÚC ÉP NHỰA \& HỆ THỐNG PHỤ TRỢ MEP};
+  \fill[TTCLightBlue,rounded corners=4pt] (0,53) rectangle (186,134);
+  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,53) rectangle (186,134);
 
-  % Câu chuyện theo chiều cao
-  \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (0,143) {CÂU CHUYỆN KỸ THUẬT • TỪ MÓNG ĐỘNG LỰC ĐẾN ĐỈNH SILO};
-  \fill[TTCLightBlue,rounded corners=4pt] (0,56) rectangle (54,137);
-  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,56) rectangle (54,137);
+  % Bản vẽ sơ đồ phân xưởng đúc ép
+  % Mái dốc kết cấu thép PEB
+  \draw[TTCBlue,line width=1.4pt] (12,122) -- (68,130) -- (128,122);
 
-  % Tháp silo mô phỏng
-  \fill[TTCBlue!10!white] (19,69) rectangle (42,123);
-  \draw[TTCBlue,line width=1.1pt] (19,69) rectangle (42,123);
-  \foreach \y in {80,91,102,113}{\draw[TTCBorder] (19,\y) -- (42,\y);}
-  \draw[TTCBlue,line width=1.1pt] (16,69) -- (45,69);
-  \fill[TTCDeepNavy] (12,62) rectangle (49,69);
-  \draw[<->,>=Latex,TTCRed,line width=.9pt] (9,69) -- (9,123);
-  \node[rotate=90,text=TTCRed,font=\fontsize{9}{10}\selectfont\bfseries]
-    at (4,96) {45 MÉT};
-  \node[text=TTCBlue,font=\fontsize{6.5}{7.5}\selectfont\bfseries]
-    at (30.5,129) {CỤM SILO};
-  \node[text=white,font=\fontsize{6.2}{7.2}\selectfont\bfseries]
-    at (30.5,65.5) {MÓNG D800};
+  % Khung cột thép
+  \draw[TTCBlue,line width=1.4pt] (12,67) -- (12,122);
+  \draw[TTCBlue,line width=1.4pt] (128,67) -- (128,122);
+  \foreach \x in {41,70,99}{
+    \draw[TTCBlue,line width=1pt,dashed] (\x,67) -- (\x,125);
+  }
 
-  % Ba rủi ro -- ba phản hồi
-  \fill[white,rounded corners=3pt] (60,108) rectangle (186,137);
-  \draw[TTCBorder,rounded corners=3pt] (60,108) rectangle (186,137);
-  \fill[TTCRed] (60,108) rectangle (63,137);
+  % Dầm cầu trục chạy trên cao (Overhead Crane)
+  \draw[TTCRed,line width=1.4pt] (14,112) -- (126,112);
+  \fill[TTCRed] (44,110) rectangle (58,114);
+  \node[anchor=south,text=TTCRed,font=\fontsize{5.8}{7}\selectfont\bfseries] at (51,114.8) {CẦU TRỤC PHỤC VỤ THAY KHUÔN};
+  \draw[-{Latex[length=1.5mm]},TTCRed,line width=.8pt] (51,110) -- (51,96);
+
+  % Tuyến đường ống Chiller / Nước giải nhiệt & Khí nén
+  \draw[TTCCyan,line width=1.2pt,dashed] (15,102) -- (125,102);
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.3}{7.5}\selectfont\bfseries]
+    at (16,105) {ĐƯỜNG ỐNG CHILLER LÀM MÁT KHUÔN \& KHÍ NÉN TRUNG TÂM};
+
+  % Cụm máy ép phun thủy lực (Injection Molding Machines)
+  \foreach \x/\label in {20/{MÁY ÉP 01\\350 TẤN}, 56/{MÁY ÉP 02\\650 TẤN}, 92/{MÁY ÉP 03\\850 TẤN}}{
+    \fill[white] (\x,72) rectangle +(28,22);
+    \draw[TTCBorder,line width=.7pt] (\x,72) rectangle +(28,22);
+    \node[align=center,text=TTCBlue,font=\fontsize{6}{7.2}\selectfont\bfseries] at (\x+14,83) {\label};
+    % Mũi tên cấp Chiller
+    \draw[-{Latex[length=1.2mm]},TTCCyan,line width=.6pt] (\x+14,102) -- (\x+14,94);
+  }
+
+  % Sàn bê tông gia cường chịu tải máy ép
+  \fill[TTCDeepNavy!85!black] (10,64) rectangle (130,68);
+  \node[anchor=north west,text=TTCDeepNavy,font=\fontsize{6.2}{7.5}\selectfont\bfseries]
+    at (12,63) {SÀN BÊ TÔNG GIA CƯỜNG CHỐNG RUNG ĐỘNG CHU KỲ ÉP};
+
+  % Chú giải bên phải
+  \draw[TTCBorder] (136,58) -- (136,128);
+  \node[anchor=north west,text=TTCBlue,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
+    at (141,126) {3 QUYẾT ĐỊNH KỸ THUẬT};
+  \node[anchor=north west,text width=40mm,align=left,text=TTCTextDark,
+        font=\fontsize{6.5}{8.1}\selectfont]
+    at (141,117) {\textbf{01 • Sàn chịu tải máy ép}\newline
+                  Bê tông cốt thép mác cao chống lún lệch và triệt tiêu rung động máy ép.};
+  \node[anchor=north west,text width=40mm,align=left,text=TTCTextDark,
+        font=\fontsize{6.5}{8.1}\selectfont]
+    at (141,94) {\textbf{02 • Hạ tầng Chiller}\newline
+                  Mạng lưới nước làm mát tuần hoàn khép kín cấp trực tiếp đến từng khuôn.};
+  \node[anchor=north west,text width=40mm,align=left,text=TTCTextDark,
+        font=\fontsize{6.5}{8.1}\selectfont]
+    at (141,71) {\textbf{03 • Tổ hợp 2 xưởng \& VP}\newline
+                  Quy hoạch giao thông nội bộ kết nối nhịp nhàng giữa xưởng và điều hành.};
+
+  % Ba ý ghi nhớ
+  \fill[white,rounded corners=3pt] (0,20) rectangle (58,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (0,20) rectangle (58,52);
+  \node[anchor=north west,text=TTCRed,font=\fontsize{8}{9}\selectfont\bfseries]
+    at (5,47) {01 • ĐÚC ÉP KỸ THUẬT};
+  \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
+    at (5,38) {Nhà xưởng khẩu độ lớn tích hợp cầu trục thay khuôn theo dữ liệu thiết bị.};
+
+  \fill[white,rounded corners=3pt] (64,20) rectangle (122,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (64,20) rectangle (122,52);
   \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (69,132) {01 • TẢI ĐỘNG MÁY NGHIỀN};
-  \node[anchor=north west,text width=108mm,text=TTCTextDark,font=\fontsize{6.9}{8.4}\selectfont]
-    at (69,122) {Móng cọc khoan nhồi sâu D800 kết hợp lớp giảm chấn để kiểm soát rung truyền sang khu vực lân cận.};
+    at (69,47) {02 • MEP LÀM MÁT};
+  \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
+    at (69,38) {Hệ thống Chiller giải nhiệt, khí nén trung tâm và trạm điện đồng bộ.};
 
-  \fill[white,rounded corners=3pt] (60,76) rectangle (186,105);
-  \draw[TTCBorder,rounded corners=3pt] (60,76) rectangle (186,105);
-  \fill[TTCBlue] (60,76) rectangle (63,105);
+  \fill[white,rounded corners=3pt] (128,20) rectangle (186,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (128,20) rectangle (186,52);
   \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (69,100) {02 • LẮP DỰNG THEO CAO ĐỘ};
-  \node[anchor=north west,text width=108mm,text=TTCTextDark,font=\fontsize{6.9}{8.4}\selectfont]
-    at (69,90) {Chia tháp thành các phân đoạn lắp dựng; kiểm soát cao độ, độ thẳng đứng và liên kết tại từng điểm dừng kỹ thuật.};
+    at (133,47) {03 • TIẾN ĐỘ TỔNG THẦU};
+  \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
+    at (133,38) {Thi công trọn gói 2 xưởng sản xuất, kho và khối nhà văn phòng 3 tầng.};
 
-  \fill[white,rounded corners=3pt] (60,44) rectangle (186,73);
-  \draw[TTCBorder,rounded corners=3pt] (60,44) rectangle (186,73);
-  \fill[TTCBlue] (60,44) rectangle (63,73);
-  \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (69,68) {03 • BỤI VÀ AN TOÀN QUY TRÌNH};
-  \node[anchor=north west,text width=108mm,text=TTCTextDark,font=\fontsize{6.9}{8.4}\selectfont]
-    at (69,58) {Tích hợp thu gom bụi, thông gió và giải pháp xả áp theo yêu cầu vận hành ATEX / HACCP của dây chuyền.};
-
-  % Chuỗi phạm vi TTC
-  \fill[TTCDeepNavy,rounded corners=4pt] (0,0) rectangle (186,35);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{8}\selectfont\bfseries]
-    at (7,28) {PHẠM VI TRIỂN KHAI};
-  \foreach \x in {46.5,93,139.5}{\draw[white!25!gray] (\x,6) -- (\x,25);}
-  \node[align=center,text width=39mm,text=white,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
-    at (23.25,15) {MÓNG SÂU\\[-.5mm]{\fontsize{5.8}{7}\selectfont\color{white!70!gray}TẢI TĨNH + TẢI ĐỘNG}};
-  \node[align=center,text width=39mm,text=white,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
-    at (69.75,15) {KẾT CẤU PEB\\[-.5mm]{\fontsize{5.8}{7}\selectfont\color{white!70!gray}SẢN XUẤT \& LẮP DỰNG}};
-  \node[align=center,text width=39mm,text=white,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
-    at (116.25,15) {CỤM SILO\\[-.5mm]{\fontsize{5.8}{7}\selectfont\color{white!70!gray}KIỂM SOÁT CAO ĐỘ}};
-  \node[align=center,text width=39mm,text=white,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
-    at (162.75,15) {HỆ THỐNG PHỤ TRỢ\\[-.5mm]{\fontsize{5.8}{7}\selectfont\color{white!70!gray}BỤI • ĐIỆN • AN TOÀN}};
+  \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,14);
+  \node[anchor=west,text=white,font=\fontsize{7.4}{9}\selectfont\bfseries]
+    at (7,7) {GIÁ TRỊ CỐT LÕI: HẠ TẦNG SẢN XUẤT NHỰA KỸ THUẬT • HỆ THỐNG PHỤ TRỢ MEP ĐỒNG BỘ};
 \end{tikzpicture}
 \end{minipage}
 \newpage
 """
 
 PAGE_25 = r"""% ============================================================
-% TRANG 25: CLEANROOM CASE -- DAEYUN ST VINA
+% TRANG 25: CASE STUDY 04 -- NHÀ MÁY MAY LÀO CAI
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{HỆ THỐNG PHÒNG SẠCH • DAEYUN ST VINA}{Trang 25}
+\casepagebars{GIẢI PHÁP KỸ THUẬT • NHÀ MÁY MAY LÀO CAI}{Trang 25}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Hồ Sơ Dự Án 04: Nhà Máy Daeyun ST Vina}{Integrated cleanroom systems • KCN Bá Thiện 2, Vĩnh Phúc}
+\secbrand{Hồ Sơ Dự Án 04: Tổ Hợp Nhà Máy May Lào Cai}{Multi-storey garment manufacturing complex • Negative pressure cooling • Phố Mới, TP. Lào Cai}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
   \path[use as bounding box] (0,0) rectangle (186,220);
 
-  % Phối cảnh ngang + thẻ dữ liệu dọc
+  % Phối cảnh dự án (trái)
   \begin{scope}
-    \clip[rounded corners=4pt] (0,157) rectangle (118,219);
-    \node[inner sep=0pt] at (59,188)
-      {\includegraphics[width=118mm]{../../public/project-assets/daeyun.jpg}};
-    \fill[TTCDeepNavy,opacity=.88] (0,157) rectangle (118,168);
-    \node[anchor=west,text=white,font=\fontsize{7}{8}\selectfont\bfseries]
-      at (4,162.5) {PHỐI CẢNH DỰ ÁN • KCN BÁ THIỆN 2};
+    \clip[rounded corners=4pt] (0,148) rectangle (104,220);
+    \node[inner sep=0pt] at (52,175)
+      {\includegraphics[width=128mm]{../../public/project-assets/laocai_4.jpg}};
+    \fill[TTCDeepNavy,opacity=.92] (0,148) rectangle (104,158);
+    \node[anchor=west,text=white,font=\fontsize{6.8}{8}\selectfont\bfseries]
+      at (4,153) {PHỐI CẢNH TỔNG THỂ • ĐƯỜNG PHỐ MỚI, TP. LÀO CAI};
   \end{scope}
-  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,157) rectangle (118,219);
+  % Góc quy hoạch bổ sung để làm rõ tổ chức ba khối xưởng
+  \begin{scope}
+    \clip[rounded corners=2pt] (70,184) rectangle (101,216);
+    \node[inner sep=0pt] at (85.5,200)
+      {\includegraphics[width=42mm,height=32mm]{../../public/project-assets/laocai_3.jpg}};
+  \end{scope}
+  \draw[white,line width=1.2pt,rounded corners=2pt] (70,184) rectangle (101,216);
+  \fill[TTCDeepNavy,opacity=.88] (70,184) rectangle (101,191);
+  \node[anchor=west,text=white,font=\fontsize{4.6}{5.4}\selectfont\bfseries]
+    at (72,187.5) {MẶT BẰNG QUY HOẠCH};
+  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,148) rectangle (104,220);
 
-  \fill[TTCDeepNavy,rounded corners=4pt] (122,157) rectangle (186,219);
-  \node[anchor=north west,text=TTCCyan,font=\fontsize{7}{8}\selectfont\bfseries]
-    at (128,213) {THÔNG TIN DỰ ÁN};
-  \node[anchor=north west,text=white,font=\fontsize{13}{14}\selectfont\bfseries]
-    at (128,203) {20.000 m$^2$};
-  \node[anchor=north west,text=white!70!gray,font=\fontsize{6}{7.2}\selectfont]
-    at (128,190) {DIỆN TÍCH SÀN};
-  \draw[white!25!gray] (128,184) -- (180,184);
-  \node[anchor=north west,text width=48mm,align=left,text=white,
-        font=\fontsize{6.8}{8.4}\selectfont]
-    at (128,180) {\textbf{Phân loại:} Xưởng sạch\\
-                  \textbf{Yêu cầu:} Class 10.000\\
-                  \textbf{Tiến độ:} 140 ngày};
+  % Thẻ dữ liệu dự án (phải)
+  \fill[TTCDeepNavy,rounded corners=4pt] (108,148) rectangle (186,220);
+  \node[anchor=north west,text=TTCCyan,font=\fontsize{6.8}{8}\selectfont\bfseries]
+    at (114,214) {TƯ VẤN THIẾT KẾ \& THI CÔNG};
+  \node[anchor=north west,text=white,font=\fontsize{11.5}{13}\selectfont\bfseries]
+    at (114,204) {NHÀ MÁY MAY LÀO CAI};
+  \node[anchor=north west,text=white!75!gray,font=\fontsize{6}{7.2}\selectfont]
+    at (114,192) {TỔ HỢP 3 KHỐI NHÀ XƯỞNG 5 TẦNG};
+  \draw[white!25!gray] (114,186) -- (180,186);
+  \node[anchor=north west,text width=66mm,align=left,text=white,
+        font=\fontsize{6.5}{8.5}\selectfont]
+    at (114,181) {\textbf{Chủ đầu tư:} Công ty May Lào Cai\\[1mm]
+                  \textbf{Địa điểm:} Đ. Phố Mới, TP. Lào Cai\\[1mm]
+                  \textbf{Quy mô:} 3 Khối xưởng 5 tầng • Khu xuất nhập\\[1mm]
+                  \textbf{Tân Thành Công JSC:} Thiết kế kiến trúc \& Tổng thầu thi công};
 
-  % Bản đồ hệ thống
+  % Khung sơ đồ kỹ thuật
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (0,149) {BẢN ĐỒ HỆ THỐNG • BỐN LỚP PHẢI HOẠT ĐỘNG NHƯ MỘT};
-  \fill[TTCLightBlue,rounded corners=4pt] (0,57) rectangle (186,143);
-  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,57) rectangle (186,143);
+    at (0,141) {SƠ ĐỒ NGUYÊN LÝ • XƯỞNG MAY CAO TẦNG \& VI KHÍ HẬU ÁP SUẤT ÂM};
+  \fill[TTCLightBlue,rounded corners=4pt] (0,53) rectangle (186,134);
+  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,53) rectangle (186,134);
 
-  % Trung tâm sản xuất
-  \fill[TTCDeepNavy,rounded corners=4pt] (68,88) rectangle (118,116);
-  \node[align=center,text=white,text width=42mm,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (93,102) {VÙNG SẢN XUẤT SẠCH\\[-.5mm]
-    {\fontsize{6}{7.2}\selectfont\color{white!70!gray}ỔN ĐỊNH • KÍN • CHỐNG TĨNH ĐIỆN}};
+  % Vùng phân tích kỹ thuật bên phải sơ đồ
+  \fill[white,rounded corners=3pt] (130,58) rectangle (181,129);
+  \draw[TTCBorder,rounded corners=3pt,line width=.6pt] (130,58) rectangle (181,129);
+  \node[anchor=north west,text=TTCBlue,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
+    at (134,125) {3 QUYẾT ĐỊNH KỸ THUẬT};
 
-  % Bốn mô-đun xung quanh
-  \fill[white,rounded corners=3pt] (7,108) rectangle (58,136);
-  \draw[TTCBorder,rounded corners=3pt] (7,108) rectangle (58,136);
-  \node[anchor=north west,text=TTCBlue,font=\fontsize{7.5}{8.5}\selectfont\bfseries]
-    at (12,131) {01 • BAO CHE KÍN};
-  \node[anchor=north west,text width=41mm,text=TTCTextDark,font=\fontsize{6.4}{7.8}\selectfont]
-    at (12,121) {Panel vách và trần hạn chế xâm nhập bụi, duy trì phân vùng áp suất.};
+  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
+    at (134,117) {\textbf{01 • Sàn nhiều tầng chịu tải}\\[.3mm]
+    \color{TTCTextDark}Hệ dầm sàn liên hợp triệt tiêu rung động cộng hưởng từ hàng ngàn máy may.};
 
-  \fill[white,rounded corners=3pt] (128,108) rectangle (179,136);
-  \draw[TTCBorder,rounded corners=3pt] (128,108) rectangle (179,136);
-  \node[anchor=north west,text=TTCBlue,font=\fontsize{7.5}{8.5}\selectfont\bfseries]
-    at (133,131) {02 • AHU / HEPA};
-  \node[anchor=north west,text width=41mm,text=TTCTextDark,font=\fontsize{6.4}{7.8}\selectfont]
-    at (133,121) {Cấp và hồi khí có lọc; cân bằng lưu lượng theo từng khu vực chức năng.};
+  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
+    at (134,94) {\textbf{02 • Vi khí hậu áp suất âm}\\[.3mm]
+    \color{TTCTextDark}Cooling Pad \& quạt hút đối lưu, lọc sạch bụi bông và cấp khí tươi liên tục.};
 
-  \fill[white,rounded corners=3pt] (7,64) rectangle (58,92);
-  \draw[TTCBorder,rounded corners=3pt] (7,64) rectangle (58,92);
-  \node[anchor=north west,text=TTCRed,font=\fontsize{7.5}{8.5}\selectfont\bfseries]
-    at (12,87) {03 • NHIỆT / ẨM};
-  \node[anchor=north west,text width=41mm,text=TTCTextDark,font=\fontsize{6.4}{7.8}\selectfont]
-    at (12,77) {Kiểm soát mục tiêu $\pm1^\circ$C và $\pm5\%$ theo yêu cầu dây chuyền.};
+  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
+    at (134,71) {\textbf{03 • Cụm 3 khối xưởng}\\[.3mm]
+    \color{TTCTextDark}Quy hoạch luồng xuất nhập hàng container và thang nâng theo yêu cầu vận hành.};
 
-  \fill[white,rounded corners=3pt] (128,64) rectangle (179,92);
-  \draw[TTCBorder,rounded corners=3pt] (128,64) rectangle (179,92);
-  \node[anchor=north west,text=TTCBlue,font=\fontsize{7.5}{8.5}\selectfont\bfseries]
-    at (133,87) {04 • SÀN ESD};
-  \node[anchor=north west,text width=41mm,text=TTCTextDark,font=\fontsize{6.4}{7.8}\selectfont]
-    at (133,77) {Vinyl dẫn điện và mạng tiếp địa hỗ trợ kiểm soát phóng tĩnh điện.};
+  % Bản vẽ mặt cắt nhà xưởng may nhiều tầng (Multi-storey Garment Factory Cross-section)
+  % Khung kết cấu bao che
+  \draw[TTCBlue,line width=1.4pt] (10,65) -- (10,123) -- (67,130) -- (124,123) -- (124,65);
 
-  \draw[-{Latex[length=2mm]},TTCCyan,line width=.9pt] (58,122) -- (68,108);
-  \draw[-{Latex[length=2mm]},TTCCyan,line width=.9pt] (128,122) -- (118,108);
-  \draw[-{Latex[length=2mm]},TTCCyan,line width=.9pt] (58,78) -- (68,94);
-  \draw[-{Latex[length=2mm]},TTCCyan,line width=.9pt] (128,78) -- (118,94);
+  % Cột chịu lực giữa (mờ để không rối text)
+  \draw[TTCBlue!40,line width=.8pt,dashed] (48,65) -- (48,127);
+  \draw[TTCBlue!40,line width=.8pt,dashed] (86,65) -- (86,127);
 
-  % Kết quả ghi nhớ
-  \fill[white,rounded corners=3pt] (0,10) rectangle (58,48);
-  \draw[TTCBorder,rounded corners=3pt] (0,10) rectangle (58,48);
-  \node[align=center,text width=48mm] at (29,29) {
-    {\fontsize{10}{11}\selectfont\bfseries\color{TTCRed}CLASS 10.000}\\[-.5mm]
-    {\fontsize{6.4}{7.6}\selectfont\color{TTCTextMuted}YÊU CẦU MÔI TRƯỜNG SẠCH}};
+  % Trục thang nâng hàng tải nặng (Freight Elevator Shaft) bên trái
+  \fill[TTCDeepNavy!15] (10,65) rectangle (24,123);
+  \draw[TTCBlue,line width=1.1pt] (24,65) -- (24,123);
+  \node[rotate=90,align=center,text=TTCDeepNavy,font=\fontsize{5.2}{6.2}\selectfont\bfseries] at (17,94) {THANG HÀNG 3--5 TẤN};
 
-  \fill[white,rounded corners=3pt] (64,10) rectangle (122,48);
-  \draw[TTCBorder,rounded corners=3pt] (64,10) rectangle (122,48);
-  \node[align=center,text width=48mm] at (93,29) {
-    {\fontsize{10}{11}\selectfont\bfseries\color{TTCBlue}ESD VINYL}\\[-.5mm]
-    {\fontsize{6.4}{7.6}\selectfont\color{TTCTextMuted}BẢO VỆ LINH KIỆN ĐIỆN TỬ}};
+  % Các tầng sàn dầm thép liên hợp (Floor slabs)
+  \draw[TTCBlue,line width=1.2pt] (24,78) -- (124,78);
+  \draw[TTCBlue,line width=1.2pt] (24,91) -- (124,91);
+  \draw[TTCBlue,line width=1.2pt] (24,104) -- (124,104);
+  \draw[TTCBlue,line width=1.2pt] (24,117) -- (124,117);
 
-  \fill[white,rounded corners=3pt] (128,10) rectangle (186,48);
-  \draw[TTCBorder,rounded corners=3pt] (128,10) rectangle (186,48);
-  \node[align=center,text width=48mm] at (157,29) {
-    {\fontsize{10}{11}\selectfont\bfseries\color{TTCBlue}140 NGÀY}\\[-.5mm]
-    {\fontsize{6.4}{7.6}\selectfont\color{TTCTextMuted}TIẾN ĐỘ THEO HỒ SƠ HIỆN TẠI}};
+  % Text nhãn từng tầng
+  \node[anchor=west,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries] at (26,74) {TẦNG 1: KHO NGUYÊN PHỤ LIỆU \& XUẤT NHẬP THÀNH PHẨM};
+  \node[anchor=west,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries] at (26,87) {TẦNG 2: PHÂN XƯỞNG CẮT \& MAY MẪU};
+  \node[anchor=west,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries] at (26,100) {TẦNG 3: DÂY CHUYỀN MAY XUẤT KHẨU 01};
+  \node[anchor=west,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries] at (26,113) {TẦNG 4: DÂY CHUYỀN MAY XUẤT KHẨU 02};
+  \node[anchor=west,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries] at (26,122.5) {TẦNG 5: HOÀN THIỆN, ỦI \& ĐÓNG GÓI};
 
-  \fill[TTCDeepNavy,rounded corners=2pt] (0,0) rectangle (186,6);
+  % Biểu tượng máy may trên các tầng 2, 3, 4
+  \foreach \y in {78, 91, 104}{
+    \foreach \x in {34, 58, 74, 98, 114}{
+      \fill[white] (\x-3.5,\y+1.5) rectangle +(6.5,4);
+      \draw[TTCBorder,line width=.4pt] (\x-3.5,\y+1.5) rectangle +(6.5,4);
+      \draw[TTCRed,line width=.5pt] (\x-1.5,\y+2.5) -- (\x+1.5,\y+2.5);
+    }
+  }
+
+  % Tuyến làm mát áp suất âm & Hút bụi vải (Cooling & Exhaust airflow)
+  \foreach \y in {70, 82.5, 95.5, 108.5}{
+    \draw[TTCCyan,line width=.8pt,dash pattern=on 3pt off 2pt] (26,\y) -- (122,\y);
+    \draw[-{Latex[length=1.1mm]},TTCCyan,line width=.7pt] (62,\y) -- (70,\y);
+    \draw[-{Latex[length=1.1mm]},TTCCyan,line width=.7pt] (98,\y) -- (106,\y);
+  }
+
+  % Móng & Sàn liên hợp đáy
+  \fill[TTCDeepNavy] (9,58) rectangle (125,65);
+  \node[anchor=center,text=white,font=\fontsize{5.4}{6.5}\selectfont\bfseries]
+    at (67,61.5) {HỆ DẦM SÀN LIÊN HỢP CHỊU TẢI ĐỘNG DÀN MÁY MAY};
+
+  % 3 Thẻ ghi nhớ dưới
+  \fill[white,rounded corners=3pt] (0,20) rectangle (58,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (0,20) rectangle (58,52);
+  \node[anchor=north west,text=TTCRed,font=\fontsize{8}{9}\selectfont\bfseries]
+    at (5,47) {01 • XƯỞNG MAY CAO TẦNG};
+  \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
+    at (5,38) {Tổ hợp 3 khối xưởng 5 tầng tối ưu mật độ sử dụng đất và bố trí dây chuyền.};
+
+  \fill[white,rounded corners=3pt] (64,20) rectangle (122,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (64,20) rectangle (122,52);
+  \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
+    at (69,47) {02 • VI KHÍ HẬU DỆT MAY};
+  \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
+    at (69,38) {Làm mát áp suất âm, lọc bụi bông và cấp khí tươi đạt chuẩn kiểm toán xuất khẩu.};
+
+  \fill[white,rounded corners=3pt] (128,20) rectangle (186,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (128,20) rectangle (186,52);
+  \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
+    at (133,47) {03 • TỔNG THẦU D\&B};
+  \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
+    at (133,38) {Tư vấn thiết kế kiến trúc, kết cấu liên hợp và thi công hoàn thiện trọn gói.};
+
+  \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,14);
+  \node[anchor=west,text=white,font=\fontsize{7.4}{9}\selectfont\bfseries]
+    at (7,7) {GIÁ TRỊ CỐT LÕI: GIẢI PHÁP NHÀ XƯỞNG CAO TẦNG • MÔI TRƯỜNG LÀM VIỆC CHUẨN XUẤT KHẨU};
 \end{tikzpicture}
 \end{minipage}
 \newpage
 """
 
 PAGE_26 = r"""% ============================================================
-% TRANG 26: QUALITY DELIVERY -- SUMIDENSO VINA
+% TRANG 26: CASE STUDY 05 -- NHÀ MÁY NHỰA DHL
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{BÀN GIAO CHẤT LƯỢNG • SUMIDENSO VINA}{Trang 26}
+\casepagebars{GIẢI PHÁP KỸ THUẬT • TẬP ĐOÀN NHỰA DHL}{Trang 26}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Hồ Sơ Dự Án 05: Nhà Máy Dây Cáp Sumidenso}{Quality-led delivery • Automotive wire harness plant • KCN Sông Hậu, Hậu Giang}
+\secbrand{Hồ Sơ Dự Án 05: Nhà Máy Sản Xuất Nhựa DHL}{High-grade plastic packaging plant • PE/PP film extrusion • KCN Thái Hà, Hà Nam}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
   \path[use as bounding box] (0,0) rectangle (186,220);
 
-  % Ảnh và tóm tắt dự án
+  % Ảnh hoàn thiện làm hình chính; phối cảnh thiết kế làm hình đối chiếu
   \begin{scope}
-    \clip[rounded corners=4pt] (0,155) rectangle (64,219);
-    \node[inner sep=0pt] at (32,187)
-      {\includegraphics[width=64mm,height=64mm]{../../public/project-assets/sumidenso.jpg}};
-    \fill[TTCDeepNavy,opacity=.88] (0,155) rectangle (64,166);
+    \clip[rounded corners=4pt] (0,148) rectangle (104,220);
+    \node[inner sep=0pt] at (52,184)
+      {\includegraphics[width=104mm]{../../public/project-assets/dhl_2.jpg}};
+    \fill[TTCDeepNavy,opacity=.92] (0,148) rectangle (104,158);
     \node[anchor=west,text=white,font=\fontsize{6.8}{8}\selectfont\bfseries]
-      at (4,160.5) {ẢNH KHU NHÀ XƯỞNG};
+      at (4,153) {ẢNH THỰC TẾ HOÀN THIỆN • KCN THÁI HÀ, HÀ NAM};
   \end{scope}
-  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,155) rectangle (64,219);
+  \begin{scope}
+    \clip[rounded corners=2pt] (71,184) rectangle (101,216);
+    \node[inner sep=0pt] at (86,200)
+      {\includegraphics[width=42mm,height=32mm]{../../public/project-assets/dhl_4.jpg}};
+  \end{scope}
+  \draw[white,line width=1.2pt,rounded corners=2pt] (71,184) rectangle (101,216);
+  \fill[TTCDeepNavy,opacity=.88] (71,184) rectangle (101,191);
+  \node[anchor=west,text=white,font=\fontsize{4.6}{5.4}\selectfont\bfseries]
+    at (73,187.5) {PHỐI CẢNH THIẾT KẾ};
+  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,148) rectangle (104,220);
 
-  \fill[TTCLightBlue,rounded corners=4pt] (68,155) rectangle (186,219);
-  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (68,155) rectangle (186,219);
-  \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (75,212) {HỒ SƠ DỰ ÁN};
-  \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{7.1}{8.8}\selectfont]
-    at (75,201) {\textbf{Chủ đầu tư:} Sumitomo Electric\\
-                  \textbf{Quy mô:} 15.015 m$^2$\\
-                  \textbf{Tiến độ:} 150 ngày};
-  \draw[TTCBorder] (129,161) -- (129,208);
-  \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (136,212) {TRỌNG TÂM BÀN GIAO};
-  \node[anchor=north west,text width=43mm,text=TTCTextDark,font=\fontsize{6.9}{8.5}\selectfont]
-    at (136,201) {\textbullet\quad Sprinkler phản ứng nhanh\\[1mm]
-                  \textbullet\quad Trạm xử lý nước thải\\[1mm]
-                  \textbullet\quad Kiểm soát hồ sơ theo chuẩn quản lý Nhật Bản};
+  % Thẻ dữ liệu dự án (phải)
+  \fill[TTCDeepNavy,rounded corners=4pt] (108,148) rectangle (186,220);
+  \node[anchor=north west,text=TTCCyan,font=\fontsize{6.8}{8}\selectfont\bfseries]
+    at (114,214) {TỔNG THẦU THI CÔNG};
+  \node[anchor=north west,text=white,font=\fontsize{11.5}{13}\selectfont\bfseries]
+    at (114,204) {NHÀ MÁY NHỰA DHL};
+  \node[anchor=north west,text=white!75!gray,font=\fontsize{6}{7.2}\selectfont]
+    at (114,192) {TỔ HỢP XƯỞNG SẢN XUẤT \& KHỐI VĂN PHÒNG};
+  \draw[white!25!gray] (114,186) -- (180,186);
+  \node[anchor=north west,text width=66mm,align=left,text=white,
+        font=\fontsize{6.5}{8.5}\selectfont]
+    at (114,181) {\textbf{Chủ đầu tư:} Cty CP Tập đoàn Nhựa DHL\\[1mm]
+                  \textbf{Địa điểm:} Lô CN02, KCN Thái Hà, Hà Nam\\[1mm]
+                  \textbf{Quy mô:} Tổ hợp xưởng màng PE/PP \& VP 3 tầng\\[1mm]
+                  \textbf{Tân Thành Công JSC:} Tổng thầu thi công PEB \& Cơ điện MEP};
 
-  % Quality gates
+  % Khung sơ đồ kỹ thuật
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (0,147) {BỐN CỔNG KIỂM SOÁT • CHỈ CHUYỂN BƯỚC KHI ĐỦ BẰNG CHỨNG};
-  \fill[white,rounded corners=4pt] (0,88) rectangle (186,141);
-  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,88) rectangle (186,141);
-  \draw[TTCBlue,line width=.8pt] (23,122) -- (163,122);
+    at (0,141) {SƠ ĐỒ NGUYÊN LÝ • DÂY CHUYỀN ĐÙN THỔI MÀNG NHỰA \& HỆ PHỤ TRỢ MEP};
+  \fill[TTCLightBlue,rounded corners=4pt] (0,53) rectangle (186,134);
+  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,53) rectangle (186,134);
 
-  \foreach \x/\n in {23/01,69/02,117/03,163/04}{
-    \fill[white] (\x,122) circle (6mm);
-    \draw[TTCBlue,line width=.9pt] (\x,122) circle (6mm);
-    \node[text=TTCBlue,font=\fontsize{7}{8}\selectfont\bfseries] at (\x,122) {\n};
+  % Vùng phân tích kỹ thuật bên phải sơ đồ
+  \fill[white,rounded corners=3pt] (130,58) rectangle (181,129);
+  \draw[TTCBorder,rounded corners=3pt,line width=.6pt] (130,58) rectangle (181,129);
+  \node[anchor=north west,text=TTCBlue,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
+    at (134,125) {3 QUYẾT ĐỊNH KỸ THUẬT};
+
+  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
+    at (134,117) {\textbf{01 • Vượt nhịp thông tầng}\\[.3mm]
+    \color{TTCTextDark}Khung nhà thép tiền chế khẩu độ lớn tích hợp khoang thông tầng cho tháp đùn màng.};
+
+  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
+    at (134,94) {\textbf{02 • Hạ tầng Chiller đùn ép}\\[.3mm]
+    \color{TTCTextDark}Hệ thống nước lạnh tuần hoàn giữ nhiệt độ ổn định định hình màng mỏng.};
+
+  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
+    at (134,71) {\textbf{03 • Sàn Hardener chịu tải}\\[.3mm]
+    \color{TTCTextDark}Bề mặt bê tông mài bóng tăng cứng, chống bụi và được thiết kế theo tải xe nâng.};
+
+  % Bản vẽ sơ đồ phân xưởng đùn màng & in bao bì
+  % Khung kết cấu nhà xưởng có tháp cao thông tầng
+  \draw[TTCBlue,line width=1.4pt] (10,65) -- (10,128) -- (48,128) -- (48,118) -- (124,118) -- (124,65);
+  \draw[TTCBlue!40,line width=.8pt,dashed] (86,65) -- (86,118);
+
+  % Tháp đùn thổi màng (Blown Film Tower)
+  \fill[white] (15,70) rectangle (43,124);
+  \draw[TTCBlue,line width=.9pt] (15,70) rectangle (43,124);
+  \draw[TTCRed,line width=1pt] (29,74) -- (29,114);
+  \draw[TTCCyan,line width=.8pt] (24,74) .. controls (19,94) and (21,110) .. (29,114);
+  \draw[TTCCyan,line width=.8pt] (34,74) .. controls (39,94) and (37,110) .. (29,114);
+  \fill[TTCBlue] (26,114) rectangle (32,118);
+  \node[align=center,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries]
+    at (29,84) {THÁP ĐÙN THỔI\\MÀNG ĐA LỚP\\KHOANG THÔNG TẦNG};
+
+  % Cụm máy in ấn ống đồng & cuộn màng
+  \fill[white] (52,70) rectangle (82,94);
+  \draw[TTCBorder,line width=.7pt] (52,70) rectangle (82,94);
+  \fill[TTCLightBlue] (55,73) rectangle (79,83);
+  \draw[TTCBlue,line width=.6pt] (55,73) rectangle (79,83);
+  \node[align=center,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries]
+    at (67,88) {MÁY IN ỐNG ĐỒNG \&\\CUỘN MÀNG TỰ ĐỘNG};
+  \node[align=center,text=TTCTextDark,font=\fontsize{4.8}{5.8}\selectfont]
+    at (67,78) {IN ĐA MÀU TỐC ĐỘ CAO};
+
+  % Cụm lưu trữ nguyên liệu & kho thành phẩm
+  \fill[white] (88,70) rectangle (120,94);
+  \draw[TTCBorder,line width=.7pt] (88,70) rectangle (120,94);
+  \node[align=center,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries]
+    at (104,88) {KHO THÀNH PHẨM \&\\HẠT NHỰA NGUYÊN SINH};
+  \foreach \x in {93, 104, 115}{
+    \fill[TTCDeepNavy!20] (\x-3,73) rectangle +(6,8);
+    \draw[TTCDeepNavy,line width=.4pt] (\x-3,73) rectangle +(6,8);
   }
-  \fill[TTCRed] (23,122) circle (3.2mm);
-  \node[text=white,font=\fontsize{6.2}{7}\selectfont\bfseries] at (23,122) {01};
 
-  \node[align=center,text width=38mm] at (23,101) {
-    {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCBlue}VẬT LIỆU ĐẦU VÀO}\\[-.3mm]
-    {\fontsize{5.9}{7.1}\selectfont\color{TTCTextMuted}CO/CQ • mẫu duyệt • truy xuất lô}};
-  \node[align=center,text width=38mm] at (69,101) {
-    {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCBlue}THI CÔNG / ITP}\\[-.3mm]
-    {\fontsize{5.9}{7.1}\selectfont\color{TTCTextMuted}Checklist • hold point • nghiệm thu}};
-  \node[align=center,text width=38mm] at (117,101) {
-    {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCBlue}CHẠY THỬ HỆ THỐNG}\\[-.3mm]
-    {\fontsize{5.9}{7.1}\selectfont\color{TTCTextMuted}PCCC • xử lý nước thải • liên động}};
-  \node[align=center,text width=38mm] at (163,101) {
-    {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCBlue}HỒ SƠ HOÀN CÔNG}\\[-.3mm]
-    {\fontsize{5.9}{7.1}\selectfont\color{TTCTextMuted}As-built • biên bản • hướng dẫn O\&M}};
+  % Tuyến đường ống Chiller tuần hoàn & Khí nén
+  \draw[TTCCyan,line width=1.1pt,dashed] (12,104) -- (122,104);
+  \node[anchor=west,text=TTCCyan,font=\fontsize{5.8}{7}\selectfont\bfseries]
+    at (50,107.5) {ĐƯỜNG ỐNG CHILLER LÀM MÁT TRỤC LÔ \& KHÍ NÉN TRUNG TÂM};
+  \draw[-{Latex[length=1.2mm]},TTCCyan,line width=.7pt] (29,104) -- (29,95);
+  \draw[-{Latex[length=1.2mm]},TTCCyan,line width=.7pt] (67,104) -- (67,96);
 
-  % Ma trận yêu cầu -- kiểm soát -- bằng chứng
-  \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (0,80) {TỪ YÊU CẦU ĐẾN HỒ SƠ BÀN GIAO};
-  \fill[TTCDeepNavy,rounded corners=3pt] (0,62) rectangle (186,75);
-  \node[anchor=west,text=white,font=\fontsize{6.5}{7.8}\selectfont\bfseries] at (6,68.5) {HẠNG MỤC};
-  \node[anchor=west,text=white,font=\fontsize{6.5}{7.8}\selectfont\bfseries] at (55,68.5) {ĐIỂM KIỂM SOÁT};
-  \node[anchor=west,text=white,font=\fontsize{6.5}{7.8}\selectfont\bfseries] at (126,68.5) {BẰNG CHỨNG BÀN GIAO};
+  % Móng & Sàn bê tông Hardener
+  \fill[TTCDeepNavy] (9,58) rectangle (125,65);
+  \node[anchor=center,text=white,font=\fontsize{5.4}{6.5}\selectfont\bfseries]
+    at (67,61.5) {SÀN BÊ TÔNG MÀI BÓNG TĂNG CỨNG HARDENER CHỐNG BỤI};
 
-  \fill[TTCLightBlue] (0,47) rectangle (186,62);
-  \fill[white] (0,32) rectangle (186,47);
-  \fill[TTCLightBlue] (0,17) rectangle (186,32);
-  \draw[TTCBorder] (49,17) -- (49,75);
-  \draw[TTCBorder] (120,17) -- (120,75);
-  \foreach \y in {17,32,47,62}{\draw[TTCBorder] (0,\y) -- (186,\y);}
-  \node[anchor=west,text=TTCBlue,font=\fontsize{6.6}{8}\selectfont\bfseries] at (6,54.5) {PCCC SPRINKLER};
-  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.4}{7.8}\selectfont] at (55,54.5) {Áp lực • lưu lượng • liên động};
-  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.4}{7.8}\selectfont] at (126,54.5) {Biên bản thử và chứng từ thiết bị};
-  \node[anchor=west,text=TTCBlue,font=\fontsize{6.6}{8}\selectfont\bfseries] at (6,39.5) {NƯỚC THẢI};
-  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.4}{7.8}\selectfont] at (55,39.5) {Vận hành thử • mẫu đầu ra};
-  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.4}{7.8}\selectfont] at (126,39.5) {Kết quả thử theo yêu cầu QCVN};
-  \node[anchor=west,text=TTCBlue,font=\fontsize{6.6}{8}\selectfont\bfseries] at (6,24.5) {HOÀN THIỆN};
-  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.4}{7.8}\selectfont] at (55,24.5) {Mẫu duyệt • punch list • vệ sinh};
-  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.4}{7.8}\selectfont] at (126,24.5) {Checklist đóng việc và ảnh nghiệm thu};
+  % 3 Thẻ ghi nhớ dưới
+  \fill[white,rounded corners=3pt] (0,20) rectangle (58,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (0,20) rectangle (58,52);
+  \node[anchor=north west,text=TTCRed,font=\fontsize{8}{9}\selectfont\bfseries]
+    at (5,47) {01 • TỔ HỢP XƯỞNG \& VP};
+  \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
+    at (5,38) {Khối văn phòng 3 tầng mặt kính hiện đại kết hợp phân xưởng đùn thổi màng quy mô lớn.};
 
-  \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,11);
-  \node[anchor=west,text=white,font=\fontsize{7}{8.5}\selectfont\bfseries]
-    at (7,5.5) {15.015 m$^2$};
-  \node[text=white!35!gray] at (49,5.5) {|};
-  \node[anchor=west,text=white,font=\fontsize{7}{8.5}\selectfont\bfseries]
-    at (57,5.5) {150 NGÀY};
-  \node[text=white!35!gray] at (95,5.5) {|};
-  \node[anchor=west,text=white,font=\fontsize{7}{8.5}\selectfont\bfseries]
-    at (103,5.5) {HỆ THỐNG PCCC + XỬ LÝ NƯỚC THẢI};
+  \fill[white,rounded corners=3pt] (64,20) rectangle (122,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (64,20) rectangle (122,52);
+  \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
+    at (69,47) {02 • MEP CÔNG SUẤT CAO};
+  \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
+    at (69,38) {Tích hợp trạm biến áp, tháp Chiller làm mát trục đùn và khí nén trung tâm đồng bộ.};
+
+  \fill[white,rounded corners=3pt] (128,20) rectangle (186,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (128,20) rectangle (186,52);
+  \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
+    at (133,47) {03 • BÀN GIAO THỰC TẾ};
+  \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
+    at (133,38) {Thi công chuẩn xác, nghiệm thu an toàn PCCC và đưa vào vận hành thương mại 2025.};
+
+  \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,14);
+  \node[anchor=west,text=white,font=\fontsize{7.4}{9}\selectfont\bfseries]
+    at (7,7) {GIÁ TRỊ CỐT LÕI: HẠ TẦNG SẢN XUẤT BAO BÌ NHỰA CAO CẤP • CHẤT LƯỢNG BÀN GIAO THỰC TẾ};
 \end{tikzpicture}
 \end{minipage}
 \newpage
 """
 
 PAGE_27 = r"""% ============================================================
-% TRANG 27: PROJECT SPOTLIGHT -- XƯỞNG SẢN XUẤT FOXCONN
+% TRANG 27: CASE STUDY 06 -- NHÀ MÁY NHÔM QUANG THỊNH
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{NHÀ XƯỞNG ĐIỆN TỬ • FOXCONN}{Trang 27}
+\casepagebars{GIẢI PHÁP KỸ THUẬT • NHÔM QUANG THỊNH}{Trang 27}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Hồ Sơ Dự Án 06: Xưởng Sản Xuất Foxconn}{Electronics manufacturing facility • KCN Quế Võ, Bắc Ninh}
+\secbrand{Hồ Sơ Dự Án 06: Nhà Máy Sản Xuất Nhôm Quang Thịnh}{High-grade aluminum profiles plant • Heavy extrusion lines • Thuận Thành, Bắc Ninh}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
   \path[use as bounding box] (0,0) rectangle (186,220);
 
-  % Hero ngang, dùng đúng ảnh Foxconn
+  % Ảnh phối cảnh dự án (trái)
   \begin{scope}
-    \clip[rounded corners=4pt] (0,151) rectangle (186,219);
-    \node[inner sep=0pt] at (93,185)
-      {\includegraphics[width=186mm]{../../public/project-assets/foxcon.png}};
-    \fill[TTCDeepNavy,opacity=.9] (0,151) rectangle (78,168);
-    \node[anchor=west,text=white,font=\fontsize{7}{8}\selectfont\bfseries]
-      at (5,159.5) {ẢNH DỰ ÁN • KCN QUẾ VÕ, BẮC NINH};
-    \fill[TTCDeepNavy,opacity=.92] (127,151) rectangle (186,219);
-    \node[anchor=north west,text=TTCCyan,font=\fontsize{6.8}{8}\selectfont\bfseries]
-      at (133,212) {THÔNG TIN DỰ ÁN};
-    \node[anchor=north west,text=white,font=\fontsize{14}{15}\selectfont\bfseries]
-      at (133,201) {12.000 m$^2$};
-    \node[anchor=north west,text=white!70!gray,font=\fontsize{6}{7.2}\selectfont]
-      at (133,187) {DIỆN TÍCH NHÀ XƯỞNG};
-    \draw[white!25!gray] (133,181) -- (180,181);
-    \node[anchor=north west,text width=43mm,text=white,font=\fontsize{6.5}{8}\selectfont]
-      at (133,177) {\textbf{Chủ đầu tư:} Foxconn\\
-                    \textbf{Quốc gia:} Đài Loan\\
-                    \textbf{Vai trò TTC:} Kết cấu thép và lắp dựng};
+    \clip[rounded corners=4pt] (0,148) rectangle (104,220);
+    \node[inner sep=0pt] at (52,198)
+      {\includegraphics[width=185mm]{../../public/project-assets/quangthinh_1.jpg}};
+    \fill[TTCDeepNavy,opacity=.92] (0,148) rectangle (104,158);
+    \node[anchor=west,text=white,font=\fontsize{6.8}{8}\selectfont\bfseries]
+      at (4,153) {PHỐI CẢNH DỰ ÁN • THUẬN THÀNH, BẮC NINH};
   \end{scope}
-  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,151) rectangle (186,219);
+  % Ảnh hiện trường bổ sung giúp phân biệt phối cảnh với tiến độ thi công thực tế
+  \begin{scope}
+    \clip[rounded corners=2pt] (70,181) rectangle (101,216);
+    \node[inner sep=0pt] at (85.5,198.5)
+      {\includegraphics[width=46mm,height=35mm]{../../public/project-assets/quangthinh_3.jpg}};
+  \end{scope}
+  \draw[white,line width=1.2pt,rounded corners=2pt] (70,181) rectangle (101,216);
+  \fill[TTCDeepNavy,opacity=.88] (70,181) rectangle (101,188);
+  \node[anchor=west,text=white,font=\fontsize{4.6}{5.4}\selectfont\bfseries]
+    at (72,184.5) {ẢNH THI CÔNG THỰC TẾ};
+  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,148) rectangle (104,220);
 
-  % Luồng triển khai theo zone -- hình thức khác 5 trang trước
+  % Thẻ dữ liệu dự án (phải)
+  \fill[TTCDeepNavy,rounded corners=4pt] (108,148) rectangle (186,220);
+  \node[anchor=north west,text=TTCCyan,font=\fontsize{6.8}{8}\selectfont\bfseries]
+    at (114,214) {TỔNG THẦU THI CÔNG};
+  \node[anchor=north west,text=white,font=\fontsize{11.2}{13}\selectfont\bfseries]
+    at (114,204) {NHÀ MÁY NHÔM QUANG THỊNH};
+  \node[anchor=north west,text=white!75!gray,font=\fontsize{6}{7.2}\selectfont]
+    at (114,192) {TỔ HỢP XƯỞNG ĐÙN ÉP \& SƠN TĨNH ĐIỆN};
+  \draw[white!25!gray] (114,186) -- (180,186);
+  \node[anchor=north west,text width=66mm,align=left,text=white,
+        font=\fontsize{6.5}{8.5}\selectfont]
+    at (114,181) {\textbf{Chủ đầu tư:} Cty CP Nhôm Quang Thịnh\\[1mm]
+                  \textbf{Địa điểm:} Thuận Thành, Bắc Ninh\\[1mm]
+                  \textbf{Quy mô:} Tổ hợp xưởng đùn ép \& Nhà VP điều hành\\[1mm]
+                  \textbf{Tân Thành Công JSC:} Tổng thầu thi công PEB \& Cơ điện MEP};
+
+  % Khung sơ đồ kỹ thuật
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (0,143) {LUỒNG TRIỂN KHAI • KHÓA GIAO DIỆN TRƯỚC KHI LẮP DỰNG};
-  \fill[TTCLightBlue,rounded corners=4pt] (0,68) rectangle (186,137);
-  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,68) rectangle (186,137);
+    at (0,141) {SƠ ĐỒ NGUYÊN LÝ • DÂY CHUYỀN ĐÙN ÉP NHÔM ĐỊNH HÌNH \& XỬ LÝ BỀ MẶT};
+  \fill[TTCLightBlue,rounded corners=4pt] (0,53) rectangle (186,134);
+  \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,53) rectangle (186,134);
 
-  % Bốn thẻ quy trình độc lập; mũi tên chỉ nằm trong khe giữa các thẻ
-  \foreach \xa/\xb in {4/43,50/89,96/135,142/182}{
-    \fill[white,rounded corners=3pt] (\xa,74) rectangle (\xb,132);
-    \draw[TTCBorder,rounded corners=3pt,line width=.65pt] (\xa,74) rectangle (\xb,132);
-    \draw[TTCBlue,line width=1.2pt] ({\xa+4},128) -- ({\xb-4},128);
-  }
-  \foreach \xa/\xb in {43/50,89/96,135/142}{
-    \draw[-{Latex[length=2mm]},TTCBlue!65!white,line width=.8pt]
-      ({\xa+1},103) -- ({\xb-1},103);
-  }
+  % Vùng phân tích kỹ thuật bên phải sơ đồ
+  \fill[white,rounded corners=3pt] (130,58) rectangle (181,129);
+  \draw[TTCBorder,rounded corners=3pt,line width=.6pt] (130,58) rectangle (181,129);
+  \node[anchor=north west,text=TTCBlue,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
+    at (134,125) {3 QUYẾT ĐỊNH KỸ THUẬT};
 
-  \fill[TTCRed] (10,122) circle (3.5mm);
-  \node[text=white,font=\fontsize{6}{7}\selectfont\bfseries] at (10,122) {01};
-  \node[anchor=north west,text width=29mm,align=left,text=TTCBlue,
-        font=\fontsize{7.2}{8.5}\selectfont\bfseries]
-    at (9,115) {PHỐI HỢP\\THIẾT KẾ};
-  \node[anchor=north west,text width=29mm,align=left,text=TTCTextMuted,
-        font=\fontsize{6.1}{7.4}\selectfont]
-    at (9,96) {Chốt trục, cao độ và giao diện kết cấu--MEP.};
+  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
+    at (134,117) {\textbf{01 • Móng máy đùn ép tải nặng}\\[.3mm]
+    \color{TTCTextDark}Bệ móng bê tông cốt thép khối lớn được thiết kế theo tải động của máy ép thủy lực.};
 
-  \fill[TTCBlue] (56,122) circle (3.5mm);
-  \node[text=white,font=\fontsize{6}{7}\selectfont\bfseries] at (56,122) {02};
-  \node[anchor=north west,text width=29mm,align=left,text=TTCBlue,
-        font=\fontsize{7.2}{8.5}\selectfont\bfseries]
-    at (55,115) {SẢN XUẤT\\CẤU KIỆN};
-  \node[anchor=north west,text width=29mm,align=left,text=TTCTextMuted,
-        font=\fontsize{6.1}{7.4}\selectfont]
-    at (55,96) {Kiểm soát vật liệu, kích thước và liên kết tại xưởng.};
+  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
+    at (134,94) {\textbf{02 • Dây chuyền sơn tĩnh điện}\\[.3mm]
+    \color{TTCTextDark}Buồng phun sơn khép kín, lò sấy nhiệt độ cao và trạm xử lý nước thải xi mạ Anode.};
 
-  \fill[TTCBlue] (102,122) circle (3.5mm);
-  \node[text=white,font=\fontsize{6}{7}\selectfont\bfseries] at (102,122) {03};
-  \node[anchor=north west,text width=29mm,align=left,text=TTCBlue,
-        font=\fontsize{7.2}{8.5}\selectfont\bfseries]
-    at (101,115) {LẮP DỰNG\\THEO ZONE};
-  \node[anchor=north west,text width=29mm,align=left,text=TTCTextMuted,
-        font=\fontsize{6.1}{7.4}\selectfont]
-    at (101,96) {Ổn định khung và mở mặt bằng cuốn chiếu.};
+  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
+    at (134,71) {\textbf{03 • Sàn Hardener chịu mài mòn}\\[.3mm]
+    \color{TTCTextDark}Bề mặt bê tông mài bóng tăng cứng, chống bụi và được thiết kế theo tải xe nâng phôi.};
 
-  \fill[TTCBlue] (148,122) circle (3.5mm);
-  \node[text=white,font=\fontsize{6}{7}\selectfont\bfseries] at (148,122) {04};
-  \node[anchor=north west,text width=29mm,align=left,text=TTCBlue,
-        font=\fontsize{7.2}{8.5}\selectfont\bfseries]
-    at (147,115) {NGHIỆM THU\\CHUYỂN BƯỚC};
-  \node[anchor=north west,text width=29mm,align=left,text=TTCTextMuted,
-        font=\fontsize{6.1}{7.4}\selectfont]
-    at (147,96) {Kiểm tra hình học, liên kết và hồ sơ trước bao che.};
+  % Bản vẽ sơ đồ phân xưởng đùn ép nhôm định hình
+  % Khung kết cấu nhà xưởng PEB
+  \draw[TTCBlue,line width=1.4pt] (10,65) -- (10,126) -- (67,126) -- (124,126) -- (124,65);
+  \draw[TTCBlue!40,line width=.8pt,dashed] (48,65) -- (48,126);
+  \draw[TTCBlue!40,line width=.8pt,dashed] (86,65) -- (86,126);
 
-  % Hai khối nội dung cô đọng
-  \fill[white,rounded corners=4pt] (0,19) rectangle (90,60);
-  \draw[TTCBorder,rounded corners=4pt] (0,19) rectangle (90,60);
+  % Dầm cầu trục phục vụ dây chuyền
+  \draw[TTCBlue,line width=1pt] (10,113) -- (124,113);
+  \fill[TTCBlue] (26,111) rectangle (36,115);
+  \fill[TTCBlue] (70,111) rectangle (80,115);
+  \node[anchor=west,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries]
+    at (14,118) {DẦM CẦU TRỤC PHỤC VỤ NÂNG HẠ PHÔI NHÔM \& THAY KHUÔN ĐÙN};
+
+  % Zone 1: Lò nung phôi nhôm & Máy đùn ép thủy lực
+  \fill[white] (13,70) rectangle (46,96);
+  \draw[TTCBorder,line width=.7pt] (13,70) rectangle (46,96);
+  \fill[TTCRed!15] (16,73) rectangle (43,83);
+  \draw[TTCRed,line width=.6pt] (16,73) rectangle (43,83);
+  \node[align=center,text=TTCBlue,font=\fontsize{5.1}{6.1}\selectfont\bfseries]
+    at (29.5,90) {LÒ NUNG PHÔI NHÔM \&\\MÁY ĐÙN ÉP THỦY LỰC};
+  \node[align=center,text=TTCRed,font=\fontsize{4.8}{5.8}\selectfont\bfseries]
+    at (29.5,78) {ÉP ĐÙN THEO DÂY CHUYỀN};
+
+  % Zone 2: Dàn làm nguội & Bàn kéo dài thanh nhôm
+  \fill[white] (49,70) rectangle (84,96);
+  \draw[TTCBorder,line width=.7pt] (49,70) rectangle (84,96);
+  \fill[TTCLightBlue] (52,73) rectangle (81,83);
+  \draw[TTCBlue,line width=.6pt] (52,73) rectangle (81,83);
+  \node[align=center,text=TTCBlue,font=\fontsize{5.1}{6.1}\selectfont\bfseries]
+    at (66.5,90) {BÀN KÉO GIÃN LÀM NGUỘI \&\\LÒ Ủ NHIỆT ĐỒNG HÓA};
+  \node[align=center,text=TTCTextDark,font=\fontsize{4.8}{5.8}\selectfont]
+    at (66.5,78) {ĐỊNH HÌNH PROFILE DÀI};
+
+  % Zone 3: Dây chuyền sơn tĩnh điện & Đóng gói
+  \fill[white] (87,70) rectangle (121,96);
+  \draw[TTCBorder,line width=.7pt] (87,70) rectangle (121,96);
+  \fill[TTCDeepNavy!15] (90,73) rectangle (118,83);
+  \draw[TTCDeepNavy,line width=.6pt] (90,73) rectangle (118,83);
+  \node[align=center,text=TTCBlue,font=\fontsize{5.1}{6.1}\selectfont\bfseries]
+    at (104,90) {DÂY CHUYỀN SƠN TĨNH ĐIỆN\\\& ĐÓNG GÓI THÀNH PHẨM};
+  \node[align=center,text=TTCTextDark,font=\fontsize{4.8}{5.8}\selectfont]
+    at (104,78) {XI MẠ ANODE • SƠN TREO};
+
+  % Mũi tên chuyển bước dây chuyền
+  \draw[-{Latex[length=1.4mm]},TTCBlue,line width=1pt] (46,83) -- (49,83);
+  \draw[-{Latex[length=1.4mm]},TTCBlue,line width=1pt] (84,83) -- (87,83);
+
+  % Tuyến đường ống Chiller giải nhiệt khuôn đùn ép & Khí nén
+  \draw[TTCCyan,line width=1.1pt,dashed] (12,103) -- (122,103);
+  \node[anchor=west,text=TTCCyan,font=\fontsize{5.8}{7}\selectfont\bfseries]
+    at (36,106.5) {HỆ NƯỚC LÀM MÁT KHUÔN ĐÙN ÉP \& KHÍ NÉN TRUNG TÂM};
+  \draw[-{Latex[length=1.2mm]},TTCCyan,line width=.7pt] (29.5,103) -- (29.5,97);
+  \draw[-{Latex[length=1.2mm]},TTCCyan,line width=.7pt] (66.5,103) -- (66.5,97);
+
+  % Móng & Sàn bê tông Hardener
+  \fill[TTCDeepNavy] (9,58) rectangle (125,65);
+  \node[anchor=center,text=white,font=\fontsize{5.4}{6.5}\selectfont\bfseries]
+    at (67,61.5) {SÀN BÊ TÔNG MÀI BÓNG TĂNG CỨNG HARDENER CHỊU MÀI MÒN};
+
+  % 3 Thẻ ghi nhớ dưới
+  \fill[white,rounded corners=3pt] (0,20) rectangle (58,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (0,20) rectangle (58,52);
   \node[anchor=north west,text=TTCRed,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (6,54) {BÀI TOÁN DỰ ÁN};
-  \node[anchor=north west,text width=77mm,align=left,text=TTCTextDark,
-        font=\fontsize{6.9}{8.5}\selectfont]
-    at (6,44) {Nhà xưởng điện tử yêu cầu mặt bằng lớn, giao diện kết cấu--MEP rõ ràng và trình tự lắp dựng không làm gián đoạn các khu vực kế cận.};
+    at (5,47) {01 • ĐÙN ÉP TẢI NẶNG};
+  \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
+    at (5,38) {Khung xưởng nhịp lớn tích hợp móng máy ép thủy lực và cầu trục dầm đôi.};
 
-  \fill[TTCLightBlue,rounded corners=4pt] (96,19) rectangle (186,60);
-  \draw[TTCBorder,rounded corners=4pt] (96,19) rectangle (186,60);
+  \fill[white,rounded corners=3pt] (64,20) rectangle (122,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (64,20) rectangle (122,52);
   \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (102,54) {PHẢN HỒI CỦA TTC};
-  \node[anchor=north west,text width=77mm,align=left,text=TTCTextDark,
-        font=\fontsize{6.9}{8.5}\selectfont]
-    at (102,44) {Chia zone thi công, kiểm soát cấu kiện từ xưởng và nghiệm thu từng bước để bàn giao mặt bằng theo trình tự rõ ràng.};
+    at (69,47) {02 • XỬ LÝ BỀ MẶT \& MEP};
+  \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
+    at (69,38) {Hệ thống sơn tĩnh điện tự động, trạm xử lý nước thải xi mạ và khí nén trung tâm.};
 
-  \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,12);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.2}{7.4}\selectfont\bfseries]
-    at (7,6) {NGUYÊN TẮC TRIỂN KHAI};
-  \draw[white!28!gray] (47,3) -- (47,9);
-  \node[anchor=west,text=white,font=\fontsize{7}{8.5}\selectfont\bfseries]
-    at (54,6) {KHÓA GIAO DIỆN → CHIA ZONE → NGHIỆM THU CHUYỂN BƯỚC};
+  \fill[white,rounded corners=3pt] (128,20) rectangle (186,52);
+  \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (128,20) rectangle (186,52);
+  \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
+    at (133,47) {03 • TỔNG THẦU TRỌN GÓI};
+  \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
+    at (133,38) {Quản lý thi công đồng bộ từ kết cấu PEB, hoàn thiện kiến trúc đến MEP vận hành.};
+
+  \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,14);
+  \node[anchor=west,text=white,font=\fontsize{7.4}{9}\selectfont\bfseries]
+    at (7,7) {GIÁ TRỊ CỐT LÕI: HẠ TẦNG SẢN XUẤT NHÔM ĐỊNH HÌNH CÔNG NGHỆ CAO • GIẢI PHÁP TỔNG THẦU ĐỒNG BỘ};
 \end{tikzpicture}
 \end{minipage}
 \newpage

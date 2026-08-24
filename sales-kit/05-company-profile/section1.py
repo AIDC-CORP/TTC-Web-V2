@@ -40,16 +40,16 @@ PAGE_01 = r"""% ============================================================
       {\fontsize{43}{49}\selectfont\bfseries\color{white} NĂNG LỰC}\\[4mm]
       {\color{TTCRed}\rule{73mm}{2.8pt}}\\[5mm]
       {\fontsize{17}{20}\selectfont\bfseries\color{white} COMPANY PROFILE}\\[10mm]
-      {\fontsize{14}{17}\selectfont\bfseries\color{white} TỔNG THẦU EPC CÔNG NGHIỆP\\THẾ HỆ MỚI}\\[3mm]
-      {\fontsize{9.5}{12}\selectfont\color{white!88!gray} Turnkey Industrial EPC General Contractor}
+      {\fontsize{14}{17}\selectfont\bfseries\color{white} TỔNG THẦU CÔNG NGHIỆP\\TÍCH HỢP}\\[3mm]
+      {\fontsize{9.5}{12}\selectfont\color{white!88!gray} Integrated Industrial Design, Build \& Delivery}
     };
 
   % 5. Proof points: compact, scannable and placed above the contact footer.
   \node[anchor=south west, align=left, fill=TTCDeepNavy!92!black, fill opacity=0.84,
         text=white, text opacity=1, rounded corners=1.5pt, inner xsep=6mm, inner ysep=4mm]
     at ([xshift=15mm,yshift=31mm]current page.south west) {
-      {\fontsize{12}{14}\selectfont\bfseries 150+ DỰ ÁN \qquad HẠNG II BXD \qquad ISO 9001 / 14001 / 45001}\\[1.2mm]
-      {\fontsize{7}{8.5}\selectfont\color{white!82!gray}Năng lực tổng thầu công nghiệp đã được chứng minh tại hiện trường}
+      {\fontsize{11}{13}\selectfont\bfseries TỔNG THẦU CÔNG NGHIỆP \qquad NĂNG LỰC HẠNG II \qquad HỆ THỐNG QUẢN LÝ ISO}\\[1.2mm]
+      {\fontsize{7}{8.5}\selectfont\color{white!82!gray}Năng lực thiết kế, thi công và bàn giao công trình công nghiệp}
     };
 
   % 6. Legal identity stays quiet; the cover remains a visual statement.
@@ -65,7 +65,7 @@ PAGE_01 = r"""% ============================================================
       \faPhone\ +84 976 447 766 \quad\textbullet\quad
       \faEnvelope\ info@tanthanhcongjsc.com \quad\textbullet\quad
       \faGlobe\ tanthanhcongjsc.com \quad\textbullet\quad
-      \faAward\ NĂNG LỰC HẠNG II BXD}
+      \faAward\ CHỨNG CHỈ NĂNG LỰC HẠNG II}
   };
 \end{tikzpicture}
 \mbox{}% Anchor the overlay to a physical page before advancing to page 02.
@@ -108,10 +108,10 @@ Hồ sơ được tổ chức theo 06 nhóm năng lực để Chủ đầu tư t
 \noindent
 \begin{tabular}{@{}p{91mm}@{\hspace{4mm}}p{91mm}@{}}
 \toccard{I}{01--07}{GIỚI THIỆU \& NĂNG LỰC}{Company profile \& credentials}{Thư ngỏ \textbullet\ Tầm nhìn và giá trị \textbullet\ Hệ sinh thái \textbullet\ Pháp nhân \& lãnh đạo} &
-\toccard{IV}{14--19}{GIẢI PHÁP EPC \& CÔNG NGHỆ}{EPC, ConTech \& ESG}{Fast-track EPC \textbullet\ BIM / AI \textbullet\ ESG \textbullet\ QA/QC \& HSE} \\[3.5mm]
-\toccard{II}{08--10}{TÀI CHÍNH \& NHÂN SỰ}{Financial capacity \& people}{Doanh thu \textbullet\ Bảo lãnh tín dụng \textbullet\ Nguồn lực \textbullet\ Văn hóa an toàn} &
-\toccard{V}{20--30}{DỰ ÁN \& KHÁCH HÀNG}{Projects \& valued partners}{Danh mục dự án \textbullet\ 06 case studies \textbullet\ Chuỗi cung ứng \textbullet\ Đối tác FDI} \\[3.5mm]
-\toccard{III}{11--13}{SẢN XUẤT \& QUẢN TRỊ}{PEB \& project control}{Đối tác PEB \textbullet\ Thiết bị cơ giới \textbullet\ Quy trình quản trị FIDIC} &
+\toccard{IV}{14--19}{GIẢI PHÁP \& CÔNG NGHỆ}{Integrated delivery \& technology}{Thiết kế--thi công tích hợp \textbullet\ Mô hình thông tin công trình \textbullet\ chất lượng \textbullet\ an toàn} \\[3.5mm]
+\toccard{II}{08--10}{QUẢN TRỊ \& NGUỒN LỰC}{Governance \& people}{Quản trị chi phí \textbullet\ năng lực bảo lãnh \textbullet\ huy động nguồn lực \textbullet\ văn hóa an toàn} &
+\toccard{V}{20--30}{DỰ ÁN \& KHÁCH HÀNG}{Projects \& valued partners}{Danh mục dự án \textbullet\ 06 hồ sơ dự án \textbullet\ chuỗi cung ứng \textbullet\ đối tác quốc tế} \\[3.5mm]
+\toccard{III}{11--13}{SẢN XUẤT \& QUẢN TRỊ}{Fabrication \& project control}{Đối tác sản xuất \textbullet\ thiết bị cơ giới \textbullet\ quy trình quản trị hợp đồng} &
 \toccard{VI}{31--36}{CAM KẾT \& ĐỒNG HÀNH}{Commitments \& support}{Chứng nhận \textbullet\ Phủ sóng thi công \textbullet\ Chiến lược \textbullet\ Bảo hành \& liên hệ}
 \end{tabular}
 
@@ -121,7 +121,7 @@ Hồ sơ được tổ chức theo 06 nhóm năng lực để Chủ đầu tư t
 \noindent
 \begin{tikzpicture}
   \node[rounded corners=3pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt,
-        minimum width=186mm, text width=172mm, inner sep=7.5mm] {
+        minimum width=186mm, text width=172mm, inner sep=7mm] {
     {\fontsize{10.5}{12.5}\selectfont\bfseries\color{TTCBlue} \faIdCard\quad HỒ SƠ PHÁP NHÂN TÓM TẮT}
     \hfill {\fontsize{7.2}{8.8}\selectfont\color{TTCRed}\bfseries CHI TIẾT CHỨNG NHẬN: TRANG 06}\\[1.5mm]
     {\fontsize{6.2}{7.5}\selectfont\color{TTCTextMuted}\bfseries
@@ -132,12 +132,15 @@ Hồ sơ được tổ chức theo 06 nhóm năng lực để Chủ đầu tư t
       \textbf{Tên doanh nghiệp} & \textbf{CÔNG TY CỔ PHẦN CÔNG NGHỆ XÂY DỰNG TÂN THÀNH CÔNG} &
       \textbf{Mã số thuế} & \textbf{0107090447} \\
       \textbf{Đại diện pháp luật} & \textbf{Ông PHẠM HUY TÂN} — Tổng Giám Đốc &
-      \textbf{Năng lực} & Hạng II BXD \textbullet\ ISO 9001 / 14001 / 45001 \\
+      \textbf{Năng lực} & Chứng chỉ năng lực hoạt động xây dựng Hạng II \textbullet\ Hệ thống quản lý ISO \\
       \textbf{Trụ sở đăng ký} & Số 39, ngõ 292 Kim Giang, Đại Kim, Hà Nội &
       \textbf{Văn phòng giao dịch} & Số 19N7B, KĐT Trung Hòa Nhân Chính, Hà Nội \\
       \textbf{Liên hệ} & +84 976 447 766 \textbullet\ info@tanthanhcongjsc.com &
       \textbf{Website} & tanthanhcongjsc.com
-    \end{tabularx}}
+    \end{tabularx}}\\[2mm]
+    {\fontsize{5.5}{6.8}\selectfont\color{TTCTextMuted}
+    \textbf{Thuật ngữ chính:} EPC -- Thiết kế, Mua sắm và Thi công; PEB -- Nhà thép tiền chế; MEP -- Cơ điện và cấp thoát nước; BIM -- Mô hình thông tin công trình;\\[-0.3mm]
+    QA/QC -- Đảm bảo và kiểm soát chất lượng; HSE -- An toàn, Sức khỏe và Môi trường; PCCC -- Phòng cháy chữa cháy; ITP -- Kế hoạch kiểm tra và nghiệm thu.}
   };
 \end{tikzpicture}
 \end{minipage}
@@ -179,9 +182,9 @@ PAGE_03 = r"""% ============================================================
       {\fontsize{9.2}{13.2}\selectfont\color{TTCTextDark}
       Thay mặt Ban Lãnh đạo và toàn thể cán bộ công nhân viên \textbf{Công ty Cổ phần Công nghệ Xây dựng Tân Thành Công}, tôi trân trọng cảm ơn sự tin tưởng và đồng hành của Quý vị trong suốt chặng đường phát triển của TTC.\\[3mm]
 
-      Hơn một thập kỷ hoạt động trong lĩnh vực xây dựng công nghiệp giúp chúng tôi thấu hiểu rằng: một dự án thành công phải đồng thời đáp ứng \textbf{chất lượng, an toàn, tiến độ và hiệu quả đầu tư}. Vì vậy, TTC kiên định với mô hình \textbf{Tổng thầu EPC một đầu mối}, kết hợp Value Engineering, BIM 5D và năng lực quản trị hiện trường theo tiêu chuẩn quốc tế.\\[3mm]
+      Hơn một thập kỷ hoạt động trong lĩnh vực xây dựng công nghiệp giúp chúng tôi thấu hiểu rằng: một dự án thành công phải đồng thời đáp ứng \textbf{chất lượng, an toàn, tiến độ và hiệu quả đầu tư}. Vì vậy, Tân Thành Công kiên định với mô hình \textbf{một đầu mối thiết kế--mua sắm--thi công}, kết hợp kỹ thuật giá trị, mô hình thông tin công trình và quản trị hiện trường có kiểm soát.\\[3mm]
 
-      Với hệ sinh thái đối tác PEB công suất 30.000 tấn/năm và đội ngũ kỹ sư thực chiến, chúng tôi cam kết cung cấp giải pháp phù hợp nhất cho từng nhà máy, kiểm soát minh bạch từ thiết kế, thi công đến bàn giao và bảo hành.\\[3mm]
+      Với hệ sinh thái đối tác sản xuất kết cấu thép và đội ngũ kỹ sư thực chiến, chúng tôi cam kết cung cấp giải pháp phù hợp cho từng nhà máy, kiểm soát minh bạch từ thiết kế, thi công đến bàn giao và bảo hành.\\[3mm]
 
       TTC mong muốn không chỉ là một nhà thầu, mà là \textbf{đối tác kiến tạo giá trị dài hạn} cùng Chủ đầu tư trên mỗi công trình.}\\[5mm]
       {\fontsize{9}{11}\selectfont\itshape\color{TTCTextMuted} Trân trọng,}
@@ -220,26 +223,26 @@ PAGE_03 = r"""% ============================================================
     \node[rounded corners=3pt, fill=TTCDeepNavy!97!black, minimum width=58mm,
           minimum height=43mm, text width=48mm, align=center, inner sep=5mm] {
       {\fontsize{17}{19}\selectfont\bfseries\color{white} 01}\\[1mm]
-      {\fontsize{9}{11}\selectfont\bfseries\color{TTCRed} ĐẦU MỐI EPC}\\[2mm]
-      {\fontsize{7.3}{9}\selectfont\color{white!78!gray}Design \textbullet\ Build \textbullet\ Turnkey}
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCRed} MỘT ĐẦU MỐI}\\[2mm]
+      {\fontsize{7.3}{9}\selectfont\color{white!78!gray}Design \textbullet\ Build \textbullet\ Handover}
     };
   \end{tikzpicture}
   &
   \begin{tikzpicture}
     \node[rounded corners=3pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt,
           minimum width=58mm, minimum height=43mm, text width=48mm, align=center, inner sep=5mm] {
-      {\fontsize{17}{19}\selectfont\bfseries\color{TTCRed} 10--15\%}\\[1mm]
-      {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} TỐI ƯU CHI PHÍ}\\[2mm]
-      {\fontsize{7.3}{9}\selectfont\color{TTCTextMuted}Value Engineering}
+      {\fontsize{15}{18}\selectfont\bfseries\color{TTCRed} VALUE}\\[1mm]
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} KỸ THUẬT GIÁ TRỊ}\\[2mm]
+      {\fontsize{7.3}{9}\selectfont\color{TTCTextMuted}Balanced cost \& performance}
     };
   \end{tikzpicture}
   &
   \begin{tikzpicture}
     \node[rounded corners=3pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt,
           minimum width=58mm, minimum height=43mm, text width=48mm, align=center, inner sep=5mm] {
-      {\fontsize{15}{18}\selectfont\bfseries\color{TTCRed} ZERO}\\[1mm]
-      {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} ACCIDENT}\\[2mm]
-      {\fontsize{7.3}{9}\selectfont\color{TTCTextMuted}HSE Commitment}
+      {\fontsize{15}{18}\selectfont\bfseries\color{TTCRed} SAFETY}\\[1mm]
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} AN TOÀN TỪ THIẾT KẾ}\\[2mm]
+      {\fontsize{7.3}{9}\selectfont\color{TTCTextMuted}Risk-based control}
     };
   \end{tikzpicture}
 \end{tabular}
@@ -337,7 +340,7 @@ PAGE_04 = r"""% ============================================================
         fill opacity=0.94, text opacity=1, rounded corners=1.5pt, inner sep=1mm] at (71,67) {
     {\fontsize{18}{20}\selectfont\bfseries\color{TTCRed} 2022}\\[-0.5mm]
     {\fontsize{8.5}{10}\selectfont\bfseries\color{TTCBlue} BỨT PHÁ}\\[1mm]
-    {\fontsize{7.2}{9}\selectfont\color{TTCTextDark}Hạng II Bộ Xây Dựng\\và các dự án FDI quy mô lớn.}
+    {\fontsize{7.2}{9}\selectfont\color{TTCTextDark}Chứng chỉ năng lực Hạng II\\và dự án công nghiệp đa ngành.}
   };
 
   % 2026
@@ -348,7 +351,7 @@ PAGE_04 = r"""% ============================================================
         fill opacity=0.94, text opacity=1, rounded corners=1.5pt, inner sep=1mm] at (119,68) {
     {\fontsize{18}{20}\selectfont\bfseries\color{TTCRed} 2026}\\[-0.5mm]
     {\fontsize{8.5}{10}\selectfont\bfseries\color{TTCBlue} CHUYỂN ĐỔI}\\[1mm]
-    {\fontsize{7.2}{9}\selectfont\color{TTCTextDark}150+ dự án \textbullet\ 20+ tỉnh thành\\PEB 30.000 tấn/năm.}
+    {\fontsize{7.2}{9}\selectfont\color{TTCTextDark}Chuẩn hóa quản trị dự án\\và hệ dữ liệu công trình.}
   };
 
   % 2030
@@ -622,7 +625,7 @@ PAGE_05_LEGACY = r"""% =========================================================
 PAGE_05 = r"""% ============================================================
 % TRANG 05: INTEGRATED FACTORY BLUEPRINT
 % ============================================================
-\pageheaderbar{HỆ SINH THÁI TỔNG THẦU EPC \& R\&D CÔNG NGHỆ}{Trang 05}
+\pageheaderbar{HỆ SINH THÁI THIẾT KẾ \& THI CÔNG TÍCH HỢP}{Trang 05}
 \pagefooterbar{Trang 05}
 
 \begin{tikzpicture}[remember picture, overlay]
@@ -633,7 +636,7 @@ PAGE_05 = r"""% ============================================================
 \end{tikzpicture}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Hệ Sinh Thái Tổng Thầu EPC}{Integrated Factory Blueprint \& AIDC ConTech Collaboration}
+\secbrand{Hệ Sinh Thái Thiết Kế \& Thi Công Tích Hợp}{Integrated Factory Blueprint \& AIDC ConTech Collaboration}
 
 \vspace{1mm}
 {\fontsize{15}{17}\selectfont\bfseries\color{TTCBlue}
@@ -667,8 +670,8 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
     text width=47mm, inner sep=3mm, align=left
   ] at (5,113) {
     {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCCyan} 01 / AIDC CONTECH}\\[1mm]
-    {\fontsize{10}{11.5}\selectfont\bfseries\color{TTCBlue} BIM 5D • AI • VALUE ENGINEERING}\\[1mm]
-    {\fontsize{7}{8.6}\selectfont\color{TTCTextDark}Tối ưu thiết kế và dữ liệu dự án; tiết kiệm 10--15\% chi phí đầu tư.}
+    {\fontsize{10}{11.5}\selectfont\bfseries\color{TTCBlue} MÔ HÌNH DỮ LIỆU • KỸ THUẬT GIÁ TRỊ}\\[1mm]
+    {\fontsize{7}{8.6}\selectfont\color{TTCTextDark}Tối ưu giải pháp thiết kế, khả năng thi công và dữ liệu bàn giao.}
   };
 
   % 02 — MEP & PCCC
@@ -679,9 +682,9 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
     minimum width=53mm, minimum height=29mm,
     text width=47mm, inner sep=3mm, align=left
   ] at (5,5) {
-    {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCBlue} 02 / MEP \& PCCC}\\[1mm]
-    {\fontsize{10}{11.5}\selectfont\bfseries\color{TTCBlue} HỆ THỐNG ĐỒNG BỘ TRÊN BIM}\\[1mm]
-    {\fontsize{7}{8.6}\selectfont\color{TTCTextDark}Điện • HVAC • cấp thoát nước • phòng cháy, phối hợp xuyên suốt một mô hình.}
+    {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCBlue} 02 / CƠ ĐIỆN \& PHÒNG CHÁY}\\[1mm]
+    {\fontsize{10}{11.5}\selectfont\bfseries\color{TTCBlue} HỆ THỐNG PHỐI HỢP TRÊN MÔ HÌNH}\\[1mm]
+    {\fontsize{7}{8.6}\selectfont\color{TTCTextDark}Điện • thông gió và điều hòa • cấp thoát nước • phòng cháy chữa cháy.}
   };
 
   % 03 — Hạ tầng
@@ -705,9 +708,9 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
     minimum width=53mm, minimum height=29mm,
     text width=47mm, inner sep=3mm, align=left
   ] at (181,5) {
-    {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCRed} 04 / PEB MANUFACTURING}\\[1mm]
+    {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCRed} 04 / STEEL FABRICATION}\\[1mm]
     {\fontsize{10}{11.5}\selectfont\bfseries\color{TTCBlue} SẢN XUẤT KẾT CẤU THÉP}\\[1mm]
-    {\fontsize{7}{8.6}\selectfont\color{TTCTextDark}CNC • SAW • AWS D1.1 • NDT; năng lực cung ứng 30.000 tấn/năm.}
+    {\fontsize{7}{8.6}\selectfont\color{TTCTextDark}Gia công CNC • hàn tự động • kiểm tra không phá hủy; huy động theo kế hoạch dự án.}
   };
 
   % Central accountability hub
@@ -790,8 +793,8 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
       text width=50mm, inner sep=4mm, align=left
     ] {
       {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} 02 / OPTIMIZATION}\\[1mm]
-      {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCBlue} TỐI ƯU CHI PHÍ}\\[1mm]
-      {\fontsize{7}{8.5}\selectfont\color{TTCTextDark}AI và Value Engineering tối ưu giải pháp kỹ thuật, tiết kiệm 10--15\% chi phí đầu tư.}
+      {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCBlue} KỸ THUẬT GIÁ TRỊ}\\[1mm]
+      {\fontsize{7}{8.5}\selectfont\color{TTCTextDark}Cân bằng công năng, khả năng thi công, chi phí vòng đời và yêu cầu vận hành.}
     };
   \end{tikzpicture}
   &
@@ -802,7 +805,7 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
       text width=50mm, inner sep=4mm, align=left
     ] {
       {\fontsize{7}{8}\selectfont\bfseries\color{TTCBlue} 03 / INTEGRATION}\\[1mm]
-      {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCBlue} 100\% KHÉP KÍN}\\[1mm]
+      {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCBlue} QUẢN TRỊ TÍCH HỢP}\\[1mm]
       {\fontsize{7}{8.5}\selectfont\color{TTCTextDark}Dữ liệu, kỹ thuật và thi công cùng vận hành trong một hệ sinh thái.}
     };
   \end{tikzpicture}
@@ -838,7 +841,7 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
   };
   \node[align=center] at (167,12) {
     {\fontsize{11}{12.5}\selectfont\bfseries\color{TTCRed} HẠNG II}\\[0.8mm]
-    {\fontsize{6.5}{8}\selectfont\color{TTCTextMuted} Bộ Xây Dựng}
+    {\fontsize{6.5}{8}\selectfont\color{TTCTextMuted} Năng lực hoạt động xây dựng}
   };
 \end{tikzpicture}
 \end{minipage}
@@ -848,7 +851,7 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
 PAGE_06_LEGACY = r"""% ============================================================
 % TRANG 06: CƠ CẤU TỔ CHỨC & HỒ SƠ PHÁP LÝ HẠNG II
 % ============================================================
-\pageheaderbar{CƠ CẤU TỔ CHỨC \& PHÁP LÝ HẠNG II BXD}{Trang 06}
+\pageheaderbar{QUẢN TRỊ \& NĂNG LỰC XÂY DỰNG HẠNG II}{Trang 06}
 \pagefooterbar{Trang 06}
 
 \begin{tikzpicture}[remember picture, overlay]
@@ -1012,7 +1015,7 @@ PAGE_06_LEGACY = r"""% =========================================================
 PAGE_06 = r"""% ============================================================
 % TRANG 06: GOVERNANCE & COMPLIANCE DASHBOARD
 % ============================================================
-\pageheaderbar{CƠ CẤU TỔ CHỨC \& PHÁP LÝ HẠNG II BXD}{Trang 06}
+\pageheaderbar{QUẢN TRỊ \& NĂNG LỰC XÂY DỰNG HẠNG II}{Trang 06}
 \pagefooterbar{Trang 06}
 
 \begin{tikzpicture}[remember picture, overlay]
@@ -1023,7 +1026,7 @@ PAGE_06 = r"""% ============================================================
 \end{tikzpicture}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Quản Trị Tinh Gọn \& Nền Tảng Tuân Thủ}{Governance Structure, Grade II Construction License \& International ISO Systems}
+\secbrand{Quản Trị Tinh Gọn \& Nền Tảng Tuân Thủ}{Governance Structure, Grade II Construction Capability \& ISO Management Systems}
 
 \vspace{1mm}
 {\fontsize{15}{17}\selectfont\bfseries\color{TTCBlue}
@@ -1091,7 +1094,7 @@ An execution-led governance model connecting board oversight directly to every p
     minimum width=42mm, minimum height=9mm, align=center
   ] at (161,70.5) {
     {\fontsize{7}{8.3}\selectfont\bfseries\color{TTCBlue}
-    \faMicrochip\quad R\&D CÔNG NGHỆ AIDC}
+    \faMicrochip\quad NGHIÊN CỨU \& PHÁT TRIỂN AIDC}
   };
 
   % Three accountable executive streams
@@ -1099,19 +1102,19 @@ An execution-led governance model connecting board oversight directly to every p
     rounded corners=3pt, fill=TTCBlue, text=white,
     minimum width=54mm, minimum height=10mm, align=center
   ] at (32,52.5) {
-    {\fontsize{7.4}{8.8}\selectfont\bfseries P.TGĐ DỰ ÁN \& THI CÔNG}
+    {\fontsize{6.2}{7.5}\selectfont\bfseries PHÓ TỔNG GIÁM ĐỐC • DỰ ÁN}
   };
   \node[
     rounded corners=3pt, fill=TTCBlue, text=white,
     minimum width=54mm, minimum height=10mm, align=center
   ] at (93,52.5) {
-    {\fontsize{7.4}{8.8}\selectfont\bfseries P.TGĐ KỸ THUẬT \& BIM}
+    {\fontsize{6.2}{7.5}\selectfont\bfseries PHÓ TỔNG GIÁM ĐỐC • KỸ THUẬT}
   };
   \node[
     rounded corners=3pt, fill=TTCBlue, text=white,
     minimum width=54mm, minimum height=10mm, align=center
   ] at (154,52.5) {
-    {\fontsize{7.4}{8.8}\selectfont\bfseries P.TGĐ TÀI CHÍNH \& FIDIC}
+    {\fontsize{6.2}{7.5}\selectfont\bfseries PHÓ TỔNG GIÁM ĐỐC • THƯƠNG MẠI}
   };
 
   % Functional teams
@@ -1122,7 +1125,7 @@ An execution-led governance model connecting board oversight directly to every p
   ] at (32,32) {
     {\fontsize{7.1}{8.4}\selectfont\bfseries\color{TTCBlue}\faHardHat\ PROJECT DELIVERY}\\[1mm]
     {\fontsize{6.7}{8.2}\selectfont\color{TTCTextDark}
-    • Ban điều hành dự án FDI\\
+    • Ban điều hành dự án quốc tế\\
     • Quản lý thi công \& cơ giới\\
     • HSE \& QA/QC hiện trường}
   };
@@ -1145,7 +1148,7 @@ An execution-led governance model connecting board oversight directly to every p
     {\fontsize{7.1}{8.4}\selectfont\bfseries\color{TTCBlue}\faFileInvoiceDollar\ COMMERCIAL}\\[1mm]
     {\fontsize{6.7}{8.2}\selectfont\color{TTCTextDark}
     • Đấu thầu \& hợp đồng FIDIC\\
-    • Tài chính \& dòng tiền EPC\\
+    • Tài chính \& dòng tiền dự án\\
     • Chuỗi cung ứng Tier-1}
   };
 
@@ -1158,7 +1161,7 @@ An execution-led governance model connecting board oversight directly to every p
     {\fontsize{7.7}{9}\selectfont\bfseries\color{TTCCyan}
     \faHardHat\quad BAN CHỈ HUY CÔNG TRƯỜNG — QUYỀN HẠN TẠI ĐIỂM THỰC THI}\\[0.6mm]
     {\fontsize{6.5}{7.8}\selectfont\color{white!82!gray}
-    Chỉ huy trưởng Hạng II • Kỹ sư kết cấu • MEP • HSE • QA/QC thường trú}
+    Chỉ huy trưởng Hạng II • Kỹ sư kết cấu • Kỹ sư cơ điện • Quản lý an toàn và chất lượng}
   };
 \end{tikzpicture}
 
@@ -1181,16 +1184,16 @@ An execution-led governance model connecting board oversight directly to every p
   \fill[white, rounded corners=3pt] (5,7) rectangle (58,57);
   \draw[TTCRed, line width=0.9pt, rounded corners=3pt] (5,7) rectangle (58,57);
   \node[align=center] at (31.5,45) {
-    {\fontsize{7}{8}\selectfont\bfseries\color{TTCRed} CONSTRUCTION LICENSE}\\[1mm]
+    {\fontsize{7}{8}\selectfont\bfseries\color{TTCRed} CONSTRUCTION CAPABILITY}\\[1mm]
     {\fontsize{22}{24}\selectfont\bfseries\color{TTCRed} HẠNG II}\\[-0.2mm]
-    {\fontsize{9}{10.5}\selectfont\bfseries\color{TTCBlue} BỘ XÂY DỰNG}
+    {\fontsize{7.4}{9}\selectfont\bfseries\color{TTCBlue} CHỨNG CHỈ NĂNG LỰC HOẠT ĐỘNG XÂY DỰNG}
   };
   \draw[TTCBorder, line width=0.5pt] (11,29) -- (52,29);
   \node[text width=42mm, align=left] at (31.5,18) {
     {\fontsize{6.6}{8.2}\selectfont\color{TTCTextDark}
-    \textcolor{TTCRed}{\faCheckCircle}\ Tổng thầu thiết kế \& thi công\\
-    \textcolor{TTCRed}{\faCheckCircle}\ Công trình công nghiệp quy mô lớn\\
-    \textcolor{TTCRed}{\faCheckCircle}\ Kết cấu vượt nhịp lớn}
+    \textcolor{TTCRed}{\faCheckCircle}\ Cấp năng lực: Hạng II\\
+    \textcolor{TTCRed}{\faCheckCircle}\ Phạm vi theo chứng chỉ còn hiệu lực\\
+    \textcolor{TTCRed}{\faCheckCircle}\ Bản sao cung cấp trong hồ sơ pháp lý}
   };
 
   % ISO 9001
@@ -1229,7 +1232,7 @@ An execution-led governance model connecting board oversight directly to every p
   };
   \node[text width=30mm, align=center] at (163,20) {
     {\fontsize{6.6}{8.2}\selectfont\color{TTCTextDark}
-    Chính sách Zero Accident, đào tạo và kiểm soát an toàn tại chỗ.}
+    Nhận diện rủi ro, đào tạo và kiểm soát an toàn tại hiện trường.}
   };
 \end{tikzpicture}
 
@@ -1244,7 +1247,7 @@ An execution-led governance model connecting board oversight directly to every p
   \fill[TTCDeepNavy, rounded corners=4pt] (0,0) rectangle (47,24);
   \node[align=left, anchor=west] at (6,12) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} PRE-QUALIFICATION}\\[0.8mm]
-    {\fontsize{10}{11.5}\selectfont\bfseries\color{white} READY FOR FDI}\\[0.5mm]
+    {\fontsize{10}{11.5}\selectfont\bfseries\color{white} SẴN SÀNG SƠ TUYỂN}\\[0.5mm]
     {\fontsize{6.3}{7.6}\selectfont\color{white!72!gray}Legal • Quality • HSE}
   };
   \node[align=center] at (72,12) {
@@ -1256,7 +1259,7 @@ An execution-led governance model connecting board oversight directly to every p
     {\fontsize{7}{8.3}\selectfont\bfseries\color{TTCTextDark} LỚP KIỂM SOÁT ITP}
   };
   \node[align=center] at (160,12) {
-    {\fontsize{11}{12.5}\selectfont\bfseries\color{TTCRed} 100\%}\\[0.6mm]
+    {\fontsize{11}{12.5}\selectfont\bfseries\color{TTCRed} CO/CQ}\\[0.6mm]
     {\fontsize{7}{8.3}\selectfont\bfseries\color{TTCTextDark} CO/CQ TRUY XUẤT}
   };
 \end{tikzpicture}
@@ -1389,7 +1392,7 @@ One accountable team mobilized from pre-construction through commissioning and w
     \textbf{As-built \& Digital Twin Team}\\
     Chuẩn hóa hồ sơ và dữ liệu tài sản.\\[0.8mm]
     \textbf{Warranty Response Team}\\
-    Tiếp nhận và xử lý kỹ thuật 24/7.}
+    Tiếp nhận và xử lý theo điều kiện hợp đồng.}
   };
   \node[anchor=south, align=center] at (157,3.5) {
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCRed} OUTPUT: READY FOR OPERATION}

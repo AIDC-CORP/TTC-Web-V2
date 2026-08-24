@@ -38,16 +38,16 @@ PAGE_01 = r"""% ============================================================
       {\fontsize{42}{50}\selectfont\bfseries\color{white} 企业能力简介}\\[5mm]
       {\color{TTCRed}\rule{73mm}{2.8pt}}\\[5mm]
       {\fontsize{17}{20}\selectfont\bfseries\color{white} COMPANY PROFILE}\\[8mm]
-      {\fontsize{15}{18}\selectfont\bfseries\color{white} 新一代工业 EPC 总承包商}\\[3mm]
-      {\fontsize{9.5}{12}\selectfont\color{white!88!gray} Turnkey Industrial EPC General Contractor}
+      {\fontsize{15}{18}\selectfont\bfseries\color{white} 工业建筑一体化总承包商}\\[3mm]
+      {\fontsize{9.5}{12}\selectfont\color{white!88!gray} Integrated Industrial Design, Build \& Delivery}
     };
 
   % 5. Proof points
   \node[anchor=south west, align=left, fill=TTCDeepNavy!92!black, fill opacity=0.84,
         text=white, text opacity=1, rounded corners=1.5pt, inner xsep=6mm, inner ysep=4mm]
     at ([xshift=15mm,yshift=31mm]current page.south west) {
-      {\fontsize{12}{14}\selectfont\bfseries 150+ 工业项目 \qquad 建设部二级资质 \qquad ISO 9001 / 14001 / 45001}\\[1.2mm]
-      {\fontsize{7}{8.5}\selectfont\color{white!82!gray}经现场验证的工业总承包综合实力}
+      {\fontsize{11}{13}\selectfont\bfseries 工业建筑总承包 \qquad 二级建设活动能力 \qquad ISO 管理体系}\\[1.2mm]
+      {\fontsize{7}{8.5}\selectfont\color{white!82!gray}以受控设计、施工与交付能力服务工业项目}
     };
 
   % 6. Legal identity
@@ -63,7 +63,7 @@ PAGE_01 = r"""% ============================================================
       \faPhone\ +84 976 447 766 \quad\textbullet\quad
       \faEnvelope\ info@tanthanhcongjsc.com \quad\textbullet\quad
       \faGlobe\ tanthanhcongjsc.com \quad\textbullet\quad
-      \faAward\ 越南建设部二级施工资质}
+      \faAward\ 建设活动能力二级证书}
   };
 \end{tikzpicture}
 \mbox{}
@@ -106,10 +106,10 @@ PAGE_02 = r"""% ============================================================
 \begin{tabular}{@{}p{91mm}@{\hspace{4mm}}p{91mm}@{}}
 \toccard{I}{01--07}{公司概况与核心能力}{Company profile \& credentials}{总经理致辞 \textbullet\ 愿景与价值观 \textbullet\ 产业生态 \textbullet\ 法人与管理团队} &
 \toccard{IV}{14--19}{EPC解决方案与建筑科技}{EPC, ConTech \& ESG}{Fast-track快速推进 \textbullet\ BIM 5D/AI \textbullet\ ESG低碳 \textbullet\ QA/QC与HSE} \\[3.5mm]
-\toccard{II}{08--10}{财务实力与精英团队}{Financial capacity \& people}{独立预算管控 \textbullet\ 2500亿授信担保 \textbullet\ 2850+人才 \textbullet\ 安全文化} &
-\toccard{V}{20--30}{重点项目与国际客户}{Projects \& valued partners}{150+工业项目 \textbullet\ 06大经典案例 \textbullet\ 严控供应链 \textbullet\ FDI伙伴} \\[3.5mm]
-\toccard{III}{11--13}{生产制造与FIDIC管理}{PEB \& project control}{3万吨PEB制造网络 \textbullet\ 3000亿重型机械 \textbullet\ FIDIC八阶段流程} &
-\toccard{VI}{31--36}{金牌承诺与长期合作}{Commitments \& support}{资质荣誉 \textbullet\ 20+省市施工覆盖 \textbullet\ 战略愿景 \textbullet\ 24个月保修与联系}
+\toccard{II}{08--10}{治理体系与资源保障}{Governance \& people}{项目成本治理 \textbullet\ 保函能力 \textbullet\ 资源调配 \textbullet\ 安全文化} &
+\toccard{V}{20--30}{重点项目与客户}{Projects \& valued partners}{代表性项目 \textbullet\ 06个项目案例 \textbullet\ 受控供应链 \textbullet\ 国际客户} \\[3.5mm]
+\toccard{III}{11--13}{生产协同与项目治理}{Fabrication \& project control}{合作生产网络 \textbullet\ 机械设备 \textbullet\ 合同与项目控制流程} &
+\toccard{VI}{31--36}{承诺与长期支持}{Commitments \& support}{法定资质 \textbullet\ 项目布局 \textbullet\ 发展路线 \textbullet\ 保修与联系}
 \end{tabular}
 
 \vspace{4.5mm}
@@ -117,7 +117,7 @@ PAGE_02 = r"""% ============================================================
 \noindent
 \begin{tikzpicture}
   \node[rounded corners=3pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt,
-        minimum width=186mm, text width=172mm, inner sep=7.5mm] {
+        minimum width=186mm, text width=172mm, inner sep=7mm] {
     {\fontsize{10.5}{12.5}\selectfont\bfseries\color{TTCBlue} \faIdCard\quad 企业法人信息摘要}
     \hfill {\fontsize{7.2}{8.8}\selectfont\color{TTCRed}\bfseries 详细资质认证：第 06 页}\\[1.5mm]
     {\fontsize{6.2}{7.5}\selectfont\color{TTCTextMuted}\bfseries
@@ -128,12 +128,15 @@ PAGE_02 = r"""% ============================================================
       \textbf{企业名称} & \textbf{新成功建筑科技股份公司} (TTC JSC) &
       \textbf{税务登记号} & \textbf{0107090447} \\
       \textbf{法定代表人} & \textbf{范辉新 (PHẠM HUY TÂN)} — 总经理 &
-      \textbf{资质等级} & 越南建设部二级资质 \textbullet\ ISO 9001/14001/45001 \\
+      \textbf{资质等级} & 建设活动能力二级证书 \textbullet\ ISO 管理体系 \\
       \textbf{注册地址} & Số 39, ngõ 292 Kim Giang, Đại Kim, Hà Nội &
       \textbf{办公地址} & Số 19N7B, KĐT Trung Hòa Nhân Chính, Hà Nội \\
       \textbf{联系电话} & +84 976 447 766 \textbullet\ info@tanthanhcongjsc.com &
       \textbf{官方网站} & tanthanhcongjsc.com
-    \end{tabularx}}
+    \end{tabularx}}\\[2mm]
+    {\fontsize{5.5}{6.8}\selectfont\color{TTCTextMuted}
+    \textbf{主要术语：} TTC JSC -- 新成功建筑科技股份公司简称；EPC -- 设计、采购与施工；PEB -- 预制钢结构建筑；MEP -- 机电与给排水；BIM -- 建筑信息模型；\\[-0.3mm]
+    QA/QC -- 质量保证与质量控制；HSE -- 健康、安全与环境；PCCC -- 消防；ITP -- 检验与试验计划。}
   };
 \end{tikzpicture}
 \end{minipage}
@@ -176,7 +179,7 @@ PAGE_03 = r"""% ============================================================
 
       十余年深耕工业建筑领域，让我们深刻理解：一个卓越的工程必须同时满足\textbf{质量、安全、进度与投资效益}。因此，TTC始终践行\textbf{EPC一站式总承包模式}，深度融合价值工程（Value Engineering）、BIM 5D协同与国际标准现场管理体系。\\[3mm]
 
-      依托年产能30,000吨的PEB战略制造网络与实战型工程师团队，我们承诺为每座工厂量身定制最优技术方案，从方案设计、施工装配到竣工交付与全寿命运维实行全程透明管控。\\[3mm]
+      依托受控的钢结构合作生产网络与实战型工程师团队，我们为每座工厂制定与工艺需求相匹配的技术方案，并对设计、施工、交付与保修过程进行透明管控。\\[3mm]
 
       TTC不仅是总承包商，更是与业主\textbf{共创长期价值的战略合作伙伴}。}\\[5mm]
       {\fontsize{9}{11}\selectfont\itshape\color{TTCTextMuted} 此致敬礼，}
@@ -222,18 +225,18 @@ PAGE_03 = r"""% ============================================================
   \begin{tikzpicture}
     \node[rounded corners=3pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt,
           minimum width=58mm, minimum height=43mm, text width=48mm, align=center, inner sep=5mm] {
-      {\fontsize{17}{19}\selectfont\bfseries\color{TTCRed} 10--15\%}\\[1mm]
-      {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} 优化投资成本}\\[2mm]
-      {\fontsize{7.3}{9}\selectfont\color{TTCTextMuted}Value Engineering}
+      {\fontsize{15}{18}\selectfont\bfseries\color{TTCRed} VALUE}\\[1mm]
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} 价值工程}\\[2mm]
+      {\fontsize{7.3}{9}\selectfont\color{TTCTextMuted}Reviewed Engineering Options}
     };
   \end{tikzpicture}
   &
   \begin{tikzpicture}
     \node[rounded corners=3pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt,
           minimum width=58mm, minimum height=43mm, text width=48mm, align=center, inner sep=5mm] {
-      {\fontsize{15}{18}\selectfont\bfseries\color{TTCRed} ZERO}\\[1mm]
-      {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} 零事故安全}\\[2mm]
-      {\fontsize{7.3}{9}\selectfont\color{TTCTextMuted}HSE Commitment}
+      {\fontsize{15}{18}\selectfont\bfseries\color{TTCRed} SAFETY}\\[1mm]
+      {\fontsize{9}{11}\selectfont\bfseries\color{TTCBlue} 设计先行的安全}\\[2mm]
+      {\fontsize{7.3}{9}\selectfont\color{TTCTextMuted}Risk Prevention by Design}
     };
   \end{tikzpicture}
 \end{tabular}
@@ -330,7 +333,7 @@ PAGE_04 = r"""% ============================================================
         fill opacity=0.94, text opacity=1, rounded corners=1.5pt, inner sep=1mm] at (71,67) {
     {\fontsize{18}{20}\selectfont\bfseries\color{TTCRed} 2022}\\[-0.5mm]
     {\fontsize{8.5}{10}\selectfont\bfseries\color{TTCBlue} 资质突破}\\[1mm]
-    {\fontsize{7.2}{9}\selectfont\color{TTCTextDark}获建设部二级总包资质，\\承建多座大型FDI厂房。}
+    {\fontsize{7.2}{9}\selectfont\color{TTCTextDark}取得建设活动能力二级证书，\\拓展多行业工业项目。}
   };
 
   % 2026
@@ -341,7 +344,7 @@ PAGE_04 = r"""% ============================================================
         fill opacity=0.94, text opacity=1, rounded corners=1.5pt, inner sep=1mm] at (119,68) {
     {\fontsize{18}{20}\selectfont\bfseries\color{TTCRed} 2026}\\[-0.5mm]
     {\fontsize{8.5}{10}\selectfont\bfseries\color{TTCBlue} 科技转型}\\[1mm]
-    {\fontsize{7.2}{9}\selectfont\color{TTCTextDark}150+工业项目 \textbullet\ 20+省市\\PEB年产能达30,000吨。}
+    {\fontsize{7.2}{9}\selectfont\color{TTCTextDark}推进数字化协同、绿色建筑与\\一体化交付能力建设。}
   };
 
   % 2030
@@ -452,7 +455,7 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
   ] at (5,113) {
     {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCCyan} 01 / AIDC CONTECH}\\[1mm]
     {\fontsize{10}{11.5}\selectfont\bfseries\color{TTCBlue} BIM 5D • AI • 价值工程}\\[1mm]
-    {\fontsize{7}{8.6}\selectfont\color{TTCTextDark}优化设计与数据模型，节省 10--15\% 投资成本。}
+    {\fontsize{7}{8.6}\selectfont\color{TTCTextDark}通过数据模型与价值工程审查设计方案。}
   };
 
   % 02 — MEP & PCCC
@@ -491,7 +494,7 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
   ] at (181,5) {
     {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCRed} 04 / PEB 钢结构制造}\\[1mm]
     {\fontsize{10}{11.5}\selectfont\bfseries\color{TTCBlue} 精密智造与品控}\\[1mm]
-    {\fontsize{7}{8.6}\selectfont\color{TTCTextDark}CNC • SAW • AWS D1.1 • NDT；年供货能力达 30,000 吨。}
+    {\fontsize{7}{8.6}\selectfont\color{TTCTextDark}按批准的生产计划实施加工、检验与放行。}
   };
 
   % Central hub
@@ -573,7 +576,7 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
     ] {
       {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} 02 / OPTIMIZATION}\\[1mm]
       {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCBlue} 成本优化}\\[1mm]
-      {\fontsize{7}{8.5}\selectfont\color{TTCTextDark}AI与价值工程优化技术方案，节省10--15\%投资成本。}
+      {\fontsize{7}{8.5}\selectfont\color{TTCTextDark}AI辅助方案比选，最终成果由专业工程师审查确认。}
     };
   \end{tikzpicture}
   &
@@ -584,8 +587,8 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
       text width=50mm, inner sep=4mm, align=left
     ] {
       {\fontsize{7}{8}\selectfont\bfseries\color{TTCGold} 03 / RELIABILITY}\\[1mm]
-      {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCBlue} 100\% 按期交付}\\[1mm]
-      {\fontsize{7}{8.5}\selectfont\color{TTCTextDark}自控重机与制造产能，保障项目关键节点绝对准时。}
+      {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCBlue} 受控交付}\\[1mm]
+      {\fontsize{7}{8.5}\selectfont\color{TTCTextDark}机械与供应资源按项目计划配置，关键节点纳入受控跟踪。}
     };
   \end{tikzpicture}
 \end{tabular}
@@ -596,7 +599,7 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
 PAGE_06 = r"""% ============================================================
 % TRANG 06: GOVERNANCE & COMPLIANCE DASHBOARD
 % ============================================================
-\pageheaderbar{组织架构与建设部二级资质认证}{第06页}
+\pageheaderbar{治理架构与建设活动能力二级资质}{第06页}
 \pagefooterbar{第06页}
 
 \begin{tikzpicture}[remember picture, overlay]
@@ -705,7 +708,7 @@ An execution-led governance model connecting board oversight directly to every p
   ] at (32,32) {
     {\fontsize{7.1}{8.4}\selectfont\bfseries\color{TTCBlue}\faHardHat\ PROJECT DELIVERY}\\[1mm]
     {\fontsize{6.7}{8.2}\selectfont\color{TTCTextDark}
-    • FDI项目指挥部\\
+    • 国际项目指挥部\\
     • 施工统筹与机械调度\\
     • 现场 HSE \& QA/QC 管控}
   };
@@ -728,7 +731,7 @@ An execution-led governance model connecting board oversight directly to every p
     {\fontsize{7.1}{8.4}\selectfont\bfseries\color{TTCBlue}\faFileInvoiceDollar\ COMMERCIAL}\\[1mm]
     {\fontsize{6.7}{8.2}\selectfont\color{TTCTextDark}
     • 招投标与FIDIC合同谈判\\
-    • EPC现金流与资金风控\\
+    • EPC成本、合同与资金计划\\
     • Tier-1 核心供应链采购}
   };
 
@@ -765,14 +768,14 @@ An execution-led governance model connecting board oversight directly to every p
   \node[align=center] at (31.5,45) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCRed} CONSTRUCTION LICENSE}\\[1mm]
     {\fontsize{20}{22}\selectfont\bfseries\color{TTCRed} 二级资质}\\[-0.2mm]
-    {\fontsize{8.5}{10}\selectfont\bfseries\color{TTCBlue} 越南建设部颁发}
+    {\fontsize{8.5}{10}\selectfont\bfseries\color{TTCBlue} 建设活动能力证书}
   };
   \draw[TTCBorder, line width=0.5pt] (11,29) -- (52,29);
   \node[text width=42mm, align=left] at (31.5,18) {
     {\fontsize{6.6}{8.2}\selectfont\color{TTCTextDark}
-    \textcolor{TTCRed}{\faCheckCircle}\ 工业建筑设计与施工总承包\\
-    \textcolor{TTCRed}{\faCheckCircle}\ 无建筑面积与楼层上限限制\\
-    \textcolor{TTCRed}{\faCheckCircle}\ 超大跨度重型工业厂房资质}
+    \textcolor{TTCRed}{\faCheckCircle}\ 证书等级：二级\\
+    \textcolor{TTCRed}{\faCheckCircle}\ 业务范围以有效证书为准\\
+    \textcolor{TTCRed}{\faCheckCircle}\ 受控副本随法定资质卷宗提供}
   };
 
   % ISO 9001
@@ -811,7 +814,7 @@ An execution-led governance model connecting board oversight directly to every p
   };
   \node[text width=30mm, align=center] at (163,20) {
     {\fontsize{6.6}{8.2}\selectfont\color{TTCTextDark}
-    职业健康安全体系，坚持零事故政策与全员安全培训。}
+    职业健康安全体系，强调岗前培训、风险控制与停工授权。}
   };
 \end{tikzpicture}
 
@@ -825,7 +828,7 @@ An execution-led governance model connecting board oversight directly to every p
   \fill[TTCDeepNavy, rounded corners=4pt] (0,0) rectangle (47,24);
   \node[align=left, anchor=west] at (6,12) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} PRE-QUALIFICATION}\\[0.8mm]
-    {\fontsize{10}{11.5}\selectfont\bfseries\color{white} READY FOR FDI}\\[0.5mm]
+    {\fontsize{10}{11.5}\selectfont\bfseries\color{white} 资审就绪}\\[0.5mm]
     {\fontsize{6.3}{7.6}\selectfont\color{white!72!gray}Legal • Quality • HSE}
   };
   \node[align=center] at (72,12) {
@@ -837,7 +840,7 @@ An execution-led governance model connecting board oversight directly to every p
     {\fontsize{7}{8.3}\selectfont\bfseries\color{TTCTextDark} 4级 ITP 品控体系}
   };
   \node[align=center] at (160,12) {
-    {\fontsize{11}{12.5}\selectfont\bfseries\color{TTCRed} 100\%}\\[0.6mm]
+    {\fontsize{11}{12.5}\selectfont\bfseries\color{TTCRed} CO/CQ}\\[0.6mm]
     {\fontsize{7}{8.3}\selectfont\bfseries\color{TTCTextDark} CO/CQ 材料溯源}
   };
 \end{tikzpicture}
@@ -965,7 +968,7 @@ One accountable team mobilized from pre-construction through commissioning and w
     \textbf{As-built \& Digital Twin Team}\\
     标准化竣工图纸与数字资产交付。\\[0.8mm]
     \textbf{Warranty Response Team}\\
-    24/7 快速技术支持与质保服务。}
+    按合同条件受理并处理技术支持与保修事项。}
   };
   \node[anchor=south, align=center] at (157,3.5) {
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCRed} OUTPUT: READY FOR OPERATION}

@@ -153,11 +153,11 @@ PAGE_11 = r"""% ============================================================
   \end{tikzpicture}%
 }
 \vspace{6mm}
-\secbrand{Chuỗi Cung Ứng PEB Được Kiểm Soát Bởi TTC}{Strategic Fabrication Network, Resident QA/QC \& Traceable Quality Gates}
+\secbrand{Chuỗi Cung Ứng Nhà Thép Tiền Chế Được Kiểm Soát}{Strategic Fabrication Network, Resident Quality Control \& Traceable Quality Gates}
 
 \vspace{1mm}
 {\fontsize{15}{17}\selectfont\bfseries\color{TTCBlue}
-THIẾT KẾ TTC • SẢN XUẤT ĐỐI TÁC • QC THƯỜNG TRÚ\par}
+THIẾT KẾ TÂN THÀNH CÔNG • SẢN XUẤT ĐỐI TÁC • KIỂM SOÁT THƯỜNG TRÚ\par}
 \vspace{1mm}
 {\fontsize{7.5}{9}\selectfont\color{TTCTextMuted}
 Flexible fabrication capacity with TTC-controlled engineering, inspection and release authority.\par}
@@ -174,8 +174,8 @@ Flexible fabrication capacity with TTC-controlled engineering, inspection and re
   \fill[TTCDeepNavy, opacity=0.28] (68,0) rectangle (92,64);
   \node[anchor=west, text width=54mm, align=left, text=white] at (8,42) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} STRATEGIC PEB NETWORK}\\[1.3mm]
-    {\fontsize{19}{21}\selectfont\bfseries 30.000 TẤN}\\[-0.4mm]
-    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCCyan} NĂNG LỰC CUNG ỨNG / NĂM}\\[1.8mm]
+    {\fontsize{18}{20}\selectfont\bfseries KẾ HOẠCH HÓA}\\[-0.4mm]
+    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCCyan} NĂNG LỰC THEO GÓI DỰ ÁN}\\[1.8mm]
     {\fontsize{7}{8.6}\selectfont\color{white!82!gray}
     TTC làm chủ thiết kế, Shop Drawing và quyền phê duyệt xuất xưởng.}
   };
@@ -185,8 +185,8 @@ Flexible fabrication capacity with TTC-controlled engineering, inspection and re
     draw=TTCCyan, line width=0.65pt,
     minimum width=55mm, minimum height=14mm, align=center
   ] at (179,7) {
-    {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCBlue} >20.000 m\textsuperscript{2} • RESIDENT QC}\\[0.6mm]
-    {\fontsize{6.5}{7.8}\selectfont\color{TTCTextDark}Partner factory footprint • TTC supervision}
+    {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCBlue} PARTNER FACTORY • RESIDENT QC}\\[0.6mm]
+    {\fontsize{6.5}{7.8}\selectfont\color{TTCTextDark}Approved production plan • TTC supervision}
   };
   \draw[white, line width=1pt, rounded corners=3pt] (0.6,0.6) rectangle (185.4,63.4);
   \draw[TTCBorder, line width=0.65pt, rounded corners=3pt] (0,0) rectangle (186,64);
@@ -671,8 +671,8 @@ Danh mục được tinh gọn theo năng lực thực thi, ưu tiên khả năn
   };
   \node[rounded corners=2pt, fill=TTCRed, text=white, align=center,
         minimum width=35mm, minimum height=16mm] at (167,17) {
-    {\fontsize{11}{12}\selectfont\bfseries 100\%}\\[-0.4mm]
-    {\fontsize{6.2}{7.4}\selectfont KIỂM ĐỊNH HIỆU LỰC}
+    {\fontsize{11}{12}\selectfont\bfseries CÒN HIỆU LỰC}\\[-0.4mm]
+    {\fontsize{6.2}{7.4}\selectfont HỒ SƠ KIỂM ĐỊNH}
   };
 \end{tikzpicture}
 
@@ -755,7 +755,7 @@ Danh mục được tinh gọn theo năng lực thực thi, ưu tiên khả năn
   \path[use as bounding box] (0,0) rectangle (186,29);
   \fill[TTCDeepNavy, rounded corners=3pt] (0,0) rectangle (186,29);
   \foreach \x in {46.5,93,139.5}{\draw[white!35!gray] (\x,6) -- (\x,23);}
-  \node[align=center, text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} 12 GIỜ}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Điều Động Khẩn Cấp}};
+  \node[align=center, text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} THEO KẾ HOẠCH}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Điều Động Theo Đường Găng}};
   \node[align=center, text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} CHỨNG CHỈ}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Vận Hành Đúng Chuẩn}};
   \node[align=center, text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries BẢO DƯỠNG}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Theo Khuyến Nghị Hãng}};
   \node[align=center, text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} NHẬT KÝ SỐ}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Trạng Thái Theo Thời Gian}};
@@ -897,7 +897,7 @@ Tám bước triển khai được gom thành bốn pha quản trị, giúp Ch�
   \node[align=center, text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} 8 BƯỚC}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Trong 4 Pha Kiểm Soát}};
   \node[align=center, text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} 4 GATES}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Quyết Định Có Điều Kiện}};
   \node[align=center, text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries FIDIC EPC}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Chuẩn Hợp Đồng Quốc Tế}};
-  \node[align=center, text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} 24 THÁNG}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Bảo Hành Toàn Diện}};
+  \node[align=center, text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} THEO HỢP ĐỒNG}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Bảo Hành Và Hậu Mãi}};
 \end{tikzpicture}
 \end{minipage}
 \newpage

@@ -6,7 +6,7 @@ Section 2: Financial Governance, Credit Capacity & Talent Development (Pages 08 
 PAGE_08 = r"""% ============================================================
 % TRANG 08: QUẢN TRỊ TÀI CHÍNH DỰ ÁN & KỶ LUẬT DÒNG TIỀN
 % ============================================================
-\pageheaderbar{项目财务管理与现金流纪律}{第08页}
+\pageheaderbar{项目成本、合同与记录治理}{第08页}
 \pagefooterbar{第08页}
 
 \begin{tikzpicture}[remember picture, overlay]
@@ -19,7 +19,7 @@ PAGE_08 = r"""% ============================================================
 \end{tikzpicture}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{项目财务管理与现金流纪律}{Project Financial Governance • Cost Discipline • Verified \& Traceable Records}
+\secbrand{项目成本、合同与记录治理}{Project Cost Governance • Contract Discipline • Verified \& Traceable Records}
 
 \vspace{1mm}
 {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCBlue}
@@ -51,7 +51,7 @@ PAGE_08 = r"""% ============================================================
   \node[anchor=south, align=center, text width=26mm, text=TTCRed, font=\fontsize{7}{8.2}\selectfont\bfseries]
     at (15,57.5) {合同审查\\与风险评估};
   \node[anchor=north, align=center, text width=27mm, text=TTCTextDark, font=\fontsize{6.2}{7.6}\selectfont]
-    at (15,42.5) {毛利率底线测算\\支付与结算条款\\质保与违约风险};
+    at (15,42.5) {商务范围核对\\支付与结算条款\\保留款与合同风险};
 
   % Cổng 02
   \fill[white] (47,50) circle (4.8);
@@ -60,7 +60,7 @@ PAGE_08 = r"""% ============================================================
   \node[anchor=south, align=center, text width=26mm, text=TTCBlue, font=\fontsize{7}{8.2}\selectfont\bfseries]
     at (47,57.5) {项目基准\\预算锁定};
   \node[anchor=north, align=center, text width=27mm, text=TTCTextDark, font=\fontsize{6.2}{7.6}\selectfont]
-    at (47,42.5) {WBS目标成本基准\\阶段现金流计划\\物资支付限额锁定};
+    at (47,42.5) {WBS成本基准\\阶段资金计划\\资源配置计划};
 
   % Cổng 03
   \fill[white] (79,50) circle (4.8);
@@ -85,7 +85,7 @@ PAGE_08 = r"""% ============================================================
   \node[anchor=west, text=TTCCyan, font=\fontsize{6.8}{8}\selectfont\bfseries]
     at (8,12) {\faShield*\quad CONTROL BEFORE COMMITMENT};
   \node[anchor=east, text=white, font=\fontsize{6.5}{7.8}\selectfont\bfseries]
-    at (118,12) {预算未定不立项，现金流不稳不调配};
+    at (118,12) {预算与资源计划获批后方可承诺};
 
   % KHỐI PHẢI: NGUYÊN TẮC QUẢN TRỊ
   \fill[TTCLightBlue, rounded corners=4pt] (131,0) rectangle (186,86);
@@ -99,14 +99,14 @@ PAGE_08 = r"""% ============================================================
 
   \node[anchor=north west, text width=45mm, text=TTCTextDark, font=\fontsize{6.8}{8.6}\selectfont]
     at (136,56) {
-    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{预算锁定：} 调配资源前 100\% 锁定成本基准。\\[2.4mm]
+    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{预算锁定：} 调配资源前完成成本基准审批。\\[2.4mm]
     \textcolor{TTCRed}{\faCheckCircle}\ \textbf{变更受控：} 额外支出必须有对应资金来源弥补。\\[2.4mm]
-    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{安全扩张：} 唯有保障交付与现金流方可拓展新单。
+    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{审慎承接：} 仅在交付资源与合同风险可控时扩大规模。
   };
 
   \fill[white, rounded corners=2.5pt, draw=TTCBorder, line width=0.55pt] (136,6) rectangle (181,18);
   \node[anchor=center, text=TTCBlue, font=\fontsize{6.6}{8}\selectfont\bfseries, align=center]
-    at (158.5,12) {\faLock\quad 100\% 项目实行独立财务代码};
+    at (158.5,12) {\faLock\quad 每个项目采用独立成本代码};
 \end{tikzpicture}
 
 \vspace{3.5mm}
@@ -177,8 +177,8 @@ PAGE_08 = r"""% ============================================================
   \foreach \xa/\xb/\num/\label/\sub in {
     53/81/01/财务审计报告/独立三方审计,
     85/113/02/完税证明文件/依法足额纳税,
-    117/145/03/供应链往来对账/0 供应商欠款,
-    149/181/04/项目管理报告/透明现金流跟踪}{
+    117/145/03/供应链往来对账/供应商与分包商核对,
+    149/181/04/项目管理报告/项目资金计划}{
     \fill[TTCLightBlue, rounded corners=3pt] (\xa,14) rectangle (\xb,40);
     \draw[TTCBorder, line width=0.5pt, rounded corners=3pt] (\xa,14) rectangle (\xb,40);
     \node[text=TTCRed, font=\fontsize{8}{9.5}\selectfont\bfseries] at ({(\xa+\xb)/2},34.5) {\num};
@@ -200,7 +200,7 @@ PAGE_08 = r"""% ============================================================
 PAGE_09 = r"""% ============================================================
 % TRANG 09: NĂNG LỰC HUY ĐỘNG CHO DỰ ÁN EPC
 % ============================================================
-\pageheaderbar{银行信用额度与精英团队保障}{第09页}
+\pageheaderbar{合同保函与项目资源调配能力}{第09页}
 \pagefooterbar{第09页}
 
 \begin{tikzpicture}[remember picture, overlay]
@@ -213,14 +213,14 @@ PAGE_09 = r"""% ============================================================
 \end{tikzpicture}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{EPC项目履约保障能力}{Banking Capacity, Performance Bonds \& Site-Ready Workforce Mobilization}
+\secbrand{保函文件与项目资源调配能力}{Banking Readiness, Contract Security \& Workforce Mobilization}
 
 \vspace{1mm}
 {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCBlue}
-双重履约引擎 • 资金授信与实战团队全面就绪\par}
+双重履约引擎 • 一套经批准的综合调配计划\par}
 \vspace{1mm}
 {\fontsize{7.5}{9}\selectfont\color{TTCTextMuted}
-雄厚银行信贷额度支撑结合多兵种实战型技术队伍，按合同节点即时响应并高效推进。\par}
+保函文件准备与多专业实施团队按合同阶段和关键作业面进行配置。\par}
 \vspace{3.5mm}
 
 \noindent
@@ -237,8 +237,8 @@ PAGE_09 = r"""% ============================================================
     at (6,67) {银行授信与履约保函能力};
 
   \node[anchor=west] at (6,54) {
-    {\fontsize{23}{25}\selectfont\bfseries\color{TTCRed} 2500 亿越盾}\quad
-    {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCTextMuted} 银行总授信额度}
+    {\fontsize{20}{22}\selectfont\bfseries\color{TTCRed} 文件就绪}\quad
+    {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCTextMuted} 按合同要求提交}
   };
 
   % Bank Badges
@@ -249,8 +249,8 @@ PAGE_09 = r"""% ============================================================
   \node[anchor=north west, text width=80mm, text=TTCTextDark, font=\fontsize{6.8}{8.6}\selectfont]
     at (6,33.5) {
     \textcolor{TTCRed}{\faCheckCircle}\ \textbf{全类型保函：} 投标保函、履约保函、预付款保函与质保函。\\[1.4mm]
-    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{快速出函：} 满足条件后 24--48 小时内开具主流银行保函。\\[1.4mm]
-    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{国际通用：} 遵循 FIDIC 银皮书标准条款，可开立国际信用证 (L/C)。
+    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{受控签发：} 保函须满足银行审批与合同条件。\\[1.4mm]
+    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{国际合同：} 可按项目要求协调FIDIC条款及信用证文件。
   };
 
   % KHỐI PHẢI: DELIVERY ENGINE
@@ -263,21 +263,21 @@ PAGE_09 = r"""% ============================================================
     at (102,67) {实战型专业技术施工队伍};
 
   \node[anchor=west] at (102,54) {
-    {\fontsize{23}{25}\selectfont\bfseries\color{TTCBlue} 2,850+ 人}\quad
-    {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCTextMuted} 多专业成熟技术团队}
+    {\fontsize{20}{22}\selectfont\bfseries\color{TTCBlue} 按工种配置}\quad
+    {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCTextMuted} 依据工作包调配团队}
   };
 
   % Visual Distribution Bar
   \fill[TTCBlue, rounded corners=1.5pt] (102,41) rectangle (114,45);
   \fill[TTCCyan, rounded corners=1.5pt] (115,41) rectangle (180,45);
-  \node[anchor=west, text=TTCBlue, font=\fontsize{6.2}{7.4}\selectfont\bfseries] at (102,47.5) {350+ 工程师 (12\%)};
-  \node[anchor=east, text=TTCCyan, font=\fontsize{6.6}{7.6}\selectfont\bfseries] at (180,47.5) {2,500+ 专业施工技工 (88\%)};
+  \node[anchor=west, text=TTCBlue, font=\fontsize{6.2}{7.4}\selectfont\bfseries] at (102,47.5) {项目管理与专业工程师};
+  \node[anchor=east, text=TTCCyan, font=\fontsize{6.6}{7.6}\selectfont\bfseries] at (180,47.5) {持证专业施工班组};
 
   \node[anchor=north west, text width=78mm, text=TTCTextDark, font=\fontsize{6.8}{8.6}\selectfont]
     at (102,33.5) {
-    \textcolor{TTCBlue}{\faCheckCircle}\ \textbf{350+ 管理与技术专家：} 二级建造师、BIM LOD400、QA/QC及HSE。\\[1.4mm]
-    \textcolor{TTCCyan}{\faCheckCircle}\ \textbf{2,500+ 熟练技工：} AWS持证焊工(3G-6G)、PEB安装、MEP机电。\\[1.4mm]
-    \textcolor{TTCTextMuted}{\faCheckCircle}\ \textbf{多作业面调度：} 实行三班连续作业，可同时承建 5--8 个大型工程。
+    \textcolor{TTCBlue}{\faCheckCircle}\ \textbf{关键岗位：} 项目管理、BIM协调、质量与安全人员按项目任命。\\[1.4mm]
+    \textcolor{TTCCyan}{\faCheckCircle}\ \textbf{专业班组：} 持证焊工、钢结构安装与机电施工人员按工序调配。\\[1.4mm]
+    \textcolor{TTCTextMuted}{\faCheckCircle}\ \textbf{多作业面管理：} 依据关键路径、场地条件与获批施工方案组织作业。
   };
 
   % Joining Connector Pill
@@ -308,7 +308,7 @@ PAGE_09 = r"""% ============================================================
   \node[anchor=north west, text width=34mm, align=left] at (4,53) {
     {\fontsize{9.8}{11.5}\selectfont\bfseries\color{TTCBlue} 投标筹备}\\[2.2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} 财务资源}\\[0.7mm]
-    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}1--3\% 投标保函及授信额度确认。}\\[2mm]
+    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}按招标文件确认投标保函与资信材料。}\\[2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} 人员配置}\\[0.7mm]
     {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}造价师、价值工程与商务谈判专家。}
   };
@@ -330,7 +330,7 @@ PAGE_09 = r"""% ============================================================
   \node[anchor=north west, text width=34mm, align=left] at (52,53) {
     {\fontsize{9.8}{11.5}\selectfont\bfseries\color{TTCBlue} 合同签署}\\[2.2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} 财务资源}\\[0.7mm]
-    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}5--10\% 履约保函与 10--20\% 预付款保函。}\\[2mm]
+    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}按合同及银行审批条件办理履约与预付款保函。}\\[2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} 人员配置}\\[0.7mm]
     {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}任命项目总监、项目经理及骨干团队。}
   };
@@ -352,7 +352,7 @@ PAGE_09 = r"""% ============================================================
   \node[anchor=north west, text width=34mm, align=left] at (100,53) {
     {\fontsize{9.8}{11.5}\selectfont\bfseries\color{TTCBlue} 现场施工}\\[2.2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} 财务资源}\\[0.7mm]
-    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}充足流动资金、材料信用证与按期结算。}\\[2mm]
+    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}按获批项目资金计划、采购条件与结算节点执行。}\\[2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} 人员配置}\\[0.7mm]
     {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}常驻指挥部、专业工程师与多班组作业。}
   };
@@ -374,9 +374,9 @@ PAGE_09 = r"""% ============================================================
   \node[anchor=north west, text width=34mm, align=left] at (148,53) {
     {\fontsize{9.8}{11.5}\selectfont\bfseries\color{TTCBlue} 竣工交付}\\[2.2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} 财务资源}\\[0.7mm]
-    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}开具 5\% 质量保函，全程覆盖 24 个月。}\\[2mm]
+    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}保修保函与期限按具体合同确定。}\\[2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} 人员配置}\\[0.7mm]
-    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}联合调试、竣工模型交付与 24/7 质保。}
+    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}联合调试、竣工资料交付与合同约定保修。}
   };
   \fill[TTCRed, rounded corners=2pt] (150,3.5) rectangle (180,10);
   \node[anchor=center] at (165,6.75) {
@@ -404,10 +404,10 @@ PAGE_09 = r"""% ============================================================
 
   % 4 Metric Badges
   \foreach \xa/\xb/\val/\title/\sub in {
-    53/81/0/逾期不良负债/充沛现金流储备,
-    85/113/100\%/HSE 安全培训/全员持安全卡上岗,
-    117/145/AWS D1.1/高级持证焊工/国际标准严苛考评,
-    149/181/FDI READY/多语种工程团队/英语 • 中文 • 韩语}{
+    53/81/资料/资信文件/受控文件可提供,
+    85/113/培训/岗前安全/按岗位要求实施,
+    117/145/证书/专业人员/按工作包核验,
+    149/181/语言/沟通支持/越语 • 英语 • 中文}{
     \fill[TTCLightBlue, rounded corners=3pt] (\xa,4.5) rectangle (\xb,38.5);
     \draw[TTCBorder, line width=0.5pt, rounded corners=3pt] (\xa,4.5) rectangle (\xb,38.5);
     \node[text=TTCRed, font=\fontsize{11}{13}\selectfont\bfseries] at ({(\xa+\xb)/2},29.5) {\val};
@@ -495,7 +495,7 @@ PAGE_10 = r"""% ============================================================
 
   \node[align=center, text width=36mm] at (22,13) {
     {\fontsize{8.8}{10}\selectfont\bfseries\color{TTCBlue} HSE READY}\\[0.7mm]
-    {\fontsize{6.5}{7.8}\selectfont 100\% 岗前安全三级教育培训}
+    {\fontsize{6.5}{7.8}\selectfont 进场前必须完成安全培训}
   };
   \node[align=center, text width=36mm] at (69,13) {
     {\fontsize{8.8}{10}\selectfont\bfseries\color{TTCBlue} TECHNICAL MASTERY}\\[0.7mm]
@@ -503,11 +503,11 @@ PAGE_10 = r"""% ============================================================
   };
   \node[align=center, text width=36mm] at (117,13) {
     {\fontsize{8.8}{10}\selectfont\bfseries\color{TTCBlue} CERTIFIED PRO}\\[0.7mm]
-    {\fontsize{6.5}{7.8}\selectfont 建设部二级 • AWS D1.1 • PMP • FIDIC}
+    {\fontsize{6.5}{7.8}\selectfont 二级能力 • AWS D1.1 • PMP • FIDIC}
   };
   \node[align=center, text width=36mm] at (164,13) {
     {\fontsize{8.8}{10}\selectfont\bfseries\color{TTCRed} PROJECT LEADER}\\[0.7mm]
-    {\fontsize{6.5}{7.8}\selectfont 独当一面、引领大型FDI项目总包}
+    {\fontsize{6.5}{7.8}\selectfont 指挥、培训并带领项目团队}
   };
 \end{tikzpicture}
 
@@ -534,7 +534,7 @@ PAGE_10 = r"""% ============================================================
     {\fontsize{10}{11.5}\selectfont\bfseries\color{TTCBlue} 职业安全与人文关怀体系}\\[1.5mm]
     {\fontsize{6.8}{8.4}\selectfont\color{TTCTextDark}
     \textcolor{TTCRed}{\faCheckCircle}\ 每日工前会 (Toolbox Talk) 与常态化消防救援演练。\\[0.8mm]
-    \textcolor{TTCRed}{\faCheckCircle}\ 全员 24/7 意外人身险及定期职业健康体检。\\[0.8mm]
+    \textcolor{TTCRed}{\faCheckCircle}\ 按规定配置意外保险并实施定期健康检查。\\[0.8mm]
     \textcolor{TTCRed}{\faCheckCircle}\ 透明 KPI 激励体系、清晰晋升通道与停工保护机制。}
   };
 \end{tikzpicture}
@@ -550,20 +550,20 @@ PAGE_10 = r"""% ============================================================
     \draw[TTCBorder, line width=0.5pt] (\x,5) -- (\x,23);
   }
   \node[align=center] at (23.25,14) {
-    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCRed} >120 小时}\\[0.7mm]
-    {\fontsize{6.6}{7.8}\selectfont\bfseries 年人均工程师培训时长}
+    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCRed} 定期开展}\\[0.7mm]
+    {\fontsize{6.6}{7.8}\selectfont\bfseries 按岗位组织培训}
   };
   \node[align=center] at (69.75,14) {
-    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCBlue} 100\%}\\[0.7mm]
-    {\fontsize{6.6}{7.8}\selectfont\bfseries 全员持安全卡上岗}
+    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCBlue} 强制要求}\\[0.7mm]
+    {\fontsize{6.6}{7.8}\selectfont\bfseries 有效安全资格}
   };
   \node[align=center] at (116.25,14) {
-    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCCyan} 100\%}\\[0.7mm]
-    {\fontsize{6.6}{7.8}\selectfont\bfseries 24/7 人身安全保险}
+    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCCyan} 依法配置}\\[0.7mm]
+    {\fontsize{6.6}{7.8}\selectfont\bfseries 保险与健康保障}
   };
   \node[align=center] at (162.75,14) {
-    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCBlue} ZERO}\\[0.7mm]
-    {\fontsize{6.6}{7.8}\selectfont\bfseries 零事故核心文化理念}
+    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCBlue} STOP WORK}\\[0.7mm]
+    {\fontsize{6.6}{7.8}\selectfont\bfseries 停工授权机制}
   };
 \end{tikzpicture}
 \end{minipage}

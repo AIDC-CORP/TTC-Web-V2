@@ -56,18 +56,18 @@ TTC将法定报批、工程设计、材料采购与施工安装整合于一份�
   };
   \node[rounded corners=2pt, fill=white, align=center, minimum width=29mm,
         minimum height=15mm] at (113,15) {
-    {\fontsize{11}{12}\selectfont\bfseries\color{TTCRed} -15\%}\\[-.3mm]
-    {\fontsize{5.8}{7}\selectfont\color{TTCBlue} 优化用钢量}
+    {\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} REVIEWED}\\[-.3mm]
+    {\fontsize{5.8}{7}\selectfont\color{TTCBlue} 结构方案比选}
   };
   \node[rounded corners=2pt, fill=white, align=center, minimum width=29mm,
         minimum height=15mm] at (145,15) {
-    {\fontsize{11}{12}\selectfont\bfseries\color{TTCCyan} -60 天}\\[-.3mm]
-    {\fontsize{5.8}{7}\selectfont\color{TTCBlue} 缩短项目工期}
+    {\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} PARALLEL}\\[-.3mm]
+    {\fontsize{5.8}{7}\selectfont\color{TTCBlue} 工作流并行}
   };
   \node[rounded corners=2pt, fill=TTCGold, text=white, align=center,
         minimum width=29mm, minimum height=15mm] at (177,15) {
-    {\fontsize{11}{12}\selectfont\bfseries 0}\\[-.3mm]
-    {\fontsize{5.8}{7}\selectfont MEP机电碰撞}
+    {\fontsize{9}{10}\selectfont\bfseries ALIGNED}\\[-.3mm]
+    {\fontsize{5.8}{7}\selectfont 模型协同校核}
   };
 \end{tikzpicture}
 
@@ -136,8 +136,8 @@ TTC将法定报批、工程设计、材料采购与施工安装整合于一份�
   \fill[TTCDeepNavy, rounded corners=3pt] (0,0) rectangle (186,29);
   \foreach \x in {46.5,93,139.5}{\draw[white!35!gray] (\x,6) -- (\x,23);}
   \node[align=center,text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} 成本优化}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 价值工程 (VE)}};
-  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} 45--60 天}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Fast-Track 快速建造}};
-  \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries 0 碰撞}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont BIM 全专业协同}};
+  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} 并行策划}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Fast-Track 快速建造}};
+  \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries 模型校核}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont BIM 全专业协同}};
   \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} 总价包干}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 预算确定性保障}};
 \end{tikzpicture}
 \end{minipage}
@@ -174,7 +174,7 @@ PAGE_15 = r"""% ============================================================
 统一数据模型 • 三维智能决策 • 赋能全生命周期\par}
 \vspace{1mm}
 {\fontsize{7.5}{9}\selectfont\color{TTCTextMuted}
-设计数据不再停留在图纸上：它直接指导采购制造、现场施工、竣工验收以及长达30+年的智慧运维。\par}
+设计数据不再停留在图纸上：它直接指导采购制造、现场施工、竣工验收，并形成可追溯的运维资产数据。\par}
 \vspace{3mm}
 
 \noindent
@@ -234,7 +234,7 @@ PAGE_15 = r"""% ============================================================
     {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}
     \textbf{输入：} 荷载 • 柱网跨度 • 内力包络\newline
     \textbf{决策：} 遗传算法多变量截面迭代\newline
-    \textbf{输出：} 结构成本优化 10--15\% 最优方案}\\[1mm]
+    \textbf{输出：} 经专业工程师复核的截面方案}\\[1mm]
     {\fontsize{6.2}{7.3}\selectfont\bfseries\color{TTCTextMuted} AISC 360 • EUROCODE • AIDC R\&D}
   };
   \node[anchor=north west,text width=50mm] at (131,53) {
@@ -243,7 +243,7 @@ PAGE_15 = r"""% ============================================================
     {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}
     \textbf{输入：} 竣工模型 • 设备台账 • IoT传感\newline
     \textbf{决策：} 基于设备状态的预测性维保\newline
-    \textbf{输出：} 30+年可追溯资产数字档案}\\[1mm]
+    \textbf{输出：} 可追溯的资产数字档案}\\[1mm]
     {\fontsize{6.2}{7.3}\selectfont\bfseries\color{TTCTextMuted} CDE • BMS • SCADA READY}
   };
 \end{tikzpicture}
@@ -281,7 +281,7 @@ PAGE_16 = r"""% ============================================================
 \secbrand{将绿色低碳理念融入工程商业价值模型}{Solar-Ready, Low-Energy Envelope, Water Circularity \& Green Certification}
 
 {\fontsize{15}{17}\selectfont\bfseries\color{TTCBlue}
-削减OPEX运营成本 • 顺应碳关税合规 • 提升资产价值\par}
+优化运营负担 • 支持适用合规 • 提升资产适应性\par}
 \vspace{1mm}
 {\fontsize{7.5}{9}\selectfont\color{TTCTextMuted}
 绿色ESG设计从前期结构载荷与围护系统深度集成，避免投产后再行改造带来的高昂成本。\par}
@@ -297,20 +297,20 @@ PAGE_16 = r"""% ============================================================
   \fill[TTCDeepNavy,opacity=.22] (61,0) rectangle (87,70);
   \node[anchor=west,text width=48mm,align=left,text=white] at (8,46) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} ESG-BY-DESIGN}\\[1.3mm]
-    {\fontsize{17}{19}\selectfont\bfseries NET-ZERO}\\[-.2mm]
+    {\fontsize{17}{19}\selectfont\bfseries GREEN}\\[-.2mm]
     {\fontsize{17}{19}\selectfont\bfseries\color{TTCRed!85!white} READY}\\[1.8mm]
     {\fontsize{7}{8.5}\selectfont\color{white!82!gray}
     屋顶荷载、能耗模拟、水资源循环与绿色认证协同设计。}
   };
   \node[rounded corners=2pt,fill=white,align=center,minimum width=31mm,
         minimum height=15mm] at (121,15) {
-    {\fontsize{10}{11}\selectfont\bfseries\color{TTCRed} 1--5 MWp}\\[-.2mm]
+    {\fontsize{10}{11}\selectfont\bfseries\color{TTCRed} SOLAR}\\[-.2mm]
     {\fontsize{5.8}{7}\selectfont\color{TTCBlue} 光伏就绪屋面}
   };
   \node[rounded corners=2pt,fill=TTCCyan,align=center,text=white,
         minimum width=31mm,minimum height=15mm] at (155,15) {
-    {\fontsize{10}{11}\selectfont\bfseries -20\%}\\[-.2mm]
-    {\fontsize{5.8}{7}\selectfont 暖通能耗降低}
+    {\fontsize{10}{11}\selectfont\bfseries PASSIVE}\\[-.2mm]
+    {\fontsize{5.8}{7}\selectfont 围护节能策略}
   };
 \end{tikzpicture}
 
@@ -328,7 +328,7 @@ PAGE_16 = r"""% ============================================================
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCRed} 01 / 清洁能源}\\[1mm]
     {\fontsize{8.5}{10}\selectfont\bfseries\color{TTCBlue} 光伏系统就绪}\\[1mm]
     {\fontsize{6.5}{7.8}\selectfont\color{TTCTextDark}
-    预留屋顶荷载与直锁式立缝咬合件，可即装 1--5MWp 光伏。}
+    依据经批准的光伏系统资料预留屋顶荷载、检修通道与安装接口。}
   };
   \node[anchor=north west,text width=35mm] at (51.5,43) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} 02 / 节能围护}\\[1mm]
@@ -358,22 +358,22 @@ PAGE_16 = r"""% ============================================================
   \fill[TTCLightBlue,rounded corners=3pt] (0,0) rectangle (186,47);
   \draw[TTCBorder,rounded corners=3pt,line width=.6pt] (0,0) rectangle (186,47);
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries] at (7,39)
-    {\faGlobeAmericas\quad 赋能外资跨国企业 (FDI) 核心诉求};
+    {\faGlobeAmericas\quad 支持国际业主的绿色合规与运营需求};
   \foreach \x in {62,124}{\draw[TTCBorder] (\x,6) -- (\x,31);}
   \node[align=left,text width=50mm,anchor=north west] at (6,30) {
-    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCRed} 绿色金融准入}\\[.7mm]
+    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCRed} 绿色金融资料支持}\\[.7mm]
     {\fontsize{6.5}{7.8}\selectfont\color{TTCTextDark}
-    助力企业轻松对接绿色低息信贷与跨国供应链ESG评级准入标准。}
+    按项目要求整理能耗、材料与认证资料，为绿色融资审查提供依据。}
   };
   \node[align=left,text width=50mm,anchor=north west] at (68,30) {
     {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCCyan} 应对碳关税壁垒}\\[.7mm]
     {\fontsize{6.5}{7.8}\selectfont\color{TTCTextDark}
-    精准采集能耗数据，满足欧盟CBAM碳关税、I-REC绿证与零碳路线图。}
+    按适用标准建立能耗与碳数据基础，支持业主后续合规评估。}
   };
   \node[align=left,text width=50mm,anchor=north west] at (130,30) {
-    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCGold} 显著降低OPEX}\\[.7mm]
+    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCGold} 优化运营成本}\\[.7mm]
     {\fontsize{6.5}{7.8}\selectfont\color{TTCTextDark}
-    自发自用降低电费支出，优化中水利用，长效提升工厂资产残值。}
+    通过围护、能源与水资源方案比选，支持降低全生命周期运营负担。}
   };
 \end{tikzpicture}
 
@@ -384,10 +384,10 @@ PAGE_16 = r"""% ============================================================
   \path[use as bounding box] (0,0) rectangle (186,29);
   \fill[TTCDeepNavy, rounded corners=3pt] (0,0) rectangle (186,29);
   \foreach \x in {46.5,93,139.5}{\draw[white!35!gray] (\x,6) -- (\x,23);}
-  \node[align=center,text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} 1--5 MWp}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 光伏就绪屋顶}};
-  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} -20\% 电耗}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 暖通节能优化}};
+  \node[align=center,text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} SOLAR-READY}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 光伏就绪屋顶}};
+  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} LOW-ENERGY}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 围护节能优化}};
   \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries LEED / LOTUS}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 国际绿色建筑标准}};
-  \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} 100\% A级水}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 污水达标循环利用}};
+  \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} WATER}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 水资源循环方案}};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -680,7 +680,7 @@ PAGE_18 = r"""% ============================================================
 PAGE_19 = r"""% ============================================================
 % TRANG 19: HSE DECISION SYSTEM & STOP WORK AUTHORITY
 % ============================================================
-\pageheaderbar{HSE职业健康安全与零事故文化}{第19页}
+\pageheaderbar{HSE职业健康安全与停工授权}{第19页}
 \pagefooterbar{第19页}
 
 \begin{tikzpicture}[remember picture, overlay]

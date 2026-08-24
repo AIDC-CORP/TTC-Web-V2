@@ -22,11 +22,11 @@ PAGE_11 = r"""% ============================================================
 \end{tikzpicture}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{TTC 受控 PEB 钢结构制造网络}{Strategic Fabrication Network, Resident QA/QC \& Traceable Quality Gates}
+\secbrand{新成功受控预制钢结构供应网络}{Strategic Fabrication Network, Resident Quality Control \& Traceable Quality Gates}
 
 \vspace{1mm}
 {\fontsize{15}{17}\selectfont\bfseries\color{TTCBlue}
-TTC深化设计 • 战略基地制造 • 常驻QC全过程品控\par}
+新成功深化设计 • 合作工厂制造 • 常驻质量控制\par}
 \vspace{1mm}
 {\fontsize{7.5}{9}\selectfont\color{TTCTextMuted}
 Flexible fabrication capacity with TTC-controlled engineering, inspection and release authority.\par}
@@ -42,8 +42,8 @@ Flexible fabrication capacity with TTC-controlled engineering, inspection and re
   \fill[TTCDeepNavy, opacity=0.28] (68,0) rectangle (92,64);
   \node[anchor=west, text width=54mm, align=left, text=white] at (8,42) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} STRATEGIC PEB NETWORK}\\[1.3mm]
-    {\fontsize{19}{21}\selectfont\bfseries 30,000 吨}\\[-0.4mm]
-    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCCyan} 年钢结构供应产能}\\[1.8mm]
+    {\fontsize{18}{20}\selectfont\bfseries 计划配置}\\[-0.4mm]
+    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCCyan} 按项目工作包安排产能}\\[1.8mm]
     {\fontsize{7}{8.6}\selectfont\color{white!82!gray}
     TTC 全程主导方案设计、加工详图 (Shop Drawing) 及出厂审批。}
   };
@@ -53,8 +53,8 @@ Flexible fabrication capacity with TTC-controlled engineering, inspection and re
     draw=TTCCyan, line width=0.65pt,
     minimum width=55mm, minimum height=14mm, align=center
   ] at (179,7) {
-    {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCBlue} >20,000 m\textsuperscript{2} • 常驻 QC 监理}\\[0.6mm]
-    {\fontsize{6.5}{7.8}\selectfont\color{TTCTextDark}Partner factory footprint • TTC supervision}
+    {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCBlue} 合作工厂 • 常驻质量控制}\\[0.6mm]
+    {\fontsize{6.5}{7.8}\selectfont\color{TTCTextDark}Approved production plan • TTC supervision}
   };
   \draw[white, line width=1pt, rounded corners=3pt] (0.6,0.6) rectangle (185.4,63.4);
   \draw[TTCBorder, line width=0.65pt, rounded corners=3pt] (0,0) rectangle (186,64);
@@ -117,7 +117,7 @@ Flexible fabrication capacity with TTC-controlled engineering, inspection and re
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} QUALITY GATE 01}\\[0.8mm]
     {\fontsize{10}{11.5}\selectfont\bfseries\color{TTCBlue} 原材料放行关}\\[1.3mm]
     {\fontsize{7}{8.5}\selectfont\color{TTCTextDark}
-    \textcolor{TTCCyan}{\faCheckCircle}\ 100\% 钢板 MTC 与质保书追溯。\\[0.7mm]
+    \textcolor{TTCCyan}{\faCheckCircle}\ MTC、CO/CQ与钢材批次追溯。\\[0.7mm]
     \textcolor{TTCCyan}{\faCheckCircle}\ Q345B • SS400 • ASTM A572。\\[0.7mm]
     \textcolor{TTCCyan}{\faCheckCircle}\ 独立第三方力学拉伸与冲击试验。}
   };
@@ -129,8 +129,8 @@ Flexible fabrication capacity with TTC-controlled engineering, inspection and re
     {\fontsize{10}{11.5}\selectfont\bfseries\color{TTCBlue} 焊接质量检验关}\\[1.3mm]
     {\fontsize{7}{8.5}\selectfont\color{TTCTextDark}
     \textcolor{TTCBlue}{\faCheckCircle}\ 严格执行核准的 WPS/PQR 规程。\\[0.7mm]
-    \textcolor{TTCBlue}{\faCheckCircle}\ 焊工全员持 3G/4G/6G 专业资格证。\\[0.7mm]
-    \textcolor{TTCBlue}{\faCheckCircle}\ 关键受力焊缝 100\% UT/MT 超声探伤。}
+    \textcolor{TTCBlue}{\faCheckCircle}\ 按工艺要求核验焊工资格。\\[0.7mm]
+    \textcolor{TTCBlue}{\faCheckCircle}\ 按批准方案实施UT/MT无损检测。}
   };
 
   \fill[white, rounded corners=4pt] (128,0) rectangle (186,53);
@@ -245,8 +245,8 @@ PAGE_12 = r"""% ============================================================
   };
   \node[rounded corners=2pt, fill=TTCRed, text=white, align=center,
         minimum width=35mm, minimum height=16mm] at (167,17) {
-    {\fontsize{11}{12}\selectfont\bfseries 100\%}\\[-0.4mm]
-    {\fontsize{6.2}{7.4}\selectfont 特种设备年检合格}
+    {\fontsize{11}{12}\selectfont\bfseries 检验有效}\\[-0.4mm]
+    {\fontsize{6.2}{7.4}\selectfont 设备检验资料}
   };
 \end{tikzpicture}
 
@@ -326,8 +326,8 @@ PAGE_12 = r"""% ============================================================
   \path[use as bounding box] (0,0) rectangle (186,29);
   \fill[TTCDeepNavy, rounded corners=3pt] (0,0) rectangle (186,29);
   \foreach \x in {46.5,93,139.5}{\draw[white!35!gray] (\x,6) -- (\x,23);}
-  \node[align=center, text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} 12 小时}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 紧急调配响应}};
-  \node[align=center, text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} 100\% 持证}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 特种作业持证上岗}};
+  \node[align=center, text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} 按计划调配}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 紧扣项目关键路径}};
+  \node[align=center, text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} 资格核验}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 特种作业持证上岗}};
   \node[align=center, text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries 原厂维保}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 定期检修保养}};
   \node[align=center, text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} 电子台账}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont 动态运行监测}};
 \end{tikzpicture}
@@ -425,7 +425,7 @@ PAGE_13 = r"""% ============================================================
     {\fontsize{7}{8.5}\selectfont\bfseries\color{TTCRed} 07 • 调试与官方验收}\\[.7mm]
     {\fontsize{6.2}{7.5}\selectfont\color{TTCTextDark}ITP四层验收、消防验收、单机试车及系统联动试运转。\\[3mm]}
     {\fontsize{7}{8.5}\selectfont\bfseries\color{TTCBlue} 08 • 移交与全寿命运维}\\[.7mm]
-    {\fontsize{6.2}{7.5}\selectfont\color{TTCTextDark}竣工档案、数字孪生交付、操作人员培训、24个月保修与运维。}
+    {\fontsize{6.2}{7.5}\selectfont\color{TTCTextDark}竣工档案、数字孪生交付、操作人员培训及合同约定保修。}
   };
   \fill[TTCGold!12!white] (146,5) rectangle (182.5,17);
   \node[align=center, text=TTCGold!80!black] at (164.25,11) {{\fontsize{6}{7}\selectfont\bfseries 关口 D (GATE D)}\\[-.2mm]{\fontsize{5.7}{6.7}\selectfont 投产运营确认}};

@@ -72,7 +72,7 @@ PAGE_28 = r"""% ============================================================
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.4}\selectfont\bfseries]
     at (0,68) {进场安装前三大质量保证屏障};
   \foreach \xa/\xb/\n/\title/\desc in {
-    0/58/01/正品正源/报审文件与厂家实际出厂来源 100\% 一致,
+    0/58/01/正品正源/报审文件与厂家实际出厂来源相互对应,
     64/122/02/指标达标/物理力学指标完全符合封样及工程技术规范,
     128/186/03/位批对应/每批进场材料精准对应具体构件编号与施工区域}
   {
@@ -295,9 +295,9 @@ PAGE_31 = r"""% ============================================================
 \begin{tikzpicture}[x=1mm,y=1mm]
   \path[use as bounding box] (0,0) rectangle (186,220);
   \node[anchor=west,text=TTCBlue,font=\fontsize{15}{17}\selectfont\bfseries]
-    at (0,211) {完备透明的企业法人身份与四重资质能力体系};
+    at (0,211) {透明可核验的企业法人身份与四类资审资料};
   \node[anchor=west,text=TTCTextMuted,font=\fontsize{7.2}{8.8}\selectfont]
-    at (0,201) {企业法人信息、国家二级工程资质及 ISO 国际管理体系完备，满足跨国招标严苛审查。};
+    at (0,201) {企业法人信息、建设活动能力二级证书及 ISO 管理体系资料可按资审要求提供。};
 
   % 企业基本信息
   \fill[TTCDeepNavy,rounded corners=4pt] (0,57) rectangle (67,191);
@@ -319,10 +319,10 @@ PAGE_31 = r"""% ============================================================
 
   % 4层能力
   \foreach \y/\n/\title/\desc in {
-    166/01/国家建设活动能力证书/建设部核发工业建筑与结构施工资质，承包业务范围完全合规有效。,
+    166/01/建设活动能力二级证书/业务范围以当前有效证书为准；受控副本随法定资质卷宗提供。,
     134/02/ISO 国际三体系认证/ISO 9001 质量 • ISO 14001 环境 • ISO 45001 职业安全健康国际认证齐全。,
-    102/03/核心技术管理团队/项目总监、国家注册二级建造师、结构师及安全工程师配置齐全。,
-    70/04/商务与资信证明材料/营业执照 • 完税证明 • 银行AAA授信证明 • 履约保函与标准投标卷宗。}
+    102/03/核心技术管理团队/项目负责人、结构工程师及安全管理人员资料按资审要求提供。,
+    70/04/商务与资信证明材料/营业执照 • 完税资料 • 银行与保函资料 • 标准投标卷宗。}
   {
     \fill[white,rounded corners=3pt] (73,{\y-13}) rectangle (186,{\y+13});
     \draw[TTCBorder,rounded corners=3pt] (73,{\y-13}) rectangle (186,{\y+13});
@@ -364,7 +364,7 @@ PAGE_32 = r"""% ============================================================
 \casepagebars{全国重点工业走廊业务布局图}{第32页}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{深耕越南核心经济带三大重点工业走廊}{Northern manufacturing belt • Central corridor • Southern FDI and logistics cluster}
+\secbrand{深耕越南核心经济带三大重点工业走廊}{Northern manufacturing belt • Central corridor • Southern industrial and logistics cluster}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
@@ -429,7 +429,7 @@ PAGE_32 = r"""% ============================================================
   \node[anchor=west,text=TTCCyan,font=\fontsize{6.1}{7.2}\selectfont\bfseries]
     at (116,8) {PROJECT FOOTPRINT};
   \node[anchor=east,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
-    at (179,8) {覆盖全国 20+ 工业重镇省市};
+    at (179,8) {三大项目走廊 • 按项目调配资源};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -439,10 +439,10 @@ PAGE_33 = r"""% ============================================================
 % TRANG 33: LỘ TRÌNH 2026--2030
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{2026--2030 战略发展规划与稳健成长路线图}{第33页}
+\casepagebars{2026--2030 受控发展与能力建设路线图}{第33页}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{精选优质工程 • 稳健健康的战略发展路线图}{Controlled growth • Repeat clients • High-tech capability • Positive cash discipline}
+\secbrand{精选适配工程 • 稳健建设交付能力}{Controlled growth • Repeat clients • High-tech capability • Delivery discipline}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
@@ -450,13 +450,13 @@ PAGE_33 = r"""% ============================================================
   \node[anchor=west,text=TTCBlue,font=\fontsize{15}{17}\selectfont\bfseries]
     at (0,211) {以健全稳健的治理能力驱动业务规模高质量增长};
   \node[anchor=west,text=TTCTextMuted,font=\fontsize{7.2}{8.8}\selectfont]
-    at (0,201) {坚持审慎务实的经营方针，将现金流健康度与高品质交付置于盲目扩张之前。};
+    at (0,201) {坚持审慎务实的经营方针，以治理、专业能力与高品质交付支持可持续发展。};
 
   % 3个发展阶段
   \foreach \xa/\xb/\year/\value/\focus/\desc in {
-    0/58/2026年/300--400 亿越盾/夯实治理底座/全面推行CDE云端数字化 • 严控成本基线 • 深耕北部核心根据地,
-    64/122/2027--2028年/依能力稳步提质/精选高附加值/扩大半导体洁净厂房与高科技工程占比 • 提升老客户复签率,
-    128/186/2029--2030年/依现金流规模化/可持续领跑/稳健拓展全境及区域市场 • 成为越南顶尖工业建筑总包商}
+    0/58/2026年/标准化/夯实治理底座/完善CDE协同 • 强化成本基线 • 深耕核心项目走廊,
+    64/122/2027--2028年/精选/提升专业能力/发展洁净厂房与高科技工程能力 • 服务长期客户,
+    128/186/2029--2030年/可持续/审慎拓展布局/依据资源与履约能力拓展重点区域 • 建设绿色供应链}
   {
     \fill[white,rounded corners=4pt] (\xa,68) rectangle (\xb,190);
     \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (\xa,68) rectangle (\xb,190);
@@ -472,7 +472,7 @@ PAGE_33 = r"""% ============================================================
           font=\fontsize{6.3}{7.7}\selectfont] at ({\xa+6},133) {\desc};
     \node[anchor=south west,text width=46mm,text=TTCTextDark,
           font=\fontsize{6.1}{7.5}\selectfont] at ({\xa+6},78)
-      {\textbf{升级考核指标：} 净利润率、正向现金流与核心技术骨干储备完全达标。};
+      {\textbf{阶段评审重点：} 治理成熟度、专业团队、合同风险与交付能力。};
   }
 
   % 亮点
@@ -493,10 +493,10 @@ PAGE_33 = r"""% ============================================================
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.3}\selectfont\bfseries]
     at (0,57) {项目承接四大内控筛选准入原则};
   \foreach \xa/\xb/\n/\label in {
-    0/43.5/01/正向现金流保障,
+    0/43.5/01/业务范围适配,
     47.5/91/02/核心团队就绪,
     95/138.5/03/合同法律风险锁定,
-    142.5/186/04/100\%确定性交付}
+    142.5/186/04/履约能力核验}
   {
     \fill[TTCLightBlue,rounded corners=3pt] (\xa,25) rectangle (\xb,49);
     \node[anchor=west,text=TTCRed,font=\fontsize{6}{7}\selectfont\bfseries]
@@ -505,11 +505,11 @@ PAGE_33 = r"""% ============================================================
       at ({\xa+5},32) {\label};
   }
   \node[anchor=west,text=TTCTextMuted,font=\fontsize{5.4}{6.5}\selectfont\itshape]
-    at (0,14) {注：相关数据为公司内部战略规划与管理目标，非对外财务盈利预测。};
+    at (0,14) {注：本页为方向性能力建设路线，具体计划以公司年度审批文件为准。};
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,10);
   \node[anchor=west,text=TTCCyan,font=\fontsize{6}{7.2}\selectfont\bfseries] at (7,5) {CONTROLLED GROWTH};
   \node[anchor=east,text=white,font=\fontsize{6.8}{8}\selectfont\bfseries]
-    at (179,5) {营收质量与交付口碑重于单纯规模扩张};
+    at (179,5) {专业能力 • 合同纪律 • 可持续交付};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -519,10 +519,10 @@ PAGE_34 = r"""% ============================================================
 % TRANG 34: BẢO HÀNH VÀ HẬU MÃI
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{24个月质保承诺与终身运维支持}{第34页}
+\casepagebars{按合同约定的保修与售后支持}{第34页}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{单一窗口全生命周期售后维保支持}{24/7 intake • Contract-based response • Field verification • Closed-loop records}
+\secbrand{单一窗口售后维保支持}{Centralized intake • Contract-based response • Field verification • Closed-loop records}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
@@ -532,23 +532,23 @@ PAGE_34 = r"""% ============================================================
   \node[anchor=west,text=TTCTextMuted,font=\fontsize{7.2}{8.8}\selectfont]
     at (0,201) {竣工后所有维保需求均由专职售后工程团队统一受理、精准处置与闭环归档。};
 
-  % 24个月承诺
+  % 合同约定承诺
   \fill[TTCDeepNavy,rounded corners=4pt] (0,141) rectangle (54,190);
   \node[anchor=west,text=TTCCyan,font=\fontsize{6.4}{7.6}\selectfont\bfseries]
-    at (7,181) {全方位标准质保};
+    at (7,181) {保修服务依据};
   \node[anchor=west,text=white,font=\fontsize{23}{25}\selectfont\bfseries]
-    at (7,162) {24 个月};
+    at (7,162) {合同约定};
   \node[anchor=west,text=white!72!gray,font=\fontsize{5.9}{7.1}\selectfont]
-    at (7,149) {主体结构享终身维保支持};
+    at (7,149) {范围与期限以签署文件为准};
 
   \fill[TTCLightBlue,rounded corners=4pt] (60,141) rectangle (186,190);
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.3}\selectfont\bfseries]
     at (67,181) {单一维保责任窗口 — 闭环追踪处理记录};
   \node[anchor=north west,text width=104mm,text=TTCTextDark,
         font=\fontsize{6.7}{8.2}\selectfont] at (67,171)
-    {设有 24/7 应急服务热线与技术专员。根据故障等级，维保团队在合同约定时间内迅速赶赴现场并提出有效解决方案。};
+    {由统一联络窗口登记维保需求。团队依据合同约定、问题等级及现场条件安排技术评估与处置。};
   \node[anchor=west,text=TTCRed,font=\fontsize{6.4}{7.6}\selectfont\bfseries]
-    at (67,149) {绝无模糊推诿 • 未经业主签字确认绝不关闭维保工单};
+    at (67,149) {责任清晰 • 过程留痕 • 业主确认后闭环归档};
 
   % 流程
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.3}\selectfont\bfseries]
@@ -588,7 +588,7 @@ PAGE_34 = r"""% ============================================================
           font=\fontsize{6}{7.3}\selectfont] at ({\xa+6},40) {\desc};
   }
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,16);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.1}{7.3}\selectfont\bfseries] at (7,8) {SERVICE DESK 24/7};
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.1}{7.3}\selectfont\bfseries] at (7,8) {CENTRAL SERVICE DESK};
   \node[anchor=east,text=white,font=\fontsize{6.8}{8}\selectfont\bfseries]
     at (179,8) {快速接单 → 精准处置 → 业主确认 → 留痕归档};
 \end{tikzpicture}
@@ -600,10 +600,10 @@ PAGE_35 = r"""% ============================================================
 % TRANG 35: HỆ SINH THÁI ĐỐI TÁC — LOGO WALL
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{战略合作伙伴与金融机构生态圈}{第35页}
+\casepagebars{企业、供应链与金融机构参考}{第35页}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{战略生态合作伙伴与授信金融机构}{Selected corporate and financial partners in the TTC network}
+\secbrand{企业、供应链与金融机构参考}{Selected ecosystem references in the TTC network}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
@@ -613,7 +613,7 @@ PAGE_35 = r"""% ============================================================
     at (0,211) {汇聚产业链优质资源 • 赋能工程卓越履约};
   \node[anchor=west,text width=178mm,text=TTCTextMuted,
         font=\fontsize{7.2}{8.8}\selectfont]
-    at (0,199) {TTC 与各领域龙头企业及各大商业银行建立稳固的战略合作伙伴关系，资金与供应链实力雄厚。};
+    at (0,199) {以下标识用于展示曾合作或业务往来的生态参考；当前关系及适用范围以最新记录为准。};
 
   % 企业合作伙伴
   \fill[TTCLightBlue,rounded corners=3pt] (0,177) rectangle (186,191);
@@ -645,7 +645,7 @@ PAGE_35 = r"""% ============================================================
   \node[anchor=west,text=TTCCyan,font=\fontsize{6.2}{7.4}\selectfont\bfseries]
     at (7,89) {FINANCIAL PARTNERS};
   \node[anchor=east,text=TTCBlue,font=\fontsize{7.2}{8.6}\selectfont\bfseries]
-    at (179,89) {银行授信金融合作伙伴};
+    at (179,89) {金融机构业务往来参考};
 
   \newcommand{\banklogoclosing}[2]{%
     \fill[white,rounded corners=3pt] (#1,39) rectangle ({#1+28.5},75);
@@ -666,7 +666,7 @@ PAGE_35 = r"""% ============================================================
   \node[anchor=west,text=white,font=\fontsize{8.4}{10}\selectfont\bfseries]
     at (15,15) {深度协同 • 创造更大商业价值};
   \node[anchor=west,text=white!70!gray,font=\fontsize{6.1}{7.4}\selectfont]
-    at (15,7) {融合专业优势、供应链资源与充沛金融资本，为业主工程保驾护航。};
+    at (15,7) {具体合作关系、授信与供应能力须以项目阶段的有效文件核验。};
   \node[anchor=east,text=TTCCyan,font=\fontsize{6.4}{7.6}\selectfont\bfseries]
     at (179,12) {PARTNERSHIP BUILT ON TRUST};
 \end{tikzpicture}
@@ -721,7 +721,7 @@ PAGE_36 = r"""% ============================================================
   \node[anchor=north west,text width=170mm,text=white!78!gray,
         font=\fontsize{8.2}{10.6}\selectfont]
     at ([xshift=18mm,yshift=-178mm]current page.north west)
-    {新成功建筑科技 (TTC) 愿从投资策划、工程设计、施工总包到终身运维，全程为您在越南的工业投资保驾护航。};
+    {新成功建筑科技股份公司（TTC JSC）愿从投资策划、工程设计、施工总包到合同约定的售后支持，全程服务您在越南的工业项目。};
 
   % 底部联系卡片
   \fill[white,rounded corners=5pt]

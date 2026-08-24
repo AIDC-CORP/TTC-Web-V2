@@ -103,14 +103,14 @@ Mỗi dự án được thiết lập ngân sách độc lập, kiểm soát 4 c
 
   \node[anchor=north west, text width=45mm, text=TTCTextDark, font=\fontsize{6.8}{8.6}\selectfont]
     at (136,56) {
-    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Khóa ngân sách:} Duyệt 100\% trước khi huy động nguồn lực.\\[2.4mm]
-    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Kiểm soát phát sinh:} Mọi chi phí ngoài HĐ phải có nguồn bù.\\[2.4mm]
+    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Khóa ngân sách:} Phê duyệt trước khi huy động nguồn lực.\\[2.4mm]
+    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Kiểm soát phát sinh:} Mọi chi phí ngoài hợp đồng phải được phê duyệt.\\[2.4mm]
     \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Tăng trưởng an toàn:} Quy mô chỉ mở rộng khi bàn giao sẵn sàng.
   };
 
   \fill[white, rounded corners=2.5pt, draw=TTCBorder, line width=0.55pt] (136,6) rectangle (181,18);
   \node[anchor=center, text=TTCBlue, font=\fontsize{6.6}{8}\selectfont\bfseries, align=center]
-    at (158.5,12) {\faLock\quad 100\% DỰ ÁN CÓ MÃ CHI PHÍ RIÊNG};
+    at (158.5,12) {\faLock\quad MỖI DỰ ÁN CÓ MÃ CHI PHÍ RIÊNG};
 \end{tikzpicture}
 
 \vspace{3.5mm}
@@ -144,7 +144,7 @@ Mỗi dự án được thiết lập ngân sách độc lập, kiểm soát 4 c
     {\fontsize{7}{8.2}\selectfont\bfseries\color{TTCCyan}\faFileInvoiceDollar\quad RECEIVABLE CONTROL}\\[1.2mm]
     {\fontsize{9.8}{11.5}\selectfont\bfseries\color{TTCBlue} KIỂM SOÁT CÔNG NỢ}\\[2mm]
     {\fontsize{6.6}{8.2}\selectfont\color{TTCTextDark}
-    \textbullet\ Bám sát mốc nghiệm thu khối lượng ITP.\newline
+    \textbullet\ Bám sát mốc nghiệm thu theo kế hoạch kiểm tra.\newline
     \textbullet\ Theo dõi dòng tiền thanh toán \& tạm ứng.\newline
     \textbullet\ Quản trị chặt chẽ khoản giữ lại bảo hành.}
   };
@@ -157,9 +157,9 @@ Mỗi dự án được thiết lập ngân sách độc lập, kiểm soát 4 c
     {\fontsize{7}{8.2}\selectfont\bfseries\color{TTCBlue}\faClipboardCheck\quad VERIFIED REPORTING}\\[1.2mm]
     {\fontsize{9.8}{11.5}\selectfont\bfseries\color{TTCBlue} HỒ SƠ TRUY XUẤT}\\[2mm]
     {\fontsize{6.6}{8.2}\selectfont\color{TTCTextDark}
-    \textbullet\ Dữ liệu chi phí đồng bộ thời gian thực.\newline
-    \textbullet\ Báo cáo quản trị đa kỳ theo chuẩn quốc tế.\newline
-    \textbullet\ Sẵn sàng kiểm toán độc lập theo yêu cầu CĐT.}
+    \textbullet\ Dữ liệu chi phí cập nhật theo chu kỳ quản trị.\newline
+    \textbullet\ Báo cáo phương sai và dự báo hoàn thành.\newline
+    \textbullet\ Hồ sơ chi tiết cung cấp theo yêu cầu Chủ đầu tư.}
   };
 \end{tikzpicture}
 
@@ -188,7 +188,7 @@ Mỗi dự án được thiết lập ngân sách độc lập, kiểm soát 4 c
   \foreach \xa/\xb/\num/\label/\sub in {
     53/81/01/BÁO CÁO TÀI CHÍNH/Kiểm toán độc lập,
     85/113/02/HỒ SƠ THUẾ/Nghĩa vụ Nhà nước,
-    117/145/03/ĐỐI CHIẾU CÔNG NỢ/0 nợ đọng NCC,
+    117/145/03/ĐỐI CHIẾU CÔNG NỢ/Nhà cung cấp và nhà thầu phụ,
     149/181/04/BÁO CÁO QUẢN TRỊ/Dòng tiền dự án}{
     \fill[TTCLightBlue, rounded corners=3pt] (\xa,14) rectangle (\xb,40);
     \draw[TTCBorder, line width=0.5pt, rounded corners=3pt] (\xa,14) rectangle (\xb,40);
@@ -202,16 +202,16 @@ Mỗi dự án được thiết lập ngân sách độc lập, kiểm soát 4 c
   % Bottom Security Notice
   \draw[TTCBorder, line width=0.5pt] (53,9.5) -- (181,9.5);
   \node[anchor=south west, text=TTCTextMuted, font=\fontsize{6}{7.3}\selectfont\itshape]
-    at (53,3) {\faLock\quad Số liệu chi tiết được cung cấp theo hồ sơ mời thầu hoặc thỏa thuận bảo mật NDA với Chủ đầu tư.};
+    at (53,3) {\faLock\quad Số liệu chi tiết chỉ cung cấp theo hồ sơ mời thầu hoặc thỏa thuận bảo mật với Chủ đầu tư.};
 \end{tikzpicture}
 \end{minipage}
 \newpage
 """
 
 PAGE_09 = r"""% ============================================================
-% TRANG 09: NĂNG LỰC HUY ĐỘNG CHO DỰ ÁN EPC
+% TRANG 09: BẢO LÃNH HỢP ĐỒNG & HUY ĐỘNG NGUỒN LỰC
 % ============================================================
-\pageheaderbar{HẠN MỨC TÍN DỤNG \& NGUỒN LỰC TRIỂN KHAI}{Trang 09}
+\pageheaderbar{BẢO LÃNH HỢP ĐỒNG \& HUY ĐỘNG NGUỒN LỰC}{Trang 09}
 \pagefooterbar{Trang 09}
 
 \begin{tikzpicture}[remember picture, overlay]
@@ -224,14 +224,14 @@ PAGE_09 = r"""% ============================================================
 \end{tikzpicture}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Năng Lực Huy Động Cho Dự Án EPC}{Banking Capacity, Performance Bonds \& Site-Ready Workforce Mobilization}
+\secbrand{Năng Lực Bảo Lãnh \& Huy Động Cho Dự Án}{Banking Readiness, Contract Security \& Workforce Mobilization}
 
 \vspace{1mm}
 {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCBlue}
 HAI NGUỒN LỰC • MỘT KẾ HOẠCH HUY ĐỘNG TOÀN DIỆN\par}
 \vspace{1mm}
 {\fontsize{7.5}{9}\selectfont\color{TTCTextMuted}
-Công cụ tài chính vững chắc kết hợp lực lượng thi công tinh nhuệ, sẵn sàng kích hoạt theo từng mốc hợp đồng.\par}
+Hồ sơ ngân hàng và kế hoạch nhân sự được chuẩn bị theo từng mốc hợp đồng, phạm vi công việc và yêu cầu huy động.\par}
 \vspace{3.5mm}
 
 % ============================================================
@@ -241,7 +241,7 @@ Công cụ tài chính vững chắc kết hợp lực lượng thi công tinh n
 \begin{tikzpicture}[x=1mm,y=1mm]
   \path[use as bounding box] (0,0) rectangle (186,80);
 
-  % KHỐI TRÁI: FINANCIAL ENGINE (HẠN MỨC TÍN DỤNG 250 TỶ)
+  % KHỐI TRÁI: HỒ SƠ NGÂN HÀNG VÀ BẢO LÃNH
   \fill[white, rounded corners=4pt] (0,0) rectangle (90,80);
   \draw[TTCBorder, line width=0.7pt, rounded corners=4pt] (0,0) rectangle (90,80);
 
@@ -251,8 +251,8 @@ Công cụ tài chính vững chắc kết hợp lực lượng thi công tinh n
     at (6,67) {NĂNG LỰC TÍN DỤNG \& BẢO LÃNH};
 
   \node[anchor=west] at (6,54) {
-    {\fontsize{25}{27}\selectfont\bfseries\color{TTCRed} 250 TỶ}\quad
-    {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCTextMuted} HẠN MỨC TÍN DỤNG}
+    {\fontsize{16}{19}\selectfont\bfseries\color{TTCRed} HỒ SƠ SẴN SÀNG}\quad
+    {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCTextMuted} THEO YÊU CẦU HỢP ĐỒNG}
   };
 
   % Bank Badges
@@ -262,12 +262,12 @@ Công cụ tài chính vững chắc kết hợp lực lượng thi công tinh n
 
   \node[anchor=north west, text width=80mm, text=TTCTextDark, font=\fontsize{6.8}{8.6}\selectfont]
     at (6,33.5) {
-    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Bảo lãnh hợp đồng:} Dự thầu, thực hiện, tạm ứng \& bảo hành.\\[1.4mm]
-    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Tốc độ phát hành:} Cấp thư bảo lãnh ngân hàng trong 24--48h.\\[1.4mm]
-    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Chuẩn quốc tế:} Tuân thủ điều ước FIDIC Silver Book \& Mở L/C thép.
+    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Loại bảo lãnh:} Dự thầu, thực hiện, tạm ứng và bảo hành.\\[1.4mm]
+    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Điều kiện phát hành:} Theo phê duyệt ngân hàng và hồ sơ hợp đồng.\\[1.4mm]
+    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Hồ sơ đối chiếu:} Xác nhận ngân hàng cung cấp trong hồ sơ sơ tuyển khi được yêu cầu.
   };
 
-  % KHỐI PHẢI: DELIVERY ENGINE (NGUỒN LỰC 2.850+ NHÂN SỰ)
+  % KHỐI PHẢI: KẾ HOẠCH HUY ĐỘNG NHÂN SỰ
   \fill[white, rounded corners=4pt] (96,0) rectangle (186,80);
   \draw[TTCBorder, line width=0.7pt, rounded corners=4pt] (96,0) rectangle (186,80);
 
@@ -277,21 +277,21 @@ Công cụ tài chính vững chắc kết hợp lực lượng thi công tinh n
     at (102,67) {LỰC LƯỢNG TRIỂN KHAI THỰC CHIẾN};
 
   \node[anchor=west] at (102,54) {
-    {\fontsize{25}{27}\selectfont\bfseries\color{TTCBlue} 2.850+}\quad
-    {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCTextMuted} NHÂN SỰ ĐA CHUYÊN NGÀNH}
+    {\fontsize{16}{19}\selectfont\bfseries\color{TTCBlue} THEO GÓI CÔNG VIỆC}\quad
+    {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCTextMuted} KẾ HOẠCH HUY ĐỘNG}
   };
 
   % Visual Distribution Bar
-  \fill[TTCBlue, rounded corners=1.5pt] (102,41) rectangle (114,45);
-  \fill[TTCCyan, rounded corners=1.5pt] (115,41) rectangle (180,45);
-  \node[anchor=west, text=TTCBlue, font=\fontsize{6.2}{7.4}\selectfont\bfseries] at (102,47.5) {350+ Kỹ sư (12\%)};
-  \node[anchor=east, text=TTCCyan, font=\fontsize{6.6}{7.6}\selectfont\bfseries] at (180,47.5) {2.500+ Công nhân xây lắp (88\%)};
+  \fill[TTCBlue, rounded corners=1.5pt] (102,41) rectangle (126,45);
+  \fill[TTCCyan, rounded corners=1.5pt] (127,41) rectangle (151,45);
+  \fill[TTCRed, rounded corners=1.5pt] (152,41) rectangle (180,45);
+  \node[anchor=west, text=TTCBlue, font=\fontsize{6.1}{7.3}\selectfont\bfseries] at (102,47.5) {QUẢN LÝ DỰ ÁN • KỸ SƯ • TỔ ĐỘI THI CÔNG};
 
   \node[anchor=north west, text width=78mm, text=TTCTextDark, font=\fontsize{6.8}{8.6}\selectfont]
     at (102,33.5) {
-    \textcolor{TTCBlue}{\faCheckCircle}\ \textbf{350+ Quản lý \& Kỹ sư:} CCHN Hạng II, BIM/Tekla LOD 400, QA/QC \& HSE.\\[1.4mm]
-    \textcolor{TTCCyan}{\faCheckCircle}\ \textbf{2.500+ Thợ lành nghề:} Hàn AWS D1.1 (3G-6G), Lắp dựng PEB, MEP/PCCC.\\[1.4mm]
-    \textcolor{TTCTextMuted}{\faCheckCircle}\ \textbf{Tổ chức thi công:} 3 ca liên tục, sẵn sàng điều động đồng thời 5--8 dự án.
+    \textcolor{TTCBlue}{\faCheckCircle}\ \textbf{Nhân sự chủ chốt:} Chứng chỉ hành nghề phù hợp vị trí và phạm vi công việc.\\[1.4mm]
+    \textcolor{TTCCyan}{\faCheckCircle}\ \textbf{Tổ đội chuyên môn:} Hàn, lắp dựng kết cấu, cơ điện và phòng cháy chữa cháy.\\[1.4mm]
+    \textcolor{TTCTextMuted}{\faCheckCircle}\ \textbf{Tổ chức thi công:} Quy mô và ca làm việc được khóa trong kế hoạch huy động được duyệt.
   };
 
   % Joining Connector Pill
@@ -325,9 +325,9 @@ Công cụ tài chính vững chắc kết hợp lực lượng thi công tinh n
   \node[anchor=north west, text width=34mm, align=left] at (4,53) {
     {\fontsize{9.8}{11.5}\selectfont\bfseries\color{TTCBlue} DỰ THẦU}\\[2.2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} TÀI CHÍNH}\\[0.7mm]
-    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Bảo lãnh dự thầu 1--3\% \& hạn mức tín dụng.}\\[2mm]
+    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Bảo lãnh dự thầu theo yêu cầu hồ sơ mời thầu.}\\[2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} NHÂN LỰC}\\[0.7mm]
-    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Đấu thầu, QS, Kỹ thuật VE \& hợp đồng FIDIC.}
+    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Đấu thầu, dự toán, kỹ thuật giá trị và hợp đồng.}
   };
   \fill[TTCLightBlue, rounded corners=2pt, draw=TTCBorder, line width=0.5pt] (6,3.5) rectangle (36,10);
   \node[anchor=center] at (21,6.75) {
@@ -347,9 +347,9 @@ Công cụ tài chính vững chắc kết hợp lực lượng thi công tinh n
   \node[anchor=north west, text width=34mm, align=left] at (52,53) {
     {\fontsize{9.8}{11.5}\selectfont\bfseries\color{TTCBlue} KÝ HỢP ĐỒNG}\\[2.2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} TÀI CHÍNH}\\[0.7mm]
-    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Bảo lãnh thực hiện 5--10\% \& tạm ứng 10--20\%.}\\[2mm]
+    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Bảo lãnh thực hiện và tạm ứng theo hợp đồng.}\\[2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} NHÂN LỰC}\\[0.7mm]
-    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Bổ nhiệm Project Director, PMO \& Core Team.}
+    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Bổ nhiệm Giám đốc dự án và nhóm nhân sự chủ chốt.}
   };
   \fill[TTCLightBlue, rounded corners=2pt, draw=TTCBorder, line width=0.5pt] (54,3.5) rectangle (84,10);
   \node[anchor=center] at (69,6.75) {
@@ -369,9 +369,9 @@ Công cụ tài chính vững chắc kết hợp lực lượng thi công tinh n
   \node[anchor=north west, text width=34mm, align=left] at (100,53) {
     {\fontsize{9.8}{11.5}\selectfont\bfseries\color{TTCBlue} TRIỂN KHAI}\\[2.2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} TÀI CHÍNH}\\[0.7mm]
-    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Vốn lưu động, L/C vật tư \& thanh toán NCC.}\\[2mm]
+    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Vốn lưu động, mua sắm vật tư và thanh toán nhà cung cấp.}\\[2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} NHÂN LỰC}\\[0.7mm]
-    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Ban chỉ huy, Kỹ sư hiện trường \& Đội thợ 3 ca.}
+    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Ban chỉ huy, kỹ sư hiện trường và tổ đội theo tiến độ.}
   };
   \fill[TTCBlue, rounded corners=2pt] (102,3.5) rectangle (132,10);
   \node[anchor=center] at (117,6.75) {
@@ -391,9 +391,9 @@ Công cụ tài chính vững chắc kết hợp lực lượng thi công tinh n
   \node[anchor=north west, text width=34mm, align=left] at (148,53) {
     {\fontsize{9.8}{11.5}\selectfont\bfseries\color{TTCBlue} BÀN GIAO}\\[2.2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} TÀI CHÍNH}\\[0.7mm]
-    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Bảo lãnh bảo hành 5\%, duy trì trọn 24 tháng.}\\[2mm]
+    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Bảo lãnh bảo hành theo điều kiện hợp đồng.}\\[2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} NHÂN LỰC}\\[0.7mm]
-    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Commissioning, As-Built \& Bảo hành 24/7.}
+    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Chạy thử, hồ sơ hoàn công và tiếp nhận bảo hành.}
   };
   \fill[TTCRed, rounded corners=2pt] (150,3.5) rectangle (180,10);
   \node[anchor=center] at (165,6.75) {
@@ -424,10 +424,10 @@ Công cụ tài chính vững chắc kết hợp lực lượng thi công tinh n
 
   % 4 Metric Badges on Right
   \foreach \xa/\xb/\val/\title/\sub in {
-    53/81/0/NỢ QUÁ HẠN/Bảo toàn dòng tiền,
-    85/113/100\%/ĐÀO TẠO HSE/Thẻ an toàn Nhóm 3,
-    117/145/AWS D1.1/THỢ HÀN 3G-6G/Sát hạch quốc tế,
-    149/181/FDI READY/ĐA NGÔN NGỮ/Anh • Hàn • Trung}{
+    53/81/HỒ SƠ/TÍN DỤNG/Đối chiếu khi yêu cầu,
+    85/113/ĐÀO TẠO/AN TOÀN/Trước khi vào công trường,
+    117/145/CHỨNG CHỈ/THỢ HÀN/Theo yêu cầu kỹ thuật,
+    149/181/NGÔN NGỮ/PHỐI HỢP/Việt • Anh theo dự án}{
     \fill[TTCLightBlue, rounded corners=3pt] (\xa,4.5) rectangle (\xb,38.5);
     \draw[TTCBorder, line width=0.5pt, rounded corners=3pt] (\xa,4.5) rectangle (\xb,38.5);
     \node[text=TTCRed, font=\fontsize{11}{13}\selectfont\bfseries] at ({(\xa+\xb)/2},29.5) {\val};
@@ -521,7 +521,7 @@ Hệ thống đào tạo gắn liền thực chiến hiện trường, biến tr
 
   \node[align=center, text width=36mm] at (22,13) {
     {\fontsize{8.8}{10}\selectfont\bfseries\color{TTCBlue} HSE READY}\\[0.7mm]
-    {\fontsize{6.5}{7.8}\selectfont 100\% huấn luyện trước khi vào công trường}
+    {\fontsize{6.5}{7.8}\selectfont Huấn luyện bắt buộc trước khi vào công trường}
   };
   \node[align=center, text width=36mm] at (69,13) {
     {\fontsize{8.8}{10}\selectfont\bfseries\color{TTCBlue} TECHNICAL MASTERY}\\[0.7mm]
@@ -563,7 +563,7 @@ Hệ thống đào tạo gắn liền thực chiến hiện trường, biến tr
     {\fontsize{10}{11.5}\selectfont\bfseries\color{TTCBlue} HÀNH VI \& PHÚC LỢI}\\[1.5mm]
     {\fontsize{6.8}{8.4}\selectfont\color{TTCTextDark}
     \textcolor{TTCRed}{\faCheckCircle}\ Toolbox Talk, diễn tập PCCC và cứu nạn định kỳ.\\[0.8mm]
-    \textcolor{TTCRed}{\faCheckCircle}\ Bảo hiểm tai nạn 24/7 và khám sức khỏe định kỳ.\\[0.8mm]
+    \textcolor{TTCRed}{\faCheckCircle}\ Bảo hiểm tai nạn theo quy định và khám sức khỏe định kỳ.\\[0.8mm]
     \textcolor{TTCRed}{\faCheckCircle}\ KPI minh bạch, lộ trình thăng tiến và quyền Stop Work.}
   };
 \end{tikzpicture}
@@ -582,20 +582,20 @@ Hệ thống đào tạo gắn liền thực chiến hiện trường, biến tr
     \draw[TTCBorder, line width=0.5pt] (\x,5) -- (\x,23);
   }
   \node[align=center] at (23.25,14) {
-    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCRed} >120 GIỜ}\\[0.7mm]
-    {\fontsize{6.6}{7.8}\selectfont\bfseries ĐÀO TẠO/NĂM/KỸ SƯ}
+    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCRed} ĐỊNH KỲ}\\[0.7mm]
+    {\fontsize{6.6}{7.8}\selectfont\bfseries ĐÀO TẠO THEO VAI TRÒ}
   };
   \node[align=center] at (69.75,14) {
-    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCBlue} 100\%}\\[0.7mm]
-    {\fontsize{6.6}{7.8}\selectfont\bfseries CẤP THẺ AN TOÀN}
+    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCBlue} BẮT BUỘC}\\[0.7mm]
+    {\fontsize{6.6}{7.8}\selectfont\bfseries THẺ AN TOÀN HỢP LỆ}
   };
   \node[align=center] at (116.25,14) {
-    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCCyan} 100\%}\\[0.7mm]
-    {\fontsize{6.6}{7.8}\selectfont\bfseries BẢO HIỂM 24/7}
+    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCCyan} PHÙ HỢP}\\[0.7mm]
+    {\fontsize{6.6}{7.8}\selectfont\bfseries BẢO HIỂM THEO QUY ĐỊNH}
   };
   \node[align=center] at (162.75,14) {
-    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCBlue} ZERO}\\[0.7mm]
-    {\fontsize{6.6}{7.8}\selectfont\bfseries ACCIDENT MINDSET}
+    {\fontsize{13.5}{15}\selectfont\bfseries\color{TTCBlue} STOP WORK}\\[0.7mm]
+    {\fontsize{6.6}{7.8}\selectfont\bfseries QUYỀN DỪNG CÔNG VIỆC}
   };
 \end{tikzpicture}
 \end{minipage}

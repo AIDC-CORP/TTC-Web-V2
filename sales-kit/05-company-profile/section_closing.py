@@ -312,14 +312,14 @@ PAGE_31 = r"""% ============================================================
     at (7,116) {\textbf{Tên viết tắt:} TTC JSC\\[2mm]
                  \textbf{Mã số thuế:} 0107090447\\[2mm]
                  \textbf{Trụ sở:} Hà Nội, Việt Nam\\[2mm]
-                 \textbf{Lĩnh vực:} Tổng thầu công nghiệp, kết cấu thép, MEP và quản lý dự án};
+                 \textbf{Lĩnh vực:} Tổng thầu công nghiệp, kết cấu thép, cơ điện và quản lý dự án};
   \fill[TTCRed,rounded corners=2pt] (7,67) rectangle (60,82);
   \node[text=white,font=\fontsize{7}{8.2}\selectfont\bfseries] at (33.5,74.5)
     {LEGAL • TRACEABLE • BID-READY};
 
   % Bốn lớp hồ sơ bên phải
   \foreach \y/\n/\title/\desc in {
-    166/01/NĂNG LỰC HOẠT ĐỘNG XÂY DỰNG/Phạm vi công việc và cấp năng lực được đối chiếu trực tiếp theo chứng chỉ còn hiệu lực.,
+    166/01/NĂNG LỰC HOẠT ĐỘNG XÂY DỰNG HẠNG II/Phạm vi công việc được đối chiếu trực tiếp theo chứng chỉ còn hiệu lực; bản sao cung cấp trong hồ sơ pháp lý.,
     134/02/HỆ THỐNG QUẢN LÝ ISO/ISO 9001 • ISO 14001 • ISO 45001 được trình bày cùng phạm vi áp dụng và kỳ đánh giá.,
     102/03/NHÂN SỰ CHỦ CHỐT/Chứng chỉ hành nghề của Giám đốc dự án • Chỉ huy trưởng • chủ trì thiết kế.,
     70/04/HỒ SƠ THƯƠNG MẠI/Đăng ký doanh nghiệp • thuế • ngân hàng • bảo hiểm • biểu mẫu hồ sơ dự thầu.}
@@ -336,7 +336,7 @@ PAGE_31 = r"""% ============================================================
 
   % Checklist hồ sơ thầu
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.3}\selectfont\bfseries]
-    at (0,46) {BỘ CHỈ MỤC PHỤC VỤ PRE-QUALIFICATION / TENDER};
+    at (0,46) {BỘ CHỈ MỤC PHỤC VỤ SƠ TUYỂN / DỰ THẦU};
   \foreach \xa/\xb/\label in {
     0/34/PHÁP NHÂN,
     38/72/NĂNG LỰC,
@@ -444,21 +444,21 @@ PAGE_33 = r"""% ============================================================
 \casepagebars{LỘ TRÌNH 2026--2030 • TĂNG TRƯỞNG CÓ KIỂM SOÁT}{Trang 33}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Lộ Trình Tăng Trưởng Chọn Lọc Và Lành Mạnh}{Controlled growth • Repeat clients • High-tech capability • Positive cash discipline}
+\secbrand{Lộ Trình Phát Triển Chọn Lọc Và Bền Vững}{Controlled development • Repeat clients • High-tech capability • Delivery discipline}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
   \path[use as bounding box] (0,0) rectangle (186,220);
   \node[anchor=west,text=TTCBlue,font=\fontsize{15}{17}\selectfont\bfseries]
-    at (0,211) {TĂNG QUY MÔ SAU KHI NĂNG LỰC QUẢN TRỊ ĐÃ SẴN SÀNG};
+    at (0,211) {MỞ RỘNG SAU KHI NĂNG LỰC QUẢN TRỊ ĐÃ SẴN SÀNG};
   \node[anchor=west,text=TTCTextMuted,font=\fontsize{7.2}{8.8}\selectfont]
-    at (0,201) {Mục tiêu doanh thu được điều chỉnh thận trọng, đặt chất lượng dòng tiền và khả năng bàn giao lên trước tốc độ mở rộng.};
+    at (0,201) {Ưu tiên năng lực bàn giao, khách hàng lặp lại và chất lượng quản trị trước tốc độ mở rộng.};
 
   % Ba horizon cards
   \foreach \xa/\xb/\year/\value/\focus/\desc in {
-    0/58/2026/300--400 TỶ/CỦNG CỐ NỀN TẢNG/Chuẩn hóa CDE • kiểm soát chi phí • củng cố năng lực miền Bắc,
-    64/122/2027--2028/THEO NĂNG LỰC/MỞ RỘNG CHỌN LỌC/Tăng dự án công nghệ cao • phòng sạch • khách hàng lặp lại,
-    128/186/2029--2030/THEO DÒNG TIỀN/QUY MÔ BỀN VỮNG/Mở rộng địa bàn có điều kiện • ưu tiên tổng thầu giá trị cao}
+    0/58/2026/CHUẨN HÓA/CỦNG CỐ NỀN TẢNG/Môi trường dữ liệu chung • kiểm soát chi phí • củng cố năng lực miền Bắc,
+    64/122/2027--2028/CHỌN LỌC/MỞ RỘNG NĂNG LỰC/Dự án công nghệ cao • phòng sạch • khách hàng lặp lại,
+    128/186/2029--2030/BỀN VỮNG/PHÁT TRIỂN CÓ ĐIỀU KIỆN/Mở rộng địa bàn có kiểm soát • ưu tiên năng lực tích hợp}
   {
     \fill[white,rounded corners=4pt] (\xa,68) rectangle (\xb,190);
     \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (\xa,68) rectangle (\xb,190);
@@ -474,19 +474,19 @@ PAGE_33 = r"""% ============================================================
           font=\fontsize{6.3}{7.7}\selectfont] at ({\xa+6},133) {\desc};
     \node[anchor=south west,text width=46mm,text=TTCTextDark,
           font=\fontsize{6.1}{7.5}\selectfont] at ({\xa+6},78)
-      {\textbf{Điều kiện chuyển bước:} biên lợi nhuận, dòng tiền và nguồn lực chủ chốt đạt ngưỡng kiểm soát nội bộ.};
+      {\textbf{Điều kiện chuyển bước:} nguồn lực chủ chốt, rủi ro hợp đồng và khả năng bàn giao đạt ngưỡng kiểm soát nội bộ.};
   }
 
   % Các ưu tiên cụ thể để lấp đầy khoảng giữa và tăng khả năng ghi nhớ
-  \foreach \y/\label in {116/CDE chuẩn hóa,104/Cost baseline,92/Năng lực miền Bắc}{
+  \foreach \y/\label in {116/Dữ liệu được chuẩn hóa,104/Ngân sách cơ sở,92/Năng lực miền Bắc}{
     \fill[TTCRed] (6,\y) circle (1.2mm);
     \node[anchor=west,text=TTCTextDark,font=\fontsize{6.2}{7.4}\selectfont] at (11,\y) {\label};
   }
-  \foreach \y/\label in {116/Phòng sạch \& high-tech,104/Khách hàng lặp lại,92/Quản trị đa dự án}{
+  \foreach \y/\label in {116/Phòng sạch \& công nghệ cao,104/Khách hàng lặp lại,92/Quản trị đa dự án}{
     \fill[TTCRed] (70,\y) circle (1.2mm);
     \node[anchor=west,text=TTCTextDark,font=\fontsize{6.2}{7.4}\selectfont] at (75,\y) {\label};
   }
-  \foreach \y/\label in {116/EPC chọn lọc,104/Địa bàn có điều kiện,92/Chuỗi cung ứng xanh}{
+  \foreach \y/\label in {116/Tổng thầu chọn lọc,104/Địa bàn có điều kiện,92/Chuỗi cung ứng xanh}{
     \fill[TTCRed] (134,\y) circle (1.2mm);
     \node[anchor=west,text=TTCTextDark,font=\fontsize{6.2}{7.4}\selectfont] at (139,\y) {\label};
   }
@@ -495,7 +495,7 @@ PAGE_33 = r"""% ============================================================
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.3}\selectfont\bfseries]
     at (0,57) {BỐN BỘ LỌC TRƯỚC KHI NHẬN THÊM QUY MÔ};
   \foreach \xa/\xb/\n/\label in {
-    0/43.5/01/DÒNG TIỀN DƯƠNG,
+    0/43.5/01/PHẠM VI PHÙ HỢP,
     47.5/91/02/NGUỒN LỰC SẴN SÀNG,
     95/138.5/03/RỦI RO HỢP ĐỒNG,
     142.5/186/04/KHẢ NĂNG BÀN GIAO}
@@ -507,11 +507,11 @@ PAGE_33 = r"""% ============================================================
       at ({\xa+5},32) {\label};
   }
   \node[anchor=west,text=TTCTextMuted,font=\fontsize{5.4}{6.5}\selectfont\itshape]
-    at (0,14) {Các số liệu là mục tiêu quản trị nội bộ, không phải cam kết hay dự báo tài chính công bố ra thị trường.};
+    at (0,14) {Lộ trình mang tính định hướng; từng bước mở rộng phụ thuộc năng lực, nhu cầu thị trường và phê duyệt quản trị.};
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,10);
   \node[anchor=west,text=TTCCyan,font=\fontsize{6}{7.2}\selectfont\bfseries] at (7,5) {CONTROLLED GROWTH};
   \node[anchor=east,text=white,font=\fontsize{6.8}{8}\selectfont\bfseries]
-    at (179,5) {CHẤT LƯỢNG DOANH THU QUAN TRỌNG HƠN TỐC ĐỘ};
+    at (179,5) {CHẤT LƯỢNG BÀN GIAO QUAN TRỌNG HƠN TỐC ĐỘ};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -525,7 +525,7 @@ PAGE_34 = r"""% ============================================================
 \casepagebars{BẢO HÀNH • HẬU MÃI • HỖ TRỢ VẬN HÀNH}{Trang 34}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Hỗ Trợ Sau Bàn Giao Theo Một Đầu Mối}{24/7 intake • Contract-based response • Field verification • Closed-loop records}
+\secbrand{Hỗ Trợ Sau Bàn Giao Theo Một Đầu Mối}{Centralized intake • Contract-based response • Field verification • Closed-loop records}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
@@ -538,18 +538,18 @@ PAGE_34 = r"""% ============================================================
   % Hero warranty promise
   \fill[TTCDeepNavy,rounded corners=4pt] (0,141) rectangle (54,190);
   \node[anchor=west,text=TTCCyan,font=\fontsize{6.4}{7.6}\selectfont\bfseries]
-    at (7,181) {BẢO HÀNH TIÊU CHUẨN};
-  \node[anchor=west,text=white,font=\fontsize{23}{25}\selectfont\bfseries]
-    at (7,162) {24 THÁNG};
-  \node[anchor=west,text=white!72!gray,font=\fontsize{5.9}{7.1}\selectfont]
-    at (7,149) {Hoặc theo điều kiện cụ thể của hợp đồng};
+    at (7,181) {ĐIỀU KIỆN BẢO HÀNH};
+  \node[anchor=center,align=center,text=white,font=\fontsize{18}{20}\selectfont\bfseries]
+    at (27,163) {THEO\\HỢP ĐỒNG};
+  \node[anchor=center,align=center,text width=42mm,text=white!72!gray,font=\fontsize{5.5}{6.7}\selectfont]
+    at (27,148) {Thời hạn và phạm vi xác lập trong từng hợp đồng};
 
   \fill[TTCLightBlue,rounded corners=4pt] (60,141) rectangle (186,190);
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.3}\selectfont\bfseries]
     at (67,181) {MỘT ĐẦU MỐI TIẾP NHẬN — MỘT HỒ SƠ THEO DÕI};
   \node[anchor=north west,text width=104mm,text=TTCTextDark,
         font=\fontsize{6.7}{8.2}\selectfont] at (67,171)
-    {Hotline và email kỹ thuật tiếp nhận thông tin 24/7. Thời gian phản hồi, hiện trường và khắc phục được xác định theo mức độ ưu tiên, điều kiện hợp đồng và khả năng tiếp cận công trình.};
+    {Hotline và email kỹ thuật là kênh tiếp nhận tập trung. Thời gian phản hồi, kiểm tra hiện trường và khắc phục được xác định theo mức độ ưu tiên, điều kiện hợp đồng và khả năng tiếp cận công trình.};
   \node[anchor=west,text=TTCRed,font=\fontsize{6.4}{7.6}\selectfont\bfseries]
     at (67,149) {KHÔNG CAM KẾT MƠ HỒ • KHÔNG ĐÓNG SỰ CỐ KHI CHƯA CÓ XÁC NHẬN};
 
@@ -582,7 +582,7 @@ PAGE_34 = r"""% ============================================================
   \foreach \xa/\xb/\title/\desc in {
     0/58/KẾT CẤU/Khung • liên kết • lớp bảo vệ,
     64/122/BAO CHE/Mái • tường • thoát nước • khe,
-    128/186/MEP \& PCCC/Thiết bị • hệ thống • hồ sơ vận hành}
+    128/186/CƠ ĐIỆN \& PCCC/Thiết bị • hệ thống • hồ sơ vận hành}
   {
     \fill[TTCLightBlue,rounded corners=3pt] (\xa,25) rectangle (\xb,58);
     \node[anchor=west,text=TTCBlue,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
@@ -591,7 +591,7 @@ PAGE_34 = r"""% ============================================================
           font=\fontsize{6}{7.3}\selectfont] at ({\xa+6},40) {\desc};
   }
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,16);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.1}{7.3}\selectfont\bfseries] at (7,8) {SERVICE DESK 24/7};
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.1}{7.3}\selectfont\bfseries] at (7,8) {CENTRAL SERVICE DESK};
   \node[anchor=east,text=white,font=\fontsize{6.8}{8}\selectfont\bfseries]
     at (179,8) {TIẾP NHẬN → XỬ LÝ → XÁC NHẬN → LƯU VẾT};
 \end{tikzpicture}
@@ -604,10 +604,10 @@ PAGE_35 = r"""% ============================================================
 % TRANG 35: HỆ SINH THÁI ĐỐI TÁC — LOGO WALL
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{ĐỐI TÁC • HỆ SINH THÁI • TÀI CHÍNH}{Trang 35}
+\casepagebars{HỆ SINH THÁI • THAM CHIẾU • HỢP TÁC}{Trang 35}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Đối Tác Và Hệ Sinh Thái Hợp Tác}{Selected corporate and financial partners in the TTC network}
+\secbrand{Hệ Sinh Thái Và Các Bên Tham Chiếu}{Selected corporate ecosystem and financial references}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
@@ -617,7 +617,7 @@ PAGE_35 = r"""% ============================================================
     at (0,211) {KẾT NỐI NĂNG LỰC • CỘNG HƯỞNG GIÁ TRỊ};
   \node[anchor=west,text width=178mm,text=TTCTextMuted,
         font=\fontsize{7.2}{8.8}\selectfont]
-    at (0,199) {Mạng lưới doanh nghiệp đồng hành và các tổ chức tài chính được nêu trong hồ sơ năng lực tín dụng của Tân Thành Công.};
+    at (0,199) {Các thương hiệu được trình bày để tham chiếu hệ sinh thái; quan hệ và trạng thái hợp tác được đối chiếu theo hồ sơ hiện hành.};
 
   % Nhóm doanh nghiệp: card lớn để giữ nhận diện của các logo dạng biểu tượng.
   \fill[TTCLightBlue,rounded corners=3pt] (0,177) rectangle (186,191);
@@ -647,9 +647,9 @@ PAGE_35 = r"""% ============================================================
   % Nhóm ngân hàng: 06 logo đúng với danh sách năng lực tín dụng trong hồ sơ.
   \fill[TTCLightBlue,rounded corners=3pt] (0,82) rectangle (186,96);
   \node[anchor=west,text=TTCCyan,font=\fontsize{6.2}{7.4}\selectfont\bfseries]
-    at (7,89) {FINANCIAL PARTNERS};
+    at (7,89) {FINANCIAL REFERENCES};
   \node[anchor=east,text=TTCBlue,font=\fontsize{7.2}{8.6}\selectfont\bfseries]
-    at (179,89) {ĐỐI TÁC TÀI CHÍNH};
+    at (179,89) {TỔ CHỨC TÀI CHÍNH THAM CHIẾU};
 
   \newcommand{\banklogoclosing}[2]{%
     \fill[white,rounded corners=3pt] (#1,39) rectangle ({#1+28.5},75);

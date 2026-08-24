@@ -401,18 +401,18 @@ TTC tích hợp pháp lý, thiết kế, mua sắm và thi công trong một h�
   };
   \node[rounded corners=2pt, fill=white, align=center, minimum width=29mm,
         minimum height=15mm] at (113,15) {
-    {\fontsize{11}{12}\selectfont\bfseries\color{TTCRed} -15\%}\\[-.3mm]
-    {\fontsize{5.8}{7}\selectfont\color{TTCBlue} KHỐI LƯỢNG THÉP}
+    {\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} REVIEWED}\\[-.3mm]
+    {\fontsize{5.8}{7}\selectfont\color{TTCBlue} STRUCTURAL OPTION}
   };
   \node[rounded corners=2pt, fill=white, align=center, minimum width=29mm,
         minimum height=15mm] at (145,15) {
-    {\fontsize{11}{12}\selectfont\bfseries\color{TTCCyan} -60}\\[-.3mm]
-    {\fontsize{5.8}{7}\selectfont\color{TTCBlue} NGÀY TIẾN ĐỘ}
+    {\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} PARALLEL}\\[-.3mm]
+    {\fontsize{5.8}{7}\selectfont\color{TTCBlue} WORKSTREAMS}
   };
   \node[rounded corners=2pt, fill=TTCGold, text=white, align=center,
         minimum width=29mm, minimum height=15mm] at (177,15) {
-    {\fontsize{11}{12}\selectfont\bfseries 0}\\[-.3mm]
-    {\fontsize{5.8}{7}\selectfont XUNG ĐỘT MEP}
+    {\fontsize{9}{10}\selectfont\bfseries ALIGNED}\\[-.3mm]
+    {\fontsize{5.8}{7}\selectfont MODEL CHECK}
   };
 \end{tikzpicture}
 
@@ -484,9 +484,9 @@ TTC tích hợp pháp lý, thiết kế, mua sắm và thi công trong một h�
   \fill[TTCDeepNavy, rounded corners=3pt] (0,0) rectangle (186,29);
   \foreach \x in {46.5,93,139.5}{\draw[white!35!gray] (\x,6) -- (\x,23);}
   \node[align=center,text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} TỐI ƯU CHI PHÍ}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Value Engineering}};
-  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} 45--60 NGÀY}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Fast-Track Delivery}};
-  \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries 0 CLASH}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont BIM Coordination}};
-  \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} LUMP-SUM}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Budget Certainty}};
+  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} SONG SONG}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Controlled Fast-Track}};
+  \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries CLASH CHECK}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Model Coordination}};
+  \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} CHANGE CONTROL}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Scope Discipline}};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -514,9 +514,9 @@ PAGE_15 = r"""% ============================================================
 
 \pagefooterbar{Trang 15}
 \begin{minipage}[t][246mm]{\textwidth}
-\pageheaderbar{TIÊN PHONG CÔNG NGHỆ CONTECH \& BIM 5D}{Trang 15}
+\pageheaderbar{MÔ HÌNH THÔNG TIN \& DỮ LIỆU CÔNG TRÌNH}{Trang 15}
 \vspace{6mm}
-\secbrand{Một Luồng Dữ Liệu Xuyên Suốt Vòng Đời Nhà Máy}{BIM 5D, AI Structural Optimization \& Smart Digital Twin}
+\secbrand{Một Luồng Dữ Liệu Xuyên Suốt Vòng Đời Nhà Máy}{Building Information Modeling, Engineering Review \& Handover Data}
 
 {\fontsize{15}{17}\selectfont\bfseries\color{TTCBlue}
 MỘT MÔ HÌNH • BA QUYẾT ĐỊNH • XUYÊN SUỐT VÒNG ĐỜI\par}
@@ -584,7 +584,7 @@ Dữ liệu thiết kế không dừng ở bản vẽ: nó dẫn dắt mua sắm
     {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}
     \textbf{Input:} Tải trọng • nhịp • nội lực\newline
     \textbf{Decision:} Lặp phương án tiết diện\newline
-    \textbf{Output:} Dầm Tapered tối ưu 10--15\%}\\[1mm]
+    \textbf{Output:} Phương án tiết diện để kỹ sư kiểm tra}\\[1mm]
     {\fontsize{6.2}{7.3}\selectfont\bfseries\color{TTCTextMuted} AISC 360 • TCVN • AIDC R\&D}
   };
   \node[anchor=north west,text width=50mm] at (131,53) {
@@ -593,7 +593,7 @@ Dữ liệu thiết kế không dừng ở bản vẽ: nó dẫn dắt mua sắm
     {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}
     \textbf{Input:} As-built • tài sản • IoT\newline
     \textbf{Decision:} Bảo trì theo trạng thái\newline
-    \textbf{Output:} O\&M có truy vết 30+ năm}\\[1mm]
+    \textbf{Output:} Hồ sơ vận hành có thể truy vết}\\[1mm]
     {\fontsize{6.2}{7.3}\selectfont\bfseries\color{TTCTextMuted} CDE • BMS • SCADA READY}
   };
 \end{tikzpicture}
@@ -630,9 +630,9 @@ Dữ liệu thiết kế không dừng ở bản vẽ: nó dẫn dắt mua sắm
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,29);
   \foreach \x in {46.5,93,139.5}{\draw[white!35!gray] (\x,6) -- (\x,23);}
   \node[align=center,text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} LOD 400}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Fabrication Detail}};
-  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} 10--15\%}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Steel Optimization}};
-  \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries CLASH-FREE}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Coordinated Model}};
-  \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} 30+ NĂM}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Digital O\&M}};
+  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} REVIEWED}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Engineering Options}};
+  \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries COORDINATED}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Model Interfaces}};
+  \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} TRACEABLE}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Handover Data}};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -693,13 +693,13 @@ ESG được tích hợp từ kết cấu và vỏ bao che — không phải b�
   };
   \node[rounded corners=2pt,fill=white,align=center,minimum width=31mm,
         minimum height=15mm] at (121,15) {
-    {\fontsize{10}{11}\selectfont\bfseries\color{TTCRed} 1--5 MWp}\\[-.2mm]
+    {\fontsize{10}{11}\selectfont\bfseries\color{TTCRed} SOLAR}\\[-.2mm]
     {\fontsize{5.8}{7}\selectfont\color{TTCBlue} SOLAR-READY}
   };
   \node[rounded corners=2pt,fill=TTCCyan,align=center,text=white,
         minimum width=31mm,minimum height=15mm] at (155,15) {
-    {\fontsize{10}{11}\selectfont\bfseries -20\%}\\[-.2mm]
-    {\fontsize{5.8}{7}\selectfont HVAC ENERGY}
+    {\fontsize{10}{11}\selectfont\bfseries PASSIVE}\\[-.2mm]
+    {\fontsize{5.8}{7}\selectfont ENVELOPE DESIGN}
   };
 \end{tikzpicture}
 
@@ -718,7 +718,7 @@ ESG được tích hợp từ kết cấu và vỏ bao che — không phải b�
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCRed} 01 / ENERGY}\\[1mm]
     {\fontsize{8.5}{10}\selectfont\bfseries\color{TTCBlue} SOLAR-READY}\\[1mm]
     {\fontsize{6.5}{7.8}\selectfont\color{TTCTextDark}
-    Dự phòng tải mái, xà gồ và Seamlock cho hệ pin 1--5MWp.}
+    Dự phòng tải mái, xà gồ và giao diện lắp đặt theo dữ liệu hệ pin được duyệt.}
   };
   \node[anchor=north west,text width=35mm] at (51.5,43) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} 02 / ENVELOPE}\\[1mm]
@@ -749,7 +749,7 @@ ESG được tích hợp từ kết cấu và vỏ bao che — không phải b�
   \fill[TTCLightBlue,rounded corners=3pt] (0,0) rectangle (186,47);
   \draw[TTCBorder,rounded corners=3pt,line width=.6pt] (0,0) rectangle (186,47);
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries] at (7,39)
-    {\faGlobeAmericas\quad BUSINESS CASE CHO CHỦ ĐẦU TƯ FDI};
+    {\faGlobeAmericas\quad GIÁ TRỊ CHO CHỦ ĐẦU TƯ QUỐC TẾ};
   \foreach \x in {62,124}{\draw[TTCBorder] (\x,6) -- (\x,31);}
   \node[align=left,text width=50mm,anchor=north west] at (6,30) {
     {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCRed} GREEN FINANCE}\\[.7mm]
@@ -759,7 +759,7 @@ ESG được tích hợp từ kết cấu và vỏ bao che — không phải b�
   \node[align=left,text width=50mm,anchor=north west] at (68,30) {
     {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCCyan} CARBON READY}\\[.7mm]
     {\fontsize{6.5}{7.8}\selectfont\color{TTCTextDark}
-    Chuẩn bị dữ liệu năng lượng và vật liệu cho CBAM, I-REC và Net-Zero roadmap.}
+    Chuẩn bị dữ liệu năng lượng, vật liệu và lộ trình giảm phát thải theo yêu cầu dự án.}
   };
   \node[align=left,text width=50mm,anchor=north west] at (130,30) {
     {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCGold} LOWER OPEX}\\[.7mm]
@@ -776,10 +776,10 @@ ESG được tích hợp từ kết cấu và vỏ bao che — không phải b�
   \path[use as bounding box] (0,0) rectangle (186,29);
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,29);
   \foreach \x in {46.5,93,139.5}{\draw[white!35!gray] (\x,6) -- (\x,23);}
-  \node[align=center,text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} 1--5 MWp}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Solar-Ready Roof}};
-  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} -20\% ĐIỆN}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont HVAC Energy}};
-  \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries CỘT A}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Water Treatment}};
-  \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} LEED READY}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Green Certification}};
+  \node[align=center,text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} SOLAR-READY}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Approved System Data}};
+  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} LOW-ENERGY}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Envelope Strategy}};
+  \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries WATER}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Project Requirements}};
+  \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} GREEN DOSSIER}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Certification Support}};
 \end{tikzpicture}
 \end{minipage}
 \newpage
