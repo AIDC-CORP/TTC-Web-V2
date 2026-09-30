@@ -56,6 +56,17 @@
 \definecolor{TTCTextMuted}{RGB}{100, 116, 139}
 \definecolor{TTCBorder}{RGB}{203, 213, 225}
 
+% English TTC lock-up: clean symbol asset with live type descriptor.
+\newcommand{\ttcenglishlogo}[1]{%
+  \begin{tikzpicture}[baseline={(sym.center)}]
+    \node[anchor=west,inner sep=0pt] (sym) at (0,0)
+      {\includegraphics[height=#1]{assets/ttc-symbol.png}};
+    \node[anchor=west,align=left,inner sep=0pt,text=TTCRed] (word) at ([xshift=3.2mm]sym.east)
+      {{\fontsize{10.5}{12}\selectfont\bfseries TAN THANH CONG}\\[-0.2mm]
+       {\fontsize{6.2}{7.4}\selectfont\bfseries\color{TTCBlue} TECHNOLOGY CONSTRUCTION JSC}};
+  \end{tikzpicture}%
+}
+
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
@@ -171,7 +182,7 @@
   \node[anchor=north west, fill=white, fill opacity=0.96, text opacity=1,
         rounded corners=1.5pt, inner xsep=5mm, inner ysep=3.8mm]
     at ([xshift=15mm,yshift=-13mm]current page.north west) {
-      \includegraphics[width=48mm]{../../public/logo-ttc-removebg-DNXrVdJp.png}
+      \ttcenglishlogo{14mm}
     };
   \node[anchor=north east, text=white, inner sep=0pt] at ([xshift=-15mm,yshift=-15mm]current page.north east) {
     {\fontsize{8}{10}\selectfont\bfseries COMPANY PROFILE \;|\; 2026}
@@ -181,11 +192,11 @@
   \node[anchor=west, align=left, text width=128mm, inner sep=0pt]
     at ([xshift=16mm,yshift=160mm]current page.south west) {
       {\fontsize{7.8}{9.6}\selectfont\bfseries\color{TTCRed} TAN THANH CONG TECHNOLOGY CONSTRUCTION JOINT STOCK COMPANY}\\[6mm]
-      {\fontsize{43}{49}\selectfont\bfseries\color{white} COMPANY}\\[-2mm]
+      {\fontsize{43}{49}\selectfont\bfseries\color{white} COMPANY}\\[3mm]
       {\fontsize{43}{49}\selectfont\bfseries\color{white} PROFILE}\\[4mm]
       {\color{TTCRed}\rule{73mm}{2.8pt}}\\[5mm]
-      {\fontsize{17}{20}\selectfont\bfseries\color{white} COMPANY PROFILE}\\[10mm]
-      {\fontsize{14}{17}\selectfont\bfseries\color{white} INDUSTRIAL GENERAL CONTRACTOR\\INTEGRATED}\\[3mm]
+      {\fontsize{17}{20}\selectfont\bfseries\color{white} EPC GENERAL CONTRACTOR}\\[10mm]
+      {\fontsize{14}{17}\selectfont\bfseries\color{white} INTEGRATED INDUSTRIAL\\SOLUTIONS}\\[3mm]
       {\fontsize{9.5}{12}\selectfont\color{white!88!gray} Integrated Industrial Design, Build \& Delivery}
     };
 
@@ -193,8 +204,8 @@
   \node[anchor=south west, align=left, fill=TTCDeepNavy!92!black, fill opacity=0.84,
         text=white, text opacity=1, rounded corners=1.5pt, inner xsep=6mm, inner ysep=4mm]
     at ([xshift=15mm,yshift=31mm]current page.south west) {
-      {\fontsize{11}{13}\selectfont\bfseries INDUSTRIAL GENERAL CONTRACTOR \qquad GRADE II CONSTRUCTION CAPABILITY \qquad ISO MANAGEMENT SYSTEMS}\\[1.2mm]
-      {\fontsize{7}{8.5}\selectfont\color{white!82!gray}Design, construction capacity and handover industrial works}
+      {\fontsize{11}{13}\selectfont\bfseries INDUSTRIAL CONTRACTOR \qquad GRADE II CAPABILITY \qquad ISO SYSTEMS}\\[1.2mm]
+      {\fontsize{7}{8.5}\selectfont\color{white!82!gray}Design, build and handover of industrial facilities}
     };
 
   % 6. Legal identity stays quiet; the cover remains a visual statement.
@@ -233,18 +244,18 @@
 \secbrand{Executive Contents}{Executive Contents — 06 Focus Categories}
 
 {\fontsize{9.2}{11.5}\selectfont\color{TTCTextMuted}
-The dossier is organized in 06 capacity groups for Client to quickly look up; details of each item are presented on the thematic pages.}\\[3mm]
+The profile is organized into 06 core sections for quick navigation; detailed information is presented on each thematic page.}\\[3mm]
 
 % Navigation cards: inspired by section-based contents, without repeating every page title.
 \newcommand{\toccard}[5]{%
   \begin{tikzpicture}
     \node[rounded corners=3pt, fill=white, draw=TTCBorder, line width=0.8pt,
-          minimum width=90mm, minimum height=52mm, text width=79mm, inner sep=5.5mm, align=left] {
-      {\fontsize{18}{19}\selectfont\bfseries\color{TTCRed} #1}\hspace{3mm}
-      {\fontsize{8.2}{9.5}\selectfont\bfseries\color{TTCRed} PAGE #2}\\[1.5mm]
-      {\fontsize{11.2}{13.2}\selectfont\bfseries\color{TTCBlue} #3}\\[0.3mm]
-      {\fontsize{7.2}{8.8}\selectfont\itshape\color{TTCTextMuted} #4}\\[3mm]
-      {\fontsize{8.2}{10.5}\selectfont\color{TTCTextDark} #5}
+          minimum width=90mm, minimum height=45mm, text width=80mm, inner sep=4.5mm, align=left] {
+      {\fontsize{16}{17}\selectfont\bfseries\color{TTCRed} #1}\hspace{3mm}
+      {\fontsize{8}{9}\selectfont\bfseries\color{TTCRed} PAGE #2}\\[1.2mm]
+      {\fontsize{10.5}{12.5}\selectfont\bfseries\color{TTCBlue} #3}\\[0.3mm]
+      {\fontsize{7}{8.5}\selectfont\itshape\color{TTCTextMuted} #4}\\[2.2mm]
+      {\fontsize{7.8}{9.8}\selectfont\color{TTCTextDark} #5}
     };
   \end{tikzpicture}%
 }
@@ -252,39 +263,39 @@ The dossier is organized in 06 capacity groups for Client to quickly look up; de
 \noindent
 \begin{tabular}{@{}p{91mm}@{\hspace{4mm}}p{91mm}@{}}
 \toccard{I}{01--07}{INTRODUCTION \& PROFILE}{Company profile \& credentials}{Open letter \textbullet\ Vision and Values \textbullet\ Ecosystem \textbullet\ Legal Entity \& leadership} &
-\toccard{IV}{14--19}{SOLUTIONS \& TECHNOLOGY}{Integrated delivery \& technology}{Design--integrated labor \textbullet\ Building information model \textbullet\ quality \textbullet\ safety} \\[3.5mm]
-\toccard{II}{08--10}{GOVERNANCE \& RESOURCES}{Governance \& people}{Expense Management \textbullet\ guaranteed capacity \textbullet\ resource mobilization \textbullet\ safety culture} &
-\toccard{V}{20--30}{Project \& CUSTOMER}{Projects \& valued partners}{Project Category \textbullet\ 06 project documents \textbullet\ supply chain \textbullet\ international partners} \\[3.5mm]
-\toccard{III}{11--13}{MANUFACTURING \& GOVERNANCE}{Fabrication \& project control}{Production partners \textbullet\ motorized equipment \textbullet\ contract administration process} &
-\toccard{VI}{31--36}{COMMITMENT \& COMPANION}{Commitments \& support}{Certification \textbullet\ Construction coverage \textbullet\ Strategy \textbullet\ Warranty \& contact}
+\toccard{IV}{14--19}{SOLUTIONS \& TECHNOLOGY}{Integrated delivery \& technology}{Design--Build delivery \textbullet\ Building Information Modeling (BIM) \textbullet\ Quality assurance \textbullet\ HSE} \\[2.5mm]
+\toccard{II}{08--10}{GOVERNANCE \& RESOURCES}{Governance \& people}{Financial governance \textbullet\ Contract guarantees \textbullet\ Resource mobilization \textbullet\ Safety culture} &
+\toccard{V}{20--30}{PROJECTS \& CLIENTS}{Projects \& valued partners}{Project portfolio \textbullet\ 06 featured project profiles \textbullet\ Supply chain \textbullet\ Global partners} \\[2.5mm]
+\toccard{III}{11--13}{MANUFACTURING \& GOVERNANCE}{Fabrication \& project control}{Fabrication network \textbullet\ Construction equipment \textbullet\ Stage-Gate EPC governance} &
+\toccard{VI}{31--36}{COMMITMENT \& PARTNERSHIP}{Commitments \& support}{Legal credentials \textbullet\ Geographic footprint \textbullet\ 2026--2030 Roadmap \textbullet\ Warranty \& contact}
 \end{tabular}
 
-\vspace{4.5mm}
+\vspace{3mm}
 
 % Compact legal snapshot: details remain on the legal-credentials spread (page 06).
 \noindent
 \begin{tikzpicture}
   \node[rounded corners=3pt, fill=TTCLightBlue, draw=TTCBorder, line width=0.8pt,
-        minimum width=186mm, text width=172mm, inner sep=7mm] {
-    {\fontsize{10.5}{12.5}\selectfont\bfseries\color{TTCBlue} \faIdCard\quad COMPANY SUMMARY LEGAL ENTITY}
-    \hfill {\fontsize{7.2}{8.8}\selectfont\color{TTCRed}\bfseries CERTIFICATE DETAILS: PAGE 06}\\[1.5mm]
+        minimum width=186mm, text width=176mm, inner sep=4.5mm] {
+    {\fontsize{10}{12}\selectfont\bfseries\color{TTCBlue} \faIdCard\quad CORPORATE LEGAL INFORMATION}
+    \hfill {\fontsize{7}{8.5}\selectfont\color{TTCRed}\bfseries CERTIFICATE DETAILS: PAGE 06}\\[1.2mm]
     {\fontsize{6.2}{7.5}\selectfont\color{TTCTextMuted}\bfseries
-    TAN THANH CONG TECHNOLOGY CONSTRUCTION JOINT STOCK COMPANY}\\[3mm]
-    \renewcommand{\arraystretch}{1.28}
-    {\fontsize{8.2}{10.2}\selectfont
+    TAN THANH CONG TECHNOLOGY CONSTRUCTION JOINT STOCK COMPANY}\\[2.5mm]
+    \renewcommand{\arraystretch}{1.18}
+    {\fontsize{7.8}{9.6}\selectfont
     \begin{tabularx}{\linewidth}{@{}p{32mm}X@{\hspace{5mm}}p{28mm}X@{}}
       \textbf{Business name} & \textbf{TAN THANH CONG TECHNOLOGY CONSTRUCTION JOINT STOCK COMPANY} &
       \textbf{Tax Identification Number} & \textbf{0107090447} \\
       \textbf{Legal representative} & \textbf{Mr. PHAM HUY TAN} — Chief Executive Officer &
-      \textbf{Competencies} & Construction capacity certificate Class II \textbullet\ ISO Management System \\
+      \textbf{Competencies} & Construction Capability Certificate Grade II \textbullet\ ISO Systems (9001, 14001, 45001) \\
       \textbf{Registered office} & No. 39, Lane 292 Kim Giang, Dai Kim, Hanoi &
       \textbf{Transaction office} & No. 19N7B, Urban area Trung Hoa Nhan Chinh, Hanoi \\
       \textbf{Contact} & +84 976 447 766 \textbullet\ info@tanthanhcongjsc.com &
       \textbf{Website} & tanthanhcongjsc.com
-    \end{tabularx}}\\[2mm]
-    {\fontsize{5.5}{6.8}\selectfont\color{TTCTextMuted}
-    \textbf{Key Terminology:} EPC -- Design, Procurement and Construction; PEB -- Pre-engineered Steel Building; MEP -- M\&E; BIM -- Building Information Modeling;\\[-0.3mm]
-    QA/QC -- Assurance and Control of quality; HSE -- Safety, Health and Environment; Fire Protection -- Fire Prevention \& Fighting; ITP -- Inspection and Acceptance Plan.}
+    \end{tabularx}}\\[1.8mm]
+    {\fontsize{5.8}{7.0}\selectfont\color{TTCTextMuted}
+    \textbf{Key Terminology:} EPC -- Engineering, Procurement \& Construction; PEB -- Pre-Engineered Building; MEP -- Mechanical, Electrical \& Plumbing; BIM -- Building Information Modeling;\\[-0.3mm]
+    QA/QC -- Quality Assurance / Quality Control; HSE -- Health, Safety \& Environment; FPS -- Fire Protection System; ITP -- Inspection \& Test Plan.}
   };
 \end{tikzpicture}
 \end{minipage}
@@ -351,7 +362,7 @@ The dossier is organized in 06 capacity groups for Client to quickly look up; de
         {\fontsize{7}{8.5}\selectfont\bfseries\color{TTCRed} CHIEF EXECUTIVE OFFICER / CEO}\\[2mm]
         {\fontsize{14}{17}\selectfont\bfseries\color{white} PHAM HUY TAN}\\[2mm]
         {\fontsize{7.5}{9.5}\selectfont\color{white!78!gray}
-        Technology Joint Stock Company\\Construction of Tan Thanh Cong}\\[4mm]
+        Tan Thanh Cong Technology Construction\\Joint Stock Company}\\[4mm]
         {\fontsize{7.2}{9}\selectfont\bfseries\color{white!68!gray} TAN THANH CONG \textbullet\ TTC JSC}
       };
   \end{tikzpicture}
@@ -397,7 +408,7 @@ The dossier is organized in 06 capacity groups for Client to quickly look up; de
   \node[rounded corners=2pt, fill=white, draw=TTCRed, line width=0.9pt,
         minimum width=186mm, minimum height=15mm, align=center, inner sep=3mm] {
     {\fontsize{10}{12}\selectfont\bfseries\color{TTCBlue}
-    CREATING LONG-TERM VALUE \quad\textbullet\quad BUILDING ENDURING VALUE}
+    ENGINEERING LONG-TERM SUCCESS \quad\textbullet\quad BUILDING ENDURING VALUE}
   };
 \end{tikzpicture}
 \end{minipage}
@@ -570,7 +581,7 @@ The dossier is organized in 06 capacity groups for Client to quickly look up; de
 \end{tikzpicture}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Design Ecosystem \& Integrated Construction}{Integrated Factory Blueprint \& AIDC ConTech Collaboration}
+\secbrand{Integrated Design \& Construction Ecosystem}{Integrated Factory Blueprint \& AIDC ConTech Collaboration}
 
 \vspace{1mm}
 {\fontsize{15}{17}\selectfont\bfseries\color{TTCBlue}
@@ -715,8 +726,8 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
       text width=50mm, inner sep=4mm, align=left
     ] {
       {\fontsize{7}{8}\selectfont\bfseries\color{TTCRed} 01 / ACCOUNTABILITY}\\[1mm]
-      {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCBlue} 01 CLUE}\\[1mm]
-      {\fontsize{7}{8.5}\selectfont\color{TTCTextDark}A general contractor is responsible throughout from design to handover.}
+      {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCBlue} SINGLE-POINT ACCOUNTABILITY}\\[1mm]
+      {\fontsize{7}{8.5}\selectfont\color{TTCTextDark}Single general contractor accountable from concept and design through final handover.}
     };
   \end{tikzpicture}
   &
@@ -739,7 +750,7 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
       text width=50mm, inner sep=4mm, align=left
     ] {
       {\fontsize{7}{8}\selectfont\bfseries\color{TTCBlue} 03 / INTEGRATION}\\[1mm]
-      {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCBlue} GOVERNANCE INTEGRATED}\\[1mm]
+      {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCBlue} INTEGRATED GOVERNANCE}\\[1mm]
       {\fontsize{7}{8.5}\selectfont\color{TTCTextDark}Data, engineering and construction work together in an ecosystem.}
     };
   \end{tikzpicture}
@@ -759,7 +770,7 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
   \node[anchor=west, align=left] at (5,12) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} DELIVERY ASSURANCE}\\[0.8mm]
     {\fontsize{9}{10.5}\selectfont\bfseries\color{TTCBlue} CONTROL PLATFORM}\\[0.6mm]
-    {\fontsize{6.4}{7.8}\selectfont\color{TTCTextMuted} Standards behind every project}
+    {\fontsize{6.5}{7.8}\selectfont\color{TTCTextMuted} Standards behind every project}
   };
   \node[align=center] at (61,12) {
     {\fontsize{11}{12.5}\selectfont\bfseries\color{TTCBlue} ISO 9001}\\[0.8mm]
@@ -795,7 +806,7 @@ One integrated ecosystem. One accountable EPC partner from concept to handover.\
 \end{tikzpicture}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Lean Management \& Compliance Platform}{Governance Structure, Grade II Construction Capability \& ISO Management Systems}
+\secbrand{Lean Governance \& Compliance Framework}{Governance Structure, Grade II Construction Capability \& ISO Management Systems}
 
 \vspace{1mm}
 {\fontsize{15}{17}\selectfont\bfseries\color{TTCBlue}
@@ -814,7 +825,7 @@ An execution-led governance model connecting board oversight directly to every p
 
   \node[anchor=west, align=left] at (6,99) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} DELIVERY GOVERNANCE}\\[-0.2mm]
-    {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCBlue} OPERATIONAL STRUCTURE ACCORDING TO THE LINE OF RESPONSIBILITY}
+    {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCBlue} OPERATIONAL STRUCTURE ALONG RESPONSIBILITY LINES}
   };
   \draw[TTCBorder, line width=0.5pt] (6,91.5) -- (180,91.5);
 
@@ -871,19 +882,19 @@ An execution-led governance model connecting board oversight directly to every p
     rounded corners=3pt, fill=TTCBlue, text=white,
     minimum width=54mm, minimum height=10mm, align=center
   ] at (32,52.5) {
-    {\fontsize{6.2}{7.5}\selectfont\bfseries DEPUTY CHIEF EXECUTIVE OFFICER • PROJECT}
+    {\fontsize{6.5}{7.7}\selectfont\bfseries DEPUTY CHIEF EXECUTIVE OFFICER • PROJECT}
   };
   \node[
     rounded corners=3pt, fill=TTCBlue, text=white,
     minimum width=54mm, minimum height=10mm, align=center
   ] at (93,52.5) {
-    {\fontsize{6.2}{7.5}\selectfont\bfseries DEPUTY CHIEF EXECUTIVE OFFICER • ENGINEERING}
+    {\fontsize{6.5}{7.7}\selectfont\bfseries DEPUTY CHIEF EXECUTIVE OFFICER • ENGINEERING}
   };
   \node[
     rounded corners=3pt, fill=TTCBlue, text=white,
     minimum width=54mm, minimum height=10mm, align=center
   ] at (154,52.5) {
-    {\fontsize{6.2}{7.5}\selectfont\bfseries DEPUTY CHIEF EXECUTIVE OFFICER • COMMERCIAL}
+    {\fontsize{6.5}{7.7}\selectfont\bfseries DEPUTY CHIEF EXECUTIVE OFFICER • COMMERCIAL}
   };
 
   % Functional teams
@@ -946,7 +957,7 @@ An execution-led governance model connecting board oversight directly to every p
   \node[anchor=west, align=left] at (6,66) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} COMPLIANCE PASSPORT}\\[-0.2mm]
     {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCBlue}
-    LEGAL PROFILE \& PROVEN MANAGEMENT SYSTEM}
+    LEGAL STANDING \& CERTIFIED MANAGEMENT SYSTEMS}
   };
 
   % Grade II anchor card
@@ -955,13 +966,13 @@ An execution-led governance model connecting board oversight directly to every p
   \node[align=center] at (31.5,45) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCRed} CONSTRUCTION CAPABILITY}\\[1mm]
     {\fontsize{22}{24}\selectfont\bfseries\color{TTCRed} CLASS II}\\[-0.2mm]
-    {\fontsize{7.4}{9}\selectfont\bfseries\color{TTCBlue} CERTIFICATE OF PROFILE CONSTRUCTION ACTIVITIES}
+    {\fontsize{7.4}{9}\selectfont\bfseries\color{TTCBlue} CONSTRUCTION CAPABILITY CERTIFICATE GRADE II}
   };
   \draw[TTCBorder, line width=0.5pt] (11,29) -- (52,29);
   \node[text width=42mm, align=left] at (31.5,18) {
     {\fontsize{6.6}{8.2}\selectfont\color{TTCTextDark}
     \textcolor{TTCRed}{\faCheckCircle}\ Competency level: Grade II\\
-    \textcolor{TTCRed}{\faCheckCircle}\ Range by valid certificate\\
+    \textcolor{TTCRed}{\faCheckCircle}\ Scope verified by valid certificate\\
     \textcolor{TTCRed}{\faCheckCircle}\ Copies provided in legal documents}
   };
 
@@ -1017,11 +1028,11 @@ An execution-led governance model connecting board oversight directly to every p
   \node[align=left, anchor=west] at (6,12) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} PRE-QUALIFICATION}\\[0.8mm]
     {\fontsize{10}{11.5}\selectfont\bfseries\color{white} READY FOR PREQUALIFICATION}\\[0.5mm]
-    {\fontsize{6.3}{7.6}\selectfont\color{white!72!gray}Legal • Quality • HSE}
+    {\fontsize{6.5}{7.7}\selectfont\color{white!72!gray}Legal • Quality • HSE}
   };
   \node[align=center] at (72,12) {
     {\fontsize{11}{12.5}\selectfont\bfseries\color{TTCBlue} 01}\\[0.6mm]
-    {\fontsize{7}{8.3}\selectfont\bfseries\color{TTCTextDark} LEGAL FOCAL POINT}
+    {\fontsize{7}{8.3}\selectfont\bfseries\color{TTCTextDark} LEGAL COMPLIANCE GATE}
   };
   \node[align=center] at (113,12) {
     {\fontsize{11}{12.5}\selectfont\bfseries\color{TTCBlue} 04}\\[0.6mm]
@@ -1029,7 +1040,7 @@ An execution-led governance model connecting board oversight directly to every p
   };
   \node[align=center] at (160,12) {
     {\fontsize{11}{12.5}\selectfont\bfseries\color{TTCRed} CO/CQ}\\[0.6mm]
-    {\fontsize{7}{8.3}\selectfont\bfseries\color{TTCTextDark} RETRIEVAL CO/CQ}
+    {\fontsize{7}{8.3}\selectfont\bfseries\color{TTCTextDark} CO/CQ TRACEABILITY}
   };
 \end{tikzpicture}
 \end{minipage}
@@ -1071,7 +1082,7 @@ One accountable team mobilized from pre-construction through commissioning and w
 
   \node[anchor=west, text width=54mm, align=left, text=white] at (8,48) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} PEOPLE AT THE POINT OF EXECUTION}\\[1.5mm]
-    {\fontsize{16}{18}\selectfont\bfseries PEOPLE IN\\EXECUTION SCORE}\\[2mm]
+    {\fontsize{16}{18}\selectfont\bfseries EMPOWERED ON-SITE\\EXECUTION TEAMS}\\[2mm]
     {\fontsize{7.2}{9}\selectfont\color{white!84!gray}
     The project team is organized by task, with clear authority and a single reporting line.}
   };
@@ -1111,11 +1122,11 @@ One accountable team mobilized from pre-construction through commissioning and w
     {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCBlue} PREPARATION \& DESIGN}\\[1.2mm]
     {\fontsize{7}{8.6}\selectfont\color{TTCTextDark}
     \textbf{Project Director}\\
-    The only focal point with Client.\\[0.8mm]
+    Single point of contact with Client.\\[0.8mm]
     \textbf{Design \& BIM Lead}\\
     Coordinate design, VE and model.\\[0.8mm]
     \textbf{Planning / QS / FIDIC}\\
-    Lock range, schedule and budget.}
+    Lock scope, schedule baseline and budget.}
   };
   \node[anchor=south, align=center] at (29,3.5) {
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCRed} OUTPUT: APPROVED BASELINE}
@@ -1176,25 +1187,25 @@ One accountable team mobilized from pre-construction through commissioning and w
   \node[align=center] at (22,14.5) {
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} GOVERNANCE}\\[0.7mm]
     {\fontsize{9.2}{10.5}\selectfont\bfseries\color{TTCBlue} HEAD OFFICE PMO}\\[0.5mm]
-    {\fontsize{6.4}{7.6}\selectfont Portfolio control}
+    {\fontsize{6.5}{7.7}\selectfont Portfolio control}
   };
   \node[text=TTCRed] at (45,14.5) {\faChevronRight};
   \node[align=center] at (68,14.5) {
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} ACCOUNTABILITY}\\[0.7mm]
     {\fontsize{9.2}{10.5}\selectfont\bfseries\color{TTCBlue} PROJECT DIRECTOR}\\[0.5mm]
-    {\fontsize{6.4}{7.6}\selectfont Single point}
+    {\fontsize{6.5}{7.7}\selectfont Single point}
   };
   \node[text=TTCRed] at (93,14.5) {\faChevronRight};
   \node[align=center] at (118,14.5) {
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} SITE AUTHORITY}\\[0.7mm]
-    {\fontsize{9.2}{10.5}\selectfont\bfseries\color{TTCBlue} STEERING COMMITTEE}\\[0.5mm]
-    {\fontsize{6.4}{7.6}\selectfont Daily execution}
+    {\fontsize{9.2}{10.5}\selectfont\bfseries\color{TTCBlue} SITE MANAGEMENT BOARD}\\[0.5mm]
+    {\fontsize{6.5}{7.7}\selectfont Daily execution}
   };
   \node[text=TTCRed] at (141,14.5) {\faChevronRight};
   \node[align=center] at (164,14.5) {
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} DELIVERY}\\[0.7mm]
-    {\fontsize{9.2}{10.5}\selectfont\bfseries\color{TTCRed} PROFESSIONAL TEAM}\\[0.5mm]
-    {\fontsize{6.4}{7.6}\selectfont Task-based crews}
+    {\fontsize{9.2}{10.5}\selectfont\bfseries\color{TTCRed} SPECIALIZED CREWS}\\[0.5mm]
+    {\fontsize{6.5}{7.7}\selectfont Task-based crews}
   };
 \end{tikzpicture}
 
@@ -1211,7 +1222,7 @@ One accountable team mobilized from pre-construction through commissioning and w
   }
   \node[align=center] at (23.25,13.5) {
     {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCRed} 350+}\\[0.8mm]
-    {\fontsize{6.8}{8}\selectfont\bfseries\color{TTCTextDark} MANAGE \& Engineer}
+    {\fontsize{6.8}{8}\selectfont\bfseries\color{TTCTextDark} MANAGERS \& ENGINEERS}
   };
   \node[align=center] at (69.75,13.5) {
     {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCBlue} 2.500+}\\[0.8mm]
@@ -1219,11 +1230,11 @@ One accountable team mobilized from pre-construction through commissioning and w
   };
   \node[align=center] at (116.25,13.5) {
     {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCCyan} 85+}\\[0.8mm]
-    {\fontsize{6.8}{8}\selectfont\bfseries\color{TTCTextDark} COMMANDER \& MONITORING}
+    {\fontsize{6.8}{8}\selectfont\bfseries\color{TTCTextDark} SITE MANAGERS \& SUPERVISORS}
   };
   \node[align=center] at (162.75,13.5) {
     {\fontsize{14}{15.5}\selectfont\bfseries\color{TTCBlue} 60+}\\[0.8mm]
-    {\fontsize{6.8}{8}\selectfont\bfseries\color{TTCTextDark} BIM engineer \& DIGITIZATION}
+    {\fontsize{6.8}{8}\selectfont\bfseries\color{TTCTextDark} BIM \& DIGITAL ENGINEERS}
   };
 \end{tikzpicture}
 \end{minipage}
@@ -1280,7 +1291,7 @@ Each project is set up an independent budget, controlling 4 ports and reconcilin
   \node[text=white, font=\fontsize{7}{8}\selectfont\bfseries] at (15,50) {01};
   \node[anchor=south, align=center, text width=26mm, text=TTCRed, font=\fontsize{7}{8.2}\selectfont\bfseries]
     at (15,57.5) {APPRAISAL\\CONTRACT};
-  \node[anchor=north, align=center, text width=27mm, text=TTCTextDark, font=\fontsize{6.2}{7.6}\selectfont]
+  \node[anchor=north, align=center, text width=27mm, text=TTCTextDark, font=\fontsize{6.5}{7.7}\selectfont]
     at (15,42.5) {Profit Margin\\Payment Terms\\Retention risk};
 
   % Cổng 02
@@ -1289,7 +1300,7 @@ Each project is set up an independent budget, controlling 4 ports and reconcilin
   \node[text=TTCBlue, font=\fontsize{7}{8}\selectfont\bfseries] at (47,50) {02};
   \node[anchor=south, align=center, text width=26mm, text=TTCBlue, font=\fontsize{7}{8.2}\selectfont\bfseries]
     at (47,57.5) {BUDGET\\Project};
-  \node[anchor=north, align=center, text width=27mm, text=TTCTextDark, font=\fontsize{6.2}{7.6}\selectfont]
+  \node[anchor=north, align=center, text width=27mm, text=TTCTextDark, font=\fontsize{6.5}{7.7}\selectfont]
     at (47,42.5) {Baseline costs\\Cash flow plan\\Disbursement limits};
 
   % Cổng 03
@@ -1298,7 +1309,7 @@ Each project is set up an independent budget, controlling 4 ports and reconcilin
   \node[text=TTCBlue, font=\fontsize{7}{8}\selectfont\bfseries] at (79,50) {03};
   \node[anchor=south, align=center, text width=26mm, text=TTCBlue, font=\fontsize{7}{8.2}\selectfont\bfseries]
     at (79,57.5) {CONTROL\\IMPLEMENTATION};
-  \node[anchor=north, align=center, text width=27mm, text=TTCTextDark, font=\fontsize{6.2}{7.6}\selectfont]
+  \node[anchor=north, align=center, text width=27mm, text=TTCTextDark, font=\fontsize{6.5}{7.7}\selectfont]
     at (79,42.5) {Plan Reality Comparison\\Additional Approval (VO)\\Forecast Completion (EAC)};
 
   % Cổng 04
@@ -1307,7 +1318,7 @@ Each project is set up an independent budget, controlling 4 ports and reconcilin
   \node[text=TTCBlue, font=\fontsize{7}{8}\selectfont\bfseries] at (111,50) {04};
   \node[anchor=south, align=center, text width=26mm, text=TTCBlue, font=\fontsize{7}{8.2}\selectfont\bfseries]
     at (111,57.5) {ACCEPTANCE\\SETTLEMENT};
-  \node[anchor=north, align=center, text width=27mm, text=TTCTextDark, font=\fontsize{6.2}{7.6}\selectfont]
+  \node[anchor=north, align=center, text width=27mm, text=TTCTextDark, font=\fontsize{6.5}{7.7}\selectfont]
     at (111,42.5) {As-built Bill of Quantities\\Debt collection\\Close project cost code};
 
   % Dải cam kết phía dưới khối trái
@@ -1324,14 +1335,14 @@ Each project is set up an independent budget, controlling 4 ports and reconcilin
   \node[anchor=north west, text=TTCCyan, font=\fontsize{7}{8}\selectfont\bfseries]
     at (136,79.5) {CONTROL PRINCIPLE};
   \node[anchor=north west, text width=46mm, text=TTCBlue, font=\fontsize{9.5}{11.5}\selectfont\bfseries]
-    at (136,73) {DO NOT RECEIVE BIDS EXCEEDING PROFILE};
+    at (136,73) {NO COMMITMENT BEYOND CAPACITY};
   \fill[TTCRed] (136,61.5) rectangle (152,63);
 
   \node[anchor=north west, text width=45mm, text=TTCTextDark, font=\fontsize{6.8}{8.6}\selectfont]
     at (136,56) {
     \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Budget Lock:} Approval before resource mobilization.\\[2.4mm]
-    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Arising control:} Any non-contractual costs must be approved.\\[2.4mm]
-    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{safety growth:} Scale only expands when handover is ready.
+    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Variation control:} All scope changes and cost variances strictly pre-approved.\\[2.4mm]
+    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Prudent growth:} Capacity only expands when handover standards are secured.
   };
 
   \fill[white, rounded corners=2.5pt, draw=TTCBorder, line width=0.55pt] (136,6) rectangle (181,18);
@@ -1381,11 +1392,11 @@ Each project is set up an independent budget, controlling 4 ports and reconcilin
   \fill[TTCBlue, rounded corners=1pt] (133,50.5) rectangle (150,52.5);
   \node[anchor=north west, text width=50mm, align=left] at (133,47.5) {
     {\fontsize{7}{8.2}\selectfont\bfseries\color{TTCBlue}\faClipboardCheck\quad VERIFIED REPORTING}\\[1.2mm]
-    {\fontsize{9.8}{11.5}\selectfont\bfseries\color{TTCBlue} COMPANY RETRIEVAL}\\[2mm]
+    {\fontsize{9.8}{11.5}\selectfont\bfseries\color{TTCBlue} TRACEABLE RECORDS}\\[2mm]
     {\fontsize{6.6}{8.2}\selectfont\color{TTCTextDark}
-    \textbullet\ Cost data updated by admin cycle.\newline
-    \textbullet\ Report variance and forecast completion.\newline
-    \textbullet\ Detailed documents provided on request Client.}
+    \textbullet\ Cost data updated on each governance cycle.\newline
+    \textbullet\ Variance analysis and Estimate-at-Completion (EAC).\newline
+    \textbullet\ Detailed documentation provided upon Client request.}
   };
 \end{tikzpicture}
 
@@ -1406,29 +1417,29 @@ Each project is set up an independent budget, controlling 4 ports and reconcilin
   \fill[TTCDeepNavy, rounded corners=4pt] (0,0) rectangle (48,46);
   \node[anchor=west, text width=40mm, align=left] at (6,23) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} DISCLOSURE POLICY}\\[1.2mm]
-    {\fontsize{9}{11}\selectfont\bfseries\color{white} TRANSPARENCY YES\\CONTROL}\\[1.8mm]
-    {\fontsize{6}{7.2}\selectfont\color{white!75!gray}Verified data \textbullet\ Right audience}
+    {\fontsize{9}{11}\selectfont\bfseries\color{white} CONTROLLED\\TRANSPARENCY}\\[1.8mm]
+    {\fontsize{6.5}{7.7}\selectfont\color{white!75!gray}Verified data \textbullet\ Right audience}
   };
 
   % 4 Pill Cards on the Right
   \foreach \xa/\xb/\num/\label/\sub in {
-    53/81/01/FINANCIAL REPORT/Independent auditor,
-    85/113/02/COMPANY TAX/State Obligations,
-    117/145/03/DEBT RECONCILIATION/Supplier and sub-contractor,
-    149/181/04/GOVERNANCE REPORT/Project cash flow}{
+    53/81/01/FINANCIAL AUDIT/Independent auditor,
+    85/113/02/TAX COMPLIANCE/Statutory tax clearance,
+    117/145/03/ACCOUNTS PAYABLE/Suppliers \& subcontractors,
+    149/181/04/FINANCIAL GOVERNANCE/Project cash-flow audits}{
     \fill[TTCLightBlue, rounded corners=3pt] (\xa,14) rectangle (\xb,40);
     \draw[TTCBorder, line width=0.5pt, rounded corners=3pt] (\xa,14) rectangle (\xb,40);
     \node[text=TTCRed, font=\fontsize{8}{9.5}\selectfont\bfseries] at ({(\xa+\xb)/2},34.5) {\num};
     \node[align=center, text width=26mm, text=TTCBlue, font=\fontsize{6.5}{7.8}\selectfont\bfseries]
       at ({(\xa+\xb)/2},26) {\label};
-    \node[align=center, text width=26mm, text=TTCTextMuted, font=\fontsize{5.8}{7}\selectfont]
+    \node[align=center, text width=26mm, text=TTCTextMuted, font=\fontsize{6.5}{7.7}\selectfont]
       at ({(\xa+\xb)/2},18.5) {\sub};
   }
 
   % Bottom Security Notice
   \draw[TTCBorder, line width=0.5pt] (53,9.5) -- (181,9.5);
-  \node[anchor=south west, text=TTCTextMuted, font=\fontsize{6}{7.3}\selectfont\itshape]
-    at (53,3) {\faLock\quad Detailed data is only provided according to the bidding documents or confidentiality agreement with Client.};
+  \node[anchor=south west, text=TTCTextMuted, font=\fontsize{6.5}{7.7}\selectfont\itshape]
+    at (53,3) {\faLock\quad Detailed financials provided under bidding procedures or confidentiality agreement with Client.};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -1449,7 +1460,7 @@ Each project is set up an independent budget, controlling 4 ports and reconcilin
 \end{tikzpicture}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Guaranteed Qualification \& Project Mobilization}{Banking Readiness, Contract Security \& Workforce Mobilization}
+\secbrand{Guarantee Capacity \& Project Mobilization}{Banking Readiness, Contract Security \& Workforce Mobilization}
 
 \vspace{1mm}
 {\fontsize{14.5}{16.5}\selectfont\bfseries\color{TTCBlue}
@@ -1473,23 +1484,23 @@ Bank records and personnel plans are prepared according to each contract milesto
   \node[anchor=north west, text=TTCCyan, font=\fontsize{7}{8}\selectfont\bfseries]
     at (6,73.5) {FINANCIAL ENGINE};
   \node[anchor=north west, text=TTCBlue, font=\fontsize{10}{12}\selectfont\bfseries]
-    at (6,67) {PROFILE TRUST AVAILABLE \& GUARANTEE};
+    at (6,67) {CREDIT FACILITIES \& BANK GUARANTEES};
 
   \node[anchor=west] at (6,54) {
-    {\fontsize{16}{19}\selectfont\bfseries\color{TTCRed} COMPANY READY}\quad
-    {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCTextMuted} ACCORDING TO THE CONTRACT REQUIREMENTS}
+    {\fontsize{16}{19}\selectfont\bfseries\color{TTCRed} CREDIT READY}\quad
+    {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCTextMuted} BASED ON CONTRACT REQUIREMENTS}
   };
 
   % Bank Badges
   \fill[TTCLightBlue, rounded corners=2.5pt, draw=TTCBorder, line width=0.5pt] (5,38) rectangle (85,46);
-  \node[anchor=center, text=TTCBlue, font=\fontsize{6.2}{7.4}\selectfont\bfseries]
+  \node[anchor=center, text=TTCBlue, font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (45,42) {Vietcombank \textbullet\ BIDV \textbullet\ VietinBank \textbullet\ TPBank \textbullet\ ACB \textbullet\ MB};
 
   \node[anchor=north west, text width=80mm, text=TTCTextDark, font=\fontsize{6.8}{8.6}\selectfont]
     at (6,33.5) {
-    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Type of guarantee:} Bid, execution, advance and warranty.\\[1.4mm]
-    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Issuance conditions:} According to bank approval and contract documents.\\[1.4mm]
-    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Reconciliation documents:} Confirm the bank provided in the prequalification dossier when required.
+    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Guarantee types:} Bid bond, performance security, advance payment, and warranty.\\[1.4mm]
+    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Issuance terms:} Per credit limits approved by partner banks and contract conditions.\\[1.4mm]
+    \textcolor{TTCRed}{\faCheckCircle}\ \textbf{Verification:} Bank credit commitments and confirmation letters submitted upon request.
   };
 
   % KHỐI PHẢI: KẾ HOẠCH HUY ĐỘNG NHÂN SỰ
@@ -1510,7 +1521,7 @@ Bank records and personnel plans are prepared according to each contract milesto
   \fill[TTCBlue, rounded corners=1.5pt] (102,41) rectangle (126,45);
   \fill[TTCCyan, rounded corners=1.5pt] (127,41) rectangle (151,45);
   \fill[TTCRed, rounded corners=1.5pt] (152,41) rectangle (180,45);
-  \node[anchor=west, text=TTCBlue, font=\fontsize{6.1}{7.3}\selectfont\bfseries] at (102,47.5) {PROJECT MANAGER • ENGINEER • CONSTRUCTION TEAM};
+  \node[anchor=west, text=TTCBlue, font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (102,47.5) {PROJECT MANAGER • ENGINEER • CONSTRUCTION TEAM};
 
   \node[anchor=north west, text width=78mm, text=TTCTextDark, font=\fontsize{6.8}{8.6}\selectfont]
     at (102,33.5) {
@@ -1556,7 +1567,7 @@ Bank records and personnel plans are prepared according to each contract milesto
   };
   \fill[TTCLightBlue, rounded corners=2pt, draw=TTCBorder, line width=0.5pt] (6,3.5) rectangle (36,10);
   \node[anchor=center] at (21,6.75) {
-    {\fontsize{6.4}{7.8}\selectfont\bfseries\color{TTCBlue} BID-READY}
+    {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCBlue} BID-READY}
   };
 
   % Chevron 1 -> 2
@@ -1578,7 +1589,7 @@ Bank records and personnel plans are prepared according to each contract milesto
   };
   \fill[TTCLightBlue, rounded corners=2pt, draw=TTCBorder, line width=0.5pt] (54,3.5) rectangle (84,10);
   \node[anchor=center] at (69,6.75) {
-    {\fontsize{6.4}{7.8}\selectfont\bfseries\color{TTCBlue} CONTRACT-READY}
+    {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCBlue} CONTRACT-READY}
   };
 
   % Chevron 2 -> 3
@@ -1596,11 +1607,11 @@ Bank records and personnel plans are prepared according to each contract milesto
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} FINANCE}\\[0.7mm]
     {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Working capital, procurement of materials and payment of suppliers.}\\[2mm]
     {\fontsize{6.5}{7.8}\selectfont\bfseries\color{TTCTextMuted} HUMAN RESOURCES}\\[0.7mm]
-    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Commanders, field engineers and teams according to schedule.}
+    {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}Site managers, field engineers and construction crews mobilized to schedule.}
   };
   \fill[TTCBlue, rounded corners=2pt] (102,3.5) rectangle (132,10);
   \node[anchor=center] at (117,6.75) {
-    {\fontsize{6.4}{7.8}\selectfont\bfseries\color{white} SITE-READY}
+    {\fontsize{6.5}{7.8}\selectfont\bfseries\color{white} SITE-READY}
   };
 
   % Chevron 3 -> 4
@@ -1622,7 +1633,7 @@ Bank records and personnel plans are prepared according to each contract milesto
   };
   \fill[TTCRed, rounded corners=2pt] (150,3.5) rectangle (180,10);
   \node[anchor=center] at (165,6.75) {
-    {\fontsize{6.4}{7.8}\selectfont\bfseries\color{white} O\&M-READY}
+    {\fontsize{6.5}{7.8}\selectfont\bfseries\color{white} O\&M-READY}
   };
 \end{tikzpicture}
 
@@ -1643,22 +1654,22 @@ Bank records and personnel plans are prepared according to each contract milesto
   \fill[TTCDeepNavy, rounded corners=4pt] (0,0) rectangle (48,43);
   \node[anchor=west, text width=40mm, align=left] at (6,21.5) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} ASSURANCE}\\[1mm]
-    {\fontsize{8.8}{10.5}\selectfont\bfseries\color{white} CONDITION\\READY}\\[1.5mm]
-    {\fontsize{6}{7.2}\selectfont\color{white!75!gray}Financial \textbullet\ Technical \textbullet\ HSE}
+    {\fontsize{8.8}{10.5}\selectfont\bfseries\color{white} MOBILIZATION\\READINESS}\\[1.5mm]
+    {\fontsize{6.5}{7.7}\selectfont\color{white!75!gray}Financial \textbullet\ Technical \textbullet\ HSE}
   };
 
   % 4 Metric Badges on Right
   \foreach \xa/\xb/\val/\title/\sub in {
-    53/81/COMPANY/TRUST APPLIED/Reconciled upon request,
-    85/113/TRAINING/SAFETY SAFETY/Before entering the construction site,
-    117/145/CERTIFICATE/WELDER/According to technical requirements,
-    149/181/LANGUAGE/COORDINATION/Vietnamese • English by project}{
+    53/81/CREDIT/FACILITIES/Verifiable upon request,
+    85/113/SAFETY/INDUCTION/Before entering site,
+    117/145/CERTIFIED/WELDERS/AWS D1.1 \& ISO standard,
+    149/181/BILINGUAL/COORDINATION/Vietnamese • English as required}{
     \fill[TTCLightBlue, rounded corners=3pt] (\xa,4.5) rectangle (\xb,38.5);
     \draw[TTCBorder, line width=0.5pt, rounded corners=3pt] (\xa,4.5) rectangle (\xb,38.5);
     \node[text=TTCRed, font=\fontsize{11}{13}\selectfont\bfseries] at ({(\xa+\xb)/2},29.5) {\val};
-    \node[align=center, text width=26mm, text=TTCBlue, font=\fontsize{6.4}{7.6}\selectfont\bfseries]
+    \node[align=center, text width=26mm, text=TTCBlue, font=\fontsize{6.5}{7.7}\selectfont\bfseries]
       at ({(\xa+\xb)/2},19.5) {\title};
-    \node[align=center, text width=26mm, text=TTCTextMuted, font=\fontsize{5.8}{7}\selectfont]
+    \node[align=center, text width=26mm, text=TTCTextMuted, font=\fontsize{6.5}{7.7}\selectfont]
       at ({(\xa+\xb)/2},11) {\sub};
   }
 \end{tikzpicture}
@@ -1704,7 +1715,7 @@ The training system is associated with field operations, turning professional kn
   \fill[TTCDeepNavy, opacity=0.28] (74,0) rectangle (98,65);
   \node[anchor=west, text width=60mm, align=left, text=white] at (8,43) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} FIELD-BASED LEARNING}\\[1.4mm]
-    {\fontsize{15}{17}\selectfont\bfseries STUDY IN\\EXECUTION SCORE}\\[1.8mm]
+    {\fontsize{15}{17}\selectfont\bfseries FIELD-BASED\\PRACTICAL TRAINING}\\[1.8mm]
     {\fontsize{7}{8.6}\selectfont\color{white!82!gray}
     Training is associated with real situations, real equipment and the right to stop work when safety is not available.}
   };
@@ -1715,7 +1726,7 @@ The training system is associated with field operations, turning professional kn
     minimum width=52mm, minimum height=13mm, align=center
   ] at (179,7) {
     {\fontsize{8.2}{9.5}\selectfont\bfseries\color{TTCBlue} SAFETY BEFORE PRODUCTIVITY}\\[0.6mm]
-    {\fontsize{6.4}{7.8}\selectfont\color{TTCTextDark}Safety is a prerequisite for starting work}
+    {\fontsize{6.5}{7.8}\selectfont\color{TTCTextDark}Safety is a prerequisite for starting work}
   };
   \draw[white, line width=1pt, rounded corners=3pt] (0.6,0.6) rectangle (185.4,64.4);
   \draw[TTCBorder, line width=0.65pt, rounded corners=3pt] (0,0) rectangle (186,65);
@@ -1731,7 +1742,7 @@ The training system is associated with field operations, turning professional kn
   \path[use as bounding box] (0,0) rectangle (186,53);
   \node[anchor=west] at (0,48) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} DEVELOPMENT JOURNEY}\quad
-    {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCBlue} ROADMAP PROFILE FROM THE FIELD TO THE LEADER}
+    {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCBlue} CAREER \& CAPABILITY ROADMAP FROM FIELD TO LEADERSHIP}
   };
   \draw[TTCBlue!28!white, line width=0.8pt] (22,30) -- (164,30);
 
@@ -1757,7 +1768,7 @@ The training system is associated with field operations, turning professional kn
   };
   \node[align=center, text width=36mm] at (164,13) {
     {\fontsize{8.8}{10}\selectfont\bfseries\color{TTCRed} PROJECT LEADER}\\[0.7mm]
-    {\fontsize{6.5}{7.8}\selectfont Lead, coach, and lead your team}
+    {\fontsize{6.5}{7.8}\selectfont Lead, coach, and mentor project teams}
   };
 \end{tikzpicture}
 
@@ -1773,7 +1784,7 @@ The training system is associated with field operations, turning professional kn
   \draw[TTCBorder, line width=0.65pt, rounded corners=4pt] (0,0) rectangle (91,49);
   \node[anchor=north west, text width=79mm, align=left] at (6,43) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} TTC TECHNICAL ACADEMY}\\[0.8mm]
-    {\fontsize{10}{11.5}\selectfont\bfseries\color{TTCBlue} PROFILE EXPERTISE}\\[1.5mm]
+    {\fontsize{10}{11.5}\selectfont\bfseries\color{TTCBlue} CORE TECHNICAL EXPERTISE}\\[1.5mm]
     {\fontsize{6.8}{8.4}\selectfont\color{TTCTextDark}
     \textcolor{TTCCyan}{\faCheckCircle}\ \textbf{ConTech \& BIM:} Revit, Tekla LOD 400, Navisworks, CDE.\\[0.8mm]
     \textcolor{TTCCyan}{\faCheckCircle}\ \textbf{Technical trades:} AWS D1.1, MEP/fire prevention and fighting, working at height.\\[0.8mm]
@@ -1828,6 +1839,9 @@ The training system is associated with field operations, turning professional kn
 % ============================================================
 % PAGE 11: PEB SUPPLY & QUALITY GATES
 % ============================================================
+\pageheaderbar{PEB SUPPLY CHAIN \& QUALITY CONTROL}{Page 11}
+\pagefooterbar{Page 11}
+
 \begin{tikzpicture}[remember picture, overlay]
   \fill[TTCLightBlue]
     ([xshift=118mm,yshift=-24mm]current page.north west) --
@@ -1841,23 +1855,11 @@ The training system is associated with field operations, turning professional kn
 \end{tikzpicture}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\noindent\makebox[\linewidth][c]{%
-  \begin{tikzpicture}[x=1mm,y=1mm]
-    \path[use as bounding box] (0,0) rectangle (210,11);
-    \fill[TTCDeepNavy] (0,1) rectangle (210,11);
-    \fill[TTCRed] (0,0) rectangle (210,1);
-    \node[anchor=west, text=white, font=\fontsize{7.5}{9}\selectfont\bfseries]
-      at (12,6) {\faBuilding\quad TAN THANH CONG TECHNOLOGY CONSTRUCTION JOINT STOCK COMPANY \textbullet\ TTC JSC};
-    \node[anchor=east, text=TTCCyan, font=\fontsize{7.5}{9}\selectfont\bfseries]
-      at (198,6) {PEB SUPPLY CHAIN \& QUALITY CONTROL};
-  \end{tikzpicture}%
-}
-\vspace{6mm}
 \secbrand{Controlled Pre-Engineered Steel Supply Chain}{Strategic Fabrication Network, Resident Quality Control \& Traceable Quality Gates}
 
 \vspace{1mm}
 {\fontsize{15}{17}\selectfont\bfseries\color{TTCBlue}
-SUCCESSFUL TAN DESIGN • PARTNER MANUFACTURING • RESIDENTIAL CONTROL\par}
+TTC IN-HOUSE DESIGN • PARTNER FABRICATION • RESIDENT QC OVERSIGHT\par}
 \vspace{1mm}
 {\fontsize{7.5}{9}\selectfont\color{TTCTextMuted}
 Flexible fabrication capacity with TTC-controlled engineering, inspection and release authority.\par}
@@ -1875,7 +1877,7 @@ Flexible fabrication capacity with TTC-controlled engineering, inspection and re
   \node[anchor=west, text width=54mm, align=left, text=white] at (8,42) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} STRATEGIC PEB NETWORK}\\[1.3mm]
     {\fontsize{18}{20}\selectfont\bfseries PLANNING}\\[-0.4mm]
-    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCCyan} PROFILE ACCORDING TO THE PROJECT PACKAGE}\\[1.8mm]
+    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCCyan} CAPACITY MATCHED TO PROJECT SCOPE}\\[1.8mm]
     {\fontsize{7}{8.6}\selectfont\color{white!82!gray}
     TTC owns the design, Shop Drawing and factory approval rights.}
   };
@@ -1914,27 +1916,27 @@ Flexible fabrication capacity with TTC-controlled engineering, inspection and re
 
   \node[align=center, text width=25mm] at (15,13) {
     {\fontsize{8}{9.2}\selectfont\bfseries\color{TTCBlue} CNC CUTTING}\\[0.6mm]
-    {\fontsize{6.3}{7.5}\selectfont Plasma • bevel}
+    {\fontsize{6.5}{7.7}\selectfont Plasma • bevel}
   };
   \node[align=center, text width=25mm] at (46,13) {
     {\fontsize{8}{9.2}\selectfont\bfseries\color{TTCBlue} FIT-UP}\\[0.6mm]
-    {\fontsize{6.3}{7.5}\selectfont Hydraulic jig}
+    {\fontsize{6.5}{7.7}\selectfont Hydraulic jig}
   };
   \node[align=center, text width=25mm] at (77,13) {
     {\fontsize{8}{9.2}\selectfont\bfseries\color{TTCBlue} SAW WELD}\\[0.6mm]
-    {\fontsize{6.3}{7.5}\selectfont AWS D1.1}
+    {\fontsize{6.5}{7.7}\selectfont AWS D1.1}
   };
   \node[align=center, text width=25mm] at (108,13) {
     {\fontsize{8}{9.2}\selectfont\bfseries\color{TTCBlue} STRAIGHTEN}\\[0.6mm]
-    {\fontsize{6.3}{7.5}\selectfont Hydraulic press}
+    {\fontsize{6.5}{7.7}\selectfont Hydraulic press}
   };
   \node[align=center, text width=25mm] at (139,13) {
     {\fontsize{8}{9.2}\selectfont\bfseries\color{TTCBlue} BLASTING}\\[0.6mm]
-    {\fontsize{6.3}{7.5}\selectfont Sa 2.5}
+    {\fontsize{6.5}{7.7}\selectfont Sa 2.5}
   };
   \node[align=center, text width=25mm] at (171,13) {
     {\fontsize{8}{9.2}\selectfont\bfseries\color{TTCRed} COATING}\\[0.6mm]
-    {\fontsize{6.3}{7.5}\selectfont Epoxy • fireproof}
+    {\fontsize{6.5}{7.7}\selectfont Epoxy • fireproof}
   };
 \end{tikzpicture}
 
@@ -1987,40 +1989,26 @@ Flexible fabrication capacity with TTC-controlled engineering, inspection and re
   \path[use as bounding box] (0,0) rectangle (186,30);
   \fill[TTCLightBlue, rounded corners=4pt] (0,0) rectangle (186,30);
   \draw[TTCBorder, line width=0.65pt, rounded corners=4pt] (0,0) rectangle (186,30);
-  \node[anchor=west, align=left] at (6,15) {
-    {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} TTC CONTROL MODEL}\\[0.7mm]
-    {\fontsize{9.3}{10.8}\selectfont\bfseries\color{TTCBlue} PERMISSION TO APPROVE FACTORY RELEASE}
+  \node[anchor=west, text width=44mm, align=left] at (6,15) {
+    {\fontsize{6.8}{7.8}\selectfont\bfseries\color{TTCCyan} TTC CONTROL MODEL}\\[0.7mm]
+    {\fontsize{8.5}{10}\selectfont\bfseries\color{TTCBlue} FACTORY RELEASE\\APPROVAL GATE}
   };
   \node[text=TTCRed] at (55,15) {\faChevronRight};
   \node[align=center] at (76,15) {
     {\fontsize{8.5}{10}\selectfont\bfseries\color{TTCBlue} DESIGN \& SHOP}\\[0.5mm]
-    {\fontsize{6.3}{7.5}\selectfont TTC engineering}
+    {\fontsize{6.5}{7.7}\selectfont TTC engineering}
   };
   \node[text=TTCRed] at (97,15) {\faChevronRight};
   \node[align=center] at (117,15) {
     {\fontsize{8.5}{10}\selectfont\bfseries\color{TTCBlue} RESIDENT QC}\\[0.5mm]
-    {\fontsize{6.3}{7.5}\selectfont At partner factory}
+    {\fontsize{6.5}{7.7}\selectfont At partner factory}
   };
   \node[text=TTCRed] at (137,15) {\faChevronRight};
   \node[align=center] at (158,15) {
     {\fontsize{8.5}{10}\selectfont\bfseries\color{TTCRed} RELEASE NOTE}\\[0.5mm]
-    {\fontsize{6.3}{7.5}\selectfont Ready for erection}
+    {\fontsize{6.5}{7.7}\selectfont Ready for erection}
   };
 \end{tikzpicture}
-\vfill
-\noindent\makebox[\linewidth][c]{%
-  \begin{tikzpicture}[x=1mm,y=1mm]
-    \path[use as bounding box] (0,0) rectangle (210,9);
-    \begin{scope}[yshift=-20mm]
-    \fill[TTCDeepNavy] (0,0) rectangle (210,8);
-    \fill[TTCCyan] (0,8) rectangle (210,9);
-    \node[anchor=west, text=white, font=\fontsize{6.8}{8}\selectfont]
-      at (12,4) {\faPhone*\ +84 976 447 766 \quad\textbullet\quad \faEnvelope\ info@tanthanhcongjsc.com \quad\textbullet\quad \faGlobe\ https://tanthanhcongjsc.com};
-    \node[anchor=east, text=white, font=\fontsize{7}{8}\selectfont\bfseries]
-      at (198,4) {Page 11};
-    \end{scope}
-  \end{tikzpicture}%
-}
 \end{minipage}
 \newpage
 
@@ -2092,12 +2080,12 @@ The list is streamlined according to execution capacity, prioritizing maneuverab
   \node[rounded corners=2pt, fill=white, text=TTCBlue, align=center,
         minimum width=31mm, minimum height=16mm] at (129,17) {
     {\fontsize{13}{14}\selectfont\bfseries 100T}\\[-0.4mm]
-    {\fontsize{6.2}{7.4}\selectfont MAXIMUM LIFTING CAPACITY}
+    {\fontsize{6.5}{7.7}\selectfont MAXIMUM LIFTING CAPACITY}
   };
   \node[rounded corners=2pt, fill=TTCRed, text=white, align=center,
         minimum width=35mm, minimum height=16mm] at (167,17) {
     {\fontsize{11}{12}\selectfont\bfseries VALID}\\[-0.4mm]
-    {\fontsize{6.2}{7.4}\selectfont COMPANY ACCREDITATION}
+    {\fontsize{6.5}{7.7}\selectfont VALID SAFETY CERTIFICATION}
   };
 \end{tikzpicture}
 
@@ -2114,15 +2102,15 @@ The list is streamlined according to execution capacity, prioritizing maneuverab
   }
   \node[anchor=north west, text width=35mm, align=left] at (4,43) {
     {\fontsize{15}{16}\selectfont\bfseries\color{TTCRed} 20}\\[-.5mm]
-    {\fontsize{7.4}{8.5}\selectfont\bfseries\color{TTCBlue} LOWER \& OUTREACH}\\[1mm]
+    {\fontsize{7.4}{8.5}\selectfont\bfseries\color{TTCBlue} LIFTING \& ACCESS}\\[1mm]
     {\fontsize{6.6}{8}\selectfont\color{TTCTextDark}
-    06 self-propelled cranes 25--100T\newline
-    14 xe Boomlift 18--28m\newline
+    06 mobile cranes 25--100T\newline
+    14 Boom lifts 18--28m\newline
     Erection of steel, roof and MEP at height.}
   };
   \node[anchor=north west, text width=35mm, align=left] at (51.5,43) {
     {\fontsize{15}{16}\selectfont\bfseries\color{TTCCyan} 12}\\[-.5mm]
-    {\fontsize{7.4}{8.5}\selectfont\bfseries\color{TTCBlue} BACKGROUND \& CONCRETE}\\[1mm]
+    {\fontsize{7.4}{8.5}\selectfont\bfseries\color{TTCBlue} FOUNDATIONS \& SLABS}\\[1mm]
     {\fontsize{6.6}{8}\selectfont\color{TTCTextDark}
     08 excavators, road roller\newline
     04 concrete pumps and tanks\newline
@@ -2130,18 +2118,18 @@ The list is streamlined according to execution capacity, prioritizing maneuverab
   };
   \node[anchor=north west, text width=35mm, align=left] at (99,43) {
     {\fontsize{15}{16}\selectfont\bfseries\color{TTCBlue} 02}\\[-.5mm]
-    {\fontsize{7.4}{8.5}\selectfont\bfseries\color{TTCBlue} ROOF \& BAO CHE}\\[1mm]
+    {\fontsize{7.4}{8.5}\selectfont\bfseries\color{TTCBlue} ROOFING \& ENVELOPE}\\[1mm]
     {\fontsize{6.6}{8}\selectfont\color{TTCTextDark}
-    02 movable coils\newline
-    Cliplock / Seamlock in place\newline
-    Long strip of corrugated iron, limiting joints and seepage.}
+    02 mobile roll-formers\newline
+    On-site Cliplock / Seamlock\newline
+    Continuous standing-seam sheets, eliminating transverse laps \& leaks.}
   };
   \node[anchor=north west, text width=35mm, align=left] at (146.5,43) {
     {\fontsize{15}{16}\selectfont\bfseries\color{TTCGold} 09}\\[-.5mm]
     {\fontsize{7.4}{8.5}\selectfont\bfseries\color{TTCBlue} SURVEYING \& QA}\\[1mm]
     {\fontsize{6.6}{8}\selectfont\color{TTCTextDark}
     09 sets of Leica / Laser 3D\newline
-    Axial heart and pitch control\newline
+    Grid line alignment and elevation control\newline
     Target error less than 2mm.}
   };
 \end{tikzpicture}
@@ -2155,7 +2143,7 @@ The list is streamlined according to execution capacity, prioritizing maneuverab
   \fill[TTCLightBlue, rounded corners=3pt] (0,0) rectangle (186,42);
   \draw[TTCBorder, rounded corners=3pt, line width=.6pt] (0,0) rectangle (186,42);
   \node[anchor=west, font=\fontsize{8}{9.5}\selectfont\bfseries, text=TTCBlue] at (7,35)
-    {\faClock\quad PROJECT CRITICAL PATH MOBILIZATION RHYTHM};
+    {\faClock\quad CRITICAL-PATH MOBILIZATION CADENCE};
   \draw[TTCBlue!35!white, line width=1pt] (19,19) -- (167,19);
   \foreach \x/\n/\t/\s in {
     21/01/FOUNDATION/Survey • earthwork • concrete,
@@ -2167,7 +2155,7 @@ The list is streamlined according to execution capacity, prioritizing maneuverab
       \node[font=\fontsize{6.8}{8}\selectfont\bfseries, text=TTCRed] at (\x,19) {\n};
       \node[anchor=north, align=center, text width=38mm] at (\x,12) {
         {\fontsize{6.8}{8}\selectfont\bfseries\color{TTCBlue} \t}\\[-.3mm]
-        {\fontsize{5.8}{7}\selectfont\color{TTCTextMuted} \s}
+        {\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted} \s}
       };
   }
 \end{tikzpicture}
@@ -2180,10 +2168,10 @@ The list is streamlined according to execution capacity, prioritizing maneuverab
   \path[use as bounding box] (0,0) rectangle (186,29);
   \fill[TTCDeepNavy, rounded corners=3pt] (0,0) rectangle (186,29);
   \foreach \x in {46.5,93,139.5}{\draw[white!35!gray] (\x,6) -- (\x,23);}
-  \node[align=center, text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} PLANNED}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Glove Line Maneuvering}};
-  \node[align=center, text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} CERTIFICATE}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Proper Operation}};
-  \node[align=center, text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries MAINTENANCE}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont According to the Firm Recommendations}};
-  \node[align=center, text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} JOURNAL NO.}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Time-Based Status}};
+  \node[align=center, text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} PLANNED}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Critical-Path Mobilization}};
+  \node[align=center, text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} CERTIFICATE}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Proper Operation}};
+  \node[align=center, text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries MAINTENANCE}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont According to the Firm Recommendations}};
+  \node[align=center, text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} EQUIPMENT LOG}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Time-Based Status}};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -2221,7 +2209,7 @@ The list is streamlined according to execution capacity, prioritizing maneuverab
 EACH PHASE WITH OUTPUT • EACH PHASE TRANSITION WITH APPROVAL\par}
 \vspace{1mm}
 {\fontsize{7.5}{9}\selectfont\color{TTCTextMuted}
-The eight steps of implementation are grouped into four governance phases, helping Client to clearly see the decision, responsibility and status of the project.\par}
+The eight delivery steps are structured into four governance phases, providing Clients with clear visibility over decisions, responsibilities, and project milestones.\par}
 \vspace{3mm}
 
 % FOUR PHASES / FOUR GATES
@@ -2236,12 +2224,12 @@ The eight steps of implementation are grouped into four governance phases, helpi
   \node[anchor=west, text=white] at (4,94) {{\fontsize{7}{8}\selectfont 01}\quad{\fontsize{10}{11}\selectfont\bfseries DEFINE}};
   \node[anchor=north west, text width=35.5mm, align=left] at (4,79) {
     {\fontsize{7}{8.5}\selectfont\bfseries\color{TTCRed} 01 • SURVEY \& BRIEF}\\[.7mm]
-    {\fontsize{6.2}{7.5}\selectfont\color{TTCTextDark}Geology, 3D topography; performance requirements and pre-feasibility report.}\\[3mm]
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextDark}Geology, 3D topography; performance requirements and pre-feasibility report.}\\[3mm]
     {\fontsize{7}{8.5}\selectfont\bfseries\color{TTCBlue} 02 • LEGAL \& PLANNING}\\[.7mm]
-    {\fontsize{6.2}{7.5}\selectfont\color{TTCTextDark}Planning 1/500, EIA, fire prevention and fighting, construction permits and design facilities.}
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextDark}Planning 1/500, EIA, fire prevention and fighting, construction permits and design facilities.}
   };
   \fill[TTCRed!8!white] (3.5,5) rectangle (40,17);
-  \node[align=center, text=TTCRed] at (21.75,11) {{\fontsize{6}{7}\selectfont\bfseries GATE A}\\[-.2mm]{\fontsize{5.7}{6.7}\selectfont Basis Approved}};
+  \node[align=center, text=TTCRed] at (21.75,11) {{\fontsize{6.5}{7.7}\selectfont\bfseries GATE A}\\[-.2mm]{\fontsize{6.5}{7.7}\selectfont Basis Approved}};
 
   % PHASE 02
   \fill[white, rounded corners=2pt] (47.5,0) rectangle (91,103);
@@ -2250,12 +2238,12 @@ The eight steps of implementation are grouped into four governance phases, helpi
   \node[anchor=west, text=white] at (51.5,94) {{\fontsize{7}{8}\selectfont 02}\quad{\fontsize{10}{11}\selectfont\bfseries ENGINEER}};
   \node[anchor=north west, text width=35.5mm, align=left] at (51.5,79) {
     {\fontsize{7}{8.5}\selectfont\bfseries\color{TTCCyan} 03 • VALUE ENGINEERING}\\[.7mm]
-    {\fontsize{6.2}{7.5}\selectfont\color{TTCTextDark}BIM LOD 400, structure optimization, subject coordination and conflict control.}\\[3mm]
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextDark}BIM LOD 400, structure optimization, subject coordination and conflict control.}\\[3mm]
     {\fontsize{7}{8.5}\selectfont\bfseries\color{TTCBlue} 04 • PROCUREMENT \& PEB}\\[.7mm]
-    {\fontsize{6.2}{7.5}\selectfont\color{TTCTextDark}Tier-1 supplies, Shop Drawing, procurement plan and permanent QC at the workshop.}
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextDark}Tier-1 supplies, Shop Drawing, procurement plan and permanent QC at the workshop.}
   };
   \fill[TTCCyan!10!white] (51,5) rectangle (87.5,17);
-  \node[align=center, text=TTCBlue] at (69.25,11) {{\fontsize{6}{7}\selectfont\bfseries GATE B}\\[-.2mm]{\fontsize{5.7}{6.7}\selectfont Design Freeze}};
+  \node[align=center, text=TTCBlue] at (69.25,11) {{\fontsize{6.5}{7.7}\selectfont\bfseries GATE B}\\[-.2mm]{\fontsize{6.5}{7.7}\selectfont Design Freeze}};
 
   % PHASE 03
   \fill[white, rounded corners=2pt] (95,0) rectangle (138.5,103);
@@ -2264,12 +2252,12 @@ The eight steps of implementation are grouped into four governance phases, helpi
   \node[anchor=west, text=white] at (99,94) {{\fontsize{7}{8}\selectfont 03}\quad{\fontsize{10}{11}\selectfont\bfseries BUILD}};
   \node[anchor=north west, text width=35.5mm, align=left] at (99,79) {
     {\fontsize{7}{8.5}\selectfont\bfseries\color{TTCRed} 05 • GROUND \& INFRA}\\[.7mm]
-    {\fontsize{6.2}{7.5}\selectfont\color{TTCTextDark}Piles, foundations, foundations, technical infrastructure and workfronts handover according to ITP.}\\[3mm]
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextDark}Piles, foundations, ground slabs, technical infrastructure and workfronts handover according to ITP.}\\[3mm]
     {\fontsize{7}{8.5}\selectfont\bfseries\color{TTCBlue} 06 • STRUCTURE \& MEP}\\[.7mm]
-    {\fontsize{6.2}{7.5}\selectfont\color{TTCTextDark}Steel structure, cover, MEP, fire prevention and fighting and control of schedule critical path.}
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextDark}Steel structure, cover, MEP, fire prevention and fighting and control of schedule critical path.}
   };
   \fill[TTCBlue!8!white] (98.5,5) rectangle (135,17);
-  \node[align=center, text=TTCBlue] at (116.75,11) {{\fontsize{6}{7}\selectfont\bfseries GATE C}\\[-.2mm]{\fontsize{5.7}{6.7}\selectfont Ready To Test}};
+  \node[align=center, text=TTCBlue] at (116.75,11) {{\fontsize{6.5}{7.7}\selectfont\bfseries GATE C}\\[-.2mm]{\fontsize{6.5}{7.7}\selectfont Ready To Test}};
 
   % PHASE 04
   \fill[white, rounded corners=2pt] (142.5,0) rectangle (186,103);
@@ -2278,18 +2266,18 @@ The eight steps of implementation are grouped into four governance phases, helpi
   \node[anchor=west, text=white] at (146.5,94) {{\fontsize{7}{8}\selectfont 04}\quad{\fontsize{10}{11}\selectfont\bfseries HANDOVER}};
   \node[anchor=north west, text width=35.5mm, align=left] at (146.5,79) {
     {\fontsize{7}{8.5}\selectfont\bfseries\color{TTCRed} 07 • TEST \& APPROVAL}\\[.7mm]
-    {\fontsize{6.2}{7.5}\selectfont\color{TTCTextDark}Acceptance of ITP, fire prevention and fighting, single-motor test run and system interconnection.}\\[3mm]
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextDark}ITP sign-off, fire protection acceptance, individual motor tests and integrated commissioning.}\\[3mm]
     {\fontsize{7}{8.5}\selectfont\bfseries\color{TTCBlue} 08 • HANDOVER \& O\&M}\\[.7mm]
-    {\fontsize{6.2}{7.5}\selectfont\color{TTCTextDark}As-built, Digital Twin, operation training, warranty and maintenance plan.}
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextDark}As-built, Digital Twin, operation training, warranty and maintenance plan.}
   };
   \fill[TTCGold!12!white] (146,5) rectangle (182.5,17);
-  \node[align=center, text=TTCGold!80!black] at (164.25,11) {{\fontsize{6}{7}\selectfont\bfseries GATE D}\\[-.2mm]{\fontsize{5.7}{6.7}\selectfont Ready To Operate}};
+  \node[align=center, text=TTCGold!80!black] at (164.25,11) {{\fontsize{6.5}{7.7}\selectfont\bfseries GATE D}\\[-.2mm]{\fontsize{6.5}{7.7}\selectfont Ready To Operate}};
 
   % TRANSITION MARKERS
   \foreach \x/\l in {45.5/A,93/B,140.5/C}{
     \fill[white] (\x,51) circle (3.8);
     \draw[TTCRed, line width=.8pt] (\x,51) circle (3.8);
-    \node[text=TTCRed, font=\fontsize{5.5}{6}\selectfont\bfseries] at (\x,51) {\l};
+    \node[text=TTCRed, font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (\x,51) {\l};
   }
 \end{tikzpicture}
 
@@ -2304,10 +2292,10 @@ The eight steps of implementation are grouped into four governance phases, helpi
   \node[anchor=west, text=TTCBlue, font=\fontsize{8}{9.5}\selectfont\bfseries] at (7,35)
     {\faProjectDiagram\quad GOVERNANCE SPINE — A GOVERNANCE SYSTEM THROUGHOUT};
   \foreach \x in {46.5,93,139.5}{\draw[TTCBorder] (\x,6) -- (\x,28);}
-  \node[align=center, text width=39mm] at (23.25,17) {{\fontsize{7}{8}\selectfont\bfseries\color{TTCRed} PROJECT DIRECTOR}\\[-.2mm]{\fontsize{5.8}{7}\selectfont\color{TTCTextMuted}A focal point responsible for the output}};
-  \node[align=center, text width=39mm] at (69.75,17) {{\fontsize{7}{8}\selectfont\bfseries\color{TTCBlue} CPM BASELINE}\\[-.2mm]{\fontsize{5.8}{7}\selectfont\color{TTCTextMuted}Weekly glove and look-ahead lines}};
-  \node[align=center, text width=39mm] at (116.25,17) {{\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} COMMON DATA ENV.}\\[-.2mm]{\fontsize{5.8}{7}\selectfont\color{TTCTextMuted}Traceable Drawings, RFI, ITP}};
-  \node[align=center, text width=39mm] at (162.75,17) {{\fontsize{7}{8}\selectfont\bfseries\color{TTCGold} FIDIC CONTROL}\\[-.2mm]{\fontsize{5.8}{7}\selectfont\color{TTCTextMuted}Scope, change and contract risk}};
+  \node[align=center, text width=39mm] at (23.25,17) {{\fontsize{7}{8}\selectfont\bfseries\color{TTCRed} PROJECT DIRECTOR}\\[-.2mm]{\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted}Single-point accountability for deliverables}};
+  \node[align=center, text width=39mm] at (69.75,17) {{\fontsize{7}{8}\selectfont\bfseries\color{TTCBlue} CPM BASELINE}\\[-.2mm]{\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted}Weekly critical-path tracking \& 3-week look-ahead}};
+  \node[align=center, text width=39mm] at (116.25,17) {{\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} COMMON DATA ENV.}\\[-.2mm]{\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted}Traceable Drawings, RFI, ITP}};
+  \node[align=center, text width=39mm] at (162.75,17) {{\fontsize{7}{8}\selectfont\bfseries\color{TTCGold} FIDIC CONTROL}\\[-.2mm]{\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted}Scope, change and contract risk}};
 \end{tikzpicture}
 
 \vspace{3mm}
@@ -2318,10 +2306,10 @@ The eight steps of implementation are grouped into four governance phases, helpi
   \path[use as bounding box] (0,0) rectangle (186,29);
   \fill[TTCDeepNavy, rounded corners=3pt] (0,0) rectangle (186,29);
   \foreach \x in {46.5,93,139.5}{\draw[white!35!gray] (\x,6) -- (\x,23);}
-  \node[align=center, text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} 8 STEPS}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont In 4 Control Phases}};
-  \node[align=center, text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} 4 GATES}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Conditional Determination}};
-  \node[align=center, text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries FIDIC EPC}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont International Contract Standard}};
-  \node[align=center, text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} CONTRACTUAL}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Warranty and After Sales}};
+  \node[align=center, text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} 8 STEPS}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont In 4 Control Phases}};
+  \node[align=center, text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} 4 GATES}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Conditional Determination}};
+  \node[align=center, text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries FIDIC EPC}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont International Contract Standard}};
+  \node[align=center, text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} CONTRACTUAL}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Warranty and After Sales}};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -2377,22 +2365,22 @@ TTC integrates legal, design, procurement and construction in one contract — a
     {\fontsize{17}{19}\selectfont\bfseries ONE CONTRACT}\\[-.2mm]
     {\fontsize{10}{12}\selectfont\bfseries\color{TTCRed!85!white} ONE ACCOUNTABILITY}\\[1.7mm]
     {\fontsize{7}{8.5}\selectfont\color{white!82!gray}
-    A focal point controlling scope, budget, schedule and quality handover.}
+    Single-point accountability for scope, budget, schedule, and handover quality.}
   };
   \node[rounded corners=2pt, fill=white, align=center, minimum width=29mm,
         minimum height=15mm] at (113,15) {
     {\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} REVIEWED}\\[-.3mm]
-    {\fontsize{5.8}{7}\selectfont\color{TTCBlue} STRUCTURAL OPTION}
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCBlue} STRUCTURAL OPTION}
   };
   \node[rounded corners=2pt, fill=white, align=center, minimum width=29mm,
         minimum height=15mm] at (145,15) {
     {\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} PARALLEL}\\[-.3mm]
-    {\fontsize{5.8}{7}\selectfont\color{TTCBlue} WORKSTREAMS}
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCBlue} WORKSTREAMS}
   };
   \node[rounded corners=2pt, fill=TTCGold, text=white, align=center,
         minimum width=29mm, minimum height=15mm] at (177,15) {
     {\fontsize{9}{10}\selectfont\bfseries ALIGNED}\\[-.3mm]
-    {\fontsize{5.8}{7}\selectfont MODEL CHECK}
+    {\fontsize{6.5}{7.7}\selectfont MODEL CHECK}
   };
 \end{tikzpicture}
 
@@ -2416,10 +2404,10 @@ TTC integrates legal, design, procurement and construction in one contract — a
     171/06/OPERATE/Twin \& O\&M}{
       \fill[white] (\x,23) circle (4.6);
       \draw[TTCBlue, line width=.75pt] (\x,23) circle (4.6);
-      \node[text=TTCRed,font=\fontsize{6.4}{7}\selectfont\bfseries] at (\x,23) {\n};
+      \node[text=TTCRed,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (\x,23) {\n};
       \node[anchor=north,align=center,text width=27mm] at (\x,16) {
         {\fontsize{6.6}{7.8}\selectfont\bfseries\color{TTCBlue} \t}\\[-.2mm]
-        {\fontsize{5.7}{6.8}\selectfont\color{TTCTextMuted} \s}
+        {\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted} \s}
       };
   }
 \end{tikzpicture}
@@ -2449,9 +2437,9 @@ TTC integrates legal, design, procurement and construction in one contract — a
   };
   \node[anchor=north west, text width=50mm] at (131,40) {
     {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCGold} 03 • CONTROL RISK}\\[1mm]
-    {\fontsize{10}{11}\selectfont\bfseries\color{TTCBlue} LOCK RANGE}\\[1mm]
+    {\fontsize{10}{11}\selectfont\bfseries\color{TTCBlue} SCOPE FREEZE}\\[1mm]
     {\fontsize{6.8}{8.2}\selectfont\color{TTCTextDark}
-    BIM clash-check, release gate and Lump-sum contract limit arising.}
+    BIM clash-check, staged release gates, and lump-sum contracting minimize scope variations.}
   };
 \end{tikzpicture}
 
@@ -2463,10 +2451,10 @@ TTC integrates legal, design, procurement and construction in one contract — a
   \path[use as bounding box] (0,0) rectangle (186,29);
   \fill[TTCDeepNavy, rounded corners=3pt] (0,0) rectangle (186,29);
   \foreach \x in {46.5,93,139.5}{\draw[white!35!gray] (\x,6) -- (\x,23);}
-  \node[align=center,text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} COST OPTIMIZATION}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Value Engineering}};
-  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} SONG SONG}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Controlled Fast-Track}};
-  \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries CLASH CHECK}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Model Coordination}};
-  \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} CHANGE CONTROL}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Scope Discipline}};
+  \node[align=center,text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} COST OPTIMIZATION}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Value Engineering}};
+  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} PARALLEL DELIVERY}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Controlled Fast-Track}};
+  \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries CLASH CHECK}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Model Coordination}};
+  \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} CHANGE CONTROL}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Scope Discipline}};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -2523,17 +2511,17 @@ Design data does not stop at drawings: it leads the procurement, construction, i
   \node[rounded corners=2pt,fill=white,align=center,minimum width=27mm,
         minimum height=15mm] at (111,15) {
     {\fontsize{9}{10}\selectfont\bfseries\color{TTCBlue} DESIGN}\\[-.2mm]
-    {\fontsize{5.8}{7}\selectfont LOD 400 • 5D}
+    {\fontsize{6.5}{7.7}\selectfont LOD 400 • 5D}
   };
   \node[rounded corners=2pt,fill=TTCCyan,align=center,text=white,
         minimum width=27mm,minimum height=15mm] at (143,15) {
     {\fontsize{9}{10}\selectfont\bfseries BUILD}\\[-.2mm]
-    {\fontsize{5.8}{7}\selectfont Clash • 4D}
+    {\fontsize{6.5}{7.7}\selectfont Clash • 4D}
   };
   \node[rounded corners=2pt,fill=TTCGold,align=center,text=white,
         minimum width=27mm,minimum height=15mm] at (172,15) {
     {\fontsize{9}{10}\selectfont\bfseries OPERATE}\\[-.2mm]
-    {\fontsize{5.8}{7}\selectfont Twin • O\&M}
+    {\fontsize{6.5}{7.7}\selectfont Twin • O\&M}
   };
 \end{tikzpicture}
 
@@ -2555,7 +2543,7 @@ Design data does not stop at drawings: it leads the procurement, construction, i
     \textbf{Input:} Architecture • Structure • MEP\newline
     \textbf{Decision:} Clash-check and sequence\newline
     \textbf{Output:} Shop Drawing, BOQ, 4D plan}\\[1mm]
-    {\fontsize{6.2}{7.3}\selectfont\bfseries\color{TTCTextMuted} TEKLA • REVIT • NAVISWORKS}
+    {\fontsize{6.5}{7.7}\selectfont\bfseries\color{TTCTextMuted} TEKLA • REVIT • NAVISWORKS}
   };
   \node[anchor=north west,text width=50mm] at (68,53) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} 02 / OPTIMIZE}\\[1mm]
@@ -2564,7 +2552,7 @@ Design data does not stop at drawings: it leads the procurement, construction, i
     \textbf{Input:} Load • span • internal force\newline
     \textbf{Decision:} Repeat the sectional plan\newline
     \textbf{Output:} Section plan for the engineer to check}\\[1mm]
-    {\fontsize{6.2}{7.3}\selectfont\bfseries\color{TTCTextMuted} AISC 360 • TCVN • AIDC R\&D}
+    {\fontsize{6.5}{7.7}\selectfont\bfseries\color{TTCTextMuted} AISC 360 • TCVN • AIDC R\&D}
   };
   \node[anchor=north west,text width=50mm] at (131,53) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCGold} 03 / OPERATE}\\[1mm]
@@ -2573,7 +2561,7 @@ Design data does not stop at drawings: it leads the procurement, construction, i
     \textbf{Input:} As-built • assets • IoT\newline
     \textbf{Decision:} Status-based maintenance\newline
     \textbf{Output:} Traceable operating records}\\[1mm]
-    {\fontsize{6.2}{7.3}\selectfont\bfseries\color{TTCTextMuted} CDE • BMS • SCADA READY}
+    {\fontsize{6.5}{7.7}\selectfont\bfseries\color{TTCTextMuted} CDE • BMS • SCADA READY}
   };
 \end{tikzpicture}
 
@@ -2590,7 +2578,7 @@ Design data does not stop at drawings: it leads the procurement, construction, i
   \foreach \x/\n/\t in {24/01/MODEL,70/02/APPROVE,116/03/BUILD,162/04/OPERATE}{
     \fill[white] (\x,17) circle (5);
     \draw[TTCBlue,line width=.8pt] (\x,17) circle (5);
-    \node[text=TTCRed,font=\fontsize{6.4}{7}\selectfont\bfseries] at (\x,17) {\n};
+    \node[text=TTCRed,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (\x,17) {\n};
     \node[anchor=north,align=center,text width=34mm] at (\x,9) {
       {\fontsize{6.7}{8}\selectfont\bfseries\color{TTCBlue} \t}
     };
@@ -2608,10 +2596,10 @@ Design data does not stop at drawings: it leads the procurement, construction, i
   \path[use as bounding box] (0,0) rectangle (186,29);
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,29);
   \foreach \x in {46.5,93,139.5}{\draw[white!35!gray] (\x,6) -- (\x,23);}
-  \node[align=center,text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} LOD 400}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Fabrication Detail}};
-  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} REVIEWED}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Engineering Options}};
-  \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries COORDINATED}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Model Interfaces}};
-  \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} TRACEABLE}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Handover Data}};
+  \node[align=center,text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} LOD 400}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Fabrication Detail}};
+  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} REVIEWED}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Engineering Options}};
+  \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries COORDINATED}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Model Interfaces}};
+  \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} TRACEABLE}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Handover Data}};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -2672,12 +2660,12 @@ ESG is built from structural and enclosure — not costly replenishment once the
   \node[rounded corners=2pt,fill=white,align=center,minimum width=31mm,
         minimum height=15mm] at (121,15) {
     {\fontsize{10}{11}\selectfont\bfseries\color{TTCRed} SOLAR}\\[-.2mm]
-    {\fontsize{5.8}{7}\selectfont\color{TTCBlue} SOLAR-READY}
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCBlue} SOLAR-READY}
   };
   \node[rounded corners=2pt,fill=TTCCyan,align=center,text=white,
         minimum width=31mm,minimum height=15mm] at (155,15) {
     {\fontsize{10}{11}\selectfont\bfseries PASSIVE}\\[-.2mm]
-    {\fontsize{5.8}{7}\selectfont ENVELOPE DESIGN}
+    {\fontsize{6.5}{7.7}\selectfont ENVELOPE DESIGN}
   };
 \end{tikzpicture}
 
@@ -2696,7 +2684,7 @@ ESG is built from structural and enclosure — not costly replenishment once the
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCRed} 01 / ENERGY}\\[1mm]
     {\fontsize{8.5}{10}\selectfont\bfseries\color{TTCBlue} SOLAR-READY}\\[1mm]
     {\fontsize{6.5}{7.8}\selectfont\color{TTCTextDark}
-    Provision for roof loading, purlins and installation interface according to approved battery system data.}
+    Provision for roof dead/live loads, reinforced purlins, and mounting interface for approved rooftop solar PV systems.}
   };
   \node[anchor=north west,text width=35mm] at (51.5,43) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCCyan} 02 / ENVELOPE}\\[1mm]
@@ -2708,7 +2696,7 @@ ESG is built from structural and enclosure — not costly replenishment once the
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCBlue} 03 / WATER}\\[1mm]
     {\fontsize{8.5}{10}\selectfont\bfseries\color{TTCBlue} CIRCULARITY}\\[1mm]
     {\fontsize{6.5}{7.8}\selectfont\color{TTCTextDark}
-    Column A wastewater, rainwater collection and reuse for the landscape.}
+    Class A treated wastewater, rainwater harvesting, and landscape irrigation reuse.}
   };
   \node[anchor=north west,text width=35mm] at (146.5,43) {
     {\fontsize{7}{8}\selectfont\bfseries\color{TTCGold} 04 / STANDARD}\\[1mm]
@@ -2754,10 +2742,10 @@ ESG is built from structural and enclosure — not costly replenishment once the
   \path[use as bounding box] (0,0) rectangle (186,29);
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,29);
   \foreach \x in {46.5,93,139.5}{\draw[white!35!gray] (\x,6) -- (\x,23);}
-  \node[align=center,text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} SOLAR-READY}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Approved System Data}};
-  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} LOW-ENERGY}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Envelope Strategy}};
-  \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries WATER}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Project Requirements}};
-  \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} GREEN DOSSIER}\\[-.3mm]{\fontsize{6.2}{7.4}\selectfont Certification Support}};
+  \node[align=center,text=white] at (23.25,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} SOLAR-READY}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Approved System Data}};
+  \node[align=center,text=white] at (69.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} LOW-ENERGY}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Envelope Strategy}};
+  \node[align=center,text=white] at (116.25,15) {{\fontsize{9}{10}\selectfont\bfseries WATER}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Project Requirements}};
+  \node[align=center,text=white] at (162.75,15) {{\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} GREEN DOSSIER}\\[-.3mm]{\fontsize{6.5}{7.7}\selectfont Certification Support}};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -2803,8 +2791,8 @@ Gather human data, safety and construction documents for the Site Manager to han
   \draw[TTCCyan!65!white,rounded corners=3pt,line width=.8pt] (0,0) rectangle (186,101);
 
   \node[anchor=west,text=white,font=\fontsize{8}{9.5}\selectfont\bfseries] at (8,93)
-    {\faDesktop\quad TRUNG DEDICATION};
-  \node[anchor=east,text=TTCCyan,font=\fontsize{6.3}{7.5}\selectfont\bfseries] at (121,93)
+    {\faDesktop\quad DIGITAL OPERATIONS CENTER};
+  \node[anchor=east,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (121,93)
     {REAL DATA • ACTIONS WITH TRACES};
 
   % Status row
@@ -2812,12 +2800,12 @@ Gather human data, safety and construction documents for the Site Manager to han
     \fill[white!7!TTCDeepNavy,rounded corners=2pt] (\x,63) rectangle +(34,21);
     \draw[\c!70!white,rounded corners=2pt,line width=.55pt] (\x,63) rectangle +(34,21);
   }
-  \node[anchor=west,text=TTCRed,font=\fontsize{6.2}{7.3}\selectfont\bfseries] at (11,78) {ACCESS CONTROL};
+  \node[anchor=west,text=TTCRed,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (11,78) {ACCESS CONTROL};
   \node[anchor=west,text=white,font=\fontsize{9.2}{10.5}\selectfont\bfseries] at (11,70) {RIGHT PERSON};
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.2}{7.3}\selectfont\bfseries] at (50,78) {GLOBAL SAFETY MONITORING};
-  \node[anchor=west,text=white,font=\fontsize{9.2}{10.5}\selectfont\bfseries] at (50,70) {CORRECT};
-  \node[anchor=west,text=TTCGold,font=\fontsize{6.2}{7.3}\selectfont\bfseries] at (89,78) {COMPANY ON SITE};
-  \node[anchor=west,text=white,font=\fontsize{9.2}{10.5}\selectfont\bfseries] at (89,70) {CORRECT VERSION};
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (50,78) {SITE SAFETY MONITORING};
+  \node[anchor=west,text=white,font=\fontsize{9.2}{10.5}\selectfont\bfseries] at (50,70) {ACTIVE};
+  \node[anchor=west,text=TTCGold,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (89,78) {ON-SITE RECORDS};
+  \node[anchor=west,text=white,font=\fontsize{9.2}{10.5}\selectfont\bfseries] at (89,70) {APPROVED VERSION};
 
   % Three real data streams
   \fill[white,rounded corners=2pt] (8,29) rectangle (40,55);
@@ -2825,25 +2813,25 @@ Gather human data, safety and construction documents for the Site Manager to han
   \fill[white,rounded corners=2pt] (86,29) rectangle (118,55);
   \node[align=center,text width=27mm] at (24,42) {
     {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCRed} PERSONNEL}\\[-.2mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}FaceID • training\\gateway certificate}
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted}FaceID • training\\gateway certificate}
   };
   \node[align=center,text width=27mm] at (63,42) {
     {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCCyan} SAFETY FULL}\\[-.2mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}Camera AI • PPE\\danger zone}
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted}Camera AI • PPE\\danger zone}
   };
   \node[align=center,text width=27mm] at (102,42) {
-    {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCGold} COMPANY}\\[-.2mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}CDE • ITP • RFI\\digital logbook}
+    {\fontsize{7.5}{9}\selectfont\bfseries\color{TTCGold} RECORDS}\\[-.2mm]
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted}CDE • ITP • RFI\\digital logbook}
   };
   \draw[-{Stealth[length=2mm]},TTCCyan,line width=.8pt] (40.5,42) -- (46,42);
   \draw[-{Stealth[length=2mm]},TTCCyan,line width=.8pt] (79.5,42) -- (85,42);
 
   % Decision layer
   \fill[TTCCyan!12!TTCDeepNavy,rounded corners=2pt] (8,7) rectangle (118,21);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6}{7}\selectfont\bfseries] at (12,14)
-    {EXECUTIVE CLASS};
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (12,14)
+    {OPERATIONAL WORKFLOW};
   \node[anchor=west,text=white,font=\fontsize{7}{8.5}\selectfont\bfseries] at (40,14)
-    {→ Roster → Approval → Warning Save Evidence};
+    {Early Alert → Task Assignment → Management Sign-Off → Evidence Archive};
 
   % Ảnh hiện trường có vùng chú thích riêng, không đặt chữ lên ảnh
   \begin{scope}
@@ -2853,8 +2841,8 @@ Gather human data, safety and construction documents for the Site Manager to han
   \end{scope}
   \draw[white!45!gray,rounded corners=2pt,line width=.6pt] (126,16) rectangle (179,86);
   \fill[TTCBlue] (126,7) rectangle (179,15);
-  \node[text=white,font=\fontsize{6.4}{7.5}\selectfont\bfseries] at (152.5,11)
-    {IMAGE OF THE SCENE};
+  \node[text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (152.5,11)
+    {SITE INSPECTION PHOTO};
 \end{tikzpicture}
 
 \vspace{3mm}
@@ -2869,19 +2857,19 @@ Gather human data, safety and construction documents for the Site Manager to han
     {\faMobile*\quad INFORMATION SUFFICIENT FOR DECISION MAKING};
   \foreach \x in {62,124}{\draw[TTCBorder] (\x,7) -- (\x,33);}
   \node[anchor=north west,text width=50mm] at (6,31) {
-    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCRed} TROOPS READY}\\[.7mm]
+    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCRed} WORKFORCE READINESS}\\[.7mm]
     {\fontsize{6.6}{8}\selectfont\color{TTCTextDark}
-    Know who is at the construction site and the entry conditions of each person.}
+    Real-time site headcount, credentials, and entry conditions for every worker.}
   };
   \node[anchor=north west,text width=50mm] at (68,31) {
-    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCCyan} SAFETY FULL VIEW}\\[.7mm]
+    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCCyan} 360° SAFETY VISIBILITY}\\[.7mm]
     {\fontsize{6.6}{8}\selectfont\color{TTCTextDark}
     PPE violation and hazardous zone intrusion alerts for immediate processing.}
   };
   \node[anchor=north west,text width=50mm] at (130,31) {
-    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCGold} FULL COMPANY}\\[.7mm]
+    {\fontsize{8}{9.5}\selectfont\bfseries\color{TTCGold} COMPLETE AUDIT TRAIL}\\[.7mm]
     {\fontsize{6.6}{8}\selectfont\color{TTCTextDark}
-    Diary, RFI and ITP records with time, approver and evidence.}
+    Daily logs, RFIs, and ITP records with timestamps, approver, and evidence.}
   };
 \end{tikzpicture}
 
@@ -2898,7 +2886,7 @@ Gather human data, safety and construction documents for the Site Manager to han
   \foreach \x/\n/\t in {23/01/RECORDING, 69/02/WARNING ,115/03/HANDLING ,161/04/TRACKING}{
     \fill[white] (\x,17) circle (5);
     \draw[TTCBlue,line width=.8pt] (\x,17) circle (5);
-    \node[text=TTCRed,font=\fontsize{6.3}{7}\selectfont\bfseries] at (\x,17) {\n};
+    \node[text=TTCRed,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (\x,17) {\n};
     \node[anchor=north,align=center,text width=34mm] at (\x,9)
       {{\fontsize{6.7}{8}\selectfont\bfseries\color{TTCBlue} \t}};
   }
@@ -2962,19 +2950,19 @@ Each material, weld and item is inspected, signed and traced prior to release fo
   }
   \node[anchor=west,text width=33mm] at (16,93.5) {
     {\fontsize{7.2}{8.5}\selectfont\bfseries\color{TTCRed} SELF-INSPECTION TEAM}\\[-.2mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}Internal Checklist}
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted}Internal Checklist}
   };
   \node[anchor=west,text width=33mm] at (16,67.5) {
     {\fontsize{7.2}{8.5}\selectfont\bfseries\color{TTCBlue} SITE ENGINEER}\\[-.2mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}Shop Drawings • ITP}
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted}Shop Drawings • ITP}
   };
   \node[anchor=west,text width=33mm] at (16,41.5) {
     {\fontsize{7.2}{8.5}\selectfont\bfseries\color{TTCCyan} INDEPENDENT QA/QC}\\[-.2mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}NDT minutes • test results}
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted}NDT minutes • test results}
   };
   \node[anchor=west,text width=33mm] at (16,15.5) {
     {\fontsize{7.2}{8.5}\selectfont\bfseries\color{TTCGold} SUPERVISION CONSULTANT / INVESTOR}\\[-.2mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}Final approval}
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted}Final approval}
   };
   \draw[-{Stealth[length=2mm]},white!55!gray,line width=.8pt] (28.5,83) -- (28.5,78);
   \draw[-{Stealth[length=2mm]},white!55!gray,line width=.8pt] (28.5,57) -- (28.5,52);
@@ -2985,25 +2973,25 @@ Each material, weld and item is inspected, signed and traced prior to release fo
   \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (62,0) rectangle (186,122);
   \fill[TTCLightBlue,rounded corners=3pt] (62,101) rectangle (186,122);
   \node[anchor=west,text=TTCBlue,font=\fontsize{10}{11.5}\selectfont\bfseries] at (68,113)
-    {\faClipboardCheck\quad COMPANY ITEM QUALITY};
-  \node[anchor=east,text=TTCTextMuted,font=\fontsize{6}{7}\selectfont\bfseries] at (180,113)
-    {JOB PACKAGE CODE/COMPANY RETRIEVAL};
+    {\faClipboardCheck\quad WORK PACKAGE QUALITY PASSPORT};
+  \node[anchor=east,text=TTCTextMuted,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (180,113)
+    {PACKAGE CODE / TRACEABLE RECORD};
 
   \foreach \y/\n/\c in {78/01/TTCRed,55/02/TTCBlue,32/03/TTCCyan,9/04/TTCGold}{
     \fill[\c!6!white,rounded corners=1.5pt] (68,\y) rectangle (180,\y+18);
     \node[anchor=west,text=\c,font=\fontsize{7}{8}\selectfont\bfseries] at (72,\y+12) {\n};
     \fill[\c] (165,\y+5) circle (2.3);
-    \node[text=white,font=\fontsize{5}{5.5}\selectfont\bfseries] at (165,\y+5) {\faCheck};
-    \node[anchor=west,text=TTCTextMuted,font=\fontsize{6.1}{7.2}\selectfont\bfseries] at (170,\y+5) {PASS};
+    \node[text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (165,\y+5) {\faCheck};
+    \node[anchor=west,text=TTCTextMuted,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (170,\y+5) {PASS};
   }
   \node[anchor=west,text=TTCBlue,font=\fontsize{7.4}{8.7}\selectfont\bfseries] at (81,90) {MATERIAL ORIGIN};
-  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.3}{7.5}\selectfont] at (81,84) {CO/CQ • lot number • factory release certificate • input inspection};
+  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.5}{7.7}\selectfont] at (81,84) {CO/CQ • lot number • factory release certificate • input inspection};
   \node[anchor=west,text=TTCBlue,font=\fontsize{7.4}{8.7}\selectfont\bfseries] at (81,67) {WELDING CONTROL};
-  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.3}{7.5}\selectfont] at (81,61) {WPS/PQR • welder code • AWS D1.1 • weld diagram};
+  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.5}{7.7}\selectfont] at (81,61) {WPS/PQR • welder code • AWS D1.1 • weld diagram};
   \node[anchor=west,text=TTCBlue,font=\fontsize{7.4}{8.7}\selectfont\bfseries] at (81,44) {PROOF OF INSPECTION};
-  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.3}{7.5}\selectfont] at (81,38) {VT • UT • MT/PT • independent inspection record};
-  \node[anchor=west,text=TTCBlue,font=\fontsize{7.4}{8.7}\selectfont\bfseries] at (81,21) {AS-BUILT COMPANY};
-  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.3}{7.5}\selectfont] at (81,15) {Signed ITP • Closed NCR • As-built drawing • save CDE};
+  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.5}{7.7}\selectfont] at (81,38) {VT • UT • MT/PT • independent inspection record};
+  \node[anchor=west,text=TTCBlue,font=\fontsize{7.4}{8.7}\selectfont\bfseries] at (81,21) {AS-BUILT DOSSIER};
+  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.5}{7.7}\selectfont] at (81,15) {Signed ITP • Closed NCRs • As-built drawings • archived on CDE};
 \end{tikzpicture}
 
 \vspace{3mm}
@@ -3015,23 +3003,23 @@ Each material, weld and item is inspected, signed and traced prior to release fo
   \fill[TTCLightBlue,rounded corners=3pt] (0,0) rectangle (186,46);
   \draw[TTCBorder,rounded corners=3pt,line width=.6pt] (0,0) rectangle (186,46);
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries] at (7,38)
-    {\faCheckDouble\quad NDT TEST METHOD};
+    {\faCheckDouble\quad NON-DESTRUCTIVE TESTING (NDT) METHODS};
   \foreach \x in {46.5,93,139.5}{\draw[TTCBorder] (\x,6) -- (\x,31);}
   \node[align=center,text width=38mm] at (23.25,18) {
     {\fontsize{9}{10}\selectfont\bfseries\color{TTCRed} VT}\\[-.2mm]
-    {\fontsize{6.1}{7.3}\selectfont Appearance • size • surface}
+    {\fontsize{6.5}{7.7}\selectfont Visual testing • geometry • surface}
   };
   \node[align=center,text width=38mm] at (69.75,18) {
     {\fontsize{9}{10}\selectfont\bfseries\color{TTCCyan} UT}\\[-.2mm]
-    {\fontsize{6.3}{7.5}\selectfont Ultrasonic inspection of welds}
+    {\fontsize{6.5}{7.7}\selectfont Ultrasonic testing of full welds}
   };
   \node[align=center,text width=38mm] at (116.25,18) {
     {\fontsize{9}{10}\selectfont\bfseries\color{TTCBlue} MT / PT}\\[-.2mm]
-    {\fontsize{6.3}{7.5}\selectfont Check surface cracks and corner joints}
+    {\fontsize{6.5}{7.7}\selectfont Magnetic particle \& dye penetrant}
   };
   \node[align=center,text width=38mm] at (162.75,18) {
     {\fontsize{9}{10}\selectfont\bfseries\color{TTCGold} LAS-XD}\\[-.2mm]
-    {\fontsize{6.3}{7.5}\selectfont Laboratory testing}
+    {\fontsize{6.5}{7.7}\selectfont Accredited lab testing}
   };
 \end{tikzpicture}
 
@@ -3045,7 +3033,7 @@ Each material, weld and item is inspected, signed and traced prior to release fo
   \node[anchor=west,text=TTCCyan,font=\fontsize{7}{8}\selectfont\bfseries] at (8,20)
     {ISSUANCE GUIDELINES};
   \node[anchor=west,text=white,font=\fontsize{10}{11.5}\selectfont\bfseries] at (8,11)
-    {VERIFIED → SUFFICIENT APPROVED PROOF → OF → RETRIEVAL};
+    {INSPECTED → FULLY VERIFIED → APPROVED → TRACEABLE};
   \node[anchor=east,text=TTCGold,font=\fontsize{12}{13}\selectfont\bfseries] at (178,15)
     {AWS D1.1 • ISO 9001};
 \end{tikzpicture}
@@ -3075,7 +3063,7 @@ Each material, weld and item is inspected, signed and traced prior to release fo
 \secbrand{Safety Is a Decision System — Not Just PPE}{Risk Elimination, Daily Control Cycle \& Stop Work Authority}
 
 {\fontsize{15}{17}\selectfont\bfseries\color{TTCBlue}
-SEES THE RISK • PRE-CONTROLS THE • STOPS WHEN SAFETY IS NOT SAFE\par}
+IDENTIFY HAZARDS • PROACTIVE CONTROL • STOP WORK ON UNSAFE CONDITIONS\par}
 \vspace{1mm}
 {\fontsize{7.5}{9}\selectfont\color{TTCTextMuted}
 Progress is never a reason to accept an uncontrolled working condition.\par}
@@ -3131,19 +3119,19 @@ Progress is never a reason to accept an uncontrolled working condition.\par}
   \foreach \x/\n/\t in {77/01/PLAN,102/02/TALK,127/03/VERIFY,152/04/WORK,175/05/CLOSE}{
     \fill[white] (\x,50) circle (4.5);
     \draw[TTCBlue,line width=.75pt] (\x,50) circle (4.5);
-    \node[text=TTCRed,font=\fontsize{5.8}{6.5}\selectfont\bfseries] at (\x,50) {\n};
+    \node[text=TTCRed,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (\x,50) {\n};
     \node[anchor=north,align=center,text width=22mm] at (\x,42)
-      {{\fontsize{6}{7.2}\selectfont\bfseries\color{TTCBlue} \t}};
+      {{\fontsize{6.5}{7.7}\selectfont\bfseries\color{TTCBlue} \t}};
   }
-  \node[anchor=west,text=TTCTextMuted,font=\fontsize{6}{7.3}\selectfont] at (70,33)
-    {JSA / Method → Toolbox Talk → PPE \& → close Action → Monitoring device};
+  \node[anchor=west,text=TTCTextMuted,font=\fontsize{6.5}{7.7}\selectfont] at (70,33)
+    {JSA / Method Statement → Toolbox Talk → PPE \& Equipment Check → Active Monitoring → Shift Closeout};
 
   % Emergency row
   \fill[white,rounded corners=3pt] (63,0) rectangle (186,24);
   \draw[TTCBorder,rounded corners=3pt,line width=.6pt] (63,0) rectangle (186,24);
   \node[anchor=west,text=TTCRed,font=\fontsize{8}{9.5}\selectfont\bfseries] at (69,16)
     {\faFireExtinguisher\quad EMERGENCY READY};
-  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.4}{7.8}\selectfont] at (69,7)
+  \node[anchor=west,text=TTCTextDark,font=\fontsize{6.5}{7.8}\selectfont] at (69,7)
     {Alarm • Isolation • Evacuation • First Aid • Investigation • Recurrence Prevention};
 \end{tikzpicture}
 
@@ -3160,23 +3148,23 @@ Progress is never a reason to accept an uncontrolled working condition.\par}
   \foreach \x in {37.2,74.4,111.6,148.8}{\draw[TTCBorder] (\x,6) -- (\x,31);}
   \node[align=center,text width=32mm] at (18.6,18) {
     {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCRed} ELEVATED}\\[-.2mm]
-    {\fontsize{5.8}{7}\selectfont 2 hooks • lifeline • improvisation net}
+    {\fontsize{6.5}{7.7}\selectfont Dual lanyard • lifeline • safety catch netting}
   };
   \node[align=center,text width=32mm] at (55.8,18) {
-    {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCBlue} LOWER}\\[-.2mm]
-    {\fontsize{5.8}{7}\selectfont Forbidden area • signal • rigging}
+    {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCBlue} LIFTING \& RIGGING}\\[-.2mm]
+    {\fontsize{6.5}{7.7}\selectfont Exclusion zone • signalman • certified rigging}
   };
   \node[align=center,text width=32mm] at (93,18) {
     {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCCyan} ELECTRICITY}\\[-.2mm]
-    {\fontsize{5.8}{7}\selectfont ELCB • earthing • lock-out}
+    {\fontsize{6.5}{7.7}\selectfont ELCB • earthing • lock-out}
   };
   \node[align=center,text width=32mm] at (130.2,18) {
     {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCGold} CUTTING WELDING}\\[-.2mm]
-    {\fontsize{5.8}{7}\selectfont Fire watch • slag • permit}
+    {\fontsize{6.5}{7.7}\selectfont Fire watch • slag • permit}
   };
   \node[align=center,text width=32mm] at (167.4,18) {
     {\fontsize{7.3}{8.5}\selectfont\bfseries\color{TTCBlue} EXCAVATION PIT}\\[-.2mm]
-    {\fontsize{5.8}{7}\selectfont Barrier • anti-slash • exit}
+    {\fontsize{6.5}{7.7}\selectfont Barriers • trench shoring • safe egress}
   };
 \end{tikzpicture}
 \end{minipage}
@@ -3214,7 +3202,7 @@ Progress is never a reason to accept an uncontrolled working condition.\par}
 \secbrand{Selected Industrial Projects}{Eight representative works • Condensed information • Easy to collate}
 
 {\fontsize{15}{17}\selectfont\bfseries\color{TTCBlue}
-SCOPE • LOCATION • SCOPE OF WORK\par}
+SCALE • LOCATION • SCOPE OF WORK\par}
 \vspace{1mm}
 {\fontsize{7.5}{9}\selectfont\color{TTCTextMuted}
 The list is presented in a unified structure for readers to quickly identify the role of TTC in each project.\par}
@@ -3240,24 +3228,24 @@ The list is presented in a unified structure for readers to quickly identify the
     \node[text=white,font=\fontsize{7}{8}\selectfont\bfseries] at (5,#1) {#2};
     \node[anchor=west,text width=53mm,align=left] at (14,#1) {
       {\fontsize{7.2}{8.4}\selectfont\bfseries\color{TTCBlue} #3}\\[-.2mm]
-      {\fontsize{5.8}{7}\selectfont\color{TTCTextMuted} #4}
+      {\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted} #4}
     };
     \node[align=center,text width=20mm] at (84,#1)
       {{\fontsize{7}{8.2}\selectfont\bfseries\color{TTCTextDark} #5}};
     \node[anchor=west,text width=29mm,align=left] at (96,#1)
-      {{\fontsize{5.9}{7.1}\selectfont\color{TTCTextDark} #6}};
+      {{\fontsize{6.5}{7.7}\selectfont\color{TTCTextDark} #6}};
     \node[anchor=west,text width=50mm,align=left] at (129,#1)
-      {{\fontsize{6}{7.2}\selectfont\color{TTCTextDark} #7}};
+      {{\fontsize{6.5}{7.7}\selectfont\color{TTCTextDark} #7}};
     \draw[TTCBorder,line width=.45pt] (10,{#1-11}) -- (186,{#1-11});
   }
 
-  \projectrowa{165}{01}{2M Technology Factory}{2M Technocom • Vietnam}{Pattern \& Plastic}{Yen My II\\Hung Yen}{Design consultancy \& General Contractor}{TTCLightBlue}
+  \projectrowa{165}{01}{2M Technology Factory}{2M Technocom • Vietnam}{Precision Molds \& Plastics}{Yen My II\\Hung Yen}{Design consultancy \& General Contractor}{TTCLightBlue}
   \projectrowa{143}{02}{Vietnam ALO Paint Factory}{ALO paint • Vietnam}{Paint \& Chemicals}{Phu Nghia\\Hanoi}{EPC General Contractor • Workshop \& Chemical storage}{white}
   \projectrowa{121}{03}{Sendai Plastics Factory}{Sendai Plastics • Vietnam}{Engineering plastics}{An Thi\\Hung Yen}{Construction general contractor • Two workshops \& office}{TTCLightBlue}
   \projectrowa{99}{04}{Lao Cai Garment Factory Complex}{Lao Cai • Viet Nam}{High-rise textiles}{New Street\\Lao Cai}{Design consultancy \& lump-sum construction}{white}
   \projectrowa{77}{05}{DHL Plastics Factory}{DHL Plastics Group • Vietnam}{Packaging \& plastic film}{Thai Ha\\Ha Nam}{General Contractor • Workshop \& office}{TTCLightBlue}
-  \projectrowa{55}{06}{Quang Thinh Aluminum Factory}{Quang Thinh Aluminum Joint Stock Company • Vietnam}{Shaped aluminum}{Thuan Thanh\\Bac Ninh}{General contractor for construction • Steel workshop \& office}{white}
-  \projectrowa{33}{07}{Foxconn Manufactory}{Foxconn • Taiwan}{12.000 m$^2$}{Que Vo\\Bac Ninh}{Span overtaking structure • Installation of a high-rise factory}{TTCLightBlue}
+  \projectrowa{55}{06}{Quang Thinh Aluminum Factory}{Quang Thinh Aluminum Joint Stock Company • Vietnam}{Aluminum Extrusions}{Thuan Thanh\\Bac Ninh}{General contractor for construction • Steel workshop \& office}{white}
+  \projectrowa{33}{07}{Foxconn Manufactory}{Foxconn • Taiwan}{12.000 m$^2$}{Que Vo\\Bac Ninh}{Long-span steel structure • Multi-storey factory erection}{TTCLightBlue}
   \projectrowa{11}{08}{BW Industrial Logistics Complex}{BW Industrial • Singapore}{45.000 m$^2$}{Yen Phong\\Bac Ninh}{Smart Warehouse General Contractor • Super Flat Floor}{white}
 \end{tikzpicture}
 
@@ -3267,24 +3255,24 @@ The list is presented in a unified structure for readers to quickly identify the
 \begin{tikzpicture}[x=1mm,y=1mm]
   \path[use as bounding box] (0,0) rectangle (186,35);
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,35);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.2}{7.2}\selectfont\bfseries]
-    at (7,29) {PROFILE PROVEN BY PORTFOLIO};
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (7,29) {PROVEN CAPABILITY DEMONSTRATED BY PORTFOLIO};
   \foreach \x in {46.5,93,139.5}{\draw[white!25!gray] (\x,5) -- (\x,23);}
   \node[align=center,text width=40mm] at (23.25,14) {
     {\fontsize{8.2}{9.5}\selectfont\bfseries\color{white} EPC / DESIGN--BUILD}\\[-.2mm]
-    {\fontsize{5.9}{7.1}\selectfont\color{white!75!gray}A clue throughout}
+    {\fontsize{6.5}{7.7}\selectfont\color{white!75!gray}Single-point accountability}
   };
   \node[align=center,text width=40mm] at (69.75,14) {
     {\fontsize{8.2}{9.5}\selectfont\bfseries\color{white} STRUCTURE \& PEB}\\[-.2mm]
-    {\fontsize{5.9}{7.1}\selectfont\color{white!75!gray}Large span • heavy load • silo}
+    {\fontsize{6.5}{7.7}\selectfont\color{white!75!gray}Long spans • heavy loads • silos}
   };
   \node[align=center,text width=40mm] at (116.25,14) {
     {\fontsize{8.2}{9.5}\selectfont\bfseries\color{white} INDUSTRIAL FLOOR}\\[-.2mm]
-    {\fontsize{5.9}{7.1}\selectfont\color{white!75!gray}Heavy duty floor • flat floor}
+    {\fontsize{6.5}{7.7}\selectfont\color{white!75!gray}Heavy-duty slabs • superflat floors}
   };
   \node[align=center,text width=40mm] at (162.75,14) {
     {\fontsize{8.2}{9.5}\selectfont\bfseries\color{white} MEP / PCCC}\\[-.2mm]
-    {\fontsize{5.9}{7.1}\selectfont\color{white!75!gray}Operational integration}
+    {\fontsize{6.5}{7.7}\selectfont\color{white!75!gray}Operational integration}
   };
 \end{tikzpicture}
 \end{minipage}
@@ -3326,25 +3314,25 @@ The list shows the experience of implementing food, electronics, mechanical, log
     \node[text=white,font=\fontsize{7}{8}\selectfont\bfseries] at (5,#1) {#2};
     \node[anchor=west,text width=53mm,align=left] at (14,#1) {
       {\fontsize{7.2}{8.4}\selectfont\bfseries\color{TTCBlue} #3}\\[-.2mm]
-      {\fontsize{5.8}{7}\selectfont\color{TTCTextMuted} #4}
+      {\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted} #4}
     };
     \node[align=center,text width=20mm] at (84,#1)
       {{\fontsize{7}{8.2}\selectfont\bfseries\color{TTCTextDark} #5}};
     \node[anchor=west,text width=29mm,align=left] at (96,#1)
-      {{\fontsize{5.9}{7.1}\selectfont\color{TTCTextDark} #6}};
+      {{\fontsize{6.5}{7.7}\selectfont\color{TTCTextDark} #6}};
     \node[anchor=west,text width=50mm,align=left] at (129,#1)
-      {{\fontsize{6}{7.2}\selectfont\color{TTCTextDark} #7}};
+      {{\fontsize{6.5}{7.7}\selectfont\color{TTCTextDark} #7}};
     \draw[TTCBorder,line width=.45pt] (10,{#1-11}) -- (186,{#1-11});
   }
 
   \projectrowb{165}{09}{Towada Electronics Factory}{Towada • Japan}{18.500 m$^2$}{Phuc Dien\\Hai Duong}{Component assembly workshop • MEP}{TTCLightBlue}
-  \projectrowb{143}{10}{Yusen Logistics Cold Storage}{Yusen • Japan}{22.000 m$^2$}{Dinh Vu\\Hai Phong}{Cold Storage $-25^\circ$C • Automatic I/O door}{white}
-  \projectrowb{121}{11}{Shinjo Vina Cable Factory}{Shinjo • Korea}{14.000 m$^2$}{Ba Thien 2\\Vinh Phuc}{Cable workshop • Large aperture steel frame}{TTCLightBlue}
+  \projectrowb{143}{10}{Yusen Logistics Cold Storage}{Yusen • Japan}{22.000 m$^2$}{Dinh Vu\\Hai Phong}{Cold Storage $-25^\circ$C • Automated dock doors}{white}
+  \projectrowb{121}{11}{Shinjo Vina Cable Factory}{Shinjo • Korea}{14.000 m$^2$}{Ba Thien 2\\Vinh Phuc}{Cable workshop • Long-span steel structure}{TTCLightBlue}
   \projectrowb{99}{12}{Toyo Seikan Packaging Factory}{Toyo Seikan • Japan}{22.000 m$^2$}{Tien Son\\Bac Ninh}{EPC general contractor • Packaging workshop • Flat floor}{white}
-  \projectrowb{77}{13}{Tien Phong Plastic Factory}{Tien Phong • Vietnam}{18.000 m$^2$}{An Duong\\Hai Phong}{Plastic pipe extrusion workshop • Floor according to design load}{TTCLightBlue}
-  \projectrowb{55}{14}{Kho Logistics Yusen}{Yusen • Japan}{25.000 m$^2$}{Dinh Vu\\Hai Phong}{Bonded warehouse • Lifting platform assembly}{white}
-  \projectrowb{33}{15}{A-One Food Factory}{Saigon Ve Wong • Taiwan}{30.000 m$^2$}{Tsunami 2\\Binh Duong}{Food processing workshop • HACCP standard}{TTCLightBlue}
-  \projectrowb{11}{16}{Son Ha Energy Plant}{Son Ha • Vietnam}{24.000 m$^2$}{Thuan Thanh\\Bac Ninh}{Tank factory • Solar cells}{white}
+  \projectrowb{77}{13}{Tien Phong Plastic Factory}{Tien Phong • Vietnam}{18.000 m$^2$}{An Duong\\Hai Phong}{Plastic pipe extrusion workshop • Heavy-load design floor}{TTCLightBlue}
+  \projectrowb{55}{14}{Yusen Logistics Warehouse}{Yusen • Japan}{25.000 m$^2$}{Dinh Vu\\Hai Phong}{Bonded warehouse • Hydraulic dock levelers}{white}
+  \projectrowb{33}{15}{A-One Food Factory}{Saigon Ve Wong • Taiwan}{30.000 m$^2$}{Song Than 2\\Binh Duong}{Food processing workshop • HACCP standard}{TTCLightBlue}
+  \projectrowb{11}{16}{Son Ha Energy Plant}{Son Ha • Vietnam}{24.000 m$^2$}{Thuan Thanh\\Bac Ninh}{Industrial tank fabrication • Solar PV equipment}{white}
 \end{tikzpicture}
 
 \vspace{3mm}
@@ -3353,20 +3341,20 @@ The list shows the experience of implementing food, electronics, mechanical, log
 \begin{tikzpicture}[x=1mm,y=1mm]
   \path[use as bounding box] (0,0) rectangle (186,35);
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,35);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.2}{7.2}\selectfont\bfseries]
-    at (7,29) {FROM LIST TO 6 COMPANY PROJECTS • PAGES 22--27};
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (7,29) {FROM TRACK RECORD TO 6 FEATURED PROJECTS • PAGES 22--27};
   \foreach \x in {62,124}{\draw[white!25!gray] (\x,5) -- (\x,23);}
   \node[align=center,text width=53mm] at (31,14) {
     {\fontsize{7.8}{9.2}\selectfont\bfseries\color{white} 2M TECHNOLOGY • ALO PAINT}\\[-.2mm]
-    {\fontsize{6}{7.2}\selectfont\color{white!75!gray}Precision mold • paint shop \& chemical}
+    {\fontsize{6.5}{7.7}\selectfont\color{white!75!gray}Precision mold • paint shop \& chemical}
   };
   \node[align=center,text width=53mm] at (93,14) {
     {\fontsize{7.8}{9.2}\selectfont\bfseries\color{white} SENDAI • LAO CAI GARMENT}\\[-.2mm]
-    {\fontsize{6}{7.2}\selectfont\color{white!75!gray}Engineering plastics • multi-storey factory sewing}
+    {\fontsize{6.5}{7.7}\selectfont\color{white!75!gray}Engineering plastics • multi-storey factory sewing}
   };
   \node[align=center,text width=53mm] at (155,14) {
     {\fontsize{7.8}{9.2}\selectfont\bfseries\color{white} DHL RESIN • ALUMINUM QUANG THINH}\\[-.2mm]
-    {\fontsize{6}{7.2}\selectfont\color{white!75!gray}Plastic packaging film • extruded aluminum profiles}
+    {\fontsize{6.5}{7.7}\selectfont\color{white!75!gray}Plastic packaging film • extruded aluminum profiles}
   };
 \end{tikzpicture}
 \end{minipage}
@@ -3379,7 +3367,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
 \casepagebars{SELECTED PROJECT • 2M TECHNOLOGY FACTORY}{Page 22}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Project Profile 01: Manufacturing Plant Mold 2M Vietnam}{High-tech precision facility • Mold \& Parts manufacturing • Yen My II Industrial Park, Hung Yen}
+\secbrand{Project Profile 01: 2M Vietnam Precision Mold Manufacturing Plant}{High-tech precision facility • Mold \& Parts manufacturing • Yen My II Industrial Park, Hung Yen}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
@@ -3406,8 +3394,8 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \end{scope}
   \fill[TTCDeepNavy,opacity=.82] (0,150) rectangle (34,156);
   \fill[TTCDeepNavy,opacity=.82] (36,150) rectangle (70,156);
-  \node[anchor=west,text=white,font=\fontsize{4.8}{5.6}\selectfont\bfseries] at (2,153) {CONSTRUCTION PHOTOS};
-  \node[anchor=west,text=white,font=\fontsize{4.8}{5.6}\selectfont\bfseries] at (38,153) {FINISHED PHOTO};
+  \node[anchor=west,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (2,153) {CONSTRUCTION PHOTOS};
+  \node[anchor=west,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (38,153) {FINISHED PHOTO};
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,150) rectangle (70,220);
 
   % Tóm tắt điều hành
@@ -3422,20 +3410,20 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \foreach \x in {113.3,146.6}{\draw[TTCBorder,line width=.5pt] (\x,163) -- (\x,186);}
   \node[align=center,text width=29mm] at (96.5,176) {
     {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCRed}PRECISION MECHANICS}\\[-.5mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}PATTERN \& PLASTIC}};
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted}MOLDS \& PLASTICS}};
   \node[align=center,text width=29mm] at (130,176) {
     {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCBlue}STEEL STRUCTURE}\\[-.5mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}WORKSHOP \& 3-STOREY OFFICE}};
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted}WORKSHOP \& 3-STOREY OFFICE}};
   \node[align=center,text width=29mm] at (163.5,176) {
     {\fontsize{9.5}{11}\selectfont\bfseries\color{TTCBlue}ANTI-VIBRATION}\\[-.5mm]
-    {\fontsize{6.2}{7.4}\selectfont\color{TTCTextMuted}FOR CNC MACHINE SETS}};
+    {\fontsize{6.5}{7.7}\selectfont\color{TTCTextMuted}FOR CNC MACHINE SETS}};
   \node[anchor=south west,text width=99mm,align=left,text=TTCTextDark,
         font=\fontsize{7.4}{9}\selectfont]
     at (80,153) {\textbf{Client:} 2M Vietnam Technology Joint Stock Company (2M TECHNOCOM., JSC) \textbullet\ \textbf{Implementing unit:} Tan Thanh Cong JSC -- steel structure design, construction consultancy, bearing floor and technical infrastructure.};
 
   % Câu chuyện dự án: bài toán -- giải pháp -- kết quả
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (0,143) {PROJECT STORY • ONLY KEEP THE THREE MAIN POINTS};
+    at (0,143) {PROJECT CASE STUDY • CHALLENGE — SOLUTION — OUTCOME};
 
   \fill[white,rounded corners=4pt] (0,79) rectangle (58,137);
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,79) rectangle (58,137);
@@ -3455,7 +3443,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
     at (69,120) {TTC SOLUTIONS};
   \node[anchor=north west,text width=48mm,align=left,text=white,
         font=\fontsize{7.2}{9}\selectfont]
-    at (69,110) {Consulting on optimal design of ventilated workshop rhythm; strengthening the foundation \& the concrete floor is subjected to anti-vibration load; synchronous integration of MEP system, lighting and transformer station of the industrial park.};
+    at (69,110) {Consulting on optimal clear-span layout for natural ventilation; reinforced foundations \& vibration-isolated floor slabs for high-precision CNC machines; integrated MEP, high-bay lighting, and dedicated substation.};
 
   \draw[-{Latex[length=2.5mm]},TTCCyan,line width=1pt] (123.5,108) -- (127,108);
   \fill[TTCLightBlue,rounded corners=4pt] (128,79) rectangle (186,137);
@@ -3472,17 +3460,17 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \fill[white,rounded corners=4pt] (0,20) rectangle (186,70);
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,20) rectangle (186,70);
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (7,61) {THREE POINTS FOR READERS TO REMEMBER};
+    at (7,61) {KEY PROJECT HIGHLIGHTS};
   \draw[TTCBorder] (62,27) -- (62,58);
   \draw[TTCBorder] (124,27) -- (124,58);
   \node[align=center,text width=52mm] at (31,42) {
     {\fontsize{11}{12}\selectfont\bfseries\color{TTCRed}ANTI-VIBRATION}\\[-.5mm]
     {\fontsize{6.6}{8}\selectfont\color{TTCTextMuted}REINFORCED FLOOR FOR CNC MACHINE SETS}};
   \node[align=center,text width=52mm] at (93,42) {
-    {\fontsize{11}{12}\selectfont\bfseries\color{TTCBlue}PACKAGE GENERAL CONTRACTOR}\\[-.5mm]
+    {\fontsize{11}{12}\selectfont\bfseries\color{TTCBlue}TURNKEY EPC CONTRACTOR}\\[-.5mm]
     {\fontsize{6.6}{8}\selectfont\color{TTCTextMuted}DESIGN CONSULTANCY • STRUCTURE • MEP}};
   \node[align=center,text width=52mm] at (155,42) {
-    {\fontsize{11}{12}\selectfont\bfseries\color{TTCBlue}BENCHMARK PROGRESS}\\[-.5mm]
+    {\fontsize{11}{12}\selectfont\bfseries\color{TTCBlue}ON-SCHEDULE DELIVERY}\\[-.5mm]
     {\fontsize{6.6}{8}\selectfont\color{TTCTextMuted}TURNKEY HANDOVER}};
 
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,14);
@@ -3496,10 +3484,10 @@ The list shows the experience of implementing food, electronics, mechanical, log
 % PAGE 23: ENGINEERING CASE -- NHÀ MÁY SƠN ALO VIỆT NAM
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{ENGINEERING SOLUTION • ALO PAINT FACTORY}{Page 23}
+\casepagebars{ALO PAINT FACTORY}{Page 23}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Project Profile 02: Manufacturing Plant ALO Paint Vietnam}{Chemical \& Paint manufacturing complex • ATEX standard fire prevention and fighting • Phu Nghia Industrial Park, Hanoi}
+\secbrand{Project Profile 02: ALO Paint Vietnam Manufacturing Complex}{Chemical \& Coatings Complex • ATEX Explosion-Proof Fire Protection • Phu Nghia Industrial Park, Hanoi}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
@@ -3519,11 +3507,16 @@ The list shows the experience of implementing food, electronics, mechanical, log
     \clip[rounded corners=2pt] (73,181) rectangle (101,217);
     \node[inner sep=0pt] at (87,199)
       {\includegraphics[width=28mm,height=36mm]{../../public/project-assets/son_alo_1.jpg}};
+    \fill[TTCDeepNavy,opacity=.94] (73,198) rectangle (101,217);
+    \node[anchor=west,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+      at (75,209) {GROUNDBREAKING};
+    \node[anchor=west,text=white!78!gray,font=\fontsize{6.5}{7.7}\selectfont]
+      at (75,203) {PROJECT MILESTONE};
   \end{scope}
   \draw[white,line width=1.2pt,rounded corners=2pt] (73,181) rectangle (101,217);
   \fill[TTCDeepNavy,opacity=.88] (73,181) rectangle (101,188);
-  \node[anchor=west,text=white,font=\fontsize{4.7}{5.5}\selectfont\bfseries]
-    at (75,184.5) {PHOTO OF COMMENCEMENT CEREMONY};
+  \node[anchor=west,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (75,184.5) {SITE CEREMONY};
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,148) rectangle (104,220);
 
   \fill[TTCDeepNavy,rounded corners=4pt] (108,148) rectangle (186,220);
@@ -3543,7 +3536,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
 
   % Sơ đồ kỹ thuật: Nhà xưởng hóa chất sơn & kiểm soát môi trường
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (0,140) {PRINCIPLE DIAGRAM • SAFETY SOLUTION WITH FULL EXPLOSION \& CHEMICAL RESISTANCE};
+    at (0,140) {SCHEMATIC DESIGN • EXPLOSION-PROOF \& CHEMICAL-RESISTANT INDUSTRIAL SOLUTIONS};
   \fill[TTCLightBlue,rounded corners=4pt] (0,53) rectangle (186,134);
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,53) rectangle (186,134);
 
@@ -3551,7 +3544,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
   % Mái dốc + Cửa trời thông gió
   \draw[TTCBlue,line width=1.4pt] (12,118) -- (68,126) -- (128,118);
   \draw[TTCRed,line width=1pt] (58,126) -- (58,130) -- (78,130) -- (78,126);
-  \node[anchor=south,text=TTCRed,font=\fontsize{5.8}{7}\selectfont\bfseries] at (68,130.5) {SOLVENT VAPOR OUTLET};
+  \node[anchor=south,text=TTCRed,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (68,130.5) {SOLVENT VAPOR OUTLET};
 
   % Khung cột thép
   \draw[TTCBlue,line width=1.4pt] (12,67) -- (12,118);
@@ -3566,25 +3559,25 @@ The list shows the experience of implementing food, electronics, mechanical, log
     \fill[TTCRed] (\x,108) circle (1.2mm);
     \draw[-{Latex[length=1.5mm]},TTCRed,line width=.6pt] (\x,106) -- (\x,100);
   }
-  \node[anchor=west,text=TTCRed,font=\fontsize{6.3}{7.5}\selectfont\bfseries]
+  \node[anchor=west,text=TTCRed,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (16,112) {FOAM AUTOMATIC FIRE NETWORK \& SPRINKLER};
 
   % Bồn khuấy & Dây chuyền sản xuất
   \fill[white] (22,72) rectangle (40,94);
   \draw[TTCBorder,line width=.7pt] (22,72) rectangle (40,94);
-  \node[align=center,text=TTCBlue,font=\fontsize{6}{7.2}\selectfont\bfseries] at (31,83) {STIRRING TANK\\PHA SON NATIONAL PARK};
+  \node[align=center,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (31,83) {PAINT-MIXING\\TANK};
 
   \fill[white] (50,72) rectangle (72,94);
   \draw[TTCBorder,line width=.7pt] (50,72) rectangle (72,94);
-  \node[align=center,text=TTCBlue,font=\fontsize{6}{7.2}\selectfont\bfseries] at (61,83) {LINES\\PACKAGING};
+  \node[align=center,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (61,83) {PACKAGING\\LINE};
 
   \fill[white] (82,72) rectangle (120,94);
   \draw[TTCBorder,line width=.7pt] (82,72) rectangle (120,94);
-  \node[align=center,text=TTCBlue,font=\fontsize{6}{7.2}\selectfont\bfseries] at (101,83) {FINISHED GOODS WAREHOUSE \&\\CHEMICAL RAW MATERIALS};
+  \node[align=center,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (101,83) {FINISHED GOODS WAREHOUSE \&\\CHEMICAL RAW MATERIALS};
 
   % Sàn Epoxy
   \fill[TTCDeepNavy!85!black] (10,64) rectangle (130,68);
-  \node[anchor=north west,text=TTCDeepNavy,font=\fontsize{6.2}{7.5}\selectfont\bfseries]
+  \node[anchor=north west,text=TTCDeepNavy,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (12,63) {EPOXY SELF-LEVELING CONCRETE FLOOR WITH CHEMICAL RESISTANCE};
 
   % Chú giải bên phải
@@ -3637,10 +3630,10 @@ The list shows the experience of implementing food, electronics, mechanical, log
 % PAGE 24: INJECTION MOLDING CASE -- NHÀ MÁY NHỰA SENDAI VIỆT NAM
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{ENGINEERING SOLUTION • SENDAI PLASTICS FACTORY}{Page 24}
+\casepagebars{SENDAI PLASTICS FACTORY}{Page 24}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Project Profile 03: Manufacturing Plant Sendai Plastic Vietnam}{High-tech plastics manufacturing plant • Injection molding facility • Industrial Park No. 3, Hung Yen}
+\secbrand{Project Profile 03: Sendai Plastic Vietnam Manufacturing Plant}{High-tech plastics manufacturing plant • Injection molding facility • Industrial Park No. 3, Hung Yen}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
@@ -3663,7 +3656,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \end{scope}
   \draw[white,line width=1.2pt,rounded corners=2pt] (68,190) rectangle (101,216);
   \fill[TTCDeepNavy,opacity=.88] (68,190) rectangle (101,197);
-  \node[anchor=west,text=white,font=\fontsize{4.6}{5.4}\selectfont\bfseries]
+  \node[anchor=west,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (70,193.5) {PERSPECTIVE};
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,148) rectangle (104,220);
 
@@ -3702,26 +3695,26 @@ The list shows the experience of implementing food, electronics, mechanical, log
   % Dầm cầu trục chạy trên cao (Overhead Crane)
   \draw[TTCRed,line width=1.4pt] (14,112) -- (126,112);
   \fill[TTCRed] (44,110) rectangle (58,114);
-  \node[anchor=south,text=TTCRed,font=\fontsize{5.8}{7}\selectfont\bfseries] at (51,114.8) {CRANE FOR MOULD REPLACEMENT};
+  \node[anchor=south,text=TTCRed,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (51,114.8) {CRANE FOR MOULD REPLACEMENT};
   \draw[-{Latex[length=1.5mm]},TTCRed,line width=.8pt] (51,110) -- (51,96);
 
   % Tuyến đường ống Chiller / Nước giải nhiệt & Khí nén
   \draw[TTCCyan,line width=1.2pt,dashed] (15,102) -- (125,102);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.3}{7.5}\selectfont\bfseries]
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (16,105) {MOLD COOLING CHILLER PIPING \& MEDIUM COMPRESSED AIR DEDICATION};
 
   % Cụm máy ép phun thủy lực (Injection Molding Machines)
   \foreach \x/\label in {20/{PRESS 01\\350 TONS}, 56/{PRESS 02\\650 TONS}, 92/{PRESS 03\\850 TONS}}{
     \fill[white] (\x,72) rectangle +(28,22);
     \draw[TTCBorder,line width=.7pt] (\x,72) rectangle +(28,22);
-    \node[align=center,text=TTCBlue,font=\fontsize{6}{7.2}\selectfont\bfseries] at (\x+14,83) {\label};
+    \node[align=center,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (\x+14,83) {\label};
     % Mũi tên cấp Chiller
     \draw[-{Latex[length=1.2mm]},TTCCyan,line width=.6pt] (\x+14,102) -- (\x+14,94);
   }
 
   % Sàn bê tông gia cường chịu tải máy ép
   \fill[TTCDeepNavy!85!black] (10,64) rectangle (130,68);
-  \node[anchor=north west,text=TTCDeepNavy,font=\fontsize{6.2}{7.5}\selectfont\bfseries]
+  \node[anchor=north west,text=TTCDeepNavy,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (12,63) {PRESS CYCLE ANTI-VIBRATION REINFORCED CONCRETE FLOOR};
 
   % Chú giải bên phải
@@ -3738,7 +3731,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
                   Closed circulating cooling water network feeds directly to each mold.};
   \node[anchor=north west,text width=40mm,align=left,text=TTCTextDark,
         font=\fontsize{6.5}{8.1}\selectfont]
-    at (141,71) {\textbf{03 • Complex of 2 workshops \& VP}\newline
+    at (141,71) {\textbf{03 • Two workshops \& office}\newline
                   Internal traffic planning connects smoothly between the workshop and the operation.};
 
   % Ba ý ghi nhớ
@@ -3747,7 +3740,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \node[anchor=north west,text=TTCRed,font=\fontsize{8}{9}\selectfont\bfseries]
     at (5,47) {01 • TECHNICAL INJECTION MOLDING};
   \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
-    at (5,38) {The large aperture workshop integrates the crane to replace the mold according to the equipment data.};
+    at (5,38) {Clear-span production hall integrated with overhead cranes for mold changeover per equipment specs.};
 
   \fill[white,rounded corners=3pt] (64,20) rectangle (122,52);
   \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (64,20) rectangle (122,52);
@@ -3759,7 +3752,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \fill[white,rounded corners=3pt] (128,20) rectangle (186,52);
   \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (128,20) rectangle (186,52);
   \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (133,47) {03 • PROGRESS OF GENERAL CONTRACTOR};
+    at (133,47) {03 • TURNKEY DELIVERY};
   \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
     at (133,38) {Package construction of 2 production workshops, warehouse and 3-storey office block.};
 
@@ -3774,10 +3767,10 @@ The list shows the experience of implementing food, electronics, mechanical, log
 % PAGE 25: CASE STUDY 04 -- NHÀ MÁY MAY LÀO CAI
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{ENGINEERING SOLUTION • LAO CAI GARMENT FACTORY}{Page 25}
+\casepagebars{LAO CAI GARMENT FACTORY}{Page 25}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Project Profile 04: Factory Complex Lao Cai}{Multi-storey garment manufacturing complex • Negative pressure cooling • New Street, Lao Cai City}
+\secbrand{Project Profile 04: Lao Cai Garment Manufacturing Complex}{Multi-storey garment manufacturing complex • Negative pressure cooling • New Street, Lao Cai City}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
@@ -3788,6 +3781,10 @@ The list shows the experience of implementing food, electronics, mechanical, log
     \clip[rounded corners=4pt] (0,148) rectangle (104,220);
     \node[inner sep=0pt] at (52,175)
       {\includegraphics[width=128mm]{../../public/project-assets/laocai_4.jpg}};
+    % Replace Vietnamese lettering embedded in the rendering with English.
+    \fill[TTCDeepNavy,opacity=.94] (0,216) rectangle (40,220);
+    \node[anchor=west,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+      at (2,218) {LAO CAI FACTORY};
     \fill[TTCDeepNavy,opacity=.92] (0,148) rectangle (104,158);
     \node[anchor=west,text=white,font=\fontsize{6.8}{8}\selectfont\bfseries]
       at (4,153) {OVERALL PERSPECTIVE • NEW STREETS, LAO CAI CITY};
@@ -3797,10 +3794,13 @@ The list shows the experience of implementing food, electronics, mechanical, log
     \clip[rounded corners=2pt] (70,184) rectangle (101,216);
     \node[inner sep=0pt] at (85.5,200)
       {\includegraphics[width=42mm,height=32mm]{../../public/project-assets/laocai_3.jpg}};
+    \fill[white,opacity=.94] (70,212.5) rectangle (101,216);
+    \node[anchor=west,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+      at (72,214.2) {SITE PLAN};
   \end{scope}
   \draw[white,line width=1.2pt,rounded corners=2pt] (70,184) rectangle (101,216);
   \fill[TTCDeepNavy,opacity=.88] (70,184) rectangle (101,191);
-  \node[anchor=west,text=white,font=\fontsize{4.6}{5.4}\selectfont\bfseries]
+  \node[anchor=west,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (72,187.5) {PLANNING PLAN};
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,148) rectangle (104,220);
 
@@ -3810,14 +3810,14 @@ The list shows the experience of implementing food, electronics, mechanical, log
     at (114,214) {DESIGN CONSULTANCY \& CONSTRUCTION};
   \node[anchor=north west,text=white,font=\fontsize{11.5}{13}\selectfont\bfseries]
     at (114,204) {LAO CAI GARMENT FACTORY};
-  \node[anchor=north west,text=white!75!gray,font=\fontsize{6}{7.2}\selectfont]
+  \node[anchor=north west,text=white!75!gray,font=\fontsize{6.5}{7.7}\selectfont]
     at (114,192) {COMPLEX OF 3 BLOCKS OF 5-STOREY FACTORY};
   \draw[white!25!gray] (114,186) -- (180,186);
   \node[anchor=north west,text width=66mm,align=left,text=white,
         font=\fontsize{6.5}{8.5}\selectfont]
     at (114,181) {\textbf{Client:} Lao Cai Garment Company\\[1mm]
                   \textbf{Location:} New Street, Lao Cai City\\[1mm]
-                  \textbf{Scale:} 3 5-storey workshop block • Import and export area\\[1mm]
+                  \textbf{Scale:} Three 5-storey factory blocks • Logistics \& loading bays\\[1mm]
                   \textbf{Tan Thanh Cong JSC:} Architectural design \& General Contractor};
 
   % Khung sơ đồ kỹ thuật
@@ -3832,15 +3832,15 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \node[anchor=north west,text=TTCBlue,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
     at (134,125) {3 TECHNICAL DECISIONS};
 
-  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
+  \node[anchor=north west,text width=44mm,font=\fontsize{6.5}{7.7}\selectfont]
     at (134,117) {\textbf{01 • Load-bearing multi-storey floor}\\[.3mm]
     \color{TTCTextDark}Composite floor beams suppress resonant vibration from thousands of sewing machines.};
 
-  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
+  \node[anchor=north west,text width=44mm,font=\fontsize{6.5}{7.7}\selectfont]
     at (134,94) {\textbf{02 • Negative pressure microclimate}\\[.3mm]
     \color{TTCTextDark}Cooling Pad \& convection exhaust fan, cotton dust purification and continuous fresh air supply.};
 
-  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
+  \node[anchor=north west,text width=44mm,font=\fontsize{6.5}{7.7}\selectfont]
     at (134,71) {\textbf{03 • Cluster of 3 workshop blocks}\\[.3mm]
     \color{TTCTextDark}Planning the import and export flow of containers and elevators according to operating requirements.};
 
@@ -3855,7 +3855,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
   % Trục thang nâng hàng tải nặng (Freight Elevator Shaft) bên trái
   \fill[TTCDeepNavy!15] (10,65) rectangle (24,123);
   \draw[TTCBlue,line width=1.1pt] (24,65) -- (24,123);
-  \node[rotate=90,align=center,text=TTCDeepNavy,font=\fontsize{5.2}{6.2}\selectfont\bfseries] at (17,94) {3--5 TON LIFT};
+  \node[rotate=90,align=center,text=TTCDeepNavy,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (17,94) {3--5 TON LIFT};
 
   % Các tầng sàn dầm thép liên hợp (Floor slabs)
   \draw[TTCBlue,line width=1.2pt] (24,78) -- (124,78);
@@ -3864,11 +3864,11 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \draw[TTCBlue,line width=1.2pt] (24,117) -- (124,117);
 
   % Text nhãn từng tầng
-  \node[anchor=west,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries] at (26,74) {1ST FLOOR: RAW MATERIAL WAREHOUSE \& EXPORT AND IMPORT OF FINISHED PRODUCTS};
-  \node[anchor=west,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries] at (26,87) {2ND FLOOR: CUTTING WORKSHOP \& SEWING SAMPLE};
-  \node[anchor=west,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries] at (26,100) {3RD FLOOR: EXPORT SEWING LINE 01};
-  \node[anchor=west,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries] at (26,113) {4TH FLOOR: EXPORT SEWING LINE 02};
-  \node[anchor=west,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries] at (26,122.5) {5TH FLOOR: FINISHING, COMFORTING \& PACKAGING};
+  \node[anchor=west,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (26,74) {1ST FLOOR: RAW MATERIALS • FINISHED-GOODS LOGISTICS};
+  \node[anchor=west,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (26,87) {2ND FLOOR: CUTTING \& SAMPLE SEWING};
+  \node[anchor=west,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (26,100) {3RD FLOOR: EXPORT SEWING LINE 01};
+  \node[anchor=west,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (26,113) {4TH FLOOR: EXPORT SEWING LINE 02};
+  \node[anchor=west,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (26,122.5) {5TH FLOOR: FINISHING \& PACKAGING};
 
   % Biểu tượng máy may trên các tầng 2, 3, 4
   \foreach \y in {78, 91, 104}{
@@ -3888,7 +3888,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
 
   % Móng & Sàn liên hợp đáy
   \fill[TTCDeepNavy] (9,58) rectangle (125,65);
-  \node[anchor=center,text=white,font=\fontsize{5.4}{6.5}\selectfont\bfseries]
+  \node[anchor=center,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (67,61.5) {COMBINED FLOOR BEAMS UNDER DYNAMIC LOAD OF SEWING MACHINE};
 
   % 3 Thẻ ghi nhớ dưới
@@ -3924,10 +3924,10 @@ The list shows the experience of implementing food, electronics, mechanical, log
 % PAGE 26: CASE STUDY 05 -- NHÀ MÁY NHỰA DHL
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{ENGINEERING SOLUTION • DHL PLASTICS GROUP}{Page 26}
+\casepagebars{DHL PLASTICS FACTORY}{Page 26}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Project Profile 05: Manufacturing Plant DHL Plastic}{High-grade plastic packaging plant • PE/PP film extrusion • Thai Ha Industrial Park, Ha Nam}
+\secbrand{Project Profile 05: DHL Plastics Factory}{PE/PP packaging film • Blown-film extrusion • Thai Ha Industrial Park, Ha Nam}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
@@ -3938,6 +3938,9 @@ The list shows the experience of implementing food, electronics, mechanical, log
     \clip[rounded corners=4pt] (0,148) rectangle (104,220);
     \node[inner sep=0pt] at (52,184)
       {\includegraphics[width=104mm]{../../public/project-assets/dhl_2.jpg}};
+    \fill[TTCDeepNavy,opacity=.94] (80,212) rectangle (104,220);
+    \node[anchor=west,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+      at (84,216) {HA NAM};
     \fill[TTCDeepNavy,opacity=.92] (0,148) rectangle (104,158);
     \node[anchor=west,text=white,font=\fontsize{6.8}{8}\selectfont\bfseries]
       at (4,153) {ACTUAL PHOTOS COMPLETED • THAI HA INDUSTRIAL ZONE, HA NAM};
@@ -3949,7 +3952,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \end{scope}
   \draw[white,line width=1.2pt,rounded corners=2pt] (71,184) rectangle (101,216);
   \fill[TTCDeepNavy,opacity=.88] (71,184) rectangle (101,191);
-  \node[anchor=west,text=white,font=\fontsize{4.6}{5.4}\selectfont\bfseries]
+  \node[anchor=west,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (73,187.5) {DESIGN PERSPECTIVE};
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,148) rectangle (104,220);
 
@@ -3959,7 +3962,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
     at (114,214) {GENERAL CONTRACTOR};
   \node[anchor=north west,text=white,font=\fontsize{11.5}{13}\selectfont\bfseries]
     at (114,204) {DHL PLASTIC FACTORY};
-  \node[anchor=north west,text=white!75!gray,font=\fontsize{6}{7.2}\selectfont]
+  \node[anchor=north west,text=white!75!gray,font=\fontsize{6.5}{7.7}\selectfont]
     at (114,192) {FACTORY COMPLEX \& OFFICE BLOCK};
   \draw[white!25!gray] (114,186) -- (180,186);
   \node[anchor=north west,text width=66mm,align=left,text=white,
@@ -3971,7 +3974,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
 
   % Khung sơ đồ kỹ thuật
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (0,141) {PRINCIPLE DIAGRAM • PLASTIC FILM BLOWING EXTRUSION LINE \& MEP BACKEND SYSTEM};
+    at (0,141) {PROCESS DIAGRAM • FILM EXTRUSION \& UTILITIES};
   \fill[TTCLightBlue,rounded corners=4pt] (0,53) rectangle (186,134);
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,53) rectangle (186,134);
 
@@ -3981,16 +3984,16 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \node[anchor=north west,text=TTCBlue,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
     at (134,125) {3 TECHNICAL DECISIONS};
 
-  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
-    at (134,117) {\textbf{01 • Crossing the cascading span}\\[.3mm]
-    \color{TTCTextDark}pre-engineered steel building large aperture frame integrates a cascade chamber for the extrusion tower.};
+  \node[anchor=north west,text width=44mm,font=\fontsize{6.5}{7.7}\selectfont]
+    at (134,117) {\textbf{01 • Tiered Large-Span PEB Structure}\\[.3mm]
+    \color{TTCTextDark}long-span PEB steel framing engineered with a tiered roof structure accommodating the blown-film extrusion tower.};
 
-  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
-    at (134,94) {\textbf{02 • Extruded chiller infrastructure}\\[.3mm]
+  \node[anchor=north west,text width=44mm,font=\fontsize{6.5}{7.7}\selectfont]
+    at (134,94) {\textbf{02 • Cooling Chiller Utilities for Extrusion Lines}\\[.3mm]
     \color{TTCTextDark}The circulating cold water system keeps the temperature stable and the thin film stable.};
 
-  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
-    at (134,71) {\textbf{03 • Hardener floor under load}\\[.3mm]
+  \node[anchor=north west,text width=44mm,font=\fontsize{6.5}{7.7}\selectfont]
+    at (134,71) {\textbf{03 • Heavy-Duty Hardener Floor Slab}\\[.3mm]
     \color{TTCTextDark}The grinding concrete surface is hardened, dustproof and designed according to the forklift load.};
 
   % Bản vẽ sơ đồ phân xưởng đùn màng & in bao bì
@@ -4005,24 +4008,24 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \draw[TTCCyan,line width=.8pt] (24,74) .. controls (19,94) and (21,110) .. (29,114);
   \draw[TTCCyan,line width=.8pt] (34,74) .. controls (39,94) and (37,110) .. (29,114);
   \fill[TTCBlue] (26,114) rectangle (32,118);
-  \node[align=center,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries]
-    at (29,84) {BLOWING EXTRUSION TOWER\\MULTILAYER MEMBRANE\\CASCADE COMPARTMENT};
+  \node[align=center,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (29,84) {BLOWN-FILM TOWER\\MULTILAYER FILM};
 
   % Cụm máy in ấn ống đồng & cuộn màng
   \fill[white] (52,70) rectangle (82,94);
   \draw[TTCBorder,line width=.7pt] (52,70) rectangle (82,94);
   \fill[TTCLightBlue] (55,73) rectangle (79,83);
   \draw[TTCBlue,line width=.6pt] (55,73) rectangle (79,83);
-  \node[align=center,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries]
-    at (67,88) {GRAVURE PRINTER \&\\AUTOMATIC FILM REEL};
-  \node[align=center,text=TTCTextDark,font=\fontsize{4.8}{5.8}\selectfont]
-    at (67,78) {SPEED MULTI-COLOR PRINTING HEIGHT};
+  \node[align=center,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (67,88) {GRAVURE PRINTING\\\& REWINDING};
+  \node[align=center,text=TTCTextDark,font=\fontsize{6.5}{7.7}\selectfont]
+    at (67,78) {MULTICOLOUR PRINTING};
 
   % Cụm lưu trữ nguyên liệu & kho thành phẩm
   \fill[white] (88,70) rectangle (120,94);
   \draw[TTCBorder,line width=.7pt] (88,70) rectangle (120,94);
-  \node[align=center,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries]
-    at (104,88) {FINISHED GOODS WAREHOUSE \&\\PROTOPLASTIC BEADS};
+  \node[align=center,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (104,88) {RESIN \& FINISHED-GOODS\\STORAGE};
   \foreach \x in {93, 104, 115}{
     \fill[TTCDeepNavy!20] (\x-3,73) rectangle +(6,8);
     \draw[TTCDeepNavy,line width=.4pt] (\x-3,73) rectangle +(6,8);
@@ -4030,41 +4033,41 @@ The list shows the experience of implementing food, electronics, mechanical, log
 
   % Tuyến đường ống Chiller tuần hoàn & Khí nén
   \draw[TTCCyan,line width=1.1pt,dashed] (12,104) -- (122,104);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{5.8}{7}\selectfont\bfseries]
-    at (50,107.5) {AXLE COOLING CHILLER PIPE \& MEDIUM COMPRESSED AIR DEDICATION};
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (50,107.5) {CHILLED WATER • COMPRESSED AIR};
   \draw[-{Latex[length=1.2mm]},TTCCyan,line width=.7pt] (29,104) -- (29,95);
   \draw[-{Latex[length=1.2mm]},TTCCyan,line width=.7pt] (67,104) -- (67,96);
 
   % Móng & Sàn bê tông Hardener
   \fill[TTCDeepNavy] (9,58) rectangle (125,65);
-  \node[anchor=center,text=white,font=\fontsize{5.4}{6.5}\selectfont\bfseries]
-    at (67,61.5) {HARDENED POLISHED CONCRETE FLOOR HARDENER AGAINST DUST};
+  \node[anchor=center,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (67,61.5) {HARDENED, DUST-RESISTANT CONCRETE FLOOR};
 
   % 3 Thẻ ghi nhớ dưới
   \fill[white,rounded corners=3pt] (0,20) rectangle (58,52);
   \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (0,20) rectangle (58,52);
   \node[anchor=north west,text=TTCRed,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (5,47) {01 • WORKSHOP COMPLEX \& VP};
+    at (5,47) {01 • FACTORY \& OFFICE};
   \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
     at (5,38) {Modern 3-storey glass office block combined with large-scale film blowing extrusion workshop.};
 
   \fill[white,rounded corners=3pt] (64,20) rectangle (122,52);
   \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (64,20) rectangle (122,52);
   \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (69,47) {02 • HIGH POWER MEP};
+    at (69,47) {02 • PROCESS UTILITIES};
   \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
     at (69,38) {Integrated substation, extruder cooling chiller tower and central compressed air synchronously.};
 
   \fill[white,rounded corners=3pt] (128,20) rectangle (186,52);
   \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (128,20) rectangle (186,52);
   \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (133,47) {03 • ACTUAL HANDOVER};
+    at (133,47) {03 • COMMISSIONED \& OPERATIONAL};
   \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
     at (133,38) {Accurate construction, inspection and acceptance of safety fire prevention and fighting and put into commercial operation by 2025.};
 
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,14);
   \node[anchor=west,text=white,font=\fontsize{7.4}{9}\selectfont\bfseries]
-    at (7,7) {CORE VALUES: HIGH-GRADE PLASTIC PACKAGING PRODUCTION INFRASTRUCTURE • ACTUAL HANDOVER QUALITY};
+    at (7,7) {CORE VALUE: INTEGRATED PACKAGING-FILM PRODUCTION INFRASTRUCTURE};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -4073,10 +4076,10 @@ The list shows the experience of implementing food, electronics, mechanical, log
 % PAGE 27: CASE STUDY 06 -- NHÀ MÁY NHÔM QUANG THỊNH
 % ============================================================
 \noindent\mbox{}\par\vspace{-\baselineskip}
-\casepagebars{ENGINEERING SOLUTION • QUANG THINH ALUMINIUM}{Page 27}
+\casepagebars{QUANG THINH ALUMINIUM FACTORY}{Page 27}
 
 \begin{minipage}[t][246mm]{\textwidth}
-\secbrand{Project Profile 06: Manufacturing Plant Quang Thinh Aluminum}{High-grade aluminum profiles plant • Heavy extrusion lines • Thuan Thanh, Bac Ninh}
+\secbrand{Project Profile 06: Quang Thinh Aluminium Extrusion Plant}{High-grade aluminium profiles • Heavy extrusion lines • Thuan Thanh, Bac Ninh}
 
 \noindent
 \begin{tikzpicture}[x=1mm,y=1mm]
@@ -4099,8 +4102,8 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \end{scope}
   \draw[white,line width=1.2pt,rounded corners=2pt] (70,181) rectangle (101,216);
   \fill[TTCDeepNavy,opacity=.88] (70,181) rectangle (101,188);
-  \node[anchor=west,text=white,font=\fontsize{4.6}{5.4}\selectfont\bfseries]
-    at (72,184.5) {ACTUAL CONSTRUCTION PHOTOS};
+  \node[anchor=west,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (72,184.5) {SITE PHOTO};
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,148) rectangle (104,220);
 
   % Thẻ dữ liệu dự án (phải)
@@ -4108,20 +4111,20 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \node[anchor=north west,text=TTCCyan,font=\fontsize{6.8}{8}\selectfont\bfseries]
     at (114,214) {GENERAL CONTRACTOR};
   \node[anchor=north west,text=white,font=\fontsize{11.2}{13}\selectfont\bfseries]
-    at (114,204) {QUANG THINH ALUMINUM FACTORY};
-  \node[anchor=north west,text=white!75!gray,font=\fontsize{6}{7.2}\selectfont]
-    at (114,192) {EXTRUSION FACTORY COMPLEX \& POWDER COATING};
+    at (114,204) {QUANG THINH ALUMINIUM PLANT};
+  \node[anchor=north west,text=white!75!gray,font=\fontsize{6.5}{7.7}\selectfont]
+    at (114,192) {EXTRUSION \& POWDER-COATING COMPLEX};
   \draw[white!25!gray] (114,186) -- (180,186);
   \node[anchor=north west,text width=66mm,align=left,text=white,
         font=\fontsize{6.5}{8.5}\selectfont]
-    at (114,181) {\textbf{Client:} Quang Thinh Aluminum Joint Stock Company\\[1mm]
+    at (114,181) {\textbf{Client:} Quang Thinh Aluminium JSC\\[1mm]
                   \textbf{Location:} Thuan Thanh, Bac Ninh\\[1mm]
-                  \textbf{Scale:} Extrusion workshop complex \& Executive office building\\[1mm]
-                  \textbf{Tan Thanh Cong JSC:} PEB General Contractor \& Electromechanical MEP};
+                  \textbf{Scale:} Extrusion plant \& office building\\[1mm]
+                  \textbf{TTC JSC:} PEB general contractor \& MEP};
 
   % Khung sơ đồ kỹ thuật
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.5}\selectfont\bfseries]
-    at (0,141) {PRINCIPLE DIAGRAM • ALUMINUM PROFILE EXTRUSION LINE \& SURFACE TREATMENT};
+    at (0,141) {PROCESS DIAGRAM • ALUMINIUM EXTRUSION \& FINISHING};
   \fill[TTCLightBlue,rounded corners=4pt] (0,53) rectangle (186,134);
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (0,53) rectangle (186,134);
 
@@ -4131,17 +4134,17 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \node[anchor=north west,text=TTCBlue,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
     at (134,125) {3 TECHNICAL DECISIONS};
 
-  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
-    at (134,117) {\textbf{01 • Heavy duty extruder foundation}\\[.3mm]
-    \color{TTCTextDark}The large block reinforced concrete foundation is designed according to the dynamic load of the hydraulic press.};
+  \node[anchor=north west,text width=44mm,font=\fontsize{6.5}{7.7}\selectfont]
+    at (134,117) {\textbf{01 • Press foundation}\\[.3mm]
+    \color{TTCTextDark}A reinforced block foundation is designed for hydraulic-press dynamic loads.};
 
-  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
+  \node[anchor=north west,text width=44mm,font=\fontsize{6.5}{7.7}\selectfont]
     at (134,94) {\textbf{02 • Powder coating line}\\[.3mm]
-    \color{TTCTextDark}Closed spray booth, high temperature oven and Anode plating wastewater treatment station.};
+    \color{TTCTextDark}Closed spray booth, curing oven and anodising wastewater treatment.};
 
-  \node[anchor=north west,text width=44mm,font=\fontsize{5.8}{7.2}\selectfont]
-    at (134,71) {\textbf{03 • Wear-Resistant Hardener Flooring}\\[.3mm]
-    \color{TTCTextDark}The grinding concrete surface is hardened, dustproof and designed according to the load of the workpiece forklift.};
+  \node[anchor=north west,text width=44mm,font=\fontsize{6.5}{7.7}\selectfont]
+    at (134,71) {\textbf{03 • Hardened floor}\\[.3mm]
+    \color{TTCTextDark}A dustproof surface is designed for forklift and workpiece loads.};
 
   % Bản vẽ sơ đồ phân xưởng đùn ép nhôm định hình
   % Khung kết cấu nhà xưởng PEB
@@ -4153,38 +4156,38 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \draw[TTCBlue,line width=1pt] (10,113) -- (124,113);
   \fill[TTCBlue] (26,111) rectangle (36,115);
   \fill[TTCBlue] (70,111) rectangle (80,115);
-  \node[anchor=west,text=TTCBlue,font=\fontsize{5.2}{6.2}\selectfont\bfseries]
-    at (14,118) {CRANE GIRDER FOR ALUMINUM WORKPIECE LIFTING \& CHANGE EXTRUSION MOLD};
+  \node[anchor=west,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (14,118) {OVERHEAD CRANE • BILLET \& DIE HANDLING};
 
   % Zone 1: Lò nung phôi nhôm & Máy đùn ép thủy lực
   \fill[white] (13,70) rectangle (46,96);
   \draw[TTCBorder,line width=.7pt] (13,70) rectangle (46,96);
   \fill[TTCRed!15] (16,73) rectangle (43,83);
   \draw[TTCRed,line width=.6pt] (16,73) rectangle (43,83);
-  \node[align=center,text=TTCBlue,font=\fontsize{5.1}{6.1}\selectfont\bfseries]
-    at (29.5,90) {ALUMINUM BLAST FURNACE \&\\HYDRAULIC EXTRUDER};
-  \node[align=center,text=TTCRed,font=\fontsize{4.8}{5.8}\selectfont\bfseries]
-    at (29.5,78) {EXTRUSION BY LINE};
+  \node[align=center,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (29.5,90) {BILLET HEATING\\HYDRAULIC EXTRUSION};
+  \node[align=center,text=TTCRed,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (29.5,78) {PROFILE EXTRUSION};
 
   % Zone 2: Dàn làm nguội & Bàn kéo dài thanh nhôm
   \fill[white] (49,70) rectangle (84,96);
   \draw[TTCBorder,line width=.7pt] (49,70) rectangle (84,96);
   \fill[TTCLightBlue] (52,73) rectangle (81,83);
   \draw[TTCBlue,line width=.6pt] (52,73) rectangle (81,83);
-  \node[align=center,text=TTCBlue,font=\fontsize{5.1}{6.1}\selectfont\bfseries]
-    at (66.5,90) {COOLING STRETCHING TABLE \&\\HOMOGENIZING FURNACE};
-  \node[align=center,text=TTCTextDark,font=\fontsize{4.8}{5.8}\selectfont]
-    at (66.5,78) {CONFIGURE LONG PROFILE};
+  \node[align=center,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (66.5,90) {COOLING TABLE\\AGEING FURNACE};
+  \node[align=center,text=TTCTextDark,font=\fontsize{6.5}{7.7}\selectfont]
+    at (66.5,78) {PROFILE SIZING};
 
   % Zone 3: Dây chuyền sơn tĩnh điện & Đóng gói
   \fill[white] (87,70) rectangle (121,96);
   \draw[TTCBorder,line width=.7pt] (87,70) rectangle (121,96);
   \fill[TTCDeepNavy!15] (90,73) rectangle (118,83);
   \draw[TTCDeepNavy,line width=.6pt] (90,73) rectangle (118,83);
-  \node[align=center,text=TTCBlue,font=\fontsize{5.1}{6.1}\selectfont\bfseries]
-    at (104,90) {POWDER COATING LINE\\\& FINISHED PRODUCT PACKAGING};
-  \node[align=center,text=TTCTextDark,font=\fontsize{4.8}{5.8}\selectfont]
-    at (104,78) {ANODE PLATING • HANGING PAINT};
+  \node[align=center,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (104,90) {POWDER COATING\\\& PACKING};
+  \node[align=center,text=TTCTextDark,font=\fontsize{6.5}{7.7}\selectfont]
+    at (104,78) {ANODISING • COATING};
 
   % Mũi tên chuyển bước dây chuyền
   \draw[-{Latex[length=1.4mm]},TTCBlue,line width=1pt] (46,83) -- (49,83);
@@ -4192,41 +4195,41 @@ The list shows the experience of implementing food, electronics, mechanical, log
 
   % Tuyến đường ống Chiller giải nhiệt khuôn đùn ép & Khí nén
   \draw[TTCCyan,line width=1.1pt,dashed] (12,103) -- (122,103);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{5.8}{7}\selectfont\bfseries]
-    at (36,106.5) {EXTRUSION MOLD COOLING WATER SYSTEM \& MEDIUM COMPRESSED AIR DEDICATION};
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (36,106.5) {DIE COOLING WATER • COMPRESSED AIR};
   \draw[-{Latex[length=1.2mm]},TTCCyan,line width=.7pt] (29.5,103) -- (29.5,97);
   \draw[-{Latex[length=1.2mm]},TTCCyan,line width=.7pt] (66.5,103) -- (66.5,97);
 
   % Móng & Sàn bê tông Hardener
   \fill[TTCDeepNavy] (9,58) rectangle (125,65);
-  \node[anchor=center,text=white,font=\fontsize{5.4}{6.5}\selectfont\bfseries]
-    at (67,61.5) {FLOOR CONCRETE GRINDING HARDENER HARDENER ABRASION RESISTANT};
+  \node[anchor=center,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (67,61.5) {HARDENED, ABRASION-RESISTANT CONCRETE FLOOR};
 
   % 3 Thẻ ghi nhớ dưới
   \fill[white,rounded corners=3pt] (0,20) rectangle (58,52);
   \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (0,20) rectangle (58,52);
   \node[anchor=north west,text=TTCRed,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (5,47) {01 • EXTRUSION OF HEAVY LOADS};
+    at (5,47) {01 • HEAVY-DUTY EXTRUSION};
   \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
     at (5,38) {Large span workshop frame integrates hydraulic press foundation and double girder crane.};
 
   \fill[white,rounded corners=3pt] (64,20) rectangle (122,52);
   \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (64,20) rectangle (122,52);
   \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (69,47) {02 • SURFACE TREATMENT \& MEP};
+    at (69,47) {02 • FINISHING \& MEP};
   \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
     at (69,38) {Automatic powder coating system, plating wastewater treatment station and central compressed air.};
 
   \fill[white,rounded corners=3pt] (128,20) rectangle (186,52);
   \draw[TTCBorder,rounded corners=3pt,line width=.7pt] (128,20) rectangle (186,52);
   \node[anchor=north west,text=TTCBlue,font=\fontsize{8}{9}\selectfont\bfseries]
-    at (133,47) {03 • LUMP-SUM GENERAL CONTRACTOR};
+    at (133,47) {03 • TURNKEY DELIVERY};
   \node[anchor=north west,text width=48mm,text=TTCTextDark,font=\fontsize{6.8}{8.4}\selectfont]
     at (133,38) {Synchronous construction management from PEB structure, architectural completion to MEP operation.};
 
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,14);
   \node[anchor=west,text=white,font=\fontsize{7.4}{9}\selectfont\bfseries]
-    at (7,7) {CORE VALUES: HIGH-TECH ALUMINUM PROFILE PRODUCTION INFRASTRUCTURE • SYNCHRONOUS GENERAL CONTRACTOR SOLUTION};
+    at (7,7) {CORE VALUE: INTEGRATED ALUMINIUM EXTRUSION INFRASTRUCTURE};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -4257,41 +4260,41 @@ The list shows the experience of implementing food, electronics, mechanical, log
 
   \foreach \y/\n/\title/\desc in {
     158/01/SOURCE APPROVAL/Manufacturer • sample • technical data,
-    134/02/COMPANY/CO--CQ • MTC • catalog • warranty,
+    134/02/DOCUMENT CONTROL/CO--CQ • MTC • catalogue • warranty,
     110/03/INPUT TEST/Lot label • size • condition • test,
-    88/04/TRACEABILITY OF INSTALLATION/Lot of materials associated with the area and inspection and acceptance minutes}
+    88/04/INSTALLATION TRACEABILITY/Lot linked to area and inspection record}
   {
     \fill[white,rounded corners=2pt] (7,{\y-8}) rectangle (55,{\y+8});
     \fill[TTCRed] (7,{\y-8}) rectangle (16,{\y+8});
-    \node[text=white,font=\fontsize{6.2}{7}\selectfont\bfseries] at (11.5,\y) {\n};
+    \node[text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (11.5,\y) {\n};
     \node[anchor=north west,text width=34mm,text=TTCBlue,
           font=\fontsize{6.7}{7.8}\selectfont\bfseries] at (19,{\y+5}) {\title};
     \node[anchor=north west,text width=34mm,text=TTCTextMuted,
-          font=\fontsize{5.6}{6.7}\selectfont] at (19,{\y-1}) {\desc};
+          font=\fontsize{6.5}{7.7}\selectfont] at (19,{\y-1}) {\desc};
   }
 
   % Ma trận nhóm vật tư
   \fill[white,rounded corners=4pt] (67,79) rectangle (186,192);
   \draw[TTCBorder,rounded corners=4pt,line width=.7pt] (67,79) rectangle (186,192);
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.4}\selectfont\bfseries]
-    at (74,184) {GROUP OF REFERENCE MATERIALS/ BRANDS};
-  \node[anchor=west,text=TTCTextMuted,font=\fontsize{5.8}{7}\selectfont]
+    at (74,184) {APPROVED TIER-1 MATERIAL PARTNERS};
+  \node[anchor=west,text=TTCTextMuted,font=\fontsize{6.5}{7.7}\selectfont]
     at (74,176) {The final selection is in accordance with the material approval documents of each project.};
 
   \foreach \y/\n/\name/\brands/\control in {
-    157/01/STEEL \& COVER/POSCO • Hoa Phat • BlueScope/MTC • steel grade • plating,
-    134/02/SON \& CHEMICALS/Jotun • KCC • Sika/batch • DFT • fire prevention and fighting certification,
-    111/03/ELECTRICITY \& MEP/Schneider • ABB • LS Vina/Catalogue • test • origin,
-    88/04/HVAC \& Fire/Daikin • Grundfos • Tyco/Submittal • UL--FM upon request}
+    157/01/STEEL STRUCTURE \& ENVELOPE/POSCO • Hoa Phat • BlueScope/MTC • steel grade • plating,
+    134/02/PAINTS \& CHEMICALS/Jotun • KCC • Sika/Batch • DFT • fire-safety certification,
+    111/03/ELECTRICAL \& MEP/Schneider • ABB • LS Vina/Catalogue • test • origin,
+    88/04/HVAC \& FIRE PROTECTION/Daikin • Grundfos • Tyco/Submittal • UL--FM upon request}
   {
     \fill[TTCLightBlue,rounded corners=2pt] (73,{\y-9}) rectangle (180,{\y+9});
-    \node[anchor=west,text=TTCRed,font=\fontsize{6.4}{7.5}\selectfont\bfseries]
+    \node[anchor=west,text=TTCRed,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
       at (78,{\y+4}) {\n};
     \node[anchor=west,text=TTCBlue,font=\fontsize{7}{8.2}\selectfont\bfseries]
       at (91,{\y+4}) {\name};
-    \node[anchor=west,text=TTCTextDark,font=\fontsize{6.2}{7.3}\selectfont]
+    \node[anchor=west,text=TTCTextDark,font=\fontsize{6.5}{7.7}\selectfont]
       at (91,{\y-2}) {\brands};
-    \node[anchor=east,text=TTCTextMuted,font=\fontsize{5.6}{6.7}\selectfont]
+    \node[anchor=east,text=TTCTextMuted,font=\fontsize{6.5}{7.7}\selectfont]
       at (176,{\y-7}) {Control: \control};
   }
 
@@ -4300,7 +4303,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
     at (0,68) {THREE LAYERS OF PROTECTION BEFORE INSTALLATION};
   \foreach \xa/\xb/\n/\title/\desc in {
     0/58/01/CORRECT SOURCE/Approval documents matching manufacturer and origin,
-    64/122/02/in ACCORDANCE WITH QUALITY/Specimen matching specifications and project standards,
+    64/122/02/COMPLIANT QUALITY/Specimen matching specifications and project standards,
     128/186/03/CORRECT LOCATION/Each lot associated with the minutes and the area of use}
   {
     \fill[white,rounded corners=3pt] (\xa,25) rectangle (\xb,60);
@@ -4310,11 +4313,11 @@ The list shows the experience of implementing food, electronics, mechanical, log
     \node[anchor=west,text=TTCBlue,font=\fontsize{7.4}{8.7}\selectfont\bfseries]
       at ({\xa+17},52) {\title};
     \node[anchor=north west,text width=46mm,text=TTCTextMuted,
-          font=\fontsize{6.2}{7.5}\selectfont] at ({\xa+6},43) {\desc};
+          font=\fontsize{6.5}{7.7}\selectfont] at ({\xa+6},43) {\desc};
   }
 
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,16);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.3}{7.5}\selectfont\bfseries]
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (7,8) {MATERIAL ASSURANCE};
   \node[anchor=east,text=white,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
     at (179,8) {APPROVED SOURCE → VERIFIED LOT → TRACEABLE INSTALLATION};
@@ -4347,7 +4350,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \end{scope}
   \draw[TTCBorder,rounded corners=3pt] (0,132) rectangle (59,190);
   \node[anchor=west,text=white,font=\fontsize{7.5}{8.8}\selectfont\bfseries] at (5,144) {FOOD \& AGRIFOOD};
-  \node[anchor=west,text=white!75!gray,font=\fontsize{5.8}{7}\selectfont] at (5,137) {Silo • process • cleaning • fire prevention and fighting};
+  \node[anchor=west,text=white!75!gray,font=\fontsize{6.5}{7.7}\selectfont] at (5,137) {Silo • process • cleaning • fire prevention and fighting};
 
   \begin{scope}
     \clip[rounded corners=3pt] (63.5,132) rectangle (122.5,190);
@@ -4356,7 +4359,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \end{scope}
   \draw[TTCBorder,rounded corners=3pt] (63.5,132) rectangle (122.5,190);
   \node[anchor=west,text=white,font=\fontsize{7.5}{8.8}\selectfont\bfseries] at (68.5,144) {ELECTRONIC \& CLEAN ROOM};
-  \node[anchor=west,text=white!75!gray,font=\fontsize{5.8}{7}\selectfont] at (68.5,137) {HVAC • ESD • environmental control};
+  \node[anchor=west,text=white!75!gray,font=\fontsize{6.5}{7.7}\selectfont] at (68.5,137) {HVAC • ESD • environmental control};
 
   \begin{scope}
     \clip[rounded corners=3pt] (127,132) rectangle (186,190);
@@ -4365,7 +4368,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \end{scope}
   \draw[TTCBorder,rounded corners=3pt] (127,132) rectangle (186,190);
   \node[anchor=west,text=white,font=\fontsize{7.5}{8.8}\selectfont\bfseries] at (132,144) {ELECTRONIC FACTORY};
-  \node[anchor=west,text=white!75!gray,font=\fontsize{5.8}{7}\selectfont] at (132,137) {MEP interface • erection by zone};
+  \node[anchor=west,text=white!75!gray,font=\fontsize{6.5}{7.7}\selectfont] at (132,137) {MEP interface • erection by zone};
 
   % Hàng 2
   \begin{scope}
@@ -4375,7 +4378,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \end{scope}
   \draw[TTCBorder,rounded corners=3pt] (0,69) rectangle (59,127);
   \node[anchor=west,text=white,font=\fontsize{7.5}{8.8}\selectfont\bfseries] at (5,81) {MULTI-STOREY TEXTILES};
-  \node[anchor=west,text=white!75!gray,font=\fontsize{5.8}{7}\selectfont] at (5,74) {Heavy loading floor • large span • escape};
+  \node[anchor=west,text=white!75!gray,font=\fontsize{6.5}{7.7}\selectfont] at (5,74) {Heavy loading floor • large span • escape};
 
   \begin{scope}
     \clip[rounded corners=3pt] (63.5,69) rectangle (122.5,127);
@@ -4383,8 +4386,8 @@ The list shows the experience of implementing food, electronics, mechanical, log
     \fill[TTCDeepNavy,opacity=.9] (63.5,69) rectangle (122.5,88);
   \end{scope}
   \draw[TTCBorder,rounded corners=3pt] (63.5,69) rectangle (122.5,127);
-  \node[anchor=west,text=white,font=\fontsize{7.5}{8.8}\selectfont\bfseries] at (68.5,81) {LOGISTICS \& LOGISTICS};
-  \node[anchor=west,text=white!75!gray,font=\fontsize{5.8}{7}\selectfont] at (68.5,74) {Flat floor • dock • cargo flow};
+  \node[anchor=west,text=white,font=\fontsize{7.5}{8.8}\selectfont\bfseries] at (68.5,81) {LOGISTICS \& WAREHOUSING};
+  \node[anchor=west,text=white!75!gray,font=\fontsize{6.5}{7.7}\selectfont] at (68.5,74) {Flat floor • dock • cargo flow};
 
   \begin{scope}
     \clip[rounded corners=3pt] (127,69) rectangle (186,127);
@@ -4393,24 +4396,24 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \end{scope}
   \draw[TTCBorder,rounded corners=3pt] (127,69) rectangle (186,127);
   \node[anchor=west,text=white,font=\fontsize{7.5}{8.8}\selectfont\bfseries] at (132,81) {AUTO PARTS};
-  \node[anchor=west,text=white!75!gray,font=\fontsize{5.8}{7}\selectfont] at (132,74) {Stable quality • handover according to gate};
+  \node[anchor=west,text=white!75!gray,font=\fontsize{6.5}{7.7}\selectfont] at (132,74) {Stable quality • handover according to gate};
 
   % Ba năng lực dùng chung
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.3}\selectfont\bfseries]
-    at (0,58) {PROFILE ACROSS ALL INDUSTRY GROUPS};
+    at (0,58) {CROSS-SECTOR CORE CAPABILITIES};
   \foreach \xa/\xb/\title/\desc in {
     0/58/COORDINATION/architectural interface key • structure • MEP,
     64/122/CONSTRUCTABILITY/Design following construction methods and sequence,
-    128/186/handover/Sufficient evidence before each transfer step}
+    128/186/CLOSEOUT INTEGRITY/Sufficient evidence before each transfer step}
   {
     \fill[TTCLightBlue,rounded corners=3pt] (\xa,20) rectangle (\xb,50);
     \node[anchor=west,text=TTCBlue,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
       at ({\xa+6},41) {\title};
     \node[anchor=north west,text width=46mm,text=TTCTextMuted,
-          font=\fontsize{6.1}{7.3}\selectfont] at ({\xa+6},34) {\desc};
+          font=\fontsize{6.5}{7.7}\selectfont] at ({\xa+6},34) {\desc};
   }
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,12);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.2}{7.4}\selectfont\bfseries] at (7,6) {SECTOR FIT};
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (7,6) {SECTOR FIT};
   \node[anchor=east,text=white,font=\fontsize{7}{8.3}\selectfont\bfseries]
     at (179,6) {TAILORED SOLUTION FOR OPERATIONAL NEEDS};
 \end{tikzpicture}
@@ -4439,7 +4442,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \draw[TTCBorder,rounded corners=4pt] (0,139) rectangle (186,190);
   \draw[TTCBlue!40!white,line width=.8pt] (18,165) -- (168,165);
   \foreach \x/\n/\title in {
-    1/18/MATERIALS,
+    18/01/MATERIALS,
     55.5/02/SHOP DRAWING,
     93/03/ACCEPTANCE TEST,
     130.5/04/AS-BUILT,
@@ -4447,12 +4450,12 @@ The list shows the experience of implementing food, electronics, mechanical, log
   {
     \fill[white] (\x,165) circle (5mm);
     \draw[TTCBlue,line width=.8pt] (\x,165) circle (5mm);
-    \node[text=TTCBlue,font=\fontsize{6}{7}\selectfont\bfseries] at (\x,165) {\n};
+    \node[text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (\x,165) {\n};
     \node[anchor=north,align=center,text width=29mm,text=TTCBlue,
           font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (\x,155) {\title};
   }
   \fill[TTCRed] (18,165) circle (3.5mm);
-  \node[text=white,font=\fontsize{5.8}{6.8}\selectfont\bfseries] at (18,165) {01};
+  \node[text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (18,165) {01};
 
   % Minh họa tập hồ sơ
   \fill[TTCDeepNavy,rounded corners=4pt] (0,48) rectangle (70,130);
@@ -4463,14 +4466,14 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \fill[white,rounded corners=2pt] (9,69) rectangle (55,119);
   \fill[TTCRed] (9,112) rectangle (55,119);
   \node[anchor=west,text=TTCBlue,font=\fontsize{7.4}{8.6}\selectfont\bfseries]
-    at (15,103) {AS-BUILT COMPANY};
+    at (15,103) {AS-BUILT DOSSIER};
   \draw[TTCBorder] (15,96) -- (49,96);
   \draw[TTCBorder] (15,90) -- (49,90);
   \draw[TTCBorder] (15,84) -- (42,84);
-  \node[anchor=west,text=TTCTextMuted,font=\fontsize{5.8}{7}\selectfont]
+  \node[anchor=west,text=TTCTextMuted,font=\fontsize{6.5}{7.7}\selectfont]
     at (15,76) {CDE index • revision • approval};
-  \node[anchor=west,text=white,font=\fontsize{6.1}{7.3}\selectfont\bfseries]
-    at (7,55) {01 SET OF INDEXES • MULTIPLE GROUPS COMPANY};
+  \node[anchor=west,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (7,55) {01 MASTER INDEX • COMPREHENSIVE DOSSIER SUITE};
 
   % Checklist bên phải
   \fill[white,rounded corners=4pt] (76,48) rectangle (186,130);
@@ -4478,17 +4481,17 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.4}\selectfont\bfseries]
     at (83,120) {MINIMUM HANDOVER STRUCTURE};
   \foreach \y/\n/\title/\desc in {
-    104/01/COMPANY MATERIAL/Approved submittal • CO/CQ • MTC • test,
-    90/02/COMPANY CONSTRUCTION/ITP • checklist • inspection and acceptance minutes,
-    76/03/COMPANY AS-BUILT/As-built drawing • revision • confirmation,
-    62/04/COMPANY OPERATING/O\&M manual • warranty • equipment list}
+    104/01/MATERIAL DOSSIER/Approved submittals • CO/CQ • MTC • test reports,
+    90/02/CONSTRUCTION QA/QC/ITP • checklists • formal inspection sign-offs,
+    76/03/AS-BUILT DOSSIER/As-built drawings • redline revisions • engineer approval,
+    62/04/O\&M HANDOVER/O\&M manuals • manufacturer warranties • asset registers}
   {
     \fill[TTCLightBlue,rounded corners=2pt] (83,{\y-6}) rectangle (179,{\y+6});
-    \node[anchor=west,text=TTCRed,font=\fontsize{6.2}{7.2}\selectfont\bfseries]
+    \node[anchor=west,text=TTCRed,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
       at (88,\y) {\n};
     \node[anchor=west,text=TTCBlue,font=\fontsize{6.6}{7.7}\selectfont\bfseries]
       at (101,{\y+2}) {\title};
-    \node[anchor=west,text=TTCTextMuted,font=\fontsize{5.6}{6.7}\selectfont]
+    \node[anchor=west,text=TTCTextMuted,font=\fontsize{6.5}{7.7}\selectfont]
       at (101,{\y-4}) {\desc};
   }
 
@@ -4496,12 +4499,12 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.3}\selectfont\bfseries]
     at (0,37) {ISSUANCE GUIDELINES};
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,29);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.2}{7.4}\selectfont\bfseries]
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (7,20) {RELEASE CONTROL};
   \node[anchor=west,text=white,font=\fontsize{9}{10.5}\selectfont\bfseries]
-    at (7,10) {VERIFIED → SUFFICIENT APPROVED PROOF → OF → RETRIEVAL};
-  \node[anchor=east,text=white!70!gray,font=\fontsize{6.1}{7.3}\selectfont]
-    at (179,20) {An effective version • A handover index};
+    at (7,10) {INSPECTED → FULLY VERIFIED → APPROVED → TRACEABLE};
+  \node[anchor=east,text=white!70!gray,font=\fontsize{6.5}{7.7}\selectfont]
+    at (179,20) {Single authorized revision • Unified handover index};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -4529,7 +4532,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
     at (7,182) {CORPORATE IDENTITY};
   \node[anchor=north west,text width=53mm,text=white,
         font=\fontsize{12}{14}\selectfont\bfseries]
-    at (7,169) {JOINT STOCK COMPANY\\CONSTRUCTION TECHNOLOGY\\TAN THANH CONG};
+    at (7,169) {TAN THANH CONG\\TECHNOLOGY CONSTRUCTION\\JOINT STOCK COMPANY};
   \draw[white!20!gray] (7,125) -- (60,125);
   \node[anchor=north west,text width=53mm,text=white!82!gray,
         font=\fontsize{6.5}{8.2}\selectfont]
@@ -4546,7 +4549,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
     166/01/CONSTRUCTION CAPABILITY/The scope of work is directly reconciled according to the valid certificate; a copy is provided in the legal documents.,
     134/02/ISO MANAGEMENT SYSTEMS/ISO 9001 • ISO 14001 • ISO 45001 presented with the same scope of application and audit period.,
     102/03/KEY PERSONNEL/Practicing certificate of Project Manager • Site Manager • design lead.,
-    70/04/COMPANY COMMERCIAL/Enterprise registration • tax • bank • insurance • bid form.}
+    70/04/COMMERCIAL \& STATUTORY/Enterprise registration • tax • bank • insurance • bid form.}
   {
     \fill[white,rounded corners=3pt] (73,{\y-13}) rectangle (186,{\y+13});
     \draw[TTCBorder,rounded corners=3pt] (73,{\y-13}) rectangle (186,{\y+13});
@@ -4555,7 +4558,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
     \node[anchor=west,text=TTCBlue,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
       at (101,{\y+5}) {\title};
     \node[anchor=north west,text width=76mm,text=TTCTextMuted,
-          font=\fontsize{6.1}{7.4}\selectfont] at (101,{\y-1}) {\desc};
+          font=\fontsize{6.5}{7.7}\selectfont] at (101,{\y-1}) {\desc};
   }
 
   % Checklist hồ sơ thầu
@@ -4563,7 +4566,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
     at (0,46) {INDEX SET FOR PREQUALIFICATION /BIDDING};
   \foreach \xa/\xb/\label in {
     0/34/LEGAL ENTITY,
-    38/72/PROFILE,
+    38/72/CAPABILITY,
     76/110/ISO,
     114/148/HR,
     152/186/FINANCIAL}
@@ -4573,7 +4576,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
       at ({(\xa+\xb)/2},29) {\label};
   }
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,12);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.2}{7.4}\selectfont\bfseries] at (7,6) {DUE DILIGENCE};
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (7,6) {DUE DILIGENCE};
   \node[anchor=east,text=white,font=\fontsize{7}{8.3}\selectfont\bfseries]
     at (179,6) {INDEXED INFORMATION • CONTROLLED COPY • EASY TO RECONCILE};
 \end{tikzpicture}
@@ -4608,48 +4611,48 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \draw[TTCRed,line width=1pt] (62,151) circle (6mm);
   \fill[TTCRed] (62,151) circle (2.2mm);
   \node[anchor=west,text=TTCRed,font=\fontsize{6.5}{7.6}\selectfont\bfseries] at (70,157) {NORTHERN CLUSTER};
-  \node[anchor=west,text=TTCTextMuted,font=\fontsize{5.5}{6.6}\selectfont] at (70,150) {Hanoi • Vinh Phuc • Bac Ninh};
+  \node[anchor=west,text=TTCTextMuted,font=\fontsize{6.5}{7.7}\selectfont] at (70,150) {Hanoi • Vinh Phuc • Bac Ninh};
 
   \fill[TTCBlue,opacity=.14] (62,94) circle (10mm);
   \draw[TTCBlue,line width=1pt] (62,94) circle (5mm);
   \fill[TTCBlue] (62,94) circle (2mm);
   \node[anchor=west,text=TTCBlue,font=\fontsize{6.5}{7.6}\selectfont\bfseries] at (69,100) {CENTRAL CORRIDOR};
-  \node[anchor=west,text=TTCTextMuted,font=\fontsize{5.5}{6.6}\selectfont] at (69,93) {Da Nang • Quang Nam • coastal};
+  \node[anchor=west,text=TTCTextMuted,font=\fontsize{6.5}{7.7}\selectfont] at (69,93) {Da Nang • Quang Nam • Central Coast};
 
   \fill[TTCCyan,opacity=.16] (51,51) circle (10mm);
   \draw[TTCCyan,line width=1pt] (51,51) circle (5mm);
   \fill[TTCCyan] (51,51) circle (2mm);
   \node[anchor=west,text=TTCBlue,font=\fontsize{6.5}{7.6}\selectfont\bfseries] at (59,57) {SOUTHERN CLUSTER};
-  \node[anchor=west,text=TTCTextMuted,font=\fontsize{5.5}{6.6}\selectfont] at (59,50) {Binh Duong • HCMC • Hau Giang};
-  \node[anchor=west,text=TTCTextMuted,font=\fontsize{4.8}{5.8}\selectfont]
+  \node[anchor=west,text=TTCTextMuted,font=\fontsize{6.5}{7.7}\selectfont] at (59,50) {Binh Duong • HCMC • Hau Giang};
+  \node[anchor=west,text=TTCTextMuted,font=\fontsize{6.5}{7.7}\selectfont]
     at (5,29) {CC0 background map: Wikimedia Commons / Thomson Walt};
 
   % Ba cụm thông tin bên phải
   \fill[TTCDeepNavy,rounded corners=4pt] (109,133) rectangle (186,191);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.2}{7.4}\selectfont\bfseries]
-    at (116,183) {01 • CURRENT DEDICATION WEIGHT};
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (116,183) {01 • STRATEGIC CORE REGION};
   \node[anchor=north west,text width=62mm,text=white,
         font=\fontsize{9.5}{11}\selectfont\bfseries] at (116,173) {NORTHERN INDUSTRIAL BELT};
   \node[anchor=north west,text width=62mm,text=white!75!gray,
-        font=\fontsize{6.2}{7.6}\selectfont] at (116,153) {The project density is high around Hanoi, Vinh Phuc, Bac Ninh, Bac Giang, Hai Duong, Hai Phong and Nam Dinh industrial zones.};
+        font=\fontsize{6.5}{7.7}\selectfont] at (116,153) {The project density is high around Hanoi, Vinh Phuc, Bac Ninh, Bac Giang, Hai Duong, Hai Phong and Nam Dinh industrial zones.};
 
   \fill[TTCLightBlue,rounded corners=4pt] (109,73) rectangle (186,127);
-  \node[anchor=west,text=TTCRed,font=\fontsize{6.2}{7.4}\selectfont\bfseries]
-    at (116,119) {02 • PROFILE MOBILE};
+  \node[anchor=west,text=TTCRed,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (116,119) {02 • REGIONAL MOBILIZATION CAPABILITY};
   \node[anchor=north west,text width=62mm,text=TTCBlue,
         font=\fontsize{8.5}{10}\selectfont\bfseries] at (116,109) {TEAM BY PROJECT CLUSTER};
   \node[anchor=north west,text width=62mm,text=TTCTextMuted,
-        font=\fontsize{6.2}{7.6}\selectfont] at (116,92) {Arrange project management, QA/QC and HSE according to the area; the equipment mobilization plan is locked according to each work package.};
+        font=\fontsize{6.5}{7.7}\selectfont] at (116,92) {Arrange project management, QA/QC and HSE according to the area; the equipment mobilization plan is locked according to each work package.};
 
   \fill[white,rounded corners=4pt] (109,24) rectangle (186,67);
   \draw[TTCBorder,rounded corners=4pt] (109,24) rectangle (186,67);
-  \node[anchor=west,text=TTCBlue,font=\fontsize{6.2}{7.4}\selectfont\bfseries]
-    at (116,59) {03 • DIRECTION EXPAND};
+  \node[anchor=west,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (116,59) {03 • EXPANSION STRATEGY};
   \node[anchor=north west,text width=62mm,text=TTCTextDark,
-        font=\fontsize{6.3}{7.7}\selectfont] at (116,49) {Selective expansion in the Central and the South, prioritizing projects that require industrial EPC, logistics and high-tech factories.};
+        font=\fontsize{6.5}{7.7}\selectfont] at (116,49) {Selective expansion in the Central and the South, prioritizing projects that require industrial EPC, logistics and high-tech factories.};
 
   \fill[TTCDeepNavy,rounded corners=3pt] (109,0) rectangle (186,16);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.1}{7.2}\selectfont\bfseries]
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (116,8) {PROJECT FOOTPRINT};
   \node[anchor=east,text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (179,8) {3 DEPLOYMENT CLUSTERS};
@@ -4676,7 +4679,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
 
   % Ba horizon cards
   \foreach \xa/\xb/\year/\value/\focus/\desc in {
-    0/58/2026/STANDARDIZATION/CONSOLIDATION OF PLATFORMS/General data environment • cost control • consolidation OF capacity IN the North,
+    0/58/2026/STANDARDIZATION/CONSOLIDATION OF PLATFORMS/General data environment • cost control • capacity consolidation in Northern Vietnam,
     64/122/2027--2028/SELECTIVE/EXPAND CAPABILITY/High-Tech Projects • clean rooms • repeat customers,
     128/186/2029--2030/SUSTAINABLE/CONDITIONAL DEVELOPMENT/Controlled expansion • integrated capacity prioritization}
   {
@@ -4691,24 +4694,24 @@ The list shows the experience of implementing food, electronics, mechanical, log
     \node[anchor=west,text=TTCBlue,font=\fontsize{7.6}{9}\selectfont\bfseries]
       at ({\xa+6},143) {\focus};
     \node[anchor=north west,text width=46mm,text=TTCTextMuted,
-          font=\fontsize{6.3}{7.7}\selectfont] at ({\xa+6},133) {\desc};
+          font=\fontsize{6.5}{7.7}\selectfont] at ({\xa+6},133) {\desc};
     \node[anchor=south west,text width=46mm,text=TTCTextDark,
-          font=\fontsize{6.1}{7.5}\selectfont] at ({\xa+6},78)
+          font=\fontsize{6.5}{7.7}\selectfont] at ({\xa+6},78)
       {\textbf{Step transition conditions:} key resources, contract risk, and handover's ability to meet the internal control threshold.};
   }
 
   % Các ưu tiên cụ thể để lấp đầy khoảng giữa và tăng khả năng ghi nhớ
   \foreach \y/\label in {116/Standardized data, 104/Base budget, 92/Northern capacity}{
     \fill[TTCRed] (6,\y) circle (1.2mm);
-    \node[anchor=west,text=TTCTextDark,font=\fontsize{6.2}{7.4}\selectfont] at (11,\y) {\label};
+    \node[anchor=west,text=TTCTextDark,font=\fontsize{6.5}{7.7}\selectfont] at (11,\y) {\label};
   }
   \foreach \y/\label in {116/Clean room \& high-tech,104/Repeat clients,92/Multi-project governance}{
     \fill[TTCRed] (70,\y) circle (1.2mm);
-    \node[anchor=west,text=TTCTextDark,font=\fontsize{6.2}{7.4}\selectfont] at (75,\y) {\label};
+    \node[anchor=west,text=TTCTextDark,font=\fontsize{6.5}{7.7}\selectfont] at (75,\y) {\label};
   }
-  \foreach \y/\label in {116/Selected General Contractor ,104/Conditional Area ,92/Green Supply Chain}{
+  \foreach \y/\label in {116/Selective EPC Contracting,104/Regional Expansion,92/Sustainable Supply Chain}{
     \fill[TTCRed] (134,\y) circle (1.2mm);
-    \node[anchor=west,text=TTCTextDark,font=\fontsize{6.2}{7.4}\selectfont] at (139,\y) {\label};
+    \node[anchor=west,text=TTCTextDark,font=\fontsize{6.5}{7.7}\selectfont] at (139,\y) {\label};
   }
 
   % Bốn bộ lọc tăng trưởng
@@ -4721,15 +4724,15 @@ The list shows the experience of implementing food, electronics, mechanical, log
     142.5/186/04/HANDOVER CAPACITY}
   {
     \fill[TTCLightBlue,rounded corners=3pt] (\xa,25) rectangle (\xb,49);
-    \node[anchor=west,text=TTCRed,font=\fontsize{6}{7}\selectfont\bfseries]
+    \node[anchor=west,text=TTCRed,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
       at ({\xa+5},40) {\n};
-    \node[anchor=west,text=TTCBlue,font=\fontsize{6.2}{7.4}\selectfont\bfseries]
+    \node[anchor=west,text=TTCBlue,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
       at ({\xa+5},32) {\label};
   }
-  \node[anchor=west,text=TTCTextMuted,font=\fontsize{5.4}{6.5}\selectfont\itshape]
+  \node[anchor=west,text=TTCTextMuted,font=\fontsize{6.5}{7.7}\selectfont\itshape]
     at (0,14) {The roadmap is oriented; step by step expansion depends on capacity, market demand and governance approval.};
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,10);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6}{7.2}\selectfont\bfseries] at (7,5) {CONTROLLED GROWTH};
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (7,5) {CONTROLLED GROWTH};
   \node[anchor=east,text=white,font=\fontsize{6.8}{8}\selectfont\bfseries]
     at (179,5) {HANDOVER QUALITY IS MORE IMPORTANT THAN SPEED};
 \end{tikzpicture}
@@ -4755,39 +4758,39 @@ The list shows the experience of implementing food, electronics, mechanical, log
 
   % Hero warranty promise
   \fill[TTCDeepNavy,rounded corners=4pt] (0,141) rectangle (54,190);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.4}{7.6}\selectfont\bfseries]
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (7,181) {WARRANTY CONDITIONS};
   \node[anchor=center,align=center,text=white,font=\fontsize{18}{20}\selectfont\bfseries]
-    at (27,163) {THEO\\CONTRACT};
-  \node[anchor=center,align=center,text width=42mm,text=white!72!gray,font=\fontsize{5.5}{6.7}\selectfont]
+    at (27,163) {CONTRACT\\BASED};
+  \node[anchor=center,align=center,text width=42mm,text=white!72!gray,font=\fontsize{6.5}{7.7}\selectfont]
     at (27,148) {Term and scope established in each contract};
 
   \fill[TTCLightBlue,rounded corners=4pt] (60,141) rectangle (186,190);
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.3}\selectfont\bfseries]
-    at (67,181) {ONE CONTRACT RECEIVING — ONE COMPANY FOLLOWING};
+    at (67,181) {SINGLE POINT OF CONTACT — UNIFIED INCIDENT LOG};
   \node[anchor=north west,text width=104mm,text=TTCTextDark,
         font=\fontsize{6.7}{8.2}\selectfont] at (67,171)
     {Hotline and technical email are centralized reception channels. Response time, site inspection and remediation are determined according to priority, contractual conditions and access to the works.};
-  \node[anchor=west,text=TTCRed,font=\fontsize{6.4}{7.6}\selectfont\bfseries]
-    at (67,149) {NO PROFILE COMMITMENT • DO NOT CLOSE WITHOUT A CONFIRMATION};
+  \node[anchor=west,text=TTCRed,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
+    at (67,149) {NO VAGUE COMMITMENTS • NO CASE CLOSURE WITHOUT CLIENT SIGN-OFF};
 
   % Quy trình bốn bước
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.3}\selectfont\bfseries]
     at (0,130) {POST-HANDOVER SUPPORT PROCESS};
   \foreach \xa/\xb/\n/\title/\desc in {
-    0/42/01/RECEIVE/record the phenomenon • image • degree of influence,
-    48/90/02/CLASSIFICATION/Determination of warranty coverage and priority,
-    96/138/03/INSPECTION/Remote assessment or site inspection arrangement,
-    144/186/04/CLOSE COMPANY/Fix • inspection and acceptance • history update}
+    0/42/01/INTAKE/Incident logging • photo evidence • operational impact,
+    48/90/02/CLASSIFICATION/Warranty scope verification \& priority level,
+    96/138/03/SITE ASSESSMENT/Remote evaluation or immediate on-site inspection,
+    144/186/04/CASE CLOSURE/Remediation • joint inspection • maintenance log update}
   {
     \fill[white,rounded corners=3pt] (\xa,78) rectangle (\xb,121);
     \draw[TTCBorder,rounded corners=3pt] (\xa,78) rectangle (\xb,121);
     \fill[TTCRed,rounded corners=1pt] ({\xa+5},109) rectangle ({\xa+16},118);
-    \node[text=white,font=\fontsize{6}{7}\selectfont\bfseries] at ({\xa+10.5},113.5) {\n};
+    \node[text=white,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at ({\xa+10.5},113.5) {\n};
     \node[anchor=west,text=TTCBlue,font=\fontsize{7}{8.2}\selectfont\bfseries]
       at ({\xa+5},101) {\title};
     \node[anchor=north west,text width=31mm,text=TTCTextMuted,
-          font=\fontsize{5.9}{7.2}\selectfont] at ({\xa+5},94) {\desc};
+          font=\fontsize{6.5}{7.7}\selectfont] at ({\xa+5},94) {\desc};
   }
   \foreach \xa/\xb in {42/48,90/96,138/144}{
     \draw[-{Latex[length=2mm]},TTCBlue!65!white,line width=.8pt]
@@ -4798,20 +4801,20 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \node[anchor=west,text=TTCBlue,font=\fontsize{8}{9.3}\selectfont\bfseries]
     at (0,67) {THE SCOPE IS DETERMINED ACCORDING TO THE CONTRACT AND HANDOVER MINUTES};
   \foreach \xa/\xb/\title/\desc in {
-    0/58/STRUCTURE/Frame • bonding • protective layer,
-    64/122/COVER/Roof • wall • drainage • slot,
-    128/186/M\&E \& Fire Protection/Equipment • system • operating records}
+    0/58/STRUCTURAL FRAME/Main frame • bolt connections • protective coatings,
+    64/122/BUILDING ENVELOPE/Roofing • wall cladding • gutters • expansion joints,
+    128/186/MEP \& FIRE SYSTEMS/Equipment • system integration • operation records}
   {
     \fill[TTCLightBlue,rounded corners=3pt] (\xa,25) rectangle (\xb,58);
     \node[anchor=west,text=TTCBlue,font=\fontsize{7.2}{8.5}\selectfont\bfseries]
       at ({\xa+6},48) {\title};
     \node[anchor=north west,text width=46mm,text=TTCTextMuted,
-          font=\fontsize{6}{7.3}\selectfont] at ({\xa+6},40) {\desc};
+          font=\fontsize{6.5}{7.7}\selectfont] at ({\xa+6},40) {\desc};
   }
   \fill[TTCDeepNavy,rounded corners=3pt] (0,0) rectangle (186,16);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.1}{7.3}\selectfont\bfseries] at (7,8) {CENTRAL SERVICE DESK};
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries] at (7,8) {CENTRAL SERVICE DESK};
   \node[anchor=east,text=white,font=\fontsize{6.8}{8}\selectfont\bfseries]
-    at (179,8) {RECEIPT → OF → TRACE → CONFIRMATION PROCESSING};
+    at (179,8) {INTAKE → SITE ASSESSMENT → REMEDIATION → FORMAL CLOSEOUT};
 \end{tikzpicture}
 \end{minipage}
 \newpage
@@ -4833,11 +4836,11 @@ The list shows the experience of implementing food, electronics, mechanical, log
     at (0,211) {CONNECTING CAPABILITIES • CREATING SHARED VALUE};
   \node[anchor=west,text width=178mm,text=TTCTextMuted,
         font=\fontsize{7.2}{8.8}\selectfont]
-    at (0,199) {The brands are presented for ecosystem reference; the relationship and state of cooperation are collated according to the current profile.};
+    at (0,199) {Brand marks are displayed for ecosystem reference; contractual relationships and partnership status are verifiable via valid legal dossier.};
 
   % Nhóm doanh nghiệp: card lớn để giữ nhận diện của các logo dạng biểu tượng.
   \fill[TTCLightBlue,rounded corners=3pt] (0,177) rectangle (186,191);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.2}{7.4}\selectfont\bfseries]
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (7,184) {CORPORATE ECOSYSTEM};
   \node[anchor=east,text=TTCBlue,font=\fontsize{7.2}{8.6}\selectfont\bfseries]
     at (179,184) {ENTERPRISE ECOSYSTEM};
@@ -4862,7 +4865,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
 
   % Nhóm ngân hàng: 06 logo đúng với danh sách năng lực tín dụng trong hồ sơ.
   \fill[TTCLightBlue,rounded corners=3pt] (0,82) rectangle (186,96);
-  \node[anchor=west,text=TTCCyan,font=\fontsize{6.2}{7.4}\selectfont\bfseries]
+  \node[anchor=west,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (7,89) {FINANCIAL REFERENCES};
   \node[anchor=east,text=TTCBlue,font=\fontsize{7.2}{8.6}\selectfont\bfseries]
     at (179,89) {REFERENCE FINANCIAL INSTITUTION};
@@ -4885,9 +4888,9 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \fill[TTCRed,rounded corners=1pt] (7,7) rectangle (9,17);
   \node[anchor=west,text=white,font=\fontsize{8.4}{10}\selectfont\bfseries]
     at (15,15) {COLLABORATE FOR BETTER DELIVERY};
-  \node[anchor=west,text=white!70!gray,font=\fontsize{6.1}{7.4}\selectfont]
+  \node[anchor=west,text=white!70!gray,font=\fontsize{6.5}{7.7}\selectfont]
     at (15,7) {Connect expertise, resources and financial capability to the project.};
-  \node[anchor=east,text=TTCCyan,font=\fontsize{6.4}{7.6}\selectfont\bfseries]
+  \node[anchor=east,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at (179,12) {PARTNERSHIP BUILT ON TRUST};
 \end{tikzpicture}
 \end{minipage}
@@ -4927,7 +4930,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \node[anchor=north west,fill=white,rounded corners=4pt,
         inner xsep=7mm,inner ysep=4mm]
     at ([xshift=17mm,yshift=-20mm]current page.north west)
-    {\includegraphics[width=57mm]{../../public/logo-ttc-removebg-DNXrVdJp.png}};
+    {\ttcenglishlogo{16mm}};
   \node[anchor=north east,text=white!75!gray,font=\fontsize{6.5}{7.8}\selectfont\bfseries]
     at ([xshift=-17mm,yshift=-24mm]current page.north east) {COMPANY PROFILE • 2026};
 
@@ -4942,7 +4945,7 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \node[anchor=north west,text width=170mm,text=white!78!gray,
         font=\fontsize{8.2}{10.6}\selectfont]
     at ([xshift=18mm,yshift=-178mm]current page.north west)
-    {Tan Thanh Cong is ready to accompany Client from concept, design to construction and handover industrial works.};
+    {Tan Thanh Cong partners with clients from concept and design through construction and handover.};
 
   % Khối thông tin sáng, rõ và nhận diện ngay khi lật tới bìa cuối.
   \fill[white,rounded corners=5pt]
@@ -4951,9 +4954,9 @@ The list shows the experience of implementing food, electronics, mechanical, log
   \node[anchor=north west,text=TTCBlue,font=\fontsize{9.2}{11}\selectfont\bfseries]
     at ([xshift=26mm,yshift=94mm]current page.south west)
     {TAN THANH CONG TECHNOLOGY CONSTRUCTION JOINT STOCK COMPANY};
-  \node[anchor=north west,text=TTCTextMuted,font=\fontsize{5.8}{7}\selectfont\bfseries]
+  \node[anchor=north west,text=TTCTextMuted,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at ([xshift=26mm,yshift=83mm]current page.south west)
-    {TAN THANH CONG TECHNOLOGY CONSTRUCTION JOINT STOCK COMPANY};
+    {INTEGRATED INDUSTRIAL GENERAL CONTRACTOR • GRADE II CAPABILITY};
   \draw[TTCBorder,line width=.6pt]
     ([xshift=26mm,yshift=75mm]current page.south west)
     -- ([xshift=-26mm,yshift=75mm]current page.south east);
@@ -4969,10 +4972,10 @@ The list shows the experience of implementing food, electronics, mechanical, log
      \hspace{12mm}\textcolor{TTCRed}{\faEnvelope}\quad info@tanthanhcongjsc.com
      \hspace{12mm}\textcolor{TTCRed}{\faGlobe}\quad tanthanhcongjsc.com};
 
-  \node[anchor=south west,text=white!65!gray,font=\fontsize{5.6}{6.8}\selectfont]
+  \node[anchor=south west,text=white!65!gray,font=\fontsize{6.5}{7.7}\selectfont]
     at ([xshift=17mm,yshift=8mm]current page.south west)
     {\textcopyright\ 2026 TAN THANH CONG JSC};
-  \node[anchor=south east,text=TTCCyan,font=\fontsize{6.2}{7.4}\selectfont\bfseries]
+  \node[anchor=south east,text=TTCCyan,font=\fontsize{6.5}{7.7}\selectfont\bfseries]
     at ([xshift=-17mm,yshift=8mm]current page.south east)
     {TANTHANHCONGJSC.COM};
 \end{tikzpicture}
